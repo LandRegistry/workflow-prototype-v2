@@ -1,0 +1,56 @@
+{#
+  For guidance on how to use layouts see:
+  https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+
+  this layout is used for Workflow pages...
+#}
+  
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+    
+{% block stylesheets %}
+  {{ super() }}
+  
+  <!--link href="/public/stylesheets/dist/accessible-autocomplete.min.css" rel="stylesheet" type="text/css" /-->
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: Workflow,
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% if (GOVUKPrototypeKit.isDevelopment) %}
+  {% set footerItems = [
+    {
+      href: "/manage-prototype",
+      text: "Manage your prototype"
+    }, {
+      href: "/manage-prototype/clear-data",
+      text: "Clear data"
+    }
+  ] %}
+{% else %}
+  {% set footerItems = [
+    {
+      href: "/manage-prototype/clear-data",
+      text: "Clear data"
+    }
+  ] %}
+{% endif %}
+
+{% block footer %}
+  {{ govukFooter({
+    meta: {
+      items: footerItems,
+      visuallyHiddenTitle: "Footer links"
+    }
+  }) }}
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+    <!--script type="text/javascript" src="/public/javascripts/accessible-autocomplete.min.js"></script-->
+{% endblock %}

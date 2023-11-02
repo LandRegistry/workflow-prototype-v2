@@ -1,0 +1,32 @@
+{% extends "layouts/wf_layout.html" %}
+
+{% set pageName="Index template example using the Workflow template" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      {{ serviceName }} - <abbr>WF</abbr> layout
+    </h1>
+
+    <p class="govuk-body">
+      This is an example page using the primary <abbr title="Workflow">wf</abbr> layout (using the <b>wf_layout.html</b> layout template). 
+    </p>
+
+    <!-- keep this page to use as a base template and to add a list of links to the various Workflow prototypes/designs -->
+    
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">  
+    
+    <!--
+    {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
+    -->
+    
+    {#
+    {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}
+    #}
+  </div>
+</div>
+
+{% endblock %}

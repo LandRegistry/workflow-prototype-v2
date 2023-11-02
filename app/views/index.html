@@ -7,13 +7,30 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
-
     <h1 class="govuk-heading-xl">
-      {{ serviceName }}  TEST!
+      {{ serviceName }}  
     </h1>
 
+    <p class="govuk-body">
+      This is the root index page. You can find the index page of the prototype you require by using the full <abbr>URL</abbr> (which will include the prototype directory name).
+    </p>
+    
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">  
+    
+    
+    <p class="govuk-body-s">This is the standard <!--abbr title="Workflow">wf</abbr--> <abbr>GDS</abbr> page template (using the <b>main.html</b> layout).</p>
+
+    <!-- keep this page to use as a base template and to add a list of links to the various Workflow prototypes/designs -->
+
+
+
+    <!--
+    {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
+    -->
+    
+    {#
     {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}
+    #}
   </div>
 </div>
 

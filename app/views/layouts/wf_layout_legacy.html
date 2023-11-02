@@ -1,0 +1,102 @@
+{#
+  For guidance on how to use layouts see:
+  https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+
+  This layout is used for recreating the LEGACY Workflow pages...
+
+  *** these LEGACY layouts/pages, in this repo, do not support IE9, etc ***
+#}
+  
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+    
+{% block stylesheets %}
+  <!--[if gt IE 8]><!--><link href="{{ asset_path }}stylesheets/legacy/legacy-wf-styles.min.css" media="screen" rel="stylesheet" /><!--<![endif]-->
+  <!--[if IE 8]><link href="{{ asset_path }}stylesheets/legacy/legacy-wf-main-ie8.min.css" media="screen" rel="stylesheet" /><![endif]-->
+
+  {#
+    Removed all references to fonts.css, fonts-ie8.css and ie.js from here as none of these were downloading on 
+    'workflow-preview.lr.net/worklist-ui' site and weren't present in the legacy Workflow prototype repository either. 
+    Using flat legacy CSS in this repo for these legacy pgs as the legacy sass had too many legacy GDS
+    constants and issues to run successfully in this later GDS v13+ repo. 
+  #}
+  
+  <!--link href="/public/stylesheets/dist/accessible-autocomplete.min.css" rel="stylesheet" type="text/css" /-->
+  <meta name="theme-color" content="#0b0c0c" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+{% endblock %}
+
+{% block header %}
+<header class="govuk-header govuk-header--hmlr" data-module="govuk-header">
+  <div class="govuk-header__container govuk-header__container--full-width">
+    <div class="govuk-width-container">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-half">
+        <a href="index" class="govuk-header__link govuk-header__service-name">
+           <img class="hmlr-header__logo" width="38" height="35" src="/public/images/lr_logo.png" alt="HM Land Registry Logo">
+           <span class="govuk-header__link govuk-header__service-name">Workflow</span>
+        </a>
+        </div>
+        <div class="govuk-grid-column-one-half">
+          <a href="marval-holding-pg" title="Report an issue (Link opens in a new window)" class="header-link opens-in-new-window" id="new-tab-link" target="_blank">
+            Report an issue
+            <span class="visuallyhidden">(Opens in a new window)</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+{% endblock %}
+
+{% if (GOVUKPrototypeKit.isDevelopment) %}
+{% endif %}
+
+{% block footer %}
+  {#
+    {{ govukFooter({
+      meta: {
+        items: footerItems,
+        visuallyHiddenTitle: "Footer links"
+      }
+    }) }}
+
+    <!-- the orginal legacy prototype used these classes and ID on the footer: noted here in case this has relevant functionality? 
+    <footer class="group js-footer" id="footer" role="contentinfo"></footer>
+    -->
+  #}
+
+  <footer class="govuk-footer govuk-footer--hmlr">
+    <div class="govuk-width-container">
+      <div class="govuk-footer__meta">
+        <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+          <h2 class="govuk-visually-hidden">Other links</h2>
+          <ul class="govuk-footer__inline-list">
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="/worklist-ui/cookies">
+                Cookies
+              </a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="/worklist-ui/accessibility-statement">
+                Accessibility statement
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="govuk-footer__meta-item">
+          <img width="172" height="53" src="/public/images/logo-greyscale.png" alt="HM Land Registry Footer Logo">
+        </div>
+      </div>
+    </div>
+  </footer>  
+{% endblock %}
+
+{% block scripts %}
+    {#
+    {{ super() }}
+    #}
+    <!--[if gt IE 8]><!-->
+      <script src="/public/javascripts/legacy/legacy-wf-main.min.js"></script>
+    <!--<![endif]-->
+    <script type="text/javascript" src="/public/javascripts/accessible-autocomplete.min.js"></script>
+{% endblock %}
