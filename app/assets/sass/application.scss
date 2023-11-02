@@ -2,7 +2,18 @@
 // For guidance on how to add CSS and SCSS see:
 // https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
 // 
+// These styles (below) will only impact layout: index-wf (not wf_layout_legacy or main).
 
 // Add extra styles here
 
 //@import "./includes/xxxxxxxx";   //no file exe required
+
+//using a grey pg bg means the faux form elements require a solid bg colour. DH
+.govuk-radios__label:before, 
+.govuk-checkboxes__label:before {
+    background-color: govuk-colour("white");
+} 
+
+body {
+    border: 5px solid red; 
+}
