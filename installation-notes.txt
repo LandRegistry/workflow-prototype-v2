@@ -25,7 +25,7 @@ To resolve this I manually edited 2 file paths:
 
 1).  
 
-I edited file: C:\prototypes\workflow-prototype-v2\node_modules\@hmlr\frontend\hmlr\_base.scss
+I edited file: workflow-prototype-v2\node_modules\@hmlr\frontend\hmlr\_base.scss
 
 This line (path): @import "govuk-frontend/govuk/base.scss";
 
@@ -39,7 +39,7 @@ to: $govuk-assets-path: "/node_modules/govuk-frontend/govuk/assets/" !default;
 
 2). 
 
-I edited file: C:\prototypes\workflow-prototype-v2\node_modules\@hmlr\frontend\hmlr\all.scss
+I edited file: workflow-prototype-v2\node_modules\@hmlr\frontend\hmlr\all.scss
 
 This line (path): @import "govuk-frontend/govuk/all";
 
@@ -55,7 +55,7 @@ b) I then manually added a hardcoded link to any of the CSS files I required in 
 wf_layout.html now links to fonts.css, like this: 
 <link href="/public/css/font.css" rel="stylesheet" type="text/css" />
 
-I don't know if this is the correct method? (No HMLR sass files populated this repo when I ran npm install @hmlr/frontend )
+I don't know if this is the correct method? (No HMLR sass files populated the app/assets/sass when I ran npm install @hmlr/frontend )
 There are no version numbers written inside the HMLR CSS files? 
 
 ----

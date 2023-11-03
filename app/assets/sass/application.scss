@@ -4,9 +4,13 @@
 // 
 // These styles (below) will only impact layout: index-wf (not wf_layout_legacy or main).
 
-// Add extra styles here
 
-//@import "./includes/xxxxxxxx";   //no file exe required
+code {
+    font-family: monospace !important;
+    font-weight: normal;
+    font-size: 1.1rem;
+    background-color: antiquewhite;
+}
 
 //using a grey pg bg means the faux form elements require a solid bg colour. DH
 .govuk-radios__label:before, 
@@ -14,6 +18,6 @@
     background-color: govuk-colour("white");
 } 
 
-body {
-    border: 5px solid red; 
-}
+@import "./includes/hmlr-wf-main";
+
+

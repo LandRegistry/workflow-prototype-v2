@@ -1,0 +1,30 @@
+{% extends "layouts/wf_layout_legacy.html" %}
+
+{% set pageName="Index" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      {{ serviceName }} - Footer links
+    </h1>
+
+    <!-- https://tetralogical.com/blog/2022/12/20/foundations-target-size -->
+
+    <!--h2 class="govuk-heading-m">Sample content</h2>
+
+    <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris porta dolor quis felis convallis tempor. Praesent pretium lacus tortor, id scelerisque mi efficitur sed. Nunc a rhoncus risus. Phasellus varius pulvinar erat vel tempus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis tellus tellus, elementum a dictum non, faucibus ac neque. Nullam volutpat, neque at egestas aliquet, velit felis porttitor erat, vitae consectetur velit lacus ac purus.</p>
+
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"--> 
+
+    <p class="govuk-body">
+      Each footer link 'A' tag has classes <code>govuk-!-display-inline-block govuk-!-margin-right-1 govuk-!-padding-top-1 govuk-!-padding-bottom-1</code> added. (Inspect the <abbr>HTML</abbr>).
+    </p>
+
+  </div>
+</div>
+
+{% endblock %}
