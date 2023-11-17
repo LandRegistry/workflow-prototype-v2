@@ -1,0 +1,43 @@
+$hmlr-brand-colour: #789904 !important;
+//$std-font-family: "GDS Transport", "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+
+@mixin menu-inset-anchors {
+    ul li {
+      padding-bottom: 0;
+      @include hmlr-font-size($s: 16px, $l: 1.2);
+  
+      &:before {
+        content: "-";
+        margin-left: - govuk-spacing(4);
+        color: $govuk-secondary-text-colour;
+      }
+    }
+}
+  
+@function calculaterem($s) {
+    $remsize: $s / 16px;
+    @return #{$remsize}rem;
+}
+
+@mixin hmlr-font-size($s, $l) {
+    font-size: $s !important;
+    font-size: calculaterem($s) !important;
+    line-height: $l !important;
+}
+
+@mixin word-wrap() {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+
+@mixin hover-underline() {
+    text-decoration-thickness: .15em !important;
+    text-decoration-thickness: .1875rem !important;
+}

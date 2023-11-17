@@ -1,10 +1,34 @@
 /* 'exclusive styles for hmlr-wf: general styles from app/assets/sass/application.scss may also be required */
 
-//main.hmlr-ap {
-    //all css classes go here
-//}
+body .govuk-header__container {
+    border-bottom-color: $hmlr-brand-colour;
+}
 
 
-.hmlr-link--min-width-48 {
-    min-width: 48px;
+.hmlr-ap {//class added to div.govuk-width-container
+
+    .hmlr-secondary-text {
+        color: $govuk-secondary-text-colour;
+    }
+
+
+    @include govuk-media-query($from: desktop){
+        .govuk-main-wrapper {
+            min-height: 385px;
+        }
+
+        .hmlr-full-height {
+            display: flex;
+            flex-direction: row;
+        
+            .hmlr-full-height__col {
+            display: flex;
+            flex-direction: column;
+        
+            & > .hmlr-full-height__col--bottom {
+                margin-top: auto;
+            }
+            }
+        }
+    }    
 }

@@ -18,6 +18,12 @@
     background-color: govuk-colour("white");
 } 
 
+.hmlr-link--min-width-48 {
+    min-width: 48px;
+}
+
+@import "./includes/hmlr-wf-mixins";
 @import "./includes/hmlr-wf-main";
+@import "./includes/hmlr-wf-left-nav";
 
 
