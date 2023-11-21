@@ -4,13 +4,17 @@
 // 
 // These styles (below) will only impact layout: index-wf (not wf_layout_legacy or main).
 
-
 /*code {
     font-family: monospace !important;
     font-weight: normal;
     font-size: 1.1rem;
     background-color: antiquewhite;
 }*/
+
+body .govuk-header__container {
+    border-bottom-color: $hmlr-brand-colour;
+    margin-bottom: -9px !important; 
+}
 
 //using a grey pg bg means the faux form elements require a solid bg colour. DH
 .govuk-radios__label:before, 
@@ -25,5 +29,4 @@
 @import "./includes/hmlr-wf-mixins";
 @import "./includes/hmlr-wf-main";
 @import "./includes/hmlr-wf-left-nav";
-
 
