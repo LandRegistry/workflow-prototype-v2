@@ -1,0 +1,168 @@
+{% extends "layouts/wf_layout.html" %}
+
+{% set pageName="{{ serviceName }} IA and UI work" %}
+
+{% block content %}
+    
+<div class="govuk-grid-row hmlr-min-height-header-sm">
+  <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-3">
+
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-1">
+      Workflow <span class="govuk-heading-l govuk-!-font-weight-regular govuk-!-display-inline">&dash; lorem ipsum centreitta</span>
+    </h1>
+
+    <p class="govuk-body hmlr-secondary-text">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat similique quae enim eius saepe.
+    </p>
+
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+
+  </div>      
+
+</div>
+
+
+<div class="govuk-grid-row">
+
+
+  <section class="govuk-grid-column-two-thirds" id="page-content" role="region">
+
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">Concept 1</h2>
+        <ul class="govuk-summary-card__actions">
+          <li class="govuk-summary-card__action"> 
+            <a href="example-01" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-regular">
+              View<span class="govuk-visually-hidden"> concept 1</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-font-size-16">
+              Type
+            </dt>
+            <dd class="govuk-summary-list__value govuk-!-font-size-16">
+              Left navigation 
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-font-size-16">
+              Description
+            </dt>
+            <dd class="govuk-summary-list__value govuk-!-font-size-16">
+              
+              Workflow content split into two conceptually in the menu. Nested secondary sub links are 'anchor' or 'jump-to' links, to land on the relevant section of the page. Simple use of top level 'My Worklist' menu link. (Can add soft scroll). Sub links disappear when not on the 'Worklist' page: adds additional 'click' to return to the Worklist page, but is simple to interpret.
+
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">Concept 2</h2>
+        <ul class="govuk-summary-card__actions">
+          <li class="govuk-summary-card__action"> 
+            <a href="example-02" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-regular">
+              View<span class="govuk-visually-hidden"> concept 2</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-font-size-16">
+              Type
+            </dt>
+            <dd class="govuk-summary-list__value govuk-!-font-size-16">
+              Left navigation 
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-font-size-16">
+              Description
+            </dt>
+            <dd class="govuk-summary-list__value govuk-!-font-size-16">
+              
+              Workflow content split across two pages with nested secondary sub links targeting an 'applications' and 'progress later' pages. This creates a 'My Worklist' landing page - and an opportunity to create a default landing/home page for the 'Workflow' service (which can provide dashboard info).
+              
+              <br><br>
+
+              'Applications' and 'Progress later' links <i>disappear</i> when not in the 'My Worklist' area.
+
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-font-size-16">
+              Concept 2b 
+            </dt>
+            <dd class="govuk-summary-list__value govuk-!-font-size-16">
+              
+              This <a href="example-02b.html" class="govuk-link govuk-link--no-visited-state">alternative variation (2b)</a> persists the secondary links when elsewhere in the service. Included here for completeness. 'Applications' and 'Progress later' links do <i>not</i> disappear when not in the 'My Worklist' area.
+
+            </dd>
+          </div>          
+        </dl>
+      </div>
+    </div>
+
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">Concept 3</h2>
+        <ul class="govuk-summary-card__actions">
+          <li class="govuk-summary-card__action"> 
+            <a href="example-03" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-regular">
+              View<span class="govuk-visually-hidden"> concept 3</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-font-size-16">
+              Type
+            </dt>
+            <dd class="govuk-summary-list__value govuk-!-font-size-16">
+              Top level and secondary navigation 
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-font-size-16">
+              Description
+            </dt>
+            <dd class="govuk-summary-list__value govuk-!-font-size-16">
+              
+              A primary navigation (in the page header) sets out the most fundemental information groupings: which have their own secondary navigation (left nav).
+
+              <br><br>
+
+              These top level options can either serve their own 'area' landing page or default to the first page in the secondary navigation. 
+
+              <br><br>
+
+              Worklist, is supported by two secondary links: 'applications' and 'progress later'.
+
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+
+
+  </section>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+  </div>
+</div>
+{% endblock %}

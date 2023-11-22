@@ -6,17 +6,6 @@
         color: $govuk-secondary-text-colour;
     }
 
-    .hmlr-min-height-header-sm {
-        min-height: 150px; 
-    }
-    .hmlr-min-height-header-med {
-        min-height: 200px; 
-    } 
-    .hmlr-min-height-header-lrg {
-        min-height: 250px; 
-    }    
-
-
     @include govuk-media-query($from: desktop){
         .govuk-main-wrapper {
             min-height: 385px;
@@ -27,13 +16,24 @@
             flex-direction: row;
         
             .hmlr-full-height__col {
-            display: flex;
-            flex-direction: column;
-        
-            & > .hmlr-full-height__col--bottom {
-                margin-top: auto;
-            }
+                display: flex;
+                flex-direction: column;
+            
+                    & > .hmlr-full-height__col--bottom {
+                        margin-top: auto;
+                    }
             }
         }
+
+        .hmlr-min-height-header-sm {
+            min-height: 150px; 
+        }
+        .hmlr-min-height-header-med {
+            min-height: 200px; 
+        } 
+        .hmlr-min-height-header-lrg {
+            min-height: 250px; 
+        }        
     }    
+
 }

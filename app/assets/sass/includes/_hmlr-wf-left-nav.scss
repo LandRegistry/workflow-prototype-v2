@@ -13,12 +13,10 @@ ul.hmlr-left-nav {
   
     & > li.hmlr-left-nav__active, 
     & > li.hmlr-left-nav__active--child {
-      @include menu-inset-anchors;
+      ul {
+        padding-left: govuk-spacing(6);
+      }
     }
-
-    /*& > li.hmlr-left-nav__active--child {
-      margin-bottom: govuk-spacing(1);
-    }*/
   
     li {
       margin-bottom: 0;
@@ -27,23 +25,24 @@ ul.hmlr-left-nav {
       @include word-wrap;
   
       ul {
+        padding-bottom: govuk-spacing(1); 
         padding-left: govuk-spacing(4);
-        margin-bottom: 0;
-      }
-  
-      ul li.hmlr-left-nav__active { /* no .hmlr-left-nav__active--child required at this child level */
-        // 3rd nested ULs
-        //@include menu-inset-anchors; 
-        @include menu-inset-anchors-bullets;
-        border-left: none;
-        margin-left: govuk-spacing(0); 
-        
-        a {
-          margin-left: 0; 
+        margin-bottom: 0; 
 
-          span {
-            font-weight: normal;
-          }
+        li { /* no .hmlr-left-nav__active--child required at this child level .hmlr-left-nav__active*/
+          @include menu-inset-anchors-bullets; 
+          @include hmlr-font-size($s: 16px, $l: 1.2);
+          border-left: none !important;
+          margin-left: govuk-spacing(0); 
+          padding-bottom: govuk-spacing(0); 
+
+          a {
+            margin-left: 0; 
+  
+            span {
+              font-weight: normal;
+            }
+          } 
         }
       }
   

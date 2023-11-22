@@ -1,27 +1,6 @@
 $hmlr-brand-colour: #789904 !important;
 //$std-font-family: "GDS Transport", "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
 
-@mixin menu-inset-anchors-bullets {
-    &:before {
-        content: "-";
-        margin-left: - govuk-spacing(4);
-        color: $govuk-secondary-text-colour;
-      }
-}
-
-@mixin menu-inset-anchors {
-    ul {
-        padding-left: govuk-spacing(6); 
-        padding-bottom: govuk-spacing(1); 
-
-        li {
-            padding-bottom: 0;
-            @include hmlr-font-size($s: 16px, $l: 1.2);
-            @include menu-inset-anchors-bullets;
-        }      
-    }
-}
-  
 @function calculaterem($s) {
     $remsize: $s / 16px;
     @return #{$remsize}rem;
@@ -49,3 +28,24 @@ $hmlr-brand-colour: #789904 !important;
     text-decoration-thickness: .15em !important;
     text-decoration-thickness: .1875rem !important;
 }
+
+@mixin menu-inset-anchors-bullets {
+    &:before {
+        content: "-";
+        margin-left: - govuk-spacing(4);
+        color: $govuk-secondary-text-colour;
+    }
+}
+
+@mixin menu-inset-anchors {
+    ul {
+        /*padding-left: govuk-spacing(6); 
+        padding-bottom: govuk-spacing(1); 
+
+        li {
+            @include menu-inset-anchors-bullets;
+        } */     
+    }
+}
+  
+
