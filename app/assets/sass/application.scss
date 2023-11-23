@@ -26,7 +26,9 @@ body .govuk-header__container {
     min-width: 48px;
 }
 
+.hmlr-wf {//class added to div.govuk-width-container
 @import "./includes/hmlr-wf-mixins";
 @import "./includes/hmlr-wf-main";
+@import "./includes/hmlr-wf-top-nav";
 @import "./includes/hmlr-wf-left-nav";
-
+}

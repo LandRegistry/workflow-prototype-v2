@@ -1,39 +1,35 @@
 /* 'exclusive styles for hmlr-wf: general styles from app/assets/sass/application.scss may also be required */
 
-.hmlr-wf {//class added to div.govuk-width-container
+.hmlr-secondary-text {
+    color: $govuk-secondary-text-colour;
+}
 
-    .hmlr-secondary-text {
-        color: $govuk-secondary-text-colour;
+@include govuk-media-query($from: desktop){
+    .govuk-main-wrapper {
+        min-height: 385px;
     }
 
-    @include govuk-media-query($from: desktop){
-        .govuk-main-wrapper {
-            min-height: 385px;
-        }
-
-        .hmlr-full-height {
+    .hmlr-full-height {
+        display: flex;
+        flex-direction: row;
+    
+        .hmlr-full-height__col {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
         
-            .hmlr-full-height__col {
-                display: flex;
-                flex-direction: column;
-            
-                    & > .hmlr-full-height__col--bottom {
-                        margin-top: auto;
-                    }
-            }
+                & > .hmlr-full-height__col--bottom {
+                    margin-top: auto;
+                }
         }
+    }
 
-        .hmlr-min-height-header-sm {
-            min-height: 150px; 
-        }
-        .hmlr-min-height-header-med {
-            min-height: 200px; 
-        } 
-        .hmlr-min-height-header-lrg {
-            min-height: 250px; 
-        }        
-    }    
-
-}
+    .hmlr-min-height-header-sm {
+        min-height: 150px; 
+    }
+    .hmlr-min-height-header-med {
+        min-height: 200px; 
+    } 
+    .hmlr-min-height-header-lrg {
+        min-height: 250px; 
+    }        
+}    

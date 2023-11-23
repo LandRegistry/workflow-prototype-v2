@@ -1,0 +1,42 @@
+.govuk-header.hmlr-top-nav {
+
+    .govuk-header__navigation .govuk-header__navigation-list .govuk-header__link {
+        font-family: "GDS Transport", arial, sans-serif !important;
+        -webkit-font-smoothing: antialiased; 
+    }
+
+    .govuk-header__navigation-item.govuk-header__navigation-item--active a.govuk-header__link {
+        color: $hmlr-brand-colour;
+        text-decoration: underline; 
+        text-underline-offset: 0.2rem;
+        
+        text-decoration: underline !important;
+        text-decoration-thickness: .1875rem !important; /* .1875rem */
+        text-decoration-thickness: .2em !important; /* .1em */
+
+        -webkit-text-decoration-skip-ink: none;
+        text-decoration-skip-ink: none;
+        -webkit-text-decoration-skip: none;
+        text-decoration-skip: none; 
+        -webkit-font-smoothing: antialiased;
+        font-smooth: always;
+
+        &:active  {
+            color: $govuk-link-active-colour !important; 
+        }
+
+        &:focus  {
+            color: $govuk-link-active-colour !important; 
+            /*text-underline-offset: 0.6rem;
+            text-decoration-thickness: 2px !important; 
+            text-decoration-color: govuk-colour("white") !important;
+            border-bottom: .2em solid $govuk-link-active-colour !important; */
+        }
+    }
+
+
+
+
+
+
+}

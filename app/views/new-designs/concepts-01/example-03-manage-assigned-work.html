@@ -1,0 +1,50 @@
+{% extends "layouts/wf_layout.html" %}
+
+{% set pageName="{{ serviceName }} IA and UI work" %}
+
+{% block header %}
+  {% include "../includes/inc_top-nav-03-administration.html" %}
+{% endblock %}
+
+{% block content %}
+    
+<div class="govuk-grid-row hmlr-min-height-header-sm">
+  <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-3">
+
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-1">
+      Workflow <span class="govuk-heading-l govuk-!-font-weight-regular govuk-!-display-inline">&dash; Administration</span>
+    </h1>
+
+    <p class="govuk-body hmlr-secondary-text">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat similique quae enim eius saepe.
+    </p>
+
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+
+  </div>      
+
+</div>
+
+
+<div class="govuk-grid-row">
+  
+  {% include "../includes/inc_left-nav-03-manage-assigned-work.html" %}
+    
+  <section class="govuk-grid-column-three-quarters" id="page-content" role="region">
+
+      <h2 class="govuk-heading-m">
+        Manage assigned work
+      </h2>
+
+      <p class="govuk-body">
+        Lorem ipsum dolor sit amet consectetur.
+      </p>
+
+  </section>
+
+</div>
+
+
+{% endblock %}

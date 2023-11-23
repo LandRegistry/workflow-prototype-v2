@@ -22,7 +22,11 @@ ul.hmlr-left-nav {
       margin-bottom: 0;
       padding: 8px 0 5px;
       @include hmlr-font-size($s: 17px, $l: 1.2);
-      @include word-wrap;
+      @include word-wrap; 
+
+      span {
+        font-weight: normal;
+      }
   
       ul {
         padding-bottom: govuk-spacing(1); 
@@ -38,10 +42,6 @@ ul.hmlr-left-nav {
 
           a {
             margin-left: 0; 
-  
-            span {
-              font-weight: normal;
-            }
           } 
         }
       }
