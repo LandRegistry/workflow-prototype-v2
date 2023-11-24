@@ -18,11 +18,19 @@
 
 {% block header %}
   {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Workflow",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+  {#
+  {{ govukHeader({
     homepageUrl: "../",
     serviceName: "Workflow",
     serviceUrl: "../concepts-01/index",
     containerClasses: "govuk-width-container"
   }) }}
+  #}
 {% endblock %}
 
 {% if (GOVUKPrototypeKit.isDevelopment) %}
