@@ -2,6 +2,15 @@
 
 {% set pageName="Workflow New Designs root index" %}
 
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "../",
+    serviceName: "Workflow",
+    serviceUrl: "../new-designs/concepts-01/index",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
 {% block content %}
 
 <div class="govuk-grid-row">
