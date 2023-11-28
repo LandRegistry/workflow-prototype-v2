@@ -1,0 +1,141 @@
+{% extends "layouts/wf_layout_legacy.html" %}
+
+{% set pageName="Home page links" %}
+
+{% block content %}
+          
+
+  
+<style>
+    /* these CSS styles have been dropped in here within the page body for this flat page demonstration */
+
+    .nav-panel {
+        background-color: #b1b4b6; /* govuk-colour("mid-grey") */
+    }
+
+    .nav-panel:hover {
+        filter: grayscale(80%);
+    }  
+    
+    .nav-panel .nav-panel__link {
+        color: #0b0c0c; /* $govuk-text-colour */
+    }
+
+    .nav-panel .nav-panel__link:focus, 
+    .nav-panel .nav-panel__link:focus-visible {
+        background-color: #ffdd00; /* $govuk-focus-colour */
+        border-width: 0 0 5px 0; 
+        border-style: solid; 
+        border-color: #0b0c0c; /* $govuk-focus-text-colour */
+        outline: inherit; 
+    }
+
+    .nav-panel .nav-panel__link > span {
+        vertical-align: middle;
+    }
+
+    .nav-panel .nav-panel__link:hover > span  {
+        text-decoration: underline;
+    }
+
+
+
+    /* remove the 'title' attributes from the .nav-panel__link 'a' tag links */
+    /* 
+    remove class 'opens-in-new-window' from the 'Report an issue' panel link and add the padding class.
+    change classes on span for "(Opens in a new window)" as demonstrated. Change the word "window" to "tab".
+    Add BR tag and nested span (with its classes) as demonstrated. 
+
+    Change two uppercase letter on 'Manage assigned work' to 'Manage assigned work'
+    Change 'Product Information' to 'Product information' (lowercase i) and also in the H1, breadcrumb and 'title' HTML tag of the product information page.
+    */
+
+</style>
+  
+  
+
+
+  
+
+<div class="content-wrapper">
+
+        
+    
+    <div class="govuk-grid-row">
+        
+            <div class="govuk-grid-column-one-third">
+                <div class="nav-panel">
+                    
+                        <a class="nav-panel__link" href="#">
+                            <span class="nav-panel__text">
+                                <span>My Worklist</span>
+                            </span>
+                        </a>
+                    
+                </div>
+            </div>
+        
+            <div class="govuk-grid-column-one-third">
+                <div class="nav-panel">
+                    
+                        <a class="nav-panel__link" href="#">
+                            <span class="nav-panel__text">Production information</span>
+                        </a>
+                    
+                </div>
+            </div>
+        
+            <div class="govuk-grid-column-one-third">
+                <div class="nav-panel">
+                    
+                        <a class="nav-panel__link" href="#" target="_blank">
+                            <span class="nav-panel__text govuk-!-padding-top-4">
+                                Report an issue <br>
+                                <span class="govuk-!-font-size-14 govuk-!-font-weight-regular">(Opens in a new tab)</span>
+                            </span>
+                            
+                        </a>
+                    
+                </div>
+            </div>
+        
+    </div>
+
+    <div class="govuk-grid-row">
+        
+            <div class="govuk-grid-column-one-third">
+                <div class="nav-panel">
+                    
+                        <a class="nav-panel__link" href="#">
+                            <span class="nav-panel__text">Search</span>
+                        </a>
+                    
+                </div>
+            </div>
+        
+            <div class="govuk-grid-column-one-third">
+                <div class="nav-panel">
+                    
+                        <a class="nav-panel__link" href="#">
+                            <span class="nav-panel__text">Select category of work</span>
+                        </a>
+                    
+                </div>
+            </div>
+        
+            <div class="govuk-grid-column-one-third">
+                <div class="nav-panel">
+                    
+                        <a class="nav-panel__link" href="#">
+                            <span class="nav-panel__text">Manage assigned work</span>
+                        </a>
+                    
+                </div>
+            </div>
+        
+    </div>
+
+
+
+</div>
+{% endblock %}
