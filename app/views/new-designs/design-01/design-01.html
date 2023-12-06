@@ -1,0 +1,93 @@
+{% extends "layouts/wf_layout.html" %}
+
+{% set pageName="{{ serviceName }} IA and UI work" %}
+
+{% block header %}
+  {% include "../includes/design-01/inc_top-nav-std.html" %}
+{% endblock %}
+
+{% block content %}
+    
+<div class="govuk-grid-row hmlr-min-height-header-sm">
+  <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-3">
+
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-1">
+      Workflow <span class="govuk-heading-l govuk-!-font-weight-regular govuk-!-display-inline">&dash; my worklist</span>
+    </h1>
+
+    <p class="govuk-body hmlr-secondary-text">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat similique quae enim eius saepe.
+    </p>
+
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+
+  </div>      
+
+</div>
+
+
+<div class="govuk-grid-row">
+  <nav class="govuk-grid-column-one-quarter govuk-!-padding-right-0"><!-- aria-label="Secondary" -->
+
+    <a href="#page-content" class="govuk-skip-link hmlr-skip-link">
+      Skip to the main content
+    </a>
+    
+    {% include "../includes/design-01/inc_left-nav-02.html" %}
+    
+  </nav>
+
+  <section class="govuk-grid-column-three-quarters" id="page-content" role="region">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-half">
+        111
+      </div>
+      <div class="govuk-grid-column-one-half">
+        222
+      </div>      
+    </div>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-half">
+        333
+      </div>
+      <div class="govuk-grid-column-one-half">
+        444
+      </div>      
+    </div> 
+    
+    <hr>
+
+    <ul class="govuk-list hmlr-list-panels">
+      <li>
+        content here
+      </li>
+      <li>
+        content here
+      </li>
+      <li>
+        second row content left
+      </li>
+      <li>
+        second row content right
+      </li>
+    </ul>
+
+
+
+
+
+
+
+
+  </section>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+  </div>
+</div>
+{% endblock %}

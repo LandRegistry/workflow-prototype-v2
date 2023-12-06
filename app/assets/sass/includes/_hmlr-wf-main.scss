@@ -32,4 +32,21 @@
     .hmlr-min-height-header-lrg {
         min-height: 250px; 
     }        
-}    
+}   
+
+.hmlr-lowercase {
+    text-transform: lowercase;
+    display: inline-block; 
+    &.hmlr-lowercase--uppercase-first:first-letter {
+        text-transform: capitalize;
+    }    
+}
+
+.hmlr-nowrap {
+    white-space: nowrap;
+}
+
+
+
+
+//@include govuk-font($size: 16, $weight: regular, $line-height: 1.5);

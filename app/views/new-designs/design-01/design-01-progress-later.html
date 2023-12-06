@@ -1,0 +1,59 @@
+{% extends "layouts/wf_layout.html" %}
+
+{% set pageName="{{ serviceName }} IA and UI work" %}
+
+{% block header %}
+  {% include "../includes/design-01/inc_top-nav-std.html" %}
+{% endblock %}
+
+{% block content %}
+    
+<div class="govuk-grid-row hmlr-min-height-header-sm">
+  <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-3">
+
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-1">
+      Workflow <span class="govuk-heading-l govuk-!-font-weight-regular govuk-!-display-inline">&dash; Progress later</span>
+    </h1>
+
+    <p class="govuk-body hmlr-secondary-text">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat similique quae enim eius saepe.
+    </p>
+
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+
+  </div>      
+
+</div>
+
+
+<div class="govuk-grid-row">
+  <nav class="govuk-grid-column-one-quarter govuk-!-padding-right-0"><!-- aria-label="Secondary" -->
+
+    <a href="#page-content" class="govuk-skip-link hmlr-skip-link">
+      Skip to the main content
+    </a>
+    
+    {% include "../includes/design-01/inc_left-nav-02-progress-later.html" %}
+    
+  </nav>
+
+  <section class="govuk-grid-column-three-quarters" id="page-content" role="region">
+
+    <p class="govuk-body">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde pariatur deserunt atque fugiat. Ipsam architecto distinctio, et, dignissimos repellendus atque sed aliquam perferendis error, perspiciatis consequatur quas a odio unde! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda repellat optio laudantium. Asperiores inventore cupiditate, ratione quaerat nesciunt adipisci perspiciatis praesentium ullam quis aliquam perferendis laborum expedita, officia, libero eveniet. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis molestiae accusamus, aspernatur velit nostrum corporis ullam necessitatibus a temporibus recusandae facilis inventore deleniti, pariatur nam quia asperiores tempora perspiciatis sequi.
+    </p>
+
+    <p class="govuk-body">
+      Asperiores inventore cupiditate, ratione quaerat nesciunt adipisci perspiciatis praesentium ullam quis aliquam perferendis laborum expedita, officia, libero eveniet. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis molestiae accusamus, aspernatur velit nostrum corporis ullam necessitatibus a temporibus recusandae facilis inventore deleniti, pariatur nam quia asperiores tempora perspiciatis sequi. Asperiores inventore cupiditate, ratione quaerat nesciunt adipisci perspiciatis praesentium ullam quis aliquam perferendis laborum expedita, officia, libero eveniet. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis molestiae accusamus, aspernatur velit nostrum corporis ullam necessitatibus a temporibus recusandae facilis inventore deleniti.
+    </p>    
+
+  </section>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+  </div>
+</div>
+{% endblock %}

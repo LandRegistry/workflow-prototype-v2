@@ -1,5 +1,7 @@
 $hmlr-brand-colour: #789904 !important;
-//$std-font-family: "GDS Transport", "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+//$std-font-family: "GDS Transport", "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif; 
+
+$hmlr-tbody-bottom-padding: govuk-spacing(4);
 
 @function calculaterem($s) {
     $remsize: $s / 16px;
@@ -37,6 +39,17 @@ $hmlr-brand-colour: #789904 !important;
     }
 }
 
+@mixin kill-faux-tbl-borders {
+    th:after, td:after {
+        content: none !important;
+        display: none !important; 
+        border-bottom: none !important; 
+        position: unset !important; 
+        bottom: auto !important;
+        height: auto !important; 
+    }
+}
+
 @mixin menu-inset-anchors {
     ul {
         /*padding-left: govuk-spacing(6); 
@@ -47,5 +60,7 @@ $hmlr-brand-colour: #789904 !important;
         } */     
     }
 }
+
+
   
 
