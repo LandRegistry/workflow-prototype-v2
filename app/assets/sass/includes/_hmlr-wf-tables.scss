@@ -1,10 +1,4 @@
-
-
 .hmlr-table {
-
-    &.hmlr-table--condensed-headers th {
-        font-stretch: semi-condensed;
-    }
 
     @include govuk-media-query($from: desktop){
         &.hmlr-table--last-col-right {
@@ -14,6 +8,19 @@
                 text-align: right; 
             }
         }
+
+        th {
+            font-size: 90%; 
+            letter-spacing: 0.02rem; /* font-stretch: semi-condensed; */
+        }
+    }
+
+    thead th {
+        vertical-align: bottom;
+    }
+
+    tfoot th {
+        vertical-align: top;
     }
 
     &.hmlr-table--visually-hide-left-headers {
@@ -27,49 +34,17 @@
         }
     } 
 
-    &.hmlr-table--tbody-spacing tbody tr:last-child {
-        th, td {
-            border-bottom-width: 2px; 
-            border-color: $govuk-text-colour;            
-        }
-    }
-
     &.hmlr-table--tbody-dividers {
-        thead, tbody {
+        thead, tbody tr:last-child {
             border-bottom: 2px solid $govuk-text-colour; 
         }
     }
 
-    &.hmlr-table--tbody-spacing tbody {
-        border-bottom: $hmlr-tbody-bottom-padding solid transparent; 
-    }
-
-    &.hmlr-table--tbody-dividers.hmlr-table--tbody-spacing tbody {
-        border-bottom: $hmlr-tbody-bottom-padding solid transparent; 
-
-        tr:last-child {
-            th:after, td:after {
-                content: "\a0";
-                display: block;
-                border-bottom: 2px solid $govuk-text-colour; 
-                position: relative; 
-                bottom: -($hmlr-tbody-bottom-padding / 2); 
-                height: 0; 
-            }
+    &.hmlr-table--tbody-spacing tbody:not(:last-child) tr:last-child {/*:not(:last-child) might not be needed?*/
+        th, td {
+            padding-bottom: govuk-spacing(7);
         }
-    }  
-    
-    &.hmlr-table--tbody-dividers.hmlr-table--tbody-spacing tfoot ~ tbody:last-child {
-        border-bottom: none; 
-
-        tr:last-child {
-            @include kill-faux-tbl-borders;
-        }        
     }
-
-    /*tfoot ~ tbody:nth-last-child(n+2) ~ tbody:last-child {
-        background-color: lime;
-    }*/
 
     &.hmlr-table--highlight-first-row {
         
@@ -93,32 +68,6 @@
                 }
             }
         }
-
-        &.hmlr-table--tbody-dividers {
-            tbody {
-                tr:last-child {
-                    @include kill-faux-tbl-borders;
-                } 
-                
-                tr:last-child {
-                    border-bottom: 2px solid $govuk-text-colour; 
-                }                
-            }
-        }
-
-        &.hmlr-table--tbody-spacing {
-            tbody {
-                border-bottom: none !important;
-            }
-            tbody tr:last-child {
-                th, td {
-                    border-bottom: none !important;
-                }
-            } 
-            tfoot tr {
-                border-top: 2px solid $govuk-text-colour; 
-            }
-        } 
     }
 
     tfoot.govuk-table__head {
@@ -127,11 +76,6 @@
             border-bottom: none;
         }
     }
-
-
-
-
-
 
     &.govuk-\!-font-size-16 {
         .govuk-table__caption {

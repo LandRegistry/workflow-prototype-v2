@@ -39,17 +39,6 @@ $hmlr-tbody-bottom-padding: govuk-spacing(4);
     }
 }
 
-@mixin kill-faux-tbl-borders {
-    th:after, td:after {
-        content: none !important;
-        display: none !important; 
-        border-bottom: none !important; 
-        position: unset !important; 
-        bottom: auto !important;
-        height: auto !important; 
-    }
-}
-
 @mixin menu-inset-anchors {
     ul {
         /*padding-left: govuk-spacing(6); 

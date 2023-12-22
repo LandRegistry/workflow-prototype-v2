@@ -7,6 +7,13 @@
 {% endblock %}
 
 {% block content %}
+
+<style>
+  /* for this demo page ... */
+  table:not(:first-child) {
+    margin-top: 120px;
+  }
+</style>
     
 <div class="govuk-grid-row hmlr-min-height-header-sm">
   <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-3">
@@ -16,7 +23,7 @@
     </h1>
 
     <p class="govuk-body hmlr-secondary-text">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat similique quae enim eius saepe.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. 
     </p>
 
   </div>
@@ -43,7 +50,7 @@
 
     <!-- ******************************** START MAIN RIGHT COL CONTENT ********************** -->
 
-    <table class="govuk-table govuk-!-font-size-16 hmlr-table hmlr-table--last-col-right hmlr-table--condensed-headers hmlr-table--visually-hide-left-headers hmlr-table--tbody-dividers hmlr-table--tbody-spacing">
+    <table class="govuk-table govuk-!-font-size-16 hmlr-table hmlr-table--last-col-right hmlr-table--visually-hide-left-headers hmlr-table--tbody-dividers hmlr-table--tbody-spacing">
       
       <caption class="govuk-table__caption govuk-table__caption--s">Work items in my worklist</caption>
       
@@ -59,7 +66,7 @@
         </tr>
       </thead>
 
-      <!-- *** TFOOT must go here in the DOM flow!!! (This is important for styling and it is the correct location) *** -->
+      <!-- *** This is the correct location for the TFOOT in the HTML DOM) *** -->
       <tfoot class="govuk-table__head">
         <tr class="govuk-table__row">
           <td></td>
@@ -100,7 +107,7 @@
         </tr>        
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Actions</th>
-          <td class="govuk-table__cell" colspan="4">
+          <td class="govuk-table__cell" colspan="4"> 
             {% include "../includes/design-01/inc_actions-menu.html" %}
           </td>
         </tr>
@@ -177,10 +184,225 @@
     </table>
 
 
-
-    <table class="govuk-table govuk-!-font-size-16 hmlr-table hmlr-table--last-col-right" style="margin-top: 100px;">
+    <table class="govuk-table govuk-!-font-size-16 hmlr-table hmlr-table--tbody-dividers hmlr-table--tbody-spacing">
       
       <caption class="govuk-table__caption govuk-table__caption--s">Work items in my worklist</caption>
+      
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <td></td>
+          <th scope="col" class="govuk-table__header">Priority date</th>
+          <th scope="col" class="govuk-table__header">Title number</th>
+          <th scope="col" class="govuk-table__header">
+            <abbr>ABR</abbr>
+          </th>
+          <th scope="col" class="govuk-table__header">Obtained date</th>          
+        </tr>
+      </thead>
+      
+      <!-- *** This is the correct location for the TFOOT in the HTML DOM) *** -->
+      <tfoot class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <td></td>
+          <th scope="col" class="govuk-table__header">Priority date</th>
+          <th scope="col" class="govuk-table__header">Title number</th>
+          <th scope="col" class="govuk-table__header">
+            <abbr>ABR</abbr>
+          </th>
+          <th scope="col" class="govuk-table__header">Obtained date</th>          
+        </tr>
+      </tfoot>       
+
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <span class="govuk-visually-hidden">Meta data:</span>
+          </th>
+          <td class="govuk-table__cell">9 Aug 2022</td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">DU164184</abbr>
+          </td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">P897RWW</abbr>
+          </td>
+          <td class="govuk-table__cell">4 Dec 2023</td>                              
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Category:</th>
+          <td class="govuk-table__cell" colspan="2">
+            <span class="hmlr-lowercase hmlr-lowercase--uppercase-first">
+              Volume Change of Ownership
+            </span>
+          </td>
+          <th scope="row" class="govuk-table__header">Next action:</th>
+          <td class="govuk-table__cell">
+            Consider referral from Rosie Brave
+          </td>          
+        </tr>
+        <tr class="govuk-table__row  mytest">
+          <th scope="row" class="govuk-table__header">Actions:</th>
+          <td class="govuk-table__cell" colspan="4">
+            {% include "../includes/design-01/inc_actions-menu.html" %}
+          </td>
+        </tr>
+      </tbody>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <span class="govuk-visually-hidden">Meta data:</span>
+          </th>
+          <td class="govuk-table__cell">12 Aug 2022</td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">DX445692</abbr>
+          </td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">P622KWW</abbr>
+          </td>
+          <td class="govuk-table__cell">19 Nov 2023</td>                              
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Category:</th>
+          <td class="govuk-table__cell" colspan="2">
+            <span class="hmlr-lowercase hmlr-lowercase--uppercase-first">
+              Volume Change of Ownership
+            </span>
+          </td>
+          <th scope="row" class="govuk-table__header">Next action:</th>
+          <td class="govuk-table__cell">
+            Consider referral from David Brown
+          </td>          
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Actions:</th>
+          <td class="govuk-table__cell" colspan="4">
+            {% include "../includes/design-01/inc_actions-menu.html" %}
+          </td>
+        </tr>
+      </tbody>     
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <span class="govuk-visually-hidden">Meta data:</span>
+          </th>
+          <td class="govuk-table__cell">9 Jun 2022</td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">DU223878</abbr>
+          </td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">P352XWW</abbr>
+          </td>
+          <td class="govuk-table__cell">30 Oct 2023</td>                              
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Category:</th>
+          <td class="govuk-table__cell" colspan="2">
+            <span class="hmlr-lowercase hmlr-lowercase--uppercase-first">
+              Volume Change of Ownership
+            </span>
+          </td>
+          <th scope="row" class="govuk-table__header">Next action:</th>
+          <td class="govuk-table__cell">
+            Consider referral from Janice Arnold
+          </td>          
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Actions:</th>
+          <td class="govuk-table__cell" colspan="4">
+            {% include "../includes/design-01/inc_actions-menu.html" %}
+          </td>
+        </tr>
+      </tbody>   
+    </table>
+
+
+    <table class="govuk-table govuk-!-font-size-16 hmlr-table hmlr-table--tbody-dividers hmlr-table--highlight-first-row">
+      
+      <caption class="govuk-table__caption govuk-table__caption--s">Work items in my worklist</caption>
+      
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <td></td>
+          <th scope="col" class="govuk-table__header">Priority date</th>
+          <th scope="col" class="govuk-table__header">Title number</th>
+          <th scope="col" class="govuk-table__header">
+            <abbr>ABR</abbr>
+          </th>
+          <th scope="col" class="govuk-table__header">Obtained date</th>          
+        </tr>
+      </thead>
+
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <span class="govuk-visually-hidden">Meta data:</span>
+          </th>
+          <td class="govuk-table__cell">9 Aug 2022</td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">DU164184</abbr>
+          </td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">P897RWW</abbr>
+          </td>
+          <td class="govuk-table__cell">4 Dec 2023</td>                              
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Category:</th>
+          <td class="govuk-table__cell" colspan="2">
+            <span class="hmlr-lowercase hmlr-lowercase--uppercase-first">
+              Volume Change of Ownership
+            </span>
+          </td>
+          <th scope="row" class="govuk-table__header">Next action:</th>
+          <td class="govuk-table__cell">
+            Consider referral from Rosie Brave
+          </td>          
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Actions:</th>
+          <td class="govuk-table__cell" colspan="4">
+            {% include "../includes/design-01/inc_actions-menu.html" %}
+          </td>
+        </tr>
+      </tbody>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <span class="govuk-visually-hidden">Meta data:</span>
+          </th>
+          <td class="govuk-table__cell">12 Aug 2022</td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">DX445692</abbr>
+          </td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">P622KWW</abbr>
+          </td>
+          <td class="govuk-table__cell">19 Nov 2023</td>                              
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Category:</th>
+          <td class="govuk-table__cell" colspan="2">
+            <span class="hmlr-lowercase hmlr-lowercase--uppercase-first">
+              Volume Change of Ownership
+            </span>
+          </td>
+          <th scope="row" class="govuk-table__header">Next action:</th>
+          <td class="govuk-table__cell">
+            Consider referral from David Brown
+          </td>          
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Actions:</th>
+          <td class="govuk-table__cell" colspan="4">
+            {% include "../includes/design-01/inc_actions-menu.html" %}
+          </td>
+        </tr>
+      </tbody>      
+    </table>
+
+
+    <table class="govuk-table govuk-!-font-size-16 hmlr-table hmlr-table--tbody-dividers hmlr-table--tbody-spacing hmlr-table--highlight-first-row">
+      
+      <caption class="govuk-table__caption govuk-table__caption--s">Work items in my worklist (end)</caption>
       
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
@@ -227,6 +449,129 @@
           </td>
         </tr>
       </tbody>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <span class="govuk-visually-hidden">Meta data</span>
+          </th>
+          <td class="govuk-table__cell">9 Aug 2022</td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">DU164184</abbr>
+          </td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">P897RWW</abbr>
+          </td>
+          <td class="govuk-table__cell">4 Dec 2023</td>                              
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Category</th>
+          <td class="govuk-table__cell" colspan="4">
+            <span class="hmlr-lowercase hmlr-lowercase--uppercase-first">
+              Volume Change of Ownership
+            </span>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Next action</th>
+          <td class="govuk-table__cell" colspan="4">
+            Consider referral from Rosie Brave
+          </td>
+        </tr>        
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" colspan="5">
+            <span class="govuk-visually-hidden">Actions:</span> {% include "../includes/design-01/inc_actions-menu.html" %}
+          </td>
+        </tr>
+      </tbody>      
+    </table>
+
+
+
+
+
+    <table class="govuk-table govuk-!-font-size-16 hmlr-table hmlr-table--tbody-dividers hmlr-table--tbody-spacing">
+      
+      <caption class="govuk-table__caption govuk-table__caption--m">Work items in my worklist (end2)</caption>
+      
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <td></td>
+          <th scope="col" class="govuk-table__header">Priority date</th>
+          <th scope="col" class="govuk-table__header">Title number</th>
+          <th scope="col" class="govuk-table__header">
+            <abbr>ABR</abbr>
+          </th>
+          <th scope="col" class="govuk-table__header">Obtained date</th>          
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <span class="govuk-visually-hidden">Meta data</span>
+          </th>
+          <td class="govuk-table__cell">9 Aug 2022</td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">DU164184</abbr>
+          </td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">P897RWW</abbr>
+          </td>
+          <td class="govuk-table__cell">4 Dec 2023</td>                              
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Category</th>
+          <td class="govuk-table__cell" colspan="4">
+            <span class="hmlr-lowercase hmlr-lowercase--uppercase-first">
+              Volume Change of Ownership
+            </span>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Next action</th>
+          <td class="govuk-table__cell" colspan="4">
+            Consider referral from Rosie Brave
+          </td>
+        </tr>        
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" colspan="5">
+            <span class="govuk-visually-hidden">Actions:</span> {% include "../includes/design-01/inc_actions-menu.html" %}
+          </td>
+        </tr>
+      </tbody>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <span class="govuk-visually-hidden">Meta data</span>
+          </th>
+          <td class="govuk-table__cell">14 Jul 2022</td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">EV554728</abbr>
+          </td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">P273CVV</abbr>
+          </td>
+          <td class="govuk-table__cell">21 Oct 2023</td>                              
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Category</th>
+          <td class="govuk-table__cell" colspan="4">
+            <span class="hmlr-lowercase hmlr-lowercase--uppercase-first">
+              Volume Change of Ownership
+            </span>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Next action</th>
+          <td class="govuk-table__cell" colspan="4">
+            Consider referral from Peter Connors
+          </td>
+        </tr>        
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" colspan="5">
+            <span class="govuk-visually-hidden">Actions:</span> {% include "../includes/design-01/inc_actions-menu.html" %}
+          </td>
+        </tr>
+      </tbody>      
     </table>
 
 
@@ -235,13 +580,7 @@
 
 
 
-
-
-
-
-
-
-    <table id="progress_now_table" class="govuk-table worklist__table ">
+    <table id="progress_now_table" class="govuk-table worklist__table " style="display: none;">
 
         <caption class="govuk-table__caption govuk-table__caption--m">Work items in My Worklist</caption>
 
