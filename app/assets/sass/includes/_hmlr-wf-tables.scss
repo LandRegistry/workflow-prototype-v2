@@ -10,7 +10,7 @@
         }
 
         th {
-            font-size: 90%; 
+            font-size: 86%; 
             letter-spacing: 0.02rem; /* font-stretch: semi-condensed; */
         }
     }
@@ -77,10 +77,84 @@
         }
     }
 
+    sup {
+        font-size: 110%;
+        font-weight: bold; 
+        line-height: 0;
+    }
+
+
     &.govuk-\!-font-size-16 {
         .govuk-table__caption {
-            margin-bottom: govuk-spacing(4);
+            margin-top: govuk-spacing(4);
+            margin-bottom: govuk-spacing(7);
+        } 
+    }
+
+    @include govuk-media-query($from: desktop){
+        &.govuk-\!-font-size-16 {
+            .govuk-table__caption {
+                margin-top: govuk-spacing(0);
+                margin-bottom: govuk-spacing(4);
+            } 
+
+            .hmlr-table__menu li {
+                @include govuk-font($size: 14, $weight: regular, $line-height: 1.5); 
+
+                .govuk-button {
+                    @include govuk-font($size: 14, $weight: regular, $line-height: .5); //0.5
+                    margin-top: -3px;
+                }
+            }
         }    
+    }
+
+    .hmlr-table__menu { 
+
+        li {
+            display: inline-block;
+            margin-right: govuk-spacing(3); 
+            @include govuk-font($size: 16, $weight: regular, $line-height: 1.5);
+
+            &:last-child{
+                margin-right: govuk-spacing(0); 
+            }              
+
+            .govuk-button {
+                @include govuk-font($size: 16, $weight: regular, $line-height: .5);
+                margin-top: -2px; 
+                margin-bottom: govuk-spacing(0);
+            }            
+        }
+
+        @include govuk-media-query($from: desktop){
+            display: flex; 
+            justify-content: space-between;
+
+            li {/*flex: 1 1 0; width: 0;*/
+                margin-right: 0;
+                padding-right: govuk-spacing(2); 
+
+                &:last-child{
+                    padding-right: govuk-spacing(0); 
+                }                 
+            }
+        } 
+
+        /*&.hmlr-table__menu--two-left {
+
+            li:nth-child(n+3) {
+                background-color: lime;
+            }            
+            li:nth-child(-n+2)  {
+                border: 1px solid red; 
+            }
+            li:nth-child(2) {
+                margin-right: 50px;
+            }
+
+        }*/
+        
     }
 
 }
