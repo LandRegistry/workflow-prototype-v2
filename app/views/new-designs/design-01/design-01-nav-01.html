@@ -1,0 +1,1050 @@
+{% extends "layouts/wf_layout.html" %}
+
+{% set pageName="{{ serviceName }} IA and UI work" %}
+
+{% block header %}
+  {% include "../includes/design-01/inc_top-nav-std.html" %}
+{% endblock %}
+
+{% block content %}
+
+<style>
+  /* for this demo page ... */
+  table:not(:first-child) {
+    margin-top: 120px;
+  }
+</style>
+    
+<div class="govuk-grid-row hmlr-min-height-header-sm">
+  <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-3">
+
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-1">
+      Workflow <span class="govuk-heading-l govuk-!-font-weight-regular govuk-!-display-inline">&dash; Applications</span>
+    </h1>
+
+    <p class="govuk-body hmlr-secondary-text">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Screen: <a href="#" class="govuk-link  govuk-link--no-visited-state" id="changeWidth">Go wide</a>
+    </p>
+
+    <p class="govuk-body hmlr-secondary-text">
+      show hide nav. Static left nav. Font size personlisation. + alt list layout of worklist for users to choose.
+    </p>
+
+    <label class="hmlr-switch">
+      <input type="checkbox" id="hmlr-switch-pg-width" name="hmlr-switch-pg-width" checked="checked">
+      <span class="hmlr-switch__slider"><span class="govuk-visually-hidden">Change the page display width</span></span>
+    </label>
+
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+
+  </div>      
+
+</div>
+
+
+<div class="govuk-grid-row">
+  <nav class="govuk-grid-column-one-quarter govuk-!-padding-right-0"><!-- aria-label="Secondary" -->
+
+    <a href="#page-content" class="govuk-skip-link hmlr-skip-link">
+      Skip to the main content
+    </a>
+    
+    {% include "../includes/design-01/inc_left-nav-02-applications.html" %}
+    
+  </nav>
+
+  <section class="govuk-grid-column-three-quarters" id="page-content" role="region">
+
+    <!-- ******************************** START MAIN RIGHT COL CONTENT ********************** -->
+
+    <table class="govuk-table govuk-!-font-size-16 hmlr-table hmlr-table--last-col-right hmlr-table--visually-hide-left-headers hmlr-table--tbody-dividers hmlr-table--tbody-spacing">
+      
+      <caption class="govuk-table__caption govuk-table__caption--s">Work items in my worklist</caption>
+      
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <td></td>
+          <th scope="col" class="govuk-table__header">Priority date</th>
+          <th scope="col" class="govuk-table__header">Title number</th>
+          <th scope="col" class="govuk-table__header">
+            <abbr>ABR</abbr>
+          </th>
+          <th scope="col" class="govuk-table__header">Obtained date</th>          
+        </tr>
+      </thead>
+
+      <!-- *** This is the correct location for the TFOOT in the HTML DOM) *** -->
+      <tfoot class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <td></td>
+          <th scope="col" class="govuk-table__header">Priority date</th>
+          <th scope="col" class="govuk-table__header">Title number</th>
+          <th scope="col" class="govuk-table__header">
+            <abbr>ABR</abbr>
+          </th>
+          <th scope="col" class="govuk-table__header">Obtained date</th>          
+        </tr>
+      </tfoot>      
+
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Meta data</th>
+          <td class="govuk-table__cell">9 Aug 2022</td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">DU164184</abbr>
+          </td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">P897RWW</abbr>
+          </td>
+          <td class="govuk-table__cell">4 Dec 2023</td>                              
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Category</th>
+          <td class="govuk-table__cell" colspan="4">
+            <span class="hmlr-lowercase hmlr-lowercase--uppercase-first">
+              Volume Change of Ownership
+            </span>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Next action</th>
+          <td class="govuk-table__cell" colspan="4">
+            Consider referral from Rosie Brave
+          </td>
+        </tr>        
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Actions</th>
+          <td class="govuk-table__cell" colspan="4"> 
+            {% include "../includes/design-01/inc_actions-menu.html" %}
+          </td>
+        </tr>
+      </tbody>
+
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Meta data</th>
+          <td class="govuk-table__cell">28 Jun 2022</td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">CB127994</abbr>
+          </td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">J310SWW</abbr>
+          </td>
+          <td class="govuk-table__cell">20 Feb 2023</td>                              
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Category</th>
+          <td class="govuk-table__cell" colspan="4">
+            <span class="hmlr-lowercase hmlr-lowercase--uppercase-first">
+              Application Processing: Executive Register Update Standard
+            </span>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Next action</th>
+          <td class="govuk-table__cell" colspan="4">
+            New - Start to process
+          </td>
+        </tr>        
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Actions</th>
+          <td class="govuk-table__cell" colspan="4">
+            {% include "../includes/design-01/inc_actions-menu.html" %}
+          </td>
+        </tr>
+      </tbody>
+
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Meta data</th>
+          <td class="govuk-table__cell">16 Jul 2022</td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">DU285534</abbr><sup>*</sup>
+          </td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">P458QTX</abbr>
+          </td>
+          <td class="govuk-table__cell">18 Sep 2022</td>                              
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Category</th>
+          <td class="govuk-table__cell" colspan="4">
+            <span class="hmlr-lowercase hmlr-lowercase--uppercase-first">
+              Volume Change of Ownership
+            </span>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Next action</th>
+          <td class="govuk-table__cell" colspan="4">
+            Consider referral from John Smith
+          </td>
+        </tr>        
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Actions</th>
+          <td class="govuk-table__cell" colspan="4">
+            {% include "../includes/design-01/inc_actions-menu.html" %}
+          </td>
+        </tr>
+      </tbody>      
+
+    </table>
+
+
+    <table class="govuk-table govuk-!-font-size-16 hmlr-table hmlr-table--tbody-dividers hmlr-table--tbody-spacing">
+      
+      <caption class="govuk-table__caption govuk-table__caption--s">Work items in my worklist</caption>
+      
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <td></td>
+          <th scope="col" class="govuk-table__header">Priority date</th>
+          <th scope="col" class="govuk-table__header">Title number</th>
+          <th scope="col" class="govuk-table__header">
+            <abbr>ABR</abbr>
+          </th>
+          <th scope="col" class="govuk-table__header">Obtained date</th>          
+        </tr>
+      </thead>
+      
+      <!-- *** This is the correct location for the TFOOT in the HTML DOM) *** -->
+      <tfoot class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <td></td>
+          <th scope="col" class="govuk-table__header">Priority date</th>
+          <th scope="col" class="govuk-table__header">Title number</th>
+          <th scope="col" class="govuk-table__header">
+            <abbr>ABR</abbr>
+          </th>
+          <th scope="col" class="govuk-table__header">Obtained date</th>          
+        </tr>
+      </tfoot>       
+
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <span class="govuk-visually-hidden">Meta data:</span>
+          </th>
+          <td class="govuk-table__cell">9 Aug 2022</td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">DU164184</abbr>
+          </td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">P897RWW</abbr>
+          </td>
+          <td class="govuk-table__cell">4 Dec 2023</td>                              
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Category:</th>
+          <td class="govuk-table__cell" colspan="2">
+            <span class="hmlr-lowercase hmlr-lowercase--uppercase-first">
+              Volume Change of Ownership
+            </span>
+          </td>
+          <th scope="row" class="govuk-table__header">Next action:</th>
+          <td class="govuk-table__cell">
+            Consider referral from Rosie Brave
+          </td>          
+        </tr>
+        <tr class="govuk-table__row  mytest">
+          <th scope="row" class="govuk-table__header">Actions:</th>
+          <td class="govuk-table__cell" colspan="4">
+            {% include "../includes/design-01/inc_actions-menu.html" %}
+          </td>
+        </tr>
+      </tbody>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <span class="govuk-visually-hidden">Meta data:</span>
+          </th>
+          <td class="govuk-table__cell">12 Aug 2022</td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">DX445692</abbr>
+          </td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">P622KWW</abbr>
+          </td>
+          <td class="govuk-table__cell">19 Nov 2023</td>                              
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Category:</th>
+          <td class="govuk-table__cell" colspan="2">
+            <span class="hmlr-lowercase hmlr-lowercase--uppercase-first">
+              Volume Change of Ownership
+            </span>
+          </td>
+          <th scope="row" class="govuk-table__header">Next action:</th>
+          <td class="govuk-table__cell">
+            Consider referral from David Brown
+          </td>          
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Actions:</th>
+          <td class="govuk-table__cell" colspan="4">
+            {% include "../includes/design-01/inc_actions-menu.html" %}
+          </td>
+        </tr>
+      </tbody>     
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <span class="govuk-visually-hidden">Meta data:</span>
+          </th>
+          <td class="govuk-table__cell">9 Jun 2022</td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">DU223878</abbr>
+          </td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">P352XWW</abbr>
+          </td>
+          <td class="govuk-table__cell">30 Oct 2023</td>                              
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Category:</th>
+          <td class="govuk-table__cell" colspan="2">
+            <span class="hmlr-lowercase hmlr-lowercase--uppercase-first">
+              Volume Change of Ownership
+            </span>
+          </td>
+          <th scope="row" class="govuk-table__header">Next action:</th>
+          <td class="govuk-table__cell">
+            Consider referral from Janice Arnold
+          </td>          
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Actions:</th>
+          <td class="govuk-table__cell" colspan="4">
+            {% include "../includes/design-01/inc_actions-menu.html" %}
+          </td>
+        </tr>
+      </tbody>   
+    </table>
+
+
+    <table class="govuk-table govuk-!-font-size-16 hmlr-table hmlr-table--tbody-dividers hmlr-table--highlight-first-row">
+      
+      <caption class="govuk-table__caption govuk-table__caption--s">Work items in my worklist</caption>
+      
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <td></td>
+          <th scope="col" class="govuk-table__header">Priority date</th>
+          <th scope="col" class="govuk-table__header">Title number</th>
+          <th scope="col" class="govuk-table__header">
+            <abbr>ABR</abbr>
+          </th>
+          <th scope="col" class="govuk-table__header">Obtained date</th>          
+        </tr>
+      </thead>
+
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <span class="govuk-visually-hidden">Meta data:</span>
+          </th>
+          <td class="govuk-table__cell">9 Aug 2022</td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">DU164184</abbr>
+          </td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">P897RWW</abbr>
+          </td>
+          <td class="govuk-table__cell">4 Dec 2023</td>                              
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Category:</th>
+          <td class="govuk-table__cell" colspan="2">
+            <span class="hmlr-lowercase hmlr-lowercase--uppercase-first">
+              Volume Change of Ownership
+            </span>
+          </td>
+          <th scope="row" class="govuk-table__header">Next action:</th>
+          <td class="govuk-table__cell">
+            Consider referral from Rosie Brave
+          </td>          
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Actions:</th>
+          <td class="govuk-table__cell" colspan="4">
+            {% include "../includes/design-01/inc_actions-menu.html" %}
+          </td>
+        </tr>
+      </tbody>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <span class="govuk-visually-hidden">Meta data:</span>
+          </th>
+          <td class="govuk-table__cell">12 Aug 2022</td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">DX445692</abbr>
+          </td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">P622KWW</abbr>
+          </td>
+          <td class="govuk-table__cell">19 Nov 2023</td>                              
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Category:</th>
+          <td class="govuk-table__cell" colspan="2">
+            <span class="hmlr-lowercase hmlr-lowercase--uppercase-first">
+              Volume Change of Ownership
+            </span>
+          </td>
+          <th scope="row" class="govuk-table__header">Next action:</th>
+          <td class="govuk-table__cell">
+            Consider referral from David Brown
+          </td>          
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Actions:</th>
+          <td class="govuk-table__cell" colspan="4">
+            {% include "../includes/design-01/inc_actions-menu.html" %}
+          </td>
+        </tr>
+      </tbody>      
+    </table>
+
+
+    <table class="govuk-table govuk-!-font-size-16 hmlr-table hmlr-table--tbody-dividers hmlr-table--tbody-spacing hmlr-table--highlight-first-row">
+      
+      <caption class="govuk-table__caption govuk-table__caption--s">Work items in my worklist (end)</caption>
+      
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <td></td>
+          <th scope="col" class="govuk-table__header">Priority date</th>
+          <th scope="col" class="govuk-table__header">Title number</th>
+          <th scope="col" class="govuk-table__header">
+            <abbr>ABR</abbr>
+          </th>
+          <th scope="col" class="govuk-table__header">Obtained date</th>          
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <span class="govuk-visually-hidden">Meta data</span>
+          </th>
+          <td class="govuk-table__cell">9 Aug 2022</td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">DU164184</abbr>
+          </td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">P897RWW</abbr>
+          </td>
+          <td class="govuk-table__cell">4 Dec 2023</td>                              
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Category</th>
+          <td class="govuk-table__cell" colspan="4">
+            <span class="hmlr-lowercase hmlr-lowercase--uppercase-first">
+              Volume Change of Ownership
+            </span>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Next action</th>
+          <td class="govuk-table__cell" colspan="4">
+            Consider referral from Rosie Brave
+          </td>
+        </tr>        
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" colspan="5">
+            <span class="govuk-visually-hidden">Actions:</span> {% include "../includes/design-01/inc_actions-menu.html" %}
+          </td>
+        </tr>
+      </tbody>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <span class="govuk-visually-hidden">Meta data</span>
+          </th>
+          <td class="govuk-table__cell">9 Aug 2022</td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">DU164184</abbr>
+          </td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">P897RWW</abbr>
+          </td>
+          <td class="govuk-table__cell">4 Dec 2023</td>                              
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Category</th>
+          <td class="govuk-table__cell" colspan="4">
+            <span class="hmlr-lowercase hmlr-lowercase--uppercase-first">
+              Volume Change of Ownership
+            </span>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Next action</th>
+          <td class="govuk-table__cell" colspan="4">
+            Consider referral from Rosie Brave
+          </td>
+        </tr>        
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" colspan="5">
+            <span class="govuk-visually-hidden">Actions:</span> {% include "../includes/design-01/inc_actions-menu.html" %}
+          </td>
+        </tr>
+      </tbody>      
+    </table>
+
+
+
+
+
+    <table class="govuk-table govuk-!-font-size-16 hmlr-table hmlr-table--tbody-dividers hmlr-table--tbody-spacing">
+      
+      <caption class="govuk-table__caption govuk-table__caption--m">Work items in my worklist (end2)</caption>
+      
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <td></td>
+          <th scope="col" class="govuk-table__header">Priority date</th>
+          <th scope="col" class="govuk-table__header">Title number</th>
+          <th scope="col" class="govuk-table__header">
+            <abbr>ABR</abbr>
+          </th>
+          <th scope="col" class="govuk-table__header">Obtained date</th>          
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <span class="govuk-visually-hidden">Meta data</span>
+          </th>
+          <td class="govuk-table__cell">9 Aug 2022</td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">DU164184</abbr>
+          </td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">P897RWW</abbr>
+          </td>
+          <td class="govuk-table__cell">4 Dec 2023</td>                              
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Category</th>
+          <td class="govuk-table__cell" colspan="4">
+            <span class="hmlr-lowercase hmlr-lowercase--uppercase-first">
+              Volume Change of Ownership
+            </span>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Next action</th>
+          <td class="govuk-table__cell" colspan="4">
+            Consider referral from Rosie Brave
+          </td>
+        </tr>        
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" colspan="5">
+            <span class="govuk-visually-hidden">Actions:</span> {% include "../includes/design-01/inc_actions-menu.html" %}
+          </td>
+        </tr>
+      </tbody>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <span class="govuk-visually-hidden">Meta data</span>
+          </th>
+          <td class="govuk-table__cell">14 Jul 2022</td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">EV554728</abbr>
+          </td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">P273CVV</abbr>
+          </td>
+          <td class="govuk-table__cell">21 Oct 2023</td>                              
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Category</th>
+          <td class="govuk-table__cell" colspan="4">
+            <span class="hmlr-lowercase hmlr-lowercase--uppercase-first">
+              Volume Change of Ownership
+            </span>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Next action</th>
+          <td class="govuk-table__cell" colspan="4">
+            Consider referral from Peter Connors
+          </td>
+        </tr>        
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" colspan="5">
+            <span class="govuk-visually-hidden">Actions:</span> {% include "../includes/design-01/inc_actions-menu.html" %}
+          </td>
+        </tr>
+      </tbody>      
+    </table>
+
+
+
+
+
+
+
+    <table id="progress_now_table" class="govuk-table worklist__table " style="display: none;">
+
+        <caption class="govuk-table__caption govuk-table__caption--m">Work items in My Worklist</caption>
+
+        <thead class="govuk-table__head">
+            <tr class="govuk-table__row worklist-black-border">
+                <th class="govuk-table__header" id="progress_now_priority_dates" scope="col">Priority date</th>
+                <th class="govuk-table__header" id="progress_now_title_numbers" scope="col">Title number</th>
+                <th class="govuk-table__header" id="progress_now_abrs" scope="col"><abbr title="A B R">ABR</abbr></th>
+                <th class="govuk-table__header" id="progress_now_categories" scope="col">Category</th>
+                <th class="govuk-table__header" id="progress_now_dates_obtained" scope="col">Date obtained</th>
+                <th class="govuk-table__header" id="progress_now_next_actions" scope="col">Next action</th>
+            </tr>
+        </thead>
+            
+        <tbody data-case-ref="P897RWW" class="case  " >
+            <tr id="row_2738" class="govuk-table__row case__data_row " >
+
+                
+        <td class="case__date" id="P897RWW_priority_date" headers="progress_now_priority_dates">
+            
+              
+              9 August 2022
+              
+            
+        </td>
+
+
+                
+        <td class="case__title-number" id="P897RWW_title_number" headers="progress_now_title_numbers">
+            
+                <span class="case__inc">
+                        
+                </span>
+                DU164184
+                
+            
+        </td>
+
+
+                
+        <td id="P897RWW_abr" class="case__abr" headers="progress_now_abrs">
+            
+            P897RWW
+            
+            <div>
+                
+            </div>
+        </td>
+
+
+                
+        <td id="P897RWW_cat" class="case__category" headers="progress_now_categories">
+            
+            
+            
+            <abbr title="Volume Change of Ownership">
+              Volume Change of Ownership
+            </abbr>
+            
+        </td>
+
+
+                
+        <td class="case__date" id="P897RWW_dobtained" headers="progress_now_dates_obtained">
+            
+            4 December 2023
+            
+        </td>
+
+
+                
+        <td id="P897RWW_next_action" class="case__next-action" headers="progress_now_next_actions">
+            
+            
+                
+                        Consider referral from<br>
+                
+                        Rosie Brave<br>
+                
+            
+            
+        </td>
+
+
+            </tr>
+            
+        
+            
+        
+
+            
+            <tr id="row_2738_actions" class="govuk-table__row case__actions">
+                <td colspan="6">
+                  <div class="case__actions-wrapper">
+                    <div class="case__left-hand-actions actions-spacing">
+
+                        
+                            
+                                
+        <form class="case__form case__form--process" id="process_form_2738" action="cslk:titleno=DU164184&appnref=P897RWW&appntype=DLG"
+            method="POST">
+            
+              <input name="csrf_token" type="hidden" value="IjBiN2QyMmFkZTcxNjcyZmE4MWYzMTIxZWFkZjk4ZmE3YzE2N2M0YmYi.ZXCEdQ.Jkx1mov8ku6JKq2HKwxdGG6aRG8">
+            
+            <input
+                title="Open CORA to start processing case P897RWW"
+                aria-label="Open CORA to start processing case P897RWW"
+                type="submit"
+                id="open_btn_P897RWW"
+                class="wf-button"
+                value="Open"/>
+        </form>
+
+                            
+                        
+
+                        
+                        
+        <a class="govuk-link actions-spacing case__anchor govuk-!-font-size-16" href="esrv-return-reason?work-item-id=2738" aria-label="return to e-serve"
+          title="Return case P897RWW to DB2">Return to ESRV</a>
+
+                        
+
+                    </div>
+
+                    <div class="case__right-hand-actions actions-spacing">
+
+                        <form class="case__form"
+                            id="change_state_2738"
+                            action="change_state/2738?lr_ref_number=DU164184&lr_work_ref=P897RWW"
+                            method="post"
+                            onsubmit="btn_await_lawyer_2738.disabled = true;
+                                      btn_progress_now_2738.disabled = true;
+                                      btn_progress_later_2738.disabled = true;">
+                          
+                            <input name="csrf_token" type="hidden" value="IjBiN2QyMmFkZTcxNjcyZmE4MWYzMTIxZWFkZjk4ZmE3YzE2N2M0YmYi.ZXCEdQ.Jkx1mov8ku6JKq2HKwxdGG6aRG8">
+                          
+                          
+                            
+                          
+
+                            <input class="case__progress-code" id="hidden_value_progress_2738" type="hidden" name="activity_code" value=PROGRESS_LATER>
+
+                            <input id="hidden_value_progress_child_cases_2738" type="hidden" name="child_cases" value=0>
+
+
+                        
+
+                            
+            <input id="btn_await_lawyer_2738"
+                  title="Refer case P897RWW to a lawyer"
+                  type="submit"
+                  name="Waiting_for_lawyer"
+                  class="case__hyperlink case__await_lawyer_btn
+                      hidden govuk-!-font-size-16"
+                  value = "Waiting for lawyer"
+                  hidden
+                  formaction="await_lawyer/2738?lr_ref_number=DU164184&lr_work_ref=P897RWW">
+
+
+                            
+        <a class="govuk-link case__refer-link case__anchor govuk-!-font-size-16"
+          title="Refer case: P897RWW"
+          href="refer?lr_work_ref=P897RWW&lr_ref_number=DU164184">Refer</a>
+
+
+                            
+            <input id="btn_progress_now_2738" title="Move case P897RWW into your worklist" type="submit"
+                name="Work_on_this" class="case__hyperlink case__progress-now-btn hidden govuk-!-font-size-16" value="Work on this">
+
+
+                            
+            <input id="btn_progress_later_2738" title="Progress case P897RWW later" type="submit"
+                name="Progress_later" class="govuk-link case__hyperlink case__progress-later-btn  govuk-!-font-size-16" value="Progress later">
+
+
+                            
+        <a class="govuk-link case__defer-link case__anchor govuk-!-font-size-16"
+          href="deferral-category-option?lr_work_ref=P897RWW&lr_ref_number=DU164184&client="
+          title="Defer case P897RWW">Defer</a>
+
+                        
+
+                        
+                            
+        <a class="govuk-link case__activity-history-link case__anchor govuk-!-font-size-16 ga_track_event"
+          href="activity-history/2738?page_no=1&return_to=worklist"
+          id="link_activity_history_P897RWW"
+          title="Activity history for P897RWW"
+          aria-label="Activity history for P897RWW"
+          data-ga-category="Activity_History_Link_From_Worklist"
+          data-ga-action="Activity History link clicked from worklist page"
+          data-ga-label="Worklist_Activity_History_Link"
+          >View Activity History</a>
+
+
+                            
+        <a
+            class="govuk-link case__more-info-link case__anchor govuk-!-font-size-16"
+            title="Open daylist for case P897RWW"
+            aria-label="Open daylist for case P897RWW"
+            href="cslk:titleno=DU164184&appnref=P897RWW&appntype=ENQ">
+            More info</a>
+
+                        
+
+                        
+                        </form>
+                    </div>
+                  </div>
+                </td>
+            </tr>
+            
+        </tbody>
+            
+        <tbody data-case-ref="J310SWW" class="case  " >
+            <tr id="row_3575" class="govuk-table__row case__data_row " >
+
+                
+        <td class="case__date" id="J310SWW_priority_date" headers="progress_now_priority_dates">
+            
+              
+              1 December 2022
+              
+            
+        </td>
+
+
+                
+        <td class="case__title-number" id="J310SWW_title_number" headers="progress_now_title_numbers">
+            
+                <span class="case__inc">
+                        
+                </span>
+                CB127994
+                
+            
+        </td>
+
+
+                
+        <td id="J310SWW_abr" class="case__abr" headers="progress_now_abrs">
+            
+            J310SWW
+            
+            <div>
+                
+            </div>
+        </td>
+
+
+                
+        <td id="J310SWW_cat" class="case__category" headers="progress_now_categories">
+            
+            
+            
+            <abbr title="Executive Register Update Standard">
+              Executive Register Update Standard
+            </abbr>
+            
+        </td>
+
+
+                
+        <td class="case__date" id="J310SWW_dobtained" headers="progress_now_dates_obtained">
+            
+            27 November 2023
+            
+        </td>
+
+
+                
+        <td id="J310SWW_next_action" class="case__next-action" headers="progress_now_next_actions">
+            
+            
+                
+                        Consider referral from<br>
+                
+                        Rosie Brave<br>
+                
+            
+            
+        </td>
+
+
+            </tr>
+            
+        
+            
+        
+
+            
+            <tr id="row_3575_actions" class="govuk-table__row case__actions">
+                <td colspan="6">
+                  <div class="case__actions-wrapper">
+                    <div class="case__left-hand-actions actions-spacing">
+
+                        
+                            
+                                
+        <form class="case__form case__form--process" id="process_form_3575" action="cslk:titleno=CB127994&appnref=J310SWW&appntype=DLG"
+            method="POST">
+            
+              <input name="csrf_token" type="hidden" value="IjBiN2QyMmFkZTcxNjcyZmE4MWYzMTIxZWFkZjk4ZmE3YzE2N2M0YmYi.ZXCEdQ.Jkx1mov8ku6JKq2HKwxdGG6aRG8">
+            
+            <input
+                title="Open CORA to start processing case J310SWW"
+                aria-label="Open CORA to start processing case J310SWW"
+                type="submit"
+                id="open_btn_J310SWW"
+                class="wf-button"
+                value="Open"/>
+        </form>
+
+                            
+                        
+
+                        
+                        
+        <a class="govuk-link actions-spacing case__anchor govuk-!-font-size-16" href="esrv-return-reason?work-item-id=3575" aria-label="return to e-serve"
+          title="Return case J310SWW to DB2">Return to ESRV</a>
+
+                        
+
+                    </div>
+
+                    <div class="case__right-hand-actions actions-spacing">
+
+                        <form class="case__form"
+                            id="change_state_3575"
+                            action="change_state/3575?lr_ref_number=CB127994&lr_work_ref=J310SWW"
+                            method="post"
+                            onsubmit="btn_await_lawyer_3575.disabled = true;
+                                      btn_progress_now_3575.disabled = true;
+                                      btn_progress_later_3575.disabled = true;">
+                          
+                            <input name="csrf_token" type="hidden" value="IjBiN2QyMmFkZTcxNjcyZmE4MWYzMTIxZWFkZjk4ZmE3YzE2N2M0YmYi.ZXCEdQ.Jkx1mov8ku6JKq2HKwxdGG6aRG8">
+                          
+                          
+                            
+                          
+
+                            <input class="case__progress-code" id="hidden_value_progress_3575" type="hidden" name="activity_code" value=PROGRESS_LATER>
+
+                            <input id="hidden_value_progress_child_cases_3575" type="hidden" name="child_cases" value=0>
+
+
+                        
+
+                            
+            <input id="btn_await_lawyer_3575"
+                  title="Refer case J310SWW to a lawyer"
+                  type="submit"
+                  name="Waiting_for_lawyer"
+                  class="case__hyperlink case__await_lawyer_btn
+                      hidden govuk-!-font-size-16"
+                  value = "Waiting for lawyer"
+                  hidden
+                  formaction="await_lawyer/3575?lr_ref_number=CB127994&lr_work_ref=J310SWW">
+
+
+                            
+        <a class="govuk-link case__refer-link case__anchor govuk-!-font-size-16"
+          title="Refer case: J310SWW"
+          href="refer?lr_work_ref=J310SWW&lr_ref_number=CB127994">Refer</a>
+
+
+                            
+            <input id="btn_progress_now_3575" title="Move case J310SWW into your worklist" type="submit"
+                name="Work_on_this" class="case__hyperlink case__progress-now-btn hidden govuk-!-font-size-16" value="Work on this">
+
+
+                            
+            <input id="btn_progress_later_3575" title="Progress case J310SWW later" type="submit"
+                name="Progress_later" class="govuk-link case__hyperlink case__progress-later-btn  govuk-!-font-size-16" value="Progress later">
+
+
+                            
+        <a class="govuk-link case__defer-link case__anchor govuk-!-font-size-16"
+          href="deferral-category-option?lr_work_ref=J310SWW&lr_ref_number=CB127994&client="
+          title="Defer case J310SWW">Defer</a>
+
+                        
+
+                        
+                            
+        <a class="govuk-link case__activity-history-link case__anchor govuk-!-font-size-16 ga_track_event"
+          href="activity-history/3575?page_no=1&return_to=worklist"
+          id="link_activity_history_J310SWW"
+          title="Activity history for J310SWW"
+          aria-label="Activity history for J310SWW"
+          data-ga-category="Activity_History_Link_From_Worklist"
+          data-ga-action="Activity History link clicked from worklist page"
+          data-ga-label="Worklist_Activity_History_Link"
+          >View Activity History</a>
+
+
+                            
+        <a
+            class="govuk-link case__more-info-link case__anchor govuk-!-font-size-16"
+            title="Open daylist for case J310SWW"
+            aria-label="Open daylist for case J310SWW"
+            href="cslk:titleno=CB127994&appnref=J310SWW&appntype=ENQ">
+            More info</a>
+
+                        
+
+                        
+                        </form>
+                    </div>
+                  </div>
+                </td>
+            </tr>
+            
+        </tbody>
+    </table>
+
+
+    <!-- ******************************** END MAIN RIGHT COL CONTENT ************************ -->
+
+  </section>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+  </div>
+</div>
+
+
+<script>
+  window.onload = (event) => {
+
+      
+      $govukWidthContainerHeader = $(document.body).children('header').find('.govuk-width-container');
+      $govukWidthContainerBody = $(document.body).children('.govuk-width-container');
+
+      $hmlrSwitchPgWidth = $('#hmlr-switch-pg-width');
+
+
+      $hmlrSwitchPgWidth.on('change', function(){
+        $govukWidthContainerHeader.add($govukWidthContainerBody).toggleClass('hmlr-width-container');
+      });
+
+
+      $('#changeWidth').on('click',function(e){
+          $govukWidthContainerHeader.add($govukWidthContainerBody).toggleClass('hmlr-width-container');
+          $(this).text($(this).text() == "Go wide" ? "Go narrow" : "Go wide");
+
+      });
+
+
+      //$('#CONFIRM-TRANSFEREE-APPLICANTS_add_transferee').on('click',function(e){
+          //e.preventDefault();// kill the 'add transferee' btn for this standalone prototype page
+      //});
+  };
+</script>
+
+{% endblock %}
