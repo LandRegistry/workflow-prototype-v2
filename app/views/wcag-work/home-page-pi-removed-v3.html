@@ -5,14 +5,21 @@
 {% block content %}
 
   <style>
-    /* grid-row > grid-column-two-thirds then add a new row and change two-thirds classes to one-half, as below */
     /* drop this 'style' block into the top of THIS page. (Important: This page only) */
     @media (min-width: 40.0625em){
-        .content-wrapper > .govuk-grid-row > .govuk-grid-column-two-thirds {
+        .content-wrapper > .govuk-grid-row > .govuk-grid-column-full {
             margin-left: auto; 
             margin-right: auto; 
             float: none;
+            width: fit-content;
         }    
+        .content-wrapper > .govuk-grid-row > .govuk-grid-column-full > div > .govuk-grid-column-one-quarter {
+            width: min-content;
+        }
+
+        .content-wrapper > .govuk-grid-row > .govuk-grid-column-full > div > .govuk-grid-column-one-quarter > .nav-panel {
+            width: 207px; 
+        }
     }
   </style>
 
@@ -40,7 +47,7 @@
                     <div class="nav-panel">
                         
                             <a class="nav-panel__link" href="work-category-option" title="Select category of work page">
-                                <span class="nav-panel__text">Select category of work</span>
+                                <span class="nav-panel__text">Select <br>category <br>of work</span>
                             </a>
                         
                     </div>
