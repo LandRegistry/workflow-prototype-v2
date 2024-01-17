@@ -1,0 +1,860 @@
+{% extends "layouts/wf_layout_legacy.html" %}
+
+{% set pageName="Index template example for legacy designs" %}
+
+{% block content %}
+
+<style>
+  
+</style>
+
+<noscript>
+  <div class="warning media">
+      <div class="media__item">
+          <i class="icon icon-important">
+              <span class="visuallyhidden">Warning</span>
+          </i>
+      </div>
+      <div class="media__body">
+          <h2 class="heading-small spacing-bottom-flush">JavaScript is disabled</h2>
+          <p class="spacing-top-flush">You must have JavaScript turned on to use this page</p>
+      </div>
+  </div>
+</noscript>
+
+<h1 class="heading-large">
+  Production Information
+</h1>
+<span class="title-bar__time heading-medium spacing-top-double" id ="localTime"></span>
+
+
+
+
+
+
+
+
+
+  <div class="govuk-tabs spacing-top-single" data-module="tabs">
+      <ul class="govuk-tabs__list" role="tablist">
+          
+              <li id="agency_new_tab" class="govuk-tabs__list-item"> 
+                  <a href="production-information#id_agency_new_panel" title="View management information for the local agency" class="govuk-tabs__tab">Agency</a>
+              </li>
+          
+              <li id="office_tab" class="govuk-tabs__list-item"> 
+                  <a href="production-information#id_office_panel" title="View allocated caseworkers by office" class="govuk-tabs__tab">Allocated caseworkers by office</a>
+              </li>
+          
+              <li id="team_tab" class="govuk-tabs__list-item"> 
+                  <a href="production-information#id_team_panel" title="View management information for your team" class="govuk-tabs__tab">Team</a>
+              </li>
+          
+      </ul>
+      
+          <div id="id_agency_new_panel" class="govuk-tabs__panel">
+              
+<div class="agency-today-panel grey-text" id="id_agency_today_panel">
+  
+
+  
+
+  
+  <div class="grid-row">
+      <div class="column-third padding-fix">
+          
+      
+<button class="title-bar__day-ind-button title-bar__day-ind-button-yesterday-agency" title="Agency yesterday figures">
+  <span class="title-bar__day-ind title-bar__yesterday-ind">
+      yesterday
+  </span>
+</button>
+
+  
+      </div>
+      <div class="column-third">
+          <div class="title-bar">
+              <h2 class="title-bar__title" id="id_agency_today_tab_header">
+                  Agency
+                  <br>
+                  today
+              </h2>
+              <!-- <div class="title-bar__time spacing-top-third spacing-bottom-single" id="agency_today_localTime"></div> -->
+          </div>
+      </div>
+      <div class="column-third">
+          
+      </div>
+  </div>
+
+
+  <div class="grid-row grid-seperator">
+      <div class="column-two-fifths" data-actioned-today>
+                  <div class="mi-panel mi-panel--right" data-mi-panel>                    <div class="mi-panel__container  ">                    <div class="mi-panel__text mi-panel__text--large" style="height:auto; min-height: 82px;">                    <h3 class="mi-panel__title">Total actioned</h3>                        <div class="mi-panel__help-text">completed (marked off, cancelled) and deferred (requisition, discharge only, prior pending, objection notice, partial reply, extension of time, reminder issued)</div>            </div>                        <div id=agency_today_actioned class="mi-panel__number mi-panel__number--large">0</div>                            <button class="mi-panel__handle mi-panel__handle--breakdown" id="id_expand_agency_today_actioned">+</button>                </div>                        <div class="mi-panel__content">                <div class="mi-panel__subheading">Volume</div>    <table class="mi-panel__table">        <caption>Agency - Today total actioned - Volume</caption>        <tbody class="mi-panel__table-body">                <tr >        <td class="mi-panel__value" id="agency_today_actioned_vco_value" headers="agency_today_actioned_vco">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_actioned_vco">                        <abbr>                Change of Ownership            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_actioned_vru_value" headers="agency_today_actioned_vru">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_actioned_vru">                        <abbr>                Register Update            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_actioned_vco_adr_value" headers="agency_today_actioned_vco_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_actioned_vco_adr">                        <abbr>                Change of Ownership Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_actioned_vru_adr_value" headers="agency_today_actioned_vru_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_actioned_vru_adr">                        <abbr>                Register Update Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_actioned_v_adn_value" headers="agency_today_actioned_v_adn">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_actioned_v_adn">                        <abbr>                Actionable Deferral: Objection Notice            </abbr>                </th>        </tr>            </tbody>    </table>    <div class="mi-panel__subheading">Executive Register Update</div>    <table class="mi-panel__table">        <caption>Agency - Today total actioned - Executive Register Update</caption>        <tbody class="mi-panel__table-body">                <tr >        <td class="mi-panel__value" id="agency_today_actioned_sru_value" headers="agency_today_actioned_sru">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_actioned_sru">                        <abbr>                Standard            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_actioned_cru_value" headers="agency_today_actioned_cru">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_actioned_cru">                        <abbr>                Complex            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_actioned_e_adr_value" headers="agency_today_actioned_e_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_actioned_e_adr">                        <abbr>                Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_actioned_e_adn_value" headers="agency_today_actioned_e_adn">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_actioned_e_adn">                        <abbr>                Actionable Deferral: Objection Notice            </abbr>                </th>        </tr>            </tbody>    </table>            </div>            </div>    
+      </div>
+      <div class="column-fifth" data-completed-today>
+                  <div class="mi-panel mi-panel--right" data-mi-panel>                    <div class="mi-panel__container mi-panel__equals-op ">                    <div class="mi-panel__text mi-panel__text--small" style="height:auto; min-height: 82px;">                    <h3 class="mi-panel__title">Total completed</h3>                        <div class="mi-panel__help-text">marked off, cancelled</div>            </div>                        <div id=agency_today_completed class="mi-panel__number mi-panel__number--small">0</div>                            <button class="mi-panel__handle mi-panel__handle--breakdown" id="id_expand_agency_today_completed">+</button>                </div>                        <div class="mi-panel__content">                <div class="mi-panel__subheading">Volume</div>    <table class="mi-panel__table">        <caption>Agency - Today total completed - Volume</caption>        <tbody class="mi-panel__table-body">                <tr >        <td class="mi-panel__value" id="agency_today_completed_vco_value" headers="agency_today_completed_vco">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_completed_vco">                        <abbr>                Change of Ownership            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_completed_vru_value" headers="agency_today_completed_vru">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_completed_vru">                        <abbr>                Register Update            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_completed_vco_adr_value" headers="agency_today_completed_vco_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_completed_vco_adr">                        <abbr>                Change of Ownership Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_completed_vru_adr_value" headers="agency_today_completed_vru_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_completed_vru_adr">                        <abbr>                Register Update Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_completed_v_adn_value" headers="agency_today_completed_v_adn">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_completed_v_adn">                        <abbr>                Actionable Deferral: Objection Notice            </abbr>                </th>        </tr>            </tbody>    </table>    <div class="mi-panel__subheading">Executive Register Update</div>    <table class="mi-panel__table">        <caption>Agency - Today total completed - Executive Register Update</caption>        <tbody class="mi-panel__table-body">                <tr >        <td class="mi-panel__value" id="agency_today_completed_sru_value" headers="agency_today_completed_sru">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_completed_sru">                        <abbr>                Standard            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_completed_cru_value" headers="agency_today_completed_cru">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_completed_cru">                        <abbr>                Complex            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_completed_e_adr_value" headers="agency_today_completed_e_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_completed_e_adr">                        <abbr>                Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_completed_e_adn_value" headers="agency_today_completed_e_adn">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_completed_e_adn">                        <abbr>                Actionable Deferral: Objection Notice            </abbr>                </th>        </tr>            </tbody>    </table>            </div>            </div>    
+      </div>
+      <div class="column-fifth" data-deferred-today>
+                  <div class="mi-panel mi-panel--right" data-mi-panel>                    <div class="mi-panel__container mi-panel__plus-op ">                    <div class="mi-panel__text mi-panel__text--small" style="height:auto; min-height: 82px;">                    <h3 class="mi-panel__title">Total deferred</h3>                        <div class="mi-panel__help-text">requisition, discharge only, prior pending, objection notice, partial reply, extension of time, reminder issued</div>            </div>                        <div id=agency_today_deferred class="mi-panel__number mi-panel__number--small">0</div>                            <button class="mi-panel__handle mi-panel__handle--breakdown" id="id_expand_agency_today_deferred">+</button>                </div>                        <div class="mi-panel__content">                <div class="mi-panel__subheading">Volume</div>    <table class="mi-panel__table">        <caption>Agency - Today total deferred - Volume</caption>        <tbody class="mi-panel__table-body">                <tr >        <td class="mi-panel__value" id="agency_today_deferred_vco_value" headers="agency_today_deferred_vco">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_deferred_vco">                        <abbr>                Change of Ownership            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_deferred_vru_value" headers="agency_today_deferred_vru">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_deferred_vru">                        <abbr>                Register Update            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_deferred_vco_adr_value" headers="agency_today_deferred_vco_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_deferred_vco_adr">                        <abbr>                Change of Ownership Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_deferred_vru_adr_value" headers="agency_today_deferred_vru_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_deferred_vru_adr">                        <abbr>                Register Update Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_deferred_v_adn_value" headers="agency_today_deferred_v_adn">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_deferred_v_adn">                        <abbr>                Actionable Deferral: Objection Notice            </abbr>                </th>        </tr>            </tbody>    </table>    <div class="mi-panel__subheading">Executive Register Update</div>    <table class="mi-panel__table">        <caption>Agency - Today total deferred - Executive Register Update</caption>        <tbody class="mi-panel__table-body">                <tr >        <td class="mi-panel__value" id="agency_today_deferred_sru_value" headers="agency_today_deferred_sru">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_deferred_sru">                        <abbr>                Standard            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_deferred_cru_value" headers="agency_today_deferred_cru">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_deferred_cru">                        <abbr>                Complex            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_deferred_e_adr_value" headers="agency_today_deferred_e_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_deferred_e_adr">                        <abbr>                Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_deferred_e_adn_value" headers="agency_today_deferred_e_adn">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_deferred_e_adn">                        <abbr>                Actionable Deferral: Objection Notice            </abbr>                </th>        </tr>            </tbody>    </table>            </div>            </div>    
+      </div>
+      <div class="column-fifth" data-returned-today>
+                  <div class="mi-panel mi-panel--right" data-mi-panel>                    <div class="mi-panel__container  mi-panel__container--border-left">                    <div class="mi-panel__text mi-panel__text--small" style="height:auto; min-height: 82px;">                    <h3 class="mi-panel__title">Total returned</h3>                        <div class="mi-panel__help-text">returned to ESRV</div>            </div>                        <div id=agency_today_returned class="mi-panel__number mi-panel__number--small">0</div>                            <button class="mi-panel__handle mi-panel__handle--breakdown" id="id_expand_agency_today_returned">+</button>                </div>                        <div class="mi-panel__content">                <div class="mi-panel__subheading">Volume</div>    <table class="mi-panel__table">        <caption>Agency - Today total returned - Volume</caption>        <tbody class="mi-panel__table-body">                <tr >        <td class="mi-panel__value" id="agency_today_returned_vco_value" headers="agency_today_returned_vco">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_returned_vco">                        <abbr>                Change of Ownership            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_returned_vru_value" headers="agency_today_returned_vru">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_returned_vru">                        <abbr>                Register Update            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_returned_vco_adr_value" headers="agency_today_returned_vco_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_returned_vco_adr">                        <abbr>                Change of Ownership Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_returned_vru_adr_value" headers="agency_today_returned_vru_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_returned_vru_adr">                        <abbr>                Register Update Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_returned_v_adn_value" headers="agency_today_returned_v_adn">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_returned_v_adn">                        <abbr>                Actionable Deferral: Objection Notice            </abbr>                </th>        </tr>            </tbody>    </table>    <div class="mi-panel__subheading">Executive Register Update</div>    <table class="mi-panel__table">        <caption>Agency - Today total returned - Executive Register Update</caption>        <tbody class="mi-panel__table-body">                <tr >        <td class="mi-panel__value" id="agency_today_returned_sru_value" headers="agency_today_returned_sru">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_returned_sru">                        <abbr>                Standard            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_returned_cru_value" headers="agency_today_returned_cru">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_returned_cru">                        <abbr>                Complex            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_returned_e_adr_value" headers="agency_today_returned_e_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_returned_e_adr">                        <abbr>                Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_returned_e_adn_value" headers="agency_today_returned_e_adn">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_returned_e_adn">                        <abbr>                Actionable Deferral: Objection Notice            </abbr>                </th>        </tr>            </tbody>    </table>            </div>            </div>    
+      </div>
+  </div>
+
+  <div class="grid-row grid-seperator">
+      <div class="column-two-fifths" data-allocated-now>
+                  <div class="mi-panel mi-panel--right" data-mi-panel>                    <div class="mi-panel__container  ">                    <div class="mi-panel__text mi-panel__text--large" style="height:auto; min-height: 82px;">                    <h3 class="mi-panel__title">Allocated caseworkers now</h3>                        <div class="mi-panel__help-text">caseworkers logged into Workflow and assigned to a category of work</div>            </div>                        <div id=agency_today_alloc_caseworkers class="mi-panel__number mi-panel__number--large">2</div>                            <button class="mi-panel__handle mi-panel__handle--breakdown" id="id_expand_agency_today_alloc_caseworkers">+</button>                </div>                        <div class="mi-panel__content">                <div class="mi-panel__subheading">Volume</div>    <table class="mi-panel__table">        <caption>Agency - Today allocated caseworkers now - Volume</caption>        <tbody class="mi-panel__table-body">                <tr >        <td class="mi-panel__value" id="agency_today_allocated_vco_value" headers="agency_today_allocated_vco">            2        </td>                <th scope="row" class="mi-panel__key" id="agency_today_allocated_vco">                        <abbr>                Change of Ownership            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_allocated_vru_value" headers="agency_today_allocated_vru">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_allocated_vru">                        <abbr>                Register Update            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_allocated_vco_adr_value" headers="agency_today_allocated_vco_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_allocated_vco_adr">                        <abbr>                Change of Ownership Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_allocated_vru_adr_value" headers="agency_today_allocated_vru_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_allocated_vru_adr">                        <abbr>                Register Update Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_allocated_v_adn_value" headers="agency_today_allocated_v_adn">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_allocated_v_adn">                        <abbr>                Actionable Deferral: Objection Notice            </abbr>                </th>        </tr>            </tbody>    </table>    <div class="mi-panel__subheading">Executive Register Update</div>    <table class="mi-panel__table">        <caption>Agency - Today allocated caseworkers now - Executive Register Update</caption>        <tbody class="mi-panel__table-body">                <tr >        <td class="mi-panel__value" id="agency_today_allocated_sru_value" headers="agency_today_allocated_sru">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_allocated_sru">                        <abbr>                Standard            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_allocated_cru_value" headers="agency_today_allocated_cru">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_allocated_cru">                        <abbr>                Complex            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_allocated_e_adr_value" headers="agency_today_allocated_e_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_allocated_e_adr">                        <abbr>                Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_allocated_e_adn_value" headers="agency_today_allocated_e_adn">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_allocated_e_adn">                        <abbr>                Actionable Deferral: Objection Notice            </abbr>                </th>        </tr>            </tbody>    </table>            </div>            </div>    
+      </div>
+      <div class="column-three-fifths" data-no-category>
+                  <div class="mi-panel mi-panel--left" data-mi-panel>                    <div class="mi-panel__container  ">                    <div class="mi-panel__text mi-panel__text--small" style="height:auto; min-height: 82px;">                    <h3 class="mi-panel__title">No category</h3>                        <div class="mi-panel__help-text">caseworkers assigned to 'no category'</div>            </div>                        <div id=agency_today_no_category class="mi-panel__number mi-panel__number--small">273</div>                        </div>                        </div>    
+      </div>
+  </div>
+
+  <div class="grid-row grid-seperator">
+      <div class="column-two-fifths" data-total-today>
+                  <div class="mi-panel mi-panel--right" data-mi-panel>                    <div class="mi-panel__container  ">                    <div class="mi-panel__text mi-panel__text--large" style="height:auto; min-height: 82px;">                    <h3 class="mi-panel__title">Total work in Workflow now</h3>                        <div class="mi-panel__help-text">available and unavailable in Workflow now</div>            </div>                        <div id=agency_today_total class="mi-panel__number mi-panel__number--large">5307</div>                        </div>                        </div>    
+      </div>
+      <div class="column-fifth" data-available-today>
+                  <div class="mi-panel mi-panel--right" data-mi-panel>                    <div class="mi-panel__container mi-panel__equals-op ">                    <div class="mi-panel__text mi-panel__text--small" style="height:auto; min-height: 82px;">                    <h3 class="mi-panel__title">Available</h3>                        <div class="mi-panel__help-text">available to be obtained now</div>            </div>                        <div id=agency_today_available class="mi-panel__number mi-panel__number--small">4320</div>                            <button class="mi-panel__handle mi-panel__handle--breakdown" id="id_expand_agency_today_available">+</button>                </div>                        <div class="mi-panel__content">                <div class="mi-panel__subheading">Volume</div>    <table class="mi-panel__table">        <caption>Agency - Today available - Volume</caption>        <tbody class="mi-panel__table-body">                <tr >        <td class="mi-panel__value" id="agency_today_available_vco_value" headers="agency_today_available_vco">            564        </td>                <th scope="row" class="mi-panel__key" id="agency_today_available_vco">                        <abbr>                Change of Ownership            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_available_vru_value" headers="agency_today_available_vru">            722        </td>                <th scope="row" class="mi-panel__key" id="agency_today_available_vru">                        <abbr>                Register Update            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_available_vco_adr_value" headers="agency_today_available_vco_adr">            8        </td>                <th scope="row" class="mi-panel__key" id="agency_today_available_vco_adr">                        <abbr>                Change of Ownership Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_available_vru_adr_value" headers="agency_today_available_vru_adr">            7        </td>                <th scope="row" class="mi-panel__key" id="agency_today_available_vru_adr">                        <abbr>                Register Update Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_available_v_adn_value" headers="agency_today_available_v_adn">            9        </td>                <th scope="row" class="mi-panel__key" id="agency_today_available_v_adn">                        <abbr>                Actionable Deferral: Objection Notice            </abbr>                </th>        </tr>            </tbody>    </table>    <div class="mi-panel__subheading">Executive Register Update</div>    <table class="mi-panel__table">        <caption>Agency - Today available - Executive Register Update</caption>        <tbody class="mi-panel__table-body">                <tr >        <td class="mi-panel__value" id="agency_today_available_sru_value" headers="agency_today_available_sru">            2058        </td>                <th scope="row" class="mi-panel__key" id="agency_today_available_sru">                        <abbr>                Standard            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_available_cru_value" headers="agency_today_available_cru">            910        </td>                <th scope="row" class="mi-panel__key" id="agency_today_available_cru">                        <abbr>                Complex            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_available_e_adr_value" headers="agency_today_available_e_adr">            30        </td>                <th scope="row" class="mi-panel__key" id="agency_today_available_e_adr">                        <abbr>                Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_available_e_adn_value" headers="agency_today_available_e_adn">            12        </td>                <th scope="row" class="mi-panel__key" id="agency_today_available_e_adn">                        <abbr>                Actionable Deferral: Objection Notice            </abbr>                </th>        </tr>            </tbody>    </table>            </div>            </div>    
+      </div>
+      <div class="column-fifth" data-unavailable-today>
+                  <div class="mi-panel mi-panel--right" data-mi-panel>                    <div class="mi-panel__container mi-panel__plus-op ">                    <div class="mi-panel__text mi-panel__text--small" style="height:auto; min-height: 82px;">                    <h3 class="mi-panel__title">Unavailable</h3>                        <div class="mi-panel__help-text">being worked on now or deferred</div>            </div>                        <div id=agency_today_unavailable class="mi-panel__number mi-panel__number--small">987</div>                            <button class="mi-panel__handle mi-panel__handle--breakdown" id="id_expand_agency_today_unavailable">+</button>                </div>                        <div class="mi-panel__content">                <table class="mi-panel__table">        <caption>Agency - Today unavailable</caption>        <tbody class="mi-panel__table-body">                <tr >        <td class="mi-panel__value" id="agency_today_unavailable_allocated_value" headers="agency_today_unavailable_allocated">            923        </td>                <th scope="row" class="mi-panel__key" id="agency_today_unavailable_allocated">                        Being worked on                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_unavailable_deferred_value" headers="agency_today_unavailable_deferred">            64        </td>                <th scope="row" class="mi-panel__key" id="agency_today_unavailable_deferred">                        Deferred (requisition, discharge only, prior pending, objection notice, partial reply, extension of time, reminder issued)                </th>        </tr>            </tbody>    </table>            </div>            </div>    
+      </div>
+      <div class="column-fifth" data-new-today>
+                  <div class="mi-panel mi-panel--right" data-mi-panel>                    <div class="mi-panel__container  mi-panel__container--border-left">                    <div class="mi-panel__text mi-panel__text--small" style="height:auto; min-height: 82px;">                    <h3 class="mi-panel__title">New today</h3>                        <div class="mi-panel__help-text">new work received today and work released from deferral today</div>            </div>                        <div id=agency_today_new_today class="mi-panel__number mi-panel__number--small">0</div>                            <button class="mi-panel__handle mi-panel__handle--breakdown" id="id_expand_agency_today_new_today">+</button>                </div>                        <div class="mi-panel__content">                <div class="mi-panel__subheading">Volume</div>    <table class="mi-panel__table">        <caption>Agency - New today - Volume</caption>        <tbody class="mi-panel__table-body">                <tr >        <td class="mi-panel__value" id="agency_today_new_today_vco_value" headers="agency_today_new_today_vco">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_new_today_vco">                        <abbr>                Change of Ownership            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_new_today_vru_value" headers="agency_today_new_today_vru">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_new_today_vru">                        <abbr>                Register Update            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_new_today_vco_adr_value" headers="agency_today_new_today_vco_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_new_today_vco_adr">                        <abbr>                Change of Ownership Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_new_today_vru_adr_value" headers="agency_today_new_today_vru_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_new_today_vru_adr">                        <abbr>                Register Update Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_new_today_v_adn_value" headers="agency_today_new_today_v_adn">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_new_today_v_adn">                        <abbr>                Actionable Deferral: Objection Notice            </abbr>                </th>        </tr>            </tbody>    </table>    <div class="mi-panel__subheading">Executive Register Update</div>    <table class="mi-panel__table">        <caption>Agency - New today - Executive Register Update</caption>        <tbody class="mi-panel__table-body">                <tr >        <td class="mi-panel__value" id="agency_today_new_today_sru_value" headers="agency_today_new_today_sru">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_new_today_sru">                        <abbr>                Standard            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_new_today_cru_value" headers="agency_today_new_today_cru">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_new_today_cru">                        <abbr>                Complex            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_new_today_e_adr_value" headers="agency_today_new_today_e_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_new_today_e_adr">                        <abbr>                Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_new_today_e_adn_value" headers="agency_today_new_today_e_adn">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_new_today_e_adn">                        <abbr>                Actionable Deferral: Objection Notice            </abbr>                </th>        </tr>            </tbody>    </table>            </div>            </div>    
+      </div>
+  </div>
+
+  <div class="grid-row grid-seperator">
+      <div class="column-two-fifths" data-total-today>
+                  <div class="mi-panel mi-panel--right" data-mi-panel>                    <div class="mi-panel__container  ">                    <div class="mi-panel__text mi-panel__text--large" style="height:auto; min-height: 82px;">                    <h3 class="mi-panel__title">Total at 7am today</h3>                        <div class="mi-panel__help-text">available and unavailable at 7am today</div>            </div>                        <div id=agency_today_start_of_today_total class="mi-panel__number mi-panel__number--large">0</div>                        </div>                        </div>    
+      </div>
+      <div class="column-fifth" data-available-today>
+                  <div class="mi-panel mi-panel--right" data-mi-panel>                    <div class="mi-panel__container mi-panel__equals-op ">                    <div class="mi-panel__text mi-panel__text--small" style="height:auto; min-height: 82px;">                    <h3 class="mi-panel__title">Available</h3>                        <div class="mi-panel__help-text">available to be obtained<br> at 7am today</div>            </div>                        <div id=agency_today_start_of_today_available class="mi-panel__number mi-panel__number--small">0</div>                            <button class="mi-panel__handle mi-panel__handle--breakdown" id="id_expand_agency_today_start_of_today_available">+</button>                </div>                        <div class="mi-panel__content">                <div class="mi-panel__subheading">Volume</div>    <table class="mi-panel__table">        <caption>Agency - 7am today - Available - Volume</caption>        <tbody class="mi-panel__table-body">                <tr >        <td class="mi-panel__value" id="agency_today_start_of_today_available_vco_value" headers="agency_today_start_of_today_available_vco">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_start_of_today_available_vco">                        <abbr>                Change of Ownership            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_start_of_today_available_vru_value" headers="agency_today_start_of_today_available_vru">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_start_of_today_available_vru">                        <abbr>                Register Update            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_start_of_today_available_vco_adr_value" headers="agency_today_start_of_today_available_vco_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_start_of_today_available_vco_adr">                        <abbr>                Change of Ownership Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_start_of_today_available_vru_adr_value" headers="agency_today_start_of_today_available_vru_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_start_of_today_available_vru_adr">                        <abbr>                Register Update Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_start_of_today_available_v_adn_value" headers="agency_today_start_of_today_available_v_adn">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_start_of_today_available_v_adn">                        <abbr>                Actionable Deferral: Objection Notice            </abbr>                </th>        </tr>            </tbody>    </table>    <div class="mi-panel__subheading">Executive Register Update</div>    <table class="mi-panel__table">        <caption>Agency - 7am today - Available - Executive Register Update</caption>        <tbody class="mi-panel__table-body">                <tr >        <td class="mi-panel__value" id="agency_today_start_of_today_available_sru_value" headers="agency_today_start_of_today_available_sru">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_start_of_today_available_sru">                        <abbr>                Standard            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_start_of_today_available_cru_value" headers="agency_today_start_of_today_available_cru">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_start_of_today_available_cru">                        <abbr>                Complex            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_start_of_today_available_e_adr_value" headers="agency_today_start_of_today_available_e_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_start_of_today_available_e_adr">                        <abbr>                Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_start_of_today_available_e_adn_value" headers="agency_today_start_of_today_available_e_adn">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_start_of_today_available_e_adn">                        <abbr>                Actionable Deferral: Objection Notice            </abbr>                </th>        </tr>            </tbody>    </table>            </div>            </div>    
+      </div>
+      <div class="column-fifth" data-deferred-today>
+                  <div class="mi-panel mi-panel--right" data-mi-panel>                    <div class="mi-panel__container mi-panel__plus-op ">                    <div class="mi-panel__text mi-panel__text--small" style="height:auto; min-height: 82px;">                    <h3 class="mi-panel__title">Unavailable</h3>                        <div class="mi-panel__help-text">being worked on or deferred<br> at 7am today</div>            </div>                        <div id=agency_today_start_of_today_unavailable class="mi-panel__number mi-panel__number--small">0</div>                            <button class="mi-panel__handle mi-panel__handle--breakdown" id="id_expand_agency_today_start_of_today_unavailable">+</button>                </div>                        <div class="mi-panel__content">                <table class="mi-panel__table">        <caption>Agency - 7am today - Unavailable</caption>        <tbody class="mi-panel__table-body">                <tr >        <td class="mi-panel__value" id="agency_today_start_of_today_unavailable_allocated_value" headers="agency_today_start_of_today_unavailable_allocated">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_start_of_today_unavailable_allocated">                        Being worked on                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_today_start_of_today_unavailable_deferred_value" headers="agency_today_start_of_today_unavailable_deferred">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_today_start_of_today_unavailable_deferred">                        Deferred (requisition, discharge only, prior pending, objection notice, partial reply, extension of time, reminder issued)                </th>        </tr>            </tbody>    </table>            </div>            </div>    
+      </div>
+  </div>
+
+
+</div>
+<div class="agency-yesterday-panel no-tab grey-text" id="id_agency_yesterday_panel">
+  
+
+  
+
+  
+  <div class="grid-row">
+      <div class="column-third padding-fix">
+          
+      </div>
+      <div class="column-third">
+          <div class="title-bar">
+              <h2 class="title-bar__title" id="id_agency_yesterday_tab_header">
+                  Agency
+                  <br>
+                  yesterday
+              </h2>
+              <!-- <div class="title-bar__time spacing-top-third spacing-bottom-single" id="agency_yesterday_localTime"></div> -->
+          </div>
+      </div>
+      <div class="column-third">
+          
+      
+<button class="title-bar__day-ind-button title-bar__day-ind-button-today-agency" title="Agency today figures">
+  <span class="title-bar__day-ind title-bar__today-ind">
+      today
+  </span>
+</button>
+
+  
+      </div>
+  </div>
+
+
+  <div class="grid-row grid-seperator">
+      <div class="column-two-fifths" data-actioned-yesterday>
+                  <div class="mi-panel mi-panel--right" data-mi-panel>                    <div class="mi-panel__container  ">                    <div class="mi-panel__text mi-panel__text--large" style="height:auto; min-height: 82px;">                    <h3 class="mi-panel__title">Total actioned</h3>                        <div class="mi-panel__help-text">completed (marked off, cancelled) and deferred (requisition, discharge only, prior pending, objection notice, partial reply, extension of time, reminder issued)</div>            </div>                        <div id=agency_yesterday_actioned class="mi-panel__number mi-panel__number--large">0</div>                            <button class="mi-panel__handle mi-panel__handle--breakdown" id="id_expand_agency_yesterday_actioned">+</button>                </div>                        <div class="mi-panel__content">                <div class="mi-panel__subheading">Volume</div>    <table class="mi-panel__table">        <caption>Agency - Yesterday actioned - Volume</caption>        <tbody class="mi-panel__table-body">                <tr >        <td class="mi-panel__value" id="agency_yesterday_actioned_vco_value" headers="agency_yesterday_actioned_vco">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_yesterday_actioned_vco">                        <abbr>                Change of Ownership            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_yesterday_actioned_vru_value" headers="agency_yesterday_actioned_vru">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_yesterday_actioned_vru">                        <abbr>                Register Update            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_yesterday_actioned_vco_adr_value" headers="agency_yesterday_actioned_vco_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_yesterday_actioned_vco_adr">                        <abbr>                Change of Ownership Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_yesterday_actioned_vru_adr_value" headers="agency_yesterday_actioned_vru_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_yesterday_actioned_vru_adr">                        <abbr>                Register Update Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_yesterday_actioned_v_adn_value" headers="agency_yesterday_actioned_v_adn">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_yesterday_actioned_v_adn">                        <abbr>                Actionable Deferral: Objection Notice            </abbr>                </th>        </tr>            </tbody>    </table>    <div class="mi-panel__subheading">Executive Register Update</div>    <table class="mi-panel__table">        <caption>Agency - Yesterday actioned - Executive Register Update</caption>        <tbody class="mi-panel__table-body">                <tr >        <td class="mi-panel__value" id="agency_yesterday_actioned_sru_value" headers="agency_yesterday_actioned_sru">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_yesterday_actioned_sru">                        <abbr>                Standard            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_yesterday_actioned_cru_value" headers="agency_yesterday_actioned_cru">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_yesterday_actioned_cru">                        <abbr>                Complex            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_yesterday_actioned_e_adr_value" headers="agency_yesterday_actioned_e_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_yesterday_actioned_e_adr">                        <abbr>                Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_yesterday_actioned_e_adn_value" headers="agency_yesterday_actioned_e_adn">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_yesterday_actioned_e_adn">                        <abbr>                Actionable Deferral: Objection Notice            </abbr>                </th>        </tr>            </tbody>    </table>            </div>            </div>    
+      </div>
+      <div class="column-fifth" data-completed-yesterday>
+                  <div class="mi-panel mi-panel--right" data-mi-panel>                    <div class="mi-panel__container mi-panel__equals-op ">                    <div class="mi-panel__text mi-panel__text--small" style="height:auto; min-height: 82px;">                    <h3 class="mi-panel__title">Total completed</h3>                        <div class="mi-panel__help-text">marked off, cancelled</div>            </div>                        <div id=agency_yesterday_completed class="mi-panel__number mi-panel__number--small">0</div>                            <button class="mi-panel__handle mi-panel__handle--breakdown" id="id_expand_agency_yesterday_completed">+</button>                </div>                        <div class="mi-panel__content">                <div class="mi-panel__subheading">Volume</div>    <table class="mi-panel__table">        <caption>Agency - Yesterday completed - Volume</caption>        <tbody class="mi-panel__table-body">                <tr >        <td class="mi-panel__value" id="agency_yesterday_completed_vco_value" headers="agency_yesterday_completed_vco">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_yesterday_completed_vco">                        <abbr>                Change of Ownership            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_yesterday_completed_vru_value" headers="agency_yesterday_completed_vru">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_yesterday_completed_vru">                        <abbr>                Register Update            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_yesterday_completed_vco_adr_value" headers="agency_yesterday_completed_vco_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_yesterday_completed_vco_adr">                        <abbr>                Change of Ownership Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_yesterday_completed_vru_adr_value" headers="agency_yesterday_completed_vru_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_yesterday_completed_vru_adr">                        <abbr>                Register Update Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_yesterday_completed_v_adn_value" headers="agency_yesterday_completed_v_adn">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_yesterday_completed_v_adn">                        <abbr>                Actionable Deferral: Objection Notice            </abbr>                </th>        </tr>            </tbody>    </table>    <div class="mi-panel__subheading">Executive Register Update</div>    <table class="mi-panel__table">        <caption>Agency - Yesterday completed - Executive Register Update</caption>        <tbody class="mi-panel__table-body">                <tr >        <td class="mi-panel__value" id="agency_yesterday_completed_sru_value" headers="agency_yesterday_completed_sru">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_yesterday_completed_sru">                        <abbr>                Standard            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_yesterday_completed_cru_value" headers="agency_yesterday_completed_cru">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_yesterday_completed_cru">                        <abbr>                Complex            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_yesterday_completed_e_adr_value" headers="agency_yesterday_completed_e_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_yesterday_completed_e_adr">                        <abbr>                Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_yesterday_completed_e_adn_value" headers="agency_yesterday_completed_e_adn">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_yesterday_completed_e_adn">                        <abbr>                Actionable Deferral: Objection Notice            </abbr>                </th>        </tr>            </tbody>    </table>            </div>            </div>    
+      </div>
+      <div class="column-fifth" data-deferred-yesterday>
+                  <div class="mi-panel mi-panel--right" data-mi-panel>                    <div class="mi-panel__container mi-panel__plus-op ">                    <div class="mi-panel__text mi-panel__text--small" style="height:auto; min-height: 82px;">                    <h3 class="mi-panel__title">Total deferred</h3>                        <div class="mi-panel__help-text">requisition, discharge only, prior pending, objection notice, partial reply, extension of time, reminder issued</div>            </div>                        <div id=agency_yesterday_deferred class="mi-panel__number mi-panel__number--small">0</div>                            <button class="mi-panel__handle mi-panel__handle--breakdown" id="id_expand_agency_yesterday_deferred">+</button>                </div>                        <div class="mi-panel__content">                <div class="mi-panel__subheading">Volume</div>    <table class="mi-panel__table">        <caption>Agency - Yesterday deferred - Volume</caption>        <tbody class="mi-panel__table-body">                <tr >        <td class="mi-panel__value" id="agency_yesterday_deferred_vco_value" headers="agency_yesterday_deferred_vco">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_yesterday_deferred_vco">                        <abbr>                Change of Ownership            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_yesterday_deferred_vru_value" headers="agency_yesterday_deferred_vru">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_yesterday_deferred_vru">                        <abbr>                Register Update            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_yesterday_deferred_vco_adr_value" headers="agency_yesterday_deferred_vco_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_yesterday_deferred_vco_adr">                        <abbr>                Change of Ownership Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_yesterday_deferred_vru_adr_value" headers="agency_yesterday_deferred_vru_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_yesterday_deferred_vru_adr">                        <abbr>                Register Update Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_yesterday_deferred_v_adn_value" headers="agency_yesterday_deferred_v_adn">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_yesterday_deferred_v_adn">                        <abbr>                Actionable Deferral: Objection Notice            </abbr>                </th>        </tr>            </tbody>    </table>    <div class="mi-panel__subheading">Executive Register Update</div>    <table class="mi-panel__table">        <caption>Agency - Yesterday deferred - Executive Register Update</caption>        <tbody class="mi-panel__table-body">                <tr >        <td class="mi-panel__value" id="agency_yesterday_deferred_sru_value" headers="agency_yesterday_deferred_sru">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_yesterday_deferred_sru">                        <abbr>                Standard            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_yesterday_deferred_cru_value" headers="agency_yesterday_deferred_cru">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_yesterday_deferred_cru">                        <abbr>                Complex            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_yesterday_deferred_e_adr_value" headers="agency_yesterday_deferred_e_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_yesterday_deferred_e_adr">                        <abbr>                Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_yesterday_deferred_e_adn_value" headers="agency_yesterday_deferred_e_adn">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_yesterday_deferred_e_adn">                        <abbr>                Actionable Deferral: Objection Notice            </abbr>                </th>        </tr>            </tbody>    </table>            </div>            </div>    
+      </div>
+      <div class="column-fifth" data-returned-yesterday>
+                  <div class="mi-panel mi-panel--right" data-mi-panel>                    <div class="mi-panel__container  mi-panel__container--border-left">                    <div class="mi-panel__text mi-panel__text--small" style="height:auto; min-height: 82px;">                    <h3 class="mi-panel__title">Total returned</h3>                        <div class="mi-panel__help-text">returned to ESRV</div>            </div>                        <div id=agency_yesterday_returned class="mi-panel__number mi-panel__number--small">0</div>                            <button class="mi-panel__handle mi-panel__handle--breakdown" id="id_expand_agency_yesterday_returned">+</button>                </div>                        <div class="mi-panel__content">                <div class="mi-panel__subheading">Volume</div>    <table class="mi-panel__table">        <caption>Agency - Yesterday returned - Volume</caption>        <tbody class="mi-panel__table-body">                <tr >        <td class="mi-panel__value" id="agency_yesterday_returned_vco_value" headers="agency_yesterday_returned_vco">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_yesterday_returned_vco">                        <abbr>                Change of Ownership            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_yesterday_returned_vru_value" headers="agency_yesterday_returned_vru">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_yesterday_returned_vru">                        <abbr>                Register Update            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_yesterday_returned_vco_adr_value" headers="agency_yesterday_returned_vco_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_yesterday_returned_vco_adr">                        <abbr>                Change of Ownership Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_yesterday_returned_vru_adr_value" headers="agency_yesterday_returned_vru_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_yesterday_returned_vru_adr">                        <abbr>                Register Update Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_yesterday_returned_v_adn_value" headers="agency_yesterday_returned_v_adn">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_yesterday_returned_v_adn">                        <abbr>                Actionable Deferral: Objection Notice            </abbr>                </th>        </tr>            </tbody>    </table>    <div class="mi-panel__subheading">Executive Register Update</div>    <table class="mi-panel__table">        <caption>Agency - Yesterday returned - Executive Register Update</caption>        <tbody class="mi-panel__table-body">                <tr >        <td class="mi-panel__value" id="agency_yesterday_returned_sru_value" headers="agency_yesterday_returned_sru">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_yesterday_returned_sru">                        <abbr>                Standard            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_yesterday_returned_cru_value" headers="agency_yesterday_returned_cru">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_yesterday_returned_cru">                        <abbr>                Complex            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_yesterday_returned_e_adr_value" headers="agency_yesterday_returned_e_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_yesterday_returned_e_adr">                        <abbr>                Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_yesterday_returned_e_adn_value" headers="agency_yesterday_returned_e_adn">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_yesterday_returned_e_adn">                        <abbr>                Actionable Deferral: Objection Notice            </abbr>                </th>        </tr>            </tbody>    </table>            </div>            </div>    
+      </div>
+  </div>
+
+  <div class="grid-row grid-seperator">
+      <div class="column-two-fifths" data-new-yesterday>
+                  <div class="mi-panel mi-panel--right" data-mi-panel>                    <div class="mi-panel__container  ">                    <div class="mi-panel__text mi-panel__text--medium" style="height:auto; min-height: 82px;">                    <h3 class="mi-panel__title">New yesterday</h3>                        <div class="mi-panel__help-text">new work received yesterday and<br>work released from deferral yesterday</div>            </div>                        <div id=agency_yesterday_new_yesterday class="mi-panel__number mi-panel__number--medium">11</div>                            <button class="mi-panel__handle mi-panel__handle--breakdown" id="id_expand_agency_yesterday_new_yesterday">+</button>                </div>                        <div class="mi-panel__content">                <div class="mi-panel__subheading">Volume</div>    <table class="mi-panel__table">        <caption>Agency - New yesterday - Volume</caption>        <tbody class="mi-panel__table-body">                <tr >        <td class="mi-panel__value" id="agency_yesterday_new_yesterday_vco_value" headers="agency_yesterday_new_yesterday_vco">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_yesterday_new_yesterday_vco">                        <abbr>                Change of Ownership            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_yesterday_new_yesterday_vru_value" headers="agency_yesterday_new_yesterday_vru">            3        </td>                <th scope="row" class="mi-panel__key" id="agency_yesterday_new_yesterday_vru">                        <abbr>                Register Update            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_yesterday_new_yesterday_vco_adr_value" headers="agency_yesterday_new_yesterday_vco_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_yesterday_new_yesterday_vco_adr">                        <abbr>                Change of Ownership Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_yesterday_new_yesterday_vru_adr_value" headers="agency_yesterday_new_yesterday_vru_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_yesterday_new_yesterday_vru_adr">                        <abbr>                Register Update Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_yesterday_new_yesterday_v_adn_value" headers="agency_yesterday_new_yesterday_v_adn">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_yesterday_new_yesterday_v_adn">                        <abbr>                Actionable Deferral: Objection Notice            </abbr>                </th>        </tr>            </tbody>    </table>    <div class="mi-panel__subheading">Executive Register Update</div>    <table class="mi-panel__table">        <caption>Agency - New yesterday - Executive Register Update</caption>        <tbody class="mi-panel__table-body">                <tr >        <td class="mi-panel__value" id="agency_yesterday_new_yesterday_sru_value" headers="agency_yesterday_new_yesterday_sru">            8        </td>                <th scope="row" class="mi-panel__key" id="agency_yesterday_new_yesterday_sru">                        <abbr>                Standard            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_yesterday_new_yesterday_cru_value" headers="agency_yesterday_new_yesterday_cru">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_yesterday_new_yesterday_cru">                        <abbr>                Complex            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_yesterday_new_yesterday_e_adr_value" headers="agency_yesterday_new_yesterday_e_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_yesterday_new_yesterday_e_adr">                        <abbr>                Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="agency_yesterday_new_yesterday_e_adn_value" headers="agency_yesterday_new_yesterday_e_adn">            0        </td>                <th scope="row" class="mi-panel__key" id="agency_yesterday_new_yesterday_e_adn">                        <abbr>                Actionable Deferral: Objection Notice            </abbr>                </th>        </tr>            </tbody>    </table>            </div>            </div>    
+      </div>
+  </div>
+
+
+</div>
+
+          </div>
+      
+          <div id="id_office_panel" class="govuk-tabs__panel">
+              
+  
+  <table class="data-table">
+      <caption>Allocated caseworkers by office</caption>
+      <thead>
+          <tr>
+              <th scope="col" rowspan="2" id="office">Office</th>
+              <th class="vol-header" id="volume" scope="colgroup" colspan="5">Volume</th>
+              <th class="vol-header" id="executive" scope="colgroup" colspan="4">Executive Register Update</th>
+              <th class="table-heading" rowspan="2" scope="col" id="allocated_caseworkers">Allocated caseworkers<br> now</th>
+              <th class="table-heading" rowspan="2" scope="col" id="no_category">No category</th>
+          </tr>
+
+          <tr>
+              
+
+              <!-- Volume -->
+              <th class="border-left table-heading" scope="col" id="change_of_ownership" aria-label="V C O">
+                  <abbr>Change of Ownership</abbr>
+              </th>
+              <th class="table-heading" scope="col" id="register_update" aria-label="V R U">
+                  <abbr>Register Update</abbr>
+              </th>
+              <th class="table-heading" scope="col" id="change_of_ownership_actionable_deferral_requisition"  aria-label="V C O A D R">
+                  <abbr>Change of Ownership Actionable Deferral: Requisition</abbr>
+              </th>
+              <th class="table-heading" scope="col" id="register_update_actionable_deferral_requisition" aria-label="V R U A D R">
+                  <abbr >Register<br> Update Actionable Deferral: Requisition</abbr>
+              </th>
+              <th class="border-right table-heading" scope="col" id="actionable_deferral_objection" aria-label="V A D N">
+                  <abbr>Actionable Deferral: Objection <br>Notice</abbr>
+              </th>
+
+              <!-- Executive Register Updates -->
+              <th class="border-left table-heading" scope="col" id="standard"  aria-label="S R U">
+                  <abbr>Standard</abbr>
+              </th>
+              <th class="table-heading" scope="col" id="complex" aria-label="C R U">
+                  <abbr>Complex</abbr>
+              </th>
+              <th class="table-heading" scope="col" id="actionable_deferral_requisition" aria-label="V C O A D R">
+                  <abbr>
+                  Actionable Deferral: Requisition</abbr>
+              </th>
+              <th class="border-right table-heading" scope="col" id="actionable_deferral_objection_notice" aria-label="E A D N">
+                  <abbr>Actionable Deferral: Objection <br>Notice</abbr>
+              </th>     
+
+          </tr>
+          
+      </thead>
+      <tbody class="data-table__body">
+
+
+          
+          <tr>
+              
+
+              
+                  <th scope="row" id="BIRKENHEAD" >
+                      Birkenhead
+                  </th>               
+                  
+  <td class="border-left" id="BIRKENHEAD_VCO" headers="BIRKENHEAD change_of_ownership volume">0</td>
+  <td id="BIRKENHEAD_VRU" headers="volume register_update BIRKENHEAD">0</td>
+  <td id="BIRKENHEAD_VCO_ADR" headers="volume change_of_ownership_actionable_deferral_requisition BIRKENHEAD">0</td>
+  <td id="BIRKENHEAD_VRU_ADR" headers="volume register_update_actionable_deferral_requisition BIRKENHEAD">0</td>
+  <td class="border-right" id="BIRKENHEAD_V_ADN" headers="volume actionable_deferral_objection BIRKENHEAD">0</td>
+
+  <td class="border-left" id="BIRKENHEAD_SRU" headers="executive standard BIRKENHEAD">0</td>
+  <td id="BIRKENHEAD_CRU" headers="executive complex BIRKENHEAD">0</td>
+  <td id="BIRKENHEAD_E_ADR" headers="BIRKENHEAD actionable_deferral_requisition executive">0</td>
+  <td class="border-right" id="BIRKENHEAD_E_ADN" headers="executive actionable_deferral_objection_notice BIRKENHEAD">0</td>
+
+  <td id="BIRKENHEAD_OFF_TOTAL" headers="allocated_caseworkers BIRKENHEAD">0</td>
+  <td id="BIRKENHEAD_NONE" headers="no_category BIRKENHEAD">1</td>
+
+              
+          
+          <tr>
+              
+
+              
+                  <th scope="row" id="COVENTRY" >
+                      Coventry
+                  </th>               
+                  
+  <td class="border-left" id="COVENTRY_VCO" headers="COVENTRY change_of_ownership volume">0</td>
+  <td id="COVENTRY_VRU" headers="volume register_update COVENTRY">0</td>
+  <td id="COVENTRY_VCO_ADR" headers="volume change_of_ownership_actionable_deferral_requisition COVENTRY">0</td>
+  <td id="COVENTRY_VRU_ADR" headers="volume register_update_actionable_deferral_requisition COVENTRY">0</td>
+  <td class="border-right" id="COVENTRY_V_ADN" headers="volume actionable_deferral_objection COVENTRY">0</td>
+
+  <td class="border-left" id="COVENTRY_SRU" headers="executive standard COVENTRY">0</td>
+  <td id="COVENTRY_CRU" headers="executive complex COVENTRY">0</td>
+  <td id="COVENTRY_E_ADR" headers="COVENTRY actionable_deferral_requisition executive">0</td>
+  <td class="border-right" id="COVENTRY_E_ADN" headers="executive actionable_deferral_objection_notice COVENTRY">0</td>
+
+  <td id="COVENTRY_OFF_TOTAL" headers="allocated_caseworkers COVENTRY">0</td>
+  <td id="COVENTRY_NONE" headers="no_category COVENTRY">25</td>
+
+              
+          
+          <tr>
+              
+
+              
+                  <th scope="row" id="CROYDON" >
+                      Croydon
+                  </th>               
+                  
+  <td class="border-left" id="CROYDON_VCO" headers="CROYDON change_of_ownership volume">0</td>
+  <td id="CROYDON_VRU" headers="volume register_update CROYDON">0</td>
+  <td id="CROYDON_VCO_ADR" headers="volume change_of_ownership_actionable_deferral_requisition CROYDON">0</td>
+  <td id="CROYDON_VRU_ADR" headers="volume register_update_actionable_deferral_requisition CROYDON">0</td>
+  <td class="border-right" id="CROYDON_V_ADN" headers="volume actionable_deferral_objection CROYDON">0</td>
+
+  <td class="border-left" id="CROYDON_SRU" headers="executive standard CROYDON">0</td>
+  <td id="CROYDON_CRU" headers="executive complex CROYDON">0</td>
+  <td id="CROYDON_E_ADR" headers="CROYDON actionable_deferral_requisition executive">0</td>
+  <td class="border-right" id="CROYDON_E_ADN" headers="executive actionable_deferral_objection_notice CROYDON">0</td>
+
+  <td id="CROYDON_OFF_TOTAL" headers="allocated_caseworkers CROYDON">0</td>
+  <td id="CROYDON_NONE" headers="no_category CROYDON">3</td>
+
+              
+          
+          <tr>
+              
+
+              
+                  <th scope="row" id="DURHAM" >
+                      Durham
+                  </th>               
+                  
+  <td class="border-left" id="DURHAM_VCO" headers="DURHAM change_of_ownership volume">0</td>
+  <td id="DURHAM_VRU" headers="volume register_update DURHAM">0</td>
+  <td id="DURHAM_VCO_ADR" headers="volume change_of_ownership_actionable_deferral_requisition DURHAM">0</td>
+  <td id="DURHAM_VRU_ADR" headers="volume register_update_actionable_deferral_requisition DURHAM">0</td>
+  <td class="border-right" id="DURHAM_V_ADN" headers="volume actionable_deferral_objection DURHAM">0</td>
+
+  <td class="border-left" id="DURHAM_SRU" headers="executive standard DURHAM">0</td>
+  <td id="DURHAM_CRU" headers="executive complex DURHAM">0</td>
+  <td id="DURHAM_E_ADR" headers="DURHAM actionable_deferral_requisition executive">0</td>
+  <td class="border-right" id="DURHAM_E_ADN" headers="executive actionable_deferral_objection_notice DURHAM">0</td>
+
+  <td id="DURHAM_OFF_TOTAL" headers="allocated_caseworkers DURHAM">0</td>
+  <td id="DURHAM_NONE" headers="no_category DURHAM">2</td>
+
+              
+          
+          <tr>
+              
+
+              
+                  <th scope="row" id="FYLDE" >
+                      Fylde
+                  </th>               
+                  
+  <td class="border-left" id="FYLDE_VCO" headers="FYLDE change_of_ownership volume">0</td>
+  <td id="FYLDE_VRU" headers="volume register_update FYLDE">0</td>
+  <td id="FYLDE_VCO_ADR" headers="volume change_of_ownership_actionable_deferral_requisition FYLDE">0</td>
+  <td id="FYLDE_VRU_ADR" headers="volume register_update_actionable_deferral_requisition FYLDE">0</td>
+  <td class="border-right" id="FYLDE_V_ADN" headers="volume actionable_deferral_objection FYLDE">0</td>
+
+  <td class="border-left" id="FYLDE_SRU" headers="executive standard FYLDE">0</td>
+  <td id="FYLDE_CRU" headers="executive complex FYLDE">0</td>
+  <td id="FYLDE_E_ADR" headers="FYLDE actionable_deferral_requisition executive">0</td>
+  <td class="border-right" id="FYLDE_E_ADN" headers="executive actionable_deferral_objection_notice FYLDE">0</td>
+
+  <td id="FYLDE_OFF_TOTAL" headers="allocated_caseworkers FYLDE">0</td>
+  <td id="FYLDE_NONE" headers="no_category FYLDE">1</td>
+
+              
+          
+          <tr>
+              
+
+              
+                  <th scope="row" id="GLOUCESTER" >
+                      Gloucester
+                  </th>               
+                  
+  <td class="border-left" id="GLOUCESTER_VCO" headers="GLOUCESTER change_of_ownership volume">1</td>
+  <td id="GLOUCESTER_VRU" headers="volume register_update GLOUCESTER">0</td>
+  <td id="GLOUCESTER_VCO_ADR" headers="volume change_of_ownership_actionable_deferral_requisition GLOUCESTER">0</td>
+  <td id="GLOUCESTER_VRU_ADR" headers="volume register_update_actionable_deferral_requisition GLOUCESTER">0</td>
+  <td class="border-right" id="GLOUCESTER_V_ADN" headers="volume actionable_deferral_objection GLOUCESTER">0</td>
+
+  <td class="border-left" id="GLOUCESTER_SRU" headers="executive standard GLOUCESTER">0</td>
+  <td id="GLOUCESTER_CRU" headers="executive complex GLOUCESTER">0</td>
+  <td id="GLOUCESTER_E_ADR" headers="GLOUCESTER actionable_deferral_requisition executive">0</td>
+  <td class="border-right" id="GLOUCESTER_E_ADN" headers="executive actionable_deferral_objection_notice GLOUCESTER">0</td>
+
+  <td id="GLOUCESTER_OFF_TOTAL" headers="allocated_caseworkers GLOUCESTER">1</td>
+  <td id="GLOUCESTER_NONE" headers="no_category GLOUCESTER">56</td>
+
+              
+          
+          <tr>
+              
+
+              
+                  <th scope="row" id="Head_Office/DDaT" >
+                      Head Office/DDaT
+                  </th>               
+                  
+  <td class="border-left" id="Head_Office/DDaT_VCO" headers="Head_Office/DDaT change_of_ownership volume">0</td>
+  <td id="Head_Office/DDaT_VRU" headers="volume register_update Head_Office/DDaT">0</td>
+  <td id="Head_Office/DDaT_VCO_ADR" headers="volume change_of_ownership_actionable_deferral_requisition Head_Office/DDaT">0</td>
+  <td id="Head_Office/DDaT_VRU_ADR" headers="volume register_update_actionable_deferral_requisition Head_Office/DDaT">0</td>
+  <td class="border-right" id="Head_Office/DDaT_V_ADN" headers="volume actionable_deferral_objection Head_Office/DDaT">0</td>
+
+  <td class="border-left" id="Head_Office/DDaT_SRU" headers="executive standard Head_Office/DDaT">0</td>
+  <td id="Head_Office/DDaT_CRU" headers="executive complex Head_Office/DDaT">0</td>
+  <td id="Head_Office/DDaT_E_ADR" headers="Head_Office/DDaT actionable_deferral_requisition executive">0</td>
+  <td class="border-right" id="Head_Office/DDaT_E_ADN" headers="executive actionable_deferral_objection_notice Head_Office/DDaT">0</td>
+
+  <td id="Head_Office/DDaT_OFF_TOTAL" headers="allocated_caseworkers Head_Office/DDaT">0</td>
+  <td id="Head_Office/DDaT_NONE" headers="no_category Head_Office/DDaT">0</td>
+
+              
+          
+          <tr>
+              
+
+              
+                  <th scope="row" id="HULL" >
+                      Hull
+                  </th>               
+                  
+  <td class="border-left" id="HULL_VCO" headers="HULL change_of_ownership volume">0</td>
+  <td id="HULL_VRU" headers="volume register_update HULL">0</td>
+  <td id="HULL_VCO_ADR" headers="volume change_of_ownership_actionable_deferral_requisition HULL">0</td>
+  <td id="HULL_VRU_ADR" headers="volume register_update_actionable_deferral_requisition HULL">0</td>
+  <td class="border-right" id="HULL_V_ADN" headers="volume actionable_deferral_objection HULL">0</td>
+
+  <td class="border-left" id="HULL_SRU" headers="executive standard HULL">0</td>
+  <td id="HULL_CRU" headers="executive complex HULL">0</td>
+  <td id="HULL_E_ADR" headers="HULL actionable_deferral_requisition executive">0</td>
+  <td class="border-right" id="HULL_E_ADN" headers="executive actionable_deferral_objection_notice HULL">0</td>
+
+  <td id="HULL_OFF_TOTAL" headers="allocated_caseworkers HULL">0</td>
+  <td id="HULL_NONE" headers="no_category HULL">23</td>
+
+              
+          
+          <tr>
+              
+
+              
+                  <th scope="row" id="LEICESTER" >
+                      Leicester
+                  </th>               
+                  
+  <td class="border-left" id="LEICESTER_VCO" headers="LEICESTER change_of_ownership volume">0</td>
+  <td id="LEICESTER_VRU" headers="volume register_update LEICESTER">0</td>
+  <td id="LEICESTER_VCO_ADR" headers="volume change_of_ownership_actionable_deferral_requisition LEICESTER">0</td>
+  <td id="LEICESTER_VRU_ADR" headers="volume register_update_actionable_deferral_requisition LEICESTER">0</td>
+  <td class="border-right" id="LEICESTER_V_ADN" headers="volume actionable_deferral_objection LEICESTER">0</td>
+
+  <td class="border-left" id="LEICESTER_SRU" headers="executive standard LEICESTER">0</td>
+  <td id="LEICESTER_CRU" headers="executive complex LEICESTER">0</td>
+  <td id="LEICESTER_E_ADR" headers="LEICESTER actionable_deferral_requisition executive">0</td>
+  <td class="border-right" id="LEICESTER_E_ADN" headers="executive actionable_deferral_objection_notice LEICESTER">0</td>
+
+  <td id="LEICESTER_OFF_TOTAL" headers="allocated_caseworkers LEICESTER">0</td>
+  <td id="LEICESTER_NONE" headers="no_category LEICESTER">1</td>
+
+              
+          
+          <tr>
+              
+
+              
+                  <th scope="row" id="NOTTINGHAM" >
+                      Nottingham
+                  </th>               
+                  
+  <td class="border-left" id="NOTTINGHAM_VCO" headers="NOTTINGHAM change_of_ownership volume">0</td>
+  <td id="NOTTINGHAM_VRU" headers="volume register_update NOTTINGHAM">0</td>
+  <td id="NOTTINGHAM_VCO_ADR" headers="volume change_of_ownership_actionable_deferral_requisition NOTTINGHAM">0</td>
+  <td id="NOTTINGHAM_VRU_ADR" headers="volume register_update_actionable_deferral_requisition NOTTINGHAM">0</td>
+  <td class="border-right" id="NOTTINGHAM_V_ADN" headers="volume actionable_deferral_objection NOTTINGHAM">0</td>
+
+  <td class="border-left" id="NOTTINGHAM_SRU" headers="executive standard NOTTINGHAM">0</td>
+  <td id="NOTTINGHAM_CRU" headers="executive complex NOTTINGHAM">0</td>
+  <td id="NOTTINGHAM_E_ADR" headers="NOTTINGHAM actionable_deferral_requisition executive">0</td>
+  <td class="border-right" id="NOTTINGHAM_E_ADN" headers="executive actionable_deferral_objection_notice NOTTINGHAM">0</td>
+
+  <td id="NOTTINGHAM_OFF_TOTAL" headers="allocated_caseworkers NOTTINGHAM">0</td>
+  <td id="NOTTINGHAM_NONE" headers="no_category NOTTINGHAM">1</td>
+
+              
+          
+          <tr>
+              
+
+              
+                  <th scope="row" id="PETERBOROUGH" >
+                      Peterborough
+                  </th>               
+                  
+  <td class="border-left" id="PETERBOROUGH_VCO" headers="PETERBOROUGH change_of_ownership volume">0</td>
+  <td id="PETERBOROUGH_VRU" headers="volume register_update PETERBOROUGH">0</td>
+  <td id="PETERBOROUGH_VCO_ADR" headers="volume change_of_ownership_actionable_deferral_requisition PETERBOROUGH">0</td>
+  <td id="PETERBOROUGH_VRU_ADR" headers="volume register_update_actionable_deferral_requisition PETERBOROUGH">0</td>
+  <td class="border-right" id="PETERBOROUGH_V_ADN" headers="volume actionable_deferral_objection PETERBOROUGH">0</td>
+
+  <td class="border-left" id="PETERBOROUGH_SRU" headers="executive standard PETERBOROUGH">0</td>
+  <td id="PETERBOROUGH_CRU" headers="executive complex PETERBOROUGH">0</td>
+  <td id="PETERBOROUGH_E_ADR" headers="PETERBOROUGH actionable_deferral_requisition executive">0</td>
+  <td class="border-right" id="PETERBOROUGH_E_ADN" headers="executive actionable_deferral_objection_notice PETERBOROUGH">0</td>
+
+  <td id="PETERBOROUGH_OFF_TOTAL" headers="allocated_caseworkers PETERBOROUGH">0</td>
+  <td id="PETERBOROUGH_NONE" headers="no_category PETERBOROUGH">74</td>
+
+              
+          
+          <tr>
+              
+
+              
+                  <th scope="row" id="PLYMOUTH" >
+                      Plymouth
+                  </th>               
+                  
+  <td class="border-left" id="PLYMOUTH_VCO" headers="PLYMOUTH change_of_ownership volume">1</td>
+  <td id="PLYMOUTH_VRU" headers="volume register_update PLYMOUTH">0</td>
+  <td id="PLYMOUTH_VCO_ADR" headers="volume change_of_ownership_actionable_deferral_requisition PLYMOUTH">0</td>
+  <td id="PLYMOUTH_VRU_ADR" headers="volume register_update_actionable_deferral_requisition PLYMOUTH">0</td>
+  <td class="border-right" id="PLYMOUTH_V_ADN" headers="volume actionable_deferral_objection PLYMOUTH">0</td>
+
+  <td class="border-left" id="PLYMOUTH_SRU" headers="executive standard PLYMOUTH">0</td>
+  <td id="PLYMOUTH_CRU" headers="executive complex PLYMOUTH">0</td>
+  <td id="PLYMOUTH_E_ADR" headers="PLYMOUTH actionable_deferral_requisition executive">0</td>
+  <td class="border-right" id="PLYMOUTH_E_ADN" headers="executive actionable_deferral_objection_notice PLYMOUTH">0</td>
+
+  <td id="PLYMOUTH_OFF_TOTAL" headers="allocated_caseworkers PLYMOUTH">1</td>
+  <td id="PLYMOUTH_NONE" headers="no_category PLYMOUTH">6</td>
+
+              
+          
+          <tr>
+              
+
+              
+                  <th scope="row" id="SWANSEA" >
+                      Swansea
+                  </th>               
+                  
+  <td class="border-left" id="SWANSEA_VCO" headers="SWANSEA change_of_ownership volume">0</td>
+  <td id="SWANSEA_VRU" headers="volume register_update SWANSEA">0</td>
+  <td id="SWANSEA_VCO_ADR" headers="volume change_of_ownership_actionable_deferral_requisition SWANSEA">0</td>
+  <td id="SWANSEA_VRU_ADR" headers="volume register_update_actionable_deferral_requisition SWANSEA">0</td>
+  <td class="border-right" id="SWANSEA_V_ADN" headers="volume actionable_deferral_objection SWANSEA">0</td>
+
+  <td class="border-left" id="SWANSEA_SRU" headers="executive standard SWANSEA">0</td>
+  <td id="SWANSEA_CRU" headers="executive complex SWANSEA">0</td>
+  <td id="SWANSEA_E_ADR" headers="SWANSEA actionable_deferral_requisition executive">0</td>
+  <td class="border-right" id="SWANSEA_E_ADN" headers="executive actionable_deferral_objection_notice SWANSEA">0</td>
+
+  <td id="SWANSEA_OFF_TOTAL" headers="allocated_caseworkers SWANSEA">0</td>
+  <td id="SWANSEA_NONE" headers="no_category SWANSEA">27</td>
+
+              
+          
+          <tr>
+              
+
+              
+                  <th scope="row" id="TELFORD" >
+                      Telford
+                  </th>               
+                  
+  <td class="border-left" id="TELFORD_VCO" headers="TELFORD change_of_ownership volume">0</td>
+  <td id="TELFORD_VRU" headers="volume register_update TELFORD">0</td>
+  <td id="TELFORD_VCO_ADR" headers="volume change_of_ownership_actionable_deferral_requisition TELFORD">0</td>
+  <td id="TELFORD_VRU_ADR" headers="volume register_update_actionable_deferral_requisition TELFORD">0</td>
+  <td class="border-right" id="TELFORD_V_ADN" headers="volume actionable_deferral_objection TELFORD">0</td>
+
+  <td class="border-left" id="TELFORD_SRU" headers="executive standard TELFORD">0</td>
+  <td id="TELFORD_CRU" headers="executive complex TELFORD">0</td>
+  <td id="TELFORD_E_ADR" headers="TELFORD actionable_deferral_requisition executive">0</td>
+  <td class="border-right" id="TELFORD_E_ADN" headers="executive actionable_deferral_objection_notice TELFORD">0</td>
+
+  <td id="TELFORD_OFF_TOTAL" headers="allocated_caseworkers TELFORD">0</td>
+  <td id="TELFORD_NONE" headers="no_category TELFORD">38</td>
+
+              
+          
+          <tr>
+              
+
+              
+                  <th scope="row" id="WEYMOUTH" >
+                      Weymouth
+                  </th>               
+                  
+  <td class="border-left" id="WEYMOUTH_VCO" headers="WEYMOUTH change_of_ownership volume">0</td>
+  <td id="WEYMOUTH_VRU" headers="volume register_update WEYMOUTH">0</td>
+  <td id="WEYMOUTH_VCO_ADR" headers="volume change_of_ownership_actionable_deferral_requisition WEYMOUTH">0</td>
+  <td id="WEYMOUTH_VRU_ADR" headers="volume register_update_actionable_deferral_requisition WEYMOUTH">0</td>
+  <td class="border-right" id="WEYMOUTH_V_ADN" headers="volume actionable_deferral_objection WEYMOUTH">0</td>
+
+  <td class="border-left" id="WEYMOUTH_SRU" headers="executive standard WEYMOUTH">0</td>
+  <td id="WEYMOUTH_CRU" headers="executive complex WEYMOUTH">0</td>
+  <td id="WEYMOUTH_E_ADR" headers="WEYMOUTH actionable_deferral_requisition executive">0</td>
+  <td class="border-right" id="WEYMOUTH_E_ADN" headers="executive actionable_deferral_objection_notice WEYMOUTH">0</td>
+
+  <td id="WEYMOUTH_OFF_TOTAL" headers="allocated_caseworkers WEYMOUTH">0</td>
+  <td id="WEYMOUTH_NONE" headers="no_category WEYMOUTH">15</td>
+
+              
+          
+          <tr>
+              
+
+              
+                  <th scope="row" rowspan="2" class="office-heading" id=Total>
+                      Total
+                  </th>
+                  
+  <td class="border-left" id="Total_VCO" headers="Total change_of_ownership volume">2</td>
+  <td id="Total_VRU" headers="volume register_update Total">0</td>
+  <td id="Total_VCO_ADR" headers="volume change_of_ownership_actionable_deferral_requisition Total">0</td>
+  <td id="Total_VRU_ADR" headers="volume register_update_actionable_deferral_requisition Total">0</td>
+  <td class="border-right" id="Total_V_ADN" headers="volume actionable_deferral_objection Total">0</td>
+
+  <td class="border-left" id="Total_SRU" headers="executive standard Total">0</td>
+  <td id="Total_CRU" headers="executive complex Total">0</td>
+  <td id="Total_E_ADR" headers="Total actionable_deferral_requisition executive">0</td>
+  <td class="border-right" id="Total_E_ADN" headers="executive actionable_deferral_objection_notice Total">0</td>
+
+  <td id="Total_OFF_TOTAL" headers="allocated_caseworkers Total">2</td>
+  <td id="Total_NONE" headers="no_category Total">273</td>
+
+                  
+  
+  
+  <tr>
+      <td class="grand-total" id="total_volume" colspan="5" 
+      headers="Total change_of_ownership change_of_ownership_actionable_deferral_requisition register_update 
+      register_update_actionable_deferral_requisition actionable_deferral_objection volume">
+      2
+      </td>
+      <td class="grand-total" id="total_executive" colspan="4"
+          headers="Total actionable_deferral_objection_notice actionable_deferral_requisition 
+          complex executive standard">0
+          </td>
+      <td class="grand-total" colspan="2" headers="Total allocated_caseworkers no_category"></td>
+  </tr>
+
+              
+          
+
+  </tbody>
+  </table>
+
+
+          </div>
+      
+          <div id="id_team_panel" class="govuk-tabs__panel">
+              
+<div class="today-panel grey-text" id="id_team_today_panel">
+  
+
+  
+
+  
+
+  
+      
+  <div class="grid-row">
+      <div class="column-third padding-fix">
+          
+      
+<button class="title-bar__day-ind-button title-bar__day-ind-button-yesterday" title="Team yesterday figures">
+  <span class="title-bar__day-ind title-bar__yesterday-ind">
+      yesterday
+  </span>
+</button>
+
+  
+      </div>
+      <div class="column-third">
+          <div class="title-bar">
+              <h2 class="title-bar__title" id="id_team_tab_header">
+                  WIRRAL TEAM
+                  <br>
+                  today
+              </h2>
+              <!-- <div class="title-bar__time spacing-top-third spacing-bottom-single" id="team_localTime"></div> -->
+          </div>
+      </div>
+      <div class="column-third">
+          
+      
+  
+  
+  <div class="title-bar__select">
+      <label class="title-bar__label" for="id_team_select_office">Change office</label>
+      <select class="title-bar__select-box" name="select_office" id="id_team_select_office">
+          
+      
+          <option value="BIRKENHEAD" selected="selected">BIRKENHEAD</option>
+      
+          <option value="COVENTRY" >COVENTRY</option>
+      
+          <option value="CROYDON" >CROYDON</option>
+      
+          <option value="DURHAM" >DURHAM</option>
+      
+          <option value="FYLDE" >FYLDE</option>
+      
+          <option value="GLOUCESTER" >GLOUCESTER</option>
+      
+          <option value="HULL" >HULL</option>
+      
+          <option value="LEICESTER" >LEICESTER</option>
+      
+          <option value="NOTTINGHAM" >NOTTINGHAM</option>
+      
+          <option value="PETERBOROUGH" >PETERBOROUGH</option>
+      
+          <option value="PLYMOUTH" >PLYMOUTH</option>
+      
+          <option value="SWANSEA" >SWANSEA</option>
+      
+          <option value="TELFORD" >TELFORD</option>
+      
+          <option value="WEYMOUTH" >WEYMOUTH</option>
+      
+  
+      </select>
+  </div>
+
+
+      
+  
+  
+  <div class="title-bar__select">
+      <label class="title-bar__label" for="id_team_select_team">Change team</label>
+      <select class="title-bar__select-box" name="select_team" id="id_team_select_team">
+          
+      <option value="OFFICE TOTAL" >
+          OFFICE TOTAL
+      </option>
+      
+          <option value="WIRRAL TEAM" selected="selected">
+              
+                  WIRRAL TEAM
+              
+          </option>
+      
+  
+      </select>
+  </div>
+
+
+  
+      </div>
+  </div>
+
+  
+
+  <div class="grid-row grid-seperator">
+      <div class="column-two-fifths" data-actioned-today>
+                  <div class="mi-panel mi-panel--right" data-mi-panel>                    <div class="mi-panel__container  ">                    <div class="mi-panel__text mi-panel__text--large" style="height:auto; min-height: 82px;">                    <h3 class="mi-panel__title">Total actioned</h3>                        <div class="mi-panel__help-text">completed (marked off, cancelled) and deferred (requisition, discharge only, prior pending, objection notice, partial reply, extension of time, reminder issued)</div>            </div>                        <div id=team_today_actioned class="mi-panel__number mi-panel__number--large">0</div>                            <button class="mi-panel__handle mi-panel__handle--breakdown" id="id_expand_team_today_actioned">+</button>                </div>                        <div class="mi-panel__content">                <div class="mi-panel__subheading">Volume</div>    <table class="mi-panel__table">        <caption>WIRRAL TEAM - Today total actioned - Volume</caption>        <tbody class="mi-panel__table-body">                <tr >        <td class="mi-panel__value" id="team_today_actioned_vco_value" headers="team_today_actioned_vco">            0        </td>                <th scope="row" class="mi-panel__key" id="team_today_actioned_vco">                        <abbr>                Change of Ownership            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_today_actioned_vru_value" headers="team_today_actioned_vru">            0        </td>                <th scope="row" class="mi-panel__key" id="team_today_actioned_vru">                        <abbr>                Register Update            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_today_actioned_vco_adr_value" headers="team_today_actioned_vco_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="team_today_actioned_vco_adr">                        <abbr>                Change of Ownership Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_today_actioned_vru_adr_value" headers="team_today_actioned_vru_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="team_today_actioned_vru_adr">                        <abbr>                Register Update Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_today_actioned_v_adn_value" headers="team_today_actioned_v_adn">            0        </td>                <th scope="row" class="mi-panel__key" id="team_today_actioned_v_adn">                        <abbr>                Actionable Deferral: Objection Notice            </abbr>                </th>        </tr>            </tbody>    </table>    <div class="mi-panel__subheading">Executive Register Update</div>    <table class="mi-panel__table">        <caption>WIRRAL TEAM - Today total actioned - Executive Register Update</caption>        <tbody class="mi-panel__table-body">                <tr >        <td class="mi-panel__value" id="team_today_actioned_sru_value" headers="team_today_actioned_sru">            0        </td>                <th scope="row" class="mi-panel__key" id="team_today_actioned_sru">                        <abbr>                Standard            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_today_actioned_cru_value" headers="team_today_actioned_cru">            0        </td>                <th scope="row" class="mi-panel__key" id="team_today_actioned_cru">                        <abbr>                Complex            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_today_actioned_e_adr_value" headers="team_today_actioned_e_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="team_today_actioned_e_adr">                        <abbr>                Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_today_actioned_e_adn_value" headers="team_today_actioned_e_adn">            0        </td>                <th scope="row" class="mi-panel__key" id="team_today_actioned_e_adn">                        <abbr>                Actionable Deferral: Objection Notice            </abbr>                </th>        </tr>            </tbody>    </table>            </div>            </div>    
+      </div>
+      <div class="column-fifth" data-completed-today>
+                  <div class="mi-panel mi-panel--right" data-mi-panel>                    <div class="mi-panel__container mi-panel__equals-op ">                    <div class="mi-panel__text mi-panel__text--small" style="height:auto; min-height: 82px;">                    <h3 class="mi-panel__title">Total completed</h3>                        <div class="mi-panel__help-text">marked off, cancelled</div>            </div>                        <div id=team_today_completed class="mi-panel__number mi-panel__number--small">0</div>                            <button class="mi-panel__handle mi-panel__handle--breakdown" id="id_expand_team_today_completed">+</button>                </div>                        <div class="mi-panel__content">                <div class="mi-panel__subheading">Volume</div>    <table class="mi-panel__table">        <caption>WIRRAL TEAM - Today total completed - Volume</caption>        <tbody class="mi-panel__table-body">                <tr >        <td class="mi-panel__value" id="team_today_completed_vco_value" headers="team_today_completed_vco">            0        </td>                <th scope="row" class="mi-panel__key" id="team_today_completed_vco">                        <abbr>                Change of Ownership            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_today_completed_vru_value" headers="team_today_completed_vru">            0        </td>                <th scope="row" class="mi-panel__key" id="team_today_completed_vru">                        <abbr>                Register Update            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_today_completed_vco_adr_value" headers="team_today_completed_vco_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="team_today_completed_vco_adr">                        <abbr>                Change of Ownership Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_today_completed_vru_adr_value" headers="team_today_completed_vru_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="team_today_completed_vru_adr">                        <abbr>                Register Update Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_today_completed_v_adn_value" headers="team_today_completed_v_adn">            0        </td>                <th scope="row" class="mi-panel__key" id="team_today_completed_v_adn">                        <abbr>                Actionable Deferral: Objection Notice            </abbr>                </th>        </tr>            </tbody>    </table>    <div class="mi-panel__subheading">Executive Register Update</div>    <table class="mi-panel__table">        <caption>WIRRAL TEAM - Today total completed - Executive Register Update</caption>        <tbody class="mi-panel__table-body">                <tr >        <td class="mi-panel__value" id="team_today_completed_sru_value" headers="team_today_completed_sru">            0        </td>                <th scope="row" class="mi-panel__key" id="team_today_completed_sru">                        <abbr>                Standard            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_today_completed_cru_value" headers="team_today_completed_cru">            0        </td>                <th scope="row" class="mi-panel__key" id="team_today_completed_cru">                        <abbr>                Complex            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_today_completed_e_adr_value" headers="team_today_completed_e_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="team_today_completed_e_adr">                        <abbr>                Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_today_completed_e_adn_value" headers="team_today_completed_e_adn">            0        </td>                <th scope="row" class="mi-panel__key" id="team_today_completed_e_adn">                        <abbr>                Actionable Deferral: Objection Notice            </abbr>                </th>        </tr>            </tbody>    </table>            </div>            </div>    
+      </div>
+      <div class="column-fifth" data-deferred-today>
+                  <div class="mi-panel mi-panel--right" data-mi-panel>                    <div class="mi-panel__container mi-panel__plus-op ">                    <div class="mi-panel__text mi-panel__text--small" style="height:auto; min-height: 82px;">                    <h3 class="mi-panel__title">Total deferred</h3>                        <div class="mi-panel__help-text">requisition, discharge only, prior pending, objection notice, partial reply, extension of time, reminder issued</div>            </div>                        <div id=team_today_deferred class="mi-panel__number mi-panel__number--small">0</div>                            <button class="mi-panel__handle mi-panel__handle--breakdown" id="id_expand_team_today_deferred">+</button>                </div>                        <div class="mi-panel__content">                <div class="mi-panel__subheading">Volume</div>    <table class="mi-panel__table">        <caption>WIRRAL TEAM - Today total deferred - Volume</caption>        <tbody class="mi-panel__table-body">                <tr >        <td class="mi-panel__value" id="team_today_deferred_vco_value" headers="team_today_deferred_vco">            0        </td>                <th scope="row" class="mi-panel__key" id="team_today_deferred_vco">                        <abbr>                Change of Ownership            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_today_deferred_vru_value" headers="team_today_deferred_vru">            0        </td>                <th scope="row" class="mi-panel__key" id="team_today_deferred_vru">                        <abbr>                Register Update            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_today_deferred_vco_adr_value" headers="team_today_deferred_vco_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="team_today_deferred_vco_adr">                        <abbr>                Change of Ownership Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_today_deferred_vru_adr_value" headers="team_today_deferred_vru_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="team_today_deferred_vru_adr">                        <abbr>                Register Update Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_today_deferred_v_adn_value" headers="team_today_deferred_v_adn">            0        </td>                <th scope="row" class="mi-panel__key" id="team_today_deferred_v_adn">                        <abbr>                Actionable Deferral: Objection Notice            </abbr>                </th>        </tr>            </tbody>    </table>    <div class="mi-panel__subheading">Executive Register Update</div>    <table class="mi-panel__table">        <caption>WIRRAL TEAM - Today total deferred - Executive Register Update</caption>        <tbody class="mi-panel__table-body">                <tr >        <td class="mi-panel__value" id="team_today_deferred_sru_value" headers="team_today_deferred_sru">            0        </td>                <th scope="row" class="mi-panel__key" id="team_today_deferred_sru">                        <abbr>                Standard            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_today_deferred_cru_value" headers="team_today_deferred_cru">            0        </td>                <th scope="row" class="mi-panel__key" id="team_today_deferred_cru">                        <abbr>                Complex            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_today_deferred_e_adr_value" headers="team_today_deferred_e_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="team_today_deferred_e_adr">                        <abbr>                Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_today_deferred_e_adn_value" headers="team_today_deferred_e_adn">            0        </td>                <th scope="row" class="mi-panel__key" id="team_today_deferred_e_adn">                        <abbr>                Actionable Deferral: Objection Notice            </abbr>                </th>        </tr>            </tbody>    </table>            </div>            </div>    
+      </div>
+      <div class="column-fifth" data-returned-today>
+                  <div class="mi-panel mi-panel--right" data-mi-panel>                    <div class="mi-panel__container  mi-panel__container--border-left">                    <div class="mi-panel__text mi-panel__text--small" style="height:auto; min-height: 82px;">                    <h3 class="mi-panel__title">Total returned</h3>                        <div class="mi-panel__help-text">returned to ESRV</div>            </div>                        <div id=team_today_returned class="mi-panel__number mi-panel__number--small">0</div>                            <button class="mi-panel__handle mi-panel__handle--breakdown" id="id_expand_team_today_returned">+</button>                </div>                        <div class="mi-panel__content">                <div class="mi-panel__subheading">Volume</div>    <table class="mi-panel__table">        <caption>WIRRAL TEAM - Today total returned - Volume</caption>        <tbody class="mi-panel__table-body">                <tr >        <td class="mi-panel__value" id="team_today_returned_vco_value" headers="team_today_returned_vco">            0        </td>                <th scope="row" class="mi-panel__key" id="team_today_returned_vco">                        <abbr>                Change of Ownership            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_today_returned_vru_value" headers="team_today_returned_vru">            0        </td>                <th scope="row" class="mi-panel__key" id="team_today_returned_vru">                        <abbr>                Register Update            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_today_returned_vco_adr_value" headers="team_today_returned_vco_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="team_today_returned_vco_adr">                        <abbr>                Change of Ownership Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_today_returned_vru_adr_value" headers="team_today_returned_vru_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="team_today_returned_vru_adr">                        <abbr>                Register Update Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_today_returned_v_adn_value" headers="team_today_returned_v_adn">            0        </td>                <th scope="row" class="mi-panel__key" id="team_today_returned_v_adn">                        <abbr>                Actionable Deferral: Objection Notice            </abbr>                </th>        </tr>            </tbody>    </table>    <div class="mi-panel__subheading">Executive Register Update</div>    <table class="mi-panel__table">        <caption>WIRRAL TEAM - Today total returned - Executive Register Update</caption>        <tbody class="mi-panel__table-body">                <tr >        <td class="mi-panel__value" id="team_today_returned_sru_value" headers="team_today_returned_sru">            0        </td>                <th scope="row" class="mi-panel__key" id="team_today_returned_sru">                        <abbr>                Standard            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_today_returned_cru_value" headers="team_today_returned_cru">            0        </td>                <th scope="row" class="mi-panel__key" id="team_today_returned_cru">                        <abbr>                Complex            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_today_returned_e_adr_value" headers="team_today_returned_e_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="team_today_returned_e_adr">                        <abbr>                Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_today_returned_e_adn_value" headers="team_today_returned_e_adn">            0        </td>                <th scope="row" class="mi-panel__key" id="team_today_returned_e_adn">                        <abbr>                Actionable Deferral: Objection Notice            </abbr>                </th>        </tr>            </tbody>    </table>            </div>            </div>    
+      </div>
+  </div>
+
+  <div class="grid-row grid-seperator">
+      <div class="column-two-fifths" data-allocated-now>
+                  <div class="mi-panel mi-panel--right" data-mi-panel>                    <div class="mi-panel__container  ">                    <div class="mi-panel__text mi-panel__text--large" style="height:auto; min-height: 82px;">                    <h3 class="mi-panel__title">Allocated caseworkers now</h3>                        <div class="mi-panel__help-text">caseworkers logged into Workflow and assigned to a category of work</div>            </div>                        <div id=team_today_alloc_caseworkers class="mi-panel__number mi-panel__number--large">0</div>                            <button class="mi-panel__handle mi-panel__handle--breakdown" id="id_expand_team_today_alloc_caseworkers">+</button>                </div>                        <div class="mi-panel__content">                <div class="mi-panel__subheading">Volume</div>    <table class="mi-panel__table">        <caption>WIRRAL TEAM - Today allocated caseworkers now - Volume</caption>        <tbody class="mi-panel__table-body">                <tr >        <td class="mi-panel__value" id="team_today_allocated_vco_value" headers="team_today_allocated_vco">            0        </td>                <th scope="row" class="mi-panel__key" id="team_today_allocated_vco">                        <abbr>                Change of Ownership            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_today_allocated_vru_value" headers="team_today_allocated_vru">            0        </td>                <th scope="row" class="mi-panel__key" id="team_today_allocated_vru">                        <abbr>                Register Update            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_today_allocated_vco_adr_value" headers="team_today_allocated_vco_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="team_today_allocated_vco_adr">                        <abbr>                Change of Ownership Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_today_allocated_vru_adr_value" headers="team_today_allocated_vru_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="team_today_allocated_vru_adr">                        <abbr>                Register Update Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_today_allocated_v_adn_value" headers="team_today_allocated_v_adn">            0        </td>                <th scope="row" class="mi-panel__key" id="team_today_allocated_v_adn">                        <abbr>                Actionable Deferral: Objection Notice            </abbr>                </th>        </tr>            </tbody>    </table>    <div class="mi-panel__subheading">Executive Register Update</div>    <table class="mi-panel__table">        <caption>WIRRAL TEAM - Today allocated caseworkers now - Executive Register Update</caption>        <tbody class="mi-panel__table-body">                <tr >        <td class="mi-panel__value" id="team_today_allocated_sru_value" headers="team_today_allocated_sru">            0        </td>                <th scope="row" class="mi-panel__key" id="team_today_allocated_sru">                        <abbr>                Standard            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_today_allocated_cru_value" headers="team_today_allocated_cru">            0        </td>                <th scope="row" class="mi-panel__key" id="team_today_allocated_cru">                        <abbr>                Complex            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_today_allocated_e_adr_value" headers="team_today_allocated_e_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="team_today_allocated_e_adr">                        <abbr>                Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_today_allocated_e_adn_value" headers="team_today_allocated_e_adn">            0        </td>                <th scope="row" class="mi-panel__key" id="team_today_allocated_e_adn">                        <abbr>                Actionable Deferral: Objection Notice            </abbr>                </th>        </tr>            </tbody>    </table>            </div>            </div>    
+      </div>
+      <div class="column-three-fifths" data-no-category>
+                  <div class="mi-panel mi-panel--left" data-mi-panel>                    <div class="mi-panel__container  ">                    <div class="mi-panel__text mi-panel__text--small" style="height:auto; min-height: 82px;">                    <h3 class="mi-panel__title">No category</h3>                        <div class="mi-panel__help-text">caseworkers assigned to 'no category'</div>            </div>                        <div id=team_today_no_category class="mi-panel__number mi-panel__number--small">1</div>                        </div>                        </div>    
+      </div>
+  </div>
+
+
+</div>
+<div class="yesterday-panel no-tab grey-text" id="id_team_yesterday_panel">
+  
+
+  
+
+  
+      
+  <div class="grid-row">
+      <div class="column-third padding-fix">
+          
+      </div>
+      <div class="column-third">
+          <div class="title-bar">
+              <h2 class="title-bar__title" id="id_team_yesterday_tab_header">
+                  WIRRAL TEAM
+                  <br>
+                  yesterday
+              </h2>
+              <!-- <div class="title-bar__time spacing-top-third spacing-bottom-single" id="team_yesterday_localTime"></div> -->
+          </div>
+      </div>
+      <div class="column-third">
+          
+      
+<button class="title-bar__day-ind-button title-bar__day-ind-button-today" title="Team today figures">
+  <span class="title-bar__day-ind title-bar__today-ind">
+      today
+  </span>
+</button>
+
+  
+      </div>
+  </div>
+
+  
+
+  <div class="grid-row grid-seperator">
+      <div class="column-two-fifths" data-actioned-yesterday>
+                  <div class="mi-panel mi-panel--right" data-mi-panel>                    <div class="mi-panel__container  ">                    <div class="mi-panel__text mi-panel__text--large" style="height:auto; min-height: 82px;">                    <h3 class="mi-panel__title">Total actioned</h3>                        <div class="mi-panel__help-text">completed (marked off, cancelled) and deferred (requisition, discharge only, prior pending, objection notice, partial reply, extension of time, reminder issued)</div>            </div>                        <div id=team_yesterday_actioned class="mi-panel__number mi-panel__number--large">0</div>                            <button class="mi-panel__handle mi-panel__handle--breakdown" id="id_expand_team_yesterday_actioned">+</button>                </div>                        <div class="mi-panel__content">                <div class="mi-panel__subheading">Volume</div>    <table class="mi-panel__table">        <caption>WIRRAL TEAM - Yesterday actioned - Volume</caption>        <tbody class="mi-panel__table-body">                <tr >        <td class="mi-panel__value" id="team_yesterday_actioned_vco_value" headers="team_yesterday_actioned_vco">            0        </td>                <th scope="row" class="mi-panel__key" id="team_yesterday_actioned_vco">                        <abbr>                Change of Ownership            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_yesterday_actioned_vru_value" headers="team_yesterday_actioned_vru">            0        </td>                <th scope="row" class="mi-panel__key" id="team_yesterday_actioned_vru">                        <abbr>                Register Update            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_yesterday_actioned_vco_adr_value" headers="team_yesterday_actioned_vco_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="team_yesterday_actioned_vco_adr">                        <abbr>                Change of Ownership Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_yesterday_actioned_vru_adr_value" headers="team_yesterday_actioned_vru_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="team_yesterday_actioned_vru_adr">                        <abbr>                Register Update Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_yesterday_actioned_v_adn_value" headers="team_yesterday_actioned_v_adn">            0        </td>                <th scope="row" class="mi-panel__key" id="team_yesterday_actioned_v_adn">                        <abbr>                Actionable Deferral: Objection Notice            </abbr>                </th>        </tr>            </tbody>    </table>    <div class="mi-panel__subheading">Executive Register Update</div>    <table class="mi-panel__table">        <caption>WIRRAL TEAM - Yesterday actioned - Executive Register Update</caption>        <tbody class="mi-panel__table-body">                <tr >        <td class="mi-panel__value" id="team_yesterday_actioned_sru_value" headers="team_yesterday_actioned_sru">            0        </td>                <th scope="row" class="mi-panel__key" id="team_yesterday_actioned_sru">                        <abbr>                Standard            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_yesterday_actioned_cru_value" headers="team_yesterday_actioned_cru">            0        </td>                <th scope="row" class="mi-panel__key" id="team_yesterday_actioned_cru">                        <abbr>                Complex            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_yesterday_actioned_e_adr_value" headers="team_yesterday_actioned_e_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="team_yesterday_actioned_e_adr">                        <abbr>                Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_yesterday_actioned_e_adn_value" headers="team_yesterday_actioned_e_adn">            0        </td>                <th scope="row" class="mi-panel__key" id="team_yesterday_actioned_e_adn">                        <abbr>                Actionable Deferral: Objection Notice            </abbr>                </th>        </tr>            </tbody>    </table>            </div>            </div>    
+      </div>
+      <div class="column-fifth" data-completed-yesterday>
+                  <div class="mi-panel mi-panel--right" data-mi-panel>                    <div class="mi-panel__container mi-panel__equals-op ">                    <div class="mi-panel__text mi-panel__text--small" style="height:auto; min-height: 82px;">                    <h3 class="mi-panel__title">Total completed</h3>                        <div class="mi-panel__help-text">marked off, cancelled</div>            </div>                        <div id=team_yesterday_completed class="mi-panel__number mi-panel__number--small">0</div>                            <button class="mi-panel__handle mi-panel__handle--breakdown" id="id_expand_team_yesterday_completed">+</button>                </div>                        <div class="mi-panel__content">                <div class="mi-panel__subheading">Volume</div>    <table class="mi-panel__table">        <caption>WIRRAL TEAM - Yesterday completed - Volume</caption>        <tbody class="mi-panel__table-body">                <tr >        <td class="mi-panel__value" id="team_yesterday_completed_vco_value" headers="team_yesterday_completed_vco">            0        </td>                <th scope="row" class="mi-panel__key" id="team_yesterday_completed_vco">                        <abbr>                Change of Ownership            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_yesterday_completed_vru_value" headers="team_yesterday_completed_vru">            0        </td>                <th scope="row" class="mi-panel__key" id="team_yesterday_completed_vru">                        <abbr>                Register Update            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_yesterday_completed_vco_adr_value" headers="team_yesterday_completed_vco_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="team_yesterday_completed_vco_adr">                        <abbr>                Change of Ownership Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_yesterday_completed_vru_adr_value" headers="team_yesterday_completed_vru_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="team_yesterday_completed_vru_adr">                        <abbr>                Register Update Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_yesterday_completed_v_adn_value" headers="team_yesterday_completed_v_adn">            0        </td>                <th scope="row" class="mi-panel__key" id="team_yesterday_completed_v_adn">                        <abbr>                Actionable Deferral: Objection Notice            </abbr>                </th>        </tr>            </tbody>    </table>    <div class="mi-panel__subheading">Executive Register Update</div>    <table class="mi-panel__table">        <caption>WIRRAL TEAM - Yesterday completed - Executive Register Update</caption>        <tbody class="mi-panel__table-body">                <tr >        <td class="mi-panel__value" id="team_yesterday_completed_sru_value" headers="team_yesterday_completed_sru">            0        </td>                <th scope="row" class="mi-panel__key" id="team_yesterday_completed_sru">                        <abbr>                Standard            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_yesterday_completed_cru_value" headers="team_yesterday_completed_cru">            0        </td>                <th scope="row" class="mi-panel__key" id="team_yesterday_completed_cru">                        <abbr>                Complex            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_yesterday_completed_e_adr_value" headers="team_yesterday_completed_e_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="team_yesterday_completed_e_adr">                        <abbr>                Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_yesterday_completed_e_adn_value" headers="team_yesterday_completed_e_adn">            0        </td>                <th scope="row" class="mi-panel__key" id="team_yesterday_completed_e_adn">                        <abbr>                Actionable Deferral: Objection Notice            </abbr>                </th>        </tr>            </tbody>    </table>            </div>            </div>    
+      </div>
+      <div class="column-fifth" data-deferred-yesterday>
+                  <div class="mi-panel mi-panel--right" data-mi-panel>                    <div class="mi-panel__container mi-panel__plus-op ">                    <div class="mi-panel__text mi-panel__text--small" style="height:auto; min-height: 82px;">                    <h3 class="mi-panel__title">Total deferred</h3>                        <div class="mi-panel__help-text">requisition, discharge only, prior pending, objection notice, partial reply, extension of time, reminder issued</div>            </div>                        <div id=team_yesterday_deferred class="mi-panel__number mi-panel__number--small">0</div>                            <button class="mi-panel__handle mi-panel__handle--breakdown" id="id_expand_team_yesterday_deferred">+</button>                </div>                        <div class="mi-panel__content">                <div class="mi-panel__subheading">Volume</div>    <table class="mi-panel__table">        <caption>WIRRAL TEAM - Yesterday deferred - Volume</caption>        <tbody class="mi-panel__table-body">                <tr >        <td class="mi-panel__value" id="team_yesterday_deferred_vco_value" headers="team_yesterday_deferred_vco">            0        </td>                <th scope="row" class="mi-panel__key" id="team_yesterday_deferred_vco">                        <abbr>                Change of Ownership            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_yesterday_deferred_vru_value" headers="team_yesterday_deferred_vru">            0        </td>                <th scope="row" class="mi-panel__key" id="team_yesterday_deferred_vru">                        <abbr>                Register Update            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_yesterday_deferred_vco_adr_value" headers="team_yesterday_deferred_vco_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="team_yesterday_deferred_vco_adr">                        <abbr>                Change of Ownership Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_yesterday_deferred_vru_adr_value" headers="team_yesterday_deferred_vru_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="team_yesterday_deferred_vru_adr">                        <abbr>                Register Update Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_yesterday_deferred_v_adn_value" headers="team_yesterday_deferred_v_adn">            0        </td>                <th scope="row" class="mi-panel__key" id="team_yesterday_deferred_v_adn">                        <abbr>                Actionable Deferral: Objection Notice            </abbr>                </th>        </tr>            </tbody>    </table>    <div class="mi-panel__subheading">Executive Register Update</div>    <table class="mi-panel__table">        <caption>WIRRAL TEAM - Yesterday deferred - Executive Register Update</caption>        <tbody class="mi-panel__table-body">                <tr >        <td class="mi-panel__value" id="team_yesterday_deferred_sru_value" headers="team_yesterday_deferred_sru">            0        </td>                <th scope="row" class="mi-panel__key" id="team_yesterday_deferred_sru">                        <abbr>                Standard            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_yesterday_deferred_cru_value" headers="team_yesterday_deferred_cru">            0        </td>                <th scope="row" class="mi-panel__key" id="team_yesterday_deferred_cru">                        <abbr>                Complex            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_yesterday_deferred_e_adr_value" headers="team_yesterday_deferred_e_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="team_yesterday_deferred_e_adr">                        <abbr>                Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_yesterday_deferred_e_adn_value" headers="team_yesterday_deferred_e_adn">            0        </td>                <th scope="row" class="mi-panel__key" id="team_yesterday_deferred_e_adn">                        <abbr>                Actionable Deferral: Objection Notice            </abbr>                </th>        </tr>            </tbody>    </table>            </div>            </div>    
+      </div>
+      <div class="column-fifth" data-returned-yesterday>
+                  <div class="mi-panel mi-panel--right" data-mi-panel>                    <div class="mi-panel__container  mi-panel__container--border-left">                    <div class="mi-panel__text mi-panel__text--small" style="height:auto; min-height: 82px;">                    <h3 class="mi-panel__title">Total returned</h3>                        <div class="mi-panel__help-text">returned to ESRV</div>            </div>                        <div id=team_yesterday_returned class="mi-panel__number mi-panel__number--small">0</div>                            <button class="mi-panel__handle mi-panel__handle--breakdown" id="id_expand_team_yesterday_returned">+</button>                </div>                        <div class="mi-panel__content">                <div class="mi-panel__subheading">Volume</div>    <table class="mi-panel__table">        <caption>WIRRAL TEAM - Yesterday returned - Volume</caption>        <tbody class="mi-panel__table-body">                <tr >        <td class="mi-panel__value" id="team_yesterday_returned_vco_value" headers="team_yesterday_returned_vco">            0        </td>                <th scope="row" class="mi-panel__key" id="team_yesterday_returned_vco">                        <abbr>                Change of Ownership            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_yesterday_returned_vru_value" headers="team_yesterday_returned_vru">            0        </td>                <th scope="row" class="mi-panel__key" id="team_yesterday_returned_vru">                        <abbr>                Register Update            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_yesterday_returned_vco_adr_value" headers="team_yesterday_returned_vco_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="team_yesterday_returned_vco_adr">                        <abbr>                Change of Ownership Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_yesterday_returned_vru_adr_value" headers="team_yesterday_returned_vru_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="team_yesterday_returned_vru_adr">                        <abbr>                Register Update Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_yesterday_returned_v_adn_value" headers="team_yesterday_returned_v_adn">            0        </td>                <th scope="row" class="mi-panel__key" id="team_yesterday_returned_v_adn">                        <abbr>                Actionable Deferral: Objection Notice            </abbr>                </th>        </tr>            </tbody>    </table>    <div class="mi-panel__subheading">Executive Register Update</div>    <table class="mi-panel__table">        <caption>WIRRAL TEAM - Yesterday returned - Executive Register Update</caption>        <tbody class="mi-panel__table-body">                <tr >        <td class="mi-panel__value" id="team_yesterday_returned_sru_value" headers="team_yesterday_returned_sru">            0        </td>                <th scope="row" class="mi-panel__key" id="team_yesterday_returned_sru">                        <abbr>                Standard            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_yesterday_returned_cru_value" headers="team_yesterday_returned_cru">            0        </td>                <th scope="row" class="mi-panel__key" id="team_yesterday_returned_cru">                        <abbr>                Complex            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_yesterday_returned_e_adr_value" headers="team_yesterday_returned_e_adr">            0        </td>                <th scope="row" class="mi-panel__key" id="team_yesterday_returned_e_adr">                        <abbr>                Actionable Deferral: Requisition            </abbr>                </th>        </tr>                    <tr >        <td class="mi-panel__value" id="team_yesterday_returned_e_adn_value" headers="team_yesterday_returned_e_adn">            0        </td>                <th scope="row" class="mi-panel__key" id="team_yesterday_returned_e_adn">                        <abbr>                Actionable Deferral: Objection Notice            </abbr>                </th>        </tr>            </tbody>    </table>            </div>            </div>    
+      </div>
+  </div>
+
+
+</div>
+
+          </div>
+      
+  </div>
+
+
+
+<script type="application/json" id="offices_json">
+{"BIRKENHEAD": ["WIRRAL TEAM"], "COVENTRY": ["EDGBASTON", "ERDINGTON"], "CROYDON": ["CROYDON", "SUTTON TEAM"], "DURHAM": ["NORTH TYNESIDE", "SOUTH TYNESIDE"], "FYLDE": ["LE1_BB"], "GLOUCESTER": ["BRISTOLS", "CHELT\u0026COTS/VOWH", "CV EXCEPTIONS", "GLOS \u0026 STROUD", "RUG/NUN \u0026 BED", "SLOUGH/WIN\u0026MAID", "SOA/WARK/N.WARK", "WARWICK/N WARKS", "WOK \u0026 BRACKNELL"], "HULL": ["BLH TEAM", "KL"], "LEICESTER": ["TEAM 1"], "NOTTINGHAM": ["WAKEFIELD TEAM"], "PETERBOROUGH": ["BRAINTREE", "BRIANS BIG TEAM", "CASTLE P", "CITY OF P\u0027BORO", "LUTON", "TENDRING"], "PLYMOUTH": ["MDEV/TEIGN TEAM", "NDEV/TORR TEAM", "NORTH SOM TEAM", "PLYM/WDEV TEAM", "SHAMS TEAM"], "SWANSEA": ["ANGLESEY", "VOG TEAM", "WREXHAM TEAM"], "TELFORD": ["GREENWICH", "SHROPSHIRE SOUTH"], "WEYMOUTH": ["CHRISTCHURCH 2", "CHRISTMASCLUB", "DUCK", "FAREHAM", "GOSPORT/HAVANT", "HART", "JENNYJOHN", "KENNET", "SARAHTEAM3", "SOURMOUTH", "THE TIGER CLUB"]}
+</script>
+{% endblock %}

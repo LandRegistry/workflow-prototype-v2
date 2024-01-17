@@ -1,0 +1,412 @@
+{% extends "layouts/wf_layout_legacy.html" %}
+
+{% set pageName="Index template example for legacy designs" %}
+
+{% block content %}
+
+<style>
+  .line-through {
+    text-decoration: line-through;
+  }
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-l">
+      <abbr>WCAG</abbr> / Accessibility templates
+    </h1>
+
+    <p class="govuk-body-s">
+      These <abbr>HTML</abbr> templates (with revised <abbr>HTML</abbr>) featuring the <abbr>HTML</abbr> to resolve recorded accessibility and <abbr>GDS</abbr> compliance issues. Grouped by page (areas).
+    </p>
+
+    <p class="govuk-body-s">
+      These updates and amends are the bare minimal to comply with accessibility requirements and <abbr>GDS</abbr> compliance which is accessibility related. (Improvements in the <abbr>HTML</abbr> and design is beyond the scope of this work).
+    </p>    
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    <h2 class="govuk-heading-s">
+      1. Manage assigned work
+    </h2>
+
+    <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-font-size-16">
+      <li><a href="./wcag-work/manage-assigned-work.html" class="govuk-link govuk-link--no-visited-state" target="_blank">manage-assigned-work</a></li>
+      <li><a href="./wcag-work/manage-assigned-work-results.html" class="govuk-link govuk-link--no-visited-state" target="_blank">manage-assigned-work-results</a></li>
+      <li></li>
+    </ol>
+
+    <details class="govuk-details  govuk-!-font-size-16">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Manage assigned work details
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p class="govuk-body-s">Issues resolved: (within the 'main' tag content area)</p>
+        <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16">
+          <li>
+            <b>Find/Search button:</b> Add class 'govuk-button' to the 'search-button' to resolve <abbr>GDS</abbr> active/keyboard states. &plus; Either add the inline style (as per <abbr>HTML</abbr> to resolve 'search-button' width styling), or add <code>!important</code> to the width <abbr>CSS</abbr> declaration for the 'search-button' class in the <abbr>CSS/SASS</abbr> file. 
+            <br><i class="govuk-!-font-size-14">This page design will eventually be revisited in general</i>.
+          </li>
+          <li>
+            <b>The placeholder texts:</b> Remove the the placeholder attributes from both text input fields. Update the labels as per the <abbr>HTML</abbr> designs. Remove the title attributes from both text input fields.
+            <br><i class="govuk-!-font-size-14">Note: This duplicates a ticket created for/by Rosie.</i>
+          </li>
+          <li>
+            <b>Form tag:</b> Add 'novalidate' attribute to the form tag.
+          </li>
+          <li>
+            <b>Fieldset/Legend:</b> Remove inappropriate use of Fieldset/Legend. 
+          </li>
+          <li class="line-through">
+            <b>Green buttons:</b> We should avoid using more than 1 green button on a page, but this will be resolved by a future page redesign. 
+          </li>          
+
+
+
+
+
+
+          <li>Active, Hover, &amp; Focus states fixed: this is done by appending the <abbr>CSS</abbr> (below) to the <abbr>CSS</abbr> file out generated. (Future upgrades to <abbr>GDS</abbr> library will resolve this).</li>
+          <li>Removed 'Placedholder' text &amp; and converted to hint text</li>
+          <li class="line-through"><abbr>GDS</abbr>compliance - Avoid duplication of green buttons: this will be resolved in the page redesigns. </li>
+          <li>Green button to start a journey: Lorem, ipsum dolor sit amet consectetur adipisicing elit.</li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          
+        </ul>
+      </div>
+    </details>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    <h2 class="govuk-heading-s">
+      2. Home page
+    </h2>
+
+    <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-font-size-16">
+      <li><a href="#" class="govuk-link govuk-link--no-visited-state" target="_blank">xxx</a></li>
+      <li></li>
+      <li></li>
+    </ol> 
+
+    <details class="govuk-details  govuk-!-font-size-16">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Home page details
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p class="govuk-body-s">Issues resolved:</p>
+        <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          
+        </ul>
+      </div>
+    </details>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">    
+    
+    <h2 class="govuk-heading-s">
+      3. My Worklist
+    </h2>
+
+    <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-font-size-16">
+      <li><a href="#" class="govuk-link govuk-link--no-visited-state" target="_blank">xxx</a></li>
+      <li></li>
+      <li></li>
+    </ol> 
+
+    <details class="govuk-details  govuk-!-font-size-16">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          My Worklist details
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p class="govuk-body-s">Issues resolved:</p>
+        <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          
+        </ul>
+      </div>
+    </details>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">    
+    
+    <h2 class="govuk-heading-s">
+      4. Search
+    </h2>
+
+    <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-font-size-16">
+      <li><a href="#" class="govuk-link govuk-link--no-visited-state" target="_blank">xxx</a></li>
+      <li></li>
+      <li></li>
+    </ol>  
+
+    <details class="govuk-details  govuk-!-font-size-16">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Search details
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p class="govuk-body-s">Issues resolved:</p>
+        <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          
+        </ul>
+      </div>
+    </details>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">    
+    
+    <h2 class="govuk-heading-s">
+      5. Search results
+    </h2>
+
+    <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-font-size-16">
+      <li><a href="#" class="govuk-link govuk-link--no-visited-state" target="_blank">xxx</a></li>
+      <li></li>
+      <li></li>
+    </ol>  
+
+    <details class="govuk-details  govuk-!-font-size-16">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Search results details
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p class="govuk-body-s">Issues resolved:</p>
+        <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          
+        </ul>
+      </div>
+    </details>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">    
+    
+    <h2 class="govuk-heading-s">
+      6. Refer
+    </h2>
+
+    <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-font-size-16">
+      <li><a href="#" class="govuk-link govuk-link--no-visited-state" target="_blank">xxx</a></li>
+      <li></li>
+      <li></li>
+    </ol>  
+
+    <details class="govuk-details  govuk-!-font-size-16">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Refer details
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p class="govuk-body-s">Issues resolved:</p>
+        <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          
+        </ul>
+      </div>
+    </details>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">    
+    
+    <h2 class="govuk-heading-s">
+      7. Defer
+    </h2>
+
+    <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-font-size-16">
+      <li><a href="#" class="govuk-link govuk-link--no-visited-state" target="_blank">xxx</a></li>
+      <li></li>
+      <li></li>
+    </ol>  
+    
+    <details class="govuk-details  govuk-!-font-size-16">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Defer details
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p class="govuk-body-s">Issues resolved:</p>
+        <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          
+        </ul>
+      </div>
+    </details>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">    
+    
+    <h2 class="govuk-heading-s">
+      8. Activity history
+    </h2>
+
+    <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-font-size-16">
+      <li><a href="#" class="govuk-link govuk-link--no-visited-state" target="_blank">xxx</a></li>
+      <li></li>
+      <li></li>
+    </ol>   
+    
+    <details class="govuk-details  govuk-!-font-size-16">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Activity history details
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p class="govuk-body-s">Issues resolved:</p>
+        <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          
+        </ul>
+      </div>
+    </details>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">    
+    
+    <h2 class="govuk-heading-s">
+      9. Return reasons
+    </h2>
+
+    <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-font-size-16">
+      <li><a href="#" class="govuk-link govuk-link--no-visited-state" target="_blank">xxx</a></li>
+      <li></li>
+      <li></li>
+    </ol> 
+
+    <details class="govuk-details  govuk-!-font-size-16">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Return reasons details
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p class="govuk-body-s">Issues resolved:</p>
+        <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          
+        </ul>
+      </div>
+    </details>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">    
+    
+    <h2 class="govuk-heading-s">
+      10. Accessibility statement
+    </h2>
+
+    <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-font-size-16">
+      <li><a href="#" class="govuk-link govuk-link--no-visited-state" target="_blank">xxx</a></li>
+      <li></li>
+      <li></li>
+    </ol>     
+    
+    <details class="govuk-details  govuk-!-font-size-16">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Accessibility statement details
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p class="govuk-body-s">Issues resolved:</p>
+        <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          
+        </ul>
+      </div>
+    </details>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">    
+
+    <h2 class="govuk-heading-s">
+      11. Page header and footer
+    </h2>
+
+    <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-font-size-16">
+      <li><a href="#" class="govuk-link govuk-link--no-visited-state" target="_blank">xxx</a></li>
+    </ol>     
+    
+    <details class="govuk-details  govuk-!-font-size-16">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Page header and footer details
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p class="govuk-body-s">Issues resolved:</p>
+        <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          
+        </ul>
+      </div>
+    </details>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">        
+
+    <!--hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"-->
+
+  </div>
+</div>
+
+{% endblock %}

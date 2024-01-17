@@ -1,0 +1,82 @@
+{% extends "layouts/wf_layout_legacy.html" %}
+
+{% set pageName="Index template example for legacy designs" %}
+
+{% block content %}
+
+  <style>
+    /* grid-row > grid-column-two-thirds then add a new row and change two-thirds classes to one-half, as below */
+    /* drop this 'style' block into the top of THIS page. (Important: This page only) */
+    @media (min-width: 40.0625em){
+        .content-wrapper > .govuk-grid-row > .govuk-grid-column-two-thirds {
+            margin-left: auto; 
+            margin-right: auto; 
+            float: none;
+        }    
+    }
+  </style>
+
+<div class="content-wrapper">
+
+        
+    
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-full"> 
+
+        <div class="govuk-grid-row">
+    
+                <div class="govuk-grid-column-one-quarter">
+                    <div class="nav-panel">
+                        
+                            <a class="nav-panel__link" href="worklist" title="My Worklist page">
+                                <span class="nav-panel__text">My Worklist</span>
+                            </a>
+                        
+                    </div>
+                </div>
+
+                <div class="govuk-grid-column-one-quarter">
+                    <div class="nav-panel">
+                        
+                            <a class="nav-panel__link" href="work-category-option" title="Select category of work page">
+                                <span class="nav-panel__text">Select category of work</span>
+                            </a>
+                        
+                    </div>
+                </div> 
+
+                <div class="govuk-grid-column-one-quarter">
+                    <div class="nav-panel">
+                        
+                            <a class="nav-panel__link" href="search" title="Search page">
+                                <span class="nav-panel__text">Search</span>
+                            </a>
+                        
+                    </div>
+                </div>     
+            
+                <div class="govuk-grid-column-one-quarter">
+                    <div class="nav-panel">
+                        
+                            <a class="nav-panel__link" href="manage-assigned-work" title="Manage Work page">
+                                <span class="nav-panel__text">Manage Assigned Work</span>
+                            </a>
+                        
+                    </div>
+                </div>   
+                            
+        </div>
+            
+    </div>
+
+  </div>
+
+
+
+</div>
+
+
+
+
+{% endblock %}

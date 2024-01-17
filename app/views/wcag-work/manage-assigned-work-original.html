@@ -1,0 +1,69 @@
+{% extends "layouts/wf_layout_legacy.html" %}
+
+{% set pageName="Index template example for legacy designs" %}
+
+{% block content %}
+
+
+  
+
+  
+  
+
+
+  
+
+<div id="manage_work">
+  <form action="/worklist-ui/manage-assigned-work"  method='post' id="manage_form">
+    
+      <input name="csrf_token" type="hidden" value="Ijc5MDRlYjA1ODc2ZTJmZjJjMTc4YWFkMDQzMjdkMTgzZjBjMTE1ZWIi.ZaaQpA.io0GFcT5bEQTcPXAf6unUtECieg">
+    
+    <fieldset class="govuk-fieldset">
+        <legend>
+            <h1 class="form-title govuk-heading-l">
+            Manage assigned work
+            </h1>
+        </legend>
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-half" data-box>
+              <label class="manage-labels" for="name">Find</label>
+
+              <div class="manage-bar search-container">
+                  <input class="search-bar manage-search" id="name" name="name" placeholder="A user who can obtain applications" size="30" title="A user who can obtain applications" type="text" value="">
+                  <span class="spin"></span>
+              </div>
+
+              <input class="hidden-result" id="caseworker_id_from" name="caseworker_id_from" type="hidden" value=""> <input class="hidden-name" id="caseworker_name_from" name="caseworker_name_from" type="hidden" value="">
+
+              <input class="search-button" type="submit" id="search_button" value="Search">
+            </div>
+
+            <div class="govuk-grid-column-one-half" data-box>
+              <label class="manage-labels" for="assignee">Assign to</label>
+              <div class="manage-bar search-container">
+                  <input class="search-bar manage-search" id="assignee" name="assignee" placeholder="A user who can obtain applications" size="30" title="A user who can obtain applications" type="text" value="">
+                  <span class="spin"></span>
+              </div>
+
+              <input class="hidden-result" id="caseworker_id_to" name="caseworker_id_to" type="hidden" value=""> <input class="hidden-name" id="caseworker_name_to" name="caseworker_name_to" type="hidden" value="">
+              <input class="wf-button" type="submit" id="assign_button" value="Assign" formaction="/worklist-ui/reassign">
+            </div>
+        </div>
+
+    
+
+      <div id="results-container"></div>
+
+    
+
+    
+
+    
+    </fieldset>
+  </form>
+</div>
+
+
+
+
+{% endblock %}
