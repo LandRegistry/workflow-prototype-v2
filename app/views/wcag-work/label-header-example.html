@@ -1,0 +1,44 @@
+{% extends "layouts/wf_layout_legacy.html" %}
+
+{% set pageName="Index template example for legacy designs" %}
+
+{% block content %}
+
+<style>
+  .line-through {
+    text-decoration: line-through;
+  }
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="#" novalidate>
+
+      <div class="govuk-form-group">
+        
+        <h1 class="govuk-label-wrapper govuk-!-margin-bottom-4">
+          <label class="govuk-label govuk-label--m" for="my-days">
+            Enter the number of working days to add to the cancellation date
+          </label>
+        </h1>
+
+        <input class="govuk-input govuk-input--width-3 govuk-!-margin-bottom-5" id="my-days" name="my-days" type="text" maxlength="3">
+
+      </div>
+
+      <div class="govuk-button-group">
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+        <a class="govuk-link govuk-link--no-visited-state" href="#">Cancel</a>
+      </div>
+
+
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
