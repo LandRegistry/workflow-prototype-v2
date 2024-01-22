@@ -2,6 +2,10 @@
 
 {% set pageName="Index template example for legacy designs" %}
 
+{% block pageTitle %}
+Manage Assigned Work - Workflow
+{% endblock %}
+
 {% block beforeContent %}
 <div class="govuk-breadcrumbs">
         
@@ -18,7 +22,7 @@
 {% endblock %}
 
 {% block content %}
-
+No Workflow user found with the name "DarrenXXX".
 
 <div id="manage_work">
   <form action="/worklist-ui/manage-assigned-work"  method='post' id="manage_form" novalidate>

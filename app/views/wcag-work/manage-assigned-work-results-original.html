@@ -1,0 +1,816 @@
+{% extends "layouts/wf_layout_legacy_wcag_updates.html" %}
+
+{% set pageName="Index template example for legacy designs" %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+        
+  <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="#">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        Manage assigned work
+      </li>
+  </ol>
+
+</div>
+{% endblock %}
+
+{% block content %}
+
+
+ 
+
+<div id="manage_work">
+  <form action="/worklist-ui/manage-assigned-work"  method='post' id="manage_form">
+    
+      <input name="csrf_token" type="hidden" value="IjhlOGIyMDY3MjNmYmQwOWJhMTZkZGRhMzQ4MjhjNmIxOGQwZjhhMTci.ZaqsxA.QavHKyRevVxa6HNtF1NsIuU4_lU">
+    
+    <fieldset class="govuk-fieldset">
+        <legend>
+            <h1 class="form-title govuk-heading-l">
+            Manage assigned work
+            </h1>
+        </legend>
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-half" data-box>
+              <label class="manage-labels" for="name">Find</label>
+
+              <div class="manage-bar search-container">
+                  <input class="search-bar manage-search" id="name" name="name" placeholder="A user who can obtain applications" size="30" title="A user who can obtain applications" type="text" value="Rosie Brave (Rosie.Brave), Information Systems">
+                  <span class="spin"></span>
+              </div>
+
+              <input class="hidden-result" id="caseworker_id_from" name="caseworker_id_from" type="hidden" value="1400"> <input class="hidden-name" id="caseworker_name_from" name="caseworker_name_from" type="hidden" value="Rosie Brave">
+
+              <input class="search-button" type="submit" id="search_button" value="Search">
+            </div>
+
+            <div class="govuk-grid-column-one-half" data-box>
+              <label class="manage-labels" for="assignee">Assign to</label>
+              <div class="manage-bar search-container">
+                  <input class="search-bar manage-search" id="assignee" name="assignee" placeholder="A user who can obtain applications" size="30" title="A user who can obtain applications" type="text" value="">
+                  <span class="spin"></span>
+              </div>
+
+              <input class="hidden-result" id="caseworker_id_to" name="caseworker_id_to" type="hidden" value=""> <input class="hidden-name" id="caseworker_name_to" name="caseworker_name_to" type="hidden" value="">
+              <input class="wf-button" type="submit" id="assign_button" value="Assign" formaction="/worklist-ui/reassign">
+            </div>
+        </div>
+
+    
+
+      <div id="results-container"></div>
+
+    
+      <div class="top-spacing">
+        <h2 id="caseworker_worklist_heading" class="govuk-heading-l">
+            
+    
+        Rosie Brave's
+    
+ Worklist: 11 applications
+        </h2>
+
+        <div class="govuk-body">
+            
+                Rosie Brave is not currently allocated to a category of work.
+            
+        </div>
+      </div>
+
+    
+
+    
+
+    
+        <table id="manage_table" class="govuk-table worklist__table form-group">
+            <caption>Rosie Brave's Worklist: 11 applications</caption>
+            <thead>
+                <tr class="govuk-table__row">
+                    <th class="govuk-table__header checkbox__label">
+                        <label for="id_select_all">Select all</label>
+                    </th>
+                    <th id="priority_dates" class="govuk-table__header" scope="col">Priority date</th>
+                    <th id="title_numbers" class="govuk-table__header" scope="col">Title number</th>
+                    <th id="abrs" class="govuk-table__header" scope="col">ABR</th>
+                    <th id="categories" class="govuk-table__header" scope="col">Category</th>
+                    <th id="dates_obtained" class="govuk-table__header" scope="col">Date obtained</th>
+                    <th id="next_actions" class="govuk-table__header" scope="col">Next action</th>
+                </tr>
+                <tr class="govuk-table__row worklist-black-border">
+                    <td class="checkbox">
+                        <input type="checkbox" id="id_select_all">
+                    </td>
+                    <td colspan="6">
+                    </td>
+                </tr>
+            </thead>
+
+            
+                
+    <tbody data-case-ref="N619SWW" class="case case-spacing  " >
+        <tr  class="case__data_row case__row-inc" >
+
+            <td class="checkbox">
+                
+                    <input type="checkbox" title="Assign work item N619SWW" id="checkbox_N619SWW" name="assign"
+                        value="6047">
+                
+            </td>
+
+            
+    <td class="manage__date" id="N619SWW_priority_date" headers="priority_dates">
+        
+          
+          <label for="checkbox_N619SWW">
+          
+          17 July 2023
+          
+          </label>
+          
+        
+    </td>
+
+
+            
+    <td class="case__title-number" id="N619SWW_title_number" headers="title_numbers">
+        
+        <label for="checkbox_N619SWW">
+        
+            <span class="case__inc">
+                    *
+            </span>
+            DT104671
+            
+        
+        </label>
+        
+    </td>
+
+
+            
+    <td id="N619SWW_abr" class="case__abr" headers="abrs">
+        
+        <label for="checkbox_N619SWW">
+        
+        N619SWW
+        
+        </label>
+        
+        <div>
+             
+        </div>
+    </td>
+
+
+            
+    <td id="N619SWW_cat" class="case__category" headers="categories">
+        
+        <label for="checkbox_N619SWW">
+        
+        <abbr title="Executive Register Update Complex">
+          Executive Register Update Complex
+        </abbr>
+        
+        </label>
+        
+    </td>
+
+
+            
+    <td class="manage__date" id="N619SWW_dobtained" headers="dates_obtained">
+        
+        <label for="checkbox_N619SWW">
+        
+        15 December 2023
+        
+        </label>
+        
+    </td>
+
+
+            
+    <td id="N619SWW_next_action" class="case__next-action" headers="next_actions">
+        
+        <label for="checkbox_N619SWW">
+        
+        
+            New - Start to process
+        
+        
+        </label>
+        
+    </td>
+
+        </tr>
+
+        
+    
+        
+    
+
+        <tr id="row_6047_actions" class="worklist-black-border case__actions">
+            <td colspan="7">
+                <div class="case__right-hand-actions">
+                    
+    <a
+        class="govuk-link case__more-info-link case__anchor"
+        title="Open daylist for case N619SWW"
+        aria-label="Open daylist for case N619SWW"
+        href="cslk:titleno=DT104671&appnref=N619SWW&appntype=ENQ&nodoc_ind=Y">
+        More info
+    </a>
+
+                    
+                </div>
+            </td>
+        </tr>
+    </tbody>
+
+                
+            
+                
+    <tbody data-case-ref="E076RWW" class="case case-spacing  " >
+        <tr >
+
+            <td class="checkbox">
+                
+                    <input type="checkbox" title="Assign work item E076RWW" id="checkbox_E076RWW" name="assign"
+                        value="2141">
+                
+            </td>
+
+            
+    <td class="manage__date" id="E076RWW_priority_date" headers="priority_dates">
+        
+          
+          <label for="checkbox_E076RWW">
+          
+          17 June 2022
+          
+          </label>
+          
+        
+    </td>
+
+
+            
+    <td class="case__title-number" id="E076RWW_title_number" headers="title_numbers">
+        
+        <label for="checkbox_E076RWW">
+        
+            <span class="case__inc">
+                    
+            </span>
+            DU164181
+            
+        
+        </label>
+        
+    </td>
+
+
+            
+    <td id="E076RWW_abr" class="case__abr" headers="abrs">
+        
+        <label for="checkbox_E076RWW">
+        
+        E076RWW
+        
+        </label>
+        
+        <div>
+             
+        </div>
+    </td>
+
+
+            
+    <td id="E076RWW_cat" class="case__category" headers="categories">
+        
+        <label for="checkbox_E076RWW">
+        
+        <abbr title="Volume Change of Ownership Actionable Deferral: Requisition">
+          Volume Change of Ownership Actionable Deferral: Requisition
+        </abbr>
+        
+        </label>
+        
+    </td>
+
+
+            
+    <td class="manage__date" id="E076RWW_dobtained" headers="dates_obtained">
+        
+        <label for="checkbox_E076RWW">
+        
+        15 December 2023
+        
+        </label>
+        
+    </td>
+
+
+            
+    <td id="E076RWW_next_action" class="case__next-action" headers="next_actions">
+        
+        <label for="checkbox_E076RWW">
+        
+        
+            
+                    Consider assignment from<br>
+            
+                    Rosie Brave<br>
+            
+        
+        
+        </label>
+        
+    </td>
+
+        </tr>
+
+        
+    
+        
+            <tr id="row_E076RWW_dates" class="row__dates">
+                <td colspan="7">
+                  <div class="date-wrapper">
+                    
+                        <div id="E076RWW_rfd_date">
+                            Release from deferral date: 16 May 2023
+                        </div>
+                    
+                    
+                        <div class="spacing-top-third" id="E076RWW_bf_date">
+                            Bring forward date: 27 April 2023
+                        </div>
+                    
+                    
+                        <div class="spacing-top-third" id="E076RWW_canc_date">
+                            Cancellation date: 30 May 2023
+                        </div>
+                    
+                    
+                  </div>
+                </td>
+            </tr>
+        
+    
+
+        <tr id="row_2141_actions" class="worklist-black-border case__actions">
+            <td colspan="7">
+                <div class="case__right-hand-actions">
+                    
+    <a
+        class="govuk-link case__more-info-link case__anchor"
+        title="Open daylist for case E076RWW"
+        aria-label="Open daylist for case E076RWW"
+        href="cslk:titleno=DU164181&appnref=E076RWW&appntype=ENQ">
+        More info
+    </a>
+
+                    
+                </div>
+            </td>
+        </tr>
+    </tbody>
+
+                
+            
+                
+    <tbody data-case-ref="V567RWW" class="case case-spacing  " >
+        <tr >
+
+            <td class="checkbox">
+                
+                    <input type="checkbox" title="Assign work item V567RWW" id="checkbox_V567RWW" name="assign"
+                        value="2575">
+                
+            </td>
+
+            
+    <td class="manage__date" id="V567RWW_priority_date" headers="priority_dates">
+        
+          
+          <label for="checkbox_V567RWW">
+          
+          27 July 2022
+          
+          </label>
+          
+        
+    </td>
+
+
+            
+    <td class="case__title-number" id="V567RWW_title_number" headers="title_numbers">
+        
+        <label for="checkbox_V567RWW">
+        
+            <span class="case__inc">
+                    
+            </span>
+            DU164325
+            
+        
+        </label>
+        
+    </td>
+
+
+            
+    <td id="V567RWW_abr" class="case__abr" headers="abrs">
+        
+        <label for="checkbox_V567RWW">
+        
+        V567RWW
+        
+        </label>
+        
+        <div>
+             
+        </div>
+    </td>
+
+
+            
+    <td id="V567RWW_cat" class="case__category" headers="categories">
+        
+        <label for="checkbox_V567RWW">
+        
+        <abbr title="Volume Change of Ownership Actionable Deferral: Requisition">
+          Volume Change of Ownership Actionable Deferral: Requisition
+        </abbr>
+        
+        </label>
+        
+    </td>
+
+
+            
+    <td class="manage__date" id="V567RWW_dobtained" headers="dates_obtained">
+        
+        <label for="checkbox_V567RWW">
+        
+        4 December 2023
+        
+        </label>
+        
+    </td>
+
+
+            
+    <td id="V567RWW_next_action" class="case__next-action" headers="next_actions">
+        
+        <label for="checkbox_V567RWW">
+        
+        
+            
+                    Consider assignment from<br>
+            
+                    Rosie Brave<br>
+            
+        
+        
+        </label>
+        
+    </td>
+
+        </tr>
+
+        
+    
+        
+            <tr id="row_V567RWW_dates" class="row__dates">
+                <td colspan="7">
+                  <div class="date-wrapper">
+                    
+                        <div id="V567RWW_rfd_date">
+                            Release from deferral date: 16 May 2023
+                        </div>
+                    
+                    
+                        <div class="spacing-top-third" id="V567RWW_bf_date">
+                            Bring forward date: 28 April 2023
+                        </div>
+                    
+                    
+                        <div class="spacing-top-third" id="V567RWW_canc_date">
+                            Cancellation date: 31 May 2023
+                        </div>
+                    
+                    
+                  </div>
+                </td>
+            </tr>
+        
+    
+
+        <tr id="row_2575_actions" class="worklist-black-border case__actions">
+            <td colspan="7">
+                <div class="case__right-hand-actions">
+                    
+    <a
+        class="govuk-link case__more-info-link case__anchor"
+        title="Open daylist for case V567RWW"
+        aria-label="Open daylist for case V567RWW"
+        href="cslk:titleno=DU164325&appnref=V567RWW&appntype=ENQ">
+        More info
+    </a>
+
+                    
+                </div>
+            </td>
+        </tr>
+    </tbody>
+
+                
+            
+                
+    <tbody data-case-ref="G667RWW" class="case case-spacing  " >
+        <tr >
+
+            <td class="checkbox">
+                
+                    <input type="checkbox" title="Assign work item G667RWW" id="checkbox_G667RWW" name="assign"
+                        value="2582">
+                
+            </td>
+
+            
+    <td class="manage__date" id="G667RWW_priority_date" headers="priority_dates">
+        
+          
+          <label for="checkbox_G667RWW">
+          
+          27 July 2022
+          
+          </label>
+          
+        
+    </td>
+
+
+            
+    <td class="case__title-number" id="G667RWW_title_number" headers="title_numbers">
+        
+        <label for="checkbox_G667RWW">
+        
+            <span class="case__inc">
+                    
+            </span>
+            DU164326
+            
+        
+        </label>
+        
+    </td>
+
+
+            
+    <td id="G667RWW_abr" class="case__abr" headers="abrs">
+        
+        <label for="checkbox_G667RWW">
+        
+        G667RWW
+        
+        </label>
+        
+        <div>
+             
+        </div>
+    </td>
+
+
+            
+    <td id="G667RWW_cat" class="case__category" headers="categories">
+        
+        <label for="checkbox_G667RWW">
+        
+        <abbr title="Volume Change of Ownership Actionable Deferral: Requisition">
+          Volume Change of Ownership Actionable Deferral: Requisition
+        </abbr>
+        
+        </label>
+        
+    </td>
+
+
+            
+    <td class="manage__date" id="G667RWW_dobtained" headers="dates_obtained">
+        
+        <label for="checkbox_G667RWW">
+        
+        15 December 2023
+        
+        </label>
+        
+    </td>
+
+
+            
+    <td id="G667RWW_next_action" class="case__next-action" headers="next_actions">
+        
+        <label for="checkbox_G667RWW">
+        
+        
+            
+                    Consider assignment from<br>
+            
+                    Rosie Brave<br>
+            
+        
+        
+        </label>
+        
+    </td>
+
+        </tr>
+
+        
+    
+        
+            <tr id="row_G667RWW_dates" class="row__dates">
+                <td colspan="7">
+                  <div class="date-wrapper">
+                    
+                        <div id="G667RWW_rfd_date">
+                            Release from deferral date: 17 July 2023
+                        </div>
+                    
+                    
+                        <div class="spacing-top-third" id="G667RWW_bf_date">
+                            Bring forward date: 6 June 2023
+                        </div>
+                    
+                    
+                        <div class="spacing-top-third" id="G667RWW_canc_date">
+                            Cancellation date: 4 July 2023
+                        </div>
+                    
+                    
+                  </div>
+                </td>
+            </tr>
+        
+    
+
+        <tr id="row_2582_actions" class="worklist-black-border case__actions">
+            <td colspan="7">
+                <div class="case__right-hand-actions">
+                    
+    <a
+        class="govuk-link case__more-info-link case__anchor"
+        title="Open daylist for case G667RWW"
+        aria-label="Open daylist for case G667RWW"
+        href="cslk:titleno=DU164326&appnref=G667RWW&appntype=ENQ">
+        More info
+    </a>
+
+                    
+                </div>
+            </td>
+        </tr>
+    </tbody>
+
+                
+            
+                
+    <tbody data-case-ref="T377RWW" class="case case-spacing  " >
+        <tr >
+
+            <td class="checkbox">
+                
+                    <input type="checkbox" title="Assign work item T377RWW" id="checkbox_T377RWW" name="assign"
+                        value="2654">
+                
+            </td>
+
+            
+    <td class="manage__date" id="T377RWW_priority_date" headers="priority_dates">
+        
+          
+          <label for="checkbox_T377RWW">
+          
+          28 July 2022
+          
+          </label>
+          
+        
+    </td>
+
+
+            
+    <td class="case__title-number" id="T377RWW_title_number" headers="title_numbers">
+        
+        <label for="checkbox_T377RWW">
+        
+            <span class="case__inc">
+                    
+            </span>
+            DU164182
+            
+        
+        </label>
+        
+    </td>
+
+
+            
+    <td id="T377RWW_abr" class="case__abr" headers="abrs">
+        
+        <label for="checkbox_T377RWW">
+        
+        T377RWW
+        
+        </label>
+        
+        <div>
+             
+        </div>
+    </td>
+
+
+            
+    <td id="T377RWW_cat" class="case__category" headers="categories">
+        
+        <label for="checkbox_T377RWW">
+        
+        <abbr title="Volume Change of Ownership">
+          Volume Change of Ownership
+        </abbr>
+        
+        </label>
+        
+    </td>
+
+
+            
+    <td class="manage__date" id="T377RWW_dobtained" headers="dates_obtained">
+        
+        <label for="checkbox_T377RWW">
+        
+        22 August 2023
+        
+        </label>
+        
+    </td>
+
+
+            
+    <td id="T377RWW_next_action" class="case__next-action" headers="next_actions">
+        
+        <label for="checkbox_T377RWW">
+        
+        
+            New - Start to process
+        
+        
+        </label>
+        
+    </td>
+
+        </tr>
+
+        
+    
+        
+    
+
+        <tr id="row_2654_actions" class="worklist-black-border case__actions">
+            <td colspan="7">
+                <div class="case__right-hand-actions">
+                    
+    <a
+        class="govuk-link case__more-info-link case__anchor"
+        title="Open daylist for case T377RWW"
+        aria-label="Open daylist for case T377RWW"
+        href="cslk:titleno=DU164182&appnref=T377RWW&appntype=ENQ">
+        More info
+    </a>
+
+                    
+                </div>
+            </td>
+        </tr>
+    </tbody>
+
+                
+            
+        </table>
+    
+    </fieldset>
+  </form>
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}

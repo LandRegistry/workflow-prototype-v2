@@ -2,13 +2,22 @@
 
 {% set pageName="Index template example for legacy designs" %}
 
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+        
+  <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+          <a title="Go to the Workflow homepage." class="govuk-breadcrumbs__link" href="#">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        Manage assigned work 
+      </li>
+  </ol>
+
+</div>
+{% endblock %}
+
 {% block content %}
-
-
-  
-
-  
-  
 
 
   
