@@ -39,17 +39,17 @@
       <div class="govuk-grid-column-one-half" data-box>
 
         <div class="govuk-form-group">  <!--  govuk-form-group--error -->
-          <label class="manage-labels" for="name">Find a user who can obtain applications</label>
+          <label class="manage-labels govuk-label govuk-!-font-weight-bold" for="name">Find a user who can obtain applications</label>
 
           <div class="manage-bar search-container">
-              <input class="search-bar manage-search" id="name" name="name" size="30" type="text" value="Rosie Brave (Rosie.Brave), Information Systems">
+              <input class="search-bar manage-search" id="name" name="name" size="30" type="text" value="John Smith (John.Smith), Information Systems">
               <span class="spin"></span>
           </div>
 
           <input class="hidden-result" id="caseworker_id_from" name="caseworker_id_from" type="hidden" value=""> 
           <input class="hidden-name" id="caseworker_name_from" name="caseworker_name_from" type="hidden" value="">
 
-          <input class="search-button govuk-button govuk-!-margin-bottom-0" type="submit" id="search_button" value="Search" style="min-width: 40px;">
+          <input class="search-button govuk-button govuk-!-margin-bottom-0" type="submit" id="search_button" value="Search" style="min-width: 40px; max-height: 38px;">
         </div>
 
       </div>
@@ -57,14 +57,15 @@
       <div class="govuk-grid-column-one-half" data-box>
 
         <div class="govuk-form-group">
-          <label class="manage-labels" for="assignee">Assign to a user who can obtain applications</label>
+          <label class="manage-labels govuk-label govuk-!-font-weight-bold" for="assignee">Assign to a user who can obtain applications</label>
         
           <div class="manage-bar search-container">
               <input class="search-bar manage-search" id="assignee" name="assignee" size="30" type="text" value="">
               <span class="spin"></span>
           </div>
         
-          <input class="hidden-result" id="caseworker_id_to" name="caseworker_id_to" type="hidden" value=""> <input class="hidden-name" id="caseworker_name_to" name="caseworker_name_to" type="hidden" value="">
+          <input class="hidden-result" id="caseworker_id_to" name="caseworker_id_to" type="hidden" value=""> 
+          <input class="hidden-name" id="caseworker_name_to" name="caseworker_name_to" type="hidden" value="">
 
           <input class="wf-button govuk-button govuk-!-margin-bottom-0" type="submit" id="assign_button" value="Assign" formaction="/worklist-ui/reassign">
         </div>
@@ -72,7 +73,18 @@
       </div>
   </div>
 
-  <div id="results-container"></div>     
+    <div id="results-container"></div>   
+
+    <div class="top-spacing govuk-!-margin-top-6">
+        <h2 id="caseworker_worklist_heading" class="govuk-heading-m">
+            John Smith's Worklist: 5 applications
+        </h2>
+
+        <p class="govuk-body-s">
+            John Smith is not currently allocated to a category of work.
+        </p>
+    </div>    
+  
 
        
         <table id="manage_table" class="govuk-table worklist__table form-group govuk-!-margin-top-6">
@@ -95,7 +107,7 @@
                         <div class="govuk-checkboxes govuk-checkboxes--small govuk-!-margin-bottom-4 govuk-!-margin-left-3">
                             <div class="govuk-checkboxes__item">
                               <input class="govuk-checkboxes__input" id="id_select_all" type="checkbox">
-                              <label class="govuk-label govuk-checkboxes__label govuk-!-font-size-16" for="id_select_all">
+                              <label class="govuk-label govuk-checkboxes__label" for="id_select_all">
                                 Select all applications
                               </label>
                             </div>
