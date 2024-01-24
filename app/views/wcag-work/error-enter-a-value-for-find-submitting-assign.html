@@ -1,0 +1,103 @@
+{% extends "layouts/wf_layout_legacy_wcag_updates.html" %}
+
+{% set pageName="Index template example for legacy designs" %}
+
+{% block pageTitle %}
+Error: Manage Assigned Work - Workflow
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+        
+  <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="#">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        Manage assigned work
+      </li>
+  </ol>
+
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-error-summary" data-module="govuk-error-summary">
+  <div role="alert">
+    <h2 class="govuk-error-summary__title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li>
+          <a href="#name">Enter a user who can obtain applications</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id="manage_work">
+  <form action="/worklist-ui/manage-assigned-work"  method='post' id="manage_form" novalidate>
+    
+      <input name="csrf_token" type="hidden" value="Ijc5MDRlYjA1ODc2ZTJmZjJjMTc4YWFkMDQzMjdkMTgzZjBjMTE1ZWIi.ZaaQpA.io0GFcT5bEQTcPXAf6unUtECieg">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-l">
+              Manage assigned work
+            </h1>
+        </div>
+      </div>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-half" data-box>
+
+          <div class="govuk-form-group govuk-form-group--error">  
+            <label class="manage-labels govuk-label govuk-!-font-weight-bold" for="name">Find a user who can obtain applications</label>
+
+            <p id="name-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span> Enter a user who can obtain applications
+            </p>            
+
+            <div class="manage-bar search-container">
+                <input class="search-bar manage-search govuk-input--error" id="name" name="name" size="30" type="text" value="" aria-describedby="name-error">
+                <span class="spin"></span>
+            </div>
+
+            <input class="hidden-result" id="caseworker_id_from" name="caseworker_id_from" type="hidden" value=""> 
+            <input class="hidden-name" id="caseworker_name_from" name="caseworker_name_from" type="hidden" value="">
+
+            <input class="search-button govuk-button govuk-!-margin-bottom-0" type="submit" id="search_button" value="Search" style="min-width: 40px; max-height: 38px;">
+          </div>
+
+        </div>
+
+        <div class="govuk-grid-column-one-half" data-box>
+
+          <div class="govuk-form-group">
+            <label class="manage-labels govuk-label govuk-!-font-weight-bold" for="assignee">Assign to a user who can obtain applications</label>
+          
+            <div class="manage-bar search-container">
+                <input class="search-bar manage-search" id="assignee" name="assignee" size="30" type="text" value="Janet Harris">
+                <span class="spin"></span>
+            </div>
+          
+            <input class="hidden-result" id="caseworker_id_to" name="caseworker_id_to" type="hidden" value=""> <input class="hidden-name" id="caseworker_name_to" name="caseworker_name_to" type="hidden" value="">
+
+            <input class="wf-button govuk-button govuk-!-margin-bottom-0" type="submit" id="assign_button" value="Assign" formaction="/worklist-ui/reassign">
+          </div>
+
+        </div>
+    </div>
+
+    <div id="results-container"></div>      
+    
+  </form>
+</div>
+
+
+
+
+{% endblock %}
