@@ -1,10 +1,6 @@
-{% extends "layouts/wf_layout_legacy_wcag_updates.html" %}
+{% extends "layouts/wf_layout_legacy_wcag_updates-new-autocomplete.html" %}
 
 {% set pageName="Index template example for legacy designs" %}
-
-{% block pageTitle %}
-Error: Manage Assigned Work - Workflow
-{% endblock %}
 
 {% block beforeContent %}
 <div class="govuk-breadcrumbs">
@@ -23,20 +19,6 @@ Error: Manage Assigned Work - Workflow
 
 {% block content %}
 
-<div class="govuk-error-summary" data-module="govuk-error-summary">
-  <div role="alert">
-    <h2 class="govuk-error-summary__title">
-      There is a problem
-    </h2>
-    <div class="govuk-error-summary__body">
-      <ul class="govuk-list govuk-error-summary__list">
-        <li>
-          <a href="#name">Enter a user who can obtain applications</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
 
 <div id="manage_work">
   <form action="/worklist-ui/manage-assigned-work"  method='post' id="manage_form" novalidate>
@@ -54,22 +36,39 @@ Error: Manage Assigned Work - Workflow
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-one-half" data-box>
 
-          <div class="govuk-form-group govuk-form-group--error">  
-            <label class="manage-labels govuk-label govuk-!-font-weight-bold" for="name">Find a user who can obtain applications</label>
+          <!-- this CSS only goes directly into this page (and the results page); these are styles for this page only. -->
+          <style>
+            .govuk-button {
+              top: -40px;
+            }
+            .js-enabled .govuk-button {
+              top: auto;
+            }
+            .search-bar {
+              padding-left: 0;
+            }
+          </style>
 
-            <p id="name-error" class="govuk-error-message">
-              <span class="govuk-visually-hidden">Error:</span> Enter a user who can obtain applications
-            </p>            
+          <div class="govuk-form-group">  
 
-            <div class="manage-bar search-container">
-                <input class="search-bar manage-search govuk-input--error" id="name" name="name" size="30" type="text" value="" aria-describedby="name-error">
-                <span class="spin"></span>
-            </div>
+            <label class="manage-labels govuk-label govuk-!-font-weight-bold" for="name">
+              Find a user who can obtain applications
+            </label>
+          
+            <noscript>
+              <div class="manage-bar search-container">
+                  <input class="search-bar manage-search govuk-input" id="name" name="name" size="30" type="text" value="">
+              </div>
+            </noscript>
 
             <input class="hidden-result" id="caseworker_id_from" name="caseworker_id_from" type="hidden" value=""> 
             <input class="hidden-name" id="caseworker_name_from" name="caseworker_name_from" type="hidden" value="">
 
+            <div class="manage-bar search-container">
+              <div id="tt-autoselect" class="autocomplete-wrapper search-bar manage-search"></div>
+            </div>
             <input class="search-button govuk-button govuk-!-margin-bottom-0" type="submit" id="search_button" value="Search" style="min-width: 40px; max-height: 38px;">
+
           </div>
 
         </div>
@@ -79,25 +78,26 @@ Error: Manage Assigned Work - Workflow
           <div class="govuk-form-group">
             <label class="manage-labels govuk-label govuk-!-font-weight-bold" for="assignee">Assign to a user who can obtain applications</label>
           
-            <div class="manage-bar search-container">
-                <input class="search-bar manage-search govuk-input" id="assignee" name="assignee" size="30" type="text" value="Janet Harris">
-                <span class="spin"></span>
-            </div>
+            <noscript>
+              <div class="manage-bar search-container">
+                <input class="search-bar manage-search govuk-input" id="assignee" name="assignee" size="30" type="text" value="">
+              </div>              
+            </noscript>
           
             <input class="hidden-result" id="caseworker_id_to" name="caseworker_id_to" type="hidden" value=""> <input class="hidden-name" id="caseworker_name_to" name="caseworker_name_to" type="hidden" value="">
 
+            <div class="manage-bar search-container">
+              <div id="tt2-autoselect" class="autocomplete-wrapper search-bar manage-search"></div>
+            </div>
             <input class="wf-button govuk-button govuk-!-margin-bottom-0" type="submit" id="assign_button" value="Assign" formaction="/worklist-ui/reassign">
           </div>
 
         </div>
     </div>
 
-    <div id="results-container"></div>      
+    <!--div id="results-container"></div-->      
     
   </form>
 </div>
-
-
-
 
 {% endblock %}
