@@ -36,6 +36,10 @@
       1. Manage assigned work
     </h2>
 
+    <p class="govuk-body-s">
+      Much of this work involves minor <abbr>HTML</abbr> amends, but two pieces of work are more significant: Replacing the autocomplete functionality with an alternative version and the 'Show/Hide attached applications' link functionality on the results page.
+    </p>
+
     <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-font-size-16">
       <li>
         <a href="./manage-assigned-work.html" class="govuk-link govuk-link--no-visited-state" target="_blank">manage-assigned-work</a>
@@ -80,7 +84,7 @@
                 <br><i class="govuk-!-font-size-14">The current Breadcrumbs pattern is not as expected - not mirroring how breadcrumbs work throughout gov services - but it is beyond the scope of this work.</i>
               </li>
               <li>
-                <b>Search input without JavaScript:</b> With JavaScript disabled it is impossible to search for a user, even if I know the name 'Rosie Brave', for example, exists this still returns no results; but searching with 'Rosie.Brave' does. We should parse/format the input (entered as a name seperated with white space) to search on this format to return a result? 
+                <b>Search input without JavaScript:</b> With JavaScript disabled it is impossible to search for a user, even if I know the name 'Rosie Brave', for example, exists this still returns no results; but searching with 'Rosie.Brave' does. We should parse/format the input (entered as a name seperated with white space) to search on this format to return a result? And/Or allow users to search on both (Rosie Brave and Rosie.Brave if this is a recognised format - possibly strip out the period?)
               </li>
               <li>
                 <b>Fieldset/Legend:</b> Remove inappropriate use of Fieldset/Legend. Simply remove the fieldset and legend <abbr>HTML</abbr> wrapping the form content and reinstigate a H1 header in a row &amp; col div (as per the <abbr>HTML</abbr>). Remove 'form-title' class from the H1. (This work should also update the results version of the page, removing the Fieldset/Legend).
@@ -162,9 +166,6 @@
                 <b>Table Caption tag:</b> Update the table caption, as per the <abbr>HTML</abbr> provided (with the first number being how many results were returned) and add class 'govuk-!-margin-top-6' to the table tag.
               </li> 
               <li>
-                <b>Table IDs and 'headers':</b> I can't see why we've added IDs to the <abbr>TH</abbr> table headers and also added 'headers' attributes to the tables cells (as this is a straightforward table design and does not require these features which are used for complex layouts with cells spanning coloumns, etc)? We could look at removing these if issues persist in testing with repeating headers and rows being read aloud by assistive technologies.
-              </li>        
-              <li>
                 <b>Labels in all coloumns:</b> Remove the label <abbr>HTML</abbr> tags wrapping the content in each of the coloumns. In the 'Category' coloumn remove the <abbr>ABBR</abbr> tags which wrap the content. <br>
                 <i>There is some inappropriate or redundant <abbr>HTML</abbr> used in these tables, but this is beyond the scope of the <abbr>WCAG</abbr> work.</i>
               </li>
@@ -194,18 +195,22 @@
                 <b>'Show attached applications' link: </b> (And the equivalent 'Hide attached applications'). Update the plus sign to use the <abbr>HTML</abbr> symbol code (as per the <abbr>HTML</abbr>). Add the class 'govuk-link' to the button tag (which will apply the keyboard tabbing focus state styling). Add the hidden span within the hyperlink content - a visually hidden span describing the application number - which will make each of these links unique (which is an accessibility requirement), as per the <abbr>HTML</abbr> provided. Remove any title attribute from the button/link.
                 
                 <br><br>
-                There is an issue with this functionality requiring JavaScript support to reveal the attached applications. The ideal solution is: the link submits (a hidden input field) to itself for the page to reload with the previously hidden table rows (applications) showing (with whatever class is required to reveal/show it). i.e, round trip posts to the server to show and hide these attached rows. The plus &amp; minus and show/hide words in the hyperlink will also require updating (hardcoded into the page). (Ultimately, if this functionality is created it may be easier to remove the JavaScript functionality which does this dynamically?). 
+                <b>Significant work:</b> There is an issue with this functionality requiring JavaScript support to reveal the attached applications. The ideal solution is: the link submits (a hidden input field) to itself for the page to reload with the previously hidden table rows (applications) showing (with whatever class is required to reveal/show it). i.e, round trip posts to the server to show and hide these attached rows. The plus &amp; minus and show/hide words in the hyperlink will also require updating (hardcoded into the page). (Ultimately, if this functionality is created it may be easier to remove the JavaScript functionality which does this dynamically?). 
                 
                 <br><br>
                 
                 <i>For this <abbr>HTML</abbr> design template the functionality of showing/hiding an additional table row/tbody isn't supported. On the preview site any table row (application) revealed as being attached to a parent application has no semantic indicator that it is linked whatsoever, but this is beyond the scope of this work. Other issues relating to such links sitting next to each other will be resolved in the Worklist <abbr>WCAG</abbr> work.</i>
               </li>
               <li>
-                <b>Self clearing input fields:</b> On the preview site, the results page persists the input values in both of the main text input fields: when clicking in these (adding focus) the content is automatically cleared. Remove/Amend the JavaScript which does this (to stop this behaviour). This appears to be related to the input class 'search-bar' (with the JavaScript targeting/finding the element via that class) and the 'autocomplete'? This update should apply to the input fields when the page first loads and the 'results' version of the page. 
+                <b>Self clearing input fields:</b> On the preview site, the results page persists the input values in both of the main text input fields: when clicking in these (adding focus) the content is automatically cleared. Remove/Amend the JavaScript which does this (to stop this behaviour). This appears to be related to the input class 'search-bar' (with the JavaScript targeting/finding the element via that class) and the 'autocomplete'? This update should apply to the input fields when the page first loads and the 'results' version of the page. <b>Note</b>: If/when we upgrade to the new proposed autoComplete component (detailed below), this will remove this 'clearing' behaviour.
               </li>
               <li>
                 <b>Results statement</b> (above the results table): On the div with class '.top-spacing' add the 'govuk-!-margin-top-6' class (as per <abbr>HTML</abbr>). Change the H2 (#caseworker_worklist_heading) class from '-l' to '-m'. Update the divs wrapping any following statement to be 'P' tags, with 'govuk-body-s' class, as per the <abbr>HTML</abbr>. Wrap the '.top-spacing' div in a new div with class '.govuk-form-group' (which should also wrap the results list table when it is included in the page).
               </li>
+
+              <li>
+                <b>Note: </b> Table IDs and 'headers': I can't see why we've added IDs to the <abbr>TH</abbr> table headers and also added 'headers' attributes to the tables cells (as this is a straightforward table design and does not require these features which are used for complex layouts with cells spanning coloumns, etc)? We could look at removing these if issues persist in testing with repeating headers and rows being read aloud by assistive technologies.
+              </li> 
 
               
     
@@ -215,19 +220,25 @@
 
       </li>
       <li>
-        <a href="./manage-assigned-work-new-autocomplete.html" class="govuk-link govuk-link--no-visited-state" target="_blank">manage-assigned-work-new-autocomplete</a>
+        <a href="./manage-assigned-work-new-autocomplete.html" class="govuk-link govuk-link--no-visited-state" target="_blank">manage-assigned-work-new-autocomplete</a> 
 
         <br>
 
         <details class="govuk-details govuk-!-margin-top-4 govuk-!-font-size-16">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
-              Managed assigned work - autocomplete details
+              Managed assigned work - autocomplete details 
             </span>
           </summary>
           <div class="govuk-details__text">
             <p class="govuk-body-s">
+              <b>Significant work:</b><br><br>
+
               Notes: The current autocomplete functionality on the 'Find' and 'Assign' text fields fail accessiblity tests. These failings have been recorded in ticket Jira <a href="https://hmlandregistry.atlassian.net/browse/AMW-1714" class="govuk-link govuk-link--no-visited-state" target="_blank">1714</a>, and this work resolves this issue. This alternative is an offical Gov <abbr>GDS</abbr> project designed to be accessibile.
+            </p>
+            <p class="govuk-body-s">
+              The current autoComplete dynically displays the message &quot;This user cannot obtain applications in 
+              Workflow&quot; when it does not recognise or match the input to a name. The alternative - demonstrated here - instead uses the <abbr>GDS</abbr> standard message of &quot;No results found&quot; (but this can be changed).
             </p>
             <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16">
               
@@ -267,22 +278,19 @@
     </ol>
 
     <h2 class="govuk-heading-s">
-      Manage assigned work - Results/Banners/Error message pages
+      Manage assigned work - Error messages
     </h2>
 
     <p class="govuk-body-s govuk-!-font-weight-bold">All error message pages should feature: </p>
     
-    <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
+    <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16 govuk-!-margin-left-8">
       <li>Prepended text "Error:" to the <abbr>HTML</abbr> document title (title tag)</li>
       <li>Error summary block with hyperlinks which point to the related form element</li>
       <li>Inline error messages, with correct styling (red left bar and text input fields with red border) and the corresponding 'aria-describedby' attributes</li>
     </ul> 
 
     <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-font-size-16">
-      <li>
-        <b>This page is Work In Progress ... No user found:</b> In the 'Find' input field enter and submit a name which is not recognised - a pink banner displays stating "No Workflow user found with the name ... ." Instead: <br>
-        &bull; <a href="./results-no-user-found.html" class="govuk-link govuk-link--no-visited-state" target="_blank">results-no-user-found</a>
-      </li>
+
       <li>
         <b>'Find' is a required field:</b> Submiting the 'find' option without a value generates a pink banner displaying  'No Workflow user found with the name &quot;&quot; '. This is a form validation message - when no value is entered - for a required field and instead should be presented as an validation error with this message, as per the design: <br>
         &bull; <a href="./error-enter-a-value-for-find.html" class="govuk-link govuk-link--no-visited-state" target="_blank">error-enter-a-value-for-find</a>. 
@@ -297,15 +305,16 @@
         &bull; <a href="./error-enter-a-value-for-find-and-assign.html" class="govuk-link govuk-link--no-visited-state" target="_blank">error-enter-a-value-for-find-and-assign</a>. 
       </li>
       <li>
-        <b>'Assign' is a required field:</b> The logic of how this page works requires redesigning but in order to get the current design to be accessibile (and <abbr>GDS</abbr> compliant) we need to use the correct error messaging patterns.
+        <b>'Assign' is a required field:</b> <!--The logic of how this page works requires redesigning but in order to get the current design to be accessibile (and <abbr>GDS</abbr> compliant) we need to use the correct error messaging patterns.
         
-        <br><br>If 'Find' has a value, then submiting the 'Assign' field without a value (the first time, before a list of applications has been returned) currently generates a pink banner displaying "Select an application and find a caseworker to assign the application to." This is a form error validation message (required fields) - this message and design is required: <br>
+        <br><br>-->If 'Find' has a value, then submiting the 'Assign' field without a value (the first time, before a list of applications has been returned) currently generates a pink banner displaying "Select an application and find a caseworker to assign the application to." This is a form error validation message (required fields) - this message and design is required: <br>
         &bull; <a href="./error-enter-a-value-for-assign.html" class="govuk-link govuk-link--no-visited-state" target="_blank">error-enter-a-value-for-assign</a>. <br>
         The summary message hyperlink for selecting an application should target the first application checkbox (not the 'Select all' checkbox option). When the 'Select one or more applications to assign' error message is shown we also add the 'aria-describedby' attribute to each checkbox (as per the <abbr>HTML</abbr> design), except for the first 'Select all' checkbox option.
       </li>
       <li>
         <b>Applications are required:</b> When both 'find' and 'assign' have values and no application has been selected: this is how the page appears: <br>
-        &bull; <a href="./error-enter-a-value-for-applications.html" class="govuk-link govuk-link--no-visited-state" target="_blank">error-enter-a-value-for-applications</a>. 
+        &bull; <a href="./error-enter-a-value-for-applications.html" class="govuk-link govuk-link--no-visited-state" target="_blank">error-enter-a-value-for-applications</a>. <br>
+        This error message is served even if there is a message stating '0 applications'.
       </li>   
       <li>
         If form validation error messages have been fired for either 'assign' and/or 'applications' the user could theoretically manually clear the value in the 'find' field; so the first error message (<a href="./error-enter-a-value-for-find.html" class="govuk-link govuk-link--no-visited-state" target="_blank">error-enter-a-value-for-find</a>) is fired. But if the user has successfully returned a list of applications and then clears all fields and 'clicks' the 'assign' button, this example provides an illustration of how all three error messages appear in this theoretical edge case: <br>
@@ -320,13 +329,53 @@
 
 
       <li>
-        <b>Form expired banner: </b> When the page/form has expired an 'important' banner (<abbr>GDS</abbr> notification banner component) message is served at the top of the page which states: "The form you were submitting has expired. Please try again.". The styling on this banner isn't quite correct - the <abbr>HTML</abbr> should be as per this: <br>
+        <b>Form expired banner: </b> When the page/form has expired an 'important' banner (<abbr>GDS</abbr> notification banner component) message is served at the top of the page which states: "The form you were submitting has expired. Please try again." The styling on this banner isn't quite correct - the <abbr>HTML</abbr> should be as per this: <br>
         &bull; <a href="./banner-form-expired.html" class="govuk-link govuk-link--no-visited-state" target="_blank">
           banner-form-expired
         </a>
-        <br><i>Rosie: pls confirm text if content edits are required (and I'll simply update this <abbr>HTML</abbr>design file).</i>
+        
       </li>               
     </ol>
+
+    <h2 class="govuk-heading-s">
+      Manage assigned work - Banners 
+    </h2>
+
+    <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-font-size-16">
+      <li>
+        <b>No user found - find:</b> In the 'Find' input field enter and submit a name which is not recognised - a pink banner displays stating 'No Workflow user found with the name &quot;Darrrren&quot;.' Instead: <br>
+        &bull; <a href="./results-no-user-found.html" class="govuk-link govuk-link--no-visited-state" target="_blank">results-no-user-found</a>
+
+
+
+       
+        <br><br>
+        <i>(This design is based upon the '0 applications' design). <b style="color: red;">Rosie</b></i>
+      </li>
+      <li>
+        <b>No user found - assign:</b> In the 'Assign' input field enter and submit a name which is not recognised - a pink banner displays stating 'No Workflow user found with the name &quot;Darrrren&quot;.' Instead: <br>
+        &bull; <a href="./results-no-assign-user-found.html" class="govuk-link govuk-link--no-visited-state" target="_blank">results-no-assign-user-found</a>
+
+
+
+       
+        <br><br>
+        <i>(This design is based upon the '0 applications' design). <b style="color: red;">Rosie</b></i>
+      </li>  
+
+      <li>
+        <b>Person is not currently allocated:</b> When the results page returns 0 applications with the statement 'User &quot;John Smith&quot; has no work items in their worklist.' in a pink banner, we are replacing that design with this design (and text 'John Smith is not currently allocated to a category or work'):<br>
+        &bull; <a href="./results-person-not-allocated.html" class="govuk-link govuk-link--no-visited-state" target="_blank">results-person-not-allocated </a>
+      </li>
+
+      <li>
+        <b>Finish drafting in <abbr>AP</abbr>:</b> The following message is presented in a pink banner: "2 applications cannot be reassigned from Rosie Woodward to Rosie Brave. <br>Finish the drafting in Application Processing." This design and content is updated to: <br>
+        &bull; <a href="./results-finish-drafting-in-ap.html" class="govuk-link govuk-link--no-visited-state" target="_blank">results-finish-drafting-in-ap</a>
+        
+        <br><br>
+        <i>(<b style="color: red;">Rosie</b> to finalise any changes to this text). </i>        
+      </li>
+      </ol>
 
 
 

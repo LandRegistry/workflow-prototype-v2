@@ -1,3 +1,5 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
 {#
   For guidance on how to use layouts see:
   https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
@@ -7,7 +9,7 @@
   *** these LEGACY layouts/pages, in this repo, do not support IE9, etc ***
 #}
   
-{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
     
 {% block stylesheets %}
   <!--[if gt IE 8]><!--><link href="{{ asset_path }}stylesheets/legacy/legacy-wf-styles.min.css" media="screen" rel="stylesheet" /><!--<![endif]-->
@@ -98,9 +100,7 @@
 {% endblock %}
 
 {% block scripts %}
-    {#
-    {{ super() }}
-    #}
+
     <!--[if gt IE 8]><!-->
       <script src="/public/javascripts/legacy/legacy-wf-main.min.js"></script>
     <!--<![endif]-->

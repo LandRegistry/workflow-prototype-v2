@@ -43,7 +43,7 @@
 .govuk-link:hover, 
 .govuk-details__summary-text:hover {
     text-decoration-thickness: max(3px,0.1875rem,0.12em) !important;
-    text-underline-offset: 0.1578em !important;
+    text-underline-offset: 0.1578em !important; 
 }
 /* temp updating hover states to match latest gds: ENDS */
 
