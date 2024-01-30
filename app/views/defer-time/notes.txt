@@ -1,0 +1,7 @@
+add legend classes
+
+remove noscript and empty js error msg divs
+
+fix h1 classes
+
+novalidate added to form tag

@@ -23,21 +23,6 @@ Manage Assigned Work - Workflow
 
 {% block content %}
 
-<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-    <div class="govuk-notification-banner__header">
-      <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-        Important
-      </h2>
-    </div>
-    <div class="govuk-notification-banner__content">
-      <p class="govuk-notification-banner__heading">A Workflow user named Johhhhn was not found.</p>
-    </div>
-  </div>
-
-
-
-
-
 <div id="manage_work">
   <form action="/worklist-ui/manage-assigned-work"  method='post' id="manage_form" novalidate>
     
@@ -76,7 +61,7 @@ Manage Assigned Work - Workflow
             <label class="manage-labels govuk-label govuk-!-font-weight-bold" for="assignee">Assign to a user who can obtain applications</label>
           
             <div class="manage-bar search-container">
-                <input class="search-bar manage-search govuk-input" id="assignee" name="assignee" size="30" type="text" value="Johhhhn">
+                <input class="search-bar manage-search govuk-input" id="assignee" name="assignee" size="30" type="text" value="Johhn">
                 <span class="spin"></span>
             </div>
           
@@ -94,13 +79,28 @@ Manage Assigned Work - Workflow
     <div class="govuk-form-group">
 
       <div class="top-spacing govuk-!-margin-top-6">
-          <h2 id="caseworker_worklist_heading" class="govuk-heading-m">
+
+
+        <h2 id="caseworker_worklist_heading" class="govuk-heading-m">
+            No results
+        </h2>
+
+        <p class="govuk-body ">
+            A Workflow user named <span class="govuk-!-font-weight-bold">Johhn</span> was not found.
+        </p>
+
+
+
+            <h2 id="caseworker_worklist_heading" class="govuk-heading-l">
               Rosie Woodwards's Worklist: 5 applications
           </h2>
 
-          <p class="govuk-body">
-            Rosie Woodward's category of work is <span class="govuk-!-font-weight-bold">Volume Change of Ownership</span>.
-          </p>
+
+          <p class="govuk-body">Rosie Woodward's category of work is <span class="govuk-!-font-weight-bold">Volume Change of Ownership.</p>
+
+</ul>
+
+
 
       </div>    
       
