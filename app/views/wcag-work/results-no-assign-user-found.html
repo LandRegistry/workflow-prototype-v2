@@ -23,6 +23,20 @@ Manage Assigned Work - Workflow
 
 {% block content %}
 
+<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+    <div class="govuk-notification-banner__header">
+      <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+        Important
+      </h2>
+    </div>
+    <div class="govuk-notification-banner__content">
+      <p class="govuk-notification-banner__heading">A Workflow user named Johhhhn was not found.</p>
+    </div>
+  </div>
+
+
+
+
 
 <div id="manage_work">
   <form action="/worklist-ui/manage-assigned-work"  method='post' id="manage_form" novalidate>
@@ -88,27 +102,6 @@ Manage Assigned Work - Workflow
             Rosie Woodward's category of work is <span class="govuk-!-font-weight-bold">Volume Change of Ownership</span>.
           </p>
 
-          <div class="govuk-warning-text">
-            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-            <strong class="govuk-warning-text__text govuk-!-font-weight-regular"> 
-              <!-- 
-                if 'govuk-!-font-weight-regular' cannot be added to the strong element (as here), 
-                instead add this to the CSS output (as is):
-
-
-                .hmlr-wf-warning-text.hmlr-font-weight-regular > strong {
-                  font-weight: normal !important;
-                }
-
-
-                and add classes 'hmlr-wf-warning-text' and 'govuk-!-font-weight-regular'to the 'govuk-warning-text' parent element.
-              -->
-              <span class="govuk-visually-hidden">Warning</span>
-              A Workflow user named Johhhhn was not found.
-              
-              <!-- No Workflow user was found with the name &quot;Darrren&quot;. -->
-            </strong>
-          </div>
       </div>    
       
       <table id="manage_table" class="govuk-table worklist__table form-group govuk-!-margin-top-6">
