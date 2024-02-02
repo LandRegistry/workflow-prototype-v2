@@ -31,9 +31,6 @@ Error: Manage Assigned Work - Workflow
     <div class="govuk-error-summary__body">
       <ul class="govuk-list govuk-error-summary__list">
         <li>
-          <a href="#assignee">Enter a user to assign applications to</a><!-- Enter a user to assign to who can obtain applications -->
-        </li>
-        <li>
           <a href="#checkbox_N619SWW">Select one or more applications to assign</a>
         </li>        
       </ul>
@@ -75,19 +72,16 @@ Error: Manage Assigned Work - Workflow
 
         <div class="govuk-grid-column-one-half" data-box>
 
-          <div class="govuk-form-group govuk-form-group--error">
+          <div class="govuk-form-group">
             <label class="manage-labels govuk-label govuk-!-font-weight-bold" for="assignee">Assign to a user who can obtain applications</label>
-
-            <p id="assignee-error" class="govuk-error-message">
-              <span class="govuk-visually-hidden">Error:</span> Enter a user to assign applications to
-            </p>
           
             <div class="manage-bar search-container">
-                <input class="search-bar manage-search govuk-input--error" id="assignee" name="assignee" size="30" type="text" value="" aria-describedby="assignee-error">
+                <input class="search-bar manage-search govuk-input" id="assignee" name="assignee" size="30" type="text" value="">
                 <span class="spin"></span>
             </div>
           
-            <input class="hidden-result" id="caseworker_id_to" name="caseworker_id_to" type="hidden" value=""> <input class="hidden-name" id="caseworker_name_to" name="caseworker_name_to" type="hidden" value="">
+            <input class="hidden-result" id="caseworker_id_to" name="caseworker_id_to" type="hidden" value=""> 
+            <input class="hidden-name" id="caseworker_name_to" name="caseworker_name_to" type="hidden" value="">
 
             <input class="wf-button govuk-button govuk-!-margin-bottom-0" type="submit" id="assign_button" value="Assign" formaction="/worklist-ui/reassign">
           </div>
@@ -99,7 +93,7 @@ Error: Manage Assigned Work - Workflow
 
     <div class="govuk-form-group govuk-form-group--error">
       <div class="top-spacing govuk-!-margin-top-6">
-          <h2 id="caseworker_worklist_heading" class="govuk-heading-l">
+          <h2 id="caseworker_worklist_heading" class="govuk-heading-m">
               John Smith's Worklist: 5 applications
           </h2>
 

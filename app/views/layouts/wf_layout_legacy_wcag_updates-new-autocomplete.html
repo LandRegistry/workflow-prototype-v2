@@ -115,7 +115,7 @@
 
 <script type="text/javascript">
   var namesExamples = [
-    'Alex Adems (Alex.Adems), Information Systems',
+    'Alex Adams (Alex.Adams), Information Systems',
     'Rosie Brave (Rosie.Brave), Information Systems',
     'Darren Harridence (Darren.Harridence), Information Systems',
     'Zak Zeal (Zak.Zeal), Information Systems'
@@ -123,26 +123,30 @@
 </script>
 
 <script type="text/javascript">
+  //FIND
   element = document.querySelector('#tt-autoselect')
   id = 'name'
+
   accessibleAutocomplete({
     autoselect: true,//remove this line if decided not required
     element: element,
     id: id,
-    source: namesExamples,
+    source: namesExamples, // Provide your remote data source here.
     menuAttributes: {
       "aria-labelledby": id
     },
     inputClasses: "govuk-input"
   })
 
+  //ASSIGN
   element = document.querySelector('#tt2-autoselect')
   id = 'assignee'
+
   accessibleAutocomplete({
     autoselect: true,//remove this line if decided not required
     element: element,
     id: id,
-    source: namesExamples,
+    source: namesExamples, // Provide your remote data source here.
     menuAttributes: {
       "aria-labelledby": id
     },

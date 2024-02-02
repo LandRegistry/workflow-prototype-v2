@@ -1,0 +1,6 @@
+const results = [
+    'Adrian Smith',
+    'Brenda Copper',
+    'Carole King',
+    'David Brown'
+  ]
