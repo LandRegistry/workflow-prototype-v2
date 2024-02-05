@@ -53,51 +53,113 @@
             </span>
           </summary>
           <div class="govuk-details__text">
-            <p class="govuk-body-s">Issues resolved: (within the 'main' tag content area)</p>
-            <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16">
+
+            <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-font-size-16">
               <li>
-                <b>Find/Search button:</b> Add classes 'govuk-button' and 'govuk-!-margin-bottom-0' to the 'search-button' to resolve <abbr>GDS</abbr> active/keyboard states and for inline styling (when error message styles are applied).
-                Also, either add <code>!important</code> to the width <abbr>CSS</abbr> declaration for the 'search-button' class in the <abbr>CSS/SASS</abbr> file (and add max-height: 38px;) or add the inline 'style' (with min-width and max-width) attribute, as per <abbr>HTML</abbr>, to the button. 
-                <br><i class="govuk-!-font-size-14">This page design will eventually be revisited/redesigned in general</i>.
+                <b>The 'Find' button:</b> to resolve the required states styling, such as keyboard active states and inline styling (for error message styles)
+
+                <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
+                  <li>Add classes 'govuk-button' and 'govuk-!-margin-bottom-0' to the 'search-button' </li>
+                  <li>Either add !important to the width CSS declaration for the 'search-button' class in the CSS/SASS file (and add max-height: 38px;) or add the inline 'style' (with min-width and max-width) attribute, as per HTML provided, to the button </li>
+                </ul>
+
               </li>
               <li>
-                <b>Assign button:</b> Add classes 'govuk-button' and 'govuk-!-margin-bottom-0' to the 'Assign' button to resolve <abbr>GDS</abbr> active/keyboard states and to resolve the inline flow styling (when error message styles are applied).           
+                <b>The Assign button:</b> to resolve required GDS active/keyboard states 
+
+                <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
+                  <li>Add classes 'govuk-button' and 'govuk-!-margin-bottom-0' to the 'Assign' button</li>
+                </ul>
               </li>
               <li>
-                <b>Labels on the two search fields:</b> On both labels (which accompany the text input fields) add classes 'govuk-label' and 'govuk-!-font-weight-bold'. (This standardises the font sizing - to match error messages - and reinstates the bold as per the current page design).
-              </li>
-              <li>
-                <b>The placeholder texts:</b> Remove the the placeholder attributes from both text input fields. Update the labels as per the <abbr>HTML</abbr> designs. Remove the title attributes from both text input fields.
-                <br><i class="govuk-!-font-size-14">Note: This duplicates a ticket created for/by Rosie.</i>
-              </li>
-              <li>
-                <b>The two input fields style:</b> On the 'Find' and 'Assign' input fields add class 'govuk-input' as per the <abbr>HTML</abbr>. (<abbr>GDS</abbr> styling required for autoComplete widget).
+                <b>Labels on the two search fields:</b> On both labels (which accompany the text input fields) - 
+                
+                <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
+                  <li>Add classes 'govuk-label' and 'govuk-!-font-weight-bold'. This standardises the font sizing - to match error messages - and reinstates the bold as per the current page design</li>
+                </ul>
               </li>              
               <li>
-                <b>Form tag:</b> Add 'novalidate' attribute to the form tag.
-              </li>
-              <li class="line-through">
-                <b>Green buttons:</b> We should avoid using more than 1 green button on a page, but this will be resolved by a future page redesign. 
-              </li>          
+                <b>The placeholder texts:</b> are non-GDS compliant (creating accessibility issues)
+                
+                <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
+                  <li>Remove the the placeholder attributes from both text input fields. Update the labels as per the HTML designs </li>
+                  <li>Remove the title attributes from both text input fields</li>
+                </ul>
+              </li> 
               <li>
-                <b>Breadcrumbs:</b> On this page - and globally throughout all Workflow pages - remove the 'title' attribute from the 'Home' page link.
-                <br><i class="govuk-!-font-size-14">The current Breadcrumbs pattern is not as expected - not mirroring how breadcrumbs work throughout gov services - but it is beyond the scope of this work.</i>
-              </li>
+                <b>The two input fields:</b> GDS styling required for the GDS auto-Complete component (detailed elsewhere)
+                
+                <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
+                  <li>On the 'Find' and 'Assign' input fields add class 'govuk-input'</li>
+                </ul>
+              </li> 
               <li>
-                <b>Search input without JavaScript:</b> With JavaScript disabled it is impossible to search for a user, even if I know the name 'Rosie Brave', for example, exists this still returns no results; but searching with 'Rosie.Brave' does. We should parse/format the input (entered as a name separated with white space) to search on this format to return a result? And/Or allow users to search on both (Rosie Brave and Rosie.Brave if this is a recognised format - possibly strip out the period?)
-              </li>
+                 <b>Form tag:</b>
+                
+                <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
+                  <li>Add the 'novalidate' attribute to the HTML form tag</li>
+                </ul>
+              </li> 
               <li>
-                <b>Fieldset/Legend:</b> Remove inappropriate use of Fieldset/Legend. Simply remove the fieldset and legend <abbr>HTML</abbr> wrapping the form content and reinstate a H1 header in a row &amp; col div (as per the <abbr>HTML</abbr>). Remove 'form-title' class from the H1. (This work should also update the results version of the page, removing the Fieldset/Legend).
-              </li>
+                <b>Breadcrumbs:</b>  some bloat compromising accessibility
+                
+                <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
+                  <li>On this page - and presumably impacting globally throughout all Workflow pages - remove the 'title' attribute from the 'Home' page link</li>
+                </ul>
+              </li> 
               <li>
-                <b><abbr>HTML</abbr> form groups:</b> Add the <abbr>GDS</abbr> <abbr>HTML</abbr> form group structure (which will be used for applying the correct error message designs). Wrap form elements in the 'govuk-form-group' divs, as per the <abbr>HTML</abbr> example.
-              </li>     
+                <b>Fieldset/Legend:</b> inappropriate usage
+                
+                <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
+                  <li>Remove the HTML tags Fieldset and Legend: Simply remove the Fieldset and Legend tags HTML wrapping the form content and reinstate a H1 header in a govuk-grid-row and govuk-grid-column div (as per the HTML provided). Remove the 'form-title' class from the H1 tag. (Removing the Fieldset and Legend tags should also update the results version of the page - when searches have been submitted)</li>
+                </ul>
+              </li> 
               <li>
-                <i>Rosie (notes for future designs): hint text on redesign (advising user to start typing/inputting data). Do we need the 'search' icon on the 'find' field button, as using autocomplete we've already searched for the user. Should this button be "Find", to then 'find' the appliactions associated with that user? (Part of the redesign).</i>
-              </li>
-    
+                <b>HTML form groups:</b> Add the GDS HTML form group HTML structure (which will be used for applying the correct error message designs)
+              
+                <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
+                  <li>Wrap form elements in the 'govuk-form-group' divs, as per the HTML example provided</li>
+                </ul>
+              </li> 
+            </ol>
+
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+            <p class="govuk-body-s">This might be separated out into a separate task:  </p>
+
+            <ol start="10" class="govuk-list govuk-list--number govuk-list--spaced govuk-!-font-size-16">
+              <li>
+                <b>Search input without JavaScript:</b> With JavaScript disabled it is impossible to search for a user
+              
+                <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
+                  <li>Even if I know the name 'Rosie Brave', for example, exists this still returns no results; but searching with 'Rosie.Brave' does. We should parse/format the input (entered as a name separated with white space) to search on this format to return a result? And/Or allow users to search on both (Rosie Brave and Rosie.Brave if this is a recognised format - possibly strip out the period?)</li>
+                </ul>
+              </li> 
+            </ol>
+
+            <p class="govuk-body-s"><i>Notes:</i></p>
+            <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
+              <li><i>Two green buttons on the same page will be resolved with redesign work at a later date</i></li>
+              <li><i>The current Breadcrumbs pattern is not as expected - not mirroring how breadcrumbs work throughout gov services - but it is beyond the scope of this work</i></li>
             </ul>
-    
+
+            <h3 class="govuk-heading-s">
+              Acceptance criteria
+            </h3>
+
+            <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-font-size-16">
+              <li>The work matches the provided HTML design and when keyboard tabbing, the focus state matches the HTML design provided</li>
+              <li>The work matches the provided HTML design and when keyboard tabbing, the focus state matches the HTML design provided</li>
+              <li>The font size and font weight matches the HTML design provided</li>
+              <li>The placeholder text is no longer shown in the two input text fields, and the label texts (above both input text fields) now match the HTML design provided</li>
+              <li>The border weight on both input text fields now match the HTML design provided</li>
+              <li>When inspecting the HTML form tag, it now has the 'novalidate' attributed added</li>
+              <li>The title attribute is removed, so that when mousing over the 'Home' link in the breadcrumb trail (with your mouse cursor) a popup text message no longer appears</li>
+              <li>When inspecting the HTML it matches the HTML design provided, showing that the Fieldset and Legend HTML tags have been removed (and the 'form-title' class has been removed from the H1 header tag)</li>
+              <li>When inspecting the HTML it matches the HTML design provided, showing that the form groups have now been wrapped by the 'govuk-form-group' divs</li>
+              <li>I can successfully search for a person - using a name not concatenated with a period - with JavaScript disabled</li>
+            </ol>
+
     
           </div>
         </details>
@@ -116,105 +178,214 @@
           </summary>
           <div class="govuk-details__text">
             <p class="govuk-body-s">Issues resolved: (assuming the same amends for the page - before form submission - have been applied to the form on the results page)</p>
-            <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16">
-              
+
+
+            <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-font-size-16">
               <li>
-                <b>Table checkboxes:</b> require <abbr>GDS</abbr> styling (for tabbing and accessibility). <br>
-                Update the <abbr>HTML</abbr> structure for each table checkbox, as per the <abbr>HTML</abbr> example (which includes adding 'hmlr-wf-checkboxes--single-tbl' to each checkbox wrapper and removing the title attribute from the checkboxes).<br>
-    
-    
-                <pre>
-                Add this to the end of your <abbr>CSS</abbr> (sass) output file: 
-    
-                .govuk-radios__label:before, 
-                .govuk-checkboxes__label:before {
-                    background-color: #ffffff;
-                }
-    
-                .hmlr-wf-checkboxes--single-tbl {
-                  margin-left: 15px;
-                  width: 0%;
-                }
-    
-                .hmlr-wf-checkboxes--single-tbl .govuk-checkboxes__item {
-                  top: -10px;
-                }            
-                
-                .hmlr-wf-checkboxes--single-tbl .govuk-label {
-                    text-indent: -3000px; 
-                    width: 0; 
-                    padding: 0; 
-                }
-                </pre>
-              </li>  
+                <b>Table checkboxes:</b> require GDS styling for accessibility when keyboard tabbing
+                <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
+                  <li>
+                    Update the HTML structure for each table checkbox, as per the HTML example (which includes adding the class 'hmlr-wf-checkboxes--single-tbl' to each checkbox wrapper)</li>
+                  <li>
+                    Remove the title attribute from the checkboxes 
+                  </li>
+                  <li>
+                    The following CSS is required in the CSS output (and should be added to your stylesheet): <br>
+
+                    <pre>
+                      .govuk-radios__label:before, 
+                        .govuk-checkboxes__label:before {
+                            background-color: #ffffff;
+                        }
+
+                        .hmlr-wf-checkboxes--single-tbl {
+                          margin-left: 15px;
+                          width: 0%;
+                        }
+
+                        .hmlr-wf-checkboxes--single-tbl .govuk-checkboxes__item {
+                          top: -10px;
+                        }            
+
+                        .hmlr-wf-checkboxes--single-tbl .govuk-label {
+                            text-indent: -3000px; 
+                            width: 0; 
+                            padding: 0; 
+                        }
+                    </pre>
+
+                  </li>
+                 
+                </ul>
+              </li>
               <li>
-                <b>Select all - checkbox option:</b> Remove the label <abbr>HTML</abbr> which wraps the 'Select all' text in the table header cell, and edit the text to just 'Select'. Update the checkbox (with hidden label) as per the <abbr>HTML</abbr> and the <abbr>CSS</abbr> classes used. In this row remove the empty 5 col cell and add colspan 7 to the single remaining cell on this row, as per the <abbr>HTML</abbr>.<br>
-                Add class 'hmlr-wf-tr-if-js' to the parent <abbr>TR</abbr> element, and this <abbr>CSS</abbr> to your <abbr>CSS</abbr> output:<br>
-                <pre>
-                  .hmlr-wf-tr-if-js {
-                    display: none; 
-                  }
+                <b>Select all - checkbox option: </b> the 'Select all' checkbox option requires amending to comply with improved accessibility and GDS accessibility requirements. (Redesigning the page is beyond the scope of this work).
+
+                <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
+                  <li>Remove the label HTML which wraps the 'Select all' text in the table header cell</li>
+                  <li>Update the checkbox HTML as per the HTML example (and with the CSS classes used) and using the new label text of 'Select all applications'</li>
+                  <li>In this table row remove the 5 empty cells and add a colspan ( =7) attribute to the single cell now remaining in this row, as per the HTML example</li>
+                  <li>Add class 'hmlr-wf-tr-if-js' to the parent TR HTML element</li>
+                  <li>
+                    Add this CSS to your CSS output (stylesheet): <br>
                   
-                  .js-enabled .hmlr-wf-tr-if-js {
-                      display: table-row; 
-                  }
-                </pre>
+                    <pre>
+                      .hmlr-wf-tr-if-js {
+                        display: none; 
+                      }
+                      
+                      .js-enabled .hmlr-wf-tr-if-js {
+                          display: table-row; 
+                      }
+                    </pre>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <b> Select all - checkbox option - non-JavaScript support: </b> There are two options: to be discussed / refined
+
+                <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
+                  <li>
+                    a). Maintain (or reapply) the JavaScript functionality which selects/checks (and unselects/unchecks) all the checkboxes in the table when this 'Select all applications' checkbox is selected/deselected. BUT when JavaScript is disabled (i.e., unsupported), when the user selects 'Select all applications' all applications must be submitted when the user selects 'Assign' (even though they are not visually selected). This should also maintain any logic currently established for 'hidden' attached applications (which, when revealed, do not feature a checkbox).
+                  </li>
+                  <li>
+                    b). Maintain (or reapply) the JavaScript functionality which selects/checks (and unselects/unchecks) all the checkboxes in the table when this 'Select all applications' checkbox is selected/deselected. BUT when JavaScript is disabled (i.e., unsupported) the 'Select all applications' checkbox option should ideally not be included in the page. (Including it within the HTML DOM by using JavaScript to inject it into the page - and then adding its listening on -change event - is preferable to relying upon CSS to “display none”) 
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <b>Table Caption tag: </b> Update the hidden table caption to improve navigation for assistive technologies
+                <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
+                  <li>
+                    Update the table caption element text, as per the HTML provided (with the first number being how many results were returned) 
+                  </li>
+                  <li>
+                    Add class 'govuk-!-margin-top-6' to the table tag
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <b>Labels in table columns and ABBR tags: </b> inappropriately used (hampering users with assistive technologies)
+                <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
+                  <li>Remove the HTML Label tags wrapping the content in each of the column Headers</li>
+                  <li>In the 'Category' column remove the ABBR tags which wrap the content of these cells</li>
+                </ul>
+              </li>
+              <li>
+                <b>Hyperlink styling: </b> apply the GDS styling for accessibility
+                <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
+                  <li>
+                    Append the following CSS to the end of your CSS output (stylesheet)<br>
+
+                    <pre>
+                      /* temp updating hover states to match latest gds: STARTS */
+                      .govuk-link, 
+                      .govuk-details__summary-text {
+                          text-decoration-thickness: max(1px,0.0625rem) !important;
+                          text-underline-offset: 0.1578em !important;   
+                      }
+
+                      .govuk-link:hover, 
+                      .govuk-details__summary-text:hover {
+                          text-decoration-thickness: max(3px,0.1875rem,0.12em) !important;
+                          text-underline-offset: 0.1578em !important;
+                      }
+                      /* temp updating hover states to match latest gds: ENDS */
+                    </pre>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <b>'More info' hyperlinks: </b> are currently not accessibility compliant
+                <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
+                  <li>For each of the 'More info' hyperlinks, remove the title and aria-label attributes</li>
+                  <li>Add target blank attributes, as per the HTML example</li>
+                  <li>Update the link content, as per the HTML example, with each featuring its unique application number</li>
+                  <li>Add to the 'a' tag (hyperlink) the 'govuk-!-font-size-16' class to reinstate the font sizing, as per the HTML example</li>
+                </ul>
+              </li>
+              <li>
+                <b>'Show attached applications' hyperlinks: </b> (And the equivalent 'Hide attached applications' hyperlinks). Make accessibility and GDS compliant
+                <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
+                  <li>Update the plus (and minus) symbols, to use a HTML symbol code, as per the HTML example</li>
+                  <li>Add the class 'govuk-link' to the button tag</li>
+                  <li>Add the hidden span within the hyperlink content - a visually hidden span describing the application number - as per the HTML example</li>
+                  <li>Remove any title attribute from the button/hyperlink</li>
+                </ul>
+              </li>
+              <li>
+                <b>Results statement: </b> (located above the results list/table) Semantic mark-up and GDS structure (for error messages)
+                <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
+                  <li>On the HTML DIV with class 'top-spacing' add the 'govuk-!-margin-top-6' class, as per HTML example </li>
+                  <li>Update the HTML DIVs wrapping any following statement to be 'P' tags, with 'govuk-body-s' class, as per the HTML example</li>
+                  <li>Wrap the HTML DIV - which has the class 'top-spacing' - with in a new DIV which has the class 'govuk-form-group' (which should also wrap the results list table when a table is included in the page), as per the HTML example</li>
+                </ul>
+              </li>
+
+            </ol>
+
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+            <p class="govuk-body-s">This might be separated out into a separate task:  </p>            
+
+            <ol start="10" class="govuk-list govuk-list--number govuk-list--spaced govuk-!-font-size-16">
+              <li>
+                <b>The 'Show attached applications' hyperlink functionality: </b> which reveals (and hides) applications which are attached/associated with an application
                 <br>
-                <i>This feature shouldn't be in the table, but moving it is beyond the scope of this <abbr>WCAG</abbr> work.</i>
-              </li>  
-              <li>
-                <b>Table Caption tag:</b> Update the table caption, as per the <abbr>HTML</abbr> provided (with the first number being how many results were returned) and add class 'govuk-!-margin-top-6' to the table tag.
-              </li> 
-              <li>
-                <b>Labels in all coloumns:</b> Remove the label <abbr>HTML</abbr> tags wrapping the content in each of the coloumns. In the 'Category' coloumn remove the <abbr>ABBR</abbr> tags which wrap the content. <br>
-                <i>There is some inappropriate or redundant <abbr>HTML</abbr> used in these tables, but this is beyond the scope of the <abbr>WCAG</abbr> work.</i>
+                <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16">
+                  <li>There is an issue with this functionality as it requires JavaScript support to function (and reveal the attached applications). </li>
+                  <li>The ideal solution is: the link submits (a hidden input value) to itself for the page to simply reload with the previously hidden table row(s), or applications, now showing in the page (by not including the inline 'hidden' attribute, and vice versa). i.e., a round trip post to the server to include or omit these attached application rows. (The plus & minus and show/hide words in the hyperlink would also be updated by simply hardcoding them in the page output). </li>
+                  <li><i>This resolves the accessibility issue. If means the related JavaScript could then be removed from the build (once the same functionality is updated on the Worklist page). A progressive enhancement could reapply the current dynamic JavaScript behaviour easily enough - but as there are ambitions to redesign these pages that enhancement might not be worthwhile. (A redesign will also provide more semantic sense within the HTML for 'attached' applications).</i></li>
+                  <li><i>This work will also be repeated for the same 'Show attached applications' hyperlinks on the Worklist page.</i></li>
+                  <li><i>Note: the HTML example does not demonstrate the current Show/Hide functionality - this needs to be observed on the Preview service where there is an application with an attached application. </i></li>
+                  
+                </ul>
               </li>
-              <li>
-                <b>Hyperlink styling:</b> Hyperlinks require the modern <abbr>GDS</abbr> styling. Append the following <abbr>CSS</abbr> to the end of your <abbr>CSS</abbr> output. (If/when upgrading to the latest <abbr>GDS</abbr> version, this will no longer be required).
-                <br>
-                <pre>
-                  /* temp updating hover states to match latest gds: STARTS */
-                  .govuk-link, 
-                  .govuk-details__summary-text {
-                      text-decoration-thickness: max(1px,0.0625rem) !important;
-                      text-underline-offset: 0.1578em !important;   
-                  }
+                    
+            </ol>
 
-                  .govuk-link:hover, 
-                  .govuk-details__summary-text:hover {
-                      text-decoration-thickness: max(3px,0.1875rem,0.12em) !important;
-                      text-underline-offset: 0.1578em !important;
-                  }
-                  /* temp updating hover states to match latest gds: ENDS */
-                </pre>
-              </li>
-              <li>
-                <b>'More info' links:</b> For each of these links, remove the title and aria-label attributes. Add target blank attributes. Update the link content, as per the <abbr>HTML</abbr>, with each featuring its unique application number. Add to the 'a' tag (hyperlink) the 'govuk-!-font-size-16' class to reinstate the font sizing, as per the <abbr>HTML</abbr>.
-              </li>
-              <li>
-                <b>'Show attached applications' link: </b> (And the equivalent 'Hide attached applications'). Update the plus sign to use the <abbr>HTML</abbr> symbol code (as per the <abbr>HTML</abbr>). Add the class 'govuk-link' to the button tag (which will apply the keyboard tabbing focus state styling). Add the hidden span within the hyperlink content - a visually hidden span describing the application number - which will make each of these links unique (which is an accessibility requirement), as per the <abbr>HTML</abbr> provided. Remove any title attribute from the button/link.
-                
-                <br><br>
-                <b>Significant work:</b> There is an issue with this functionality requiring JavaScript support to reveal the attached applications. The ideal solution is: the link submits (a hidden input field) to itself for the page to reload with the previously hidden table rows (applications) showing (with whatever class is required to reveal/show it). i.e, round trip posts to the server to show and hide these attached rows. The plus &amp; minus and show/hide words in the hyperlink will also require updating (hardcoded into the page). (Ultimately, if this functionality is created it may be easier to remove the JavaScript functionality which does this dynamically?). 
-                
-                <br><br>
-                
-                <i>For this <abbr>HTML</abbr> design template the functionality of showing/hiding an additional table row/tbody isn't supported. On the preview site any table row (application) revealed as being attached to a parent application has no semantic indicator that it is linked whatsoever, but this is beyond the scope of this work. Other issues relating to such links sitting next to each other will be resolved in the Worklist <abbr>WCAG</abbr> work.</i>
-              </li>
-              <li>
-                <b>Self clearing input fields:</b> On the preview site, the results page persists the input values in both of the main text input fields: when clicking in these (adding focus) the content is automatically cleared. Remove/Amend the JavaScript which does this (to stop this behaviour). This appears to be related to the input class 'search-bar' (with the JavaScript targeting/finding the element via that class) and the 'autocomplete'? This update should apply to the input fields when the page first loads and the 'results' version of the page. <b>Note</b>: If/when we upgrade to the new proposed autoComplete component (detailed below), this will remove this 'clearing' behaviour.
-              </li>
-              <li>
-                <b>Results statement</b> (above the results table): On the div with class '.top-spacing' add the 'govuk-!-margin-top-6' class (as per <abbr>HTML</abbr>). Change the H2 (#caseworker_worklist_heading) class from '-l' to '-m'. Update the divs wrapping any following statement to be 'P' tags, with 'govuk-body-s' class, as per the <abbr>HTML</abbr>. Wrap the '.top-spacing' div in a new div with class '.govuk-form-group' (which should also wrap the results list table when it is included in the page).
-              </li>
+            <p class="govuk-body-s"><i>Notes:</i></p>
 
-              <li>
-                <b>Note: </b> Table IDs and 'headers': I can't see why we've added IDs to the <abbr>TH</abbr> table headers and also added 'headers' attributes to the tables cells (as this is a straightforward table design and does not require these features which are used for complex layouts with cells spanning coloumns, etc)? We could look at removing these if issues persist in testing with repeating headers and rows being read aloud by assistive technologies.
-              </li> 
-
-              
-    
+            <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
+              <li><i>Problems with the self-clearing input fields, when the user adds focus, will be resolved as part of the auto-complete work (in a separate ticket) </i></li>
+              <li><i>Table IDs and 'headers': I see no reason for keeping the IDs on the TH table headers and the 'headers' attributes on the tables cells (as this is a straightforward table design and does not require these features, which are used to resolve complex table structures with cells spanning columns, etc)? We could look at removing these if issues persist in testing with narrators (audio browsers) repeating headers and rows, being read aloud twice by assistive technologies</i></li>
             </ul>
+
+            <h3 class="govuk-heading-s">
+              Acceptance criteria
+            </h3>
+
+            <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-font-size-16">
+              <li>The checkboxes match the HTML design and display the correct GDS styles when keyboard tabbing, as per the HMTL example. There is no pop-up (tool tip) text when mousing over the checkboxes (with your mouse cursor)</li>
+              <li>The checkbox matches the HTML design and displays the correct GDS styles when keyboard tabbing, as per the HMTL example. Selecting/Deselecting it selects and unselects all the checkboxes in the table. (Inspecting the table HTML shows this checkbox in one continuous cell which spans all seven columns)</li>
+              <li>
+                Depending upon which option was chosen: <br>
+
+                <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
+                  <li>
+                    a). With JavaScript disabled, I select the 'Select all applications' option and I assign them to a user (without making further selections). All the applications must be successfully assigned to that user even though the individual application checkboxes were not selected. (If I select it and then unselect it, all the applications won't be assigned, but any applications which are selected will be). 
+                  </li>
+                </ul>
+
+                OR<br>
+
+                <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
+                  <li>
+                    b). With JavaScript disabled: the 'Select all applications' checkbox option is not included in the page. Keyboard tabbing through the page does not include this option in its page flow (and assistive technologies don't find it). The checkbox option should not be in the HTML document.
+                  </li>
+                </ul>
+
+              </li>
+              <li>Inspecting the table Caption within the HTML (or temporarily disabling the styling) will confirm the updated content</li>
+              <li>Clicking on the headers in the table header row does nothing (and does not select/unselect checkboxes) and mousing over the text in the Category column  table cells (with your mouse cursor) does not show a pop-up (tool tip)</li>
+              <li>The hover states and styling of hyperlinks (such as 'More info') matches those provided in the HTML design</li>
+              <li>The hyperlinks visually match the examples provided in the HTML design and by inspecting the HTML (or disabling the styles) the full hyperlink text matches that provided in the HTML design (which includes the unique number for each application)</li>
+              <li>The hyperlinks visually match the examples provided in the HTML design and their active states when keyboard tabbing onto them. There is no pop-up (tool tip) text when mousing over the text (with your mouse cursor). inspecting the HTML (or disabling the styles) shows the hyperlink text has been updated to include the unique number for the application, as per the HTML design example</li>
+              <li>The spacing visually matches the HTML design. Inspecting the HTML confirms that the text (and table) has been wrapped in a HTML DIV with the class 'govuk-form-group' (which is used for correct error message styling)</li>
+              <li>With JavaScript disabled: clicking a 'Show attached applications' hyperlink refreshes the page with one or more attached applications (associated with the application which was selected) now visible in the page. The hyperlink text has also updated to 'Hide attached applications' for that application row. (Hiding the applications also refreshes the page with the attached applications no longer visible and the hyperlink text reverted to 'Show attached applications').</li>
+              
+            </ol>
+
           </div>
         </details>    
 
@@ -232,45 +403,144 @@
           </summary>
           <div class="govuk-details__text">
             <p class="govuk-body-s">
-              <b>Significant work:</b><br><br>
+              Assuming the issues in ticket #3377 are resolved (as they share features), these are the additional updates required to resolve accessibility issues concerning the auto-complete functionality (which are largely resolved by using an alternative auto-complete component). 
+            </p>
 
-              Notes: The current autocomplete functionality on the 'Find' and 'Assign' text fields fail accessiblity tests. These failings have been recorded in ticket Jira <a href="https://hmlandregistry.atlassian.net/browse/AMW-1714" class="govuk-link govuk-link--no-visited-state" target="_blank">1714</a>, and this work resolves this issue. This alternative is an offical Gov <abbr>GDS</abbr> project designed to be accessibile.
-            </p>
             <p class="govuk-body-s">
-              The current autoComplete dynically displays the message &quot;This user cannot obtain applications in 
-              Workflow&quot; when it does not recognise or match the input to a name. The alternative - demonstrated here - instead uses the <abbr>GDS</abbr> standard message of &quot;No results found&quot; (but this can be changed).
+              The current auto-complete functionality on the 'Find' and 'Assign' text fields fail accessibility tests. These failings have been recorded in ticket Jira #<a href="https://hmlandregistry.atlassian.net/browse/AMW-1714" class="govuk-link govuk-link--no-visited-state" target="_blank">1714</a>, and this work resolves this issue. This alternative uses a Gov GDS project/component designed to be accessible. 
             </p>
-            <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16">
+
+            <p class="govuk-body-s">
+              The current auto-complete functionality dynamically displays the message "This user cannot obtain applications in Workflow" when it does not recognise or match the input to a name. The new text for this scenario - demonstrated in the HTML design - instead uses the GDS standard message of "No results found". (This is editable).
+            </p>
+
+            <h2 class="govuk-heading-m">
+              Steps to update the page HTML to work with the new accessibility compliant auto-complete component:
+            </h2>
+
+            <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-font-size-16">
               
               <li>
-                Remove legacy class 'spin' spans and the redundant #results-container div
+                Remove legacy SPAN elements (with class 'spin') in both input search fields and the redundant DIV with ID #results-container
               </li>
               <li>
-                Move the input text fields into a <code>noscript</code> tag as per the <abbr>HTML</abbr> design templates provided.
+                Move the input text fields into a noscript HTML tag as per the HTML design templates provided. (These will be used to maintain the current functionality and submit searches for uses without JavaScript support)
               </li>
               <li>
-                Add the <code>style</code> tags to the body of the page - these are styles exclusive to this page only - as per the <abbr>HTML</abbr> design template provided.
-              </li>
-              <li>
-                Add the new <abbr>HTML</abbr> blocks (identified by the classs 'manage-bar search-container') as per the <abbr>HTML</abbr> design template provided; these are where the generated autocomplete and new input field is injected.
-              </li>
-              <li>
-                For this prototype I have added the JavaScript and <abbr>CSS</abbr> required by this autocomplete to the bottom of the <abbr>HTML</abbr> template file. We could move the block of <abbr>CSS</abbr> to a seperate file. The JavaScript could be moved to a standalone file (as we may reuse it elsewhere); however the two ('#tt-autoselect' and '#tt2-autoselect') local declarations could remain as part of this file/page. You can access the minified <abbr>CSS</abbr> and JavaScript files on this page: https://alphagov.github.io/accessible-autocomplete/
-              </li>
-              <li>
-                The hardcoded array (var namesExamples) provides the sample search data for these designs.<br><br>
-                
-                From https://alphagov.github.io/accessible-autocomplete/ ...<br>
-                &quot;<i>If source is a function, the arguments are: query: string, populateResults: Function<br><br>
+                Add style tags to the body of the page - these are styles exclusive to this page only - as per the HTML design template provided - and cannot contaminate other pages/forms used in the service. (Or add them in the header section of this page and the results pages). <br>
 
-                  Similar to the source argument for typeahead.js, a backing data source for suggestions. query is what gets typed into the input field, which will callback to populateResults synchronously with the array of string results to display in the menu.</i>&quot; (Further info on the website).
+                <pre>
+                    .govuk-button {
+                      top: -40px;
+                    }
+                    .js-enabled .govuk-button {
+                      top: auto;
+                    }
+                    .search-bar {
+                      padding-left: 0;
+                    }
+                </pre>
+
+              </li>
+              <li>
+                Add the new HTML blocks (identified by the classes 'manage-bar search-container') as per the HTML design provided; these are where the generated auto-complete and new input field is injected
+              </li>
+              <li>
+                The auto-complete component:
+
+                <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16">
+                  <li>
+                    We require the component's JavaScript and CSS: For this prototype I have added the JavaScript and CSS required by this auto-complete component to the bottom of the HTML template file. (We could move the block of CSS to a separate CSS file). The JavaScript could be moved to a standalone file (as we may reuse it elsewhere); however the two ('#tt-autoselect' and '#tt2-autoselect') local declarations could remain as part of this file/page. 
+                  </li>
+                  <li>
+                    We can source minified CSS and JavaScript files - if required. It is also available via npm and a module system.
+                  </li>
+                  <li>
+                    The hardcoded array of names (var namesExamples) used at the bottom of the HTML design file, provides the sample search data for the HTML design example. The component's documentation identifies where we can “Provide your remote data source” (commented in the HTML design file). The API provides further 'remote source' documentation.
+                  </li>
+                </ul>
+
+              </li>
+              
+            </ol>
+
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+            <p class="govuk-body-s">
+              <i>Notes: </i>
+            </p>
+            <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16">
+              <li>
+                <i>The current auto-complete requires two characters before initiating a search for matches. This new auto-complete defaults to searching on one character - we might wish to review this?
+                </i>
+              </li>
+              <li>
+                <i>The current accessibility issue of user's input instantly clearing when the user returns focus to the input field is resolved by the behaviour of this replacement auto-complete component (which does not clear the field automatically)</i>
+              </li>
+              <li>
+                <i>Planned redesigns of these pages will resolve the CSS and in-page styling used to resolve these accessibility issues (remaining in scope of the required work)</i>
+              </li>
+              
+            </ul>
+
+
+            <h3 class="govuk-heading-s">
+              Acceptance criteria
+            </h3>
+
+            <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-font-size-16">
+              
+              <li>
+                Inspecting the HTML will confirm if these redundant HTML elements have been removed - no test required
+              </li>
+              <li>
+                With JavaScript disabled, submit a search: the page should refresh with a response, whether a user is found or not, confirming that the page remains functional for users with browsers which do not support JavaScript functionality. (When JavaScript is disabled the input text fields should appear as expected - as shown in the attached screengrab 'new-version-with-javascript-disabled') 
+              </li>
+              <li>
+                The presentation will match the HTML design asset 
+              </li>
+              <li>
+                The presentation will match the HTML design asset 
+              </li>
+              <li>
+                The auto-complete component behaviour<br>
+
+                <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16">
+                  <li>
+                    Names are suggested whether entered using lowercase or uppercase
+                  </li>
+                  <li>
+                    Using the keyboard the user can navigate onto suggested matches and select them
+                  </li>
+                  <li>
+                    A 'No results found' message presents when there are no matches
+                  </li>
+                  <li>
+                    When an option is select the user can successfully submit the option/value
+                  </li>
+                </ul>
+
+              </li>
+
+            </ol>
+
+            <p class="govuk-body-s">
+              <i>Replacement auto-complete component: </i>
+            </p>
+            <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16">
+              <li>
+                API: https://alphagov.github.io/accessible-autocomplete/ 
+              </li>
+              <li>
+                Examples in use: https://alphagov.github.io/accessible-autocomplete/examples/ 
               </li>
             </ul>
 
-            <p class="govuk-body-s">
-              API: https://alphagov.github.io/accessible-autocomplete/<br><br>
-              Example: https://alphagov.github.io/accessible-autocomplete/examples/
-            </p>
+
+
+
+
+
           </div>
         </details>    
 
@@ -280,6 +550,8 @@
     <h2 class="govuk-heading-s">
       Manage assigned work - Error messages
     </h2>
+
+    <p class="govuk-body-s">Dependencies: Assuming the issues in tickets #3377 and #3380 have been completed (as they feature work required for these error messages); these are the error messages and error summaries required to resolve accessibility issues and GDS compliance. </p>
 
     <p class="govuk-body-s govuk-!-font-weight-bold">All error message pages should feature: </p>
     
@@ -292,50 +564,89 @@
     <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-font-size-16">
 
       <li>
-        <b>'Find' is a required field:</b> Submiting the 'find' option without a value generates a pink banner displaying  'No Workflow user found with the name &quot;&quot; '. This is a form validation message - when no value is entered - for a required field and instead should be presented as an validation error with this message, as per the design: <br>
-        &bull; <a href="./error-enter-a-value-for-find.html" class="govuk-link govuk-link--no-visited-state" target="_blank">error-enter-a-value-for-find</a>. 
+        <b>'Find' is a required field:</b> Submitting the 'find' option without a value currently generates a pink banner displaying 'No Workflow user found with the name "" '. This is a form validation message - when no value is entered - and is a required field, so instead we require a validation error (with a revised message), as per the design: <a href="./error-enter-a-value-for-find.html" class="govuk-link govuk-link--no-visited-state" target="_blank">error-enter-a-value-for-find</a> 
       </li>
       <li>
-        <b>Submiting 'Assign' - 'Find' is a required field:</b> The result is similar to the previous 'error-enter-a-value-for-find' example - when the 'find' field is empty and a user enters a 'assign' value and submits the 'assign' field the error message for the empty 'find' field is also fired. This example shows the same error message with a value in the 'assign' field:  
-        <br>
-        &bull; <a href="./error-enter-a-value-for-find-submitting-assign.html" class="govuk-link govuk-link--no-visited-state" target="_blank">error-enter-a-value-for-find-submitting-assign</a>. 
+        <b>Submitting 'Assign' when 'Find' is empty: </b> Similar to the previous 'find' example: When the 'find' field is empty and a user has entered a value in the 'assign' field and submits the 'assign' field (using the assign button) a pink banner shows the text: “Find a caseworker to assign applications from and to.” The required fields validation error message and styling should now be as two validation errors as per the HTML design provided:   
+        <a href="./error-enter-a-value-for-find-and-assign.html" class="govuk-link govuk-link--no-visited-state" target="_blank">error-enter-a-value-for-find-and-assign</a> 
       </li>
       <li>
-        <b>Submiting 'Assign' with no values in either fields:</b> If the user submits the assign field without entering any value into both the 'find' and 'assign' field, this is how the error messages appear: <br>
-        &bull; <a href="./error-enter-a-value-for-find-and-assign.html" class="govuk-link govuk-link--no-visited-state" target="_blank">error-enter-a-value-for-find-and-assign</a>. 
+        <b>Submitting 'Assign' when both fields are empty</b> <br>
+        When both 'find' and 'assign' fields do not have a value and the user submits the 'assign' field (using the assign button), the page refreshes with two error messages, as per the HTML design: <a href="./error-enter-a-value-for-find-and-assign.html" class="govuk-link govuk-link--no-visited-state" target="_blank">error-enter-a-value-for-find-and-assign</a> 
       </li>
       <li>
-        <b>'Assign' is a required field:</b> <!--The logic of how this page works requires redesigning but in order to get the current design to be accessibile (and <abbr>GDS</abbr> compliant) we need to use the correct error messaging patterns.
+        <b>'Assign is a required field'</b> <!--The logic of how this page works requires redesigning but in order to get the current design to be accessibile (and <abbr>GDS</abbr> compliant) we need to use the correct error messaging patterns.-->
+        If the 'find' field has a value and the 'assign' field does not have a value, then submitting the 'assign' field (using the assign button), the current form behaviour automatically submits the value in the 'find' field and returns the 'find' results. 
+
+        <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
+          <li style="text-decoration: line-through;"><b>Option A</b> - which may prove too difficult to implement (to accommodate the current form design):</li>
+
+          <li style="text-decoration: line-through;">Currently, a pink banner displays the message "Select an application and find a caseworker to assign the application to."</li> 
+            
+            <li style="text-decoration: line-through;">Instead these two messages should display, as per the HTML design: 
+              <a href="./error-enter-a-value-for-assign.html" class="govuk-link govuk-link--no-visited-state" target="_blank">error-enter-a-value-for-assign</a>
+              <br>The summary message hyperlink for selecting an application should target the first application checkbox (not the 'Select all' checkbox option). When the 'Select one or more applications to assign' error message is shown we also add the 'aria-describedby' attribute to each checkbox (as per the HTML design), except for the first 'Select all' checkbox option</li>
+            
+            <li style="text-decoration: line-through;">If the 'find' field has already returned zero results, and the user attempts to submit an 'assigned' value (using the assign button) - due to the nature of the current page design - we still require both error and summary messages, but the 'applications' error summary hyperlink should point to the ID on H2 header title (#caseworker_worklist_heading) due to the absence of any applications to target</li>
+          
+            <li><b>Option B</b> - due to the nature of this form design, this is a simple amendment to the current behaviour: </li>
+            <li>Currently, a pink banner displays the message "Select an application and find a caseworker to assign the application to." </li>
+            <li>Instead serve this error message and design as per the HTML design:
+              <a href="./error-enter-a-value-for-applications-no-assign.html" class="govuk-link govuk-link--no-visited-state" target="_blank">error-enter-a-value-for-applications-no-assign</a>
+              <br>(This simpler message does not load with instructions)</li>
+            <li>The summary message hyperlink for selecting an application should target the first application checkbox (not the 'Select all' checkbox option). When the 'Select one or more applications to assign' error message is shown we also add the 'aria-describedby' attribute to each checkbox (as per the HTML design), except for the first 'Select all' checkbox option</li>
+            <li><i>If no applications are returned we can point the error summary hyperlink to the ID on the H2 header title (#caseworker_worklist_heading) due to the absence of any applications to target</i></li>
+            
+        </ul> 
         
-        <br><br>-->If 'Find' has a value, then submiting the 'Assign' field without a value (the first time, before a list of applications has been returned) currently generates a pink banner displaying "Select an application and find a caseworker to assign the application to." This is a form error validation message (required fields) - this message and design is required: <br>
-        &bull; <a href="./error-enter-a-value-for-assign.html" class="govuk-link govuk-link--no-visited-state" target="_blank">error-enter-a-value-for-assign</a>. <br>
-        The summary message hyperlink for selecting an application should target the first application checkbox (not the 'Select all' checkbox option). When the 'Select one or more applications to assign' error message is shown we also add the 'aria-describedby' attribute to each checkbox (as per the <abbr>HTML</abbr> design), except for the first 'Select all' checkbox option.
       </li>
       <li>
-        <b>Applications are required:</b> When both 'find' and 'assign' have values and no application has been selected: this is how the page appears: <br>
-        &bull; <a href="./error-enter-a-value-for-applications.html" class="govuk-link govuk-link--no-visited-state" target="_blank">error-enter-a-value-for-applications</a>. <br>
-        This error message is served even if there is a message stating '0 applications'.
+        <b>'Applications' are requred: </b> If the 'find' field has a value and the 'assign' field also has a value, then submitting the 'assign' field (using the assign button), the current form behaviour automatically submits the value in the 'find' field and returns the 'find' results. (When the results have already been returned the page resubmission can appear as though nothing has happened). 
+
+        <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
+          <li>Currently,  a pink banner with the message “Select an application to assign.“ is returned.</li>
+          <li>Instead we should return the message and styling as per the HTML design: 
+            <a href="./error-enter-a-value-for-applications.html" class="govuk-link govuk-link--no-visited-state" target="_blank">error-enter-a-value-for-applications</a>
+          </li> 
+          <li>The summary message hyperlink for selecting an application should target the first application checkbox (not the 'Select all' checkbox option). When the 'Select one or more applications to assign' error message is shown we also add the 'aria-describedby' attribute to each checkbox (as per the HTML design), except for the first 'Select all' checkbox option</li>
+          <li><i>If no applications are returned we can point the error summary hyperlink to the ID on the H2 header title (#caseworker_worklist_heading) due to the absence of any applications to target</i></li>
+          
+        </ul>
+
       </li>   
-      <li>
-        If form validation error messages have been fired for either 'assign' and/or 'applications' the user could theoretically manually clear the value in the 'find' field; so the first error message (<a href="./error-enter-a-value-for-find.html" class="govuk-link govuk-link--no-visited-state" target="_blank">error-enter-a-value-for-find</a>) is fired. But if the user has successfully returned a list of applications and then clears all fields and 'clicks' the 'assign' button, this example provides an illustration of how all three error messages appear in this theoretical edge case: <br>
-        &bull; <a href="./error-all.html" class="govuk-link govuk-link--no-visited-state" target="_blank">error-all</a>. 
-      </li>
-      <!--li>
-        For non-JavaScript users do we require input validation on avoid symbols?
-      </li-->
-
-
-
-
-
-      <li>
-        <b>Form expired banner: </b> When the page/form has expired an 'important' banner (<abbr>GDS</abbr> notification banner component) message is served at the top of the page which states: "The form you were submitting has expired. Please try again." The styling on this banner isn't quite correct - the <abbr>HTML</abbr> should be as per this: <br>
-        &bull; <a href="./banner-form-expired.html" class="govuk-link govuk-link--no-visited-state" target="_blank">
-          banner-form-expired
-        </a>
-        
-      </li>               
     </ol>
+
+    <h3 class="govuk-heading-s">
+      Acceptance criteria
+    </h3>
+
+    <p class="govuk-body-s"><b>For all pages displaying an form validation message: </b></p>
+
+    <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16 govuk-!-margin-left-8">
+      <li>All error messages and summaries are presented as HTML within the HTML document - served from the server - and not as dynamically generated, or revealed, elements</li>
+      <li>The text and colon “Error: “ prepend the webpage document title</li>
+      <li>All error message text and visual presentation to match the HTML designs provided</li>
+      
+    </ul>
+
+    <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-font-size-16">
+
+      <li>In the 'Find' field submit a blank field. The page should reload with error summary, error message and error text prepended to the HTML document (window) title as per the design. Text should match the text in the design. Hyperlinks in the error summary should move focus to the relevant form element, as per the HTML design. </li>
+      <li> If the 'find' field is empty and a value has been entered in the 'assign' field, then submitting the 'assign' field (using the assign button) refreshes the page with the error message for the empty 'find' field, as per the HTML design. Text should match the text in the design. The hyperlinks in the error summary should move focus to the relevant form element, as per the HTML design. “Error: “ text should be prepended to the HTML document (window) title. </li>
+      <li>When both 'find' and 'assign' fields do not have a value and the user submits the 'assign' field (using the assign button), the page refreshes with two error messages, as per the HTML design. Text should match the text in the design. Hyperlinks in the error summary should move focus to the relevant form element, as per the HTML design. “Error: “ text should be prepended to the HTML document (window) title. </li>
+      <li>If 'find' has a value, then submitting the 'assign' field without a value will submit the 'find' value and the page refreshes with the 'find' result. The error summary hyperlink targets the first application checkbox (not the 'Select all applications' checkbox). All checkboxes now include the 'aria-describedby' attribute pointing to the inline error message as per the design. </li>
+      <li>If the 'find' field has a value and the 'assign' field also has a value, then submitting the 'assign' field (using the assign button), the current form behaviour automatically submits the value in the 'find' field and returns the 'find' result. Acceptance criteria matches number 4.</li>
+   
+
+
+    </ol>
+
+
+
+
+
+
+
 
     <h2 class="govuk-heading-s">
       Manage assigned work - Banners 
