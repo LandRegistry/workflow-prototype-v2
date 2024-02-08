@@ -245,11 +245,11 @@
                 <b> Select all - checkbox option - non-JavaScript support: </b> There are two options: to be discussed / refined
 
                 <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
-                  <li>
+                  <li style="text-decoration: line-through;">
                     a). Maintain (or reapply) the JavaScript functionality which selects/checks (and unselects/unchecks) all the checkboxes in the table when this 'Select all applications' checkbox is selected/deselected. BUT when JavaScript is disabled (i.e., unsupported), when the user selects 'Select all applications' all applications must be submitted when the user selects 'Assign' (even though they are not visually selected). This should also maintain any logic currently established for 'hidden' attached applications (which, when revealed, do not feature a checkbox).
                   </li>
                   <li>
-                    b). Maintain (or reapply) the JavaScript functionality which selects/checks (and unselects/unchecks) all the checkboxes in the table when this 'Select all applications' checkbox is selected/deselected. BUT when JavaScript is disabled (i.e., unsupported) the 'Select all applications' checkbox option should ideally not be included in the page. (Including it within the HTML DOM by using JavaScript to inject it into the page - and then adding its listening on -change event - is preferable to relying upon CSS to “display none”) 
+                    b). Maintain (or reapply) the JavaScript functionality which selects/checks (and unselects/unchecks) all the checkboxes in the table when this 'Select all applications' checkbox is selected/deselected. BUT when JavaScript is disabled (i.e., unsupported) the 'Select all applications' checkbox option should ideally not be included in the page. (Including it within the HTML DOM by using JavaScript to inject it into the page - and then adding its listening on -change event - is preferable to relying upon CSS to “display none”). Update: The HTML template provided for this page has now been updated to demonstrate a stable solution for injecting the 'Select all applications' checkbox using vanilla JavaScript to satisfy number 3 in the acceptance criteria - view the HTML source (at the end) to rip the JavaScript. (A div#hmlr-wf-select-all is added to the HTML as the target).  
                   </li>
                 </ul>
               </li>

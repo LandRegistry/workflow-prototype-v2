@@ -106,10 +106,9 @@
                         <!--input type="checkbox" id="id_select_all"-->
                         <div class="govuk-checkboxes govuk-checkboxes--small govuk-!-margin-bottom-4 govuk-!-margin-left-3">
                             <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="id_select_all" type="checkbox">
-                                <label class="govuk-label govuk-checkboxes__label" for="id_select_all">
-                                Select all applications
-                                </label>
+                                
+                                <div id="hmlr-wf-select-all"></div>
+
                             </div>
                         </div>
 
@@ -500,7 +499,51 @@
 
 
 
+<script>
+    window.onload = (event) => {
 
+        function fSubProcedure1() {
+            var checkboxHtml = '<input class="govuk-checkboxes__input" id="id_select_all" type="checkbox">';
+            checkboxHtml += '<label class="govuk-label govuk-checkboxes__label" for="id_select_all">';
+            checkboxHtml += 'Select all applications';
+            checkboxHtml += '</label>';   
+
+            document.getElementById("hmlr-wf-select-all").innerHTML = checkboxHtml;
+        }
+
+        function fSubProcedure2() {
+            var checkboxes = document.querySelectorAll('.govuk-checkboxes__input');
+            var selectAllCheckbox = document.getElementById('id_select_all');    
+
+            selectAllCheckbox.addEventListener('change', function () {
+                checkboxes.forEach(checkbox => {
+                    checkbox.checked = this.checked;
+                });
+            });
+
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function () {
+                    if (!this.checked) {
+                        selectAllCheckbox.checked = false;
+                    }
+                });
+            });
+        }
+
+        function fAddSelectAllCheckbox() {//using Promise to ensure HTML has been added first before event listener
+            //supported by IE11+, Edge 12+ etc
+            return new Promise((resolve, reject) => {
+                fSubProcedure1();//add the HTML checkbox first
+                resolve();
+            }).then(() => {
+                fSubProcedure2();//now we can add the event listener
+            });
+        }
+
+        fAddSelectAllCheckbox();
+
+    };
+</script>
 
 
 
