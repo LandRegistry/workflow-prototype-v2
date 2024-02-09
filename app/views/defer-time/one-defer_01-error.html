@@ -3,45 +3,32 @@
 {# set pageName="Select a category of work" #}
 
 {% block pageTitle %}
-Select a deferral reason
+Error: Select a deferral reason
 {% endblock %}
 
 {% block beforeContent %}
-<!--div class="govuk-breadcrumbs">
-        
-  <ol class="govuk-breadcrumbs__list">
-      <li class="govuk-breadcrumbs__list-item">
-          <a title="Go to the Workflow homepage." class="govuk-breadcrumbs__link" href="#">Home</a>
-      </li>
-      <li class="govuk-breadcrumbs__list-item">
-        Select a category of work 
-      </li>
-  </ol>
 
-</div-->
 
 <a href="#" class="govuk-back-link">Back</a>
 {% endblock %}
 
 {% block content %}
-<!--noscript>
-  <div class="warning media">
-      <div class="media__item">
-          <i class="icon icon-important">
-              <span class="visuallyhidden">Warning</span>
-          </i>
-      </div>
-      <div class="media__body">
-          <h2 class="govuk-heading-s spacing-bottom-flush">JavaScript is disabled</h2>
-          <p class="spacing-top-flush">You must have JavaScript turned on to use this page</p>
-      </div>
+
+<div class="govuk-error-summary" data-module="govuk-error-summary">
+  <div role="alert">
+    <h2 class="govuk-error-summary__title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li>
+          <a href="#id_DIS">Select a deferral reason</a>
+        </li>
+      </ul>
+    </div>
   </div>
+</div>
 
-We are removing all JavaScript dependancy
-</noscript-->
-
-
-<!-- *** ADD grid-row and column-two-thirds ***-->
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
@@ -49,8 +36,8 @@ We are removing all JavaScript dependancy
 
     <form action="#" method="post" novalidate>
 
-      <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset">
+      <div class="govuk-form-group govuk-form-group--error">
+          <fieldset class="govuk-fieldset" aria-describedby="category_code-error">
 
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-margin-bottom-5">
               <h1 class="govuk-fieldset__heading">
@@ -58,21 +45,9 @@ We are removing all JavaScript dependancy
               </h1>
             </legend>
 
-            <!-- What is this - the JS error message injection targets? Remove...
-              
-              div class="govuk-error-summary half-width " role="group" aria-labelledby="page_error_header" tabindex="-1" hidden="">
-
-              <p class="govuk-error-summary__title" id="page_error_header">
-                -
-              </p>
-
-              <p id="page_error_description" class="gov-font">
-                -
-              </p>
-
-            </div-->
-
-
+            <p id="category_code-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span> Select a deferral reason
+            </p>
 
             <div class="govuk-radios" data-module="govuk-radios">
               
@@ -141,10 +116,6 @@ We are removing all JavaScript dependancy
 
             </div>
               
-            <!-- if users navs back this will clear session value if no selection made -->
-            <!--input type="hidden" name="category_code" value=""-->
-
-
           </fieldset>
       </div>
 

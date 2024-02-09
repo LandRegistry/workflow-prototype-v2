@@ -1,0 +1,56 @@
+{% extends "layouts/wf_layout_legacy.html" %}
+
+{# set pageName="Select a category of work" #}
+
+{% block pageTitle %}
+Confirm the extension of time
+{% endblock %}
+
+{% block beforeContent %}
+
+<a href="one-defer_02.html" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+      <form action="#" id="id_deferral_category_form" method="post" novalidate>
+
+        <div class="govuk-form-group">
+          
+          <h1 class="govuk-label-wrapper govuk-!-margin-bottom-6">
+            
+              Confirm the extension of time
+            
+          </h1>
+
+          <p class="govuk-body">
+            You'll be adding an extension of xxxx working days.
+          </p>
+
+          <p class="govuk-body">
+            The new cancellation date will be xx xx xxxx.
+          </p>          
+          
+
+        </div>        
+
+         
+        
+        <div class="govuk-button-group">
+
+          <input type="submit" class="govuk-button" value="Confirm and save">     
+
+          <a class="govuk-link govuk-link--no-visited-state" href="one-defer_02.html">Change the number of working days</a>
+        </div>        
+
+      </form>
+
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,87 @@
+{% extends "layouts/wf_layout_legacy.html" %}
+
+{# set pageName="Select a category of work" #}
+
+{% block pageTitle %}
+How many working days do you want to extend by?
+{% endblock %}
+
+{% block beforeContent %}
+<!--div class="govuk-breadcrumbs">
+        
+  <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+          <a title="Go to the Workflow homepage." class="govuk-breadcrumbs__link" href="#">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        Select a category of work 
+      </li>
+  </ol>
+
+</div-->
+
+<a href="two-defer_01.html" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+      <form action="#" id="id_deferral_category_form" method="post" novalidate>
+
+        <div class="govuk-form-group govuk-!-margin-bottom-7">
+          <fieldset class="govuk-fieldset"> <!-- aria-describedby="dats-hint" -->
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-margin-bottom-6">
+              <h1 class="govuk-fieldset__heading">
+                How many working days do you want to extend by?
+              </h1>
+            </legend>
+
+            <!--div id="days-hint" class="govuk-hint">
+              Select one option.
+            </div-->
+
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="days" name="days" type="radio" value="days">
+                <label class="govuk-label govuk-radios__label" for="days">
+                  20 working days
+                </label>
+              </div>
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="days-2" name="days" type="radio" value="date" data-aria-controls="conditional-days-2">
+                <label class="govuk-label govuk-radios__label" for="days-2">
+                  Custom number of working days
+                </label>
+              </div>
+
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-days-2">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="days-entry">
+                    Lorem ipsum dolor
+                  </label>
+                  <input class="govuk-input govuk-!-width-one-third" id="days-entry" name="days-entry" type="text">
+                </div>
+              </div>
+
+            </div>
+          </fieldset>
+        </div>              
+
+
+
+
+
+        <input type="submit" class="govuk-button" value="Select">          
+
+      </form>
+
+
+  </div>
+</div>
+
+{% endblock %}

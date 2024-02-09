@@ -1,131 +1,45 @@
 {% extends "layouts/wf_layout_legacy.html" %}
 
-{% set pageName="Select a category of work" %}
+{# set pageName="Select a category of work" #}
+
+{% block pageTitle %}
+How many working days do you want to extend by?
+{% endblock %}
 
 {% block beforeContent %}
-<!--div class="govuk-breadcrumbs">
-        
-  <ol class="govuk-breadcrumbs__list">
-      <li class="govuk-breadcrumbs__list-item">
-          <a title="Go to the Workflow homepage." class="govuk-breadcrumbs__link" href="#">Home</a>
-      </li>
-      <li class="govuk-breadcrumbs__list-item">
-        Select a category of work 
-      </li>
-  </ol>
-
-</div-->
 
 <a href="one-defer_01.html" class="govuk-back-link">Back</a>
 {% endblock %}
 
 {% block content %}
 
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+    {% if (data['category_code'] != '') %}
+    this is the value 
+    {% endif %}
+    <br>
+    {{data['category_code']}}
 
+      <form action="#" id="id_deferral_category_form" method="post" novalidate>
 
-      <form action="one-defer_03" id="id_deferral_category_form" method="post" novalidate>
+        <div class="govuk-form-group">
+          
+          <h1 class="govuk-label-wrapper govuk-!-margin-bottom-5">
+            <label class="govuk-label govuk-label--l" for="days">
+              How many working days do you want to extend by?
+            </label>
+          </h1>
 
-        <div class="govuk-form-group govuk-!-margin-bottom-7">
-          <fieldset class="govuk-fieldset"> <!-- aria-describedby="dats-hint" -->
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-margin-bottom-6">
-              <h1 class="govuk-fieldset__heading">
-                How many working days do you want to extend by?
-              </h1>
-            </legend>
+          <div id="days-hint" class="govuk-hint">
+            Enter a number between 20 and 100.
+          </div>
 
-            <!--div id="days-hint" class="govuk-hint">
-              Select one option.
-            </div-->
+          <input class="govuk-input govuk-input--width-3" id="days" name="days" type="text" aria-describedby="days-hint">
 
-            <div class="govuk-radios" data-module="govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="days" name="days" type="radio" value="days">
-                <label class="govuk-label govuk-radios__label" for="days">
-                  20 working days
-                </label>
-              </div>
-              
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="days-2" name="days" type="radio" value="date" data-aria-controls="conditional-days-2">
-                <label class="govuk-label govuk-radios__label" for="days-2">
-                  Custom number of working days
-                </label>
-              </div>
+        </div>        
 
-              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-days-2">
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="days-entry">
-                    Lorem ipsum dolor
-                  </label>
-                  <input class="govuk-input govuk-!-width-one-third" id="days-entry" name="days-entry" type="text">
-                </div>
-              </div>
-
-              <hr>
-
-              <div class="govuk-radios" data-module="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" checked data-aria-controls="conditional-contact">
-                  <label class="govuk-label govuk-radios__label" for="contact">
-                    Email
-                  </label>
-                </div>
-                <div class="govuk-radios__conditional" id="conditional-contact">
-                  <div class="govuk-form-group govuk-form-group--error">
-                    <label class="govuk-label" for="contact-by-email">
-                      Email address
-                    </label>
-                    <p id="contact-by-email-error" class="govuk-error-message">
-                      <span class="govuk-visually-hidden">Error:</span> Email address cannot be blank
-                    </p>
-                    <input class="govuk-input govuk-!-width-one-half govuk-input--error" id="contact-by-email" name="contactByEmail" type="email" spellcheck="false" aria-describedby="contact-by-email-error" autocomplete="email">
-                  </div>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
-                  <label class="govuk-label govuk-radios__label" for="contact-2">
-                    Phone
-                  </label>
-                </div>
-                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label" for="contact-by-phone">
-                      Phone number
-                    </label>
-                    <input class="govuk-input govuk-!-width-one-third" id="contact-by-phone" name="contactByPhone" type="tel" autocomplete="tel">
-                  </div>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="contact-3" name="contact" type="radio" value="text" data-aria-controls="conditional-contact-3">
-                  <label class="govuk-label govuk-radios__label" for="contact-3">
-                    Text message
-                  </label>
-                </div>
-                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-3">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label" for="contact-by-text">
-                      Mobile phone number
-                    </label>
-                    <input class="govuk-input govuk-!-width-one-third" id="contact-by-text" name="contactByText" type="tel" autocomplete="tel">
-                  </div>
-                </div>
-              </div>
-
-              
-              
-
-            </div>
-          </fieldset>
-        </div>              
-
-
-
-
-
-        <input type="submit" class="govuk-button" value="Select">          
+        <input type="submit" class="govuk-button" value="Continue">         
 
       </form>
 
