@@ -23,6 +23,18 @@ Manage Assigned Work - Workflow
 
 {% block content %}
 
+<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+    <div class="govuk-notification-banner__header">
+      <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+        Important
+      </h2>
+    </div>
+    <div class="govuk-notification-banner__content">
+      <p class="govuk-notification-banner__heading">You cannot assign applications from and to the same caseworker.</p>
+    </div>
+</div>
+
+
 <div id="manage_work">
   <form action="/worklist-ui/manage-assigned-work"  method='post' id="manage_form" novalidate>
     
@@ -43,7 +55,7 @@ Manage Assigned Work - Workflow
             <label class="manage-labels govuk-label govuk-!-font-weight-bold" for="name">Find a user who can obtain applications</label>
 
             <div class="manage-bar search-container">
-                <input class="search-bar manage-search govuk-input" id="name" name="name" size="30" type="text" value="Rosie Woodward (Rosie.Woodward), Information lorum ipsum">
+                <input class="search-bar manage-search govuk-input" id="name" name="name" size="30" type="text" value="John Smith">
                 <span class="spin"></span>
             </div>
 
@@ -61,7 +73,7 @@ Manage Assigned Work - Workflow
             <label class="manage-labels govuk-label govuk-!-font-weight-bold" for="assignee">Assign to a user who can obtain applications</label>
           
             <div class="manage-bar search-container">
-                <input class="search-bar manage-search govuk-input" id="assignee" name="assignee" size="30" type="text" value="Johhn">
+                <input class="search-bar manage-search govuk-input" id="assignee" name="assignee" size="30" type="text" value="John Smith">
                 <span class="spin"></span>
             </div>
           
@@ -79,28 +91,13 @@ Manage Assigned Work - Workflow
     <div class="govuk-form-group">
 
       <div class="top-spacing govuk-!-margin-top-6">
-
-
-        <h2 id="caseworker_worklist_heading" class="govuk-heading-m">
-            No results found
-        </h2>
-
-        <p class="govuk-body ">
-            A Workflow user named <span class="govuk-!-font-weight-bold">Johhn</span> was not found.
-        </p>
-
-
-
-            <h2 id="caseworker_worklist_heading" class="govuk-heading-l">
+          <h2 id="caseworker_worklist_heading" class="govuk-heading-l">
               Rosie Woodwards's Worklist: 5 applications
           </h2>
 
-
-          <p class="govuk-body">Rosie Woodward's category of work is <span class="govuk-!-font-weight-bold">Volume Change of Ownership.</p>
-
-</ul>
-
-
+          <p class="govuk-body">
+            Rosie Woodward's category of work is <span class="govuk-!-font-weight-bold">Application Processing: Exectuive Register Update Standard</span>.
+          </p>
 
       </div>    
       
@@ -141,7 +138,7 @@ Manage Assigned Work - Workflow
 
                     <div class="govuk-checkboxes govuk-checkboxes--small hmlr-wf-checkboxes--single-tbl">
                         <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="checkbox_N619SWW" name="assign" type="checkbox" value="2345">
+                        <input class="govuk-checkboxes__input" id="checkbox_N619SWW" name="assign" type="checkbox" value="2345" checked>
                         <label class="govuk-label govuk-checkboxes__label" for="checkbox_N619SWW">
                             Assign work item N619SWW
                         </label>
