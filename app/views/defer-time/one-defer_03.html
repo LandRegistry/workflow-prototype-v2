@@ -17,7 +17,7 @@ Confirm the extension of time
   <div class="govuk-grid-column-two-thirds">
 
 
-      <form action="#" id="id_deferral_category_form" method="post" novalidate>
+      <form action="one-defer_04" id="id_deferral_category_form" method="post" novalidate>
 
         <div class="govuk-form-group">
           
@@ -28,14 +28,13 @@ Confirm the extension of time
           </h1>
 
           <p class="govuk-body">
-            You'll be adding an extension of xxxx working days.
+            You'll be adding an extension of {{data['days']}} working days.
           </p>
 
           <p class="govuk-body">
-            The new cancellation date will be xx xx xxxx.
+            The new cancellation date will be <span id="forPrototypeOnly"></span>.
           </p>          
           
-
         </div>        
 
          
@@ -53,4 +52,43 @@ Confirm the extension of time
   </div>
 </div>
 
+
+
+<script>
+  window.onload = (event) => { 
+
+    
+    
+      /* *** this js ONLY for this prototype *** */
+      function addDaysToDate(date, days) {
+        const result = new Date(date); // Create a new date object based on the input date
+        result.setDate(result.getDate() + days); // Add the specified number of days
+        return result;
+      }      
+
+      function formatDate(date) {
+        const options = {
+          timeZone: "UTC",
+          month: "long",
+          day: "2-digit",
+          year: "numeric"
+        };
+
+        const daysToAdd = {{data['days']}};
+        const currentDate = new Date();
+        const newDate = addDaysToDate(currentDate, daysToAdd);
+
+        const formattedDate = newDate.toLocaleDateString({}, options);
+        const [day, month, year] = formattedDate.split(" ");
+        const monthWord = month; // .slice(0, 3); Get the first 3 letters of the month
+
+        return `${day} ${monthWord} ${year}`;
+      }
+
+      const currentDate = formatDate("2024-02-13T15:53:55.000Z");
+      const targetSpan = document.getElementById("forPrototypeOnly"); 
+      targetSpan.textContent = currentDate;
+
+  };
+</script>
 {% endblock %}

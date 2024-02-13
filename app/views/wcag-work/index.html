@@ -613,7 +613,17 @@
           
         </ul>
 
-      </li>   
+      </li>  
+      <li>
+        
+        <b>An assignee is required:</b> If the user has entered a Find value and then has selected one or more applications from the
+        resulting applications list, but has not entered an Assign value and submits the empty Assign
+        field, then this error message is returned: <a href="./error-only-assigned-is-empty.html" class="govuk-link govuk-link--no-visited-state" target="_blank">results-finish-drafting-in-ap</a><br>
+        <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
+        <li>If the user repeatedly submits the assign field - without a value - any selections already made from the applications list should maintain their state each time the page
+          is returned</li>
+        </ul>
+      </li>       
     </ol>
 
     <h3 class="govuk-heading-s">
@@ -636,6 +646,9 @@
       <li>When both 'find' and 'assign' fields do not have a value and the user submits the 'assign' field (using the assign button), the page refreshes with two error messages, as per the HTML design. Text should match the text in the design. Hyperlinks in the error summary should move focus to the relevant form element, as per the HTML design. “Error: “ text should be prepended to the HTML document (window) title. </li>
       <li>If 'find' has a value, then submitting the 'assign' field without a value will submit the 'find' value and the page refreshes with the 'find' result. The error summary hyperlink targets the first application checkbox (not the 'Select all applications' checkbox). All checkboxes now include the 'aria-describedby' attribute pointing to the inline error message as per the design. </li>
       <li>If the 'find' field has a value and the 'assign' field also has a value, then submitting the 'assign' field (using the assign button), the current form behaviour automatically submits the value in the 'find' field and returns the 'find' result. Acceptance criteria matches number 4.</li>
+      <li>
+        An assignee is required: If the 'find' field has a value and the user has made one or more selections from the resulting applications list, but then submits the assign field without a value, the page must refresh with the error validation message requesting a value for the assign field. Acceptance criteria matches number 4. This error message is returned: Sign in - GOV.UK Prototype Kit  (as per other error messages). If the user repeatedly submits the assign field - without a value - any selections already made from the applications list should maintain their state each time the page is refreshed
+      </li>
    
 
 
@@ -662,7 +675,7 @@
       </li>
       <li>
         <b>No user found - assign:</b> In the 'Assign' input field enter and submit a name which is not recognised - a pink banner displays stating 'No Workflow user found with the name &quot;Darrrren&quot;.' Instead: <br>
-        &bull; <a href="./results-no-assign-user-found.html" class="govuk-link govuk-link--no-visited-state" target="_blank">results-no-assign-user-found</a> (using an important banner).
+        &bull; <a href="./results-no-assign-user-found.html" class="govuk-link govuk-link--no-visited-state" target="_blank">results-no-assign-user-found</a> 
        
         <!--br><br>
         <i><b style="color: red;">Rosie</b> to review</i-->
@@ -680,6 +693,13 @@
         <!--br><br>
         <i>(<b style="color: red;">Rosie</b> to review). </i-->        
       </li>
+
+      <li>
+        <b>Form timed out:</b> Currently when the form times out an 'Important' notification banner is added to the page reading: 
+        &quot;The form you were submitting has expired. Please try again.&quot; The styling is not quite correct (and we want to remove the word “Please”) and should match the HTML design as per the HTML. <br>
+        &bull; <a href="./wcag-work/banner-form-expired.html" class="govuk-link govuk-link--no-visited-state" target="_blank">wcag-work/banner-form-expired</a>
+      </li>
+
       </ol>
 
 

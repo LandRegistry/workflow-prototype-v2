@@ -5,3 +5,12 @@ remove noscript and empty js error msg divs
 fix h1 classes
 
 novalidate added to form tag
+
+
+
+
+    {% if (data['category_code'] != '') %}
+    this is the value 
+    {% endif %}
+    <br>
+    {{data['category_code']}}
