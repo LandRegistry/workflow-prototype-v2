@@ -28,7 +28,7 @@ How many working days do you want to extend by?
           </h1>
 
           <div id="days-hint" class="govuk-hint">
-            Enter a number between 20 and 100.
+            {% include "./inc_number-hint.html" %}
           </div>
 
           <input class="govuk-input govuk-input--width-3" id="days" name="days" type="text" value="{{data['days']}}" spellcheck="false" aria-describedby="days-hint">

@@ -1,0 +1,169 @@
+{% extends "layouts/wf_layout_legacy.html" %}
+
+{# set pageName="Select a category of work" #}
+
+{% block pageTitle %}
+Select a deferral reason
+{% endblock %}
+
+{% block beforeContent %}
+<!--div class="govuk-breadcrumbs">
+        
+  <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+          <a title="Go to the Workflow homepage." class="govuk-breadcrumbs__link" href="#">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        Select a category of work 
+      </li>
+  </ol>
+
+</div-->
+
+<a href="#" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+<!--noscript>
+  <div class="warning media">
+      <div class="media__item">
+          <i class="icon icon-important">
+              <span class="visuallyhidden">Warning</span>
+          </i>
+      </div>
+      <div class="media__body">
+          <h2 class="govuk-heading-s spacing-bottom-flush">JavaScript is disabled</h2>
+          <p class="spacing-top-flush">You must have JavaScript turned on to use this page</p>
+      </div>
+  </div>
+
+We are removing all JavaScript dependancy
+</noscript-->
+
+
+<!-- *** ADD grid-row and column-two-thirds ***-->
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <form action="#" method="post" novalidate>
+
+      <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-margin-bottom-5">
+              <h1 class="govuk-fieldset__heading">
+                  Select a deferral reason
+              </h1>
+            </legend>
+
+            <!-- What is this - the JS error message injection targets? Remove...
+              
+              div class="govuk-error-summary half-width " role="group" aria-labelledby="page_error_header" tabindex="-1" hidden="">
+
+              <p class="govuk-error-summary__title" id="page_error_header">
+                -
+              </p>
+
+              <p id="page_error_description" class="gov-font">
+                -
+              </p>
+
+            </div-->
+
+
+
+            <div class="govuk-radios" data-module="govuk-radios">
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="id_DIS" type="radio" name="category_code" value="DIS">
+                
+                <label class="govuk-label govuk-radios__label" for="id_DIS">
+                  Awaiting discharge only (no requisition)
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="id_REQN" type="radio" name="category_code" value="REQN">
+                <label class="govuk-label govuk-radios__label" for="id_REQN">
+                  Requisition
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="id_NOTICE" type="radio" name="category_code" value="NOTICE">
+
+                <label class="govuk-label govuk-radios__label" for="id_NOTICE">
+                  Partial reply
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="id_REQNNOTICE" type="radio" name="category_code" value="REQNNOTICE">
+
+                <label class="govuk-label govuk-radios__label" for="id_REQNNOTICE">
+                  Reminder issued
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="id_PL" type="radio" name="category_code" value="PL">
+
+                <label class="govuk-label govuk-radios__label" for="id_PL">
+                  Extension of time
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="x1" type="radio" name="category_code" value="x1">
+
+                <label class="govuk-label govuk-radios__label" for="x1">
+                  Ojection notice (15 days) and Requisition
+                </label>
+              </div>
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="x2" type="radio" name="category_code" value="x2">
+
+                <label class="govuk-label govuk-radios__label" for="x2">
+                  Objection notice (15 days) and Rquisition
+                </label>
+              </div> 
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="x3" type="radio" name="category_code" value="x3">
+
+                <label class="govuk-label govuk-radios__label" for="x3">
+                  Progress later
+                </label>
+              </div>           
+
+            </div>
+              
+            <!-- if users navs back this will clear session value if no selection made -->
+            <!--input type="hidden" name="category_code" value=""-->
+
+
+          </fieldset>
+      </div>
+
+        <!--input type="hidden" name="lr_ref_number" value="DU164184">
+        <input type="hidden" name="lr_work_ref" value="L967RWW">
+        <input type="hidden" name="client" value="False"-->
+        <input type="hidden" name="days" value="">
+
+        
+        <input type="submit" class="govuk-button" value="Select"> 
+
+        <!-- removed 'ID' and 'data-double-click-prevention' from btn = can remove all javascript from js files also -->
+        <!--a id="btn_back" href="/worklist-ui/worklist" class="govuk-link worklist-link">Go back to My Worklist</a-->
+
+    </form>
+
+
+  </div>
+</div>
+
+
+{% endblock %}

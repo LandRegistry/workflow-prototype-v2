@@ -6,6 +6,7 @@
 const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 
+//flow one starts ...
 router.post('/one-defer_01', function (req, res) {
 
     if (req.session.data['category_code'] == null) {//empty
@@ -48,7 +49,7 @@ router.post('/one-defer_02', function (req, res) {
 
         res.redirect("one-defer_02-error")
 
-    } else if (userInput < 20 || userInput > 100) {//within range?
+    } else if (userInput > 100) { //(userInput < 1 || userInput > 100) {//within range?
 
         res.redirect("one-defer_02-error-size") 
 
@@ -71,7 +72,7 @@ router.post('/one-defer_02-error', function (req, res) {
 
         res.redirect("one-defer_02-error")
 
-    } else if (userInput < 20 || userInput > 100) {//within range?
+    } else if (userInput > 100) { //(userInput < 20 || userInput > 100) {//within range?
 
         res.redirect("one-defer_02-error-size")      
         
@@ -94,7 +95,7 @@ router.post('/one-defer_02-error-size', function (req, res) {
 
         res.redirect("one-defer_02-error")
 
-    } else if (userInput < 20 || userInput > 100) {//within range?
+    } else if (userInput > 100) { // (userInput < 20 || userInput > 100) {//within range?
 
         res.redirect("one-defer_02-error-size")    
         
@@ -117,7 +118,7 @@ router.post('/one-defer_02-error-characters', function (req, res) {
 
         res.redirect("one-defer_02-error")
 
-    } else if (userInput < 20 || userInput > 100) {//within range?
+    } else if (userInput > 100) { // (userInput < 20 || userInput > 100) {//within range?
 
         res.redirect("one-defer_02-error-size")    
         
@@ -131,5 +132,46 @@ router.post('/one-defer_02-error-characters', function (req, res) {
 
     }
 })
+
+
+//flow two starts ...
+router.post('/two-defer_01', function (req, res) {
+
+    if (req.session.data['category_code'] == null) {//empty
+
+        res.redirect("two-defer_01-error")
+
+    } else if (req.session.data['category_code'] == 'PL') {//selected Extension of time       
+
+        res.redirect("two-defer_02")  
+        
+    } else {
+
+        res.redirect("end")  //selected one of the other options  
+
+    }
+})
+
+router.post('/two-defer_01-error', function (req, res) {
+
+    if (req.session.data['category_code'] == null) {//empty
+
+        res.redirect("two-defer_01-error")
+
+    } else if (req.session.data['category_code'] == 'PL') {//selected Extension of time       
+
+        res.redirect("two-defer_02")  
+        
+    } else {
+
+        res.redirect("end")  //selected one of the other options  
+
+    }
+})
+
+
+
+
+
 
 module.exports = router

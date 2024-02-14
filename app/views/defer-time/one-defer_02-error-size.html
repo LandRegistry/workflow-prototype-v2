@@ -21,7 +21,7 @@ Error: How many working days do you want to extend by?
     <div class="govuk-error-summary__body">
       <ul class="govuk-list govuk-error-summary__list">
         <li>
-          <a href="#days">The number of working days must be between 20 and 100</a>
+          <a href="#days">{% include "./inc_number-error.html" %}</a>
         </li>
       </ul>
     </div>
@@ -43,11 +43,11 @@ Error: How many working days do you want to extend by?
           </h1>
 
           <div id="days-hint" class="govuk-hint">
-            Enter a number between 20 and 100.
+            {% include "./inc_number-hint.html" %}
           </div>
 
           <p id="days-error" class="govuk-error-message">
-            <span class="govuk-visually-hidden">Error:</span> The number of working days must be between 20 and 100
+            <span class="govuk-visually-hidden">Error:</span> {% include "./inc_number-error.html" %}
           </p>          
 
           <input class="govuk-input govuk-input--width-3 govuk-input--error" id="days" name="days" type="text" value="{{data['days']}}" spellcheck="false" aria-describedby="days-hint">
