@@ -3,11 +3,10 @@
 {# set pageName="Select a category of work" #}
 
 {% block pageTitle %}
-How many working days do you want to extend by?
+Error: How many working days do you want to extend by?
 {% endblock %}
 
 {% block beforeContent %}
-
 
 <a href="one-defer_01.html" class="govuk-back-link">Back</a>
 {% endblock %}
@@ -27,7 +26,7 @@ How many working days do you want to extend by?
       </ul>
     </div>
   </div>
-</div>
+</div> 
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
@@ -35,58 +34,27 @@ How many working days do you want to extend by?
 
       <form action="#" id="id_deferral_category_form" method="post" novalidate>
 
-        <div class="govuk-form-group govuk-!-margin-bottom-7">
-          <fieldset class="govuk-fieldset"> <!-- aria-describedby="dats-hint" -->
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-margin-bottom-6">
-              <h1 class="govuk-fieldset__heading">
-                How many working days do you want to extend by?
-              </h1>
-            </legend>
+        <div class="govuk-form-group govuk-form-group--error">
+          
+          <h1 class="govuk-label-wrapper govuk-!-margin-bottom-5">
+            <label class="govuk-label govuk-label--l" for="days">
+              How many working days do you want to extend by?
+            </label>
+          </h1>
 
-            <!--div id="days-hint" class="govuk-hint">
-              Select one option.
-            </div-->
+          <div id="days-hint" class="govuk-hint">
+            {% include "./inc_number-hint.html" %}
+          </div>
 
-            <div class="govuk-radios" data-module="govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="days-type" name="days-type" type="radio" value="20">
-                <label class="govuk-label govuk-radios__label" for="days-type">
-                  20 working days
-                </label>
-              </div>
-              
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="days-type-2" name="days-type" type="radio" value="date" data-aria-controls="conditional-days-type-2" checked>
-                <label class="govuk-label govuk-radios__label" for="days-type-2">
-                  Custom number of working days
-                </label>
-              </div>
+          <p id="days-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> {% include "./inc_number-error-not-valid.html" %}
+          </p>          
 
-              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-days-type-2">
-                <div class="govuk-form-group govuk-form-group--error">
+          <input class="govuk-input govuk-input--width-3 govuk-input--error" id="days" name="days" type="text" value="{{data['days']}}" spellcheck="false" aria-describedby="days-hint">
 
-                  <label class="govuk-label govuk-visually-hidden" for="days">
-                    How many working days to extend by
-                  </label>
-                  
-                  <div id="days-hint" class="govuk-hint">
-                      {% include "./inc_number-hint.html" %}
-                  </div>
+        </div>        
 
-                  <p id="days-error" class="govuk-error-message">
-                    <span class="govuk-visually-hidden">Error:</span> {% include "./inc_number-error-not-valid.html" %}
-                  </p>                  
-                  
-                  <input class="govuk-input govuk-input--error govuk-input--width-3" id="days" name="days" type="text" value="{{data['days']}}" spellcheck="false" aria-describedby="days-hint days-error">
-
-                </div>
-              </div>
-
-            </div>
-          </fieldset>
-        </div>              
-
-        <input type="submit" class="govuk-button" value="Select">          
+        <input type="submit" class="govuk-button" value="Continue">         
 
       </form>
 
@@ -94,4 +62,15 @@ How many working days do you want to extend by?
   </div>
 </div>
 
+<script>
+  window.onload = (event) => { 
+    
+      /* *** this js ONLY for this prototype. We require serverside blank space removal *** */
+      $("#days").on("blur", function () {
+            var inputValue = $(this).val().replace(/ /g,'');
+            $("#days").val(inputValue);//console.log("Cleaned value: " + inputValue);
+      });
+
+  };
+</script>
 {% endblock %}
