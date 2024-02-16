@@ -240,7 +240,7 @@ router.post('/two-defer_01-error', function (req, res) {
     }
 })
 
-router.post('/two-defer_02', function (req, res) {
+router.post('/two-defer_02', function (req, res) {//xxxxxxx
 
     const userInput = req.session.data['days'];      
     const userInput2 = req.session.data['days-type']; 
@@ -251,7 +251,7 @@ router.post('/two-defer_02', function (req, res) {
 
     } else if (userInput2 == '20') {
 
-        res.redirect("two-defer_03")
+        res.redirect("two-defer_03-20-days")
     
     } else if (userInput2 == 'date' && userInput == '') { 
 
@@ -292,7 +292,7 @@ router.post('/two-defer_02-error', function (req, res) {
 
     } else if (userInput2 == '20') {
 
-        res.redirect("two-defer_03")
+        res.redirect("two-defer_03-20-days")
     
     } else if (userInput2 == 'date' && userInput == '') { 
 
@@ -333,7 +333,7 @@ router.post('/two-defer_02-error-empty', function (req, res) {
 
     } else*/ if (userInput2 == '20') {
 
-        res.redirect("two-defer_03")
+        res.redirect("two-defer_03-20-days")
     
     } else if (userInput2 == 'date' && userInput == '') { 
 
@@ -374,7 +374,7 @@ router.post('/two-defer_02-error-size', function (req, res) {
 
     } else*/ if (userInput2 == '20') {
 
-        res.redirect("two-defer_03")
+        res.redirect("two-defer_03-20-days")
     
     } else if (userInput2 == 'date' && userInput == '') { 
 
@@ -415,7 +415,7 @@ router.post('/two-defer_02-error-not-valid', function (req, res) {
 
     } else*/ if (userInput2 == '20') {
 
-        res.redirect("two-defer_03")
+        res.redirect("two-defer_03-20-days")
     
     } else if (userInput2 == 'date' && userInput == '') { 
 
@@ -456,7 +456,7 @@ router.post('/two-defer_02-error-characters', function (req, res) {
 
     } else*/ if (userInput2 == '20') {
 
-        res.redirect("two-defer_03")
+        res.redirect("two-defer_03-20-days")
     
     } else if (userInput2 == 'date' && userInput == '') { 
 
