@@ -1,0 +1,11 @@
+<script>
+    window.onload = (event) => { 
+      
+        /* *** this js ONLY for this prototype. We require serverside blank space removal *** */
+        $("#days").on("blur", function () {
+              var inputValue = $(this).val().replace(/ /g,'');
+              $("#days").val(inputValue);//console.log("Cleaned value: " + inputValue);
+        });
+  
+    };
+</script>

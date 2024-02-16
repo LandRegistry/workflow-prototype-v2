@@ -28,7 +28,7 @@ Confirm the extension of time
           </h1>
 
           <p class="govuk-body">
-            You'll be adding an extension of {{data['days']}} working days.
+            You'll be adding an extension of <span id="forPrototypeOnly2"></span> working days.
           </p>
 
           <p class="govuk-body">
@@ -93,6 +93,10 @@ Confirm the extension of time
       const currentDate = formatDate("2024-02-13T15:53:55.000Z");
       const targetSpan = document.getElementById("forPrototypeOnly");
       targetSpan.textContent = removeLeadingZero(currentDate);
+
+      const targetSpan2 = document.getElementById("forPrototypeOnly2");
+      var myDays = "{{data["days"]}}";
+      targetSpan2.textContent = removeLeadingZero(myDays);      
 
   };
 </script>

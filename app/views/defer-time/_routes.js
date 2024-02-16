@@ -57,9 +57,9 @@ router.post('/one-defer_02', function (req, res) {
 
         res.redirect("one-defer_02-error-size")
 
-    } else if (/^0/.test(userInput)) {//starts with a zero
+    //} else if (/^0/.test(userInput)) {//starts with a zero
 
-        res.redirect("one-defer_02-error-not-valid")           
+        //res.redirect("one-defer_02-error-not-valid")           
 
     } else if (userInput > 100) {//no over 100
 
@@ -88,9 +88,9 @@ router.post('/one-defer_02-error', function (req, res) {
 
         res.redirect("one-defer_02-error-size")        
 
-    } else if (/^0/.test(userInput)) {//starts with a zero
+    //} else if (/^0/.test(userInput)) {//starts with a zero
 
-        res.redirect("one-defer_02-error-not-valid")          
+        //res.redirect("one-defer_02-error-not-valid")          
 
     } else if (userInput > 100) {//no over 100 //userInput < 1 || userInput > 100
 
@@ -119,9 +119,9 @@ router.post('/one-defer_02-error-size', function (req, res) {
 
         res.redirect("one-defer_02-error-size")  
 
-    } else if (/^0/.test(userInput)) {//starts with a zero
+    //} else if (/^0/.test(userInput)) {//starts with a zero
 
-        res.redirect("one-defer_02-error-not-valid")         
+        //res.redirect("one-defer_02-error-not-valid")         
 
     } else if (userInput > 100) {//no zero and no over 100
 
@@ -138,7 +138,7 @@ router.post('/one-defer_02-error-size', function (req, res) {
     }
 })
 
-router.post('/one-defer_02-error-not-valid', function (req, res) {
+/*router.post('/one-defer_02-error-not-valid', function (req, res) {
 
     const userInput = req.session.data['days'];
 
@@ -167,7 +167,7 @@ router.post('/one-defer_02-error-not-valid', function (req, res) {
         res.redirect("one-defer_03")
 
     }
-})
+})*/
 
 router.post('/one-defer_02-error-characters', function (req, res) {
 
@@ -181,9 +181,9 @@ router.post('/one-defer_02-error-characters', function (req, res) {
 
         res.redirect("one-defer_02-error-size")         
 
-    } else if (/^0/.test(userInput)) {//starts with a zero
+    //} else if (/^0/.test(userInput)) {//starts with a zero
 
-        res.redirect("one-defer_02-error-not-valid")         
+        //res.redirect("one-defer_02-error-not-valid")         
 
     } else if (userInput > 100) {//no zero and no over 100
 
@@ -261,9 +261,9 @@ router.post('/two-defer_02', function (req, res) {//xxxxxxx
 
         res.redirect("two-defer_02-error-size")//not zero  
 
-    } else if (userInput2 == 'date' && /^0/.test(userInput)) {//starts with a zero
+    //} else if (userInput2 == 'date' && /^0/.test(userInput)) {//starts with a zero
 
-        res.redirect("two-defer_02-error-not-valid")         
+        //res.redirect("two-defer_02-error-not-valid")         
 
     } else if (userInput2 == 'date' && userInput > 100) { 
 
@@ -302,9 +302,9 @@ router.post('/two-defer_02-error', function (req, res) {
 
         res.redirect("two-defer_02-error-size")  
 
-    } else if (userInput2 == 'date' && /^0/.test(userInput)) {//starts with a zero
+    //} else if (userInput2 == 'date' && /^0/.test(userInput)) {//starts with a zero
 
-        res.redirect("two-defer_02-error-not-valid")         
+        //res.redirect("two-defer_02-error-not-valid")         
 
     } else if (userInput2 == 'date' && userInput > 100) { 
 
@@ -343,9 +343,9 @@ router.post('/two-defer_02-error-empty', function (req, res) {
 
         res.redirect("two-defer_02-error-size")   
 
-    } else if (userInput2 == 'date' && /^0/.test(userInput)) {//starts with a zero
+    //} else if (userInput2 == 'date' && /^0/.test(userInput)) {//starts with a zero
 
-        res.redirect("two-defer_02-error-not-valid")         
+        //res.redirect("two-defer_02-error-not-valid")         
 
     } else if (userInput2 == 'date' && userInput > 100) { 
 
@@ -384,9 +384,9 @@ router.post('/two-defer_02-error-size', function (req, res) {
 
         res.redirect("two-defer_02-error-size")   
 
-    } else if (userInput2 == 'date' && /^0/.test(userInput)) {//starts with a zero
+    //} else if (userInput2 == 'date' && /^0/.test(userInput)) {//starts with a zero
 
-        res.redirect("two-defer_02-error-not-valid") 
+        //res.redirect("two-defer_02-error-not-valid") 
 
     } else if (userInput2 == 'date' && userInput > 100) { 
 
@@ -404,16 +404,12 @@ router.post('/two-defer_02-error-size', function (req, res) {
 
 })
 
-router.post('/two-defer_02-error-not-valid', function (req, res) {
+/*router.post('/two-defer_02-error-not-valid', function (req, res) {
 
     const userInput = req.session.data['days'];      
     const userInput2 = req.session.data['days-type']; 
 
-    /*if (userInput2 == null) {//non selected
-
-        res.redirect("two-defer_02-error")
-
-    } else*/ if (userInput2 == '20') {
+    if (userInput2 == '20') {
 
         res.redirect("two-defer_03-20-days")
     
@@ -443,7 +439,7 @@ router.post('/two-defer_02-error-not-valid', function (req, res) {
 
     }
 
-})
+})*/
 
 router.post('/two-defer_02-error-characters', function (req, res) {
 
@@ -466,9 +462,9 @@ router.post('/two-defer_02-error-characters', function (req, res) {
 
         res.redirect("two-defer_02-error-size")   
 
-    } else if (userInput2 == 'date' && /^0/.test(userInput)) {//starts with a zero
+    //} else if (userInput2 == 'date' && /^0/.test(userInput)) {//starts with a zero
 
-        res.redirect("two-defer_02-error-not-valid")         
+        //res.redirect("two-defer_02-error-not-valid")         
 
     } else if (userInput2 == 'date' && userInput > 100) { 
 

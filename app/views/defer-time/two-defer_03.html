@@ -28,7 +28,7 @@ Confirm the extension of time
           </h1>
 
           <p class="govuk-body">
-            You'll be adding an extension of {{data['days']}} working days.
+            You'll be adding an extension of <span id="forPrototypeOnly2"></span> working days.
           </p>
 
           <p class="govuk-body">
@@ -79,7 +79,7 @@ Confirm the extension of time
           year: "numeric"
         };
 
-        const daysToAdd = {{data['days']}};
+        const daysToAdd = {{data["days"]}};
         const currentDate = new Date();
         const newDate = addDaysToDate(currentDate, daysToAdd);
 
@@ -94,6 +94,9 @@ Confirm the extension of time
       const targetSpan = document.getElementById("forPrototypeOnly");
       targetSpan.textContent = removeLeadingZero(currentDate);
 
+      const targetSpan2 = document.getElementById("forPrototypeOnly2");
+      var myDays = "{{data["days"]}}";
+      targetSpan2.textContent = removeLeadingZero(myDays);
   };
 </script>
 {% endblock %}
