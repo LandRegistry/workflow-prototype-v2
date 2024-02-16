@@ -14,3 +14,8 @@ novalidate added to form tag
     {% endif %}
     <br>
     {{data['category_code']}}
+
+
+
+
+    {% include "./inc_number-error-not-valid.html" %}
