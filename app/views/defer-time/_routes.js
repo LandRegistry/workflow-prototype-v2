@@ -53,13 +53,13 @@ router.post('/one-defer_02', function (req, res) {
 
         res.redirect("one-defer_02-error")
 
-    } else if (/^0/.test(userInput)) {//starts with a zero
-
-        res.redirect("one-defer_02-error-not-valid")         
-
     } else if (userInput < 1) {//not zero
 
         res.redirect("one-defer_02-error-size")
+
+    } else if (/^0/.test(userInput)) {//starts with a zero
+
+        res.redirect("one-defer_02-error-not-valid")           
 
     } else if (userInput > 100) {//no over 100
 
@@ -84,13 +84,13 @@ router.post('/one-defer_02-error', function (req, res) {
 
         res.redirect("one-defer_02-error")
 
-    } else if (/^0/.test(userInput)) {//starts with a zero
-
-        res.redirect("one-defer_02-error-not-valid")         
-
     } else if (userInput < 1) {//not zero
 
         res.redirect("one-defer_02-error-size")        
+
+    } else if (/^0/.test(userInput)) {//starts with a zero
+
+        res.redirect("one-defer_02-error-not-valid")          
 
     } else if (userInput > 100) {//no over 100 //userInput < 1 || userInput > 100
 
@@ -115,13 +115,13 @@ router.post('/one-defer_02-error-size', function (req, res) {
 
         res.redirect("one-defer_02-error")
 
+    } else if (userInput < 1) {//not zero
+
+        res.redirect("one-defer_02-error-size")  
+
     } else if (/^0/.test(userInput)) {//starts with a zero
 
         res.redirect("one-defer_02-error-not-valid")         
-
-    } else if (userInput < 1) {//not zero
-
-        res.redirect("one-defer_02-error-size")           
 
     } else if (userInput > 100) {//no zero and no over 100
 
@@ -146,13 +146,13 @@ router.post('/one-defer_02-error-not-valid', function (req, res) {
 
         res.redirect("one-defer_02-error")
 
+    } else if (userInput < 1) {//not zero
+
+        res.redirect("one-defer_02-error-size")       
+
     } else if (/^0/.test(userInput)) {//starts with a zero
 
         res.redirect("one-defer_02-error-not-valid")         
-
-    } else if (userInput < 1) {//not zero
-
-        res.redirect("one-defer_02-error-size")           
 
     } else if (userInput > 100) {//no zero and no over 100
 
@@ -177,13 +177,13 @@ router.post('/one-defer_02-error-characters', function (req, res) {
 
         res.redirect("one-defer_02-error")
 
+    } else if (userInput < 1) {//not zero
+
+        res.redirect("one-defer_02-error-size")         
+
     } else if (/^0/.test(userInput)) {//starts with a zero
 
         res.redirect("one-defer_02-error-not-valid")         
-
-    } else if (userInput < 1) {//not zero
-
-        res.redirect("one-defer_02-error-size")           
 
     } else if (userInput > 100) {//no zero and no over 100
 
@@ -257,13 +257,13 @@ router.post('/two-defer_02', function (req, res) {
 
         res.redirect("two-defer_02-error-empty")//text input is emtpy
 
+    } else if (userInput2 == 'date' && userInput < 1) {//not zero
+
+        res.redirect("two-defer_02-error-size")//not zero  
+
     } else if (userInput2 == 'date' && /^0/.test(userInput)) {//starts with a zero
 
         res.redirect("two-defer_02-error-not-valid")         
-
-    } else if (userInput2 == 'date' && userInput < 1) {//not zero
-
-        res.redirect("two-defer_02-error-size")//not zero         
 
     } else if (userInput2 == 'date' && userInput > 100) { 
 
@@ -298,13 +298,13 @@ router.post('/two-defer_02-error', function (req, res) {
 
         res.redirect("two-defer_02-error-empty")//text input is emtpy
 
+    } else if (userInput2 == 'date' && userInput < 1) {//not zero
+
+        res.redirect("two-defer_02-error-size")  
+
     } else if (userInput2 == 'date' && /^0/.test(userInput)) {//starts with a zero
 
         res.redirect("two-defer_02-error-not-valid")         
-
-    } else if (userInput2 == 'date' && userInput < 1) {//not zero
-
-        res.redirect("two-defer_02-error-size")        
 
     } else if (userInput2 == 'date' && userInput > 100) { 
 
@@ -339,13 +339,13 @@ router.post('/two-defer_02-error-empty', function (req, res) {
 
         res.redirect("two-defer_02-error-empty")//text input is emtpy
 
-    } else if (userInput2 == 'date' && /^0/.test(userInput)) {//starts with a zero
-
-        res.redirect("two-defer_02-error-not-valid")         
-
     } else if (userInput2 == 'date' && userInput < 1) {//not zero
 
         res.redirect("two-defer_02-error-size")   
+
+    } else if (userInput2 == 'date' && /^0/.test(userInput)) {//starts with a zero
+
+        res.redirect("two-defer_02-error-not-valid")         
 
     } else if (userInput2 == 'date' && userInput > 100) { 
 
@@ -380,13 +380,13 @@ router.post('/two-defer_02-error-size', function (req, res) {
 
         res.redirect("two-defer_02-error-empty")//text input is emtpy
 
+    } else if (userInput2 == 'date' && userInput < 1) {//not zero
+
+        res.redirect("two-defer_02-error-size")   
+
     } else if (userInput2 == 'date' && /^0/.test(userInput)) {//starts with a zero
 
         res.redirect("two-defer_02-error-not-valid") 
-
-    } else if (userInput2 == 'date' && userInput < 1) {//not zero
-
-        res.redirect("two-defer_02-error-size")           
 
     } else if (userInput2 == 'date' && userInput > 100) { 
 
@@ -421,13 +421,13 @@ router.post('/two-defer_02-error-not-valid', function (req, res) {
 
         res.redirect("two-defer_02-error-empty")//text input is emtpy
 
+    } else if (userInput2 == 'date' && userInput < 1) {//not zero
+
+        res.redirect("two-defer_02-error-size")   
+
     } else if (userInput2 == 'date' && /^0/.test(userInput)) {//starts with a zero
 
         res.redirect("two-defer_02-error-not-valid") 
-
-    } else if (userInput2 == 'date' && userInput < 1) {//not zero
-
-        res.redirect("two-defer_02-error-size")           
 
     } else if (userInput2 == 'date' && userInput > 100) { 
 
@@ -462,13 +462,13 @@ router.post('/two-defer_02-error-characters', function (req, res) {
 
         res.redirect("two-defer_02-error-empty")//text input is emtpy 
 
+    } else if (userInput2 == 'date' && userInput < 1) {//not zero
+
+        res.redirect("two-defer_02-error-size")   
+
     } else if (userInput2 == 'date' && /^0/.test(userInput)) {//starts with a zero
 
         res.redirect("two-defer_02-error-not-valid")         
-
-    } else if (userInput2 == 'date' && userInput < 1) {//not zero
-
-        res.redirect("two-defer_02-error-size")         
 
     } else if (userInput2 == 'date' && userInput > 100) { 
 
