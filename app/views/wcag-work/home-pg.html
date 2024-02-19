@@ -18,6 +18,32 @@
 
 <div class="content-wrapper">
 
+    <!-- *** new styles which can be added to the CSS output (at the end) *** -->
+    <style>
+        .nav-panel {
+            padding: 0 !important; 
+        }
+        .govuk-link.nav-panel__link {
+            color: #0b0c0c; /* or $govuk-text-colour is sass */
+        }
+        .nav-panel {
+            background-color: #bfbfbf; /*legacy colour*/
+            transition: background-color 0.3s ease;
+        }
+        .nav-panel:hover {
+            background-color: #cccccc; /*legacy colour*/
+        }
+        .nav-panel__text {
+            padding-left: 10px;
+            padding-right: 10px;
+        }  
+        @media (min-width: 40.0625em) { 
+            .nav-panel__text {
+                font-size: 140% !important;
+            } 
+        }
+    </style>
+
         
     
   <div class="govuk-grid-row">
@@ -29,7 +55,7 @@
                 <div class="govuk-grid-column-one-half">
                     <div class="nav-panel">
                         
-                            <a class="nav-panel__link" href="worklist" title="My Worklist page">
+                            <a class="govuk-link nav-panel__link" href="worklist">
                                 <span class="nav-panel__text">My Worklist</span>
                             </a>
                         
@@ -39,7 +65,7 @@
                 <div class="govuk-grid-column-one-half">
                     <div class="nav-panel">
                         
-                            <a class="nav-panel__link" href="work-category-option" title="Select category of work page">
+                            <a class="govuk-link nav-panel__link" href="work-category-option">
                                 <span class="nav-panel__text">Select category of work</span>
                             </a>
                         
@@ -61,7 +87,7 @@
                 <div class="govuk-grid-column-one-half">
                     <div class="nav-panel">
                         
-                            <a class="nav-panel__link" href="search" title="Search page">
+                            <a class="govuk-link nav-panel__link" href="search">
                                 <span class="nav-panel__text">Search</span>
                             </a>
                         
@@ -71,8 +97,8 @@
                 <div class="govuk-grid-column-one-half">
                     <div class="nav-panel">
                         
-                            <a class="nav-panel__link" href="manage-assigned-work" title="Manage Work page">
-                                <span class="nav-panel__text">Manage Assigned Work</span>
+                            <a class="govuk-link nav-panel__link" href="manage-assigned-work">
+                                <span class="nav-panel__text">Manage assigned work</span>
                             </a>
                         
                     </div>

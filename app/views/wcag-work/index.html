@@ -709,11 +709,11 @@
     <h2 class="govuk-heading-m">
       2. Home page
     </h2>
+    
+    <p class="govuk-body-s">This HTML design shows the page after Production Information and Report an issue have been removed (from a seperate ticket).</p>
 
     <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-font-size-16">
       <li><a href="./home-pg.html" class="govuk-link govuk-link--no-visited-state" target="_blank">Home page</a></li>
-      <li></li>
-      <li></li>
     </ol> 
 
     <details class="govuk-details  govuk-!-font-size-16">
@@ -723,14 +723,52 @@
         </span>
       </summary>
       <div class="govuk-details__text">
-        <p class="govuk-body-s">Issues resolved:</p>
+        <p class="govuk-body-s">Issues resolved: </p>
         <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
+          <li>On the main links, remove the title attributes from the 'a' tags</li>
+          <li>Check that this CSS has already been added to the CSS output from a previous WCAG ticket:<br>
+            <pre>
+              /* temp updating hover states to match latest gds: STARTS */
+              .govuk-link, .govuk-details__summary-text {
+                  text-decoration-thickness: max(1px,0.0625rem) !important;
+                  text-underline-offset: 0.1578em !important;
+              }
+
+              .govuk-link:hover, .govuk-details__summary-text:hover {
+                  text-decoration-thickness: max(3px,0.1875rem,0.12em) !important;
+                  text-underline-offset: 0.1578em !important;
+              }
+              /* temp updating hover states to match latest gds: ENDS */
+            </pre>
+          </li>
+          <li>Add these styles to your CSS output (at the end); or embed into the home page body as per the HTML design:<br>
+            <pre>
+                .nav-panel {
+                    padding: 0 !important; 
+                }
+                .govuk-link.nav-panel__link {
+                    color: #0b0c0c; /* or $govuk-text-colour is sass */
+                }
+                .nav-panel {
+                    background-color: #bfbfbf; /*legacy colour*/
+                    transition: background-color 0.3s ease;
+                }
+                .nav-panel:hover {
+                    background-color: #cccccc; /*legacy colour*/
+                }
+                .nav-panel__text {
+                    padding-left: 10px;
+                    padding-right: 10px;
+                }  
+                @media (min-width: 40.0625em) { 
+                    .nav-panel__text {
+                        font-size: 140% !important;
+                    } 
+                }
+            </pre>
+
+          </li>
+          <li>Correct upper/lowercase in 'Manage assigned work' link (as per HTML design)</li>
           
         </ul>
       </div>
