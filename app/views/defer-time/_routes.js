@@ -53,13 +53,17 @@ router.post('/one-defer_02', function (req, res) {
 
         res.redirect("one-defer_02-error")
 
-    } else if ( (isNaN(userInput)) || (/^-/.test(userInput)) || (/^\+/.test(userInput)) ) {//must be a number
+    } else if (/^-/.test(userInput)) {//minus
+
+        res.redirect("one-defer_02-error-minus")    
+
+    } else if ( (isNaN(userInput)) || (/^\+/.test(userInput)) ) {//must be a number
         //production build will parse out any white space
         res.redirect("one-defer_02-error-characters")         
 
     } else if (userInput < 1) {//is zero
 
-        res.redirect("one-defer_02-error-size")
+        res.redirect("one-defer_02-error-over-one")
 
     //} else if (/^0/.test(userInput)) {//starts with a zero
 
@@ -84,13 +88,17 @@ router.post('/one-defer_02-error', function (req, res) {
 
         res.redirect("one-defer_02-error")
 
-    } else if ( (isNaN(userInput)) || (/^-/.test(userInput)) || (/^\+/.test(userInput)) ) {//must be a number
+    } else if (/^-/.test(userInput)) {//minus
+
+        res.redirect("one-defer_02-error-minus")    
+
+    } else if ( (isNaN(userInput)) || (/^\+/.test(userInput)) ) {//must be a number
         //production build will parse out any white space
-        res.redirect("one-defer_02-error-characters")            
+        res.redirect("one-defer_02-error-characters")         
 
     } else if (userInput < 1) {//is zero
 
-        res.redirect("one-defer_02-error-size")        
+        res.redirect("one-defer_02-error-over-one")        
 
     //} else if (/^0/.test(userInput)) {//starts with a zero
 
@@ -107,6 +115,76 @@ router.post('/one-defer_02-error', function (req, res) {
     }
 })
 
+router.post('/one-defer_02-error-over-one', function (req, res) {
+
+    const userInput = req.session.data['days'];
+
+    if (userInput == '') {//empty
+
+        res.redirect("one-defer_02-error")
+
+    } else if (/^-/.test(userInput)) {//minus
+
+        res.redirect("one-defer_02-error-minus")    
+
+    } else if ( (isNaN(userInput)) || (/^\+/.test(userInput)) ) {//must be a number
+        //production build will parse out any white space
+        res.redirect("one-defer_02-error-characters")           
+
+    } else if (userInput < 1) {//is zero
+
+        res.redirect("one-defer_02-error-over-one")  
+
+    //} else if (/^0/.test(userInput)) {//starts with a zero
+
+        //res.redirect("one-defer_02-error-not-valid")         
+
+    } else if (userInput > 100) {//no zero and no over 100
+
+        res.redirect("one-defer_02-error-size")    
+        
+    } else {
+
+        res.redirect("one-defer_03")
+
+    }
+})
+
+router.post('/one-defer_02-error-minus', function (req, res) {
+
+    const userInput = req.session.data['days'];
+
+    if (userInput == '') {//empty
+
+        res.redirect("one-defer_02-error")
+
+    } else if (/^-/.test(userInput)) {//minus
+
+        res.redirect("one-defer_02-error-minus")    
+
+    } else if ( (isNaN(userInput)) || (/^\+/.test(userInput)) ) {//must be a number
+        //production build will parse out any white space
+        res.redirect("one-defer_02-error-characters")           
+
+    } else if (userInput < 1) {//is zero
+
+        res.redirect("one-defer_02-error-over-one")  
+
+    //} else if (/^0/.test(userInput)) {//starts with a zero
+
+        //res.redirect("one-defer_02-error-not-valid")         
+
+    } else if (userInput > 100) {//no zero and no over 100
+
+        res.redirect("one-defer_02-error-size")    
+        
+    } else {
+
+        res.redirect("one-defer_03")
+
+    }
+})
+
 router.post('/one-defer_02-error-size', function (req, res) {
 
     const userInput = req.session.data['days'];
@@ -115,13 +193,17 @@ router.post('/one-defer_02-error-size', function (req, res) {
 
         res.redirect("one-defer_02-error")
 
-    } else if ( (isNaN(userInput)) || (/^-/.test(userInput)) || (/^\+/.test(userInput)) ) {//must be a number
+    } else if (/^-/.test(userInput)) {//minus
+
+        res.redirect("one-defer_02-error-minus")    
+
+    } else if ( (isNaN(userInput)) || (/^\+/.test(userInput)) ) {//must be a number
         //production build will parse out any white space
-        res.redirect("one-defer_02-error-characters")            
+        res.redirect("one-defer_02-error-characters")      
 
     } else if (userInput < 1) {//is zero
 
-        res.redirect("one-defer_02-error-size")  
+        res.redirect("one-defer_02-error-over-one")  
 
     //} else if (/^0/.test(userInput)) {//starts with a zero
 
@@ -148,7 +230,7 @@ router.post('/one-defer_02-error-size', function (req, res) {
 
     } else if (userInput < 1) {//is zero
 
-        res.redirect("one-defer_02-error-size")       
+        res.redirect("one-defer_02-error-over-one")       
 
     } else if (/^0/.test(userInput)) {//starts with a zero
 
@@ -177,13 +259,17 @@ router.post('/one-defer_02-error-characters', function (req, res) {
 
         res.redirect("one-defer_02-error")
 
-    } else if ( (isNaN(userInput)) || (/^-/.test(userInput)) || (/^\+/.test(userInput)) ) {//must be a number
+    } else if (/^-/.test(userInput)) {//minus
+
+        res.redirect("one-defer_02-error-minus")    
+
+    } else if ( (isNaN(userInput)) || (/^\+/.test(userInput)) ) {//must be a number
         //production build will parse out any white space
-        res.redirect("one-defer_02-error-characters")            
+        res.redirect("one-defer_02-error-characters")           
 
     } else if (userInput < 1) {//is zero
 
-        res.redirect("one-defer_02-error-size")         
+        res.redirect("one-defer_02-error-over-one")         
 
     //} else if (/^0/.test(userInput)) {//starts with a zero
 
@@ -257,13 +343,17 @@ router.post('/two-defer_02', function (req, res) {//xxxxxxx
 
         res.redirect("two-defer_02-error-empty")//text input is emtpy
 
-    } else if ( (userInput2 == 'date' && isNaN(userInput)) || (userInput2 == 'date' && /^-/.test(userInput)) || (userInput2 == 'date' && /^\+/.test(userInput)) ) {
+    } else if (userInput2 == 'date' && /^-/.test(userInput) ) {//minus
+
+        res.redirect("two-defer_02-error-minus")    
+
+    } else if ( (userInput2 == 'date' && isNaN(userInput)) || (userInput2 == 'date' && /^\+/.test(userInput)) ) {
         
         res.redirect("two-defer_02-error-characters")//text input must be a number        
 
     } else if (userInput2 == 'date' && userInput < 1) {//is zero
 
-        res.redirect("two-defer_02-error-size")//not zero  
+        res.redirect("two-defer_02-error-over-one")//not zero  
 
     //} else if (userInput2 == 'date' && /^0/.test(userInput)) {//starts with a zero
 
@@ -298,13 +388,17 @@ router.post('/two-defer_02-error', function (req, res) {
 
         res.redirect("two-defer_02-error-empty")//text input is emtpy
 
-    } else if ( (userInput2 == 'date' && isNaN(userInput)) || (userInput2 == 'date' && /^-/.test(userInput)) || (userInput2 == 'date' && /^\+/.test(userInput)) ) {
+    } else if (userInput2 == 'date' && /^-/.test(userInput) ) {//minus
+
+        res.redirect("two-defer_02-error-minus")    
+
+    } else if ( (userInput2 == 'date' && isNaN(userInput)) || (userInput2 == 'date' && /^\+/.test(userInput)) ) {
         
         res.redirect("two-defer_02-error-characters")//text input must be a number        
 
     } else if (userInput2 == 'date' && userInput < 1) {//is zero
 
-        res.redirect("two-defer_02-error-size")  
+        res.redirect("two-defer_02-error-over-one")  
 
     //} else if (userInput2 == 'date' && /^0/.test(userInput)) {//starts with a zero
 
@@ -339,17 +433,111 @@ router.post('/two-defer_02-error-empty', function (req, res) {
 
         res.redirect("two-defer_02-error-empty")//text input is emtpy
 
-    } else if ( (userInput2 == 'date' && isNaN(userInput)) || (userInput2 == 'date' && /^-/.test(userInput)) || (userInput2 == 'date' && /^\+/.test(userInput)) ) {
+    } else if (userInput2 == 'date' && /^-/.test(userInput) ) {//minus
+
+        res.redirect("two-defer_02-error-minus")    
+
+    } else if ( (userInput2 == 'date' && isNaN(userInput)) || (userInput2 == 'date' && /^\+/.test(userInput)) ) {
+        
+        res.redirect("two-defer_02-error-characters")//text input must be a number       
+
+    } else if (userInput2 == 'date' && userInput < 1) {//is zero
+
+        res.redirect("two-defer_02-error-over-one")   
+
+    //} else if (userInput2 == 'date' && /^0/.test(userInput)) {//starts with a zero
+
+        //res.redirect("two-defer_02-error-not-valid")         
+
+    } else if (userInput2 == 'date' && userInput > 100) { 
+
+        res.redirect("two-defer_02-error-size")//text input number must be 100 or less 
+
+    } else {
+
+        res.redirect("two-defer_03")    
+
+    }
+
+})
+
+router.post('/two-defer_02-error-over-one', function (req, res) {
+
+    const userInput = req.session.data['days'];      
+    const userInput2 = req.session.data['days-type']; 
+
+    /*if (userInput2 == null) {//non selected
+
+        res.redirect("two-defer_02-error")
+
+    } else*/ if (userInput2 == '20') {
+
+        res.redirect("two-defer_03-20-days")
+    
+    } else if (userInput2 == 'date' && userInput == '') { 
+
+        res.redirect("two-defer_02-error-empty")//text input is emtpy
+
+    } else if (userInput2 == 'date' && /^-/.test(userInput) ) {//minus
+
+        res.redirect("two-defer_02-error-minus")    
+
+    } else if ( (userInput2 == 'date' && isNaN(userInput)) || (userInput2 == 'date' && /^\+/.test(userInput)) ) {
         
         res.redirect("two-defer_02-error-characters")//text input must be a number        
 
     } else if (userInput2 == 'date' && userInput < 1) {//is zero
 
-        res.redirect("two-defer_02-error-size")   
+        res.redirect("two-defer_02-error-over-one")   
 
     //} else if (userInput2 == 'date' && /^0/.test(userInput)) {//starts with a zero
 
-        //res.redirect("two-defer_02-error-not-valid")         
+        //res.redirect("two-defer_02-error-not-valid") 
+
+    } else if (userInput2 == 'date' && userInput > 100) { 
+
+        res.redirect("two-defer_02-error-size")//text input number must be 100 or less 
+
+    } else {
+
+        res.redirect("two-defer_03")    
+
+    }
+
+})
+
+router.post('/two-defer_02-error-minus', function (req, res) {
+
+    const userInput = req.session.data['days'];      
+    const userInput2 = req.session.data['days-type']; 
+
+    /*if (userInput2 == null) {//non selected
+
+        res.redirect("two-defer_02-error")
+
+    } else*/ if (userInput2 == '20') {
+
+        res.redirect("two-defer_03-20-days")
+    
+    } else if (userInput2 == 'date' && userInput == '') { 
+
+        res.redirect("two-defer_02-error-empty")//text input is emtpy
+
+    } else if (userInput2 == 'date' && /^-/.test(userInput) ) {//minus
+
+        res.redirect("two-defer_02-error-minus")    
+
+    } else if ( (userInput2 == 'date' && isNaN(userInput)) || (userInput2 == 'date' && /^\+/.test(userInput)) ) {
+        
+        res.redirect("two-defer_02-error-characters")//text input must be a number        
+
+    } else if (userInput2 == 'date' && userInput < 1) {//is zero
+
+        res.redirect("two-defer_02-error-over-one")   
+
+    //} else if (userInput2 == 'date' && /^0/.test(userInput)) {//starts with a zero
+
+        //res.redirect("two-defer_02-error-not-valid") 
 
     } else if (userInput2 == 'date' && userInput > 100) { 
 
@@ -380,13 +568,17 @@ router.post('/two-defer_02-error-size', function (req, res) {
 
         res.redirect("two-defer_02-error-empty")//text input is emtpy
 
-    } else if ( (userInput2 == 'date' && isNaN(userInput)) || (userInput2 == 'date' && /^-/.test(userInput)) || (userInput2 == 'date' && /^\+/.test(userInput)) ) {
+    } else if (userInput2 == 'date' && /^-/.test(userInput) ) {//minus
+
+        res.redirect("two-defer_02-error-minus")    
+
+    } else if ( (userInput2 == 'date' && isNaN(userInput)) || (userInput2 == 'date' && /^\+/.test(userInput)) ) {
         
-        res.redirect("two-defer_02-error-characters")//text input must be a number        
+        res.redirect("two-defer_02-error-characters")//text input must be a number         
 
     } else if (userInput2 == 'date' && userInput < 1) {//is zero
 
-        res.redirect("two-defer_02-error-size")   
+        res.redirect("two-defer_02-error-over-one")   
 
     //} else if (userInput2 == 'date' && /^0/.test(userInput)) {//starts with a zero
 
@@ -419,7 +611,7 @@ router.post('/two-defer_02-error-size', function (req, res) {
 
     } else if (userInput2 == 'date' && userInput < 1) {//is zero
 
-        res.redirect("two-defer_02-error-size")   
+        res.redirect("two-defer_02-error-over-one")   
 
     } else if (userInput2 == 'date' && /^0/.test(userInput)) {//starts with a zero
 
@@ -458,13 +650,17 @@ router.post('/two-defer_02-error-characters', function (req, res) {
 
         res.redirect("two-defer_02-error-empty")//text input is emtpy 
 
-    } else if ( (userInput2 == 'date' && isNaN(userInput)) || (userInput2 == 'date' && /^-/.test(userInput)) || (userInput2 == 'date' && /^\+/.test(userInput)) ) {
+    } else if (userInput2 == 'date' && /^-/.test(userInput) ) {//minus
+
+        res.redirect("two-defer_02-error-minus")    
+
+    } else if ( (userInput2 == 'date' && isNaN(userInput)) || (userInput2 == 'date' && /^\+/.test(userInput)) ) {
         
-        res.redirect("two-defer_02-error-characters")//text input must be a number        
+        res.redirect("two-defer_02-error-characters")//text input must be a number         
 
     } else if (userInput2 == 'date' && userInput < 1) {//is zero
 
-        res.redirect("two-defer_02-error-size")   
+        res.redirect("two-defer_02-error-over-one")   
 
     //} else if (userInput2 == 'date' && /^0/.test(userInput)) {//starts with a zero
 
