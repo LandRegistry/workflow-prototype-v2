@@ -781,8 +781,8 @@
     </h2>
 
     <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-font-size-16">
-      <li><a href="#" class="govuk-link govuk-link--no-visited-state" target="_blank">xxx</a></li>
-      <li></li>
+      <li><a href="./my-worklist.html" class="govuk-link govuk-link--no-visited-state" target="_blank">My Worklist</a></li>
+      <li><a href="./my-worklist-timed-out.html" class="govuk-link govuk-link--no-visited-state" target="_blank">My Worklist timed out</a></li></li>
       <li></li>
     </ol> 
 
@@ -795,12 +795,63 @@
       <div class="govuk-details__text">
         <p class="govuk-body-s">Issues resolved:</p>
         <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16">
+          <li>Check if this CSS has been added to the build yet, if not, it is required: <br>
+            <pre>
+              /* temp updating hover states to match latest gds: STARTS */
+              .govuk-link, .govuk-details__summary-text {
+                  text-decoration-thickness: max(1px,0.0625rem) !important;
+                  text-underline-offset: 0.1578em !important;
+              }
+
+              .govuk-link:hover, .govuk-details__summary-text:hover {
+                  text-decoration-thickness: max(3px,0.1875rem,0.12em) !important;
+                  text-underline-offset: 0.1578em !important;
+              }
+              /* temp updating hover states to match latest gds: ENDS */
+
+
+            </pre><br>
+            This will resolve link hover states.
+          </li>
+          <li>In the HTML there is a 'noscript' tag block which includes the message "You must have JavaScript turned on to use this page". Remove this 'noscript' block.</li>
+          <li>
+            
+            Obtain button: when a user has zero applications they can select the 'Obtain' button. The current behaviour uses JavaScript to alter the button state (making it disabled) and dynamically changing the button text to "Please wait ...". We need to remove the JavaScript which executes this from the build (as it is not required). Instead, the button will function unhindered and submit the request, with the page then returned with the updated content (exactly as it currently behaves without JavaScript) <br>
+
+            <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16 govuk-!-margin-left-6">
+              <li><b>To discuss with the delivery team:</b> to replace the behaviour currently executed via a non-accessible JavaScript event, we want to determin if it is possible to set a timeout limit on this response. For example, if we are unable to serve a response/page within 8 seconds then we instead return the current page with a notfication banner included as per this design (and as per the HTML): <a href="./my-worklist-timed-out.html" class="govuk-link govuk-link--no-visited-state" target="_blank">My Worklist timed out</a>. (Note the HTML on the hyperlink)</li>
+            </ul>              
+
+          </li>
+          <li>The obtain button sits in a form element: add the 'novalidate' attribute to the form element. We should also add 'novalidate' to the 'Open' buttons forms.</li>
+          <li>My Worklist: When there are zero Worklist applications in the Worklist application list the page still includes a table and nested THead set: if the number of Worklist applications is zero we do not want to include any table HTML.</li>
+          <li>Progress later: When there are zero applications in the progress later list the page still includes a table and nested header set: if the number of progress later applications is zero we do not want to include any table HTML.</li>
+          <li>
+            When there are zero Worklist applications, the following HTML is included in the page (which also has complications for assitive technologies regarding the 'hidden' attribute): we can remove this.<br>
+            <pre>
+              &lt;div class="panel panel-border-narrow alert-success" hidden=""&gt;
+                &lt;p id="last_action_performed" class="govuk-body"&gt;
+                  None
+                &lt;/p&gt;
+              &lt;/div&gt;
+            </pre>
+          
+          </li>
+          <li>On the hyperlink "Change your category of work": remove the title attribute from this link and add class 'govuk-link--no-visited-state' to the 'govuk-link' class</li>
+          <li>On the 'More Info' links: we need to make each instance unique; this is done by adding the hidden context within each link, as per the HTML design</li>
+          <li>
+            Table captions (in both): Reuse the same logic which writes the number of applications (or application) into the Table Caption tags with the additional text describing the table structure, as per the HTML design
+          </li> 
+          <li>... diff ticket for the spacing on the links menus ... here</li>
+          <li>Work on this "links": add class xxxxxxxxx</li> 
+          <li>All menu links remove the title attribute</li>
+          <li></li> 
           <li></li>
+          <li></li> 
           <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
+          <li></li> 
+          <li>Not sure why we have headers in the this simple table?</li>
+          <li>The banners appearing after the event - delayed? We agreed to remove those and have a solid roundtrip notification banner when actually submitting? This currently an injected JS message.</li>                    
           
         </ul>
       </div>
@@ -1038,6 +1089,7 @@
 
     <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-font-size-16">
       <li><a href="#" class="govuk-link govuk-link--no-visited-state" target="_blank">xxx</a></li>
+      <li>Including fixing the breadcrumb non-link and hover states.</li>
     </ol>     
     
     <details class="govuk-details  govuk-!-font-size-16">
