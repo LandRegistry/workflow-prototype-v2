@@ -781,9 +781,21 @@
     </h2>
 
     <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-font-size-16">
-      <li><a href="./my-worklist.html" class="govuk-link govuk-link--no-visited-state" target="_blank">My Worklist</a></li>
-      <li><a href="./my-worklist-timed-out.html" class="govuk-link govuk-link--no-visited-state" target="_blank">My Worklist timed out</a></li></li>
-      <li></li>
+      <li>
+        <a href="./my-worklist.html" class="govuk-link govuk-link--no-visited-state" target="_blank">My Worklist</a>
+      </li>
+      <li>
+        <a href="./my-worklist-obtained.html" class="govuk-link govuk-link--no-visited-state" target="_blank">My Worklist zero applications</a>
+      </li>      
+      <li>
+        <a href="./my-worklist-timed-out.html" class="govuk-link govuk-link--no-visited-state" target="_blank">My Worklist timed out</a>
+      </li>
+      <li>
+        <a href="./my-worklist-obtain-concurrency.html" class="govuk-link govuk-link--no-visited-state" target="_blank">My Worklist Obtain button: concurrency issue</a> This may change to an error page (TBC).
+      </li>
+      <li>
+        <a href="./my-worklist-success-obtained.html" class="govuk-link govuk-link--no-visited-state" target="_blank">My Worklist application obtained</a>: example for replacing dynamic banners
+      </li>      
     </ol> 
 
     <details class="govuk-details  govuk-!-font-size-16">
@@ -815,15 +827,27 @@
           </li>
           <li>In the HTML there is a 'noscript' tag block which includes the message "You must have JavaScript turned on to use this page". Remove this 'noscript' block.</li>
           <li>
+            The 'Open' buttons: remove the title attribute and its text. (Keep the aria-label intact). The preview site is a hyperlink (not sure how or why the code I copied is an input?)
+          </li>
+          <li>
+            After each of the buttons and options running horizontally in the table menu, add &lt;span class="govuk-visually-hidden"&gt;|&lt;/span&gt; (as per the HTML)
+          </li>           
+          <li>
             
-            Obtain button: when a user has zero applications they can select the 'Obtain' button. The current behaviour uses JavaScript to alter the button state (making it disabled) and dynamically changing the button text to "Please wait ...". We need to remove the JavaScript which executes this from the build (as it is not required). Instead, the button will function unhindered and submit the request, with the page then returned with the updated content (exactly as it currently behaves without JavaScript) <br>
+            Obtain button: when a user has <a href="./my-worklist-obtained.html" class="govuk-link govuk-link--no-visited-state" target="_blank">zero applications</a> they can select the 'Obtain' button. The current behaviour uses JavaScript to alter the button state (making it disabled) and dynamically changing the button text to "Please wait ...". We need to remove the JavaScript which executes this from the build (as it is not required). Instead, the button will function unhindered and submit the request, with the page then returned with the updated content (exactly as it currently behaves without JavaScript) <br>
 
             <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16 govuk-!-margin-left-6">
               <li><b>To discuss with the delivery team:</b> to replace the behaviour currently executed via a non-accessible JavaScript event, we want to determin if it is possible to set a timeout limit on this response. For example, if we are unable to serve a response/page within 8 seconds then we instead return the current page with a notfication banner included as per this design (and as per the HTML): <a href="./my-worklist-timed-out.html" class="govuk-link govuk-link--no-visited-state" target="_blank">My Worklist timed out</a>. (Note the HTML on the hyperlink)</li>
-            </ul>              
+            </ul> 
+            
+            <br>
+            When the 'Obtain' button is not required in the page, we currently still include the HTML but add a 'hidden' attribute. Ideally we should not include the redundant HTML when it isn't required, but alternatively we should not use the 'hidden' attribute (or the 'hidden' class in the class declarations), and instead simply update the type attribute to 'hidden' (when this element is not required).
 
           </li>
-          <li>The obtain button sits in a form element: add the 'novalidate' attribute to the form element. We should also add 'novalidate' to the 'Open' buttons forms.</li>
+          <li>
+            On the Obtain button, replace the class 'wf-button' with class 'govuk-button'
+          </li>
+          <li>The obtain button sits in a form element: add the 'novalidate' attribute to the form element. We should also add 'novalidate' to the 'Open' buttons forms. The row of menu links in the table is wrapped in a form tag - att 'novalidate' to this tag. And the progress later button form.</li>
           <li>My Worklist: When there are zero Worklist applications in the Worklist application list the page still includes a table and nested THead set: if the number of Worklist applications is zero we do not want to include any table HTML.</li>
           <li>Progress later: When there are zero applications in the progress later list the page still includes a table and nested header set: if the number of progress later applications is zero we do not want to include any table HTML.</li>
           <li>
@@ -837,23 +861,121 @@
             </pre>
           
           </li>
-          <li>On the hyperlink "Change your category of work": remove the title attribute from this link and add class 'govuk-link--no-visited-state' to the 'govuk-link' class</li>
+          <li>On the hyperlink 'Change your category of work': remove the title attribute from this link and add class 'govuk-link--no-visited-state' to the 'govuk-link' class</li>
           <li>On the 'More Info' links: we need to make each instance unique; this is done by adding the hidden context within each link, as per the HTML design</li>
           <li>
-            Table captions (in both): Reuse the same logic which writes the number of applications (or application) into the Table Caption tags with the additional text describing the table structure, as per the HTML design
+            Table captions (in both): Reuse the same logic which writes the number of applications (or application) in the H1 and H2 headers into the Table Caption tags with the additional text describing the table structure, as per the HTML design
           </li> 
-          <li>... diff ticket for the spacing on the links menus ... here</li>
-          <li>Work on this "links": add class xxxxxxxxx</li> 
-          <li>All menu links remove the title attribute</li>
-          <li></li> 
-          <li></li>
-          <li></li> 
-          <li></li>
-          <li></li> 
-          <li>Not sure why we have headers in the this simple table?</li>
-          <li>The banners appearing after the event - delayed? We agreed to remove those and have a solid roundtrip notification banner when actually submitting? This currently an injected JS message.</li>                    
+          <li>
+            Updates to the table menu links (adding classes) are also covered in Jira ticket <a href="https://hmlandregistry.atlassian.net/browse/AMW-3144" class="govuk-link govuk-link--no-visited-state" target="_blank">#3144</a>            
+          </li>
+          <li>
+            'Work on this', 'Progress later', links featured in the table menus: 
+            
+            <br>
+            <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16">
+              <li>where the "link" is an input element, change the title attribute to a 'aria-label' attribute</li>
+            </ul>
+            
+          </li> 
+          <li>
+            'Defer' links: remove the title attribute and instead include part of that text as hidden text within the hyperlink, as per the HTML design
+          </li>
+          <li>
+            'Refer' links: remove the title attribute and instead include part of that text as hidden text within the hyperlink, as per the HTML design
+          </li>  
+          <li>
+            'View activity history' links: remove the title <b>and</b> the aria-label attributes and instead include part of that text as hidden text within the hyperlink, as per the HTML design
+          </li>
+          <li>
+            'Return to ESRV' links: remove the title <b>and</b> the aria-label attributes and instead include part of that text as hidden text within the hyperlink, as per the HTML design. The ESRV links require additional HTML wrapping the ESRV text, and no space between the span tags, as per the HTML design.
+          </li>  
+          <li>
+            There are hidden input elements (used for maintaining states) and menu "links" (which are input elements) which are hidden (as they aren't always required in the menu): these are currently hidden using a 'hidden' CSS class and a 'hidden' attribute. These should be updated to instead utilse the type attribute which is changed to 'hidden'. <br><br>
+            On the hidden input elements (for maintaining states); remove the CSS 'hidden' and 'hidden' attribute and change the type to 'hidden'.<br<br>
+            For the "links", with are hidden according to context, instead of using CSS 'hidden' classes and 'hidden' attributes to hide them (when not required), we should update the type status to 'hidden' instead.
+          </li>
+          <li>Where the links are hyperlinks (including the 'More info' links), ensure they have the class 'govuk-link' and 'govuk-link--no-visited-state'</li>          
+          <li>
+            'Show attached applications' hyperlinks: (And the equivalent 'Hide attached applications' hyperlinks). Make accessibility and GDS compliant
+            <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
+              <li>Update the plus (and minus) symbols, to use a HTML symbol code, as per the HTML example</li>
+              <li>Add the class 'govuk-link' to the button tag</li>
+              <li>Add the hidden span within the hyperlink content - a visually hidden span describing the application number - as per the HTML example</li>
+              <li>Remove any title attribute from the button/hyperlink</li>
+            </ul>
+          </li>
+          <li>
+            <b>The 'Show attached applications' hyperlink functionality: </b> which reveals (and hides) applications which are attached/associated with an application
+            <br>
+            <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16">
+              <li>There is an issue with this functionality as it requires JavaScript support to function (and reveal the attached applications)... </li>
+              <li>The solution, as recently implimented in Manage Assigned Work, is: the link submits (a hidden input value) to itself for the page to simply reload with the previously hidden table row(s), or applications, now showing in the page (by not including the inline 'hidden' attribute, and vice versa). i.e., a round trip post to the server to include or omit these attached application rows. (The plus &amp; minus and show/hide words in the hyperlink would also be updated by simply hardcoding them in the page output). </li>
+              <li><i>This resolves the accessibility issue. If means the related JavaScript should then be removed from the build. </i></li>
+              <li><i>Note: the HTML example does not demonstrate the current Show/Hide functionality - this needs to be observed on the Preview service where there is an application with an attached application. </i></li>
+              
+            </ul>
+          </li>
+          <li>
+            In the category column of the table, where the text "Executive Register Update Standard" is included in each cell, remove the 'ABBR' tags which wrap it
+          </li>
+          <li>
+            <b>Worklist Obtain button: concurrency issue:</b> As per <a href="./my-worklist-obtain-concurrency.html" class="govuk-link govuk-link--no-visited-state" target="_blank">the HTML design</a> - this might change (TBC). When this issue occurs the page is refreshed with the information panel included.
+          </li> 
+          <li>
+            <b>Update banner messages: </b>there is currently the behaviour of showing confirmation panels (within the page) confirming if and when applications have been updated (for example, 'progress later'); see list below. This relies upon JavaScript and it is a known issue that these updates often lag in time significantly and typically cause confusion when they are 'fired/served' inappropriately when the user has already instigated a different action on a different application. The use of JavaScript to impliment this is also non-accessible. 
+            
+            <br><br>
+
+            We wish to propose (investigate) changing how this functionality is executed. Instead, when the page is refreshed (reloaded) we <a href="./my-worklist-obtain-success-obtained.html" class="govuk-link govuk-link--no-visited-state" target="_blank">use a standard GDS notification banner</a> added to the top of the page. (The current messages are rehoused in the new notification banner, as is, and as demonstrated). However, this issue remains that the action may not have completed before the page is returned? 
+
+            <br><br>
+            This list of messages appear to be: <br>
+
+
+            <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
+              <li>You have deferred application</li>
+              <li>You have deferred lead application ...</li>
+              <li>You have returned application ... to ESRV</li>
+              <li>You have returned lead application ... and ... attached applications to ESRV</li>
+              <li>You have obtained application ... </li>
+              <li>You have obtained lead application ...</li>
+              <li>You have cancelled application ...  (x3 instances?)</li>
+              <li>You have marked off application ... </li>
+              <li>You have marked off lead application ...</li>
+              <li>There is no longer a prior pending item. You cannot defer application ... for this reason</li>
+              <li>You have added application ... to your worklist</li>
+              <li>You have added lead application ... attached applications to your worklist</li>
+              <li>You will progress application ... later</li>
+              <li>You will progress lead application ... and ... attached applications later</li>
+              <li>You are drafting attached application ... </li>
+              <li>You are drafting lead application ...</li>
+              <li>You have partially drafted attached application ...</li>
+              <li>You have fully drafted attached application ...</li>
+              <li>You have partially drafted lead application ...</li>
+              <li>You have fully drafted lead application ... </li>
+              <li>You have referred application ... </li>
+              <li>You have referred lead application ...</li>
+              <li>... and ... attached applications</li>
+              <li>You have referred application ... to a lawyer</li>
+              <li>You have referred lead application ... and ... attached applications to a lawyer</li>              
+            </ul>
+
+            <br>
+            Remove the JavaScript from the body of the page and any related JavaScript from the build.
+
+          </li>                    
           
         </ul>
+
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+        <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-14">
+          <li>Not sure why there are 'headers' in this simple table, but this is beyond the immediate scope of this work</li>
+          <li>Multiple green buttons on the same page is a GDS issue and beyond the scope of this work</li>
+          <li>Dates and the menu links not having a semantic structure is beyond the scope of this work</li>
+        </ul>
+        
       </div>
     </details>
 
