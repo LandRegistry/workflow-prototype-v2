@@ -1,0 +1,135 @@
+{% extends "layouts/wf_layout_legacy.html" %}
+
+{% set pageName="Search" %}
+
+{% block pageTitle %}
+Search
+{% endblock %}
+
+{% block beforeContent %}
+<!-- do not add this style bloc to the build - this is for this prototype only -->
+<style>
+.search-button {
+    width: 40px !important;
+    max-height: 38px;
+}
+</style>
+<div class="govuk-breadcrumbs">
+        
+  <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="#">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        Search
+      </li>
+  </ol>
+
+</div>
+{% endblock %}
+
+{% block content %}
+
+
+<form action="search_results" class="form" method="POST" novalidate>
+      
+    <input name="csrf_token" type="hidden" value="IjI2YzBiY2QwNzJiZjE0M2M3MDMxZGQ1M2UyMTBkMDNhMWE3YTdiZmYi.Zd8z3g.RgWSPvJzCQbWkJGEflEfG6SY0Ao">
+
+    <div class="govuk-form-group">
+
+        <h1 class="govuk-label-wrapper govuk-!-margin-bottom-6">
+          <label class="govuk-label govuk-label--l" for="lr_work_ref">
+            Search
+          </label>
+        </h1>
+
+        <div id="lr_work_ref-hint" class="govuk-hint">
+            Enter the <abbr>ABR</abbr> to search for
+        </div>
+
+        <input class="govuk-input govuk-input--width-10" id="lr_work_ref" name="lr_work_ref" type="text" value="Z119SWW" spellcheck="false" aria-describedby="lr_work_ref-hint">
+
+        <input class="search-button govuk-button govuk-!-margin-bottom-0" type="submit" id="search_button" value="Search">
+        
+    </div>
+
+</form>
+
+<div class="top-spacing">
+  <h2 class="govuk-heading-l">
+      Results
+  </h2>
+</div>
+
+<table class="govuk-table worklist__table form-group">
+  
+  <caption class="visuallyhidden">Results presented in a 7 column table.</caption>
+  
+  <thead>
+      <tr class="govuk-table__row">
+          <th class="govuk-table__header" id="priority_dates" scope="col">Priority date</th>
+          <th class="govuk-table__header" id="title_numbers" scope="col">Title number</th>
+          <th class="govuk-table__header" id="abrs" scope="col">A<span class="visuallyhidden"> </span>B<span class="visuallyhidden"> </span>R</th>
+          <th class="govuk-table__header" id="categories" scope="col">Category</th>
+          <th class="govuk-table__header" id="last_actions" scope="col">Last action</th>
+          <th class="govuk-table__header" id="caseworkers" scope="col">Caseworker</th>
+      </tr>
+  </thead>
+  
+  <tbody class="case">
+    <tr class="govuk-table__row case__data_row ">
+      <td class="case__date" id="Z119SWW_priority_date" headers="priority_dates">
+        17 July 2023
+      </td>
+      <td class="case__title-number" id="Z119SWW_title_number" headers="title_numbers">
+        <span class="case__inc">
+          
+        </span>
+        DT100061
+      </td>
+      <td id="Z119SWW_abr" class="case__abr" headers="abrs">
+        Z119SWW
+        <div>
+
+        </div>
+      </td>
+      <td id="Z119SWW_cat" class="case__category" headers="categories">
+        Application Processing: Executive Register Update Standard
+      </td>
+      <td id="Z119SWW_last_action" class="case__last-action" headers="last_actions">
+        Allocated
+      </td>
+      <td id="Z119SWW_caseworker">
+        Darren Harridence
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="search-actions-area govuk-grid-row">
+  
+  <div class="govuk-grid-column-one-half">
+    
+
+        <form action="expedite_and_search" method="post" class="case__form" novalidate>
+            
+              <input name="csrf_token" type="hidden" value="IjI2YzBiY2QwNzJiZjE0M2M3MDMxZGQ1M2UyMTBkMDNhMWE3YTdiZmYi.Zd9s9Q.3m-KTQrnpct59nYHFfToAYQEWoU">
+            
+            <input class="search-bar" id="lr_work_ref" maxlength="7" minlength="7" name="lr_work_ref" placeholder="ABR" title="Enter ABR to search for" type="hidden" value="Z119SWW">
+
+            <input type="submit" aria-label="Add Expedite Status to Application(s)" id="btn_expedite" class="govuk-link expedite-button case__hyperlink" value="Add Expedite">
+        </form>
+    
+  
+  </div>
+  <div class="govuk-grid-column-one-half">
+  
+      <a class="govuk-link govuk-link--no-visited-state search-actions-link-right ga_track_event" href="activity-history/6009?page_no=1&amp;return_to=search" id="link_activity_history_Z119SWW" data-ga-category="Activity_History_Link_From_Search" data-ga-action="Activity History link clicked from search page" data-ga-label="Search_Activity_History_Link">
+        View activity history <span class="govuk-visually-hidden">for Z119SWW</span>
+      </a>
+  
+  </div>
+
+</div>
+
+{% endblock %}

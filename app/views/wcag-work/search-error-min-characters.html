@@ -1,0 +1,77 @@
+{% extends "layouts/wf_layout_legacy.html" %}
+
+{% set pageName="Search" %}
+
+{% block pageTitle %}
+Error: Search
+{% endblock %}
+
+{% block beforeContent %}
+<!-- do not add this style bloc to the build - this is for this prototype only -->
+<style>
+.search-button {
+    width: 40px !important;
+    max-height: 38px;
+}
+</style>
+<div class="govuk-breadcrumbs">
+        
+  <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="#">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        Search
+      </li>
+  </ol>
+
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-error-summary" data-module="govuk-error-summary">
+  <div role="alert">
+    <h2 class="govuk-error-summary__title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li>
+          <a href="#lr_work_ref">The <abbr>ABR</abbr> must be 7 characters</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<form action="search_results" class="form" method="POST" novalidate>
+      
+    <input name="csrf_token" type="hidden" value="IjI2YzBiY2QwNzJiZjE0M2M3MDMxZGQ1M2UyMTBkMDNhMWE3YTdiZmYi.Zd8z3g.RgWSPvJzCQbWkJGEflEfG6SY0Ao">
+
+    <div class="govuk-form-group govuk-form-group--error">
+
+        <h1 class="govuk-label-wrapper govuk-!-margin-bottom-6">
+          <label class="govuk-label govuk-label--l" for="lr_work_ref">
+            Search
+          </label>
+        </h1>
+
+        <div id="lr_work_ref-hint" class="govuk-hint">
+            Enter the <abbr>ABR</abbr> to search for
+        </div>
+
+        <p id="lr_work_ref-error" class="govuk-error-message">
+          <span class="govuk-visually-hidden">Error:</span> The <abbr>ABR</abbr> must be 7 characters
+        </p>        
+
+        <input class="govuk-input govuk-input--width-10 govuk-input--error" id="lr_work_ref" name="lr_work_ref" type="text" value="" spellcheck="false" aria-describedby="lr_work_ref-hint lr_work_ref-error">
+
+        <input class="search-button govuk-button govuk-!-margin-bottom-0" type="submit" id="search_button" value="Search">
+        
+    </div>
+
+</form>
+
+
+{% endblock %}

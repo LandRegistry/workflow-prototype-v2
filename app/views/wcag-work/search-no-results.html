@@ -1,0 +1,70 @@
+{% extends "layouts/wf_layout_legacy.html" %}
+
+{% set pageName="Search" %}
+
+{% block pageTitle %}
+Search
+{% endblock %}
+
+{% block beforeContent %}
+<!-- do not add this style bloc to the build - this is for this prototype only -->
+<style>
+.search-button {
+    width: 40px !important;
+    max-height: 38px;
+}
+</style>
+<div class="govuk-breadcrumbs">
+        
+  <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="#">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        Search
+      </li>
+  </ol>
+
+</div>
+{% endblock %}
+
+{% block content %}
+
+
+<form action="search_results" class="form" method="POST" novalidate>
+      
+    <input name="csrf_token" type="hidden" value="IjI2YzBiY2QwNzJiZjE0M2M3MDMxZGQ1M2UyMTBkMDNhMWE3YTdiZmYi.Zd8z3g.RgWSPvJzCQbWkJGEflEfG6SY0Ao">
+
+    <div class="govuk-form-group">
+
+        <h1 class="govuk-label-wrapper govuk-!-margin-bottom-6">
+          <label class="govuk-label govuk-label--l" for="lr_work_ref">
+            Search
+          </label>
+        </h1>
+
+        <div id="lr_work_ref-hint" class="govuk-hint">
+            Enter the <abbr>ABR</abbr> to search for
+        </div>
+
+        <input class="govuk-input govuk-input--width-10" id="lr_work_ref" name="lr_work_ref" type="text" value="" spellcheck="false" aria-describedby="lr_work_ref-hint">
+
+        <input class="search-button govuk-button govuk-!-margin-bottom-0" type="submit" id="search_button" value="Search">
+        
+    </div>
+
+</form>
+
+
+<div class="top-spacing govuk-!-margin-top-6">
+  <h2 id="caseworker_worklist_heading" class="govuk-heading-m">
+      No results found
+  </h2>
+
+  <p class="govuk-body">
+    A Workflow user named <span class="govuk-!-font-weight-bold">Johhn</span> was not found.
+  </p>
+
+</div>
+
+{% endblock %}

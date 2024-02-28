@@ -982,13 +982,38 @@
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">    
     
     <h2 class="govuk-heading-m">
-      4. Search
+      4. Search  (before search)
     </h2>
 
+    <p class="govuk-body-s">In addressing this form we are not changing the current layout or logic, but focusing upon the accessibility issues only.</p>
+
     <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-font-size-16">
-      <li><a href="#" class="govuk-link govuk-link--no-visited-state" target="_blank">xxx</a></li>
-      <li></li>
-      <li></li>
+      <li>
+        <a href="./search.html" class="govuk-link govuk-link--no-visited-state" target="_blank">
+          Search page
+        </a>
+      </li>
+      <li>
+        <a href="./search-error-blank.html" class="govuk-link govuk-link--no-visited-state" target="_blank">
+          Search page error for required field
+        </a>. This is the required field error message.
+      </li>
+      <li>
+        <a href="./search-error-min-characters.html" class="govuk-link govuk-link--no-visited-state" target="_blank">
+          Search page error min characters
+        </a>. These are updates to the current error message of "Field must be exactly 7 characters long.". Note, there is no fullstop
+      </li>
+      <li>
+        <a href="./search-error-min-characters.html" class="govuk-link govuk-link--no-visited-state" target="_blank">
+          Search page error min characters
+        </a>. If too few characters are entered. This is an update to the current error message of "Field must be exactly 7 characters long.". Note, there is no fullstop.
+      </li>
+      <li>
+        <a href="./search-error-max-characters.html" class="govuk-link govuk-link--no-visited-state" target="_blank">
+          Search page error min characters
+        </a>. This is a new error message to be served if the user enters more than 7 characters.
+      </li>
+                 
     </ol>  
 
     <details class="govuk-details  govuk-!-font-size-16">
@@ -1000,12 +1025,34 @@
       <div class="govuk-details__text">
         <p class="govuk-body-s">Issues resolved:</p>
         <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
+          <li>There is an inappropriate use of fielset and legend, so we need to update the HTML structure of the HTML used to layout the form (as per the HTML design), including the use of '.govuk-form-group' and '.govuk-label-wrapper'. These updates include: <br>
+
+            <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
+              <li>Remove the placeholder attribute form the input field</li>
+              <li>Remove the title attribute form the input field</li>
+              <li>On the input field change the style class to 'govuk-input' and 'govuk-input--width-10'</li>
+              <li>On the input field add spellcheck false</li>
+              <li>Add classes 'govuk-button' and 'govuk-!-margin-bottom-0' to the search button</li>
+              <li>This may already have been done on the manage assigned work ticket: On the search button, add !important to the width CSS declaration for the 'search-button' class in the workflow CSS/SASS file and add max-height: 38px;</li>
+            </ul>
+
+          </li>
+
+          <li>We should consider removing maxlength and minlength attributes from the input field. This preferable - will this cause a security issue (significant work)?</li>
+          <li>Add the 'novalidate' attribute to the form element. This is very important as we are using max and min length values.</li>
+          <li>Add the new hint text and the 'aria-describedby' to the input field to match the hint text ID</li>
+
+          <li>Error messages: 
+            <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
+              <li>"Error" prepended to the doc title</li>
+              <li>Error summary hyperlink points to the correct form element</li>
+              <li>'govuk-form-group' has the error class</li>
+              <li>Input box has the error class</li>
+              <li>Error message in correct location with ID</li>
+              <li>Input box has aria-describedby pointing to the error message ID</li>
+            </ul>
+
+          </li>
           
         </ul>
       </div>
@@ -1018,12 +1065,20 @@
     </h2>
 
     <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-font-size-16">
-      <li><a href="#" class="govuk-link govuk-link--no-visited-state" target="_blank">xxx</a></li>
-      <li></li>
-      <li></li>
+      <li>
+        <a href="./search-no-results.html" class="govuk-link govuk-link--no-visited-state" target="_blank">
+          Search page - no results
+        </a>. Updated design for when no results are returned.
+      </li>  
+      <li>
+        <a href="./search-with-results.html" class="govuk-link govuk-link--no-visited-state" target="_blank">
+          Search page - with results
+        </a>. 
+      </li>
+
     </ol>  
 
-    <details class="govuk-details  govuk-!-font-size-16">
+    <details class="govuk-details govuk-!-font-size-16">
       <summary class="govuk-details__summary">
         <span class="govuk-details__summary-text">
           Search results details
@@ -1032,13 +1087,25 @@
       <div class="govuk-details__text">
         <p class="govuk-body-s">Issues resolved:</p>
         <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          
+          <li>
+            Remove from the HTML output: <br>
+            <pre>
+              &lt;div class="panel panel-border-narrow alert-success" hidden="" &gt;
+                &lt;p id="last_action_performed" class="govuk-body" &gt;
+                  None
+                &lt;/p &gt;
+              &lt;/div &gt;
+            </pre>
+
+          </li>
+          <li>Add a 'novalidate' attribute to the action="expedite_and_search" form.</li>
+          <li>When the input (with ID lr_work_ref) is hidden, don't rely upon the 'hidden' attribute. We must update the type attribute to be 'hidden' instead. Remove the 'hidden' attribute. We should consider changing the ID when we repeat the inclusion of this input field as we then have duplicate IDs in the same page?</li>
+          <li>On the 'Add expedite' button change the title attribute to be a 'aria-label'.</li>
+          <li>Add class 'govuk-link' to the 'Add expedite' button.</li>
+          <li>Add class 'govuk-link--no-visited-state' to the 'View activity history' link.</li>
+          <li>Remove from the 'View activity history' link the title attribute and the 'aria-label' attribute, but update the content of the hyperlink with the value in the hidden nested span as per the HTML design.</li>
+          <li>Remove the ABBR tag (and its title attribute) from the table content "Application Processing: Executive Register Update Standard" (and similar)</li>
+          <li>Update the HTML table caption tag to read "Results presented in a 7 column table."</li>
         </ul>
       </div>
     </details>
