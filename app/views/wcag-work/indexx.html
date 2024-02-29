@@ -1013,6 +1013,11 @@
           Search page error min characters
         </a>. This is a new error message to be served if the user enters more than 7 characters.
       </li>
+      <li>
+        <a href="./search-error-letters-only.html" class="govuk-link govuk-link--no-visited-state" target="_blank">
+          Search page error letters only
+        </a>. This is a new error message to be served if the is anything other than letters and numbers.
+      </li>      
                  
     </ol>  
 
@@ -1038,11 +1043,11 @@
 
           </li>
 
-          <li>We should consider removing maxlength and minlength attributes from the input field. This preferable - will this cause a security issue (significant work)?</li>
+          <li>Remove maxlength and minlength attributes from the input field. </li>
           <li>Add the 'novalidate' attribute to the form element. This is very important as we are using max and min length values.</li>
-          <li>Add the new hint text and the 'aria-describedby' to the input field to match the hint text ID</li>
 
-          <li>Error messages: 
+          <li>Error messages: <br>
+
             <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
               <li>"Error" prepended to the doc title</li>
               <li>Error summary hyperlink points to the correct form element</li>
@@ -1053,6 +1058,7 @@
             </ul>
 
           </li>
+          <li>Error message for illegal characters: we also need to trim whitespace and remove whitespace from within the input value</li>
           
         </ul>
       </div>
@@ -1071,9 +1077,14 @@
         </a>. Updated design for when no results are returned.
       </li>  
       <li>
+        <a href="./search-not-available.html" class="govuk-link govuk-link--no-visited-state" target="_blank">
+          Search page - not available
+        </a>. Updated design for when application was previously available in Workflow but is now completed or returned to ESRV.
+      </li>      
+      <li>
         <a href="./search-with-results.html" class="govuk-link govuk-link--no-visited-state" target="_blank">
           Search page - with results
-        </a>. 
+        </a>. HTML guide for results returned - standard page.
       </li>
 
     </ol>  
