@@ -52,20 +52,51 @@
 
         </div>
 
+        <!-- this CSS placed here just for illustrative purposes -->
+        <style>
+          .hmlr-wf-inline-btn .govuk-form-group {
+            margin: 0 0 5px 0;
+          }
+
+          @media(min-width:1020px){
+              .hmlr-wf-inline-btn {
+                display: block; 
+                position: absolute;
+              }
+              .hmlr-wf-inline-btn .govuk-form-group {
+                margin: 0;
+              }              
+              .hmlr-wf-inline-btn .wf-button {
+                position: absolute;
+                bottom: 3px;
+                z-index: 1;
+                right: 0;
+              }
+          }
+        </style>
+
         <div class="govuk-grid-column-one-half" data-box>
 
-          <div class="govuk-form-group">
-            <label class="manage-labels govuk-label govuk-!-font-weight-bold" for="assignee">Assign to a user who can obtain applications</label>
-          
-            <div class="manage-bar search-container">
-                <input class="search-bar manage-search govuk-input" id="assignee" name="assignee" size="30" type="text" value="">
-                <span class="spin"></span>
-            </div>
-          
-            <input class="hidden-result" id="caseworker_id_to" name="caseworker_id_to" type="hidden" value=""> <input class="hidden-name" id="caseworker_name_to" name="caseworker_name_to" type="hidden" value="">
+          <div class="hmlr-wf-inline-btn">
 
-            <input class="wf-button govuk-button govuk-!-margin-bottom-0" type="submit" id="assign_button" value="Assign" formaction="/worklist-ui/reassign">
+              <div class="govuk-form-group">
+                
+                <label class="manage-labels govuk-label govuk-!-font-weight-bold" for="assignee">Assign to a user who can obtain applications</label>
+              
+                <div class="manage-bar search-container"><!-- this div keeps the width -->
+                    <input class="search-bar manage-search govuk-input" id="assignee" name="assignee" size="30" type="text" value="">
+                    <span class="spin"></span>
+                </div>
+
+              </div>
+              
+              <input class="hidden-result" id="caseworker_id_to" name="caseworker_id_to" type="hidden" value=""> 
+              <input class="hidden-name" id="caseworker_name_to" name="caseworker_name_to" type="hidden" value="">
+
+              <input class="wf-button govuk-button govuk-!-margin-bottom-0" type="submit" id="assign_button" value="Assign" formaction="/worklist-ui/reassign">
+
           </div>
+          
 
         </div>
     </div>
