@@ -3,7 +3,7 @@
 {% set pageName="Search" %}
 
 {% block pageTitle %}
-Search
+Error: Search
 {% endblock %}
 
 {% block beforeContent %}
@@ -30,18 +30,36 @@ Search
 
 {% block content %}
 
+<div class="govuk-error-summary" data-module="govuk-error-summary">
+  <div role="alert">
+    <h2 class="govuk-error-summary__title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li>
+          <a href="#lr_work_ref"> <abbr>ABR</abbr> must only include numbers or letters a to z</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
 
 <form action="search_results" class="form" method="POST" novalidate>
       
     <input name="csrf_token" type="hidden" value="IjI2YzBiY2QwNzJiZjE0M2M3MDMxZGQ1M2UyMTBkMDNhMWE3YTdiZmYi.Zd8z3g.RgWSPvJzCQbWkJGEflEfG6SY0Ao">
 
-    <div class="govuk-form-group">
+    <div class="govuk-form-group govuk-form-group--error">
 
         {% include "./inc_search-h1.html" %}
 
         {% include "./inc_search-hint.html" %}
 
-        {% include "./inc_search-field.html" %}
+        <p id="lr_work_ref-error" class="govuk-error-message">
+          <span class="govuk-visually-hidden">Error:</span> <abbr>ABR</abbr> must only include numbers or letters a to z
+        </p>        
+
+        {% include "./inc_search-field-error.html" %}
 
         <input class="search-button govuk-button govuk-!-margin-bottom-0" type="submit" id="search_button" value="Search">
         

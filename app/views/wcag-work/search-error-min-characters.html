@@ -38,7 +38,7 @@ Error: Search
     <div class="govuk-error-summary__body">
       <ul class="govuk-list govuk-error-summary__list">
         <li>
-          <a href="#lr_work_ref">The <abbr>ABR</abbr> must be 7 characters</a>
+          <a href="#lr_work_ref"> <abbr>ABR</abbr> must be 7 characters long</a>
         </li>
       </ul>
     </div>
@@ -51,21 +51,15 @@ Error: Search
 
     <div class="govuk-form-group govuk-form-group--error">
 
-        <h1 class="govuk-label-wrapper govuk-!-margin-bottom-6">
-          <label class="govuk-label govuk-label--l" for="lr_work_ref">
-            Search
-          </label>
-        </h1>
+        {% include "./inc_search-h1.html" %}
 
-        <div id="lr_work_ref-hint" class="govuk-hint">
-            Enter the <abbr>ABR</abbr> to search for
-        </div>
+        {% include "./inc_search-hint.html" %}
 
         <p id="lr_work_ref-error" class="govuk-error-message">
-          <span class="govuk-visually-hidden">Error:</span> The <abbr>ABR</abbr> must be 7 characters
+          <span class="govuk-visually-hidden">Error:</span> <abbr>ABR</abbr> must be 7 characters long
         </p>        
 
-        <input class="govuk-input govuk-input--width-10 govuk-input--error" id="lr_work_ref" name="lr_work_ref" type="text" value="" spellcheck="false" aria-describedby="lr_work_ref-hint lr_work_ref-error">
+        {% include "./inc_search-field-error.html" %}
 
         <input class="search-button govuk-button govuk-!-margin-bottom-0" type="submit" id="search_button" value="Search">
         

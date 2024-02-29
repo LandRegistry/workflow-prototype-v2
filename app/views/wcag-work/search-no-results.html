@@ -37,17 +37,11 @@ Search
 
     <div class="govuk-form-group">
 
-        <h1 class="govuk-label-wrapper govuk-!-margin-bottom-6">
-          <label class="govuk-label govuk-label--l" for="lr_work_ref">
-            Search
-          </label>
-        </h1>
+        {% include "./inc_search-h1.html" %}
 
-        <div id="lr_work_ref-hint" class="govuk-hint">
-            Enter the <abbr>ABR</abbr> to search for
-        </div>
+        {% include "./inc_search-hint.html" %}
 
-        <input class="govuk-input govuk-input--width-10" id="lr_work_ref" name="lr_work_ref" type="text" value="" spellcheck="false" aria-describedby="lr_work_ref-hint">
+        {% include "./inc_search-field.html" %}
 
         <input class="search-button govuk-button govuk-!-margin-bottom-0" type="submit" id="search_button" value="Search">
         
@@ -62,7 +56,7 @@ Search
   </h2>
 
   <p class="govuk-body">
-    A Workflow user named <span class="govuk-!-font-weight-bold">Johhn</span> was not found.
+    We could not find a match for the <abbr>ABR</abbr> you entered.
   </p>
 
 </div>
