@@ -1,0 +1,219 @@
+<html lang="en" class="govuk-template "><head>
+    <meta charset="utf-8">
+    <title>Manage Assigned Work - Workflow</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    
+  <!--[if gt IE 8]><!--><link rel="stylesheet" type="text/css" href="/worklist-ui/ui/css/main.css"><!--<![endif]-->
+  <!--[if IE 8]><link rel="stylesheet" type="text/css" href="/worklist-ui/ui/css/main-ie8.css" /><![endif]-->
+    <link rel="shortcut icon" href="/worklist-ui/ui/images/app/favicon.ico" type="image/x-icon">
+
+    
+    <!-- Google tag (gtag.js) -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-YWQDFBWDZD"></script>
+    <script> window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-YWQDFBWDZD');
+    </script>
+    
+
+
+  </head>
+  <body class="govuk-template__body  js-enabled">
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+    
+      
+<a href="#main-content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
+
+    
+
+    
+
+    
+
+<header class="govuk-header govuk-header--hmlr" data-module="govuk-header">
+  <div class="govuk-header__container govuk-header__container--full-width">
+    <div class="govuk-width-container">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-half">
+        <a href="/worklist-ui/" class="govuk-header__link govuk-header__service-name">
+           <img class="hmlr-header__logo" width="38" height="35" src="/worklist-ui/ui/images/app/lr_logo.png" alt="HM Land Registry Logo">
+           <span class="govuk-header__link govuk-header__service-name">Workflow</span>
+        </a>
+        </div>
+        <div class="govuk-grid-column-one-half">
+          <a href="http://marval-live/MSMselfservice/AutoGen.aspx?page=645" title="Report an issue (Link opens in a new window)" class="header-link opens-in-new-window" id="new-tab-link" target="_blank">
+            Report an issue
+            <span class="visuallyhidden">(Opens in a new window)</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+    
+      <div class="govuk-width-container">
+        
+          
+            
+    <div class="govuk-breadcrumbs">
+        
+          <ol class="govuk-breadcrumbs__list">
+              <li class="govuk-breadcrumbs__list-item">
+                  <a class="govuk-breadcrumbs__link" href="/worklist-ui/">Home</a>
+              </li>
+              
+              <li class="govuk-breadcrumbs__list-item">
+                  Manage assigned work
+              </li>
+          </ol>
+        
+    </div>
+          
+        
+        <main class="govuk-main-wrapper " id="main-content">
+          
+
+  
+
+  
+  
+
+
+  
+
+<div id="manage_work">
+  <form action="/worklist-ui/manage-assigned-work" method="post" id="manage_form" novalidate="">
+    
+      <input name="csrf_token" type="hidden" value="IjRmZTU2MWNmNmNlNzkwMGE2NTgwNzYxNjA2MTRhOTM0MjU5NzNlNmMi.ZeG-Sw.Ee9gGYOaGSRbCTihuQwHnYdwVGg">
+    
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-l">
+          Manage assigned work
+          </h1>
+        </div>
+      </div>
+      <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half" data-box="">
+                  
+                  <div class="hmlr-wf-inline-btn">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label manage-labels govuk-!-font-weight-bold" for="name">
+                          Find a user who can obtain applications
+                        </label>
+                        <input class="govuk-input search-bar manage-search" id="name" name="name" type="text" required="required" autocomplete="off">
+                      </div>
+                      
+                      <span class="spin"></span>
+
+                      <input class="hidden-result" id="caseworker_id_from" name="caseworker_id_from" type="hidden" value=""> <input class="hidden-name" id="caseworker_name_from" name="caseworker_name_from" type="hidden" value="">
+                      <input class="manage-search-button govuk-button govuk-!-margin-bottom-0" type="submit" id="search_button" value="Search">
+                  </div>
+
+                  <div class="hmlr-wf-inline-btn">
+                    <div class="govuk-form-group">  <!--  govuk-form-group--error -->
+                      <label class="manage-labels govuk-label govuk-!-font-weight-bold" for="name">
+                        Find a user who can obtain applications
+                      </label>
+        
+                      <div class="manage-bar search-container">
+                          <input class="search-bar manage-search govuk-input" id="name" name="name" size="30" type="text" value="">
+                          <span class="spin"></span>
+                      </div>
+        
+                      <input class="hidden-result" id="caseworker_id_from" name="caseworker_id_from" type="hidden" value=""> 
+                      <input class="hidden-name" id="caseworker_name_from" name="caseworker_name_from" type="hidden" value="">
+                      <input class="search-button govuk-button govuk-!-margin-bottom-0" type="submit" id="search_button" value="Search" style="min-width: 40px; max-height: 38px;">
+                    </div>
+                  </div>
+
+
+          </div>
+
+          <div class="govuk-grid-column-one-half" data-box="">
+            <div class="hmlr-wf-inline-btn">
+              
+
+
+
+<div class="govuk-form-group">
+  <label class="govuk-label manage-labels govuk-!-font-weight-bold" for="assignee">
+    Assign to a user who can obtain applications
+  </label>
+
+
+  <input class="govuk-input search-bar manage-search" id="assignee" name="assignee" type="text" required="required" autocomplete="off">
+
+</div>
+
+              <span class="spin"></span>
+
+              <input class="hidden-result" id="caseworker_id_to" name="caseworker_id_to" type="hidden" value=""> <input class="hidden-name" id="caseworker_name_to" name="caseworker_name_to" type="hidden" value="">
+              <input class="wf-button govuk-button govuk-!-margin-bottom-0" type="submit" id="assign_button" value="Assign" formaction="/worklist-ui/reassign">
+            </div>
+          </div>
+      </div>
+
+    
+
+      <div id="results-container"><div class="autocomplete-suggestions " style="left: 31px; top: 317px; width: 465px;"></div><div class="autocomplete-suggestions " style="left: 526px; top: 317px; width: 465px;"></div></div>
+
+    
+
+    
+
+    
+  </form>
+</div>
+
+
+
+
+        </main>
+      </div>
+    
+
+    
+
+<footer class="govuk-footer govuk-footer--hmlr">
+  <div class="govuk-width-container">
+    <div class="govuk-footer__meta">
+      <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+        <h2 class="govuk-visually-hidden">Other links</h2>
+        <ul class="govuk-footer__inline-list">
+          <li class="govuk-footer__inline-list-item">
+            <a class="govuk-footer__link" href="/worklist-ui/cookies">
+              Cookies
+            </a>
+          </li>
+          <li class="govuk-footer__inline-list-item">
+            <a class="govuk-footer__link" href="/worklist-ui/accessibility-statement">
+              Accessibility statement
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="govuk-footer__meta-item">
+        <img width="172" height="53" src="/worklist-ui/ui/images/hmlr-design-system/footer/logo-greyscale.png" alt="HM Land Registry Footer Logo">
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+  <!--[if gt IE 8]><!-->
+  <script src="/worklist-ui/ui/js/main.js"> </script>
+  <!--<![endif]-->
+
+  </body>
+  </html>
