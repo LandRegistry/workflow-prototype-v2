@@ -33,25 +33,6 @@
         </div>
       </div>
 
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-one-half" data-box>
-
-          <div class="govuk-form-group">  <!--  govuk-form-group--error -->
-            <label class="manage-labels govuk-label govuk-!-font-weight-bold" for="name">Find a user who can obtain applications</label>
-
-            <div class="manage-bar search-container">
-                <input class="search-bar manage-search govuk-input" id="name" name="name" size="30" type="text" value="">
-                <span class="spin"></span>
-            </div>
-
-            <input class="hidden-result" id="caseworker_id_from" name="caseworker_id_from" type="hidden" value=""> 
-            <input class="hidden-name" id="caseworker_name_from" name="caseworker_name_from" type="hidden" value="">
-
-            <input class="search-button govuk-button govuk-!-margin-bottom-0" type="submit" id="search_button" value="Search" style="min-width: 40px; max-height: 38px;">
-          </div>
-
-        </div>
-
         <!-- this CSS placed here just for illustrative purposes -->
         <style>
           .hmlr-wf-inline-btn .govuk-form-group {
@@ -73,7 +54,30 @@
                 right: 0;
               }
           }
-        </style>
+        </style>      
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-half" data-box>
+
+          <div class="hmlr-wf-inline-btn-2">
+
+            <div class="govuk-form-group">  <!--  govuk-form-group--error -->
+              <label class="manage-labels govuk-label govuk-!-font-weight-bold" for="name">Find a user who can obtain applications</label>
+
+              <div class="manage-bar search-container">
+                  <input class="search-bar manage-search govuk-input" id="name" name="name" size="30" type="text" value="">
+                  <span class="spin"></span>
+              </div>
+
+              <input class="hidden-result" id="caseworker_id_from" name="caseworker_id_from" type="hidden" value=""> 
+              <input class="hidden-name" id="caseworker_name_from" name="caseworker_name_from" type="hidden" value="">
+
+              <input class="search-button govuk-button govuk-!-margin-bottom-0" type="submit" id="search_button" value="Search" style="min-width: 40px; max-height: 38px;">
+            </div>
+
+          </div>
+
+        </div>
 
         <div class="govuk-grid-column-one-half" data-box>
 
