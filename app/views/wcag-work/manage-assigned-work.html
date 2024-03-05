@@ -46,17 +46,30 @@
               }
               .hmlr-wf-inline-btn .govuk-form-group {
                 margin: 0;
-              }              
+              }           
+              .hmlr-wf-inline-btn .govuk-form-group input {
+                width: 80%;
+              }                            
               .hmlr-wf-inline-btn .wf-button {
                 position: absolute;
                 bottom: 3px;
                 z-index: 1;
                 right: 5px;
               }
-              .govuk-grid-column-one-half:first-child .wf-button {
+              .govuk-grid-column-one-half:first-child .hmlr-wf-inline-btn .wf-button {
                 right: 45px
               }
+              .hmlr-wf-inline-btn .wf-button:active {
+                max-height: 38px !important;
+                top: auto;
+              }
+
           }
+
+          /*              x.govuk-grid-column-one-half:first-child .hmlr-wf-inline-btn .govuk-form-group--error ~ input:active {
+                top: 84px;
+              }
+              */
         </style>      
 
       <div class="govuk-grid-row">
@@ -64,13 +77,13 @@
 
           <div class="hmlr-wf-inline-btn">
 
-            <div class="govuk-form-group">  <!--  govuk-form-group--error -->
-              <label class="manage-labels govuk-label govuk-!-font-weight-bold" for="name">Find a user who can obtain applications</label>
 
-              <div class="manage-bar search-container">
+              <div class="govuk-form-group">  
+                  <label class="manage-labels govuk-label govuk-!-font-weight-bold" for="name">Find a user who can obtain applications</label>
+              
                   <input class="search-bar manage-search govuk-input" id="name" name="name" size="30" type="text" value="">
               </div>
-            </div>
+
 
               <span class="spin"></span>
 
@@ -82,21 +95,55 @@
           </div>
 
         </div>
+<!--
+        <div class="govuk-grid-column-one-half" data-box="">
+          <div class="hmlr-wf-inline-btn">
+            
+
+
+
+<div class="govuk-form-group govuk-form-group--error">
+<label class="govuk-label manage-labels govuk-!-font-weight-bold" for="name">
+  Find a user who can obtain applications
+</label>
+
+
+
+
+<p id="name-error" class="govuk-error-message">
+  
+  <span class="govuk-visually-hidden">Error:</span> Enter a user who can obtain applications
+  
+</p>
+
+<input class="govuk-input search-bar manage-search govuk-input--error" id="name" name="name" type="text" aria-describedby="name-error" required="required" autocomplete="off">
+
+</div>
+
+            <span class="spin"></span>
+
+            <input class="hidden-result" id="caseworker_id_from" name="caseworker_id_from" type="hidden" value=""> 
+            <input class="hidden-name" id="caseworker_name_from" name="caseworker_name_from" type="hidden" value="">
+
+            <input class="wf-button search-button govuk-button govuk-!-margin-bottom-0" type="submit" id="search_button" value="Search" style="min-width: 40px; max-height: 38px;">
+
+
+
+          </div>
+        </div>
+      -->
 
         <div class="govuk-grid-column-one-half" data-box>
 
           <div class="hmlr-wf-inline-btn">
-
-              <div class="govuk-form-group">
-                
-                <label class="manage-labels govuk-label govuk-!-font-weight-bold" for="assignee">Assign to a user who can obtain applications</label>
               
-                <div class="manage-bar search-container"><!-- this div keeps the width -->
-                    <input class="search-bar manage-search govuk-input" id="assignee" name="assignee" size="30" type="text" value="">
-                    
-                </div>
+                <div class="govuk-form-group">
+                  
+                  <label class="manage-labels govuk-label govuk-!-font-weight-bold" for="assignee">Assign to a user who can obtain applications</label>
+                  <input class="search-bar manage-search govuk-input" id="assignee" name="assignee" size="30" type="text" value="">
 
-              </div>
+                </div>
+              
               
               <span class="spin"></span>
 
@@ -104,9 +151,7 @@
               <input class="hidden-name" id="caseworker_name_to" name="caseworker_name_to" type="hidden" value="">
 
               <input class="wf-button govuk-button govuk-!-margin-bottom-0" type="submit" id="assign_button" value="Assign" formaction="/worklist-ui/reassign">
-
           </div>
-          
 
         </div>
     </div>
