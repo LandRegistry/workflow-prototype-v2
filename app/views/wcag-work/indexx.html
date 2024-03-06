@@ -623,7 +623,8 @@
         <li>If the user repeatedly submits the assign field - without a value - any selections already made from the applications list should maintain their state each time the page
           is returned</li>
         </ul>
-      </li>       
+      </li>
+       
     </ol>
 
     <h3 class="govuk-heading-s">
@@ -687,7 +688,7 @@
       </li>
 
       <li>
-        <b>Finish drafting in <abbr>AP</abbr>:</b> The following message is presented in a pink banner: "2 applications cannot be reassigned from Rosie Woodward to Rosie Brave. <br>Finish the drafting in Application Processing." This design and content is updated to: <br>
+        <b>Finish drafting in <abbr>AP</abbr>/ Could not be assigned:</b> The following message is presented in a pink banner: "2 applications cannot be reassigned from Rosie Woodward to Rosie Brave. <br>Finish the drafting in Application Processing." This design and content is updated to: <br>
         &bull; <a href="./results-finish-drafting-in-ap.html" class="govuk-link govuk-link--no-visited-state" target="_blank">results-finish-drafting-in-ap</a> (using an important banner)
         
         <!--br><br>
@@ -697,8 +698,23 @@
       <li>
         <b>Form timed out:</b> Currently when the form times out an 'Important' notification banner is added to the page reading: 
         &quot;The form you were submitting has expired. Please try again.&quot; The styling is not quite correct (and we want to remove the word “Please”) and should match the HTML design as per the HTML. <br>
-        &bull; <a href="./wcag-work/banner-form-expired.html" class="govuk-link govuk-link--no-visited-state" target="_blank">wcag-work/banner-form-expired</a>
+        &bull; <a href="./banner-form-expired.html" class="govuk-link govuk-link--no-visited-state" target="_blank">banner-form-expired</a>
       </li>
+
+      <li>
+        <b>Could not be assigned:</b> If a number of applications could not be assigned from [person 1] to [person 2] a standard message is currently shown - we are rehousing that message in the GDS compliant important notification banner.
+        <br>
+        &bull; <a href="./results-could-not-be-assigned.html" class="govuk-link govuk-link--no-visited-state" target="_blank">results-could-not-be-assigned</a> (using an important banner)
+      </li>
+
+      <li>
+        <b>Assigned success:</b> If you have assigned [number] of applications from [person 1] to [person 2] a standard message is currently shown - we are rehousing that message in the GDS compliant important notification banner.
+        <br>
+        &bull; <a href="./assigned-success.html" class="govuk-link govuk-link--no-visited-state" target="_blank">assigned-success</a> (using a success banner)
+      </li>
+
+
+      
 
       </ol>
 
