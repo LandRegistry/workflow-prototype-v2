@@ -427,19 +427,19 @@
                 Move the input text fields into a noscript HTML tag as per the HTML design templates provided. (These will be used to maintain the current functionality and submit searches for uses without JavaScript support)
               </li>
               <li>
-                Add style tags to the body of the page - these are styles exclusive to this page only - as per the HTML design template provided - and cannot contaminate other pages/forms used in the service. (Or add them in the header section of this page and the results pages). <br>
+                To ensure these styles only target this instance (and cannot contaminate other pages/forms used in the service) as per the HTML design template provided - we add class "hmlr-wf-button-auto-complete" to the buttons on the searches and we add this CSS to the CSS output: <br>
 
                 <pre>
-                    .govuk-button {
+                    .govuk-button.hmlr-wf-button-auto-complete {
                       top: -40px;
                     }
-                    .js-enabled .govuk-button {
+                    .js-enabled .govuk-button.hmlr-wf-button-auto-complete {
                       top: auto;
                     }
-                    .search-bar {
-                      padding-left: 0;
-                    }
                 </pre>
+                
+                <br>
+                Also, we add the standard GDS class of "govuk-!-padding-left-0" to each instance of an input field with the class "search-bar" on this page.
 
               </li>
               <li>

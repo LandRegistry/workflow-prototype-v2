@@ -38,15 +38,15 @@
 
           <!-- this CSS only goes directly into this page (and the results page); these are styles for this page only. -->
           <style>
-            .govuk-button {
+            .govuk-button.hmlr-wf-button-auto-complete {
               top: -40px;
             }
-            .js-enabled .govuk-button {
+            .js-enabled .govuk-button.hmlr-wf-button-auto-complete {
               top: auto;
             }
-            .search-bar {
+            /*.search-bar {
               padding-left: 0;
-            }
+            }*/
           </style>
 
           <div class="govuk-form-group">  
@@ -57,7 +57,7 @@
           
             <noscript>
               <div class="manage-bar search-container">
-                  <input class="search-bar manage-search govuk-input" id="name" name="name" size="30" type="text" value="">
+                  <input class="search-bar manage-search govuk-input govuk-!-padding-left-0" id="name" name="name" size="30" type="text" value="">
               </div>
             </noscript>
 
@@ -65,9 +65,9 @@
             <input class="hidden-name" id="caseworker_name_from" name="caseworker_name_from" type="hidden" value="">
 
             <div class="manage-bar search-container">
-              <div id="tt-autoselect" class="autocomplete-wrapper search-bar manage-search"></div>
+              <div id="tt-autoselect" class="autocomplete-wrapper search-bar manage-search govuk-!-padding-left-0"></div>
             </div>
-            <input class="search-button govuk-button govuk-!-margin-bottom-0" type="submit" id="search_button" value="Search" style="min-width: 40px; max-height: 38px;">
+            <input class="search-button govuk-button govuk-!-margin-bottom-0 hmlr-wf-button-auto-complete" type="submit" id="search_button" value="Search" style="min-width: 40px; max-height: 38px;">
 
           </div>
 
@@ -87,9 +87,9 @@
             <input class="hidden-result" id="caseworker_id_to" name="caseworker_id_to" type="hidden" value=""> <input class="hidden-name" id="caseworker_name_to" name="caseworker_name_to" type="hidden" value="">
 
             <div class="manage-bar search-container">
-              <div id="tt2-autoselect" class="autocomplete-wrapper search-bar manage-search"></div>
+              <div id="tt2-autoselect" class="autocomplete-wrapper search-bar manage-search govuk-!-padding-left-0"></div>
             </div>
-            <input class="wf-button govuk-button govuk-!-margin-bottom-0" type="submit" id="assign_button" value="Assign" formaction="/worklist-ui/reassign">
+            <input class="wf-button govuk-button govuk-!-margin-bottom-0 hmlr-wf-button-auto-complete" type="submit" id="assign_button" value="Assign" formaction="/worklist-ui/reassign">
           </div>
 
         </div>
