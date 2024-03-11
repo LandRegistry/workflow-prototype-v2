@@ -1,0 +1,214 @@
+{% extends "layouts/wf_layout_legacy_wcag_updates-new-autocomplete.html" %}
+
+{% set pageName="Index template example for legacy designs" %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+        
+  <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="#">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        Manage assigned work
+      </li>
+  </ol>
+
+</div>
+{% endblock %}
+
+{% block content %}
+
+
+<div id="manage_work">
+  <form action="/worklist-ui/manage-assigned-work"  method='post' id="manage_form" novalidate>
+    
+      <input name="csrf_token" type="hidden" value="Ijc5MDRlYjA1ODc2ZTJmZjJjMTc4YWFkMDQzMjdkMTgzZjBjMTE1ZWIi.ZaaQpA.io0GFcT5bEQTcPXAf6unUtECieg">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-l">
+              Manage assigned work
+            </h1>
+        </div>
+      </div>
+
+          <!-- this CSS placed here just for illustrative purposes -->
+          <style>
+            :root {
+              --find-width: 370px;
+            }
+
+            @media(min-width:1020px){
+              .govuk-grid-column-one-half:first-child .autocomplete-wrapper + .search-button {
+                min-width: 40px; 
+                max-height: 38px;
+              }
+              .govuk-grid-column-one-half:first-child .autocomplete-wrapper + .search-button:active {
+                max-height: 38px;
+                top: auto;
+              }   
+
+
+
+              .autocomplete-wrapper .govuk-input {
+                display: block; 
+                position: absolute;                
+                margin-bottom: 0;
+                width: var(--find-width); 
+              }
+              .autocomplete-wrapper + .search-button {
+                position: relative; 
+                bottom: 25px; 
+                left: calc(var(--find-width) + 4px); 
+                margin-bottom: 0;
+              }
+
+
+
+
+
+              ul.autocomplete__menu--inline.autocomplete__menu--visible {
+                position: absolute; 
+                width: calc(var(--find-width) - 4px); 
+                top: 2px; 
+              }
+
+
+              body:not(.js-enabled) .govuk-form-group.autocomplete-wrapper {
+                margin: 0;
+              }
+              body:not(.js-enabled) .autocomplete-wrapper label {
+                display: none;
+              } 
+              body:not(.js-enabled) noscript .search-bar {
+                width: var(--find-width); 
+              }
+              body:not(.js-enabled) .autocomplete-wrapper + .search-button {
+                bottom: 70px; 
+              } 
+
+
+
+
+
+              xxx.hmlr-wf-inline-btn {
+                display: block; 
+                position: relative;
+              }
+              xxx.hmlr-wf-inline-btn .govuk-form-group {
+                margin: 0;
+              }           
+              xxx.hmlr-wf-inline-btn .govuk-form-group input {
+                width: 80%;
+              }                            
+              xxx.hmlr-wf-inline-btn .wf-button {
+                position: absolute;
+                bottom: 3px;
+                z-index: 1;
+                right: 5px;
+              }
+              xxx.govuk-grid-column-one-half:first-child .hmlr-wf-inline-btn .wf-button {
+                right: 45px;
+              }
+              xxx.hmlr-wf-inline-btn .wf-button:active {
+                max-height: 38px !important;
+                top: auto;
+              }
+
+
+
+
+            }
+
+            xxxx.govuk-grid-column-one-half:first-child .autocomplete-wrapper .search-button {
+              min-width: 40px; 
+              max-height: 38px;
+            }
+  
+  
+              xxxx.govuk-button.hmlr-wf-button-auto-complete {
+                top: -40px;
+              }
+              xxx.js-enabled .govuk-button.hmlr-wf-button-auto-complete {
+                top: auto;
+              }
+
+
+              xxxxxbody:not(.js-enabled) .autocomplete-wrapper {
+                display: none; 
+              }
+
+              /*.autocomplete__input--focused + .autocomplete__menu--visible li.autocomplete__option--no-results {
+                width: 375px !important; 
+                background-color: red !important; 
+
+              }*/
+  
+  
+            /* x.govuk-grid-column-one-half:first-child .hmlr-wf-inline-btn .govuk-form-group--error ~ input:active {
+              top: 84px;
+            }
+            */
+          </style> 
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-half" data-box>
+
+          <noscript>
+            <div class="govuk-form-group">
+              <label class="govuk-label manage-labels govuk-!-font-weight-bold" for="name">
+                Find a user who can obtain applications
+              </label>
+              <input class="govuk-input search-bar" id="name" name="name" type="text">
+            </div>  
+            <!-- **** remove 'required="required"' add 'govuk-!-width-two-thirds **** -->                        
+          </noscript>
+
+
+          <div class="govuk-form-group autocomplete-wrapper">
+
+            <label id="find-field-label" class="govuk-label govuk-!-font-weight-bold" for="name">
+              Find a user who can obtain applications
+            </label>
+
+            <div id="tt-autoselect"></div>
+
+          </div>
+
+          <input class="search-button govuk-button" type="submit" id="search_button" value="Search"> 
+          <!-- add 'search-button' -->
+
+        </div>
+
+
+        <div class="govuk-grid-column-one-half" data-box>
+
+          <div class="govuk-form-group">
+            <label id="assign-field-label" class="manage-labels govuk-label govuk-!-font-weight-bold" for="assignee">Assign to a user who can obtain applications</label>
+          
+            <noscript>
+              <div class="manage-bar search-container">
+                <input class="govuk-input search-bar" id="assignee" name="assignee" type="text" value="">
+              </div>              
+            </noscript>
+          
+            <input class="hidden-result" id="caseworker_id_to" name="caseworker_id_to" type="hidden" value=""> <input class="hidden-name" id="caseworker_name_to" name="caseworker_name_to" type="hidden" value="">
+
+
+            <div id="tt2-autoselect"></div>
+
+            <input class="wf-button govuk-button govuk-!-margin-bottom-0 hmlr-wf-button-auto-complete" type="submit" id="assign_button" value="Assign" formaction="/worklist-ui/reassign">
+          </div>
+
+        </div>
+    </div>
+
+    <!--div id="results-container"></div-->      
+    
+  </form>
+</div>
+
+
+
+{% endblock %}
