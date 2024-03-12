@@ -32,8 +32,9 @@
             </h1>
         </div>
       </div>
+                <!-- this CSS placed here just for illustrative purposes -->
 
-          <!-- this CSS placed here just for illustrative purposes -->
+
           <style>
             /*** temp css for the legay layouts on manage assigned work, starts ***/
             :root {
@@ -41,41 +42,32 @@
             }
 
             @media(min-width:1020px){
-              .govuk-grid-column-one-half:first-child .autocomplete-wrapper + .search-button {
-                min-width: 40px; 
-                max-height: 38px;
-              }
-              .govuk-grid-column-one-half:first-child .autocomplete-wrapper + .search-button:active {
-                max-height: 38px;
-                top: auto;
-              }   
-
-
-
+              .autocomplete__wrapper {
+                width: var(--find-width); 
+              }              
               .autocomplete-wrapper .govuk-input {
                 display: block; 
                 position: absolute;                
                 margin-bottom: 0;
                 width: var(--find-width); 
               }
-              .autocomplete-wrapper + .search-button {
+              .autocomplete-wrapper + .govuk-button {
                 position: relative; 
                 bottom: 25px; 
                 left: calc(var(--find-width) + 4px); 
-                margin-bottom: 0;
+                margin-bottom: 0; 
+                min-width: 40px;
               }
-
-
-
-
-
+              .autocomplete-wrapper + .govuk-button, 
+              .autocomplete-wrapper + .govuk-button:active {
+                max-height: 38px;
+                top: auto;
+              }              
               ul.autocomplete__menu--inline.autocomplete__menu--visible {
                 position: absolute; 
                 width: calc(var(--find-width) - 4px); 
-                top: 2px; 
+                top: 40px; 
               }
-
-
               body:not(.js-enabled) .govuk-form-group.autocomplete-wrapper {
                 margin: 0;
               }
@@ -85,72 +77,11 @@
               body:not(.js-enabled) noscript .search-bar {
                 width: var(--find-width); 
               }
-              body:not(.js-enabled) .autocomplete-wrapper + .search-button {
+              body:not(.js-enabled) .autocomplete-wrapper + .govuk-button {
                 bottom: 70px; 
               } 
-
-
               /*** temp css for the legay layouts on manage assigned work, ends ***/
-
-
-              xxx.hmlr-wf-inline-btn {
-                display: block; 
-                position: relative;
-              }
-              xxx.hmlr-wf-inline-btn .govuk-form-group {
-                margin: 0;
-              }           
-              xxx.hmlr-wf-inline-btn .govuk-form-group input {
-                width: 80%;
-              }                            
-              xxx.hmlr-wf-inline-btn .wf-button {
-                position: absolute;
-                bottom: 3px;
-                z-index: 1;
-                right: 5px;
-              }
-              xxx.govuk-grid-column-one-half:first-child .hmlr-wf-inline-btn .wf-button {
-                right: 45px;
-              }
-              xxx.hmlr-wf-inline-btn .wf-button:active {
-                max-height: 38px !important;
-                top: auto;
-              }
-
-
-
-
             }
-
-            xxxx.govuk-grid-column-one-half:first-child .autocomplete-wrapper .search-button {
-              min-width: 40px; 
-              max-height: 38px;
-            }
-  
-  
-              xxxx.govuk-button.hmlr-wf-button-auto-complete {
-                top: -40px;
-              }
-              xxx.js-enabled .govuk-button.hmlr-wf-button-auto-complete {
-                top: auto;
-              }
-
-
-              xxxxxbody:not(.js-enabled) .autocomplete-wrapper {
-                display: none; 
-              }
-
-              /*.autocomplete__input--focused + .autocomplete__menu--visible li.autocomplete__option--no-results {
-                width: 375px !important; 
-                background-color: red !important; 
-
-              }*/
-  
-  
-            /* x.govuk-grid-column-one-half:first-child .hmlr-wf-inline-btn .govuk-form-group--error ~ input:active {
-              top: 84px;
-            }
-            */
           </style> 
 
       <div class="govuk-grid-row">
@@ -158,7 +89,7 @@
 
           <noscript>
             <div class="govuk-form-group">
-              <label class="govuk-label manage-labels govuk-!-font-weight-bold" for="name">
+              <label class="govuk-label govuk-!-font-weight-bold" for="name">
                 Find a user who can obtain applications
               </label>
               <input class="govuk-input search-bar" id="name" name="name" type="text">
@@ -187,7 +118,7 @@
 
             <noscript>
               <div class="govuk-form-group">
-                <label id="assign-field-label"  class="govuk-label manage-labels govuk-!-font-weight-bold" for="assignee">
+                <label id="assign-field-label" class="govuk-label govuk-!-font-weight-bold" for="assignee">
                   Assign to a user who can obtain applications
                 </label>
 
@@ -198,7 +129,7 @@
 
             <div class="govuk-form-group autocomplete-wrapper">
 
-              <label id="assign-field-label" class="manage-labels govuk-label govuk-!-font-weight-bold" for="assignee">Assign to a user who can obtain applications</label>
+              <label id="assign-field-label" class="govuk-label govuk-!-font-weight-bold" for="assignee">Assign to a user who can obtain applications</label>
           
               <div id="tt2-autoselect"></div>
 
