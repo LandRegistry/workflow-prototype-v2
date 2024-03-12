@@ -35,6 +35,7 @@
 
           <!-- this CSS placed here just for illustrative purposes -->
           <style>
+            /*** temp css for the legay layouts on manage assigned work, starts ***/
             :root {
               --find-width: 370px;
             }
@@ -89,7 +90,7 @@
               } 
 
 
-
+              /*** temp css for the legay layouts on manage assigned work, ends ***/
 
 
               xxx.hmlr-wf-inline-btn {
@@ -162,7 +163,7 @@
               </label>
               <input class="govuk-input search-bar" id="name" name="name" type="text">
             </div>  
-            <!-- **** remove 'required="required"' add 'govuk-!-width-two-thirds **** -->                        
+            <!-- **** remove 'required="required"' **** -->                        
           </noscript>
 
 
@@ -184,22 +185,26 @@
 
         <div class="govuk-grid-column-one-half" data-box>
 
-          <div class="govuk-form-group">
-            <label id="assign-field-label" class="manage-labels govuk-label govuk-!-font-weight-bold" for="assignee">Assign to a user who can obtain applications</label>
-          
             <noscript>
-              <div class="manage-bar search-container">
+              <div class="govuk-form-group">
+                <label id="assign-field-label"  class="govuk-label manage-labels govuk-!-font-weight-bold" for="assignee">
+                  Assign to a user who can obtain applications
+                </label>
+
                 <input class="govuk-input search-bar" id="assignee" name="assignee" type="text" value="">
+                <!-- **** remove 'required="required"' **** -->     
               </div>              
             </noscript>
+
+            <div class="govuk-form-group autocomplete-wrapper">
+
+              <label id="assign-field-label" class="manage-labels govuk-label govuk-!-font-weight-bold" for="assignee">Assign to a user who can obtain applications</label>
           
-            <input class="hidden-result" id="caseworker_id_to" name="caseworker_id_to" type="hidden" value=""> <input class="hidden-name" id="caseworker_name_to" name="caseworker_name_to" type="hidden" value="">
+              <div id="tt2-autoselect"></div>
 
+            </div>
 
-            <div id="tt2-autoselect"></div>
-
-            <input class="wf-button govuk-button govuk-!-margin-bottom-0 hmlr-wf-button-auto-complete" type="submit" id="assign_button" value="Assign" formaction="/worklist-ui/reassign">
-          </div>
+            <input class="govuk-button" type="submit" id="assign_button" value="Assign" formaction="/worklist-ui/reassign">
 
         </div>
     </div>
