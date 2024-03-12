@@ -42,10 +42,10 @@
             }
 
             @media(min-width:1020px){
-              .autocomplete__wrapper {
+              .autocomplete-wrapper .autocomplete__wrapper {
                 width: var(--find-width); 
               }              
-              .autocomplete-wrapper .govuk-input {
+              .autocomplete-wrapper .autocomplete__input--default {
                 display: block; 
                 position: absolute;                
                 margin-bottom: 0;
@@ -63,12 +63,12 @@
                 max-height: 38px;
                 top: auto;
               }              
-              ul.autocomplete__menu--inline.autocomplete__menu--visible {
+              .autocomplete-wrapper ul.autocomplete__menu--inline.autocomplete__menu--visible {
                 position: absolute; 
                 width: calc(var(--find-width) - 4px); 
                 top: 40px; 
               }
-              body:not(.js-enabled) .govuk-form-group.autocomplete-wrapper {
+              body:not(.js-enabled) .autocomplete-wrapper .govuk-form-group {
                 margin: 0;
               }
               body:not(.js-enabled) .autocomplete-wrapper label {
@@ -97,15 +97,16 @@
             <!-- **** remove 'required="required"' **** -->                        
           </noscript>
 
+          <div class="autocomplete-wrapper">
+            <div class="govuk-form-group">
 
-          <div class="govuk-form-group autocomplete-wrapper">
+              <label id="find-field-label" class="govuk-label govuk-!-font-weight-bold" for="name">
+                Find a user who can obtain applications
+              </label>
 
-            <label id="find-field-label" class="govuk-label govuk-!-font-weight-bold" for="name">
-              Find a user who can obtain applications
-            </label>
+              <div id="tt-autoselect"></div>
 
-            <div id="tt-autoselect"></div>
-
+            </div>
           </div>
 
           <input class="search-button govuk-button" type="submit" id="search_button" value="Search"> 
@@ -118,7 +119,7 @@
 
             <noscript>
               <div class="govuk-form-group">
-                <label id="assign-field-label" class="govuk-label govuk-!-font-weight-bold" for="assignee">
+                <label class="govuk-label govuk-!-font-weight-bold" for="assignee">
                   Assign to a user who can obtain applications
                 </label>
 
@@ -127,12 +128,14 @@
               </div>              
             </noscript>
 
-            <div class="govuk-form-group autocomplete-wrapper">
+            <div class="autocomplete-wrapper">
+              <div class="govuk-form-group">
 
-              <label id="assign-field-label" class="govuk-label govuk-!-font-weight-bold" for="assignee">Assign to a user who can obtain applications</label>
-          
-              <div id="tt2-autoselect"></div>
+                <label id="assign-field-label" class="govuk-label govuk-!-font-weight-bold" for="assignee">Assign to a user who can obtain applications</label>
+            
+                <div id="tt2-autoselect"></div>
 
+              </div>
             </div>
 
             <input class="govuk-button" type="submit" id="assign_button" value="Assign" formaction="/worklist-ui/reassign">
