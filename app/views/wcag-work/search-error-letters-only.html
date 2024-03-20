@@ -49,21 +49,21 @@ Error: Search
       
     <input name="csrf_token" type="hidden" value="IjI2YzBiY2QwNzJiZjE0M2M3MDMxZGQ1M2UyMTBkMDNhMWE3YTdiZmYi.Zd8z3g.RgWSPvJzCQbWkJGEflEfG6SY0Ao">
 
-    <div class="govuk-form-group govuk-form-group--error">
+    <div class="govuk-form-group govuk-!-margin-bottom-0 hmlr-wf-position-relative govuk-form-group--error">
 
-        {% include "./inc_search-h1.html" %}
+      {% include "./inc_search-h1.html" %}
 
-        {% include "./inc_search-hint.html" %}
+      {% include "./inc_search-hint.html" %}
 
-        <p id="lr_work_ref-error" class="govuk-error-message">
-          <span class="govuk-visually-hidden">Error:</span> <abbr>ABR</abbr> must only include numbers or letters a to z
-        </p>        
+      <p id="lr_work_ref-error" class="govuk-error-message">
+        <span class="govuk-visually-hidden">Error:</span> <abbr>ABR</abbr> must only include numbers or letters a to z
+      </p>       
 
-        {% include "./inc_search-field-error.html" %}
+      {% include "./inc_search-field-error.html" %}
 
-        <input class="search-button govuk-button govuk-!-margin-bottom-0" type="submit" id="search_button" value="Search">
-        
     </div>
+
+    {% include "./inc_search-field-btn.html" %}        
 
 </form>
 

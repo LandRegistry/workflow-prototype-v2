@@ -33,19 +33,19 @@ Search
 
 <form action="search_results" class="form" method="POST" novalidate>
       
-    <input name="csrf_token" type="hidden" value="IjI2YzBiY2QwNzJiZjE0M2M3MDMxZGQ1M2UyMTBkMDNhMWE3YTdiZmYi.Zd8z3g.RgWSPvJzCQbWkJGEflEfG6SY0Ao">
+  <input name="csrf_token" type="hidden" value="IjI2YzBiY2QwNzJiZjE0M2M3MDMxZGQ1M2UyMTBkMDNhMWE3YTdiZmYi.Zd8z3g.RgWSPvJzCQbWkJGEflEfG6SY0Ao">
 
-    <div class="govuk-form-group">
+  <div class="govuk-form-group govuk-!-margin-bottom-0 hmlr-wf-position-relative">
 
-        {% include "./inc_search-h1.html" %}
+    {% include "./inc_search-h1.html" %}
 
-        {% include "./inc_search-hint.html" %}
+    {% include "./inc_search-hint.html" %}
 
-        {% include "./inc_search-field.html" %}
+    {% include "./inc_search-field.html" %}
 
-        <input class="search-button govuk-button govuk-!-margin-bottom-0" type="submit" id="search_button" value="Search">
-        
-    </div>
+</div>
+
+{% include "./inc_search-field-btn.html" %}
 
 </form>
 
