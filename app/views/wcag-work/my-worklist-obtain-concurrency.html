@@ -19,20 +19,24 @@
 
 {% block content %}
 
-<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-    <div class="govuk-notification-banner__header">
-      <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-        Important
-      </h2>
-    </div>
-    <div class="govuk-notification-banner__content">
-      <p class="govuk-notification-banner__heading">
-        You must store application DT174671 / K359SWW in CORA before you can return it
-      </p>
-      <p class="govuk-body">
-        If this does not work then you can <a href="#" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">report this as an error 400 issue to <abbr>4</abbr>me (opens in new tab)</a>.
-      </p>
-    </div>
+<div id="pleaseWaitTarget" aria-live="assertive">
+
+  <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Important
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <p class="govuk-notification-banner__heading">
+          You must store application DT174671 / K359SWW in CORA before you can return it
+        </p>
+        <p class="govuk-body">
+          If this does not work then you can <a href="#" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">report this as an error 400 issue to <abbr>4</abbr>me (opens in new tab)</a>.
+        </p>
+      </div>
+  </div>
+
 </div>
  
   <div id="worklist_page">
