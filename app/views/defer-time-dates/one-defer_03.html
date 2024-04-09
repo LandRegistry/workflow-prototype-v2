@@ -1,0 +1,70 @@
+{% extends "layouts/wf_layout_legacy.html" %}
+
+{# set pageName="Select a category of work" #}
+
+{% block pageTitle %}
+Confirm the extension of time
+{% endblock %}
+
+{% block beforeContent %}
+
+<a href="one-defer_02.html" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+      <form action="one-defer_04" id="id_deferral_category_form" method="post" novalidate>
+
+        <div class="govuk-form-group">
+          
+          <h1 class="govuk-label-wrapper govuk-!-margin-bottom-6">
+            
+              Confirm the extension of time
+            
+          </h1>
+
+          <p class="govuk-body">
+            You'll be adding an extension of <span id="forPrototypeOnly2"></span> working days.
+          </p>
+
+          <p class="govuk-body">
+            The new cancellation date will be {{ data['new-date-day'] | zeroPadding }} {{ data['new-date-month'] | toMonth }} {{data['new-date-year']}}.
+          </p> 
+          
+          <!--br><b> {{ data['new-date-day'] | uppercase }} {{ data['new-date-month'] | toMonth | uppercase}}    </b-->
+          
+        </div>        
+
+         
+        
+        <div class="govuk-button-group">
+
+          <input type="submit" class="govuk-button" value="Confirm and save">     
+
+          <a class="govuk-link govuk-link--no-visited-state" href="one-defer_02.html">Change the date</a>
+        </div>        
+
+      </form>
+
+
+  </div>
+</div>
+
+
+
+<script>
+  window.onload = (event) => { 
+      /* *** this js ONLY for this prototype, not production *** */
+      const targetSpan2 = document.getElementById("forPrototypeOnly2");
+      const myNewDate = new Date("{{data['new-date-year']}}-{{data['new-date-month']}}-{{data['new-date-day']}}");
+      const myCurrentDate = new Date();
+      const oneDay = 24 * 60 * 60 * 1000; // milliseconds in a day
+      const diffDays = Math.round(Math.abs((myCurrentDate - myNewDate) / oneDay));
+      targetSpan2.textContent = diffDays;     
+  };
+</script>
+{% endblock %}

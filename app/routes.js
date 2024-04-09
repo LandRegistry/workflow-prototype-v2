@@ -21,3 +21,7 @@ router.use(/\/example-flow\/v([0-9]+)/, (req, res, next) => {
 router.use("/defer-time/", (req, res, next) => {
     return require("./views/defer-time/_routes")(req, res, next);
 })
+
+router.use("/defer-time-dates/", (req, res, next) => {
+    return require("./views/defer-time-dates/_routes")(req, res, next);
+})

@@ -1,0 +1,139 @@
+{% extends "layouts/wf_layout_legacy.html" %}
+
+{# set pageName="Select a category of work" #}
+
+{% block pageTitle %}
+Error: How many working days do you want to extend by?
+{% endblock %}
+
+{% block beforeContent %}
+
+<a href="one-defer_01.html" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-error-summary" data-module="govuk-error-summary">
+  <div role="alert">
+    <h2 class="govuk-error-summary__title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        {% if (data['new-date-day'] == '') %}
+        <li>
+          <a href="#new-date-day">Enter a day</a>
+        </li>
+        {% endif %}
+
+        {% if (data['new-date-month'] == '') %}
+        <li>
+          <a href="#new-date-month">Enter a month</a>
+        </li>
+        {% endif %}
+        
+        {% if (data['new-date-year'] == '') %}
+        <li>
+          <a href="#new-date-year">Enter a year</a>
+        </li>
+        {% endif %}        
+
+      </ul>
+    </div>
+  </div>
+</div> 
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+      <form action="#" id="id_deferral_category_form" method="post" novalidate>
+
+        <div class="govuk-form-group govuk-form-group--error">
+          <fieldset class="govuk-fieldset" role="group" aria-describedby="new-date-hint 
+            {% if (data['new-date-day'] == '') %}
+              new-date-day-error
+            {% endif %} {% if (data['new-date-month'] == '') %}
+            new-date-month-error
+            {% endif %} {% if (data['new-date-year'] == '') %}
+              new-date-year-error
+            {% endif %}">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                What is the new cancellation date?
+              </h1>
+            </legend>
+
+            <div id="new-date-hint" class="govuk-hint">
+              For example, 08 03 2024
+            </div>
+
+            {% if (data['new-date-day'] == '') %}
+            <p id="new-date-day-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span> Enter a day
+            </p>
+            {% endif %} 
+            {% if (data['new-date-month'] == '') %}
+            <p id="new-date-month-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span> Enter a month
+            </p>
+            {% endif %} 
+            {% if (data['new-date-year'] == '') %}
+            <p id="new-date-year-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span> Enter a year
+            </p>
+            {% endif %}
+
+
+
+            <div class="govuk-date-input" id="new-date">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="new-date-day">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2 
+                  {% if (data['new-date-day'] == '') %}
+                    govuk-input--error
+                  {% endif %}" id="new-date-day" name="new-date-day" type="text" inputmode="numeric" value="{{data['new-date-day']}}">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="new-date-month">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2 
+                  {% if (data['new-date-month'] == '') %}
+                    govuk-input--error
+                  {% endif %}" id="new-date-month" name="new-date-month" type="text" inputmode="numeric" value="{{data['new-date-month']}}">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="new-date-year">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4 
+                  {% if (data['new-date-year'] == '') %}
+                    govuk-input--error
+                  {% endif %}" id="new-date-year" name="new-date-year" type="text" inputmode="numeric" value="{{data['new-date-year']}}">
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>               
+
+        <div class="govuk-button-group">
+          <input type="submit" class="govuk-button govuk-!-margin-top-4" value="Continue">
+          <a class="govuk-link govuk-link--no-visited-state" href="one-defer_01">Cancel</a>
+        </div>      
+
+      </form>
+
+
+  </div>
+</div>
+
+{% include "./inc_js-blank-space-removal.html" %}
+{% endblock %}

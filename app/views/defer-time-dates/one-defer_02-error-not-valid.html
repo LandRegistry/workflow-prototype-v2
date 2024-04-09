@@ -1,0 +1,66 @@
+{% extends "layouts/wf_layout_legacy.html" %}
+
+{# set pageName="Select a category of work" #}
+
+{% block pageTitle %}
+Error: How many working days do you want to extend by?
+{% endblock %}
+
+{% block beforeContent %}
+
+<a href="one-defer_01.html" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-error-summary" data-module="govuk-error-summary">
+  <div role="alert">
+    <h2 class="govuk-error-summary__title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li>
+          <a href="#days">{% include "./inc_number-error-not-valid.html" %}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div> 
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+      <form action="#" id="id_deferral_category_form" method="post" novalidate>
+
+        <div class="govuk-form-group govuk-form-group--error">
+          
+          <h1 class="govuk-label-wrapper govuk-!-margin-bottom-5">
+            <label class="govuk-label govuk-label--l" for="days">
+              How many working days do you want to extend by?
+            </label>
+          </h1>
+
+          <div id="days-hint" class="govuk-hint">
+            {% include "./inc_number-hint.html" %}
+          </div>
+
+          <p id="days-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> {% include "./inc_number-error-not-valid.html" %}
+          </p>          
+
+          <input class="govuk-input govuk-input--width-3 govuk-input--error" id="days" name="days" type="text" value="{{data['days']}}" spellcheck="false" aria-describedby="days-hint">
+
+        </div>        
+
+        <input type="submit" class="govuk-button" value="Continue">         
+
+      </form>
+
+
+  </div>
+</div>
+
+{% include "./inc_js-blank-space-removal.html" %}
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends "layouts/wf_layout_legacy.html" %}
+
+{# set pageName="Select a category of work" #}
+
+{% block pageTitle %}
+What is the new cancellation date?
+{% endblock %}
+
+{% block beforeContent %}
+
+<a href="one-defer_01.html" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+      <form action="#" id="id_deferral_category_form" method="post" novalidate>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" role="group" aria-describedby="new-date-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                What is the new cancellation date?
+              </h1>
+            </legend>
+            <div id="new-date-hint" class="govuk-hint">
+              For example, 08 03 2024
+            </div>
+            <div class="govuk-date-input" id="new-date">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="new-date-day">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="new-date-day" name="new-date-day" type="text" inputmode="numeric" value="{{data['new-date-day']}}">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="new-date-month">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="new-date-month" name="new-date-month" type="text" inputmode="numeric" value="{{data['new-date-month']}}">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="new-date-year">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="new-date-year" name="new-date-year" type="text" inputmode="numeric" value="{{data['new-date-year']}}">
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>               
+
+        <div class="govuk-button-group">
+          <input type="submit" class="govuk-button govuk-!-margin-top-4" value="Continue">
+          <a class="govuk-link govuk-link--no-visited-state" href="one-defer_01">Cancel</a>
+        </div>
+
+                 
+
+      </form>
+
+
+  </div>
+</div>
+
+
+
+{% endblock %}
