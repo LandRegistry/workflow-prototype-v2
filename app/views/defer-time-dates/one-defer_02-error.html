@@ -20,23 +20,33 @@ Error: How many working days do you want to extend by?
     </h2>
     <div class="govuk-error-summary__body">
       <ul class="govuk-list govuk-error-summary__list">
-        {% if (data['new-date-day'] == '') %}
-        <li>
-          <a href="#new-date-day">Enter a day</a>
-        </li>
-        {% endif %}
+        {% if (data['new-date-day'] == '' and data['new-date-month'] == '' and data['new-date-year'] == '') %}
 
-        {% if (data['new-date-month'] == '') %}
         <li>
-          <a href="#new-date-month">Enter a month</a>
+          <a href="#new-date-day">Enter the new cancellation date</a>
         </li>
-        {% endif %}
+
+        {% else %}
+
+            {% if (data['new-date-day'] == '') %}
+            <li>
+              <a href="#new-date-day">The new cancellation date must include a day</a>
+            </li>
+            {% endif %}
+
+            {% if (data['new-date-month'] == '') %}
+            <li>
+              <a href="#new-date-month">The new cancellation date must include a month</a>
+            </li>
+            {% endif %}
+            
+            {% if (data['new-date-year'] == '') %}
+            <li>
+              <a href="#new-date-year">The new cancellation date must include a year</a>
+            </li>
+            {% endif %} 
         
-        {% if (data['new-date-year'] == '') %}
-        <li>
-          <a href="#new-date-year">Enter a year</a>
-        </li>
-        {% endif %}        
+        {% endif %}
 
       </ul>
     </div>
@@ -51,13 +61,17 @@ Error: How many working days do you want to extend by?
 
         <div class="govuk-form-group govuk-form-group--error">
           <fieldset class="govuk-fieldset" role="group" aria-describedby="new-date-hint 
+          {% if (data['new-date-day'] == '' and data['new-date-month'] == '' and data['new-date-year'] == '') %}
+            new-date-day-error
+          {% else %}
             {% if (data['new-date-day'] == '') %}
               new-date-day-error
             {% endif %} {% if (data['new-date-month'] == '') %}
             new-date-month-error
             {% endif %} {% if (data['new-date-year'] == '') %}
               new-date-year-error
-            {% endif %}">
+            {% endif %}
+          {% endif %}">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h1 class="govuk-fieldset__heading">
                 What is the new cancellation date?
@@ -68,23 +82,31 @@ Error: How many working days do you want to extend by?
               For example, 08 03 2024
             </div>
 
-            {% if (data['new-date-day'] == '') %}
-            <p id="new-date-day-error" class="govuk-error-message">
-              <span class="govuk-visually-hidden">Error:</span> Enter a day
-            </p>
-            {% endif %} 
-            {% if (data['new-date-month'] == '') %}
-            <p id="new-date-month-error" class="govuk-error-message">
-              <span class="govuk-visually-hidden">Error:</span> Enter a month
-            </p>
-            {% endif %} 
-            {% if (data['new-date-year'] == '') %}
-            <p id="new-date-year-error" class="govuk-error-message">
-              <span class="govuk-visually-hidden">Error:</span> Enter a year
-            </p>
-            {% endif %}
+            {% if (data['new-date-day'] == '' and data['new-date-month'] == '' and data['new-date-year'] == '') %}
 
+                <p id="new-date-day-error" class="govuk-error-message">
+                  <span class="govuk-visually-hidden">Error:</span> Enter the new cancellation date
+                </p>
 
+            {% else %}
+
+                {% if (data['new-date-day'] == '') %}
+                <p id="new-date-day-error" class="govuk-error-message">
+                  <span class="govuk-visually-hidden">Error:</span> The new cancellation date must include a day
+                </p>
+                {% endif %} 
+                {% if (data['new-date-month'] == '') %}
+                <p id="new-date-month-error" class="govuk-error-message">
+                  <span class="govuk-visually-hidden">Error:</span> The new cancellation date must include a month
+                </p>
+                {% endif %} 
+                {% if (data['new-date-year'] == '') %}
+                <p id="new-date-year-error" class="govuk-error-message">
+                  <span class="govuk-visually-hidden">Error:</span> The new cancellation date must include a year
+                </p>
+                {% endif %} 
+                
+            {% endif %}                           
 
             <div class="govuk-date-input" id="new-date">
               <div class="govuk-date-input__item">
@@ -122,12 +144,14 @@ Error: How many working days do you want to extend by?
               </div>
             </div>
           </fieldset>
-        </div>               
+        </div>   
+        
+        <input type="submit" class="govuk-button govuk-!-margin-top-4" value="Continue">
 
-        <div class="govuk-button-group">
+        <!--div class="govuk-button-group">
           <input type="submit" class="govuk-button govuk-!-margin-top-4" value="Continue">
           <a class="govuk-link govuk-link--no-visited-state" href="one-defer_01">Cancel</a>
-        </div>      
+        </div-->      
 
       </form>
 

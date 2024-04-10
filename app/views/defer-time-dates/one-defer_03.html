@@ -35,7 +35,11 @@ Confirm the extension of time
             The new cancellation date will be {{ data['new-date-day'] | zeroPadding }} {{ data['new-date-month'] | toMonth }} {{data['new-date-year']}}.
           </p> 
           
-          <!--br><b> {{ data['new-date-day'] | uppercase }} {{ data['new-date-month'] | toMonth | uppercase}}    </b-->
+          <!--br><b> 
+           {#  
+            {{ data['new-date-day'] | uppercase }} {{ data['new-date-month'] | toMonth | uppercase}}    
+           #}
+          </b-->
           
         </div>        
 
@@ -59,12 +63,12 @@ Confirm the extension of time
 <script>
   window.onload = (event) => { 
       /* *** this js ONLY for this prototype, not production *** */
-      const targetSpan2 = document.getElementById("forPrototypeOnly2");
+      const targetSpan3 = document.getElementById("forPrototypeOnly2");
       const myNewDate = new Date("{{data['new-date-year']}}-{{data['new-date-month']}}-{{data['new-date-day']}}");
       const myCurrentDate = new Date();
       const oneDay = 24 * 60 * 60 * 1000; // milliseconds in a day
       const diffDays = Math.round(Math.abs((myCurrentDate - myNewDate) / oneDay));
-      targetSpan2.textContent = diffDays;     
+      targetSpan3.textContent = diffDays;     
   };
 </script>
 {% endblock %}

@@ -108,7 +108,9 @@ We are removing all JavaScript dependancy
               </div>
 
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="id_PL" type="radio" name="category_code" value="PL">
+                <input class="govuk-radios__input" id="id_PL" type="radio" name="category_code" value="PL" {% if (data['category_code'] == 'PL') %}
+                checked
+                {% endif %}>
 
                 <label class="govuk-label govuk-radios__label" for="id_PL">
                   Extension of time

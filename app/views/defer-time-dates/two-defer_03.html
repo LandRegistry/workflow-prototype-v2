@@ -72,6 +72,7 @@ Confirm the extension of time
       }
 
       function formatDate(date) {
+        
         const options = {
           timeZone: "UTC",
           month: "long",
@@ -79,7 +80,7 @@ Confirm the extension of time
           year: "numeric"
         };
 
-        const daysToAdd = {{data["days"]}};
+        const daysToAdd = {{data["days"]}} + 0;
         const currentDate = new Date();
         const newDate = addDaysToDate(currentDate, daysToAdd);
 
@@ -90,13 +91,25 @@ Confirm the extension of time
         return `${day} ${monthWord} ${year}`;
       }
 
-      const currentDate = formatDate("2024-02-13T15:53:55.000Z");
-      const targetSpan = document.getElementById("forPrototypeOnly");
-      targetSpan.textContent = removeLeadingZero(currentDate);
-
+      const myDays = "{{data["days"]}}";
       const targetSpan2 = document.getElementById("forPrototypeOnly2");
-      var myDays = "{{data["days"]}}";
-      targetSpan2.textContent = removeLeadingZero(myDays);
+      const targetSpan = document.getElementById("forPrototypeOnly");      
+      
+
+      if(myDays === ''){// = calendar dates
+        const myNewDate = new Date("{{data['new-date-year']}}-{{data['new-date-month']}}-{{data['new-date-day']}}");
+        const myCurrentDate = new Date();
+        const oneDay = 24 * 60 * 60 * 1000; // milliseconds in a day
+        const diffDays = Math.round(Math.abs((myCurrentDate - myNewDate) / oneDay));
+        targetSpan2.textContent = diffDays;
+        targetSpan.textContent = "{{ data['new-date-day'] | zeroPadding }} {{ data['new-date-month'] | toMonth }} {{data['new-date-year']}}";
+      }else{// = 20 days
+        const currentDate = formatDate("2024-02-13T15:53:55.000Z");
+        targetSpan.textContent = removeLeadingZero(currentDate);
+        targetSpan2.textContent = removeLeadingZero(myDays);
+      }
+
+
   };
 </script>
 {% endblock %}

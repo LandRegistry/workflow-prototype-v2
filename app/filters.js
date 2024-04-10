@@ -9,14 +9,14 @@ const addFilter = govukPrototypeKit.views.addFilter
 // Add your filters here
 
 addFilter('uppercase', function (content) {
-  return content.toUpperCase()
+  return content.toUpperCase();
 })
 
 addFilter('toMonth', function(mth) { 
     months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]; 
 
     if (mth > 0){ 
-        return months[mth - 1]; // returns date as per month      
+        return months[mth - 1]; // returns month number as the word
     } else {
         return mth;      
     }  
@@ -35,7 +35,4 @@ addFilter('zeroPadding', function(theNumber) {
 })
 
 
-
-//filters.toMoney = function(x){  return("£" + x );
-    //TO ADD - case to handle nothing being there 
 
