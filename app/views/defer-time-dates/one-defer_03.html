@@ -62,13 +62,35 @@ Confirm the extension of time
 
 <script>
   window.onload = (event) => { 
+    
       /* *** this js ONLY for this prototype, not production *** */
+/*
+
+function calculateDaysBetween(today, givenDate) {
+    const oneDayInMilliseconds = 1000 * 60 * 60 * 24;
+    const timeDifference = Math.abs(givenDate.getTime() - today.getTime());
+    const daysBetween = Math.round(timeDifference / oneDayInMilliseconds);
+    return daysBetween;
+}
+
+// Example usage:
+const today = new Date(); // Current date
+const givenDate = new Date("2024-04-20"); // Replace with your desired date
+
+const days = calculateDaysBetween(today, givenDate);
+console.log(`Days between today and ${givenDate.toDateString()}: ${days}`);
+
+
+      
+  */    
+
+
       const targetSpan3 = document.getElementById("forPrototypeOnly2");
       const myNewDate = new Date("{{data['new-date-year']}}-{{data['new-date-month']}}-{{data['new-date-day']}}");
       const myCurrentDate = new Date();
       const oneDay = 24 * 60 * 60 * 1000; // milliseconds in a day
       const diffDays = Math.round(Math.abs((myCurrentDate - myNewDate) / oneDay));
-      targetSpan3.textContent = diffDays;     
-  };
+      targetSpan3.textContent = diffDays;   
+  }      
 </script>
 {% endblock %}
