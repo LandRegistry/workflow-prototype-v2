@@ -1,4 +1,4 @@
-{% extends "layouts/wf_layout_legacy_wcag_updates-new-autocomplete.html" %}
+{% extends "layouts/wf_layout_legacy_wcag_updates.html" %}
 
 {% set pageName="Refer" %}
 
@@ -29,7 +29,7 @@ Error: Refer search
 {% block content %}
 
 <style>
-  /*these CSS styles are already part of the build / part of the manage assigned work Aron did*/
+  /*these CSS styles are already part of the build / part of the manage assigned work Aron did*/  
   .govuk-radios__label:before,
   .govuk-checkboxes__label:before {
       background-color: #ffffff;
@@ -186,6 +186,22 @@ Error: Refer search
   }
 </style-->
 
+<div class="govuk-error-summary" data-module="govuk-error-summary">
+  <div role="alert">
+    <h2 class="govuk-error-summary__title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li>
+          <a href="#name">Enter a user who can obtain applications</a>
+        </li>
+      
+      </ul>
+    </div>
+  </div>
+</div>
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds" data-box="">
 
@@ -200,7 +216,7 @@ Error: Refer search
         </h1>        
 
         <noscript>
-          <div class="govuk-form-group">
+          <div class="govuk-form-group govuk-form-group--error">
             <label class="govuk-label govuk-!-font-weight-bold" for="name">
               Find a user who can obtain applications
             </label>
@@ -211,20 +227,24 @@ Error: Refer search
 
         <div class="autocomplete-wrapper">
            
-            <div class="govuk-form-group">
-              <!--label class="govuk-label govuk-!-font-size-16" for="name">
-                Refer <span class="govuk-!-font-weight-bold">DU164181 / E076RWW</span> to a user who can obtain applications
-              </label>
-              <select class="govuk-select" id="caseworker_from" name="caseworker_from-select" required="required">
-              </select-->
+          <div class="govuk-form-group govuk-form-group--error">
 
-              <label class="govuk-label govuk-!-font-size-16" for="name">
-                Refer <span class="govuk-!-font-weight-bold">DU164181 / E076RWW</span> to a user who can obtain applications
-              </label>
-              <div id="tt-autoselect"></div>
+            <label class="govuk-label govuk-!-font-size-16" for="name">
+              Refer <span class="govuk-!-font-weight-bold">DU164181 / E076RWW</span> to a user who can obtain applications
+            </label>
+
+            <p id="name-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span> Enter a user who can obtain applications
+            </p>
+
+            <div id="tt-autoselect">
+              <div class="autocomplete__wrapper"><div class="autocomplete__status" style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; margin-bottom: -1px; margin-right: -1px; overflow: hidden; padding: 0px; position: absolute; white-space: nowrap; width: 1px;"><div id="name__status--A" role="status" aria-atomic="true" aria-live="polite"></div><div id="name__status--B" role="status" aria-atomic="true" aria-live="polite"></div>
+              </div>
+              <input aria-describedby="name__assistiveHint name-error" aria-expanded="false" aria-owns="name__listbox" aria-autocomplete="both" autocomplete="off" class="autocomplete__input autocomplete__input--default govuk-input--error" id="name" name="input-autocomplete" placeholder="" type="text" role="combobox"></div>
             </div>
+          </div>
 
-        </div>
+      </div>
 
         <input class="govuk-button" type="submit" id="search_button" value="Refer">
 
@@ -240,5 +260,21 @@ Error: Refer search
   </div>
 </div>
 
+<style>
+  .autocomplete__wrapper{position:relative}.autocomplete__hint,.autocomplete__input{-webkit-appearance:none;appearance:none;border:2px solid #0b0c0c;border-radius:0;box-sizing:border-box;height:2.5rem;line-height:1.25;margin-bottom:0;width:100%}.autocomplete__input{background-color:transparent;position:relative}.autocomplete__hint{color:#505a5f;position:absolute}.autocomplete__input--default{padding:5px}.autocomplete__input--focused{box-shadow:inset 0 0 0 2px;outline:3px solid #fd0;outline-offset:0}.autocomplete__input--show-all-values{cursor:pointer;padding:5px 35px 5px 5px}.autocomplete__dropdown-arrow-down{display:inline-block;height:24px;position:absolute;right:8px;top:10px;width:24px;z-index:-1}.autocomplete__menu{background-color:#fff;border:2px solid #0b0c0c;border-top:0;color:#0b0c0c;margin:0;max-height:342px;overflow-x:hidden;padding:0;width:100%;width:calc(100% - 4px)}.autocomplete__menu--visible{display:block}.autocomplete__menu--hidden{display:none}.autocomplete__menu--overlay{box-shadow:0 2px 6px rgba(0,0,0,.257);left:0;position:absolute;top:100%;z-index:100}.autocomplete__menu--inline{position:relative}.autocomplete__option{border-bottom:1px solid #b1b4b6;border-left-width:0;border-right-width:0;border-top-width:1px;cursor:pointer;display:block;position:relative}.autocomplete__option>*{pointer-events:none}.autocomplete__option:first-of-type{border-top-width:0}.autocomplete__option:last-of-type{border-bottom-width:0}.autocomplete__option--odd{background-color:#f3f2f1}.autocomplete__option--focused,.autocomplete__option:hover{background-color:#1d70b8;border-color:#1d70b8;color:#fff;outline:none}@media (-ms-high-contrast:active),(forced-colors:active){.autocomplete__menu{border-color:FieldText}.autocomplete__option{background-color:Field;color:FieldText}.autocomplete__option--focused,.autocomplete__option:hover{background-color:Highlight;background-color:SelectedItem;border-color:SelectedItem;color:HighlightText;color:SelectedItemText;forced-color-adjust:none;outline-color:SelectedItemText}}.autocomplete__option--no-results{background-color:#f3f2f1;color:#505a5f;cursor:not-allowed}.autocomplete__hint,.autocomplete__input,.autocomplete__option{font-size:1rem;font-weight:400}.autocomplete__hint,.autocomplete__option{padding:5px}@media (min-width:641px){.autocomplete__hint,.autocomplete__input,.autocomplete__option{font-size:1.1875rem;line-height:1.3157894737}}
 
+/*# sourceMappingURL=accessible-autocomplete.min.css.map*/
+
+input.govuk-input--error {
+  border-color: #d4351c !important;
+}
+input.govuk-input--error:focus {
+  outline: 3px solid #fd0;
+  outline-offset: 0;
+  box-shadow: inset 0 0 0 2px;
+}
+input.govuk-input--error.govuk-input--error:focus {
+  border-color: #000 !important;
+}
+</style>
 {% endblock %}

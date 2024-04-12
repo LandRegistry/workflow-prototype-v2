@@ -1146,27 +1146,17 @@
       6. Refer
     </h2>
 
-    <a href="./refer-before-search.html" class="govuk-link govuk-link--no-visited-state" target="_blank">Refer (before search)</a>
-
     <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-font-size-16">
-      <li>We are replacing the legacy autocomplete with the new version, as installed on the recently updated Manage assigned work pages. This includes adding the noscript hidden form, as done on the Manage assigned work page. The required CSS should now already be within the production CSS (but I have re-included it here within the body of the prototype).</li>
-      <li>On the Manage assigned work, we created seperate instances for this autocomplete: that can be updated, so as not to duplicate code.</li>
-      <li>For (dev) reference - we are basically reusing the same HTML as on the 'Find' input form (Manage assigned work) but without the 'search-button' class on the button.</li>
-      <li>Remove the bold class from the label tag and use the nested spans (with a class of 'govuk-!-font-weight-bold'): if we can't insert the nested spans, then we'll have to omit styling those inline numbers.</li>
-      <li>Replace class 'search-labels' on the label with classes 'govuk-label govuk-!-font-size-16', to emulate the current design</li>
-      <li>Remove the placeholder attribute from the text input field tag</li>
-      <li>Remove the title attribute from the text input field tag</li>  
-      <li>Remove ' size="30"' from the text input field tag and add class 'govuk-!-width-one-half'</li>
-      <li>Remove the 'spin' span tags</li>
-      <li>While we're here: swap the 'bold' style class on the span to 'govuk-!-font-weight-bold' (which will maintain GDS styles under different scenarios)</li>
-      <li>Add 'novalidate' to the form element</li>
-      <li>Ensure this page/row uses 'govuk-grid-column-two-thirds' and not 'govuk-grid-column-one-half'. Its fine if this also updates the defer page.</li>
-      <li>Add 'govuk-link--no-visited-state' class to the 'Go back ...' hyperlink</li>
-      <li></li>
-      <li>Error messages .............</li>
-      <li>(Here, we are maintaining the current design/layout, but an improved form design - using the recommended GDS HTML structure - is out of scope for this accessibility work).</li>
-            
-    </ol>  
+      <li>
+        <a href="./refer-before-search.html" class="govuk-link govuk-link--no-visited-state" target="_blank">Refer (before search)</a>
+      </li>
+      <li>
+        <a href="./refer-before-search-error-blank-error-blank.html" class="govuk-link govuk-link--no-visited-state" target="_blank">Refer (before search): blank error message</a> 
+      </li>      
+    </ol>
+
+
+    
 
     <details class="govuk-details  govuk-!-font-size-16">
       <summary class="govuk-details__summary">
@@ -1176,15 +1166,25 @@
       </summary>
       <div class="govuk-details__text">
         <p class="govuk-body-s">Issues resolved:</p>
-        <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16">
+        <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-font-size-16">
+          <li>We are replacing the legacy autocomplete with the new version, as installed on the recently updated Manage assigned work pages. This includes adding the noscript hidden form, as done on the Manage assigned work page. The required CSS should now already be within the production CSS (but I have re-included it here within the body of the prototype).</li>
+          <li>On the Manage assigned work, we created seperate instances for this autocomplete: that can be updated, so as not to duplicate code.</li>
+          <li>For (dev) reference - we are basically reusing the same HTML as on the 'Find' input form (Manage assigned work) but without the 'search-button' class on the button.</li>
+          <li>Remove the bold class from the label tag and use the nested spans (with a class of 'govuk-!-font-weight-bold'): if we can't insert the nested spans, then we'll have to omit styling those inline numbers.</li>
+          <li>Replace class 'search-labels' on the label with classes 'govuk-label govuk-!-font-size-16', to emulate the current design</li>
+          <li>Remove the placeholder attribute from the text input field tag</li>
+          <li>Remove the title attribute from the text input field tag</li>  
+          <li>Remove ' size="30"' from the text input field tag and add class 'govuk-!-width-one-half'</li>
+          <li>Remove the 'spin' span tags</li>
+          <li>While we're here: swap the 'bold' style class on the span to 'govuk-!-font-weight-bold' (which will maintain GDS styles under different scenarios)</li>
+          <li>Add 'novalidate' to the form element</li>
+          <li>Ensure this page/row uses 'govuk-grid-column-two-thirds' and not 'govuk-grid-column-one-half'. Its fine if this also updates the defer page.</li>
+          <li>Add 'govuk-link--no-visited-state' class to the 'Go back ...' hyperlink</li>
           <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          
-        </ul>
+          <li>An error message has been created to demonstrate the error message for submitting a blank entry (as this is a required field). <br><br>(The input label text is not ideal, and 'grates' against the error message, but redesigning the form and label is beyond the scope of this <abbr>WCAG</abbr>work). </li>
+          <li>(Here, we are maintaining the current design/layout, but an improved form design - using the recommended GDS HTML structure - is out of scope for this accessibility work).</li>
+                
+        </ol>          
       </div>
     </details>
 
