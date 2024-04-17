@@ -93,16 +93,24 @@ Confirm the extension of time
 
       const myDays = "{{data["days"]}}";
       const targetSpan2 = document.getElementById("forPrototypeOnly2");
-      const targetSpan = document.getElementById("forPrototypeOnly");      
+      const targetSpan = document.getElementById("forPrototypeOnly");  
+      {% if data['new-date-day']|length %}
+        const wordDate = "{{ data['new-date-day'] | zeroPadding }} {{ data['new-date-month'] | toMonth }} {{data['new-date-year']}}";
+        const myNewDateVal = "{{data['new-date-year']}}-{{data['new-date-month']}}-{{data['new-date-day']}}";
+      {% else %}
+        const wordDate = "0 0 0000"; 
+        const myNewDateVal = ;
+      {% endif %}
+      //this if statement is if pg data cleared and pg refreshed: the filters need a value of some sort
       
 
       if(myDays === ''){// = calendar dates
-        const myNewDate = new Date("{{data['new-date-year']}}-{{data['new-date-month']}}-{{data['new-date-day']}}");
+        const myNewDate = new Date(myNewDateVal);
         const myCurrentDate = new Date();
         const oneDay = 24 * 60 * 60 * 1000; // milliseconds in a day
         const diffDays = Math.round(Math.abs((myCurrentDate - myNewDate) / oneDay));
         targetSpan2.textContent = diffDays;
-        targetSpan.textContent = "{{ data['new-date-day'] | zeroPadding }} {{ data['new-date-month'] | toMonth }} {{data['new-date-year']}}";
+        targetSpan.textContent = wordDate; 
       }else{// = 20 days
         const currentDate = formatDate("2024-02-13T15:53:55.000Z");
         targetSpan.textContent = removeLeadingZero(currentDate);
