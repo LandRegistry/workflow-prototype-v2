@@ -58,33 +58,11 @@ Confirm the extension of time
   window.onload = (event) => { 
     
       /* *** this js ONLY for this prototype, not production *** */
-      function addWorkingDays(startDate, n) {
-          if (isNaN(n)) {
-              console.log("Value provided for 'n' was not a number");
-              return null;
-          }
-
-          if (!(startDate instanceof Date)) {
-              console.log("Value provided for 'startDate' was not a Date object");
-              return null;
-          }
-
-          let currentDate = new Date(startDate);
-          let workingDaysToAdd = parseInt(n);
-
-          // Calculate weekends and adjust working days
-          while (workingDaysToAdd > 0) {
-              currentDate.setDate(currentDate.getDate() + 1); // Move to the next day
-              const dayOfWeek = currentDate.getDay();
-
-              // Check if the day is a weekday (Monday to Friday)
-              if (dayOfWeek !== 0 && dayOfWeek !== 6) {
-                  workingDaysToAdd--;
-              }
-          }
-
-          return currentDate;
-      }
+      function addDaysToDate(date, days) {
+        const result = new Date(date); // Create a new date object based on the input date
+        result.setDate(result.getDate() + days); // Add the specified number of days
+        return result;
+      }     
       
       function removeLeadingZero(str) {
           if (str.charAt(0) === '0') {// Remove the first character (if its a zero)
@@ -94,19 +72,27 @@ Confirm the extension of time
       }
 
       function formatDate(date) {
-        const options = {timeZone: "UTC", month: "long", day: "2-digit", year: "numeric"};
+        const options = {
+          timeZone: "UTC",
+          month: "long",
+          day: "2-digit",
+          year: "numeric"
+        };
 
-        const formattedDate = date.toLocaleDateString({}, options);
+        const daysToAdd = 20;
+        const currentDate = new Date();
+        const newDate = addDaysToDate(currentDate, daysToAdd);
+
+        const formattedDate = newDate.toLocaleDateString({}, options);
         const [day, month, year] = formattedDate.split(" ");
         const monthWord = month; // .slice(0, 3); Get the first 3 letters of the month
+
         return `${day} ${monthWord} ${year}`;
       }
 
-      const startDate = new Date();//today 
-      const workingDaysToAdd = 20;
-      const resultDate = addWorkingDays(startDate, workingDaysToAdd);
+      const currentDate = formatDate("2024-02-13T15:53:55.000Z");
       const targetSpan = document.getElementById("forPrototypeOnly");
-      targetSpan.textContent = removeLeadingZero(formatDate(resultDate));
+      targetSpan.textContent = removeLeadingZero(currentDate);
 
   };
 </script>

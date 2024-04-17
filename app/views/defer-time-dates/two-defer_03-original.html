@@ -58,25 +58,12 @@ Confirm the extension of time
   window.onload = (event) => { 
     
       /* *** this js ONLY for this prototype, not production *** */
-      function getWorkingDays(start, end) {
-          const oneDay = 24 * 60 * 60 * 1000; // One day in milliseconds
-          const startDate = new Date(start);
-          const endDate = new Date(end);
-          const totalDays = Math.round(Math.abs((endDate - startDate) / oneDay));// Calculate the total days between the two dates
-          let workingDays = 0;// Initialize a counter for working days
-
-          for (let i = 0; i <= totalDays; i++) {// Iterate through each day and check if it's a weekday (Monday to Friday)
-              const currentDate = new Date(startDate.getTime() + i * oneDay);
-              const dayOfWeek = currentDate.getDay();
-
-              if (dayOfWeek !== 0 && dayOfWeek !== 6) {// Check if the day is a weekday (0 = Sunday, 6 = Saturday)
-                  workingDays++;
-              }
-          }
-
-          return workingDays;
-      }
-
+      function addDaysToDate(date, days) {
+        const result = new Date(date); // Create a new date object based on the input date
+        result.setDate(result.getDate() + days); // Add the specified number of days
+        return result;
+      }     
+      
       function removeLeadingZero(str) {
           if (str.charAt(0) === '0') {// Remove the first character (if its a zero)
               str = str.substring(1);
@@ -84,24 +71,52 @@ Confirm the extension of time
           return str;
       }
 
-      //this if statement is if pg data cleared and pg refreshed: the filters need a value of some sort
-      {% if data['new-date-day']|length %}
+      function formatDate(date) {
+        
+        const options = {
+          timeZone: "UTC",
+          month: "long",
+          day: "2-digit",
+          year: "numeric"
+        };
 
+        const daysToAdd = {{data["days"]}} + 0;
+        const currentDate = new Date();
+        const newDate = addDaysToDate(currentDate, daysToAdd);
+
+        const formattedDate = newDate.toLocaleDateString({}, options);
+        const [day, month, year] = formattedDate.split(" ");
+        const monthWord = month; // .slice(0, 3); Get the first 3 letters of the month
+
+        return `${day} ${monthWord} ${year}`;
+      }
+
+      const myDays = "{{data["days"]}}";
+      const targetSpan2 = document.getElementById("forPrototypeOnly2");
+      const targetSpan = document.getElementById("forPrototypeOnly");  
+      {% if data['new-date-day']|length %}
         const wordDate = "{{ data['new-date-day'] | zeroPadding }} {{ data['new-date-month'] | toMonth }} {{data['new-date-year']}}";
         const myNewDateVal = "{{data['new-date-year']}}-{{data['new-date-month']}}-{{data['new-date-day']}}";
-               
       {% else %}
         const wordDate = "0 0 0000"; 
         const myNewDateVal = ;
       {% endif %}
+      //this if statement is if pg data cleared and pg refreshed: the filters need a value of some sort
       
-      const myNewDate = new Date(myNewDateVal);
-      const myCurrentDate = new Date();   
-      const targetSpan2 = document.getElementById("forPrototypeOnly2");
-      const targetSpan = document.getElementById("forPrototypeOnly");    
-      const workingDaysCount = getWorkingDays(myCurrentDate, myNewDateVal);
-      targetSpan2.textContent = workingDaysCount;
-      targetSpan.textContent = removeLeadingZero(wordDate);   
+
+      if(myDays === ''){// = calendar dates
+        const myNewDate = new Date(myNewDateVal);
+        const myCurrentDate = new Date();
+        const oneDay = 24 * 60 * 60 * 1000; // milliseconds in a day
+        const diffDays = Math.round(Math.abs((myCurrentDate - myNewDate) / oneDay));
+        targetSpan2.textContent = diffDays;
+        targetSpan.textContent = wordDate; 
+      }else{// = 20 days
+        const currentDate = formatDate("2024-02-13T15:53:55.000Z");
+        targetSpan.textContent = removeLeadingZero(currentDate);
+        targetSpan2.textContent = removeLeadingZero(myDays);
+      }
+
 
   };
 </script>
