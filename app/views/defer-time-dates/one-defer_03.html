@@ -70,7 +70,9 @@ Confirm the extension of time
   window.onload = (event) => { 
 
       /* *** this js ONLY for this prototype, not production *** */
-      function getWorkingDays(start, end) {
+      function getWorkingDays(start, end, s, e) {
+
+        if(new Date(e) > new Date(s)){//end(entered date) is after start(today)        
           const oneDay = 24 * 60 * 60 * 1000; // One day in milliseconds
           const startDate = new Date(start);
           const endDate = new Date(end);
@@ -86,7 +88,15 @@ Confirm the extension of time
               }
           }
 
+          return workingDays; 
+
+        }else{//start(today) is before end(entered date)
+
+          let workingDays = 0;
           return workingDays;
+
+        }  
+
       }
 
       function removeLeadingZero(str) {
@@ -106,9 +116,14 @@ Confirm the extension of time
         const myNewDateVal = ;
       {% endif %}
       
+      const myNewDate = new Date(myNewDateVal);      
       const myCurrentDate = new Date();   
+
+      let s = myCurrentDate.toDateString();       
+      let e = myNewDate.toDateString(); 
+
       const targetSpan2 = document.getElementById("forPrototypeOnly2");
-      const workingDaysCount = getWorkingDays(myCurrentDate, myNewDateVal);
+      const workingDaysCount = getWorkingDays(myCurrentDate, myNewDateVal,s,e);      
       targetSpan2.textContent = workingDaysCount;
 
   }      
