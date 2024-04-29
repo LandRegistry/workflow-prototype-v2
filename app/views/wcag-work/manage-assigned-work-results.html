@@ -20,8 +20,12 @@
 {% block content %}
 
 <style>
-    body.js-enabled .hmlr-wf-\!-display-none--if-js {
+    body.js-enabled .hmlr-wf-\!-display-none--if-js, 
+    body:not(.js-enabled) .hmlr-wf-\!-display-none--no-js {
         display: none; 
+    }
+    body.js-enabled .hmlr-wf-\!-display-none--no-js {
+        display: inline-block;
     }
     body:not(.js-enabled) table .govuk-visually-hidden.case {
         display: table; 
@@ -444,7 +448,7 @@
 
                             <span class="govuk-visually-hidden">|</span>
 
-                            <a href="#" aria-expanded="false" id="btn_show_attached_E365VWW" data-attached="E365VWW" class="govuk-link  govuk-!-font-size-16">
+                            <a href="#" aria-expanded="false" id="btn_show_attached_E365VWW" data-attached="E365VWW" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-16 hmlr-wf-!-display-none--no-js">
                                 Show attached applications <span class="govuk-visually-hidden">for <abbr>E365VWW</abbr></span> <span class="case__expand-symbol">&plus;</span>
                             </a>
                             
@@ -454,7 +458,7 @@
             </tbody> 
             
 
-            <tbody aria-hidden="true" data-case-ref="V567RWZ" class="govuk-visually-hidden case case-spacing hmlr-wf-attached-tbody-E365VWW">
+            <tbody aria-hidden="true" data-case-ref="V567RWZ" class="hmlr-wf-!-display-none--if-js case case-spacing hmlr-wf-attached-tbody-E365VWW">
                 <tr>
                     <td class="checkbox">
 
@@ -498,7 +502,7 @@
                     </td>
                 </tr>
             </tbody>   
-            <tbody aria-hidden="true" data-case-ref="D567QZY" class="govuk-visually-hidden case case-spacing hmlr-wf-attached-tbody-E365VWW">
+            <tbody aria-hidden="true" data-case-ref="D567QZY" class="hmlr-wf-!-display-none--if-js case case-spacing hmlr-wf-attached-tbody-E365VWW">
                 <tr>
                     <td class="checkbox">
 
@@ -618,7 +622,6 @@
 
 <script>
 //document.addEventListener("DOMContentLoaded", function() {
-
 //});
 
     window.onload = (event) => {
@@ -627,12 +630,11 @@
         const tableList = document.getElementById("manage_table");
 
         if(tableList){
-            const attachedTbody = tableList.querySelectorAll(".govuk-visually-hidden.case"); 
-
+            /*const attachedTbody = tableList.querySelectorAll(".govuk-visually-hidden.case"); 
             attachedTbody.forEach(attachedTbody => {
                 attachedTbody.classList.add("hmlr-wf-!-display-none--if-js");
                 attachedTbody.classList.remove("govuk-visually-hidden");
-            });        
+            });*/        
 
             function showTbodies(t){
                 const targetTbodies = tableList.querySelectorAll(".hmlr-wf-attached-tbody-"+ t);
