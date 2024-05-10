@@ -1,0 +1,73 @@
+{% extends "layouts/wf_layout_legacy.html" %}
+
+{% block pageTitle %}
+Workflow error message pages
+{% endblock %}
+
+{% block beforeContent %}
+
+{#
+    <!-- extra content before the Main tag goes here ... -->
+#}
+<style>
+  .hmlr-wf-lowercase {
+    text-transform: lowercase;
+  }
+  .hmlr-wf-lowercase abbr {
+    text-transform: none;
+  }  
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    
+    <div class="govuk-grid-column-two-thirds">
+        
+        <h1 class="govuk-heading-l">
+          Error message pages - templates
+        </h1>
+        
+        <p class="govuk-body-s govuk-!-margin-bottom-6">
+          10 May 2023. These pages (design/content) are work in progress: subject to change following research conclusions.
+        </p>
+
+        <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-font-size-16">
+          <li>
+            <a href="page-not-found.html" class="govuk-link govuk-link--no-visited-state" target="_blank">Page not found (opens in new tab)</a>
+          </li>
+          <li>
+            <a href="problem-with-the-service.html" class="govuk-link govuk-link--no-visited-state" target="_blank">Problem with the service (opens in new tab)</a>
+          </li>
+          <li>
+            <a href="banner-notifications.html" class="govuk-link govuk-link--no-visited-state" target="_blank">Banner notifications (opens in new tab)</a>
+          </li>
+          <li>
+            <a href="access-denied.html" class="govuk-link govuk-link--no-visited-state" target="_blank">Access denied (opens in new tab)</a>
+          </li>          
+        </ol>  
+        
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+        <details class="govuk-details govuk-!-font-size-16">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Notes for developers/tickets
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16">
+              <li>Not the additional <abbr>CSS</abbr> required, and added to the body in these templates.</li>
+              <li>Note the span tags used to wrap the error message text (to convert to lowercase if hardcoded).</li>
+              <li>Note the document title wording for each page. "Sorry" isn't needed in document title in the 'Problem with the service' page.</li>
+            </ul>
+          </div>
+        </details>        
+        
+        
+
+
+    </div>
+
+</div>
+{% endblock %}
