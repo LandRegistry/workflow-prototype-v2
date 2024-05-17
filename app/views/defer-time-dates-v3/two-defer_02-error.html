@@ -1,0 +1,143 @@
+{% extends "layouts/wf_layout_legacy.html" %}
+
+{# set pageName="Select a category of work" #}
+
+{% block pageTitle %}
+Error: How many working days do you want to extend by?
+{% endblock %}
+
+{% block beforeContent %}
+<!--div class="govuk-breadcrumbs">
+        
+  <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+          <a title="Go to the Workflow homepage." class="govuk-breadcrumbs__link" href="#">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        Select a category of work 
+      </li>
+  </ol>
+
+</div-->
+
+<a href="two-defer_01.html" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-error-summary" data-module="govuk-error-summary">
+  <div role="alert">
+    <h2 class="govuk-error-summary__title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li>
+          <a href="#days-type">{% include "./inc_20-days-error.html" %}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+      <form action="#" id="id_deferral_category_form" method="post" novalidate>
+
+        <div class="govuk-form-group govuk-form-group--error govuk-!-margin-bottom-7">
+
+          <fieldset class="govuk-fieldset" aria-describedby="days-type-error"> 
+            
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-margin-bottom-6">
+              <h1 class="govuk-fieldset__heading">
+                How many working days do you want to extend by?
+              </h1>
+            </legend>
+
+            <p id="days-type-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span> {% include "./inc_20-days-error.html" %}
+            </p>
+
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="days-type" name="days-type" type="radio" value="20">
+                <label class="govuk-label govuk-radios__label" for="days-type">
+                  20 working days
+                </label>
+              </div>
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="days-type-2" name="days-type" type="radio" value="date" data-aria-controls="conditional-days-type-2">
+                <label class="govuk-label govuk-radios__label" for="days-type-2">
+                  Enter a new cancellation date
+                </label>
+              </div>
+
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-days-type-2">
+
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset" role="group" aria-describedby="new-date-hint">
+                    
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-font-weight-regular govuk-visually-hidden">
+                      <h1 class="govuk-fieldset__heading">
+                        The new cancellation date
+                      </h1>
+                    </legend>
+
+                    <div id="new-date-hint" class="govuk-hint govuk-!-font-size-16">
+                      For example, 08 03 2024
+                    </div>
+
+                    <div class="govuk-date-input" id="new-date">
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="new-date-day">
+                            Day
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="new-date-day" name="new-date-day" type="text" inputmode="numeric" value="{{data['new-date-day']}}">
+                        </div>
+                      </div>
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="new-date-month">
+                            Month
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="new-date-month" name="new-date-month" type="text" inputmode="numeric" value="{{data['new-date-month']}}">
+                        </div>
+                      </div>
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="new-date-year">
+                            Year
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="new-date-year" name="new-date-year" type="text" inputmode="numeric" value="{{data['new-date-year']}}">
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div> 
+
+              </div>
+
+            </div>
+          </fieldset>
+
+        </div>              
+
+
+
+
+
+        <input type="submit" class="govuk-button" value="Continue">          
+
+      </form>
+
+
+  </div>
+</div>
+
+{% include "./inc_js-blank-space-removal.html" %}
+{% endblock %}

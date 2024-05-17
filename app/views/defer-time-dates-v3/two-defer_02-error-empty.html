@@ -1,0 +1,191 @@
+{% extends "layouts/wf_layout_legacy.html" %}
+
+{# set pageName="Select a category of work" #}
+
+{% block pageTitle %}
+How many working days do you want to extend by?
+{% endblock %}
+
+{% block beforeContent %}
+
+
+<a href="two-defer_01.html" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-error-summary" data-module="govuk-error-summary">
+  <div role="alert">
+    <h2 class="govuk-error-summary__title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        {% if (data['new-date-day'] == '' and data['new-date-month'] == '' and data['new-date-year'] == '') %}
+
+        <li>
+          <a href="#new-date-day">Enter the new cancellation date</a>
+        </li>
+
+        {% else %}
+
+            {% if (data['new-date-day'] == '') %}
+            <li>
+              <a href="#new-date-day">The new cancellation date must include a day</a>
+            </li>
+            {% endif %}
+
+            {% if (data['new-date-month'] == '') %}
+            <li>
+              <a href="#new-date-month">The new cancellation date must include a month</a>
+            </li>
+            {% endif %}
+            
+            {% if (data['new-date-year'] == '') %}
+            <li>
+              <a href="#new-date-year">The new cancellation date must include a year</a>
+            </li>
+            {% endif %} 
+        
+        {% endif %}
+
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+      <form action="#" id="id_deferral_category_form" method="post" novalidate>
+
+        <div class="govuk-form-group govuk-!-margin-bottom-7">
+          <fieldset class="govuk-fieldset"> <!-- aria-describedby="dats-hint" -->
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-margin-bottom-6">
+              <h1 class="govuk-fieldset__heading">
+                How many working days do you want to extend by?
+              </h1>
+            </legend>
+
+            <!--div id="days-hint" class="govuk-hint">
+              Select one option.
+            </div-->
+
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="days-type" name="days-type" type="radio" value="20">
+                <label class="govuk-label govuk-radios__label" for="days-type">
+                  20 working days
+                </label>
+              </div>
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="days-type-2" name="days-type" type="radio" value="date" data-aria-controls="conditional-days-type-2" checked>
+                <label class="govuk-label govuk-radios__label" for="days-type-2">
+                  Enter a new cancellation date
+                </label>
+              </div>
+
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-days-type-2">
+                  <div class="govuk-form-group govuk-form-group--error">
+                    <fieldset class="govuk-fieldset" role="group" aria-describedby="new-date-hint 
+                    {% if (data['new-date-day'] == '' and data['new-date-month'] == '' and data['new-date-year'] == '') %}
+                      new-date-day-error
+                    {% else %}
+                      {% if (data['new-date-day'] == '') %}
+                        new-date-day-error
+                      {% endif %} {% if (data['new-date-month'] == '') %}
+                      new-date-month-error
+                      {% endif %} {% if (data['new-date-year'] == '') %}
+                        new-date-year-error
+                      {% endif %}
+                    {% endif %}">
+                      
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-font-weight-regular govuk-visually-hidden">
+                        <h1 class="govuk-fieldset__heading">
+                          The new cancellation date
+                        </h1>
+                      </legend>
+  
+                      <div id="new-date-hint" class="govuk-hint govuk-!-font-size-16">
+                        For example, 08 03 2024
+                      </div>
+
+                      {% if (data['new-date-day'] == '' and data['new-date-month'] == '' and data['new-date-year'] == '') %}
+
+                          <p id="new-date-day-error" class="govuk-error-message">
+                            <span class="govuk-visually-hidden">Error:</span> Enter the new cancellation date
+                          </p>
+
+                      {% else %}
+
+                          {% if (data['new-date-day'] == '') %}
+                          <p id="new-date-day-error" class="govuk-error-message">
+                            <span class="govuk-visually-hidden">Error:</span> The new cancellation date must include a day
+                          </p>
+                          {% endif %} 
+                          {% if (data['new-date-month'] == '') %}
+                          <p id="new-date-month-error" class="govuk-error-message">
+                            <span class="govuk-visually-hidden">Error:</span> The new cancellation date must include a month
+                          </p>
+                          {% endif %} 
+                          {% if (data['new-date-year'] == '') %}
+                          <p id="new-date-year-error" class="govuk-error-message">
+                            <span class="govuk-visually-hidden">Error:</span> The new cancellation date must include a year
+                          </p>
+                          {% endif %} 
+                          
+                      {% endif %}                           
+  
+                      <div class="govuk-date-input" id="new-date">
+                        <div class="govuk-date-input__item">
+                          <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="new-date-day">
+                              Day
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2 
+                            {% if (data['new-date-day'] == '') %}
+                              govuk-input--error
+                            {% endif %}" id="new-date-day" name="new-date-day" type="text" inputmode="numeric"  value="{{data['new-date-day']}}">
+                          </div>
+                        </div>
+                        <div class="govuk-date-input__item">
+                          <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="new-date-month">
+                              Month
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2 
+                            {% if (data['new-date-month'] == '') %}
+                              govuk-input--error
+                            {% endif %}" id="new-date-month" name="new-date-month" type="text" inputmode="numeric" value="{{data['new-date-month']}}">
+                          </div>
+                        </div>
+                        <div class="govuk-date-input__item">
+                          <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="new-date-year">
+                              Year
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-4 
+                            {% if (data['new-date-year'] == '') %}
+                              govuk-input--error
+                            {% endif %}" id="new-date-year" name="new-date-year" type="text" inputmode="numeric" value="{{data['new-date-year']}}">
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>     
+
+            </div>
+          </fieldset>
+        </div>              
+
+        <input type="submit" class="govuk-button" value="Continue">          
+
+      </form>
+
+
+  </div>
+</div>
+
+{% endblock %}

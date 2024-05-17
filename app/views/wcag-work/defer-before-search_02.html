@@ -1,0 +1,244 @@
+{% extends "layouts/wf_layout_legacy_wcag_updates-new-autocomplete.html" %}
+
+{% set pageName="Refer" %}
+
+{% block pageTitle %}
+Error: Refer search
+{% endblock %}
+
+{% block beforeContent %}
+
+
+<div class="govuk-breadcrumbs">
+        
+  <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="#">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">My Worklist</a>
+    </li>      
+      <li class="govuk-breadcrumbs__list-item">
+        Refer
+      </li>
+  </ol>
+
+</div>
+{% endblock %}
+
+{% block content %}
+
+<style>
+  /*these CSS styles are already part of the build / part of the manage assigned work Aron did*/
+  .govuk-radios__label:before,
+  .govuk-checkboxes__label:before {
+      background-color: #ffffff;
+  }
+
+  .hmlr-wf-checkboxes--single-tbl {
+      margin-left: 15px;
+      width: 0%;
+  }
+
+  .hmlr-wf-checkboxes--single-tbl .govuk-checkboxes__item {
+      top: -10px;
+  }
+
+  .hmlr-wf-checkboxes--single-tbl .govuk-label {
+      text-indent: -3000px;
+      width: 0;
+      padding: 0;
+  }
+
+  .hmlr-wf-tr-if-js {
+      display: none;
+  }
+
+  .js-enabled .hmlr-wf-tr-if-js {
+      display: table-row;
+  }
+
+
+  /* temp updating hover states to match latest gds: STARTS */
+  .govuk-link,
+  .govuk-details__summary-text {
+      text-decoration-thickness: max(1px,0.0625rem) !important;
+      text-underline-offset: 0.1578em !important;
+  }
+
+  .govuk-link:hover,
+  .govuk-details__summary-text:hover {
+      text-decoration-thickness: max(3px,0.1875rem,0.12em) !important;
+      text-underline-offset: 0.1578em !important;
+  }
+  /* temp updating hover states to match latest gds: ENDS */
+  /* Should this be common? END */
+
+  /*** temp css for the legay layouts on manage assigned work, starts ***/
+  /* :root {
+  //   --find-width: 370px;
+  // }*/
+
+  @media(min-width:1020px){
+    .autocomplete-wrapper .autocomplete__wrapper {
+      width: 370px;
+    }
+    .autocomplete-wrapper .autocomplete__input--default {
+      display: block;
+      position: absolute;
+      margin-bottom: 0;
+      width: 370px;
+      height: 39px;
+    }
+    .autocomplete-wrapper + .govuk-button {
+      position: relative;
+      bottom: 69px;
+      left: calc(370px + 4px);
+      margin-bottom: 0;
+    }
+    .autocomplete-wrapper + .govuk-button,
+    .autocomplete-wrapper + .govuk-button:active {
+      max-height: 38px;
+      top: auto;
+    }
+    .autocomplete-wrapper ul.autocomplete__menu--inline.autocomplete__menu--visible {
+      position: absolute;
+      width: calc(370px - 4px);
+      top: 40px;
+    }
+    body:not(.js-enabled) .autocomplete-wrapper .govuk-form-group {
+      margin: 0;
+    }
+    body:not(.js-enabled) .autocomplete-wrapper label,
+    body:not(.js-enabled) .autocomplete-wrapper select {
+      display: none;
+    }
+    body:not(.js-enabled) noscript .search-bar {
+      width: 370px;
+    }
+    body:not(.js-enabled) .autocomplete-wrapper + .govuk-button {
+      bottom: 70px;
+    }
+    .autocomplete-wrapper #caseworker_from-select,
+    .autocomplete-wrapper #caseworker_to-select {
+      position: absolute;
+      left: -3000px;
+    }
+    .autocomplete-wrapper select#caseworker_from,
+    .autocomplete-wrapper select#caseworker_to {
+      width: 370px;
+      height: 39px;
+    }
+    .autocomplete__menu li {
+      font-family: Arial, Helvetica, sans-serif !important;
+    }
+    .autocomplete-wrapper .autocomplete__wrapper {
+      height: 39px;
+      display: block;
+    }
+    /*** temp css for the legay layouts on manage assigned work, ends ***/
+
+    /* new error msg width adjustment starts - error left padding adds 20px */
+    .autocomplete-wrapper .govuk-form-group--error .autocomplete__wrapper, 
+    .autocomplete-wrapper .govuk-form-group--error .autocomplete__input--default, 
+    body:not(.js-enabled) noscript .govuk-form-group--error .search-bar, 
+    .autocomplete-wrapper .govuk-form-group--error select#caseworker_from,
+    .autocomplete-wrapper .govuk-form-group--error select#caseworker_to, 
+    .autocomplete-wrapper .govuk-form-group--error .autocomplete__menu {
+      width: calc(370px - 20px) !important;
+    }
+    /* new error msg width adjustment ends */                
+  }
+
+  .autocomplete-wrapper .search-button {
+    background-position: center !important;
+  }
+  .autocomplete-wrapper + .govuk-button {
+    min-width: 40px;
+  }
+  .autocomplete-wrapper #caseworker_from::-ms-expand,
+  .autocomplete-wrapper #caseworker_to::-ms-expand {
+    display: none;
+  }
+  .autocomplete-wrapper #caseworker_from,
+  .autocomplete-wrapper #caseworker_to {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+  }
+
+
+</style>
+<!--style>
+  @media(min-width:1020px){
+      .hmlr-wf-position-relative {
+          position: relative; 
+      }
+      .hmlr-wf-search-button--width-10, 
+      .hmlr-wf-search-button--width-10:active {
+          top: -2.5rem;
+          left: calc(11.5em + 4px);   
+      }
+      .govuk-form-group--error + .hmlr-wf-search-button--width-10 {
+        left: calc(11.5em + 24px);   
+      }
+  }
+</style-->
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds" data-box="">
+
+
+    <div id="refer_work">
+      <meta property="employee_legacy_id" content="LRT0048">
+  
+      <form action="#" method="POST" id="lorem-ipsum" data-box="" novalidate>    
+
+        <h1 class="form-title govuk-heading-l">
+          Refer 
+        </h1>        
+
+        <noscript>
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="name">
+              Find a user who can obtain applications
+            </label>
+          
+            <input class="govuk-input search-bar" id="name" name="name" type="text">
+          </div>
+        </noscript>          
+
+        <div class="autocomplete-wrapper">
+           
+            <div class="govuk-form-group">
+              <!--label class="govuk-label govuk-!-font-size-16" for="name">
+                Refer <span class="govuk-!-font-weight-bold">DU164181 / E076RWW</span> to a user who can obtain applications
+              </label>
+              <select class="govuk-select" id="caseworker_from" name="caseworker_from-select" required="required">
+              </select-->
+
+              <label class="govuk-label govuk-!-font-size-16" for="name">
+                Refer <span class="govuk-!-font-weight-bold">DU164181 / E076RWW</span> to a user who can obtain applications
+              </label>
+              <div id="tt-autoselect"></div>
+            </div>
+
+        </div>
+
+        <input class="govuk-button" type="submit" id="search_button" value="Refer">
+
+        <input class="hidden-result" id="caseworker_id_to" name="caseworker_id_to" type="hidden" value="">
+        <input class="hidden-name" id="caseworker_name_to" name="caseworker_name_to" type="hidden" value="">
+        <input id="work_item_id" name="work_item_id" type="hidden" value="2141">
+        <input type="hidden" name="client" value="False">
+
+      </form>
+
+      <a id="btn_back" href="#" class="govuk-link govuk-link--no-visited-state">Go back to My Worklist</a>
+
+  </div>
+</div>
+
+
+{% endblock %}
