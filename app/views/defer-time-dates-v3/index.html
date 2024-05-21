@@ -45,21 +45,39 @@ Extention of time index - dates
           <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible govuk-!-margin-top-9 govuk-!-margin-bottom-9">
           
           <h2 class="govuk-heading-s govuk-!-margin-bottom-9">
-            Error messages xxxxxxxxxxxx to be updated ...
+            Error messages 
           </h2>
           
           <ul class="govuk-list govuk-list--bullet">
             <li>Select a deferral reason (in the proto)</li>
-            <li>Select if you want to extend by 20 working days or enter a new cancellation date (in the proto)</li>
+            <li>{% include "./inc_20-days-error.html" %} (in the proto)</li>
             <li>Enter the new cancellation date (in the proto)</li>
             <li>The new cancellation date must include a day (in the proto)</li>
             <li>The new cancellation date must include a month (in the proto)</li>
             <li>The new cancellation date must include a year (in the proto)</li>
             <li>The new cancellation date must be a real date</li>
-            <li>The new cancellation date must be in the future</li>
+            <li>The new cancellation date must be in the future (note: the new cancellation date cannot be in the past or 'today')</li>
             <!--li>Or (?), The new cancellation date must be today or in the future</li-->   
-            <li>Year must include 4 numbers</li>         
+            <li>Year must include 4 numbers</li>  
+            <li>... <i>and for the custom number field</i> ...</li>       
+            <li>Enter a number of working days to extend by (in the proto)</li>       
+            <li>Working days must only include numbers (in the proto); e.g, no letters, etc</li>
+            <li>The number of working days must be 1 or more (in the proto); if minus 1</li>
+            <li>The number of working days must be 1 or more (in the proto); if zero</li>       
+            <li>{% include "./inc_number-error.html" %} (in the proto); if 100 or greater</li> 
+            <li>...</li>              
+            <li>Note, for the "Enter a new cancellation date form" the new cancellation date must be after the current cancellation date: The new cancellation date must be after the current cancellation date</li>
+            <li>Note, the new date entry form must fire a validation message if the date is not a working day: The new cancellation date must be a working day [Rosie to confirm] </li>              
           </ul>
+
+          <p class="govuk-body">Some requirements include:</p>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>White space of custom number to be trimmed and formatted to remove any leading zero</li>
+            <li>The new deferral date must be later than the date already in use on the application: This will require an additional error message (see above) ***</li>
+            <li>Dates must be a working day. The custom days should automatically count only working days. The date entry form must fire a validation message if the date is not a working day (see above) ***</li>
+           <li>Day counts to start from, and include, the next working day (not from 'today')</li>
+          </ul>          
 
 
   </div>

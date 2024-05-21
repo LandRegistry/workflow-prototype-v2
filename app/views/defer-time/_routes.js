@@ -51,7 +51,7 @@ router.post('/one-defer_02', function (req, res) {
 
     if (userInput == '') {//empty
 
-        res.redirect("one-defer_02-error")
+        res.redirect("one-defer_02-error-empty")
 
     } else if (/^-/.test(userInput)) {//minus
 

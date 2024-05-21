@@ -17,7 +17,7 @@ Confirm the extension of time
   <div class="govuk-grid-column-two-thirds">
 
 
-      <form action="one-defer_04" id="id_deferral_category_form" method="post" novalidate>
+      <form action="two-defer_04" id="id_deferral_category_form" method="post" novalidate>
 
         <div class="govuk-form-group">
           
@@ -57,35 +57,9 @@ Confirm the extension of time
 <script>
   window.onload = (event) => { 
     
-      /* *** this js ONLY for this prototype, not production *** */
-      function getWorkingDays(start, end, s, e) {
-        
-        if(new Date(e) > new Date(s)){//end(entered date) is after start(today)
-          const oneDay = 24 * 60 * 60 * 1000; // One day in milliseconds
-          const startDate = new Date(start);
-          const endDate = new Date(end);
-          const totalDays = Math.round(Math.abs((endDate - startDate) / oneDay));// Calculate the total days between the two dates
-          let workingDays = 0;// Initialize a counter for working days
-
-          for (let i = 0; i <= totalDays; i++) {// Iterate through each day and check if it's a weekday (Monday to Friday)
-              const currentDate = new Date(startDate.getTime() + i * oneDay);
-              const dayOfWeek = currentDate.getDay();
-
-              if (dayOfWeek !== 0 && dayOfWeek !== 6) {// Check if the day is a weekday (0 = Sunday, 6 = Saturday)
-                  workingDays++;
-              }
-          }
-
-          return workingDays;
-
-        }else{//start(today) is before end(entered date)
-
-          let workingDays = 0;
-          return workingDays;
-
-        }
-          
-      }
+      /* *** all this js functionality is ONLY for this prototype, not production *** */
+      const targetSpan = document.getElementById("forPrototypeOnly");  
+      const targetSpan2 = document.getElementById("forPrototypeOnly2");
 
       function removeLeadingZero(str) {
           if (str.charAt(0) === '0') {// Remove the first character (if its a zero)
@@ -99,24 +73,90 @@ Confirm the extension of time
 
         const wordDate = "{{ data['new-date-day'] | zeroPadding }} {{ data['new-date-month'] | toMonth }} {{data['new-date-year']}}";
         const myNewDateVal = "{{data['new-date-year']}}-{{data['new-date-month']}}-{{data['new-date-day']}}";
- 
+      
+      {% elseif data['days']|length %}
+      
+        // nothing needed
                
       {% else %}
         const wordDate = "0 0 0000"; 
         const myNewDateVal = ;
       {% endif %}
-      
-      const myNewDate = new Date(myNewDateVal);
-      const myCurrentDate = new Date();   
 
-      let s = myCurrentDate.toDateString();       
-      let e = myNewDate.toDateString(); 
 
-      const targetSpan2 = document.getElementById("forPrototypeOnly2");
-      const targetSpan = document.getElementById("forPrototypeOnly");    
-      const workingDaysCount = getWorkingDays(myCurrentDate, myNewDateVal,s,e);
-      targetSpan2.textContent = workingDaysCount;
-      targetSpan.textContent = removeLeadingZero(wordDate);   
+      {% if data['days-type'] == 'days' %}
+
+        function addWorkingDays(date, d) {
+            const millisecondsPerDay = 24 * 60 * 60 * 1000;
+            let thiscurrentDate = new Date(date);
+
+            while (parseInt(d) > 0) {
+              thiscurrentDate.setTime(thiscurrentDate.getTime() + millisecondsPerDay);
+                if (thiscurrentDate.getDay() !== 0 && thiscurrentDate.getDay() !== 6) {
+                    // Skip weekends (Sunday = 0, Saturday = 6)
+                    d--;
+                }
+            }
+
+            return thiscurrentDate;
+        }
+
+        function formatDate(date,d) {
+          const options = {timeZone: "UTC",month: "long",day: "2-digit",year: "numeric"};
+          const newDate = addWorkingDays(new Date(), parseInt(d));//a new date and the days to add
+          const formattedDate = newDate.toLocaleDateString({}, options);
+          const [day, month, year] = formattedDate.split(" ");
+          const monthWord = month; // .slice(0, 3); Get the first 3 letters of the month
+          return `${day} ${monthWord} ${year}`;
+        }
+
+        var myDays = "{{data["days"]}}";
+        const currentDate = formatDate("2024-02-13T15:53:55.000Z", myDays);
+        targetSpan.textContent = removeLeadingZero(currentDate);
+        targetSpan2.textContent = removeLeadingZero(myDays);        
+
+      {% else %}
+
+        function getWorkingDays(start, end, s, e) {
+            
+          if(new Date(e) > new Date(s)){//end(entered date) is after start(today)
+            const oneDay = 24 * 60 * 60 * 1000; // One day in milliseconds
+            const startDate = new Date(start);
+            const endDate = new Date(end);
+            const totalDays = Math.round(Math.abs((endDate - startDate) / oneDay));// Calculate the total days between the two dates
+            let workingDays = 0;// Initialize a counter for working days
+
+            for (let i = 0; i <= totalDays; i++) {// Iterate through each day and check if it's a weekday (Monday to Friday)
+                const currentDate = new Date(startDate.getTime() + i * oneDay);
+                const dayOfWeek = currentDate.getDay();
+
+                if (dayOfWeek !== 0 && dayOfWeek !== 6) {// Check if the day is a weekday (0 = Sunday, 6 = Saturday)
+                    workingDays++;
+                }
+            }
+
+            return workingDays;
+
+          }else{//start(today) is before end(entered date)
+
+            let workingDays = 0;
+            return workingDays;
+
+          }
+              
+        }   
+
+        const myNewDate = new Date(myNewDateVal);
+        const myCurrentDate = new Date();   
+
+        let s = myCurrentDate.toDateString();       
+        let e = myNewDate.toDateString(); 
+
+        const workingDaysCount = getWorkingDays(myCurrentDate, myNewDateVal,s,e);
+        targetSpan2.textContent = workingDaysCount;
+        targetSpan.textContent = removeLeadingZero(wordDate);
+
+      {% endif %}      
 
   };
 </script>
