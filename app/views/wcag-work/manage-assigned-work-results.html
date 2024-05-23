@@ -449,7 +449,7 @@
                             <span class="govuk-visually-hidden">|</span>
 
                             <a href="#" aria-expanded="false" id="btn_show_attached_E365VWW" data-attached="E365VWW" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-16 hmlr-wf-!-display-none--no-js">
-                                Show attached applications <span class="govuk-visually-hidden">for <abbr>E365VWW</abbr></span> <span class="case__expand-symbol">&plus;</span>
+                                <span class="hmlr-state-text">Show</span> attached applications <span class="govuk-visually-hidden">for <abbr>E365VWW</abbr></span> <span class="case__expand-symbol">&plus;</span>
                             </a>
                             
                         </div>
@@ -661,10 +661,12 @@
 
                     if (this.getAttribute('aria-expanded') === 'false') {
                         this.setAttribute("aria-expanded", "true");
+                        this.querySelector(".hmlr-state-text").innerHTML = 'Hide';//<<< new line here
                         this.querySelector(".case__expand-symbol").innerHTML = '&minus;';
                         showTbodies(mytargets);
                     }else{
                         this.setAttribute("aria-expanded", "false");
+                        this.querySelector(".hmlr-state-text").innerHTML = 'Show';//<<< new line here
                         this.querySelector(".case__expand-symbol").innerHTML = '&plus;';
                         hideTbodies(mytargets);
                     }
