@@ -1194,11 +1194,9 @@
       7. Defer
     </h2>
 
-    <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-font-size-16">
-      <li><a href="#" class="govuk-link govuk-link--no-visited-state" target="_blank">xxx</a></li>
-      <li></li>
-      <li></li>
-    </ol>  
+<p class="govuk-body-s">
+  Updates to the form page - formatting and content/text changes. Introduction of GDS error messages (replacing the use of JavaScript disabling of submit button before selections are made).
+</p>
     
     <details class="govuk-details  govuk-!-font-size-16">
       <summary class="govuk-details__summary">
@@ -1207,15 +1205,36 @@
         </span>
       </summary>
       <div class="govuk-details__text">
-        <p class="govuk-body-s">Issues resolved:</p>
+
         <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          
+
+          <li>Replace the breadcrumb with 'Back' link</li>
+
+          <li>Update the H1 text (as per the HTML design)</li>
+
+            <li>Ensure the classes used on the Legend and H1 tags are updated to match the HTML design</li>
+
+              <li>Put button into GDS HTML structure (as per the HTML design)</li>
+
+                <li>Change button text to 'Select'</li>
+
+                  <li>Remove the 'Go back to My Worklist' link</li>
+
+                    <li>Remove the disabling of the main button (which becomes enabled once a selection is made); by removing the JavaScript from the build</li>
+
+                      <li>Instead we will implement conventional GDS form validation: a selection is required “Select a deferral reason” (as per error message HTML design)</li>
+
+                        <li>Clicking the error summary statement should move the browser focus to the first radio button option at the top of the list</li>
+
+                          <li>GDS error messages, include: doc title prepended with “Error: “, left red bar, summary banner, inline error message, aria-describedby on fieldset linked to the inline error message</li>
+
+                            <li>If not already - remove the hidden 'noscript' HTML block (which includes the message “You must have JavaScript turned on to use this page")</li>
+
+                              <li>Add 'novalidate' to the form tag</li>
+
+                                <li>Ensure the page structure matches the HTML design: grid-row and column-two-thirds</li>
+
+                                  <li>This may no longer be required as ticket #3746 (which reformatted the banners to use an aria-live Section element), but the DIV (with classes 'govuk-error-summary half-width') located below the main H1 should now not be needed having been replaced with the recent update. </li>
         </ul>
       </div>
     </details>
