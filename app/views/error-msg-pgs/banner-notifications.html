@@ -18,6 +18,23 @@ Lorem ipsum standard page title text
 {% endblock %}
 
 {% block content %}
+<style>
+/* temp updating hover states to match latest gds: STARTS */
+.govuk-link,
+.govuk-details__summary-text {
+    text-decoration-thickness: max(1px,0.0625rem) !important;
+    text-underline-offset: 0.1578em !important;
+}
+
+.govuk-link:hover,
+.govuk-details__summary-text:hover, 
+.govuk-notification-banner__link:hover {
+    text-decoration-thickness: max(3px,0.1875rem,0.12em) !important;
+    text-underline-offset: 0.1578em !important;
+}
+/* temp updating hover states to match latest gds: ENDS */
+</style>
+
 <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
   <div class="govuk-notification-banner__header">
     <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
@@ -29,7 +46,7 @@ Lorem ipsum standard page title text
       You must store application TITLE / <abbr>ABR</abbr> in CORA before you can return it
     </p>
     <p class="govuk-body">
-      If this does not work, you can <a href="#" class="govuk-notification-banner__link">report this as an error 400 issue using 4me (opens in new tab)</a>.
+      If this does not work, you can <a href="#" class="govuk-notification-banner__link" target="_blank">report this as an error 400 issue using 4me (opens in new tab)</a>.
     </p>
   </div>
 </div>
