@@ -1274,14 +1274,11 @@
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">    
     
     <h2 class="govuk-heading-m">
-      9. Return reasons
+      9. Return reasons 
     </h2>
 
-    <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-font-size-16">
-      <li><a href="#" class="govuk-link govuk-link--no-visited-state" target="_blank">xxx</a></li>
-      <li></li>
-      <li></li>
-    </ol> 
+    <p class="govuk-body-s">The following list of straightforward amends to this simple page do not require any additional design assets: 
+    </p>
 
     <details class="govuk-details  govuk-!-font-size-16">
       <summary class="govuk-details__summary">
@@ -1292,15 +1289,35 @@
       <div class="govuk-details__text">
         <p class="govuk-body-s">Issues resolved:</p>
         <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          
+          <li>The Back to be represented by the correct <abbr>GDS</abbr> component <abbr>HTML</abbr> (replacing the ordered list of one): Update the mark-up to use Back link </li>
+          <li>Change the text of the last option ('None of the above') to "Something else". (The value we submit for this option should remain the same)</li>
+          <li>abbreviations in the labels should be wrapped in a 'abbr' tags, for example: (<abbr>CRTI</abbr>)</li>
+          <li>add a 'novalidate' attribute to the form tag</li>
+        </ul>
+
+        <p class="govuk-body-s">The form requires a value and serves a form validation error message:</p>
+        <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16">
+          <li>the text for this message should be updated to "Select a return reason" (for both the summary error message and inline error message)</li>
+          <li>clicking the hyperlink in the summary error message should move focus to the first option in the list. (The radio button should show the focus - bold black and yellow border - styling)</li>
+          <li>the document title - the <abbr>HTML</abbr> title tag - should be prepended with "Error: " as per the <abbr>GDS</abbr> error pattern</li>
         </ul>
       </div>
+      
+
+
+. 
+
+ 
+
+
+
+
+
+
+
+
+
+ 
     </details>
 
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">    
@@ -1403,7 +1420,15 @@
     </h2>
 
     <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-font-size-16">
-      <li><a href="#" class="govuk-link govuk-link--no-visited-state" target="_blank">xxx</a></li>
+      <li>
+        <a href="./select-a-category-of-work.html" class="govuk-link govuk-link--no-visited-state" target="_blank">select-a-category-of-work</a>
+      </li>
+      <li>
+        <a href="./select-a-category-of-work-error.html" class="govuk-link govuk-link--no-visited-state" target="_blank">select-a-category-of-work-error</a>
+      </li>
+      <li>
+        <a href="./select-a-category-of-work-success.html" class="govuk-link govuk-link--no-visited-state" target="_blank">select-a-category-of-work-success</a>
+      </li>            
     </ol>     
     
     <details class="govuk-details  govuk-!-font-size-16">
@@ -1413,16 +1438,44 @@
         </span>
       </summary>
       <div class="govuk-details__text">
-        <p class="govuk-body-s">Issues resolved:</p>
+        <p class="govuk-body-s">1). The basic page: changes to the UI structure:</p>
         <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          
+          <li>Add the GDS grid system, using 'govuk-grid-column-three-quarters' on this page (as per the HTML design example)</li>
+
+          <li>Due to the nature of the existing page/form design - with grouped radio button options along with inline sub-headings - this HTML on this page should be restructured using nested Fieldsets (as per the HTML design example). i.e., Each of the 5 groups sit within their own Fieldset (with Legends), placed within the one parent Fieldset (using a H1 header within a legend), as per the new HTML design. [This structure is also required to support the GDS error message logic]. </li>
+
+            <li>Add 'novalidate' to the form tag</li>
+
+              <li>Individual abbreviations within the form labels should be wrapped in an ABBR tag. (Sometimes there are double or triple abbreviations, such as <abbr>VCO</abbr> <abbr>ADR</abbr> in a single label)</li>
+
+                <li>Note: because we can only use one ‘div.govuk-form-group’ to wrap all the Fieldsets (for the GDS error message styling) we need to add the margin-bottom class to each Fieldset (and a margin class on the main H1 tag, or parent legend)</li>
+
+                  <li>While we're here, we'll also take the opportunity to simply add the 'govuk-radios--small' style class to the radio buttons list to reduce the size of the radio buttons - because the list of options is so long/extensive and because the GDS design system recommends it: "Small radios can work well on information dense screens in services designed for repeat use, like case-working systems."</li>
+         
         </ul>
+
+        <p class="govuk-body-s">2). The error message: implement form validation: On the preview site, there doesn't appear to be any form validation on this page? (The page simply redirecting to the workflow page isn't accessibility compliant).</p>
+
+        <p class="govuk-body-s">Selecting an option is a requirement. If not selection is made we refresh the page with a GDS error message (all as per the HTML design): </p>
+        <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16">
+          <li>“Error: “ is prepended to the document title</li>
+
+          <li>An error summary banner is placed at the top of the page</li>
+          
+          <li>The hyperlink in the error summary banner moves focus to the first radio option</li> 
+          
+          <li>An inline error message repeats the summary banner message</li>
+          
+          <li>An aria describedby attribute is added to the parent Fieldset which targets the ID on the inline error message</li>
+          
+          <li>Red styling is added to the left of the form options</li>
+          </ul>
+          
+          
+          <p class="govuk-body-s">3). Notification banner: ensure the action is fed back: </p>
+
+          <p class="govuk-body-s">When the user submits the form they are returned to the Worklist page where a notification banner is included - as per the design - confirming success.  The dynamic content as currently used, remains unchanged, but the HTML has been updated, as per the design. The statement text has been updated to include the word ‘now’ (as per the design) and the space before the colon in the title is removed (as per the design).  We are also removing the hyperlink ‘Change your category of work’ which currently features in the confirmation banner (as this is repeated directly below, is not part of the confirmation banner function, and the duplication creates a new set of accessibility issues).</p>
+          
       </div>
     </details>    
 

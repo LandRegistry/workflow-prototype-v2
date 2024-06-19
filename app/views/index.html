@@ -3,29 +3,297 @@
 {% set pageName="Home" %}
 
 {% block content %}
+<style>
+  .js-enabled .govuk-accordion__section-button {
+    padding-bottom: 0;   
+  }
+  .govuk-accordion > .govuk-accordion__controls:first-of-type .govuk-accordion__show-all {
+    float: right; 
+  }
+  .govuk-accordion > .govuk-accordion__controls .govuk-accordion__show-all, 
+  .govuk-accordion__section-heading .govuk-accordion__section-toggle {
+    font-size: 16px !important;
+    font-size: 1rem !important;
+    line-height: 1.25 !important; 
+  }
+  table tr td[colspan="4"]{
+    background-color: #f3f2f1; 
+    font-weight: bold;
+  }
+  table *  /*, table tbody tr td:nth-child(2)*/{
+    font-size: 16px !important;
+    font-size: 1rem !important; 
+    line-height: 1.25 !important;
+  }
+  table thead tr th:first-child, 
+  table tfoot tr th:first-child, 
+  table tr td:first-child {
+    padding-left: 5px;
+  }
+  table thead tr th:last-child, 
+  table tfoot tr th:last-child, 
+  table tr td:last-child {
+    padding-right: 5px !important; 
+  }  
+  table tbody tr:last-child td {
+    padding-bottom: 60px; 
+  }
+  table tbody:last-of-type tr:last-child td {
+    padding-bottom: 20px; 
+  }  
+  /*table thead tr th, 
+  table tfoot tr th {
+    font-size: 16px !important;
+    font-size: 1rem !important;
+    color: #505a5f; 
+    font-weight: normal !important;
+  }*/
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-m">
+        Workflow prototype V2 repository <span class="govuk-visually-hidden"> &ndash; </span>
+      </span>
+      Workflow Prototypes and Designs
+    </h1>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <p class="govuk-body-s">
+          This repository of 'Workflow' prototypes and <abbr>HTML</abbr> designs contains Workflow designs from mid 2023 onwards. It supersedes the <a href="https://workflow-prototype-main.herokuapp.com/" class="govuk-link govuk-link--no-visited-state" target="_blank">previouse Workflow repository (opens in new tab)</a>. 
+        </p>
+
+        <p class="govuk-body-l govuk-!-font-weight-bold">This index page is work in progress: 19 June 2024.</p>
+
+      </div>
+    </div>   
+    
+    <div class="govuk-accordion govuk-!-margin-top-4" data-module="govuk-accordion" id="accordion-with-summary-sections">
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-1">
+              The design prototypes
+            </span>
+          </h2>
+          <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1">
+            Find the prototypes and design work in this Workflow v2 repository   <!--designed using the <abbr>GDS</abbr> Design System-->
+          </div>
+        </div>
+        <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content">
+
+          <table class="govuk-table govuk-!-margin-bottom-8">
+            <caption class="govuk-table__caption govuk-table__caption--s govuk-!-font-weight-regular govuk-!-padding-left-1 govuk-!-font-size-16">Prototypes - from mid 2023 onwards</caption>
+
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Name</th>
+                <th scope="col" class="govuk-table__header govuk-!-width-one-half">Notes</th>
+                <th scope="col" class="govuk-table__header">Period</th>
+                <th scope="col" class="govuk-table__header">Index</th>
+              </tr>
+            </thead>
+      
+            <!-- *** This is the correct location for the TFOOT in the HTML DOM) *** -->
+            <tfoot class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Name</th>
+                <th scope="col" class="govuk-table__header">Notes</th>
+                <th scope="col" class="govuk-table__header">Period</th>
+                <th scope="col" class="govuk-table__header">Index</th>
+              </tr>
+            </tfoot>             
+
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell" colspan="4">
+                    <span class="govuk-!-padding-right-4">Extension of time</span> <span class="govuk-!-font-weight-regular">(or Deferral of time)</span>
+                </td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <a href="/defer-time-dates-v3/two-defer_01" class="govuk-link govuk-link--no-visited-state">Extension of time v3</a>
+                </td>
+                <td class="govuk-table__cell">
+                    <span class="govuk-!-font-weight-bold">Final</span>: <br>This version incorporates all three options for adding a date.
+                </td>
+                <td class="govuk-table__cell">
+                  May 2024
+                </td>                
+                <td class="govuk-table__cell">
+                  <a href="/defer-time-dates-v3/index" class="govuk-link govuk-link--no-visited-state">Open<span class="govuk-visually-hidden"> v3 index</span></a>
+                </td>                            
+              </tr>              
+
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  Extension of time v2
+                </td>
+                <td class="govuk-table__cell">
+                  Two flows: 1). moves live design <a href="/defer-time-dates/one-defer_01" class="govuk-link govuk-link--no-visited-state">date fields</a> into own page. 2). <a href="/defer-time-dates/two-defer_01" class="govuk-link govuk-link--no-visited-state">date fields and a set 20 days</a> option combined.
+                </td>
+                <td class="govuk-table__cell">
+                  May 2024
+                </td>                
+                <td class="govuk-table__cell">
+                  <a href="/defer-time-dates/index" class="govuk-link govuk-link--no-visited-state">Open<span class="govuk-visually-hidden"> v2 index</span></a>
+                </td>                            
+              </tr>  
+
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  Extension of time v1
+                </td>
+                <td class="govuk-table__cell">
+                  Two flows: 1). proposed replacing live design with <a href="/defer-time/one-defer_01" class="govuk-link govuk-link--no-visited-state">a custom number entry</a>. 2). proposed a <a href="/defer-time/two-defer_01" class="govuk-link govuk-link--no-visited-state">custom number entry and a set 20 days</a>.  
+                </td>
+                <td class="govuk-table__cell">
+                  April 2024
+                </td>                
+                <td class="govuk-table__cell">
+                  <a href="/defer-time/index" class="govuk-link govuk-link--no-visited-state">Open<span class="govuk-visually-hidden"> v1 index</span></a>
+                </td>                            
+              </tr>              
+
+            </tbody>
+
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell" colspan="4">
+                    <span class="govuk-!-padding-right-4"><abbr>WCAG</abbr></span> <span class="govuk-!-font-weight-regular">(Accessibility and <abbr>GDS</abbr> compliance)</span>
+                </td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <abbr>WCAG</abbr> work
+                </td>
+                <td class="govuk-table__cell">
+                  <abbr>HTML</abbr> Designs, templates, guides and examples for resolving accessibility and <abbr>GDS</abbr> compliance issues.
+                </td>
+                <td class="govuk-table__cell">
+                  Q1 and Q2 2024
+                </td>                
+                <td class="govuk-table__cell">
+                  <a href="/wcag-work/indexx" class="govuk-link govuk-link--no-visited-state">Open<span class="govuk-visually-hidden"> <abbr>WCAG</abbr> index</span></a>
+                </td>                            
+              </tr> 
+
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  Error message pages
+                </td>
+                <td class="govuk-table__cell">
+                  <abbr>HTML</abbr> Designs and example guides for revised error message pages.
+                </td>
+                <td class="govuk-table__cell">
+                  May 2024
+                </td>                
+                <td class="govuk-table__cell">
+                  <a href="/error-msg-pgs/index" class="govuk-link govuk-link--no-visited-state">Open<span class="govuk-visually-hidden"> <abbr>WCAG</abbr> index</span></a>
+                </td>                            
+              </tr>               
+
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  Related works assets
+                </td>
+                <td class="govuk-table__cell" colspan="2">
+                  
+                  <ul class="govuk-list govuk-!-margin-0">
+                    <li class="govuk-!-display-inline-block govuk-!-margin-right-1">
+                      <a class="govuk-link govuk-link--no-visited-state" href="/accessibility-issues/index">Accessibility issues</a>
+                    </li>
+                  </ul>
+
+                </td>
+                <td class="govuk-table__cell">
+                  &mdash;
+                </td>                            
+              </tr>                  
+                          
+            </tbody>                  
+
+
+            
+          </table>
+
+          <p class="govuk-body-s">Miscellaneous: </p>
+
+          <ul class="govuk-list govuk-!-margin-0 govuk-!-font-size-16 govuk-list--bullet">
+            <li>
+              <a href="x" class="govuk-link govuk-link--no-visited-state">Lorem</a>
+            </li>
+                                    
+          </ul>
+
+        </div>
+      </div>
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-2">
+              Information for designers
+            </span>
+          </h2>
+          <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-2">
+            How to use this repository and prototyping kit
+          </div>
+        </div>
+        <div id="accordion-with-summary-sections-content-2" class="govuk-accordion__section-content">
+
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus fuga doloribus, aliquam distinctio exercitationem, odio eum dicta alias facilis quaerat modi ex aut iusto recusandae sunt. Voluptatem excepturi sapiente libero.
+
+        </div>
+      </div>
+
+    </div>    
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-xl">
-      {{ serviceName }}  
+      {{ serviceName }} 
     </h1>
 
-    <p class="govuk-body">
-      This is the root index page. You can find the index page of the prototype you require by using the full <abbr>URL</abbr> (which will include the prototype directory name).
-    </p>
+    <p class="govuk-body">This is the standard Workflow <abbr>GDS</abbr> page template, using the <b>main.html</b> layout. (You could make a copy of this file to use as your first page).</p>
+
+    <!-- keep this page to use as a base template and to add a list of links to the various Workflow prototypes/designs -->
     
     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">  
     
     
-    <p class="govuk-body-s">This is the standard <!--abbr title="Workflow">wf</abbr--> <abbr>GDS</abbr> page template (using the <b>main.html</b> layout).</p>
+    
 
-    <!-- keep this page to use as a base template and to add a list of links to the various Workflow prototypes/designs -->
-
-
-    <!--
+    <!-- these optional include .njk files have been commented out -->
+    {#
     {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
-    -->
+    #}
     
     {#
     {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}
