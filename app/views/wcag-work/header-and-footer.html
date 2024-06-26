@@ -1,0 +1,94 @@
+{% extends "layouts/wf_layout_legacy.html" %}
+
+{% set pageName="Search" %}
+
+{% block header %}
+
+<header class="govuk-header govuk-header--hmlr" data-module="govuk-header">
+    <div class="govuk-header__container govuk-header__container--full-width">
+      <div class="govuk-width-container">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+          <a href="#" class="govuk-header__link govuk-header__service-name hmlr-header-wf--temp-style">
+             <img class="hmlr-header__logo" width="38" height="35" src="/public/images/lr_logo.png" alt="HM Land Registry Logo">
+             <span class="govuk-header__link govuk-header__service-name">Workflow</span>
+          </a>
+          </div>
+          <div class="govuk-grid-column-one-half">
+            <a href="https://uk.4me.io/cnQ9MjIwNA" class="header-link hmlr-header-link-wf--temp-style" id="new-tab-link" target="_blank">
+              Report an issue (opens in new tab)
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+{% endblock %}
+
+{% block pageTitle %}
+Search
+{% endblock %}
+
+{% block beforeContent %}
+
+<!-- do not add this style bloc to the build - this is for this prototype only -->
+<style>
+/*temp styling for the proprietary Workflow header*/
+.govuk-header__service-name.hmlr-header-wf--temp-style:focus {
+    outline-offset: 0; 
+    background-color: #ffdd00; 
+    color: #0b0c0c; 
+    margin-top: -4px;
+    padding-top: 4px;
+    margin-bottom: 10px;
+    padding-bottom: 0;
+    padding-right: 10px; 
+}
+.header-link.hmlr-header-link-wf--temp-style:focus {
+    outline-offset: 0;
+    background-color: #ffdd00;
+    padding: 0 5px;
+    color: #0b0c0c;     
+}
+
+/*temp breadcrumb fix to apply modern gds style*/    
+.govuk-breadcrumbs__list-item .govuk-breadcrumbs__link {
+    text-decoration-thickness: max(1px, .0625rem); 
+    text-underline-offset: .1578em;
+}   
+.govuk-breadcrumbs__list-item .govuk-breadcrumbs__link:hover {
+    text-decoration-thickness: max(3px, .1875rem, .12em);
+}
+</style>
+<div class="govuk-breadcrumbs">
+        
+  <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="#">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        Search
+      </li>
+  </ol>
+
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <p class="govuk-body">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo repellat aperiam ex maxime reiciendis placeat dolores. Ipsum error eaque exercitationem! Impedit unde obcaecati qui ea ipsum beatae vero veniam nulla!
+        </p>
+
+        <p class="govuk-body">
+            Dolor sit amet consectetur adipisicing elit. Perspiciatis tenetur sit, debitis voluptate illum sed vitae, atque doloremque labore molestiae obcaecati architecto magni nemo ipsam est dolores doloribus quis? Harum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis vel commodi dolorem nemo eligendi voluptates numquam, corrupti impedit laboriosam totam voluptate? Odit eius totam hic nobis provident recusandae velit corporis?
+        </p>
+
+    </div>
+</div>
+
+{% endblock %}

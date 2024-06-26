@@ -1194,9 +1194,23 @@
       7. Defer
     </h2>
 
-<p class="govuk-body-s">
-  Updates to the form page - formatting and content/text changes. Introduction of GDS error messages (replacing the use of JavaScript disabling of submit button before selections are made).
-</p>
+    <p class="govuk-body-s">
+      Updates to the form page - formatting and content/text changes. Introduction of GDS error messages (replacing the use of JavaScript disabling of submit button before selections are made).
+    </p>
+
+    <p class="govuk-body-s">
+      
+    </p>
+
+    <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16">
+
+      <li><a href="defer-before-01" class="govuk-link govuk-link--no-visited-state" target="_blank">defer before 01</a></li>
+
+      <li><a href="defer-before-02" class="govuk-link govuk-link--no-visited-state" target="_blank">defer before 02</a>: example (using the refer search form)</li>
+
+      <li><a href="defer-before-01-error" class="govuk-link govuk-link--no-visited-state" target="_blank">defer before 01 error</a></li>
+
+    </ul>    
     
     <details class="govuk-details  govuk-!-font-size-16">
       <summary class="govuk-details__summary">
@@ -1302,22 +1316,7 @@
           <li>the document title - the <abbr>HTML</abbr> title tag - should be prepended with "Error: " as per the <abbr>GDS</abbr> error pattern</li>
         </ul>
       </div>
-      
-
-
-. 
-
- 
-
-
-
-
-
-
-
-
-
- 
+    
     </details>
 
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">    
@@ -1355,12 +1354,20 @@
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">    
 
     <h2 class="govuk-heading-m">
-      11. Page header and footer
+      11. Page header and footer (and breadcrumb)
     </h2>
 
-    <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-font-size-16">
-      <li><a href="#" class="govuk-link govuk-link--no-visited-state" target="_blank">xxx</a></li>
-      <li>Including fixing the breadcrumb non-link and hover states.</li>
+    <p class="govuk-body-s">
+      Minimum amends purely for <abbr>WCAG</abbr> compliance (although several improvements could be made), to stay in scope.
+    </p>
+
+    <p class="govuk-body-s">
+      <abbr>HTML</abbr> asset: <a href="header-and-footer" class="govuk-link govuk-link--no-visited-state" target="_blank">Header and footer</a> 
+    </p>
+
+    <ol class="govuk-list govuk-list--bullet govuk-!-font-size-16">
+      <li>Includes fixing the breadcrumb non-link and hover states</li>
+      <li>Includes removing link icons from 'Report' link</li>
     </ol>     
     
     <details class="govuk-details  govuk-!-font-size-16">
@@ -1372,12 +1379,35 @@
       <div class="govuk-details__text">
         <p class="govuk-body-s">Issues resolved:</p>
         <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16">
-          <li>Fix footer - widths (inline with the header); if in scope?</li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
+          <li>In the header: 
+
+            <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16">
+              <li>Add new CSS 'hmlr-header-wf--temp-style' style class to the 'govuk-header__link' A tag/hyperlink (which wraps the image)</li>
+          
+              <li>Edit the visually hidden text from 'Opens in a new window' to 'opens in new tab', all in lowercase</li>
+  
+              <li>Remove the “visuallyhidden” span tag which currently wraps the 'Opens in a new window' text</li>
+  
+              <li>Remove the title attribute from the A tag/hyperlink which contains the “Report an issue …” text </li>
+  
+              <li>Remove the CSS 'opens-in-new-window' style class from the A tag/hyperlink which contains the “Report an issue …” text </li>
+  
+              <li>Add the new CSS 'hmlr-header-link-wf--temp-style' style class to the 'header-link' A tag hyperlink which contains the “Report an issue …” text</li>
+  
+              <li>To fix the header links active state styling, add the "temp styling for the proprietary Workflow header" CSS as provided within the HTML design </li>              
+            </ul>
+
+          </li>
+          
+          <li>Breadcrumb: 
+
+            <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16">
+              <li>To fix the breadcrumb styling and active state styling, add the "temp breadcrumb fix to apply modern gds style" CSS styles provided within the HTML design asset</li>
+            </ul>
+
+          </li>
+                    
+          <li>Footer: no edits for accessibility compliance required</li>
           
         </ul>
       </div>
@@ -1448,7 +1478,7 @@
 
               <li>Individual abbreviations within the form labels should be wrapped in an ABBR tag. (Sometimes there are double or triple abbreviations, such as <abbr>VCO</abbr> <abbr>ADR</abbr> in a single label)</li>
 
-                <li>Note: because we can only use one ‘div.govuk-form-group’ to wrap all the Fieldsets (for the GDS error message styling) we need to add the margin-bottom class to each Fieldset (and a margin class on the main H1 tag, or parent legend)</li>
+                <li>Note: because we can only use one 'div.govuk-form-group' to wrap all the Fieldsets (for the GDS error message styling) we need to add the margin-bottom class to each Fieldset (and a margin class on the main H1 tag, or parent legend)</li>
 
                   <li>While we're here, we'll also take the opportunity to simply add the 'govuk-radios--small' style class to the radio buttons list to reduce the size of the radio buttons - because the list of options is so long/extensive and because the GDS design system recommends it: "Small radios can work well on information dense screens in services designed for repeat use, like case-working systems."</li>
          
@@ -1474,7 +1504,7 @@
           
           <p class="govuk-body-s">3). Notification banner: ensure the action is fed back: </p>
 
-          <p class="govuk-body-s">When the user submits the form they are returned to the Worklist page where a notification banner is included - as per the design - confirming success.  The dynamic content as currently used, remains unchanged, but the HTML has been updated, as per the design. The statement text has been updated to include the word ‘now’ (as per the design) and the space before the colon in the title is removed (as per the design).  We are also removing the hyperlink ‘Change your category of work’ which currently features in the confirmation banner (as this is repeated directly below, is not part of the confirmation banner function, and the duplication creates a new set of accessibility issues).</p>
+          <p class="govuk-body-s">When the user submits the form they are returned to the Worklist page where a notification banner is included - as per the design - confirming success.  The dynamic content as currently used, remains unchanged, but the HTML has been updated, as per the design. The statement text has been updated to include the word 'now' (as per the design) and the space before the colon in the title is removed (as per the design).  We are also removing the hyperlink 'Change your category of work' which currently features in the confirmation banner (as this is repeated directly below, is not part of the confirmation banner function, and the duplication creates a new set of accessibility issues).</p>
           
       </div>
     </details>    
