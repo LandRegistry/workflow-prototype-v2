@@ -10,7 +10,7 @@
   }
 
   main h1, main h2, main h3, main p, main li  {
-    font-family: "GDS Transport", arial, sans-serif !important;
+    font-family: "<abbr>GDS</abbr> Transport", arial, sans-serif !important;
     -webkit-font-smoothing: antialiased !important; 
   }
 </style>
@@ -60,12 +60,12 @@
 
                 <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
                   <li>Add classes 'govuk-button' and 'govuk-!-margin-bottom-0' to the 'search-button' </li>
-                  <li>Either add !important to the width CSS declaration for the 'search-button' class in the CSS/SASS file (and add max-height: 38px;) or add the inline 'style' (with min-width and max-width) attribute, as per HTML provided, to the button </li>
+                  <li>Either add !important to the width <abbr>CSS</abbr> declaration for the 'search-button' class in the <abbr>CSS</abbr>/SASS file (and add max-height: 38px;) or add the inline 'style' (with min-width and max-width) attribute, as per <abbr>HTML</abbr> provided, to the button </li>
                 </ul>
 
               </li>
               <li>
-                <b>The Assign button:</b> to resolve required GDS active/keyboard states 
+                <b>The Assign button:</b> to resolve required <abbr>GDS</abbr> active/keyboard states 
 
                 <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
                   <li>Add classes 'govuk-button' and 'govuk-!-margin-bottom-0' to the 'Assign' button</li>
@@ -79,15 +79,15 @@
                 </ul>
               </li>              
               <li>
-                <b>The placeholder texts:</b> are non-GDS compliant (creating accessibility issues)
+                <b>The placeholder texts:</b> are non-<abbr>GDS</abbr> compliant (creating accessibility issues)
                 
                 <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
-                  <li>Remove the the placeholder attributes from both text input fields. Update the labels as per the HTML designs </li>
+                  <li>Remove the the placeholder attributes from both text input fields. Update the labels as per the <abbr>HTML</abbr> designs </li>
                   <li>Remove the title attributes from both text input fields</li>
                 </ul>
               </li> 
               <li>
-                <b>The two input fields:</b> GDS styling required for the GDS auto-Complete component (detailed elsewhere)
+                <b>The two input fields:</b> <abbr>GDS</abbr> styling required for the <abbr>GDS</abbr> auto-Complete component (detailed elsewhere)
                 
                 <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
                   <li>On the 'Find' and 'Assign' input fields add class 'govuk-input'</li>
@@ -97,7 +97,7 @@
                  <b>Form tag:</b>
                 
                 <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
-                  <li>Add the 'novalidate' attribute to the HTML form tag</li>
+                  <li>Add the 'novalidate' attribute to the <abbr>HTML</abbr> form tag</li>
                 </ul>
               </li> 
               <li>
@@ -111,14 +111,14 @@
                 <b>Fieldset/Legend:</b> inappropriate usage
                 
                 <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
-                  <li>Remove the HTML tags Fieldset and Legend: Simply remove the Fieldset and Legend tags HTML wrapping the form content and reinstate a H1 header in a govuk-grid-row and govuk-grid-column div (as per the HTML provided). Remove the 'form-title' class from the H1 tag. (Removing the Fieldset and Legend tags should also update the results version of the page - when searches have been submitted)</li>
+                  <li>Remove the <abbr>HTML</abbr> tags Fieldset and Legend: Simply remove the Fieldset and Legend tags <abbr>HTML</abbr> wrapping the form content and reinstate a H1 header in a govuk-grid-row and govuk-grid-column div (as per the <abbr>HTML</abbr> provided). Remove the 'form-title' class from the H1 tag. (Removing the Fieldset and Legend tags should also update the results version of the page - when searches have been submitted)</li>
                 </ul>
               </li> 
               <li>
-                <b>HTML form groups:</b> Add the GDS HTML form group HTML structure (which will be used for applying the correct error message designs)
+                <b><abbr>HTML</abbr> form groups:</b> Add the <abbr>GDS</abbr> <abbr>HTML</abbr> form group <abbr>HTML</abbr> structure (which will be used for applying the correct error message designs)
               
                 <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
-                  <li>Wrap form elements in the 'govuk-form-group' divs, as per the HTML example provided</li>
+                  <li>Wrap form elements in the 'govuk-form-group' divs, as per the <abbr>HTML</abbr> example provided</li>
                 </ul>
               </li> 
             </ol>
@@ -148,15 +148,15 @@
             </h3>
 
             <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-font-size-16">
-              <li>The work matches the provided HTML design and when keyboard tabbing, the focus state matches the HTML design provided</li>
-              <li>The work matches the provided HTML design and when keyboard tabbing, the focus state matches the HTML design provided</li>
-              <li>The font size and font weight matches the HTML design provided</li>
-              <li>The placeholder text is no longer shown in the two input text fields, and the label texts (above both input text fields) now match the HTML design provided</li>
-              <li>The border weight on both input text fields now match the HTML design provided</li>
-              <li>When inspecting the HTML form tag, it now has the 'novalidate' attributed added</li>
+              <li>The work matches the provided <abbr>HTML</abbr> design and when keyboard tabbing, the focus state matches the <abbr>HTML</abbr> design provided</li>
+              <li>The work matches the provided <abbr>HTML</abbr> design and when keyboard tabbing, the focus state matches the <abbr>HTML</abbr> design provided</li>
+              <li>The font size and font weight matches the <abbr>HTML</abbr> design provided</li>
+              <li>The placeholder text is no longer shown in the two input text fields, and the label texts (above both input text fields) now match the <abbr>HTML</abbr> design provided</li>
+              <li>The border weight on both input text fields now match the <abbr>HTML</abbr> design provided</li>
+              <li>When inspecting the <abbr>HTML</abbr> form tag, it now has the 'novalidate' attributed added</li>
               <li>The title attribute is removed, so that when mousing over the 'Home' link in the breadcrumb trail (with your mouse cursor) a popup text message no longer appears</li>
-              <li>When inspecting the HTML it matches the HTML design provided, showing that the Fieldset and Legend HTML tags have been removed (and the 'form-title' class has been removed from the H1 header tag)</li>
-              <li>When inspecting the HTML it matches the HTML design provided, showing that the form groups have now been wrapped by the 'govuk-form-group' divs</li>
+              <li>When inspecting the <abbr>HTML</abbr> it matches the <abbr>HTML</abbr> design provided, showing that the Fieldset and Legend <abbr>HTML</abbr> tags have been removed (and the 'form-title' class has been removed from the H1 header tag)</li>
+              <li>When inspecting the <abbr>HTML</abbr> it matches the <abbr>HTML</abbr> design provided, showing that the form groups have now been wrapped by the 'govuk-form-group' divs</li>
               <li>I can successfully search for a person - using a name not concatenated with a period - with JavaScript disabled</li>
             </ol>
 
@@ -182,15 +182,15 @@
 
             <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-font-size-16">
               <li>
-                <b>Table checkboxes:</b> require GDS styling for accessibility when keyboard tabbing
+                <b>Table checkboxes:</b> require <abbr>GDS</abbr> styling for accessibility when keyboard tabbing
                 <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
                   <li>
-                    Update the HTML structure for each table checkbox, as per the HTML example (which includes adding the class 'hmlr-wf-checkboxes--single-tbl' to each checkbox wrapper)</li>
+                    Update the <abbr>HTML</abbr> structure for each table checkbox, as per the <abbr>HTML</abbr> example (which includes adding the class 'hmlr-wf-checkboxes--single-tbl' to each checkbox wrapper)</li>
                   <li>
                     Remove the title attribute from the checkboxes 
                   </li>
                   <li>
-                    The following CSS is required in the CSS output (and should be added to your stylesheet): <br>
+                    The following <abbr>CSS</abbr> is required in the <abbr>CSS</abbr> output (and should be added to your stylesheet): <br>
 
                     <pre>
                       .govuk-radios__label:before, 
@@ -219,15 +219,15 @@
                 </ul>
               </li>
               <li>
-                <b>Select all - checkbox option: </b> the 'Select all' checkbox option requires amending to comply with improved accessibility and GDS accessibility requirements. (Redesigning the page is beyond the scope of this work).
+                <b>Select all - checkbox option: </b> the 'Select all' checkbox option requires amending to comply with improved accessibility and <abbr>GDS</abbr> accessibility requirements. (Redesigning the page is beyond the scope of this work).
 
                 <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
-                  <li>Remove the label HTML which wraps the 'Select all' text in the table header cell</li>
-                  <li>Update the checkbox HTML as per the HTML example (and with the CSS classes used) and using the new label text of 'Select all applications'</li>
-                  <li>In this table row remove the 5 empty cells and add a colspan ( =7) attribute to the single cell now remaining in this row, as per the HTML example</li>
-                  <li>Add class 'hmlr-wf-tr-if-js' to the parent TR HTML element</li>
+                  <li>Remove the label <abbr>HTML</abbr> which wraps the 'Select all' text in the table header cell</li>
+                  <li>Update the checkbox <abbr>HTML</abbr> as per the <abbr>HTML</abbr> example (and with the <abbr>CSS</abbr> classes used) and using the new label text of 'Select all applications'</li>
+                  <li>In this table row remove the 5 empty cells and add a colspan ( =7) attribute to the single cell now remaining in this row, as per the <abbr>HTML</abbr> example</li>
+                  <li>Add class 'hmlr-wf-tr-if-js' to the parent TR <abbr>HTML</abbr> element</li>
                   <li>
-                    Add this CSS to your CSS output (stylesheet): <br>
+                    Add this <abbr>CSS</abbr> to your <abbr>CSS</abbr> output (stylesheet): <br>
                   
                     <pre>
                       .hmlr-wf-tr-if-js {
@@ -249,7 +249,7 @@
                     a). Maintain (or reapply) the JavaScript functionality which selects/checks (and unselects/unchecks) all the checkboxes in the table when this 'Select all applications' checkbox is selected/deselected. BUT when JavaScript is disabled (i.e., unsupported), when the user selects 'Select all applications' all applications must be submitted when the user selects 'Assign' (even though they are not visually selected). This should also maintain any logic currently established for 'hidden' attached applications (which, when revealed, do not feature a checkbox).
                   </li>
                   <li>
-                    b). Maintain (or reapply) the JavaScript functionality which selects/checks (and unselects/unchecks) all the checkboxes in the table when this 'Select all applications' checkbox is selected/deselected. BUT when JavaScript is disabled (i.e., unsupported) the 'Select all applications' checkbox option should ideally not be included in the page. (Including it within the HTML DOM by using JavaScript to inject it into the page - and then adding its listening on -change event - is preferable to relying upon CSS to “display none”). Update: The HTML template provided for this page has now been updated to demonstrate a stable solution for injecting the 'Select all applications' checkbox using vanilla JavaScript to satisfy number 3 in the acceptance criteria - view the HTML source (at the end) to rip the JavaScript. (A div#hmlr-wf-select-all is added to the HTML as the target).  
+                    b). Maintain (or reapply) the JavaScript functionality which selects/checks (and unselects/unchecks) all the checkboxes in the table when this 'Select all applications' checkbox is selected/deselected. BUT when JavaScript is disabled (i.e., unsupported) the 'Select all applications' checkbox option should ideally not be included in the page. (Including it within the <abbr>HTML</abbr> DOM by using JavaScript to inject it into the page - and then adding its listening on -change event - is preferable to relying upon <abbr>CSS</abbr> to "display none"). Update: The <abbr>HTML</abbr> template provided for this page has now been updated to demonstrate a stable solution for injecting the 'Select all applications' checkbox using vanilla JavaScript to satisfy number 3 in the acceptance criteria - view the <abbr>HTML</abbr> source (at the end) to rip the JavaScript. (A div#hmlr-wf-select-all is added to the <abbr>HTML</abbr> as the target).  
                   </li>
                 </ul>
               </li>
@@ -257,7 +257,7 @@
                 <b>Table Caption tag: </b> Update the hidden table caption to improve navigation for assistive technologies
                 <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
                   <li>
-                    Update the table caption element text, as per the HTML provided (with the first number being how many results were returned) 
+                    Update the table caption element text, as per the <abbr>HTML</abbr> provided (with the first number being how many results were returned) 
                   </li>
                   <li>
                     Add class 'govuk-!-margin-top-6' to the table tag
@@ -267,18 +267,18 @@
               <li>
                 <b>Labels in table columns and ABBR tags: </b> inappropriately used (hampering users with assistive technologies)
                 <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
-                  <li>Remove the HTML Label tags wrapping the content in each of the column Headers</li>
+                  <li>Remove the <abbr>HTML</abbr> Label tags wrapping the content in each of the column Headers</li>
                   <li>In the 'Category' column remove the ABBR tags which wrap the content of these cells</li>
                 </ul>
               </li>
               <li>
-                <b>Hyperlink styling: </b> apply the GDS styling for accessibility
+                <b>Hyperlink styling: </b> apply the <abbr>GDS</abbr> styling for accessibility
                 <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
                   <li>
-                    Append the following CSS to the end of your CSS output (stylesheet)<br>
+                    Append the following <abbr>CSS</abbr> to the end of your <abbr>CSS</abbr> output (stylesheet)<br>
 
                     <pre>
-                      /* temp updating hover states to match latest gds: STARTS */
+                      /* temp updating hover states to match latest <abbr>GDS</abbr>: STARTS */
                       .govuk-link, 
                       .govuk-details__summary-text {
                           text-decoration-thickness: max(1px,0.0625rem) !important;
@@ -290,7 +290,7 @@
                           text-decoration-thickness: max(3px,0.1875rem,0.12em) !important;
                           text-underline-offset: 0.1578em !important;
                       }
-                      /* temp updating hover states to match latest gds: ENDS */
+                      /* temp updating hover states to match latest <abbr>GDS</abbr>: ENDS */
                     </pre>
                   </li>
                 </ul>
@@ -299,26 +299,26 @@
                 <b>'More info' hyperlinks: </b> are currently not accessibility compliant
                 <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
                   <li>For each of the 'More info' hyperlinks, remove the title and aria-label attributes</li>
-                  <li>Add target blank attributes, as per the HTML example</li>
-                  <li>Update the link content, as per the HTML example, with each featuring its unique application number</li>
-                  <li>Add to the 'a' tag (hyperlink) the 'govuk-!-font-size-16' class to reinstate the font sizing, as per the HTML example</li>
+                  <li>Add target blank attributes, as per the <abbr>HTML</abbr> example</li>
+                  <li>Update the link content, as per the <abbr>HTML</abbr> example, with each featuring its unique application number</li>
+                  <li>Add to the 'a' tag (hyperlink) the 'govuk-!-font-size-16' class to reinstate the font sizing, as per the <abbr>HTML</abbr> example</li>
                 </ul>
               </li>
               <li>
-                <b>'Show attached applications' hyperlinks: </b> (And the equivalent 'Hide attached applications' hyperlinks). Make accessibility and GDS compliant
+                <b>'Show attached applications' hyperlinks: </b> (And the equivalent 'Hide attached applications' hyperlinks). Make accessibility and <abbr>GDS</abbr> compliant
                 <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
-                  <li>Update the plus (and minus) symbols, to use a HTML symbol code, as per the HTML example</li>
+                  <li>Update the plus (and minus) symbols, to use a <abbr>HTML</abbr> symbol code, as per the <abbr>HTML</abbr> example</li>
                   <li>Add the class 'govuk-link' to the button tag</li>
-                  <li>Add the hidden span within the hyperlink content - a visually hidden span describing the application number - as per the HTML example</li>
+                  <li>Add the hidden span within the hyperlink content - a visually hidden span describing the application number - as per the <abbr>HTML</abbr> example</li>
                   <li>Remove any title attribute from the button/hyperlink</li>
                 </ul>
               </li>
               <li>
-                <b>Results statement: </b> (located above the results list/table) Semantic mark-up and GDS structure (for error messages)
+                <b>Results statement: </b> (located above the results list/table) Semantic mark-up and <abbr>GDS</abbr> structure (for error messages)
                 <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
-                  <li>On the HTML DIV with class 'top-spacing' add the 'govuk-!-margin-top-6' class, as per HTML example </li>
-                  <li>Update the HTML DIVs wrapping any following statement to be 'P' tags, with 'govuk-body-s' class, as per the HTML example</li>
-                  <li>Wrap the HTML DIV - which has the class 'top-spacing' - with in a new DIV which has the class 'govuk-form-group' (which should also wrap the results list table when a table is included in the page), as per the HTML example</li>
+                  <li>On the <abbr>HTML</abbr> DIV with class 'top-spacing' add the 'govuk-!-margin-top-6' class, as per <abbr>HTML</abbr> example </li>
+                  <li>Update the <abbr>HTML</abbr> DIVs wrapping any following statement to be 'P' tags, with 'govuk-body-s' class, as per the <abbr>HTML</abbr> example</li>
+                  <li>Wrap the <abbr>HTML</abbr> DIV - which has the class 'top-spacing' - with in a new DIV which has the class 'govuk-form-group' (which should also wrap the results list table when a table is included in the page), as per the <abbr>HTML</abbr> example</li>
                 </ul>
               </li>
 
@@ -335,9 +335,9 @@
                 <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16">
                   <li>There is an issue with this functionality as it requires JavaScript support to function (and reveal the attached applications). </li>
                   <li>The ideal solution is: the link submits (a hidden input value) to itself for the page to simply reload with the previously hidden table row(s), or applications, now showing in the page (by not including the inline 'hidden' attribute, and vice versa). i.e., a round trip post to the server to include or omit these attached application rows. (The plus & minus and show/hide words in the hyperlink would also be updated by simply hardcoding them in the page output). </li>
-                  <li><i>This resolves the accessibility issue. If means the related JavaScript could then be removed from the build (once the same functionality is updated on the Worklist page). A progressive enhancement could reapply the current dynamic JavaScript behaviour easily enough - but as there are ambitions to redesign these pages that enhancement might not be worthwhile. (A redesign will also provide more semantic sense within the HTML for 'attached' applications).</i></li>
+                  <li><i>This resolves the accessibility issue. If means the related JavaScript could then be removed from the build (once the same functionality is updated on the Worklist page). A progressive enhancement could reapply the current dynamic JavaScript behaviour easily enough - but as there are ambitions to redesign these pages that enhancement might not be worthwhile. (A redesign will also provide more semantic sense within the <abbr>HTML</abbr> for 'attached' applications).</i></li>
                   <li><i>This work will also be repeated for the same 'Show attached applications' hyperlinks on the Worklist page.</i></li>
-                  <li><i>Note: the HTML example does not demonstrate the current Show/Hide functionality - this needs to be observed on the Preview service where there is an application with an attached application. </i></li>
+                  <li><i>Note: the <abbr>HTML</abbr> example does not demonstrate the current Show/Hide functionality - this needs to be observed on the Preview service where there is an application with an attached application. </i></li>
                   
                 </ul>
               </li>
@@ -356,8 +356,8 @@
             </h3>
 
             <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-font-size-16">
-              <li>The checkboxes match the HTML design and display the correct GDS styles when keyboard tabbing, as per the HMTL example. There is no pop-up (tool tip) text when mousing over the checkboxes (with your mouse cursor)</li>
-              <li>The checkbox matches the HTML design and displays the correct GDS styles when keyboard tabbing, as per the HMTL example. Selecting/Deselecting it selects and unselects all the checkboxes in the table. (Inspecting the table HTML shows this checkbox in one continuous cell which spans all seven columns)</li>
+              <li>The checkboxes match the <abbr>HTML</abbr> design and display the correct <abbr>GDS</abbr> styles when keyboard tabbing, as per the HMTL example. There is no pop-up (tool tip) text when mousing over the checkboxes (with your mouse cursor)</li>
+              <li>The checkbox matches the <abbr>HTML</abbr> design and displays the correct <abbr>GDS</abbr> styles when keyboard tabbing, as per the HMTL example. Selecting/Deselecting it selects and unselects all the checkboxes in the table. (Inspecting the table <abbr>HTML</abbr> shows this checkbox in one continuous cell which spans all seven columns)</li>
               <li>
                 Depending upon which option was chosen: <br>
 
@@ -371,17 +371,17 @@
 
                 <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
                   <li>
-                    b). With JavaScript disabled: the 'Select all applications' checkbox option is not included in the page. Keyboard tabbing through the page does not include this option in its page flow (and assistive technologies don't find it). The checkbox option should not be in the HTML document.
+                    b). With JavaScript disabled: the 'Select all applications' checkbox option is not included in the page. Keyboard tabbing through the page does not include this option in its page flow (and assistive technologies don't find it). The checkbox option should not be in the <abbr>HTML</abbr> document.
                   </li>
                 </ul>
 
               </li>
-              <li>Inspecting the table Caption within the HTML (or temporarily disabling the styling) will confirm the updated content</li>
+              <li>Inspecting the table Caption within the <abbr>HTML</abbr> (or temporarily disabling the styling) will confirm the updated content</li>
               <li>Clicking on the headers in the table header row does nothing (and does not select/unselect checkboxes) and mousing over the text in the Category column  table cells (with your mouse cursor) does not show a pop-up (tool tip)</li>
-              <li>The hover states and styling of hyperlinks (such as 'More info') matches those provided in the HTML design</li>
-              <li>The hyperlinks visually match the examples provided in the HTML design and by inspecting the HTML (or disabling the styles) the full hyperlink text matches that provided in the HTML design (which includes the unique number for each application)</li>
-              <li>The hyperlinks visually match the examples provided in the HTML design and their active states when keyboard tabbing onto them. There is no pop-up (tool tip) text when mousing over the text (with your mouse cursor). inspecting the HTML (or disabling the styles) shows the hyperlink text has been updated to include the unique number for the application, as per the HTML design example</li>
-              <li>The spacing visually matches the HTML design. Inspecting the HTML confirms that the text (and table) has been wrapped in a HTML DIV with the class 'govuk-form-group' (which is used for correct error message styling)</li>
+              <li>The hover states and styling of hyperlinks (such as 'More info') matches those provided in the <abbr>HTML</abbr> design</li>
+              <li>The hyperlinks visually match the examples provided in the <abbr>HTML</abbr> design and by inspecting the <abbr>HTML</abbr> (or disabling the styles) the full hyperlink text matches that provided in the <abbr>HTML</abbr> design (which includes the unique number for each application)</li>
+              <li>The hyperlinks visually match the examples provided in the <abbr>HTML</abbr> design and their active states when keyboard tabbing onto them. There is no pop-up (tool tip) text when mousing over the text (with your mouse cursor). inspecting the <abbr>HTML</abbr> (or disabling the styles) shows the hyperlink text has been updated to include the unique number for the application, as per the <abbr>HTML</abbr> design example</li>
+              <li>The spacing visually matches the <abbr>HTML</abbr> design. Inspecting the <abbr>HTML</abbr> confirms that the text (and table) has been wrapped in a <abbr>HTML</abbr> DIV with the class 'govuk-form-group' (which is used for correct error message styling)</li>
               <li>With JavaScript disabled: clicking a 'Show attached applications' hyperlink refreshes the page with one or more attached applications (associated with the application which was selected) now visible in the page. The hyperlink text has also updated to 'Hide attached applications' for that application row. (Hiding the applications also refreshes the page with the attached applications no longer visible and the hyperlink text reverted to 'Show attached applications').</li>
               
             </ol>
@@ -407,15 +407,15 @@
             </p>
 
             <p class="govuk-body-s">
-              The current auto-complete functionality on the 'Find' and 'Assign' text fields fail accessibility tests. These failings have been recorded in ticket Jira #<a href="https://hmlandregistry.atlassian.net/browse/AMW-1714" class="govuk-link govuk-link--no-visited-state" target="_blank">1714</a>, and this work resolves this issue. This alternative uses a Gov GDS project/component designed to be accessible. 
+              The current auto-complete functionality on the 'Find' and 'Assign' text fields fail accessibility tests. These failings have been recorded in ticket Jira #<a href="https://hmlandregistry.atlassian.net/browse/AMW-1714" class="govuk-link govuk-link--no-visited-state" target="_blank">1714</a>, and this work resolves this issue. This alternative uses a Gov <abbr>GDS</abbr> project/component designed to be accessible. 
             </p>
 
             <p class="govuk-body-s">
-              The current auto-complete functionality dynamically displays the message "This user cannot obtain applications in Workflow" when it does not recognise or match the input to a name. The new text for this scenario - demonstrated in the HTML design - instead uses the GDS standard message of "No results found". (This is editable).
+              The current auto-complete functionality dynamically displays the message "This user cannot obtain applications in Workflow" when it does not recognise or match the input to a name. The new text for this scenario - demonstrated in the <abbr>HTML</abbr> design - instead uses the <abbr>GDS</abbr> standard message of "No results found". (This is editable).
             </p>
 
             <h2 class="govuk-heading-m">
-              Steps to update the page HTML to work with the new accessibility compliant auto-complete component:
+              Steps to update the page <abbr>HTML</abbr> to work with the new accessibility compliant auto-complete component:
             </h2>
 
             <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-font-size-16">
@@ -424,10 +424,10 @@
                 Remove legacy SPAN elements (with class 'spin') in both input search fields and the redundant DIV with ID #results-container
               </li>
               <li>
-                Move the input text fields into a noscript HTML tag as per the HTML design templates provided. (These will be used to maintain the current functionality and submit searches for uses without JavaScript support)
+                Move the input text fields into a noscript <abbr>HTML</abbr> tag as per the <abbr>HTML</abbr> design templates provided. (These will be used to maintain the current functionality and submit searches for uses without JavaScript support)
               </li>
               <li>
-                To ensure these styles only target this instance (and cannot contaminate other pages/forms used in the service) as per the HTML design template provided - we add class "hmlr-wf-button-auto-complete" to the buttons on the searches and we add this CSS to the CSS output: <br>
+                To ensure these styles only target this instance (and cannot contaminate other pages/forms used in the service) as per the <abbr>HTML</abbr> design template provided - we add class "hmlr-wf-button-auto-complete" to the buttons on the searches and we add this <abbr>CSS</abbr> to the <abbr>CSS</abbr> output: <br>
 
                 <pre>
                     .govuk-button.hmlr-wf-button-auto-complete {
@@ -442,24 +442,24 @@
                 </pre>
                 
                 <br>
-                Also, we add the standard GDS class of "govuk-!-padding-left-0" to each instance of an input field with the class "search-bar" on this page.
+                Also, we add the standard <abbr>GDS</abbr> class of "govuk-!-padding-left-0" to each instance of an input field with the class "search-bar" on this page.
 
               </li>
               <li>
-                Add the new HTML blocks (identified by the classes 'manage-bar search-container') as per the HTML design provided; these are where the generated auto-complete and new input field is injected
+                Add the new <abbr>HTML</abbr> blocks (identified by the classes 'manage-bar search-container') as per the <abbr>HTML</abbr> design provided; these are where the generated auto-complete and new input field is injected
               </li>
               <li>
                 The auto-complete component:
 
                 <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16">
                   <li>
-                    We require the component's JavaScript and CSS: For this prototype I have added the JavaScript and CSS required by this auto-complete component to the bottom of the HTML template file. (We could move the block of CSS to a separate CSS file). The JavaScript could be moved to a standalone file (as we may reuse it elsewhere); however the two ('#tt-autoselect' and '#tt2-autoselect') local declarations could remain as part of this file/page. 
+                    We require the component's JavaScript and <abbr>CSS</abbr>: For this prototype I have added the JavaScript and <abbr>CSS</abbr> required by this auto-complete component to the bottom of the <abbr>HTML</abbr> template file. (We could move the block of <abbr>CSS</abbr> to a separate <abbr>CSS</abbr> file). The JavaScript could be moved to a standalone file (as we may reuse it elsewhere); however the two ('#tt-autoselect' and '#tt2-autoselect') local declarations could remain as part of this file/page. 
                   </li>
                   <li>
-                    We can source minified CSS and JavaScript files - if required. It is also available via npm and a module system.
+                    We can source minified <abbr>CSS</abbr> and JavaScript files - if required. It is also available via npm and a module system.
                   </li>
                   <li>
-                    The hardcoded array of names (var namesExamples) used at the bottom of the HTML design file, provides the sample search data for the HTML design example. The component's documentation identifies where we can “Provide your remote data source” (commented in the HTML design file). The API provides further 'remote source' documentation.
+                    The hardcoded array of names (var namesExamples) used at the bottom of the <abbr>HTML</abbr> design file, provides the sample search data for the <abbr>HTML</abbr> design example. The component's documentation identifies where we can "Provide your remote data source" (commented in the <abbr>HTML</abbr> design file). The API provides further 'remote source' documentation.
                   </li>
                 </ul>
 
@@ -481,7 +481,7 @@
                 <i>The current accessibility issue of user's input instantly clearing when the user returns focus to the input field is resolved by the behaviour of this replacement auto-complete component (which does not clear the field automatically)</i>
               </li>
               <li>
-                <i>Planned redesigns of these pages will resolve the CSS and in-page styling used to resolve these accessibility issues (remaining in scope of the required work)</i>
+                <i>Planned redesigns of these pages will resolve the <abbr>CSS</abbr> and in-page styling used to resolve these accessibility issues (remaining in scope of the required work)</i>
               </li>
               
             </ul>
@@ -494,16 +494,16 @@
             <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-font-size-16">
               
               <li>
-                Inspecting the HTML will confirm if these redundant HTML elements have been removed - no test required
+                Inspecting the <abbr>HTML</abbr> will confirm if these redundant <abbr>HTML</abbr> elements have been removed - no test required
               </li>
               <li>
                 With JavaScript disabled, submit a search: the page should refresh with a response, whether a user is found or not, confirming that the page remains functional for users with browsers which do not support JavaScript functionality. (When JavaScript is disabled the input text fields should appear as expected - as shown in the attached screengrab 'new-version-with-javascript-disabled') 
               </li>
               <li>
-                The presentation will match the HTML design asset 
+                The presentation will match the <abbr>HTML</abbr> design asset 
               </li>
               <li>
-                The presentation will match the HTML design asset 
+                The presentation will match the <abbr>HTML</abbr> design asset 
               </li>
               <li>
                 The auto-complete component behaviour<br>
@@ -554,7 +554,7 @@
       Manage assigned work - Error messages
     </h2>
 
-    <p class="govuk-body-s">Dependencies: Assuming the issues in tickets #3377 and #3380 have been completed (as they feature work required for these error messages); these are the error messages and error summaries required to resolve accessibility issues and GDS compliance. </p>
+    <p class="govuk-body-s">Dependencies: Assuming the issues in tickets #3377 and #3380 have been completed (as they feature work required for these error messages); these are the error messages and error summaries required to resolve accessibility issues and <abbr>GDS</abbr> compliance. </p>
 
     <p class="govuk-body-s govuk-!-font-weight-bold">All error message pages should feature: </p>
     
@@ -570,12 +570,12 @@
         <b>'Find' is a required field:</b> Submitting the 'find' option without a value currently generates a pink banner displaying 'No Workflow user found with the name "" '. This is a form validation message - when no value is entered - and is a required field, so instead we require a validation error (with a revised message), as per the design: <a href="./error-enter-a-value-for-find.html" class="govuk-link govuk-link--no-visited-state" target="_blank">error-enter-a-value-for-find</a> 
       </li>
       <li>
-        <b>Submitting 'Assign' when 'Find' is empty: </b> Similar to the previous 'find' example: When the 'find' field is empty and a user has entered a value in the 'assign' field and submits the 'assign' field (using the assign button) a pink banner shows the text: “Find a caseworker to assign applications from and to.” The required fields validation error message and styling should now be as two validation errors as per the HTML design provided:   
+        <b>Submitting 'Assign' when 'Find' is empty: </b> Similar to the previous 'find' example: When the 'find' field is empty and a user has entered a value in the 'assign' field and submits the 'assign' field (using the assign button) a pink banner shows the text: "Find a caseworker to assign applications from and to." The required fields validation error message and styling should now be as two validation errors as per the <abbr>HTML</abbr> design provided:   
         <a href="./error-enter-a-value-for-find-and-assign.html" class="govuk-link govuk-link--no-visited-state" target="_blank">error-enter-a-value-for-find-and-assign</a> 
       </li>
       <li>
         <b>Submitting 'Assign' when both fields are empty</b> <br>
-        When both 'find' and 'assign' fields do not have a value and the user submits the 'assign' field (using the assign button), the page refreshes with two error messages, as per the HTML design: <a href="./error-enter-a-value-for-find-and-assign.html" class="govuk-link govuk-link--no-visited-state" target="_blank">error-enter-a-value-for-find-and-assign</a> 
+        When both 'find' and 'assign' fields do not have a value and the user submits the 'assign' field (using the assign button), the page refreshes with two error messages, as per the <abbr>HTML</abbr> design: <a href="./error-enter-a-value-for-find-and-assign.html" class="govuk-link govuk-link--no-visited-state" target="_blank">error-enter-a-value-for-find-and-assign</a> 
       </li>
       <li>
         <b>'Assign is a required field'</b> <!--The logic of how this page works requires redesigning but in order to get the current design to be accessibile (and <abbr>GDS</abbr> compliant) we need to use the correct error messaging patterns.-->
@@ -586,18 +586,18 @@
 
           <li style="text-decoration: line-through;">Currently, a pink banner displays the message "Select an application and find a caseworker to assign the application to."</li> 
             
-            <li style="text-decoration: line-through;">Instead these two messages should display, as per the HTML design: 
+            <li style="text-decoration: line-through;">Instead these two messages should display, as per the <abbr>HTML</abbr> design: 
               <a href="./error-enter-a-value-for-assign.html" class="govuk-link govuk-link--no-visited-state" target="_blank">error-enter-a-value-for-assign</a>
-              <br>The summary message hyperlink for selecting an application should target the first application checkbox (not the 'Select all' checkbox option). When the 'Select one or more applications to assign' error message is shown we also add the 'aria-describedby' attribute to each checkbox (as per the HTML design), except for the first 'Select all' checkbox option</li>
+              <br>The summary message hyperlink for selecting an application should target the first application checkbox (not the 'Select all' checkbox option). When the 'Select one or more applications to assign' error message is shown we also add the 'aria-describedby' attribute to each checkbox (as per the <abbr>HTML</abbr> design), except for the first 'Select all' checkbox option</li>
             
             <li style="text-decoration: line-through;">If the 'find' field has already returned zero results, and the user attempts to submit an 'assigned' value (using the assign button) - due to the nature of the current page design - we still require both error and summary messages, but the 'applications' error summary hyperlink should point to the ID on H2 header title (#caseworker_worklist_heading) due to the absence of any applications to target</li>
           
             <li><b>Option B</b> - due to the nature of this form design, this is a simple amendment to the current behaviour: </li>
             <li>Currently, a pink banner displays the message "Select an application and find a caseworker to assign the application to." </li>
-            <li>Instead serve this error message and design as per the HTML design:
+            <li>Instead serve this error message and design as per the <abbr>HTML</abbr> design:
               <a href="./error-enter-a-value-for-applications-no-assign.html" class="govuk-link govuk-link--no-visited-state" target="_blank">error-enter-a-value-for-applications-no-assign</a>
               <br>(This simpler message does not load with instructions)</li>
-            <li>The summary message hyperlink for selecting an application should target the first application checkbox (not the 'Select all' checkbox option). When the 'Select one or more applications to assign' error message is shown we also add the 'aria-describedby' attribute to each checkbox (as per the HTML design), except for the first 'Select all' checkbox option</li>
+            <li>The summary message hyperlink for selecting an application should target the first application checkbox (not the 'Select all' checkbox option). When the 'Select one or more applications to assign' error message is shown we also add the 'aria-describedby' attribute to each checkbox (as per the <abbr>HTML</abbr> design), except for the first 'Select all' checkbox option</li>
             <li><i>If no applications are returned we can point the error summary hyperlink to the ID on the H2 header title (#caseworker_worklist_heading) due to the absence of any applications to target</i></li>
             
         </ul> 
@@ -607,11 +607,11 @@
         <b>'Applications' are requred: </b> If the 'find' field has a value and the 'assign' field also has a value, then submitting the 'assign' field (using the assign button), the current form behaviour automatically submits the value in the 'find' field and returns the 'find' results. (When the results have already been returned the page resubmission can appear as though nothing has happened). 
 
         <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
-          <li>Currently,  a pink banner with the message “Select an application to assign.“ is returned.</li>
-          <li>Instead we should return the message and styling as per the HTML design: 
+          <li>Currently,  a pink banner with the message "Select an application to assign." is returned.</li>
+          <li>Instead we should return the message and styling as per the <abbr>HTML</abbr> design: 
             <a href="./error-enter-a-value-for-applications.html" class="govuk-link govuk-link--no-visited-state" target="_blank">error-enter-a-value-for-applications</a>
           </li> 
-          <li>The summary message hyperlink for selecting an application should target the first application checkbox (not the 'Select all' checkbox option). When the 'Select one or more applications to assign' error message is shown we also add the 'aria-describedby' attribute to each checkbox (as per the HTML design), except for the first 'Select all' checkbox option</li>
+          <li>The summary message hyperlink for selecting an application should target the first application checkbox (not the 'Select all' checkbox option). When the 'Select one or more applications to assign' error message is shown we also add the 'aria-describedby' attribute to each checkbox (as per the <abbr>HTML</abbr> design), except for the first 'Select all' checkbox option</li>
           <li><i>If no applications are returned we can point the error summary hyperlink to the ID on the H2 header title (#caseworker_worklist_heading) due to the absence of any applications to target</i></li>
           
         </ul>
@@ -637,17 +637,17 @@
     <p class="govuk-body-s"><b>For all pages displaying an form validation message: </b></p>
 
     <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16 govuk-!-margin-left-8">
-      <li>All error messages and summaries are presented as HTML within the HTML document - served from the server - and not as dynamically generated, or revealed, elements</li>
-      <li>The text and colon “Error: “ prepend the webpage document title</li>
-      <li>All error message text and visual presentation to match the HTML designs provided</li>
+      <li>All error messages and summaries are presented as <abbr>HTML</abbr> within the <abbr>HTML</abbr> document - served from the server - and not as dynamically generated, or revealed, elements</li>
+      <li>The text and colon "Error: " prepend the webpage document title</li>
+      <li>All error message text and visual presentation to match the <abbr>HTML</abbr> designs provided</li>
       
     </ul>
 
     <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-font-size-16">
 
-      <li>In the 'Find' field submit a blank field. The page should reload with error summary, error message and error text prepended to the HTML document (window) title as per the design. Text should match the text in the design. Hyperlinks in the error summary should move focus to the relevant form element, as per the HTML design. </li>
-      <li> If the 'find' field is empty and a value has been entered in the 'assign' field, then submitting the 'assign' field (using the assign button) refreshes the page with the error message for the empty 'find' field, as per the HTML design. Text should match the text in the design. The hyperlinks in the error summary should move focus to the relevant form element, as per the HTML design. “Error: “ text should be prepended to the HTML document (window) title. </li>
-      <li>When both 'find' and 'assign' fields do not have a value and the user submits the 'assign' field (using the assign button), the page refreshes with two error messages, as per the HTML design. Text should match the text in the design. Hyperlinks in the error summary should move focus to the relevant form element, as per the HTML design. “Error: “ text should be prepended to the HTML document (window) title. </li>
+      <li>In the 'Find' field submit a blank field. The page should reload with error summary, error message and error text prepended to the <abbr>HTML</abbr> document (window) title as per the design. Text should match the text in the design. Hyperlinks in the error summary should move focus to the relevant form element, as per the <abbr>HTML</abbr> design. </li>
+      <li> If the 'find' field is empty and a value has been entered in the 'assign' field, then submitting the 'assign' field (using the assign button) refreshes the page with the error message for the empty 'find' field, as per the <abbr>HTML</abbr> design. Text should match the text in the design. The hyperlinks in the error summary should move focus to the relevant form element, as per the <abbr>HTML</abbr> design. "Error: " text should be prepended to the <abbr>HTML</abbr> document (window) title. </li>
+      <li>When both 'find' and 'assign' fields do not have a value and the user submits the 'assign' field (using the assign button), the page refreshes with two error messages, as per the <abbr>HTML</abbr> design. Text should match the text in the design. Hyperlinks in the error summary should move focus to the relevant form element, as per the <abbr>HTML</abbr> design. "Error: " text should be prepended to the <abbr>HTML</abbr> document (window) title. </li>
       <li>If 'find' has a value, then submitting the 'assign' field without a value will submit the 'find' value and the page refreshes with the 'find' result. The error summary hyperlink targets the first application checkbox (not the 'Select all applications' checkbox). All checkboxes now include the 'aria-describedby' attribute pointing to the inline error message as per the design. </li>
       <li>If the 'find' field has a value and the 'assign' field also has a value, then submitting the 'assign' field (using the assign button), the current form behaviour automatically submits the value in the 'find' field and returns the 'find' result. Acceptance criteria matches number 4.</li>
       <li>
@@ -700,18 +700,18 @@
 
       <li>
         <b>Form timed out:</b> Currently when the form times out an 'Important' notification banner is added to the page reading: 
-        &quot;The form you were submitting has expired. Please try again.&quot; The styling is not quite correct (and we want to remove the word “Please”) and should match the HTML design as per the HTML. <br>
+        &quot;The form you were submitting has expired. Please try again.&quot; The styling is not quite correct (and we want to remove the word "Please") and should match the <abbr>HTML</abbr> design as per the <abbr>HTML</abbr>. <br>
         &bull; <a href="./banner-form-expired.html" class="govuk-link govuk-link--no-visited-state" target="_blank">banner-form-expired</a>
       </li>
 
       <li>
-        <b>Could not be assigned:</b> If a number of applications could not be assigned from [person 1] to [person 2] a standard message is currently shown - we are rehousing that message in the GDS compliant important notification banner.
+        <b>Could not be assigned:</b> If a number of applications could not be assigned from [person 1] to [person 2] a standard message is currently shown - we are rehousing that message in the <abbr>GDS</abbr> compliant important notification banner.
         <br>
         &bull; <a href="./results-could-not-be-assigned.html" class="govuk-link govuk-link--no-visited-state" target="_blank">results-could-not-be-assigned</a> (using an important banner)
       </li>
 
       <li>
-        <b>Assigned success:</b> If you have assigned [number] of applications from [person 1] to [person 2] a standard message is currently shown - we are rehousing that message in the GDS compliant important notification banner.
+        <b>Assigned success:</b> If you have assigned [number] of applications from [person 1] to [person 2] a standard message is currently shown - we are rehousing that message in the <abbr>GDS</abbr> compliant important notification banner.
         <br>
         &bull; <a href="./assigned-success.html" class="govuk-link govuk-link--no-visited-state" target="_blank">assigned-success</a> (using a success banner)
       </li>
@@ -729,7 +729,7 @@
       2. Home page
     </h2>
     
-    <p class="govuk-body-s">This HTML design shows the page after Production Information and Report an issue have been removed (from a seperate ticket).</p>
+    <p class="govuk-body-s">This <abbr>HTML</abbr> design shows the page after Production Information and Report an issue have been removed (from a seperate ticket).</p>
 
     <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-font-size-16">
       <li><a href="./home-pg.html" class="govuk-link govuk-link--no-visited-state" target="_blank">Home page</a></li>
@@ -745,9 +745,9 @@
         <p class="govuk-body-s">Issues resolved: </p>
         <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16">
           <li>On the main links, remove the title attributes from the 'a' tags</li>
-          <li>Check that this CSS has already been added to the CSS output from a previous WCAG ticket:<br>
+          <li>Check that this <abbr>CSS</abbr> has already been added to the <abbr>CSS</abbr> output from a previous WCAG ticket:<br>
             <pre>
-              /* temp updating hover states to match latest gds: STARTS */
+              /* temp updating hover states to match latest <abbr>GDS</abbr>: STARTS */
               .govuk-link, .govuk-details__summary-text {
                   text-decoration-thickness: max(1px,0.0625rem) !important;
                   text-underline-offset: 0.1578em !important;
@@ -757,10 +757,10 @@
                   text-decoration-thickness: max(3px,0.1875rem,0.12em) !important;
                   text-underline-offset: 0.1578em !important;
               }
-              /* temp updating hover states to match latest gds: ENDS */
+              /* temp updating hover states to match latest <abbr>GDS</abbr>: ENDS */
             </pre>
           </li>
-          <li>Add these styles to your CSS output (at the end); or embed into the home page body as per the HTML design:<br>
+          <li>Add these styles to your <abbr>CSS</abbr> output (at the end); or embed into the home page body as per the <abbr>HTML</abbr> design:<br>
             <pre>
                 .nav-panel {
                     padding: 0 !important; 
@@ -787,7 +787,7 @@
             </pre>
 
           </li>
-          <li>Correct upper/lowercase in 'Manage assigned work' link (as per HTML design)</li>
+          <li>Correct upper/lowercase in 'Manage assigned work' link (as per <abbr>HTML</abbr> design)</li>
           
         </ul>
       </div>
@@ -826,9 +826,9 @@
       <div class="govuk-details__text">
         <p class="govuk-body-s">Issues resolved:</p>
         <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16">
-          <li>Check if this CSS has been added to the build yet, if not, it is required: <br>
+          <li>Check if this <abbr>CSS</abbr> has been added to the build yet, if not, it is required: <br>
             <pre>
-              /* temp updating hover states to match latest gds: STARTS */
+              /* temp updating hover states to match latest <abbr>GDS</abbr>: STARTS */
               .govuk-link, .govuk-details__summary-text {
                   text-decoration-thickness: max(1px,0.0625rem) !important;
                   text-underline-offset: 0.1578em !important;
@@ -838,39 +838,39 @@
                   text-decoration-thickness: max(3px,0.1875rem,0.12em) !important;
                   text-underline-offset: 0.1578em !important;
               }
-              /* temp updating hover states to match latest gds: ENDS */
+              /* temp updating hover states to match latest <abbr>GDS</abbr>: ENDS */
 
 
             </pre><br>
             This will resolve link hover states.
           </li>
-          <li>In the HTML there is a 'noscript' tag block which includes the message "You must have JavaScript turned on to use this page". Remove this 'noscript' block.</li>
+          <li>In the <abbr>HTML</abbr> there is a 'noscript' tag block which includes the message "You must have JavaScript turned on to use this page". Remove this 'noscript' block.</li>
           <li>
             The 'Open' buttons: remove the title attribute and its text. (Keep the aria-label intact). The preview site is a hyperlink (not sure how or why the code I copied is an input?)
           </li>
           <li>
-            After each of the buttons and options running horizontally in the table menu, add &lt;span class="govuk-visually-hidden"&gt;|&lt;/span&gt; (as per the HTML)
+            After each of the buttons and options running horizontally in the table menu, add &lt;span class="govuk-visually-hidden"&gt;|&lt;/span&gt; (as per the <abbr>HTML</abbr>)
           </li>           
           <li>
             
             Obtain button: when a user has <a href="./my-worklist-obtained.html" class="govuk-link govuk-link--no-visited-state" target="_blank">zero applications</a> they can select the 'Obtain' button. The current behaviour uses JavaScript to alter the button state (making it disabled) and dynamically changing the button text to "Please wait ...". We need to remove the JavaScript which executes this from the build (as it is not required). Instead, the button will function unhindered and submit the request, with the page then returned with the updated content (exactly as it currently behaves without JavaScript) <br>
 
             <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16 govuk-!-margin-left-6">
-              <li><b>To discuss with the delivery team:</b> to replace the behaviour currently executed via a non-accessible JavaScript event, we want to determin if it is possible to set a timeout limit on this response. For example, if we are unable to serve a response/page within 8 seconds then we instead return the current page with a notfication banner included as per this design (and as per the HTML): <a href="./my-worklist-timed-out.html" class="govuk-link govuk-link--no-visited-state" target="_blank">My Worklist timed out</a>. (Note the HTML on the hyperlink)</li>
+              <li><b>To discuss with the delivery team:</b> to replace the behaviour currently executed via a non-accessible JavaScript event, we want to determin if it is possible to set a timeout limit on this response. For example, if we are unable to serve a response/page within 8 seconds then we instead return the current page with a notfication banner included as per this design (and as per the <abbr>HTML</abbr>): <a href="./my-worklist-timed-out.html" class="govuk-link govuk-link--no-visited-state" target="_blank">My Worklist timed out</a>. (Note the <abbr>HTML</abbr> on the hyperlink)</li>
             </ul> 
             
             <br>
-            When the 'Obtain' button is not required in the page, we currently still include the HTML but add a 'hidden' attribute. Ideally we should not include the redundant HTML when it isn't required, but alternatively we should not use the 'hidden' attribute (or the 'hidden' class in the class declarations), and instead simply update the type attribute to 'hidden' (when this element is not required).
+            When the 'Obtain' button is not required in the page, we currently still include the <abbr>HTML</abbr> but add a 'hidden' attribute. Ideally we should not include the redundant <abbr>HTML</abbr> when it isn't required, but alternatively we should not use the 'hidden' attribute (or the 'hidden' class in the class declarations), and instead simply update the type attribute to 'hidden' (when this element is not required).
 
           </li>
           <li>
             On the Obtain button, replace the class 'wf-button' with class 'govuk-button'
           </li>
           <li>The obtain button sits in a form element: add the 'novalidate' attribute to the form element. We should also add 'novalidate' to the 'Open' buttons forms. The row of menu links in the table is wrapped in a form tag - att 'novalidate' to this tag. And the progress later button form.</li>
-          <li>My Worklist: When there are zero Worklist applications in the Worklist application list the page still includes a table and nested THead set: if the number of Worklist applications is zero we do not want to include any table HTML.</li>
-          <li>Progress later: When there are zero applications in the progress later list the page still includes a table and nested header set: if the number of progress later applications is zero we do not want to include any table HTML.</li>
+          <li>My Worklist: When there are zero Worklist applications in the Worklist application list the page still includes a table and nested THead set: if the number of Worklist applications is zero we do not want to include any table <abbr>HTML</abbr>.</li>
+          <li>Progress later: When there are zero applications in the progress later list the page still includes a table and nested header set: if the number of progress later applications is zero we do not want to include any table <abbr>HTML</abbr>.</li>
           <li>
-            When there are zero Worklist applications, the following HTML is included in the page (which also has complications for assitive technologies regarding the 'hidden' attribute): we can remove this.<br>
+            When there are zero Worklist applications, the following <abbr>HTML</abbr> is included in the page (which also has complications for assitive technologies regarding the 'hidden' attribute): we can remove this.<br>
             <pre>
               &lt;div class="panel panel-border-narrow alert-success" hidden=""&gt;
                 &lt;p id="last_action_performed" class="govuk-body"&gt;
@@ -881,9 +881,9 @@
           
           </li>
           <li>On the hyperlink 'Change your category of work': remove the title attribute from this link and add class 'govuk-link--no-visited-state' to the 'govuk-link' class</li>
-          <li>On the 'More Info' links: we need to make each instance unique; this is done by adding the hidden context within each link, as per the HTML design</li>
+          <li>On the 'More Info' links: we need to make each instance unique; this is done by adding the hidden context within each link, as per the <abbr>HTML</abbr> design</li>
           <li>
-            Table captions (in both): Reuse the same logic which writes the number of applications (or application) in the H1 and H2 headers into the Table Caption tags with the additional text describing the table structure, as per the HTML design
+            Table captions (in both): Reuse the same logic which writes the number of applications (or application) in the H1 and H2 headers into the Table Caption tags with the additional text describing the table structure, as per the <abbr>HTML</abbr> design
           </li> 
           <li>
             Updates to the table menu links (adding classes) are also covered in Jira ticket <a href="https://hmlandregistry.atlassian.net/browse/AMW-3144" class="govuk-link govuk-link--no-visited-state" target="_blank">#3144</a>            
@@ -898,29 +898,29 @@
             
           </li> 
           <li>
-            'Defer' links: remove the title attribute and instead include part of that text as hidden text within the hyperlink, as per the HTML design
+            'Defer' links: remove the title attribute and instead include part of that text as hidden text within the hyperlink, as per the <abbr>HTML</abbr> design
           </li>
           <li>
-            'Refer' links: remove the title attribute and instead include part of that text as hidden text within the hyperlink, as per the HTML design
+            'Refer' links: remove the title attribute and instead include part of that text as hidden text within the hyperlink, as per the <abbr>HTML</abbr> design
           </li>  
           <li>
-            'View activity history' links: remove the title <b>and</b> the aria-label attributes and instead include part of that text as hidden text within the hyperlink, as per the HTML design
+            'View activity history' links: remove the title <b>and</b> the aria-label attributes and instead include part of that text as hidden text within the hyperlink, as per the <abbr>HTML</abbr> design
           </li>
           <li>
-            'Return to ESRV' links: remove the title <b>and</b> the aria-label attributes and instead include part of that text as hidden text within the hyperlink, as per the HTML design. The ESRV links require additional HTML wrapping the ESRV text, and no space between the span tags, as per the HTML design.
+            'Return to ESRV' links: remove the title <b>and</b> the aria-label attributes and instead include part of that text as hidden text within the hyperlink, as per the <abbr>HTML</abbr> design. The ESRV links require additional <abbr>HTML</abbr> wrapping the ESRV text, and no space between the span tags, as per the <abbr>HTML</abbr> design.
           </li>  
           <li>
-            There are hidden input elements (used for maintaining states) and menu "links" (which are input elements) which are hidden (as they aren't always required in the menu): these are currently hidden using a 'hidden' CSS class and a 'hidden' attribute. These should be updated to instead utilse the type attribute which is changed to 'hidden'. <br><br>
-            On the hidden input elements (for maintaining states); remove the CSS 'hidden' and 'hidden' attribute and change the type to 'hidden'.<br<br>
-            For the "links", with are hidden according to context, instead of using CSS 'hidden' classes and 'hidden' attributes to hide them (when not required), we should update the type status to 'hidden' instead.
+            There are hidden input elements (used for maintaining states) and menu "links" (which are input elements) which are hidden (as they aren't always required in the menu): these are currently hidden using a 'hidden' <abbr>CSS</abbr> class and a 'hidden' attribute. These should be updated to instead utilse the type attribute which is changed to 'hidden'. <br><br>
+            On the hidden input elements (for maintaining states); remove the <abbr>CSS</abbr> 'hidden' and 'hidden' attribute and change the type to 'hidden'.<br<br>
+            For the "links", with are hidden according to context, instead of using <abbr>CSS</abbr> 'hidden' classes and 'hidden' attributes to hide them (when not required), we should update the type status to 'hidden' instead.
           </li>
           <li>Where the links are hyperlinks (including the 'More info' links), ensure they have the class 'govuk-link' and 'govuk-link--no-visited-state'</li>          
           <li>
-            'Show attached applications' hyperlinks: (And the equivalent 'Hide attached applications' hyperlinks). Make accessibility and GDS compliant
+            'Show attached applications' hyperlinks: (And the equivalent 'Hide attached applications' hyperlinks). Make accessibility and <abbr>GDS</abbr> compliant
             <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
-              <li>Update the plus (and minus) symbols, to use a HTML symbol code, as per the HTML example</li>
+              <li>Update the plus (and minus) symbols, to use a <abbr>HTML</abbr> symbol code, as per the <abbr>HTML</abbr> example</li>
               <li>Add the class 'govuk-link' to the button tag</li>
-              <li>Add the hidden span within the hyperlink content - a visually hidden span describing the application number - as per the HTML example</li>
+              <li>Add the hidden span within the hyperlink content - a visually hidden span describing the application number - as per the <abbr>HTML</abbr> example</li>
               <li>Remove any title attribute from the button/hyperlink</li>
             </ul>
           </li>
@@ -931,7 +931,7 @@
               <li>There is an issue with this functionality as it requires JavaScript support to function (and reveal the attached applications)... </li>
               <li>The solution, as recently implimented in Manage Assigned Work, is: the link submits (a hidden input value) to itself for the page to simply reload with the previously hidden table row(s), or applications, now showing in the page (by not including the inline 'hidden' attribute, and vice versa). i.e., a round trip post to the server to include or omit these attached application rows. (The plus &amp; minus and show/hide words in the hyperlink would also be updated by simply hardcoding them in the page output). </li>
               <li><i>This resolves the accessibility issue. If means the related JavaScript should then be removed from the build. </i></li>
-              <li><i>Note: the HTML example does not demonstrate the current Show/Hide functionality - this needs to be observed on the Preview service where there is an application with an attached application. </i></li>
+              <li><i>Note: the <abbr>HTML</abbr> example does not demonstrate the current Show/Hide functionality - this needs to be observed on the Preview service where there is an application with an attached application. </i></li>
               
             </ul>
           </li>
@@ -939,14 +939,14 @@
             In the category column of the table, where the text "Executive Register Update Standard" is included in each cell, remove the 'ABBR' tags which wrap it
           </li>
           <li>
-            <b>Worklist Obtain button: concurrency issue:</b> As per <a href="./my-worklist-obtain-concurrency.html" class="govuk-link govuk-link--no-visited-state" target="_blank">the HTML design</a> - this might change (TBC). When this issue occurs the page is refreshed with the information panel included.
+            <b>Worklist Obtain button: concurrency issue:</b> As per <a href="./my-worklist-obtain-concurrency.html" class="govuk-link govuk-link--no-visited-state" target="_blank">the <abbr>HTML</abbr> design</a> - this might change (TBC). When this issue occurs the page is refreshed with the information panel included.
           </li> 
           <li>
             <b>Update banner messages: </b>there is currently the behaviour of showing confirmation panels (within the page) confirming if and when applications have been updated (for example, 'progress later'); see list below. This relies upon JavaScript and it is a known issue that these updates often lag in time significantly and typically cause confusion when they are 'fired/served' inappropriately when the user has already instigated a different action on a different application. The use of JavaScript to impliment this is also non-accessible. 
             
             <br><br>
 
-            We wish to propose (investigate) changing how this functionality is executed. Instead, when the page is refreshed (reloaded) we <a href="./my-worklist-obtain-success-obtained.html" class="govuk-link govuk-link--no-visited-state" target="_blank">use a standard GDS notification banner</a> added to the top of the page. (The current messages are rehoused in the new notification banner, as is, and as demonstrated). However, this issue remains that the action may not have completed before the page is returned? 
+            We wish to propose (investigate) changing how this functionality is executed. Instead, when the page is refreshed (reloaded) we <a href="./my-worklist-obtain-success-obtained.html" class="govuk-link govuk-link--no-visited-state" target="_blank">use a standard <abbr>GDS</abbr> notification banner</a> added to the top of the page. (The current messages are rehoused in the new notification banner, as is, and as demonstrated). However, this issue remains that the action may not have completed before the page is returned? 
 
             <br><br>
             This list of messages appear to be: <br>
@@ -991,7 +991,7 @@
 
         <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-14">
           <li>Not sure why there are 'headers' in this simple table, but this is beyond the immediate scope of this work</li>
-          <li>Multiple green buttons on the same page is a GDS issue and beyond the scope of this work</li>
+          <li>Multiple green buttons on the same page is a <abbr>GDS</abbr> issue and beyond the scope of this work</li>
           <li>Dates and the menu links not having a semantic structure is beyond the scope of this work</li>
         </ul>
         
@@ -1049,7 +1049,7 @@
       <div class="govuk-details__text">
         <p class="govuk-body-s">Issues resolved:</p>
         <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16">
-          <li>There is an inappropriate use of fielset and legend, so we need to update the HTML structure of the HTML used to layout the form (as per the HTML design), including the use of '.govuk-form-group' and '.govuk-label-wrapper'. These updates include: <br>
+          <li>There is an inappropriate use of fielset and legend, so we need to update the <abbr>HTML</abbr> structure of the <abbr>HTML</abbr> used to layout the form (as per the <abbr>HTML</abbr> design), including the use of '.govuk-form-group' and '.govuk-label-wrapper'. These updates include: <br>
 
             <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
               <li>Remove the placeholder attribute form the input field</li>
@@ -1057,7 +1057,7 @@
               <li>On the input field change the style class to 'govuk-input' and 'govuk-input--width-10'</li>
               <li>On the input field add spellcheck false</li>
               <li>Add classes 'govuk-button' and 'govuk-!-margin-bottom-0' to the search button</li>
-              <li>This may already have been done on the manage assigned work ticket: On the search button, add !important to the width CSS declaration for the 'search-button' class in the workflow CSS/SASS file and add max-height: 38px;</li>
+              <li>This may already have been done on the manage assigned work ticket: On the search button, add !important to the width <abbr>CSS</abbr> declaration for the 'search-button' class in the workflow <abbr>CSS</abbr>/SASS file and add max-height: 38px;</li>
             </ul>
 
           </li>
@@ -1103,7 +1103,7 @@
       <li>
         <a href="./search-with-results.html" class="govuk-link govuk-link--no-visited-state" target="_blank">
           Search page - with results
-        </a>. HTML guide for results returned - standard page.
+        </a>. <abbr>HTML</abbr> guide for results returned - standard page.
       </li>
 
     </ol>  
@@ -1118,7 +1118,7 @@
         <p class="govuk-body-s">Issues resolved:</p>
         <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16">
           <li>
-            Remove from the HTML output: <br>
+            Remove from the <abbr>HTML</abbr> output: <br>
             <pre>
               &lt;div class="panel panel-border-narrow alert-success" hidden="" &gt;
                 &lt;p id="last_action_performed" class="govuk-body" &gt;
@@ -1133,9 +1133,9 @@
           <li>On the 'Add expedite' button change the title attribute to be a 'aria-label'.</li>
           <li>Add class 'govuk-link' to the 'Add expedite' button.</li>
           <li>Add class 'govuk-link--no-visited-state' to the 'View activity history' link.</li>
-          <li>Remove from the 'View activity history' link the title attribute and the 'aria-label' attribute, but update the content of the hyperlink with the value in the hidden nested span as per the HTML design.</li>
+          <li>Remove from the 'View activity history' link the title attribute and the 'aria-label' attribute, but update the content of the hyperlink with the value in the hidden nested span as per the <abbr>HTML</abbr> design.</li>
           <li>Remove the ABBR tag (and its title attribute) from the table content "Application Processing: Executive Register Update Standard" (and similar)</li>
-          <li>Update the HTML table caption tag to read "Results presented in a 7 column table."</li>
+          <li>Update the <abbr>HTML</abbr> table caption tag to read "Results presented in a 7 column table."</li>
         </ul>
       </div>
     </details>
@@ -1167,22 +1167,22 @@
       <div class="govuk-details__text">
         <p class="govuk-body-s">Issues resolved:</p>
         <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-font-size-16">
-          <li>We are replacing the legacy autocomplete with the new version, as installed on the recently updated Manage assigned work pages. This includes adding the noscript hidden form, as done on the Manage assigned work page. The required CSS should now already be within the production CSS (but I have re-included it here within the body of the prototype).</li>
+          <li>We are replacing the legacy autocomplete with the new version, as installed on the recently updated Manage assigned work pages. This includes adding the noscript hidden form, as done on the Manage assigned work page. The required <abbr>CSS</abbr> should now already be within the production <abbr>CSS</abbr> (but I have re-included it here within the body of the prototype).</li>
           <li>On the Manage assigned work, we created seperate instances for this autocomplete: that can be updated, so as not to duplicate code.</li>
-          <li>For (dev) reference - we are basically reusing the same HTML as on the 'Find' input form (Manage assigned work) but without the 'search-button' class on the button.</li>
+          <li>For (dev) reference - we are basically reusing the same <abbr>HTML</abbr> as on the 'Find' input form (Manage assigned work) but without the 'search-button' class on the button.</li>
           <li>Remove the bold class from the label tag and use the nested spans (with a class of 'govuk-!-font-weight-bold'): if we can't insert the nested spans, then we'll have to omit styling those inline numbers.</li>
           <li>Replace class 'search-labels' on the label with classes 'govuk-label govuk-!-font-size-16', to emulate the current design</li>
           <li>Remove the placeholder attribute from the text input field tag</li>
           <li>Remove the title attribute from the text input field tag</li>  
           <li>Remove ' size="30"' from the text input field tag and add class 'govuk-!-width-one-half'</li>
           <li>Remove the 'spin' span tags</li>
-          <li>While we're here: swap the 'bold' style class on the span to 'govuk-!-font-weight-bold' (which will maintain GDS styles under different scenarios)</li>
+          <li>While we're here: swap the 'bold' style class on the span to 'govuk-!-font-weight-bold' (which will maintain <abbr>GDS</abbr> styles under different scenarios)</li>
           <li>Add 'novalidate' to the form element</li>
           <li>Ensure this page/row uses 'govuk-grid-column-two-thirds' and not 'govuk-grid-column-one-half'. Its fine if this also updates the defer page.</li>
           <li>Add 'govuk-link--no-visited-state' class to the 'Go back ...' hyperlink</li>
           <li></li>
           <li>An error message has been created to demonstrate the error message for submitting a blank entry (as this is a required field). <br><br>(The input label text is not ideal, and 'grates' against the error message, but redesigning the form and label is beyond the scope of this <abbr>WCAG</abbr>work). </li>
-          <li>(Here, we are maintaining the current design/layout, but an improved form design - using the recommended GDS HTML structure - is out of scope for this accessibility work).</li>
+          <li>(Here, we are maintaining the current design/layout, but an improved form design - using the recommended <abbr>GDS</abbr> <abbr>HTML</abbr> structure - is out of scope for this accessibility work).</li>
                 
         </ol>          
       </div>
@@ -1195,7 +1195,7 @@
     </h2>
 
     <p class="govuk-body-s">
-      Updates to the form page - formatting and content/text changes. Introduction of GDS error messages (replacing the use of JavaScript disabling of submit button before selections are made).
+      Updates to the form page - formatting and content/text changes. Introduction of <abbr>GDS</abbr> error messages (replacing the use of JavaScript disabling of submit button before selections are made).
     </p>
 
     <p class="govuk-body-s">
@@ -1224,11 +1224,11 @@
 
           <li>Replace the breadcrumb with 'Back' link</li>
 
-          <li>Update the H1 text (as per the HTML design)</li>
+          <li>Update the H1 text (as per the <abbr>HTML</abbr> design)</li>
 
-            <li>Ensure the classes used on the Legend and H1 tags are updated to match the HTML design</li>
+            <li>Ensure the classes used on the Legend and H1 tags are updated to match the <abbr>HTML</abbr> design</li>
 
-              <li>Put button into GDS HTML structure (as per the HTML design)</li>
+              <li>Put button into <abbr>GDS</abbr> <abbr>HTML</abbr> structure (as per the <abbr>HTML</abbr> design)</li>
 
                 <li>Change button text to 'Select'</li>
 
@@ -1236,17 +1236,17 @@
 
                     <li>Remove the disabling of the main button (which becomes enabled once a selection is made); by removing the JavaScript from the build</li>
 
-                      <li>Instead we will implement conventional GDS form validation: a selection is required “Select a deferral reason” (as per error message HTML design)</li>
+                      <li>Instead we will implement conventional <abbr>GDS</abbr> form validation: a selection is required "Select a deferral reason" (as per error message <abbr>HTML</abbr> design)</li>
 
                         <li>Clicking the error summary statement should move the browser focus to the first radio button option at the top of the list</li>
 
-                          <li>GDS error messages, include: doc title prepended with “Error: “, left red bar, summary banner, inline error message, aria-describedby on fieldset linked to the inline error message</li>
+                          <li><abbr>GDS</abbr> error messages, include: doc title prepended with "Error: ", left red bar, summary banner, inline error message, aria-describedby on fieldset linked to the inline error message</li>
 
-                            <li>If not already - remove the hidden 'noscript' HTML block (which includes the message “You must have JavaScript turned on to use this page")</li>
+                            <li>If not already - remove the hidden 'noscript' <abbr>HTML</abbr> block (which includes the message "You must have JavaScript turned on to use this page")</li>
 
                               <li>Add 'novalidate' to the form tag</li>
 
-                                <li>Ensure the page structure matches the HTML design: grid-row and column-two-thirds</li>
+                                <li>Ensure the page structure matches the <abbr>HTML</abbr> design: grid-row and column-two-thirds</li>
 
                                   <li>This may no longer be required as ticket #3746 (which reformatted the banners to use an aria-live Section element), but the DIV (with classes 'govuk-error-summary half-width') located below the main H1 should now not be needed having been replaced with the recent update. </li>
         </ul>
@@ -1259,31 +1259,7 @@
       8. Activity history
     </h2>
 
-    <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-font-size-16">
-      <li><a href="#" class="govuk-link govuk-link--no-visited-state" target="_blank">xxx</a></li>
-      <li></li>
-      <li></li>
-    </ol>   
-    
-    <details class="govuk-details  govuk-!-font-size-16">
-      <summary class="govuk-details__summary">
-        <span class="govuk-details__summary-text">
-          Activity history details
-        </span>
-      </summary>
-      <div class="govuk-details__text">
-        <p class="govuk-body-s">Issues resolved:</p>
-        <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          
-        </ul>
-      </div>
-    </details>
+    <p class="govuk-body-s">No <abbr>WCAG</abbr> work required.</p>
 
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">    
     
@@ -1325,31 +1301,9 @@
       10. Accessibility statement
     </h2>
 
-    <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-font-size-16">
-      <li><a href="#" class="govuk-link govuk-link--no-visited-state" target="_blank">xxx</a></li>
-      <li></li>
-      <li></li>
-    </ol>     
-    
-    <details class="govuk-details  govuk-!-font-size-16">
-      <summary class="govuk-details__summary">
-        <span class="govuk-details__summary-text">
-          Accessibility statement details
-        </span>
-      </summary>
-      <div class="govuk-details__text">
-        <p class="govuk-body-s">Issues resolved:</p>
-        <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          
-        </ul>
-      </div>
-    </details>
+    <p class="govuk-body-s">The Accessibility page (and Cookies - see 12. below) requires a Back link. (Recent user-testing revealed that not everyone knows that the logo/title in the header is a link to the homepage). If it isn't possible to return to the previous page then we should use a breadcrumb. (The "Home" text to be made a link to the homepage).</p>
+
+    <p class="govuk-body-s">In Jira this was combined with Cookies page work under: "Final accessibility updates"</p>
 
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">    
 
@@ -1382,19 +1336,19 @@
           <li>In the header: 
 
             <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16">
-              <li>Add new CSS 'hmlr-header-wf--temp-style' style class to the 'govuk-header__link' A tag/hyperlink (which wraps the image)</li>
+              <li>Add new <abbr>CSS</abbr> 'hmlr-header-wf--temp-style' style class to the 'govuk-header__link' A tag/hyperlink (which wraps the image)</li>
           
               <li>Edit the visually hidden text from 'Opens in a new window' to 'opens in new tab', all in lowercase</li>
   
-              <li>Remove the “visuallyhidden” span tag which currently wraps the 'Opens in a new window' text</li>
+              <li>Remove the "visuallyhidden" span tag which currently wraps the 'Opens in a new window' text</li>
   
-              <li>Remove the title attribute from the A tag/hyperlink which contains the “Report an issue …” text </li>
+              <li>Remove the title attribute from the A tag/hyperlink which contains the "Report an issue …" text </li>
   
-              <li>Remove the CSS 'opens-in-new-window' style class from the A tag/hyperlink which contains the “Report an issue …” text </li>
+              <li>Remove the <abbr>CSS</abbr> 'opens-in-new-window' style class from the A tag/hyperlink which contains the "Report an issue …" text </li>
   
-              <li>Add the new CSS 'hmlr-header-link-wf--temp-style' style class to the 'header-link' A tag hyperlink which contains the “Report an issue …” text</li>
+              <li>Add the new <abbr>CSS</abbr> 'hmlr-header-link-wf--temp-style' style class to the 'header-link' A tag hyperlink which contains the "Report an issue …" text</li>
   
-              <li>To fix the header links active state styling, add the "temp styling for the proprietary Workflow header" CSS as provided within the HTML design </li>              
+              <li>To fix the header links active state styling, add the "temp styling for the proprietary Workflow header" <abbr>CSS</abbr> as provided within the <abbr>HTML</abbr> design </li>              
             </ul>
 
           </li>
@@ -1402,7 +1356,7 @@
           <li>Breadcrumb: 
 
             <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16">
-              <li>To fix the breadcrumb styling and active state styling, add the "temp breadcrumb fix to apply modern gds style" CSS styles provided within the HTML design asset</li>
+              <li>To fix the breadcrumb styling and active state styling, add the "temp breadcrumb fix to apply modern <abbr>GDS</abbr> style" <abbr>CSS</abbr> styles provided within the <abbr>HTML</abbr> design asset</li>
             </ul>
 
           </li>
@@ -1419,29 +1373,24 @@
       12. Cookies
     </h2>
 
-    <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-font-size-16">
-      <li><a href="#" class="govuk-link govuk-link--no-visited-state" target="_blank">xxx</a></li>
-    </ol>     
+    <p class="govuk-body-s">In common.<abbr>SCSS</abbr> there is a block of <abbr>CSS</abbr> styling targeting the <abbr>HTML</abbr> table element 'caption' which "hides" the content of all 'captions'. (This is illogical as we require the use of 'captions' for new form pages going forward and in this instance the techniques being used aren't advisable for accessibility)*. The <abbr>CSS</abbr> used in common.<abbr>SCSS</abbr> for 'caption' should be updated to (replaced with):</p>
+
+    <p class="govuk-body-s" style="font-size: 90%;"><code>
+      caption {clip: rect(0 0 0 0) !important; -webkit-clip-path: inset(50%) !important; clip-path: inset(50%) !important; height: 1px !important; margin: 0 !important; overflow: hidden !important; position: absolute !important; white-space: nowrap !important; width: 1px !important; }
+    </code></p>   
     
-    <details class="govuk-details  govuk-!-font-size-16">
-      <summary class="govuk-details__summary">
-        <span class="govuk-details__summary-text">
-          Cookies details
-        </span>
-      </summary>
-      <div class="govuk-details__text">
-        <p class="govuk-body-s">Issues resolved:</p>
-        <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          
-        </ul>
-      </div>
-    </details>
+    <p class="govuk-body-s">This is the same <abbr>CSS</abbr> styling used by the <abbr>GDS</abbr> system for this purpose. </p>
+
+    <p class="govuk-body-s" style="font-size: 80%;">
+    <sup>*</sup>This could be some tech debt: we should add the <abbr>GDS</abbr> 'govuk-visually-hidden' style class to the caption elements in the tables in Worklist and the search results pages (and then remove entirely the bespoke <abbr>CSS</abbr> styles which explicitly target the caption elements, referenced above); as we may want to use the table caption in the future? Discuss! 
+    </p>
+
+    <p class="govuk-body-s">The Cookies (and Accessibility page) requires a Back link. (Recent user-testing revealed that not everyone knows that the logo/title in the header is a link to the homepage). If it isn't possible to return to the previous page then we should use a breadcrumb: "Home > Cookies" on both pages. (The "Home" text to be made a link to the homepage).</p>
+   
+    <p class="govuk-body-s">In Jira this was combined with Cookies page work under: "Final accessibility updates"</p>
+
+    <p class="govuk-body-s" style="font-size: 80%;">The mark-up in activity later, cookies and the accessibility page could be improved but there is nothing else which fails or blocks accessibility.</p>
+
 
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">    
 
@@ -1470,25 +1419,25 @@
       <div class="govuk-details__text">
         <p class="govuk-body-s">1). The basic page: changes to the UI structure:</p>
         <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16">
-          <li>Add the GDS grid system, using 'govuk-grid-column-three-quarters' on this page (as per the HTML design example)</li>
+          <li>Add the <abbr>GDS</abbr> grid system, using 'govuk-grid-column-three-quarters' on this page (as per the <abbr>HTML</abbr> design example)</li>
 
-          <li>Due to the nature of the existing page/form design - with grouped radio button options along with inline sub-headings - this HTML on this page should be restructured using nested Fieldsets (as per the HTML design example). i.e., Each of the 5 groups sit within their own Fieldset (with Legends), placed within the one parent Fieldset (using a H1 header within a legend), as per the new HTML design. [This structure is also required to support the GDS error message logic]. </li>
+          <li>Due to the nature of the existing page/form design - with grouped radio button options along with inline sub-headings - this <abbr>HTML</abbr> on this page should be restructured using nested Fieldsets (as per the <abbr>HTML</abbr> design example). i.e., Each of the 5 groups sit within their own Fieldset (with Legends), placed within the one parent Fieldset (using a H1 header within a legend), as per the new <abbr>HTML</abbr> design. [This structure is also required to support the <abbr>GDS</abbr> error message logic]. </li>
 
             <li>Add 'novalidate' to the form tag</li>
 
               <li>Individual abbreviations within the form labels should be wrapped in an ABBR tag. (Sometimes there are double or triple abbreviations, such as <abbr>VCO</abbr> <abbr>ADR</abbr> in a single label)</li>
 
-                <li>Note: because we can only use one 'div.govuk-form-group' to wrap all the Fieldsets (for the GDS error message styling) we need to add the margin-bottom class to each Fieldset (and a margin class on the main H1 tag, or parent legend)</li>
+                <li>Note: because we can only use one 'div.govuk-form-group' to wrap all the Fieldsets (for the <abbr>GDS</abbr> error message styling) we need to add the margin-bottom class to each Fieldset (and a margin class on the main H1 tag, or parent legend)</li>
 
-                  <li>While we're here, we'll also take the opportunity to simply add the 'govuk-radios--small' style class to the radio buttons list to reduce the size of the radio buttons - because the list of options is so long/extensive and because the GDS design system recommends it: "Small radios can work well on information dense screens in services designed for repeat use, like case-working systems."</li>
+                  <li>While we're here, we'll also take the opportunity to simply add the 'govuk-radios--small' style class to the radio buttons list to reduce the size of the radio buttons - because the list of options is so long/extensive and because the <abbr>GDS</abbr> design system recommends it: "Small radios can work well on information dense screens in services designed for repeat use, like case-working systems."</li>
          
         </ul>
 
         <p class="govuk-body-s">2). The error message: implement form validation: On the preview site, there doesn't appear to be any form validation on this page? (The page simply redirecting to the workflow page isn't accessibility compliant).</p>
 
-        <p class="govuk-body-s">Selecting an option is a requirement. If not selection is made we refresh the page with a GDS error message (all as per the HTML design): </p>
+        <p class="govuk-body-s">Selecting an option is a requirement. If not selection is made we refresh the page with a <abbr>GDS</abbr> error message (all as per the <abbr>HTML</abbr> design): </p>
         <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16">
-          <li>“Error: “ is prepended to the document title</li>
+          <li>"Error: " is prepended to the document title</li>
 
           <li>An error summary banner is placed at the top of the page</li>
           
@@ -1504,42 +1453,14 @@
           
           <p class="govuk-body-s">3). Notification banner: ensure the action is fed back: </p>
 
-          <p class="govuk-body-s">When the user submits the form they are returned to the Worklist page where a notification banner is included - as per the design - confirming success.  The dynamic content as currently used, remains unchanged, but the HTML has been updated, as per the design. The statement text has been updated to include the word 'now' (as per the design) and the space before the colon in the title is removed (as per the design).  We are also removing the hyperlink 'Change your category of work' which currently features in the confirmation banner (as this is repeated directly below, is not part of the confirmation banner function, and the duplication creates a new set of accessibility issues).</p>
+          <p class="govuk-body-s">When the user submits the form they are returned to the Worklist page where a notification banner is included - as per the design - confirming success.  The dynamic content as currently used, remains unchanged, but the <abbr>HTML</abbr> has been updated, as per the design. The statement text has been updated to include the word 'now' (as per the design) and the space before the colon in the title is removed (as per the design).  We are also removing the hyperlink 'Change your category of work' which currently features in the confirmation banner (as this is repeated directly below, is not part of the confirmation banner function, and the duplication creates a new set of accessibility issues).</p>
           
       </div>
     </details>    
 
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">    
 
-    <h2 class="govuk-heading-m">
-      14. Accessibility statement
-    </h2>
-
-    <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-font-size-16">
-      <li><a href="#" class="govuk-link govuk-link--no-visited-state" target="_blank">xxx</a></li>
-    </ol>     
-    
-    <details class="govuk-details  govuk-!-font-size-16">
-      <summary class="govuk-details__summary">
-        <span class="govuk-details__summary-text">
-          Accessibility statement details
-        </span>
-      </summary>
-      <div class="govuk-details__text">
-        <p class="govuk-body-s">Issues resolved:</p>
-        <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          
-        </ul>
-      </div>
-    </details>    
-
-    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">        
+       
 
     <!--hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"-->
 
