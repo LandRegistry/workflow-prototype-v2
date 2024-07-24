@@ -19,22 +19,6 @@
 
 {% block content %}
 
-  <section id="pleaseWaitTarget" aria-live="assertive">
-
-      <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-        <div class="govuk-notification-banner__header">
-          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-            Success
-          </h2>
-        </div>
-        <div class="govuk-notification-banner__content">
-          <p class="govuk-notification-banner__heading">
-            You have obtained application DT174671 / K359SWW
-          </p>
-        </div>        
-      </div>
-
-  </section>
   
   <div id="worklist_page">
     <meta property="proc_party" content="1510">
@@ -48,12 +32,9 @@
   
       </h1>
   
-      <p class="govuk-body">
-        
-        Your category of work is <span class="bold">Application Processing: Executive Register Update Standard</span>.
-        
-        <a href="#" class="govuk-link govuk-link--no-visited-state">Change your category of work</a>.
-      </p>
+      <div class="govuk-inset-text">
+        This page demonstrates our own <abbr>AMW</abbr> "prevent double click" JavaScript code (while our <abbr>GDS</abbr> library version does not support the "data-prevent-double-click='true'"). This demo page features <b>two</b> buttons simply to make the JavaScript button functionality for other instances where multiple buttons on the same page might require the 'stop double click' functionality.
+      </div>
       
       
       <table id="progress_now_table" class="govuk-table worklist__table ">
@@ -165,7 +146,7 @@
           
             <input name="csrf_token" type="hidden" value="IjI2YzBiY2QwNzJiZjE0M2M3MDMxZGQ1M2UyMTBkMDNhMWE3YTdiZmYi.ZdYZDA.PHMOSAvho5tJKgE5EQe9HLJdBz8">
           
-          <input aria-label="Open CORA to start processing case E365VWW" type="submit" id="open_btn_E365VWW" class="govuk-button" value="Open">
+          <input aria-label="Open CORA to start processing case E365VWW" type="submit" id="open_btn_E365VWW" class="govuk-button hmlr-wf-prevent-double-click" value="Open xxx">
       </form>
   
                           
@@ -207,39 +188,39 @@
   
                           
       <a class="govuk-link case__refer-link case__anchor govuk-!-font-size-16" title="Refer case: E365VWW" href="refer?lr_work_ref=E365VWW&amp;lr_ref_number=DU164997">
-        Refer <span class="govuk-visually-hidden">case <abbr>E365VWW</abbr></span>
+        Refer <span class="govuk-visually-hidden">case <abbr>E365VWX</abbr></span>
       </a>
   
   
       <span class="govuk-visually-hidden">|</span>       
                      
-      <input aria-label="Move case E365VWW into your worklist" id="btn_progress_now_10628" type="submit" name="Work_on_this" class="govuk-link case__hyperlink case__progress-now-btn govuk-!-font-size-16" value="Work on this">
+      <input aria-label="Move case E365VWX into your worklist" id="btn_progress_now_10628" type="submit" name="Work_on_this" class="govuk-link case__hyperlink case__progress-now-btn govuk-!-font-size-16" value="Work on this">
 
       <span class="govuk-visually-hidden">|</span>       
 
       <!-- *** -->
  
                           
-          <input id="btn_progress_later_10628" aria-label="Progress case E365VWW later" type="submit" name="Progress_later" class="govuk-link case__hyperlink case__progress-later-btn govuk-!-font-size-16" value="Progress later">
+          <input id="btn_progress_later_10628" aria-label="Progress case E365VWX later" type="submit" name="Progress_later" class="govuk-link case__hyperlink case__progress-later-btn govuk-!-font-size-16" value="Progress later">
   
           <span class="govuk-visually-hidden">|</span>       
                           
       <a class="govuk-link case__defer-link case__anchor govuk-!-font-size-16" href="deferral-category-option?lr_work_ref=E365VWW&amp;lr_ref_number=DU164997&amp;client=">
-        Defer <span class="govuk-visually-hidden">case <abbr>E365VWW</abbr></span>
+        Defer <span class="govuk-visually-hidden">case <abbr>E365VWX</abbr></span>
       </a>
   
       <span class="govuk-visually-hidden">|</span>                     
   
                       
                           
-      <a class="govuk-link case__activity-history-link case__anchor govuk-!-font-size-16 ga_track_event" href="activity-history/10628?page_no=1&amp;return_to=worklist" id="link_activity_history_E365VWW" data-ga-category="Activity_History_Link_From_Worklist" data-ga-action="Activity History link clicked from worklist page" data-ga-label="Worklist_Activity_History_Link">
-        View activity history <span class="govuk-visually-hidden">for <abbr>E365VWW</abbr></span>
+      <a class="govuk-link case__activity-history-link case__anchor govuk-!-font-size-16 ga_track_event" href="activity-history/10628?page_no=1&amp;return_to=worklist" id="link_activity_history_E365VWX" data-ga-category="Activity_History_Link_From_Worklist" data-ga-action="Activity History link clicked from worklist page" data-ga-label="Worklist_Activity_History_Link">
+        View activity history <span class="govuk-visually-hidden">for <abbr>E365VWX</abbr></span>
       </a>
 
       <span class="govuk-visually-hidden">|</span>       
                           
       <a href="#" class="govuk-link case__more-info-link case__anchor govuk-!-font-size-16" target="_blank">
-          More info<span class="govuk-visually-hidden">: open daylist for case <abbr>N619SWW</abbr>. Opens in new tab.</span>
+          More info<span class="govuk-visually-hidden">: open daylist for case <abbr>N619SWX</abbr>. Opens in new tab.</span>
       </a>
 
       <span class="govuk-visually-hidden">|</span>       
@@ -257,6 +238,184 @@
           </tr>
           
       </tbody>
+
+      <tbody data-case-ref="E365VWW" class="case case--parent ">
+        <tr id="row_10628" class="govuk-table__row case__data_row ">
+
+            
+    <td class="case__date" id="E365VWW_priority_date" headers="progress_now_priority_dates">
+        
+          
+          22 January 2024
+          
+        
+    </td>
+
+
+            
+    <td class="case__title-number" id="E365VWW_title_number" headers="progress_now_title_numbers">
+        
+            <span class="case__inc">
+                    
+            </span>
+            DU164997
+            
+        
+    </td>
+
+
+            
+    <td id="E365VWX_abr" class="case__abr" headers="progress_now_abrs">
+        
+        E365VWX
+        
+        <div>
+              Leading application
+        </div>
+    </td>
+
+
+            
+    <td id="E365VWX_cat" class="case__category" headers="progress_now_categories">
+        
+        
+        
+        
+          Executive Register Update Standard
+
+        
+    </td>
+
+
+            
+    <td class="case__date" id="E365VWX_dobtained" headers="progress_now_dates_obtained">
+        
+        25 January 2024
+        
+    </td>
+
+
+            
+    <td id="E365VWX_next_action" class="case__next-action" headers="progress_now_next_actions">
+        
+        
+            New - Start to process
+        
+        
+    </td>
+
+
+        </tr>
+        
+    
+        
+    
+
+        
+        <tr id="row_10628_actions" class="govuk-table__row case__actions">
+            <td colspan="6">
+              <div class="case__actions-wrapper">
+                <div class="case__left-hand-actions actions-spacing">
+
+                    
+                        
+                            
+    <form class="case__form case__form--process" id="process_form_10628" action="cslk:titleno=DU164997&amp;appnref=E365VWX&amp;appntype=DLG" method="POST" novalidate>
+        
+          <input name="csrf_token" type="hidden" value="IjI2YzBiY2QwNzJiZjE0M2M3MDMxZGQ1M2UyMTBkMDNhMWE3YTdiZmYi.ZdYZDA.PHMOSAvho5tJKgE5EQe9HLJdBz8">
+        
+        <input aria-label="Open CORA to start processing case E365VWX" type="submit" id="open_btn_E365VWX" class="govuk-button hmlr-wf-prevent-double-click" value="Open zzzz">
+    </form>
+
+                        
+    <span class="govuk-visually-hidden">|</span>                
+
+                    
+                    
+    <a class="govuk-link actions-spacing case__anchor govuk-!-font-size-16" href="esrv-return-reason?work-item-id=10628" aria-label="return to e-serve" title="Return case E365VWX to DB2">Return to ESRV</a>
+
+    <span class="govuk-visually-hidden">|</span>              
+
+                </div>
+
+                <div class="case__right-hand-actions actions-spacing">
+
+                    <form class="case__form" id="change_state_10628" action="change_state/10628?lr_ref_number=DU164997&amp;lr_work_ref=E365VWX" method="post" onsubmit="btn_await_lawyer_10628.disabled = true;
+                                  btn_progress_now_10628.disabled = true;
+                                  btn_progress_later_10628.disabled = true;" novalidate>
+                      
+                        <input name="csrf_token" type="hidden" value="IjI2YzBiY2QwNzJiZjE0M2M3MDMxZGQ1M2UyMTBkMDNhMWE3YTdiZmYi.ZdYZDA.PHMOSAvho5tJKgE5EQe9HLJdBz8">
+                      
+                      
+                        
+                      
+
+                        <input class="case__progress-code" id="hidden_value_progress_10628" type="hidden" name="activity_code" value="PROGRESS_LATER">
+
+                        <span class="govuk-visually-hidden">|</span>       
+
+                        <input id="hidden_value_progress_child_cases_10628" type="hidden" name="child_cases" value="1">
+
+
+                    
+
+        <input id="btn_await_lawyer_10628" aria-label="Refer case E365VWX to a lawyer" type="hidden" name="Waiting_for_lawyer" class="case__hyperlink case__await_lawyer_btn
+                         govuk-!-font-size-16" value="Waiting for lawyer" formaction="await_lawyer/10628?lr_ref_number=DU164997&amp;lr_work_ref=E365VWX">
+
+                         <span class="govuk-visually-hidden">|</span>       
+
+                        
+    <a class="govuk-link case__refer-link case__anchor govuk-!-font-size-16" title="Refer case: E365VWX" href="refer?lr_work_ref=E365VWW&amp;lr_ref_number=DU164997">
+      Refer <span class="govuk-visually-hidden">case <abbr>E365VWX</abbr></span>
+    </a>
+
+
+    <span class="govuk-visually-hidden">|</span>       
+                   
+    <input aria-label="Move case E365VWX into your worklist" id="btn_progress_now_10628" type="submit" name="Work_on_this" class="govuk-link case__hyperlink case__progress-now-btn govuk-!-font-size-16" value="Work on this">
+
+    <span class="govuk-visually-hidden">|</span>       
+
+    <!-- *** -->
+
+                        
+        <input id="btn_progress_later_10628" aria-label="Progress case E365VWX later" type="submit" name="Progress_later" class="govuk-link case__hyperlink case__progress-later-btn govuk-!-font-size-16" value="Progress later">
+
+        <span class="govuk-visually-hidden">|</span>       
+                        
+    <a class="govuk-link case__defer-link case__anchor govuk-!-font-size-16" href="deferral-category-option?lr_work_ref=E365VWX&amp;lr_ref_number=DU164997&amp;client=">
+      Defer <span class="govuk-visually-hidden">case <abbr>E365VWW</abbr></span>
+    </a>
+
+    <span class="govuk-visually-hidden">|</span>                     
+
+                    
+                        
+    <a class="govuk-link case__activity-history-link case__anchor govuk-!-font-size-16 ga_track_event" href="activity-history/10628?page_no=1&amp;return_to=worklist" id="link_activity_history_E365VWX" data-ga-category="Activity_History_Link_From_Worklist" data-ga-action="Activity History link clicked from worklist page" data-ga-label="Worklist_Activity_History_Link">
+      View activity history <span class="govuk-visually-hidden">for <abbr>E365VWX</abbr></span>
+    </a>
+
+    <span class="govuk-visually-hidden">|</span>       
+                        
+    <a href="#" class="govuk-link case__more-info-link case__anchor govuk-!-font-size-16" target="_blank">
+        More info<span class="govuk-visually-hidden">: open daylist for case <abbr>N619SWX</abbr>. Opens in new tab.</span>
+    </a>
+
+    <span class="govuk-visually-hidden">|</span>       
+
+    <button id="btn_show_attached_N619SWX" class="case__expand case__hyperlink case__anchor govuk-!-font-size-16 govuk-link">
+      <span class="case__expand-verb" id="attached_apps_verb_N619SWX">Show</span> attached applications <span class="govuk-visually-hidden">for <abbr>N619SWX</abbr></span> <span class="case__expand-symbol" id="attached_apps_operator_N619SWX">&plus;</span>
+          <!-- the HTML code for the minus symbol: &minus; -->
+    </button>
+
+                    
+                    </form>
+                </div>
+              </div>
+            </td>
+        </tr>
+        
+    </tbody>      
   
           
               
@@ -404,8 +563,7 @@
           
             <input name="csrf_token" type="hidden" value="IjI2YzBiY2QwNzJiZjE0M2M3MDMxZGQ1M2UyMTBkMDNhMWE3YTdiZmYi.ZdYZDA.PHMOSAvho5tJKgE5EQe9HLJdBz8">
           
-          <input type="hidden" id="button_obtain" value="Obtain" class="govuk-button button-large" data-prevent-double-click="true">
-          <!-- data-double-click-prevention="true" or data-prevent-double-click="true" ? -->
+          <input type="hidden" id="button_obtain" value="Obtain" class="govuk-button button-large" data-double-click-prevention="true">
         </form>
       </div>
       
@@ -761,6 +919,31 @@
     </div>
   
   </div>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {//only use this DOMContentLoaded wrapper if placing script directly in the page
+
+    var hmlrPreventDoubleClick = document.getElementById("main-content").querySelectorAll(".hmlr-wf-prevent-double-click");
+    if (hmlrPreventDoubleClick !== null) {
+
+      hmlrPreventDoubleClick.forEach(function (theBtn) {
+        theBtn.addEventListener('click', function (e) {
+          
+          const closestForm = theBtn.closest("form");
+          if (!closestForm.classList.contains("hmlr-wf-form-already-submitted")) {//no class
+            closestForm.classList.add("hmlr-wf-form-already-submitted");
+          } else {
+            e.preventDefault(); // prevent form submission
+          }
+
+        });
+      });
+
+    }
+
+  });    
+</script>
 
 
 {% endblock %}

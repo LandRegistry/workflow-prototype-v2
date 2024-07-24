@@ -1,0 +1,61 @@
+{#
+For guidance on how to use layouts see:
+https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+#}
+
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{% block pageTitle %}
+  UCD quiz
+{% endblock %}
+
+{% block header %}
+<header class="govuk-header govuk-header--hmlr " role="banner" data-module="govuk-header">
+    <div class="govuk-header__container govuk-width-container">
+      <div class="govuk-header__content govuk-header__content--hmlr">
+      
+        <span style="font-size: 24px; font-size: 1.5rem; line-height: 1.25; font-weight: bold; margin: 5px 0 10px 0; display: block;">
+            <abbr>UCD questionnaire</abbr>
+        </span>
+
+        <!--a href="/quiz/" class="govuk-header__link govuk-header__service-name">
+          Home
+        </a-->
+      
+      </div>
+    </div>
+  </header>
+{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    <!-- styles added to the layout: non-wf.html-->
+    <style>
+      @media (min-width: 40.0625em){
+        .govuk-main-wrapper {
+          min-height: 440px;
+        }
+      }
+      table, th, td {
+          border: 1px solid #000; 
+          font-family: Arial, Helvetica, sans-serif; 
+          font-size: 0.9rem;
+      }
+    </style>
+{% endblock %}
+
+{% block footer %}
+<footer class="govuk-footer govuk-footer--hmlr " role="contentinfo">
+    <div class="govuk-width-container ">
+      
+      <div class="govuk-footer__meta">
+        <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+        </div>
+        <div class="govuk-footer__meta-item">
+          <span class="govuk-footer__link govuk-footer__copyright-logo govuk-footer__copyright-logo--hmlr"></span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+{% endblock %}

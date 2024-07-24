@@ -1,0 +1,61 @@
+{% extends "layouts/wf_layout_legacy.html" %}
+
+{% set pageName="Quiz" %}
+
+{% block content %}
+
+<style>
+    
+</style>
+
+<div class="content-wrapper">       
+    
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+      
+            <div class="govuk-form-group">
+
+              </div>
+
+              <hr>
+
+
+                  <div id="dropzone" style="border: 1px solid black; height: 100px;">Drop Files Here</div>
+                  Should update here: <input type="file" id="fileInput" multiple>
+                  <script>
+                      const dropContainer = document.getElementById('dropzone');
+                      const fileInput = document.getElementById('fileInput');
+              
+                      // Prevent default behavior for dragover and dragenter
+                      dropContainer.ondragover = dropContainer.ondragenter = function(evt) {
+                          evt.preventDefault();
+                      };
+              
+                      // Handle dropped files
+                      dropContainer.ondrop = function(evt) {
+                          // Assign all dropped files to the input
+                          fileInput.files = evt.dataTransfer.files;
+              
+                          // If you want to use specific files:
+                          // const dT = new DataTransfer();
+                          // dT.items.add(evt.dataTransfer.files[0]);
+                          // dT.items.add(evt.dataTransfer.files[3]);
+                          // fileInput.files = dT.files;
+              
+                          evt.preventDefault();
+                      };
+                  </script>
+
+              
+            
+
+
+
+
+
+
+        </div>
+   </div>  
+
+</div>
+{% endblock %}
