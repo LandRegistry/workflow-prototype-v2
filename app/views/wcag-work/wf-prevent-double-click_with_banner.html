@@ -943,10 +943,18 @@
             
             theClosestForm.classList.add("hmlr-wf-form-already-submitted_with_banner");
 
-            if (document.getElementById("govuk-notification-banner-title") === null) {//check if GDS banner has been added to pg
+            const bannerAdded = document.getElementById("pleaseWaitTarget");
+            
+            if (!bannerAdded.classList.contains("hmlr-wf-timed-banner-added")) {//no class
+              //alert('add banner fnc called');
+              bannerFunction();
+              bannerAdded.classList.add("hmlr-wf-timed-banner-added");
+            }
+
+            /*if (document.getElementById("govuk-notification-banner-title") === null) {//check if GDS banner has been added to pg
               alert('add banner fnc called');
               bannerFunction();
-            }
+            }*/
 
           } else {
             e.preventDefault(); // prevent form submission

@@ -1,0 +1,71 @@
+{% extends "layouts/non-wf.html" %}
+
+{#% 
+  set pageName="Quiz question" 
+%#}
+
+{% block content %}
+<div class="content-wrapper">       
+    
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+      
+          <form action="#" id="quiz_form" method="post" novalidate>
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <span class="govuk-caption-m">Question 7</span>
+                    <h1 class="govuk-fieldset__heading">
+                      Do you think <abbr>GDS</abbr> follows good design principles?
+                    </h1>
+                  </legend>
+
+
+                  <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="implicitBias" name="implicitBias" type="radio" value="1">
+                      <label class="govuk-label govuk-radios__label" for="implicitBias">
+                        Strongly agree
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="implicitBias-2" name="implicitBias" type="radio" value="2">
+                      <label class="govuk-label govuk-radios__label" for="implicitBias-2">
+                        Agree
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="implicitBias-3" name="implicitBias" type="radio" value="3">
+                      <label class="govuk-label govuk-radios__label" for="implicitBias-3">
+                        Disagree
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="implicitBias-4" name="implicitBias" type="radio" value="4">
+                      <label class="govuk-label govuk-radios__label" for="implicitBias-4">
+                        Strongly disagree
+                      </label>
+                    </div> 
+                    <div class="govuk-radios__divider">or</div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="implicitBias-5" name="implicitBias" type="radio" value="5">
+                      <label class="govuk-label govuk-radios__label" for="implicitBias-5">
+                        I don't know
+                      </label>
+                    </div>                                                            
+                    
+                                                                                                   
+                  </div>
+                </fieldset>
+            </div>
+
+            <button type="submit" class="govuk-button" data-module="govuk-button">
+              Continue
+            </button>            
+          </form>
+
+        </div>
+   </div>  
+
+</div>
+{% endblock %}

@@ -12,38 +12,42 @@
       
           <form action="#" id="quiz_form" method="post" novalidate>
             <div class="govuk-form-group">
-                <fieldset class="govuk-fieldset">
+                <fieldset class="govuk-fieldset" aria-describedby="quiz-hint">
                   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                    <span class="govuk-caption-m">Question 5</span>
+                    <span class="govuk-caption-m">Question 9</span>
                     <h1 class="govuk-fieldset__heading">
                       Which of these statements is true?
                     </h1>
                   </legend>
 
+                  <div id="quiz-hint" class="govuk-hint">
+                    After the earthquake, David claimed that it had been predicted by Nostradamus five hundred years ago. His claim is based on which pitfall of heuristics?
+                  </div>
+
 
                   <div class="govuk-radios" data-module="govuk-radios">
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="confirmationBias" name="confirmationBias" type="radio" value="1-proven">
-                      <label class="govuk-label govuk-radios__label" for="confirmationBias">
-                        Vaccines have been scientifically proven to be safe and effective
+                      <input class="govuk-radios__input" id="hindsightBias" name="hindsightBias" type="radio" value="1">
+                      <label class="govuk-label govuk-radios__label" for="hindsightBias">
+                        Confirmation bias
                       </label>
                     </div>
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="confirmationBias-2" name="confirmationBias" type="radio" value="2">
-                      <label class="govuk-label govuk-radios__label" for="confirmationBias-2">
-                        Vaccines are associated with severe side effects
+                      <input class="govuk-radios__input" id="hindsightBias-2" name="hindsightBias" type="radio" value="2">
+                      <label class="govuk-label govuk-radios__label" for="hindsightBias-2">
+                        Representativeness bias
                       </label>
                     </div>
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="confirmationBias-3" name="confirmationBias" type="radio" value="3">
-                      <label class="govuk-label govuk-radios__label" for="confirmationBias-3">
-                        Vaccines are ineffective and unnecessary
+                      <input class="govuk-radios__input" id="hindsightBias-3" name="hindsightBias" type="radio" value="3-hindsight">
+                      <label class="govuk-label govuk-radios__label" for="hindsightBias-3">
+                        Hindsight bias
                       </label>
                     </div>
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="confirmationBias-4" name="confirmationBias" type="radio" value="4">
-                      <label class="govuk-label govuk-radios__label" for="confirmationBias-4">
-                        Vaccines cause autism
+                      <input class="govuk-radios__input" id="hindsightBias-4" name="hindsightBias" type="radio" value="4">
+                      <label class="govuk-label govuk-radios__label" for="hindsightBias-4">
+                        Functional fixedness
                       </label>
                     </div>                                        
                     

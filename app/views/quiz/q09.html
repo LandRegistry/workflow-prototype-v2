@@ -1,0 +1,99 @@
+{% extends "layouts/non-wf.html" %}
+
+{#% 
+  set pageName="Quiz question" 
+%#}
+
+{% block content %}
+<div class="content-wrapper">       
+    
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+      
+          <form action="#" id="quiz_form" method="post" novalidate>
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="quiz-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <span class="govuk-caption-m">Question 9</span>
+                    <h1 class="govuk-fieldset__heading">
+                      Review this poster
+                    </h1>
+                  </legend>
+
+
+                  <!-- USE SWITCHING STATEMENT HERE DEPENDING UPON TEAM A OR B -->
+
+                  <div id="quiz-hint" class="govuk-hint">
+                    This celebrated American poster was designed in 1932 by graphic designer Isaac Levitt. It defined his career and is still popular in places of work to this day. What do you think? <!--Select the observations you agree with.-->
+                  </div>
+
+                  <img src="/public/images/poster.jpg" class="govuk-!-margin-bottom-5" style="width: 50%;" alt="Work with care poster by Isaac Levitt.">
+
+
+
+
+
+                  <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="classicPoster" name="classicPoster" type="checkbox" value="pos">
+                      <label class="govuk-label govuk-checkboxes__label" for="classicPoster">
+                        I like the strong typography  
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="classicPoster-2" name="classicPoster" type="checkbox" value="pos">
+                      <label class="govuk-label govuk-checkboxes__label" for="classicPoster-2">
+                        I like the dynamic text flow
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="classicPoster-5" name="classicPoster" type="checkbox" value="neg">
+                      <label class="govuk-label govuk-checkboxes__label" for="classicPoster-5">
+                        I think the illustration isn't clear
+                      </label>
+                    </div>                    
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="classicPoster-3" name="classicPoster" type="checkbox" value="pos">
+                      <label class="govuk-label govuk-checkboxes__label" for="classicPoster-3">
+                        I think it is distinctive and direct 
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="classicPoster-6" name="classicPoster" type="neg" value="neg">
+                      <label class="govuk-label govuk-checkboxes__label" for="classicPoster-6">
+                        I dislike the subdued colours
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="classicPoster-7" name="classicPoster" type="checkbox" value="neg">
+                      <label class="govuk-label govuk-checkboxes__label" for="classicPoster-7">
+                        I think the text is difficult to read
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="classicPoster-4" name="classicPoster" type="checkbox" value="pos">
+                      <label class="govuk-label govuk-checkboxes__label" for="classicPoster-4">
+                        I like the memorable colour pallett
+                      </label>
+                    </div>                    
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="classicPoster-8" name="classicPoster" type="checkbox" value="neg">
+                      <label class="govuk-label govuk-checkboxes__label" for="classicPoster-8">
+                        I don't like the uppercase lettering
+                      </label>
+                    </div> 
+                                                                                                                    
+                  </div>
+                </fieldset>
+            </div>
+
+            <button type="submit" class="govuk-button" data-module="govuk-button">
+              Continue
+            </button>            
+          </form>
+
+        </div>
+   </div>  
+
+</div>
+{% endblock %}
