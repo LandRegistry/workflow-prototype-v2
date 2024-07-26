@@ -11,46 +11,254 @@
         <div class="govuk-grid-column-two-thirds">
       
           <form action="#" id="quiz_form" method="post" novalidate>
-            <div class="govuk-form-group">
-                <fieldset class="govuk-fieldset">
-                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                    <span class="govuk-caption-m">Question 5</span>
-                    <h1 class="govuk-fieldset__heading">
-                      Which of these statements is true?
-                    </h1>
-                  </legend>
+
+                  <span class="govuk-caption-m">Question 5</span>
+                  <h1 class="govuk-heading-l">Review this poster</h1>
 
 
-                  <div class="govuk-radios" data-module="govuk-radios">
-                    <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="confirmationBias" name="confirmationBias" type="radio" value="1-proven">
-                      <label class="govuk-label govuk-radios__label" for="confirmationBias">
-                        Vaccines have been scientifically proven to be safe and effective
+
+                  <div id="quiz-hint" class="govuk-hint">
+                    This celebrated American poster was designed in 1932 by graphic designer Isaac Levitt. It defined his career and is still popular today. <!--What do you think? Select the observations you agree with.-->
+                  </div>
+
+                  <div id="quiz-hint" class="govuk-hint">
+                    This is the original version of a poster issued in America in the 1930s by the <abbr>US</abbr> Department for Labour before it was improved a year later. 
+                  </div>                  
+
+                  <img src="/public/images/poster.jpg" class="govuk-!-margin-top-3 govuk-!-margin-bottom-6" style="width: 50%;" alt="Work with care poster by Isaac Levitt.">
+
+
+                  <!-- just record the negatives -->
+                  <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                      <legend class="govuk-fieldset__legend">
+                          Is the typography strong?
+                      </legend>
+                      <div class="govuk-radios govuk-radios--inline govuk-radios--small" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="classicPoster-1" name="classicPoster" type="radio" value="yes">
+                          <label class="govuk-label govuk-radios__label" for="classicPoster-1">
+                            Yes
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="classicPoster-2" name="classicPoster" type="radio" value="no">
+                          <label class="govuk-label govuk-radios__label" for="classicPoster-2">
+                            No
+                          </label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                  <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                      <legend class="govuk-fieldset__legend">
+                        Is the space used effectively?
+                      </legend>
+                      <div class="govuk-radios govuk-radios--inline govuk-radios--small" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="classicPoster-3" name="classicPoster" type="radio" value="yes">
+                          <label class="govuk-label govuk-radios__label" for="classicPoster-3">
+                            Yes
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="classicPoster-4" name="classicPoster" type="radio" value="no">
+                          <label class="govuk-label govuk-radios__label" for="classicPoster-4">
+                            No
+                          </label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div> 
+                  <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                      <legend class="govuk-fieldset__legend">
+                        Is the illustration clear?
+                      </legend>
+                      <div class="govuk-radios govuk-radios--inline govuk-radios--small" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="classicPoster-3" name="classicPoster" type="radio" value="yes">
+                          <label class="govuk-label govuk-radios__label" for="classicPoster-3">
+                            Yes
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="classicPoster-4" name="classicPoster" type="radio" value="no">
+                          <label class="govuk-label govuk-radios__label" for="classicPoster-4">
+                            No
+                          </label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                  <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                      <legend class="govuk-fieldset__legend">
+                        Is the poster distinctive and direct?
+                      </legend>
+                      <div class="govuk-radios govuk-radios--inline govuk-radios--small" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="classicPoster-5" name="classicPoster" type="radio" value="yes">
+                          <label class="govuk-label govuk-radios__label" for="classicPoster-5">
+                            Yes
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="classicPoster-6" name="classicPoster" type="radio" value="no">
+                          <label class="govuk-label govuk-radios__label" for="classicPoster-6">
+                            No
+                          </label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div> 
+                  <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                      <legend class="govuk-fieldset__legend">
+                        Is the message clear?
+                      </legend>
+                      <div class="govuk-radios govuk-radios--inline govuk-radios--small" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="classicPoster-7" name="classicPoster" type="radio" value="yes">
+                          <label class="govuk-label govuk-radios__label" for="classicPoster-7">
+                            Yes
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="classicPoster-8" name="classicPoster" type="radio" value="no">
+                          <label class="govuk-label govuk-radios__label" for="classicPoster-8">
+                            No
+                          </label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                  <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                      <legend class="govuk-fieldset__legend">
+                        Is the text easy to read?<!--Is the text difficult to read?-->
+                      </legend>
+                      <div class="govuk-radios govuk-radios--inline govuk-radios--small" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="classicPoster-9" name="classicPoster" type="radio" value="yes">
+                          <label class="govuk-label govuk-radios__label" for="classicPoster-9">
+                            Yes
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="classicPoster-10" name="classicPoster" type="radio" value="no">
+                          <label class="govuk-label govuk-radios__label" for="classicPoster-10">
+                            No
+                          </label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                  <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                      <legend class="govuk-fieldset__legend">
+                        Is the colour pallett memorable?
+                      </legend>
+                      <div class="govuk-radios govuk-radios--inline govuk-radios--small" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="classicPoster-11" name="classicPoster" type="radio" value="yes">
+                          <label class="govuk-label govuk-radios__label" for="classicPoster-1">
+                            Yes
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="classicPoster-12" name="classicPoster" type="radio" value="no">
+                          <label class="govuk-label govuk-radios__label" for="classicPoster-12">
+                            No
+                          </label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                  <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                      <legend class="govuk-fieldset__legend">
+                       Does the framing of the main illustration work? <!--Do you dislike the uppercase lettering?-->
+                      </legend>
+                      <div class="govuk-radios govuk-radios--inline govuk-radios--small" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="classicPoster-13" name="classicPoster" type="radio" value="yes">
+                          <label class="govuk-label govuk-radios__label" for="classicPoster-13">
+                            Yes
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="classicPoster-14" name="classicPoster" type="radio" value="no">
+                          <label class="govuk-label govuk-radios__label" for="classicPoster-14">
+                            No
+                          </label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div> 
+
+
+            <!--div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="quiz-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <span class="govuk-caption-m">Question 9</span>
+                  <h1 class="govuk-fieldset__heading">
+                    Review this poster
+                  </h1>
+                </legend>
+                  <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="classicPoster" name="classicPoster" type="checkbox" value="pos">
+                      <label class="govuk-label govuk-checkboxes__label" for="classicPoster">
+                        I like the strong typography  
                       </label>
                     </div>
-                    <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="confirmationBias-2" name="confirmationBias" type="radio" value="2">
-                      <label class="govuk-label govuk-radios__label" for="confirmationBias-2">
-                        Vaccines are associated with severe side effects
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="classicPoster-2" name="classicPoster" type="checkbox" value="pos">
+                      <label class="govuk-label govuk-checkboxes__label" for="classicPoster-2">
+                        I like the dynamic text flow
                       </label>
                     </div>
-                    <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="confirmationBias-3" name="confirmationBias" type="radio" value="3">
-                      <label class="govuk-label govuk-radios__label" for="confirmationBias-3">
-                        Vaccines are ineffective and unnecessary
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="classicPoster-5" name="classicPoster" type="checkbox" value="neg">
+                      <label class="govuk-label govuk-checkboxes__label" for="classicPoster-5">
+                        I think the illustration isn't clear
+                      </label>
+                    </div>                    
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="classicPoster-3" name="classicPoster" type="checkbox" value="pos">
+                      <label class="govuk-label govuk-checkboxes__label" for="classicPoster-3">
+                        I think it is distinctive and direct 
                       </label>
                     </div>
-                    <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="confirmationBias-4" name="confirmationBias" type="radio" value="4">
-                      <label class="govuk-label govuk-radios__label" for="confirmationBias-4">
-                        Vaccines cause autism
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="classicPoster-6" name="classicPoster" type="neg" value="neg">
+                      <label class="govuk-label govuk-checkboxes__label" for="classicPoster-6">
+                        I dislike the subdued colours
                       </label>
-                    </div>                                        
-                    
-                                                                                                   
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="classicPoster-7" name="classicPoster" type="checkbox" value="neg">
+                      <label class="govuk-label govuk-checkboxes__label" for="classicPoster-7">
+                        I think the text is difficult to read
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="classicPoster-4" name="classicPoster" type="checkbox" value="pos">
+                      <label class="govuk-label govuk-checkboxes__label" for="classicPoster-4">
+                        I like the memorable colour pallett
+                      </label>
+                    </div>                    
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="classicPoster-8" name="classicPoster" type="checkbox" value="neg">
+                      <label class="govuk-label govuk-checkboxes__label" for="classicPoster-8">
+                        I don't like the uppercase lettering
+                      </label>
+                    </div> 
                   </div>
                 </fieldset>
-            </div>
+            </div-->
 
             <button type="submit" class="govuk-button" data-module="govuk-button">
               Continue

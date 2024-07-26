@@ -1,0 +1,64 @@
+{% extends "layouts/non-wf.html" %}
+
+{#% 
+  set pageName="Quiz question" 
+%#}
+
+{% block content %}
+<div class="content-wrapper">       
+    
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+      
+          <form action="#" id="quiz_form" method="post" novalidate>
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <span class="govuk-caption-m">Question 5</span>
+                    <h1 class="govuk-fieldset__heading">
+                      Which of these statements is true?
+                    </h1>
+                  </legend>
+
+
+                  <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="confirmationBias" name="confirmationBias" type="radio" value="1-proven">
+                      <label class="govuk-label govuk-radios__label" for="confirmationBias">
+                        Vaccines have been scientifically proven to be safe and effective
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="confirmationBias-2" name="confirmationBias" type="radio" value="2">
+                      <label class="govuk-label govuk-radios__label" for="confirmationBias-2">
+                        Vaccines are associated with severe side effects
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="confirmationBias-3" name="confirmationBias" type="radio" value="3">
+                      <label class="govuk-label govuk-radios__label" for="confirmationBias-3">
+                        Vaccines are ineffective and unnecessary
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="confirmationBias-4" name="confirmationBias" type="radio" value="4">
+                      <label class="govuk-label govuk-radios__label" for="confirmationBias-4">
+                        Vaccines cause autism
+                      </label>
+                    </div>                                        
+                    
+                                                                                                   
+                  </div>
+                </fieldset>
+            </div>
+
+            <button type="submit" class="govuk-button" data-module="govuk-button">
+              Continue
+            </button>            
+          </form>
+
+        </div>
+   </div>  
+
+</div>
+{% endblock %}
