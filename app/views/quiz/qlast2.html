@@ -1,0 +1,72 @@
+{% extends "layouts/non-wf.html" %}
+
+{#% 
+  set pageName="Quiz question" 
+%#}
+
+{% block content %}
+<div class="content-wrapper">       
+    
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+      
+          <form action="#" id="quiz_form" method="post" novalidate>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="quiz-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <span class="govuk-caption-m">And finally ...</span>
+                  <h1 class="govuk-fieldset__heading">
+                    How much did you enjoy answering these questions?
+                  </h1>
+                </legend>
+
+                <div id="quiz-hint" class="govuk-hint">
+                  Thank you for participating XXXXXXXXXXX - it was very much appreciated. <br>Darren.
+                </div>                   
+
+                  <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="lastQuestion1" name="lastQuestion" type="checkbox" value="1">
+                      <label class="govuk-label govuk-checkboxes__label" for="lastQuestion1">
+                        Very much
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="lastQuestion2" name="lastQuestion" type="checkbox" value="2">
+                      <label class="govuk-label govuk-checkboxes__label" for="lastQuestion2">
+                        Not much
+                      </label>
+                    </div>                    
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="lastQuestion2" name="lastQuestion" type="checkbox" value="2">
+                      <label class="govuk-label govuk-checkboxes__label" for="lastQuestion2">
+                        Not much
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="lastQuestion3" name="lastQuestion" type="checkbox" value="3">
+                      <label class="govuk-label govuk-checkboxes__label" for="lastQuestion3">
+                        Not at all
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="lastQuestion3" name="lastQuestion" type="checkbox" value="4">
+                      <label class="govuk-label govuk-checkboxes__label" for="lastQuestion3">
+                        I hated it
+                      </label>
+                    </div>                                        
+
+                </fieldset>
+            </div>
+
+            <button type="submit" class="govuk-button" data-module="govuk-button">
+              Continue
+            </button>            
+          </form>
+
+        </div>
+   </div>  
+
+</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "layouts/non-wf.html" %}
+
+{#% 
+  set pageName="Quiz question" 
+%#}
+
+{% block content %}
+<div class="content-wrapper">       
+    
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+      
+          <form action="#" id="quiz_form" method="post" novalidate>
+            <div class="govuk-form-group">
+
+                    <span class="govuk-caption-m">10 questions completed</span>
+                    <h1 class="govuk-heading-l">
+                      Wait here ...
+                    </h1>
+                    
+                    <p class="govuk-body">
+                      Let's pause here and wait for everyone to catch-up, and we'll all start the next set of questions at the same time.
+                    </p>
+
+            </div>
+
+            <button type="submit" class="govuk-button" data-module="govuk-button">
+              Continue
+            </button>            
+          </form>
+
+        </div>
+   </div>  
+
+</div>
+{% endblock %}

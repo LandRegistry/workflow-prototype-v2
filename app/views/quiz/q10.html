@@ -1,0 +1,90 @@
+{% extends "layouts/non-wf.html" %}
+
+{#% 
+  set pageName="Quiz question" 
+%#}
+
+{% block content %}
+<div class="content-wrapper">       
+    
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+      
+          <form action="#" id="quiz_form" method="post" novalidate>
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="quiz-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <span class="govuk-caption-m">Question 10</span>
+                    <h1 class="govuk-fieldset__heading">
+                      Choose a type of <abbr>UK</abbr> wild flower
+                    </h1>
+                  </legend>
+
+                  <div id="quiz-hint" class="govuk-hint">
+                    Remember your choice
+                  </div>
+
+                  <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="flowerType" name="flowerType" type="radio" value="1">
+                      <label class="govuk-label govuk-radios__label" for="flowerType">
+                        Frog Orchid
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="flowerType-2" name="flowerType" type="radio" value="2">
+                      <label class="govuk-label govuk-radios__label" for="flowerType-2">
+                        Fly Orchid
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="flowerType-3" name="flowerType" type="radio" value="3">
+                      <label class="govuk-label govuk-radios__label" for="flowerType-3">
+                        Sea Campion
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="flowerType-4" name="flowerType" type="radio" value="4">
+                      <label class="govuk-label govuk-radios__label" for="flowerType-4">
+                        Southern March Orchid
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="flowerType-5" name="flowerType" type="radio" value="5">
+                      <label class="govuk-label govuk-radios__label" for="flowerType-5">
+                        Greater Water Parsnip
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="flowerType-6" name="flowerType" type="radio" value="6">
+                      <label class="govuk-label govuk-radios__label" for="flowerType-6">
+                        Fen Violet
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="flowerType-7" name="flowerType" type="radio" value="7">
+                      <label class="govuk-label govuk-radios__label" for="flowerType-7">
+                        Wood Anemone
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="flowerType-8" name="flowerType" type="radio" value="8">
+                      <label class="govuk-label govuk-radios__label" for="flowerType-8">
+                        Harebell
+                      </label>
+                    </div>                    
+                                                                                                   
+                  </div>
+                </fieldset>
+            </div>
+
+            <button type="submit" class="govuk-button" data-module="govuk-button">
+              Continue
+            </button>            
+          </form>
+
+        </div>
+   </div>  
+
+</div>
+{% endblock %}

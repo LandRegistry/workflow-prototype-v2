@@ -1,0 +1,73 @@
+{% extends "layouts/non-wf.html" %}
+
+{#% 
+  set pageName="Quiz question" 
+%#}
+
+{% block content %}
+<div class="content-wrapper">       
+    
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+      
+          <form action="#" id="quiz_form" method="post" novalidate>
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="quiz-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <span class="govuk-caption-m">Question 13</span>
+                    <h1 class="govuk-fieldset__heading">
+                      Who are the best group of people to design a GOV web service
+                    </h1>
+                  </legend>
+
+                  <div id="quiz-hint" class="govuk-hint">
+                    From these options, which group of people would be best placed to design a digital service?
+                    <br>IMPLICIT BIAS or another example of Self serving bias
+                  </div>
+
+                  <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="bestPerson" name="bestPerson" type="radio" value="1">
+                      <label class="govuk-label govuk-radios__label" for="bestPerson">
+                        Product owner, business analyst, and interaction designer
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="bestPerson-2" name="bestPerson" type="radio" value="2">
+                      <label class="govuk-label govuk-radios__label" for="bestPerson-2">
+                        User researcher, developers, and product owner
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="bestPerson-3" name="bestPerson" type="radio" value="3">
+                      <label class="govuk-label govuk-radios__label" for="bestPerson-3">
+                        Interaction designer, developers, and product owner
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="bestPerson-4" name="bestPerson" type="radio" value="4">
+                      <label class="govuk-label govuk-radios__label" for="bestPerson-4">
+                        Content designer, interaction designer, and user researcher
+                      </label>
+                    </div> 
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="bestPerson-5" name="bestPerson" type="radio" value="5">
+                      <label class="govuk-label govuk-radios__label" for="bestPerson-5">
+                        Business analyst, interaction designer and user researcher
+                      </label>
+                    </div>                                        
+                                                                                                   
+                  </div>
+                </fieldset>
+            </div>
+
+            <button type="submit" class="govuk-button" data-module="govuk-button">
+              Continue
+            </button>            
+          </form>
+
+        </div>
+   </div>  
+
+</div>
+{% endblock %}

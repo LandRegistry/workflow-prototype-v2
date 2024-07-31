@@ -1,0 +1,52 @@
+{% extends "layouts/non-wf.html" %}
+
+{#% 
+  set pageName="Quiz question" 
+%#}
+
+{% block content %}
+<div class="content-wrapper">       
+    
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+      
+          <form action="#" id="quiz_form" method="post" novalidate>
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <span class="govuk-caption-m">Part 2</span>
+                    <h1 class="govuk-fieldset__heading">
+                      How would you like the remaining questions
+                    </h1>
+                  </legend>
+
+
+                  <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="questionType" name="questionType" type="radio" value="1">
+                      <label class="govuk-label govuk-radios__label" for="questionType">
+                        Stick with the current style
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="questionType-2" name="questionType" type="radio" value="2">
+                      <label class="govuk-label govuk-radios__label" for="questionType-2">
+                        Change to freeform input
+                      </label>
+                    </div>
+
+                                                                                                   
+                  </div>
+                </fieldset>
+            </div>
+
+            <button type="submit" class="govuk-button" data-module="govuk-button">
+              Continue
+            </button>            
+          </form>
+
+        </div>
+   </div>  
+
+</div>
+{% endblock %}
