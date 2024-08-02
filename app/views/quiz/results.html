@@ -1,0 +1,110 @@
+{% extends "layouts/non-wf.html" %}
+
+{#% 
+  set pageName="Quiz answers" 
+%#}
+
+{% block content %}
+<style>
+  table.govuk-table th, table.govuk-table td {text-align: center !important; }
+</style>
+<div class="content-wrapper">       
+    
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+      
+          <noscript>This page requires JavaScript support to be enabled!</noscript>
+
+            <p class="govuk-body">
+              Please download your answers. 
+            </p> 
+
+            <p class="govuk-body govuk-!-margin-bottom-5">
+              An Excel file named 'q-xxxxxx' should download to your default Downloads folder. 
+            </p>            
+
+            <table id="tableID" class="govuk-table govuk-table--small-text-until-tablet">
+                <tr>
+                  <th>Q1</th>
+                  <th>Q2</th>
+                  <th>Q3</th>
+                  <th>Q4</th>
+                  <th>Q5</th>
+                  <th>Q6</th>
+                  <th>Q7</th>
+                  <th>Q8</th>
+                  <th>Q9</th>
+                  <th>Q10</th>
+                  <th>Q11</th>
+                  <th>Q12</th>
+                  <th>Q13</th>
+                  <th>Q14</th>
+                  <th>Q15</th>
+                  <th>Q16</th>
+                  <th>Q17</th>
+                  <th>Q18</th>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>3</td>
+                  <td>4</td>
+                  <td>2</td>
+                  <td>3</td>
+                  <td>4</td>
+                  <td>2</td>
+                  <td>3</td>
+                  <td>4</td>
+                  <td>2</td>
+                  <td>3</td>
+                  <td>4</td>
+                  <td>2</td>
+                  <td>3</td>
+                  <td>4</td>
+                  <td>2</td>
+                  <td>3</td>
+                  <td>4</td>
+                </tr>
+            </table>            
+
+            
+            <!-- *** Yes, I know using an 'onClick' is bad. This is a dirty mock-up. *** -->
+            <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button" onclick="tableToCSV()">
+              Download
+            </button>  
+                      
+          
+
+        </div>
+   </div>  
+
+</div>
+
+<script>
+  function tableToCSV() {
+      let csv_data = [];
+      let rows = document.getElementsByTagName('tr');
+
+      for (let i = 0; i < rows.length; i++) {
+          let cols = rows[i].querySelectorAll('td,th');
+          let csvrow = [];
+
+          for (let j = 0; j < cols.length; j++) {
+              csvrow.push(cols[j].innerHTML);
+          }
+
+          csv_data.push(csvrow.join(","));
+      }
+
+      csv_data = csv_data.join('\n');
+
+      // Create a Blob and download link
+      const blob = new Blob([csv_data], { type: 'text/csv' });
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'q-darren.csv';
+      a.click();
+      window.URL.revokeObjectURL(url);
+  }
+</script>  
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends "layouts/non-wf.html" %}
+
+{#% 
+  set pageName="Quiz question" 
+%#}
+
+{% block content %}
+<div class="content-wrapper">       
+    
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+      
+          <form action="#" id="quiz_form" method="post" novalidate>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="quiz-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <span class="govuk-caption-m">Question 17</span>
+                  <h1 class="govuk-fieldset__heading">
+                    Which was your favourite?
+                  </h1>
+                </legend>
+
+                <div id="quiz-hint" class="govuk-hint">
+                  Of the 3 questions about random preferences and choosing from a list of random things, which one did you like the most? 
+                </div>                   
+
+                  <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="favouriteQuestion1" name="favouriteQuestion" type="radio" value="1">
+                      <label class="govuk-label govuk-radios__label" for="favouriteQuestion1">
+                        Question 3
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="favouriteQuestion2" name="favouriteQuestion" type="radio" value="2">
+                      <label class="govuk-label govuk-radios__label" for="favouriteQuestion2">
+                        Question 4
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="favouriteQuestion3" name="favouriteQuestion" type="radio" value="3">
+                      <label class="govuk-label govuk-radios__label" for="favouriteQuestion3">
+                        Question 6
+                      </label>
+                    </div>                    
+
+                </fieldset>
+            </div>
+
+            <button type="submit" class="govuk-button" data-module="govuk-button">
+              Continue
+            </button>            
+          </form>
+
+        </div>
+   </div>  
+
+</div>
+{% endblock %}

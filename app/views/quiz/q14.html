@@ -1,0 +1,97 @@
+{% extends "layouts/non-wf.html" %}
+
+{#% 
+  set pageName="Quiz question" 
+%#}
+
+{% block content %}
+<div class="content-wrapper">       
+    
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+      
+          <form action="#" id="quiz_form" method="post" novalidate>
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                    <span class="govuk-caption-m">Question 14</span>
+                    <h1 class="govuk-fieldset__heading">
+                      Choose the colour of soap dish to match the soap colour you selected earlier
+                    </h1>
+                  </legend>
+
+                  <!-- select a colour of soap dish to match the colour of soap you preferred. 
+                  TYPE in the name of the colour! 
+                  
+                  Remove the bracketed colours and run the list upside down -->
+
+                  <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="soapDish-5" name="soapDish" type="radio" value="5">
+                      <label class="govuk-label govuk-radios__label" for="soapDish-5">
+                        Walnut
+                      </label>
+                    </div>                    
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="soapDish-9" name="soapDish" type="radio" value="9">
+                      <label class="govuk-label govuk-radios__label" for="soapDish-9">
+                        Moroccan
+                      </label>
+                    </div> 
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="soapDish-7" name="soapDish" type="radio" value="7">
+                      <label class="govuk-label govuk-radios__label" for="soapDish-7">
+                        Indigo
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="soapDish-6" name="soapDish" type="radio" value="6">
+                      <label class="govuk-label govuk-radios__label" for="soapDish-6">
+                        Calendula
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="soapDish-2" name="soapDish" type="radio" value="2">
+                      <label class="govuk-label govuk-radios__label" for="soapDish-2">
+                        Alkanet
+                      </label>
+                    </div>                    
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="soapDish-8" name="soapDish" type="radio" value="8">
+                      <label class="govuk-label govuk-radios__label" for="soapDish-8">
+                        Madder
+                      </label>
+                    </div>  
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="soapDish" name="soapDish" type="radio" value="1">
+                      <label class="govuk-label govuk-radios__label" for="soapDish">
+                        Alfalfa
+                      </label>
+                    </div>                                      
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="soapDish-4" name="soapDish" type="radio" value="4">
+                      <label class="govuk-label govuk-radios__label" for="soapDish-4">
+                        Beetroot
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="soapDish-3" name="soapDish" type="radio" value="3">
+                      <label class="govuk-label govuk-radios__label" for="soapDish-3">
+                        Annatto
+                      </label>
+                    </div>
+
+                  </div>
+                </fieldset>
+            </div>
+
+            <button type="submit" class="govuk-button" data-module="govuk-button">
+              Continue
+            </button>            
+          </form>
+
+        </div>
+   </div>  
+
+</div>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "layouts/non-wf.html" %}
+
+{#% 
+  set pageName="Quiz question" 
+%#}
+
+{% block content %}
+<div class="content-wrapper">       
+    
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+      
+          <form action="#" id="quiz_form" method="post" novalidate>
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <span class="govuk-caption-m">Question 16</span>
+                  <h1 class="govuk-fieldset__heading">
+                    Would you like your answers sent to you afterwards?
+                  </h1>
+                </legend>
+
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="illustionChoice" name="illustionChoice" type="checkbox" value="carcasses">
+                    <label class="govuk-label govuk-checkboxes__label" for="illustionChoice">
+                      Yes
+                    </label>
+                  </div>
+
+
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="illustionChoice-2" name="illustionChoice" type="checkbox" value="mines" checked>
+                    <label class="govuk-label govuk-checkboxes__label" for="illustionChoice-2">
+                      Yes
+                    </label>
+                  </div>
+
+                </div>
+              </fieldset>
+            </div>            
+
+
+            <button type="submit" class="govuk-button" data-module="govuk-button">
+              Continue
+            </button>            
+          </form>
+
+        </div>
+   </div>  
+
+</div>
+{% endblock %}

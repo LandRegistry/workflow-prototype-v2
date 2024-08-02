@@ -1,0 +1,313 @@
+{% extends "layouts/non-wf.html" %}
+
+{#% 
+  set pageName="Quiz question" 
+%#}
+
+{% block content %}
+<div class="content-wrapper">       
+    
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+      
+          <form action="#" id="quiz_form" method="post" novalidate>
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                    <span class="govuk-caption-m">Question 15</span>
+                    <h1 class="govuk-fieldset__heading">
+                      To submit all your answers, answer one of these sets of questions
+                    </h1>
+                  </legend>
+
+                 
+
+                  <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="submitQuestion" name="submitQuestion" type="radio" value="1"  data-aria-controls="conditional-01">
+                      <label class="govuk-label govuk-radios__label" for="submitQuestion">
+                        Metrics of your daily work routine
+                      </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-01">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="contact-01">
+                          Which team do you spend most time working in?
+                        </label>
+                        <input class="govuk-input govuk-!-width-one-third" id="contact-01" name="contactByEmail" type="text" spellcheck="false">
+                      </div>
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="one-quarter">
+                          How many teams do you work in?
+                        </label>
+                        <input class="govuk-input govuk-!-width-one-quarter" id="one-quarter" name="oneQuarter" type="text">
+                      </div> 
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="more-detail">
+                          What is your percentage split of time between these teams
+                        </label>
+                        <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5"></textarea>
+                      </div> 
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="more-detail2">
+                          Why is your time split by these amounts?
+                        </label>
+                        <textarea class="govuk-textarea" id="more-detail2" name="moreDetail2" rows="5"></textarea>
+                      </div>
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="more-detail3">
+                          Which team do you prefer to spend more time working with?
+                        </label>
+                        <textarea class="govuk-textarea govuk-!-width-one-half" id="more-detail3" name="moreDetail3" rows="3"></textarea>
+                      </div> 
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="more-detail4">
+                          Why do you prefer to spend more time working with that team?
+                        </label>
+                        <textarea class="govuk-textarea" id="more-detail4" name="moreDetail4" rows="5"></textarea>
+                      </div>
+                      <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-font-weight-regular">
+                            <h1 class="govuk-fieldset__heading">
+                              When did you start working at <abbr>HMLR</abbr>?
+                            </h1>
+                          </legend>
+                          <div id="passport-issued-hint" class="govuk-hint">
+                            For example, 27 3 2007
+                          </div>
+                          <div class="govuk-date-input" id="passport-issued">
+                            <div class="govuk-date-input__item">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                                  Day
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+                              </div>
+                            </div>
+                            <div class="govuk-date-input__item">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                                  Month
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+                              </div>
+                            </div>
+                            <div class="govuk-date-input__item">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                                  Year
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+                              </div>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </div> 
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="contact-01x">
+                          What is the project code for the project you spend most time on?
+                        </label>
+                        <input class="govuk-input govuk-!-width-one-third" id="contact-01x" name="contactByEmailx" type="text" spellcheck="false">
+                      </div>                      
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="more-detail6">
+                          How many weeks have you worked on that project and why?
+                        </label>
+                        <textarea class="govuk-textarea" id="more-detail6" name="moreDetail6" rows="5"></textarea>
+                      </div>                                           
+                      
+                                                               
+                    </div>
+
+
+
+
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="submitQuestion-2" name="submitQuestion" type="radio" value="2"  data-aria-controls="conditional-02">
+                      <label class="govuk-label govuk-radios__label" for="submitQuestion-2">
+                        Typical Saturday morning routine
+                      </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-02">
+                      <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset">
+                          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-font-weight-regular">
+
+                              Do you usually get up later on a Saturday?
+
+                          </legend>
+
+                          <div class="govuk-radios govuk-radios--inline  govuk-radios--small" data-module="govuk-radios">
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
+                              <label class="govuk-label govuk-radios__label" for="changedName">
+                                Yes
+                              </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
+                              <label class="govuk-label govuk-radios__label" for="changedName-2">
+                                No
+                              </label>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </div>
+                      <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset">
+                          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-font-weight-regular">
+                            
+                              Which of these apply to you on a Saturday morning?
+                            
+                          </legend>
+                          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                              <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                Listen to the radio
+                              </label>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+                              <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                                Watch <abbr>TV</abbr>
+                              </label>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="organisation-3" name="organisation" type="checkbox" value="MOD">
+                              <label class="govuk-label govuk-checkboxes__label" for="organisation-3">
+                                Read a newspaper
+                              </label>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="DfT">
+                              <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
+                                Look at social media
+                              </label>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </div>
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="sort">
+                          Select which best describes your preferred Saturday morning
+                        </label>
+                        <select class="govuk-select" id="sort" name="sort">
+                          <option value="published">Relaxing at home</option>
+                          <option value="updated">Head into town</option>
+                          <option value="views">A long lie-in</option>
+                          <option value="comments">Get the shopping done</option>
+                          <option value="comments">Head off somewhere nice</option>
+                        </select>
+                      </div>                                            
+                    </div>
+
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="submitQuestion-3" name="submitQuestion" type="radio" value="3"  data-aria-controls="conditional-03">
+                      <label class="govuk-label govuk-radios__label" for="submitQuestion-3">
+                        Percentage splits on your latest project
+                      </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-03">
+                      <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hintz">
+                          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-font-weight-regular">
+                            <h1 class="govuk-fieldset__heading">
+                              When did you start working on your latest project?
+                            </h1>
+                          </legend>
+                          <div id="passport-issued-hintz" class="govuk-hint">
+                            For example, 27 3 2007
+                          </div>
+                          <div class="govuk-date-input" id="passport-issuedz">
+                            <div class="govuk-date-input__item">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="passport-issued-dayz">
+                                  Day
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-dayz" name="passport-issued-dayz" type="text" inputmode="numeric">
+                              </div>
+                            </div>
+                            <div class="govuk-date-input__item">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="passport-issued-monthz">
+                                  Month
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-monthz" name="passport-issued-monthz" type="text" inputmode="numeric">
+                              </div>
+                            </div>
+                            <div class="govuk-date-input__item">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="passport-issued-yearz">
+                                  Year
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-yearz" name="passport-issued-yearz" type="text" inputmode="numeric">
+                              </div>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </div>   
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="contact-01xz">
+                          What is the project code for the project you started most recently?
+                        </label>
+                        <input class="govuk-input govuk-!-width-one-third" id="contact-01xz" name="contactByEmailxz" type="text" spellcheck="false">
+                      </div>                                           
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="contact-01z">
+                          Which team is this project with?
+                        </label>
+                        <input class="govuk-input govuk-!-width-one-third" id="contact-01z" name="contactByEmailz" type="text" spellcheck="false">
+                      </div>
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="one-quarterz">
+                          How many people work on this project?
+                        </label>
+                        <input class="govuk-input govuk-!-width-one-quarter" id="one-quarterz" name="oneQuarterz" type="text">
+                      </div> 
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="more-detailz">
+                          What is your percentage of time split between this project and others you are working on?
+                        </label>
+                        <textarea class="govuk-textarea" id="more-detailz" name="moreDetailz" rows="5"></textarea>
+                      </div> 
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="more-detail2z">
+                          Why is your time split by these amounts?
+                        </label>
+                        <textarea class="govuk-textarea govuk-!-width-one-half" id="more-detail2z" name="moreDetail2z" rows="3"></textarea>
+                      </div>
+ 
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="more-detail4z">
+                          Why does this project take up the amount of time it does?
+                        </label>
+                        <textarea class="govuk-textarea govuk-!-width-one-half" id="more-detail4z" name="moreDetail4z" rows="5"></textarea>
+                      </div>
+
+                     
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="more-detail6z">
+                          How many weeks have you worked on that project and why?
+                        </label>
+                        <textarea class="govuk-textarea" id="more-detail6z" name="moreDetail6z" rows="5"></textarea>
+                      </div>                                           
+                      
+                                                               
+                    </div>                    
+                                                                                                   
+                  </div>
+                </fieldset>
+            </div>
+
+            <button type="submit" class="govuk-button" data-module="govuk-button">
+              Continue
+            </button>            
+          </form>
+
+        </div>
+   </div>  
+
+</div>
+{% endblock %}
