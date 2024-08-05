@@ -33,3 +33,7 @@ router.use("/defer-time-dates-v3/", (req, res, next) => {
 router.use("/defer-time-dates-v3-1/", (req, res, next) => {
     return require("./views/defer-time-dates-v3/_routes")(req, res, next);
 })
+
+router.use("/quiz/", (req, res, next) => {
+    return require("./views/quiz/_routes")(req, res, next);
+})

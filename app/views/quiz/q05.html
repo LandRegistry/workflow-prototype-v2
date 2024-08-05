@@ -16,15 +16,15 @@
                   <h1 class="govuk-heading-l">Review this poster</h1>
 
 
-
+                  {% if (data['whichTeam'] == 'A') %}
                   <div id="quiz-hint" class="govuk-hint">
                     This celebrated American poster was designed in 1932 by graphic designer Isaac Levitt. It defined his career and is still popular today. <!--What do you think? Select the observations you agree with.-->
                   </div>
-
+                  {% else %}
                   <div id="quiz-hint" class="govuk-hint">
                     This is the original version of a poster issued in America in the 1930s by the <abbr>US</abbr> Department for Labour before it was improved a year later. 
                   </div>                  
-
+                  {% endif %}
                   <img src="/public/images/poster.jpg" class="govuk-!-margin-top-3 govuk-!-margin-bottom-6" style="width: 50%;" alt="Work with care poster by Isaac Levitt.">
 
 
@@ -36,13 +36,13 @@
                       </legend>
                       <div class="govuk-radios govuk-radios--inline govuk-radios--small" data-module="govuk-radios">
                         <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="classicPoster-1" name="classicPoster" type="radio" value="yes">
+                          <input class="govuk-radios__input" id="classicPoster-1" name="classicPosterA1" type="radio" value="y">
                           <label class="govuk-label govuk-radios__label" for="classicPoster-1">
                             Yes
                           </label>
                         </div>
                         <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="classicPoster-2" name="classicPoster" type="radio" value="no">
+                          <input class="govuk-radios__input" id="classicPoster-2" name="classicPosterA1" type="radio" value="n">
                           <label class="govuk-label govuk-radios__label" for="classicPoster-2">
                             No
                           </label>
@@ -57,13 +57,13 @@
                       </legend>
                       <div class="govuk-radios govuk-radios--inline govuk-radios--small" data-module="govuk-radios">
                         <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="classicPoster-3" name="classicPoster" type="radio" value="yes">
+                          <input class="govuk-radios__input" id="classicPoster-3" name="classicPosterA2" type="radio" value="y">
                           <label class="govuk-label govuk-radios__label" for="classicPoster-3">
                             Yes
                           </label>
                         </div>
                         <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="classicPoster-4" name="classicPoster" type="radio" value="no">
+                          <input class="govuk-radios__input" id="classicPoster-4" name="classicPosterA2" type="radio" value="n">
                           <label class="govuk-label govuk-radios__label" for="classicPoster-4">
                             No
                           </label>
@@ -78,14 +78,14 @@
                       </legend>
                       <div class="govuk-radios govuk-radios--inline govuk-radios--small" data-module="govuk-radios">
                         <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="classicPoster-3" name="classicPoster" type="radio" value="yes">
-                          <label class="govuk-label govuk-radios__label" for="classicPoster-3">
+                          <input class="govuk-radios__input" id="classicPoster-5" name="classicPosterA3" type="radio" value="y">
+                          <label class="govuk-label govuk-radios__label" for="classicPoster-5">
                             Yes
                           </label>
                         </div>
                         <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="classicPoster-4" name="classicPoster" type="radio" value="no">
-                          <label class="govuk-label govuk-radios__label" for="classicPoster-4">
+                          <input class="govuk-radios__input" id="classicPoster-6" name="classicPosterA3" type="radio" value="n">
+                          <label class="govuk-label govuk-radios__label" for="classicPoster-6">
                             No
                           </label>
                         </div>
@@ -99,14 +99,14 @@
                       </legend>
                       <div class="govuk-radios govuk-radios--inline govuk-radios--small" data-module="govuk-radios">
                         <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="classicPoster-5" name="classicPoster" type="radio" value="yes">
-                          <label class="govuk-label govuk-radios__label" for="classicPoster-5">
+                          <input class="govuk-radios__input" id="classicPoster-6b" name="classicPosterA4" type="radio" value="y">
+                          <label class="govuk-label govuk-radios__label" for="classicPoster-6b">
                             Yes
                           </label>
                         </div>
                         <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="classicPoster-6" name="classicPoster" type="radio" value="no">
-                          <label class="govuk-label govuk-radios__label" for="classicPoster-6">
+                          <input class="govuk-radios__input" id="classicPoster-7" name="classicPosterA4" type="radio" value="n">
+                          <label class="govuk-label govuk-radios__label" for="classicPoster-7">
                             No
                           </label>
                         </div>
@@ -120,14 +120,14 @@
                       </legend>
                       <div class="govuk-radios govuk-radios--inline govuk-radios--small" data-module="govuk-radios">
                         <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="classicPoster-7" name="classicPoster" type="radio" value="yes">
-                          <label class="govuk-label govuk-radios__label" for="classicPoster-7">
+                          <input class="govuk-radios__input" id="classicPoster-8" name="classicPosterA5" type="radio" value="y">
+                          <label class="govuk-label govuk-radios__label" for="classicPoster-8">
                             Yes
                           </label>
                         </div>
                         <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="classicPoster-8" name="classicPoster" type="radio" value="no">
-                          <label class="govuk-label govuk-radios__label" for="classicPoster-8">
+                          <input class="govuk-radios__input" id="classicPoster-9" name="classicPosterA5" type="radio" value="n">
+                          <label class="govuk-label govuk-radios__label" for="classicPoster-9">
                             No
                           </label>
                         </div>
@@ -141,14 +141,14 @@
                       </legend>
                       <div class="govuk-radios govuk-radios--inline govuk-radios--small" data-module="govuk-radios">
                         <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="classicPoster-9" name="classicPoster" type="radio" value="yes">
-                          <label class="govuk-label govuk-radios__label" for="classicPoster-9">
+                          <input class="govuk-radios__input" id="classicPoster-10" name="classicPosterA6" type="radio" value="y">
+                          <label class="govuk-label govuk-radios__label" for="classicPoster-10">
                             Yes
                           </label>
                         </div>
                         <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="classicPoster-10" name="classicPoster" type="radio" value="no">
-                          <label class="govuk-label govuk-radios__label" for="classicPoster-10">
+                          <input class="govuk-radios__input" id="classicPoster-11" name="classicPosterA6" type="radio" value="n">
+                          <label class="govuk-label govuk-radios__label" for="classicPoster-11">
                             No
                           </label>
                         </div>
@@ -162,14 +162,14 @@
                       </legend>
                       <div class="govuk-radios govuk-radios--inline govuk-radios--small" data-module="govuk-radios">
                         <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="classicPoster-11" name="classicPoster" type="radio" value="yes">
-                          <label class="govuk-label govuk-radios__label" for="classicPoster-1">
+                          <input class="govuk-radios__input" id="classicPoster-12" name="classicPosterA7" type="radio" value="y">
+                          <label class="govuk-label govuk-radios__label" for="classicPoster-12">
                             Yes
                           </label>
                         </div>
                         <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="classicPoster-12" name="classicPoster" type="radio" value="no">
-                          <label class="govuk-label govuk-radios__label" for="classicPoster-12">
+                          <input class="govuk-radios__input" id="classicPoster-13" name="classicPosterA7" type="radio" value="n">
+                          <label class="govuk-label govuk-radios__label" for="classicPoster-13">
                             No
                           </label>
                         </div>
@@ -183,14 +183,14 @@
                       </legend>
                       <div class="govuk-radios govuk-radios--inline govuk-radios--small" data-module="govuk-radios">
                         <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="classicPoster-13" name="classicPoster" type="radio" value="yes">
-                          <label class="govuk-label govuk-radios__label" for="classicPoster-13">
+                          <input class="govuk-radios__input" id="classicPoster-14" name="classicPosterA8" type="radio" value="y">
+                          <label class="govuk-label govuk-radios__label" for="classicPoster-14">
                             Yes
                           </label>
                         </div>
                         <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="classicPoster-14" name="classicPoster" type="radio" value="no">
-                          <label class="govuk-label govuk-radios__label" for="classicPoster-14">
+                          <input class="govuk-radios__input" id="classicPoster-15" name="classicPosterA8" type="radio" value="n">
+                          <label class="govuk-label govuk-radios__label" for="classicPoster-15">
                             No
                           </label>
                         </div>

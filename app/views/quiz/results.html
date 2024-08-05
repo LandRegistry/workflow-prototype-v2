@@ -13,19 +13,18 @@
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-full">
       
-          <noscript>This page requires JavaScript support to be enabled!</noscript>
+            <noscript>This page requires JavaScript support to be enabled!</noscript>
 
             <p class="govuk-body">
               Please download your answers. 
             </p> 
 
             <p class="govuk-body govuk-!-margin-bottom-5">
-              An Excel file named 'q-xxxxxx' should download to your default Downloads folder. 
+              An Excel file named '<code>q-{{ data['firstName'] | trimWhiteSpace }}.<abbr>csv</abbr></code>' should download to your default Downloads folder. 
             </p>            
 
             <table id="tableID" class="govuk-table govuk-table--small-text-until-tablet">
                 <tr>
-                  <th>Q1</th>
                   <th>Q2</th>
                   <th>Q3</th>
                   <th>Q4</th>
@@ -45,24 +44,23 @@
                   <th>Q18</th>
                 </tr>
                 <tr>
-                  <td>2</td>
-                  <td>3</td>
-                  <td>4</td>
-                  <td>2</td>
-                  <td>3</td>
-                  <td>4</td>
-                  <td>2</td>
-                  <td>3</td>
-                  <td>4</td>
-                  <td>2</td>
-                  <td>3</td>
-                  <td>4</td>
-                  <td>2</td>
-                  <td>3</td>
-                  <td>4</td>
-                  <td>2</td>
-                  <td>3</td>
-                  <td>4</td>
+                  <td>{{ data['whichTeam']}}</td>
+                  <td>{{ data['soapColour']}}</td>
+                  <td>{{ data['penguinType']}}</td>
+                  <td>{{ data['classicPosterA1']}}</td>
+                  <td>{{ data['framingEffect']}}</td>
+                  <td>{{ data['implicitBias']}}</td>
+                  <td>{{ data['selfServingBias']}}</td>
+                  <td>{{ data['classicPoster2']}}</td>
+                  <td>{{ data['questionType']}}</td>
+                  <td>{{ data['whichQuestion']}}</td>
+                  <td>{{ data['bestPerson']}}</td>
+                  <td>{{ data['soapDish']}}</td>
+                  <td>{{ data['submitQuestion']}}</td>
+                  <td>{{ data['illustionChoice']}}</td>
+                  <td>{{ data['favouriteQuestion']}}</td>
+                  <td>{{ data['lastQuestion']}}</td>
+                  <td>{{ data['illustionChoice']}}</td>
                 </tr>
             </table>            
 
@@ -102,7 +100,7 @@
       const url = window.URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = 'q-darren.csv';
+      a.download = 'q-{{ data['firstName'] | trimWhiteSpace }}.csv';    
       a.click();
       window.URL.revokeObjectURL(url);
   }

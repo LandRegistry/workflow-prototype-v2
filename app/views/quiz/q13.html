@@ -20,14 +20,16 @@
                     </h1>
                   </legend>
 
+                  {% if (data['whichTeam'] == 'A') %}
                   <div id="quiz-hint" class="govuk-hint">
                     I like, reading, board games, painting, dancing and swimming. 
                   </div>
-
+                  {% else %}
                   <div id="quiz-hint" class="govuk-hint">
                     I like, reading, board games, painting, golf and swimming. 
                   </div>                  
-
+                  {% endif %}
+                  
                   <div class="govuk-radios" data-module="govuk-radios">
                     <div class="govuk-radios__item">
                       <input class="govuk-radios__input" id="bestPerson" name="bestPerson" type="radio" value="1">

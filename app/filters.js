@@ -34,5 +34,10 @@ addFilter('zeroPadding', function(theNumber) {
     
 })
 
+addFilter('trimWhiteSpace', function(strTxt) {
+    if(!strTxt) return;
+    return strTxt.trim();
+})
+
 
 

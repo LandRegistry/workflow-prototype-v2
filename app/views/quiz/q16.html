@@ -13,24 +13,18 @@
           <form action="#" id="quiz_form" method="post" novalidate>
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                   <span class="govuk-caption-m">Question 16</span>
                   <h1 class="govuk-fieldset__heading">
-                    Would you like your answers sent to you afterwards?
+                    Would you like your answers to be sent to you afterwards?
                   </h1>
                 </legend>
 
                 <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                   <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="illustionChoice" name="illustionChoice" type="checkbox" value="carcasses">
-                    <label class="govuk-label govuk-checkboxes__label" for="illustionChoice">
-                      Yes
-                    </label>
-                  </div>
-
-
-                  <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="illustionChoice-2" name="illustionChoice" type="checkbox" value="mines" checked>
+                    <input class="govuk-checkboxes__input" id="illustionChoice-2" name="illustionChoice" type="checkbox" value="y"  {% if (data['whichTeam'] == 'B') %}
+                    checked
+                    {% endif %}>
                     <label class="govuk-label govuk-checkboxes__label" for="illustionChoice-2">
                       Yes
                     </label>
