@@ -31,11 +31,28 @@ router.post('/q04', function (req, res) {
 })
 
 router.post('/q05', function (req, res) {
-    if (req.session.data['classicPosterA1'] != null) {
 
+        const a1 = req.session.data['classicPosterA1']; 
+        const a2 = req.session.data['classicPosterA2']; 
+        const a3 = req.session.data['classicPosterA3']; 
+        const a4 = req.session.data['classicPosterA4']; 
+        const a5 = req.session.data['classicPosterA5']; 
+        const a6 = req.session.data['classicPosterA6']; 
+        const a7 = req.session.data['classicPosterA7']; 
+        const a8 = req.session.data['classicPosterA8']; 
+        const myPosterArray = [a1, a2, a3, a4, a5, a6, a7, a8];
 
+        let myPosterCounter = 0;        
 
+    if (myPosterArray.every(value => value != null)) {
 
+        myPosterArray.forEach(value => {
+            if (value === 'y') {
+                myPosterCounter++;
+            }
+        });
+
+        req.session.data['classicPosterA1'] = myPosterCounter;
 
         res.redirect("q06")
     } 
@@ -60,7 +77,32 @@ router.post('/q08', function (req, res) {
 })
 
 router.post('/q09', function (req, res) {
-    if (req.session.data['classicPoster2'] != null) {
+
+    const p1 = req.session.data['classicPoster2']; 
+    const p2 = req.session.data['classicPoster22']; 
+    const p3 = req.session.data['classicPoster23']; 
+    const p4 = req.session.data['classicPoster24']; 
+    const myPosterArray = [p1, p2, p3, p4];
+
+    let myPosterCounter = 0;        
+
+    if (myPosterArray.every(value => value != null)) {
+
+        myPosterArray.forEach(value => {
+            if (value === 'y') {
+                myPosterCounter++;
+            }
+        });
+
+        req.session.data['classicPoster2'] = myPosterCounter;
+
+        res.redirect("q10")
+    }     
+ 
+})
+
+router.post('/q10', function (req, res) {
+    if (req.session.data['flowerType'] != null) {
         res.redirect("q10b-pause")
     } 
 })
