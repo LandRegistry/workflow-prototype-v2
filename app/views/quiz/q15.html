@@ -43,6 +43,12 @@
                         <input class="govuk-input govuk-!-width-one-quarter" id="one-quarter" name="oneQuarter" type="text">
                       </div> 
                       <div class="govuk-form-group">
+                        <label class="govuk-label" for="contact-01x">
+                          What is the project code for the project you spend most time on?
+                        </label>
+                        <input class="govuk-input govuk-!-width-one-third" id="contact-01x" name="contactByEmailx" type="text" spellcheck="false">
+                      </div>                       
+                      <div class="govuk-form-group">
                         <label class="govuk-label" for="more-detail">
                           What is your percentage split of time between these teams
                         </label>
@@ -105,12 +111,6 @@
                         </fieldset>
                       </div> 
                       <div class="govuk-form-group">
-                        <label class="govuk-label" for="contact-01x">
-                          What is the project code for the project you spend most time on?
-                        </label>
-                        <input class="govuk-input govuk-!-width-one-third" id="contact-01x" name="contactByEmailx" type="text" spellcheck="false">
-                      </div>                      
-                      <div class="govuk-form-group">
                         <label class="govuk-label" for="more-detail6">
                           How many weeks have you worked on that project and why?
                         </label>
@@ -126,7 +126,7 @@
                     <div class="govuk-radios__item">
                       <input class="govuk-radios__input" id="submitQuestion-2" name="submitQuestion" type="radio" value="2"  data-aria-controls="conditional-02">
                       <label class="govuk-label govuk-radios__label" for="submitQuestion-2">
-                        Typical Saturday morning routine
+                        Saturday morning routine
                       </label>
                     </div>
                     <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-02">
@@ -158,7 +158,7 @@
                         <fieldset class="govuk-fieldset">
                           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-font-weight-regular">
                             
-                              Which of these apply to you on a Saturday morning?
+                              Which of these applies to you during a Saturday morning?
                             
                           </legend>
                           <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -190,15 +190,16 @@
                         </fieldset>
                       </div>
                       <div class="govuk-form-group">
-                        <label class="govuk-label" for="sort">
+                        <label class="govuk-label" for="selection">
                           Select which best describes your preferred Saturday morning
                         </label>
-                        <select class="govuk-select" id="sort" name="sort">
-                          <option value="published">Relaxing at home</option>
-                          <option value="updated">Head into town</option>
-                          <option value="views">A long lie-in</option>
-                          <option value="comments">Get the shopping done</option>
-                          <option value="comments">Head off somewhere nice</option>
+                        <select class="govuk-select" id="selection" name="selection">
+                          <option value="relaxing">Relaxing at home</option>
+                          <option value="town">Head into town</option>
+                          <option value="lie-in">A long lie-in</option>
+                          <option value="shopping">Get the shopping done</option>
+                          <option value="nice">Head off somewhere nice</option>
+                          <option value="other">Other</option>
                         </select>
                       </div>                                            
                     </div>
