@@ -51,7 +51,11 @@
 
   /* for pw sharing privacy */
   #main-content {visibility: hidden; }
-  .js-enabled #main-content {visibility: visible; }
+  .js-enabled #main-content {visibility: visible; min-height: 350px; }
+
+  .hide-me {
+    display: none !important;
+  }
 </style>
 
 <div class="govuk-grid-row">
@@ -343,9 +347,15 @@
   </div>
 </div>
 
-
-
-
+<script>
+window.onload = function() {
+  var hideIndexValue = localStorage.getItem('hideIndex');// Retrieve the value 
+  
+  if (hideIndexValue === 'true') {
+    document.getElementById('accordion-with-summary-sections').classList.add('hide-me');
+  }
+};  
+</script>
   
     
     <!--hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"-->  
