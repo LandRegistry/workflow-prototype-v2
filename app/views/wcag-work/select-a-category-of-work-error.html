@@ -41,6 +41,8 @@ Error: Select a category of work
 
     <form action="#" method="post" novalidate>
 
+      <div class="govuk-form-group govuk-form-group--error">
+
       <fieldset class="govuk-fieldset" aria-describedby="category-error">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-margin-bottom-8">
           <h1 class="govuk-fieldset__heading">
@@ -52,7 +54,7 @@ Error: Select a category of work
           <span class="govuk-visually-hidden">Error:</span> Select a category of work
         </p>        
 
-        <div class="govuk-form-group govuk-form-group--error">
+        
 
           <fieldset class="govuk-fieldset govuk-!-margin-bottom-6">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
@@ -381,10 +383,11 @@ Error: Select a category of work
           -->
 
 
-        </div>
+        
         
       </fieldset>
-
+    </div>
+    
       <button value="y" type="submit" name="save" class="govuk-button" id="save">
         Select
       </button>
