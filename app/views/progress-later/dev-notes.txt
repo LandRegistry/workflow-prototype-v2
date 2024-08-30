@@ -1,0 +1,13 @@
+worklist page: note the use of gds grid layout - width full "govuk-grid-column-full" (parent divs)
+
+on worklist prog later, can now get rid of "div data-progress-later-table" ? from live?
+
+formaction not allowed on input
+
+On the inputs with classes "case__hyperlink case__await_lawyer_btn" add "govuk-link"
+
+Add table footer - in this location in the HTML - if there are 5 or more items in the list. No IDs on the tfoot TH tags.
+
+remove 'worklist-black-border' from table thead
+
+
