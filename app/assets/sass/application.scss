@@ -70,7 +70,10 @@ body .govuk-header__container {
     } 
     &.hmlr-wf-form-grouping--width-04 {
         min-width: 66%;
-    }        
+    }  
+    /*&.hmlr-wf-form-grouping--full-width {
+        width: 100%; 
+    }*/      
 
     .hmlr-wf-from-grouping__header {
         background-color: govuk-colour("white"); 

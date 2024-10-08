@@ -922,10 +922,65 @@
 
 
 <script>
+
+/*document.addEventListener('DOMContentLoaded', function () {
+
+    var hmlrPreventDoubleClick2 = document.getElementById("main-content").querySelectorAll(".hmlr-wf-prevent-double-click2");
+    if (hmlrPreventDoubleClick2 !== null) {
+
+        hmlrPreventDoubleClick2.addEventListener('click', function (e) {
+          const closestForm = document.getElementById("wrapper-div");
+          if (!closestForm.classList.contains("hmlr-wf-form-already-submitted")) {//no class
+            closestForm.classList.add("hmlr-wf-form-already-submitted");
+          } else {
+            e.preventDefault(); // prevent form submission
+          }
+        });
+
+    }
+
+}); */ 
+  
+/* ORIGINAL, with simple 'closest'
+document.addEventListener('DOMContentLoaded', function () {
+
+    var hmlrPreventDoubleClick = document.getElementById("main-content").querySelectorAll(".hmlr-wf-prevent-double-click");
+    if (hmlrPreventDoubleClick !== null) {
+
+      hmlrPreventDoubleClick.forEach(function (theBtn) {
+        theBtn.addEventListener('click', function (e) {
+          
+          const closestForm = theBtn.closest("form");
+          if (!closestForm.classList.contains("hmlr-wf-form-already-submitted")) {//no class
+            closestForm.classList.add("hmlr-wf-form-already-submitted");
+          } else {
+            e.preventDefault(); // prevent form submission
+          }
+
+        });
+      });
+
+    }
+
+  });  
+  */ 
+
   document.addEventListener('DOMContentLoaded', function () {
 
     var hmlrPreventDoubleClick = document.getElementById("main-content").querySelectorAll(".hmlr-wf-prevent-double-click");
     if (hmlrPreventDoubleClick !== null) {
+
+      // polyfill if browser does not support 'closest'
+      /*if (!Element.prototype.closest) {
+          Element.prototype.closest = function(selector) {
+              var element = this;
+              while (element) {
+                  if (element.matches(selector)) return element;
+                  element = element.parentElement;
+              }
+              return null;
+          };
+      } */     
 
       hmlrPreventDoubleClick.forEach(function (theBtn) {
         theBtn.addEventListener('click', function (e) {
