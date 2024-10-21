@@ -980,7 +980,23 @@ document.addEventListener('DOMContentLoaded', function () {
               }
               return null;
           };
-      } */     
+      } */    
+
+      /* this is an alternative polyfill, doing the same thing but supports older browsers */
+      /*if (!Element.prototype.closest) {
+          Element.prototype.closest = function(selector) {
+              var element = this;
+              while (element) {
+                  // Check if the element matches the selector
+                  if (element.nodeType === 1 && 
+                      (element.webkitMatchesSelector || element.mozMatchesSelector || element.msMatchesSelector || element.oMatchesSelector || element.matchesSelector).call(element, selector)) {
+                      return element;
+                  }
+                  element = element.parentElement;
+              }
+              return null;
+          };
+      } */
 
       hmlrPreventDoubleClick.forEach(function (theBtn) {
         theBtn.addEventListener('click', function (e) {
