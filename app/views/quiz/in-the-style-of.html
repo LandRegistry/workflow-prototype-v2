@@ -1,0 +1,51 @@
+{% extends "layouts/non-wf.html" %}
+
+{#% 
+  set pageName="Quiz question" 
+%#}
+
+{% block content %}
+<div class="content-wrapper">       
+    
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          
+          <form action="#" id="quiz_form" method="post" novalidate>
+            
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <span class="govuk-caption-m">Question 2</span>
+                  <h1 class="govuk-fieldset__heading">
+                    Which team were you allocated to?
+                  </h1>
+                </legend>
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="whichTeam" name="whichTeam" type="radio" value="A">
+                    <label class="govuk-label govuk-radios__label" for="whichTeam">
+                      Team A
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="whichTeam-2" name="whichTeam" type="radio" value="B">
+                    <label class="govuk-label govuk-radios__label" for="whichTeam-2">
+                      Team B
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+  
+            <button type="submit" class="govuk-button" data-module="govuk-button">
+              Continue
+            </button>
+
+          </form>
+
+        </div>
+   </div>  
+
+</div>
+{% endblock %}

@@ -7,23 +7,24 @@ const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 
 //flow one starts ...
-router.post('/one-defer_01', function (req, res) {
+router.post('/pg-a-01', function (req, res) {
 
-    const userInput = req.session.data['category_code'];
+    const userInput = req.session.data['my_progress_later'];
 
-    if (userInput == null) {//empty
+    //if (userInput == null) {//empty
 
-        res.redirect("one-defer_01-error")
+        //res.redirect("elsewhere")
 
-    } else if (userInput == 'PL') {//selected Extension of time       
+    //} else 
+    if (userInput == 'Progress later') {//selected Extension of time       
 
-        res.redirect("one-defer_02")  
+        res.redirect("pg-a-01")  
         
-    } else {
+    } //else {
 
-        res.redirect("end")  //selected one of the other options  
+        //res.redirect("end")  //selected one of the other options  
 
-    }
+    //}
 })
 
 router.post('/one-defer_01-error', function (req, res) {
