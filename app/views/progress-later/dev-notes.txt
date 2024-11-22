@@ -1,13 +1,71 @@
-worklist page: note the use of gds grid layout - width full "govuk-grid-column-full" (parent divs)
+ Next actions text in quotes ...
+   
+   
+   
+   "New - Start to process"
+RELEASE:
+    -An application has been released from deferral
+    Default: "New - Start to process"
+    Possible events:
+        BF:
+        -Hit bring forward date: 
+            If reason is DIS:
+                -awaiting discharge only, no requisition
+                "Consider issuing requisition"
+            Otherwise:
+                "Issue reminder"
+        CANC:
+            -cancelled
+            "Consider cancellation"
+        REPLY:
+            -customer has replied
+            "Consider customer reply"
+        NEWAPP:
+            -new application submitted
+            "Consider subsequent application"
+        PRIOR:
+            -prior pending
+            "Consider priority"
+        SEARCH:
+            "New - Start to process"
+        EXPIRE:
+            -objection notice expired
+            "Consider expired objection notice"
+STORE_PART:
+    -A user has started to work on an application but not finished it
+    "Partially drafted - continue to process"
+STORE_FULL:
+    -A user has finished working on an application but not marked it off
+    "Fully drafted - consider mark off"
+MARKOFF:
+    "Marked off"
+CANCEL:
+    "Cancelled"
+RELEASE_OBTAIN:
+    -After deferring an application you then obtain it through the search function
+    "New - Start to process"
+SEARCH_OBTAIN:
+    -Obtaining an application through the search function
+    If previous activity code was "RELEASE":
+        same messages as RELEASE code   
+    Otherwise:
+        "New - Start to process"
+REFER:
+    "Consider referral from <REFERRER>"
+REASSIGN:
+    "Consider assignment from <REASSIGNER>"
+AWAIT_LAWYER:
+    -A lawyer is required to further the application
+    "Waiting lawyer's response"
 
-on worklist prog later, can now get rid of "div data-progress-later-table" ? from live?
-
-formaction not allowed on input
-
-On the inputs with classes "case__hyperlink case__await_lawyer_btn" add "govuk-link"
-
-Add table footer - in this location in the HTML - if there are 5 or more items in the list. No IDs on the tfoot TH tags.
-
-remove 'worklist-black-border' from table thead
 
 
+
+    Yeah I believe so, other than <REFFERER> and <REASSIGNER> which would be replaced with the name of the referrer and reassigner
+ 
+the default value for referrer (if the case worker isn't in the cache or active directory) is "new caseworker"  
+ 
+and the default for reassigner is "Manager"
+ 
+so it would appear in the column as for example "Consider referral from new caseworker" or "Consider assignment from Darren Harridence" etc
+ 

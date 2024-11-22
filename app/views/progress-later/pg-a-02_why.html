@@ -21,100 +21,150 @@ Select a deferral reason
     <form action="#" method="post" novalidate>
 
       <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset">
+          <fieldset class="govuk-fieldset" aria-describedby="reason-hint">
 
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-margin-bottom-5">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h1 class="govuk-fieldset__heading">
-                  Why are you moving this to Progress Later?
+                  Why is this case being moved to Progress Later?
+                  <!-- Record why the application is being moved to Progress Later? -->
               </h1>
             </legend>
 
+            <div id="reason-hint" class="govuk-hint govuk-!-margin-bottom-7">
+              This will help you identify why applications are in your Progress Later list
+            </div>            
 
-            <div class="govuk-radios" data-module="govuk-radios">
-              
+            <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+
+              <!-- *** only use 'govuk-!-padding-bottom-1' on labels if there is a hint text *** -->
+
+
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="id_DIS" type="radio" name="category_code" value="DIS">
+                <input class="govuk-radios__input" id="manual" type="radio" name="reason-why" value="manual">
                 
-                <label class="govuk-label govuk-radios__label" for="id_DIS">
-                  Awaiting discharge only (no requisition)
-                </label>
-              </div>
-
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="id_REQN" type="radio" name="category_code" value="REQN">
-                <label class="govuk-label govuk-radios__label" for="id_REQN">
-                  Requisition
-                </label>
-              </div>
-
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="id_NOTICE" type="radio" name="category_code" value="NOTICE">
-
-                <label class="govuk-label govuk-radios__label" for="id_NOTICE">
-                  Partial reply
-                </label>
-              </div>
-
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="id_REQNNOTICE" type="radio" name="category_code" value="REQNNOTICE">
-
-                <label class="govuk-label govuk-radios__label" for="id_REQNNOTICE">
-                  Reminder issued
-                </label>
-              </div>
-
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="id_PL" type="radio" name="category_code" value="PL">
-
-                <label class="govuk-label govuk-radios__label" for="id_PL">
-                  Extension of time 
-                </label>
-              </div>
-
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="x1" type="radio" name="category_code" value="x1">
-
-                <label class="govuk-label govuk-radios__label" for="x1">
-                  Objection notice (15 days) and Requisition
-                </label>
-              </div>
-              
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="x2" type="radio" name="category_code" value="x2">
-
-                <label class="govuk-label govuk-radios__label" for="x2">
-                  Objection notice (15 days) and Requisition
+                <label class="govuk-label govuk-radios__label" for="manual">
+                  Manual files require ordering
                 </label>
               </div> 
-              
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="x3" type="radio" name="category_code" value="x3">
-
-                <label class="govuk-label govuk-radios__label" for="x3">
-                  Progress later
+                <input class="govuk-radios__input" id="surveys" type="radio" name="reason-why" value="surveys">
+                
+                <label class="govuk-label govuk-radios__label" for="surveys">
+                  Awaiting a survey   <!-- surveys need to be carried out -->
                 </label>
-              </div>           
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="subsequent" type="radio" name="reason-why" value="subsequent" aria-describedby="subsequent-hint">
+                
+                <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-1" for="subsequent">
+                  Subsequent applications
+                </label>
+                <div id="subsequent-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16">
+                  <!-- Sometimes if you are working on strings, you don't want another caseworker obtaining the subsequent application, so I pull it and put it in Progress Later -->
+
+                  To avoid a colleague obtaining the subsequent application <!-- when working on strings -->
+                </div>
+              </div>              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="referral" type="radio" name="reason-why" value="referral" aria-describedby="referral-hint">
+                
+                <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-1" for="referral">
+                  Referral
+                </label>
+                <div id="referral-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16">
+                  For example, you want to query something with a colleague
+                </div>
+              </div> 
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="telephone" type="radio" name="reason-why" value="telephone" aria-describedby="telephone-hint">
+                
+                <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-1" for="telephone">
+                  Telephone conversation required
+                </label>
+                <div id="telephone-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16">
+                  For example, you might be waiting to call at a specific time 
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="cancelled" type="radio" name="reason-why" value="cancelled" aria-describedby="cancelled-hint">
+                
+                <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-1" for="cancelled">
+                  Application needs to be Cancelled and Retaken In (<abbr>CRTI</abbr>) 
+                </label>
+                <div id="cancelled-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16">
+                  <!-- This would be an overtime issue. You would drop the case out of Workflow to CRTI, however I retain in Workflow for the Monday morning because I would forget if I dropped it out on the weekend -->
+
+                  Retain this case within Workflow to ensure it is not forgotten <!--(when dropping the case outside of typical working hours)-->
+                </div>
+              </div> 
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="complex" type="radio" name="reason-why" value="complex" aria-describedby="complex-hint">
+                
+                <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-1" for="complex">
+                  Complex case
+                </label>
+                <div id="complex-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16">
+                  <!-- More time than is available is required than is available
+
+                  More time is required -->
+
+                  More than the time that is currently available is required
+
+                  <!--More than the time that available is required
+                  More than the available time is required-->
+
+                  <!--You need more than the available time to process this case--> <!-- application? -->    
+                  <!-- Complex cases pulled at the end of the working day (Pending) -->
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="progress" type="radio" name="reason-why" value="progress" aria-describedby="progress-hint">
+                
+                <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-1" for="progress">
+                  Work in progress
+                </label>
+                <div id="progress-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16">
+                  This case is ongoing <!--(and requires more than a day)--> <!--taking more time than a working day-->
+                </div>
+              </div>                           
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="training" type="radio" name="reason-why" value="training" aria-describedby="training-hint">
+                
+                <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-1" for="training">
+                  Training example
+                </label>
+                <div id="training-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16">
+                  Colleagues might require this type of case for training
+                   <!--. Temporarilly moving the case to Progress Later until confirmation 
+                   Move to Progress Later until confirmation that the application can be moved--> <!-- to another colleague -->
+                </div>
+              </div>
+
+              <div class="govuk-radios__divider govuk-!-padding-bottom-2">or</div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="something" type="radio" name="reason-why" value="something">
+                
+                <label class="govuk-label govuk-radios__label" for="something">
+                  Something else
+                </label>
+
+              </div>              
+                                                                                                                            
 
             </div>
               
-            <!-- if users navs back this will clear session value if no selection made -->
-            <!--input type="hidden" name="category_code" value=""-->
+
 
 
           </fieldset>
       </div>
 
-        <!--input type="hidden" name="lr_ref_number" value="DU164184">
-        <input type="hidden" name="lr_work_ref" value="L967RWW">
-        <input type="hidden" name="client" value="False"-->
-        <input type="hidden" name="days" value="">
-        
+      
 
         
-        <input type="submit" class="govuk-button" value="Select"> 
+        <input type="submit" class="govuk-button" value="Save"> 
 
-        <!-- removed 'ID' and 'data-double-click-prevention' from btn = can remove all javascript from js files also -->
-        <!--a id="btn_back" href="/worklist-ui/worklist" class="govuk-link worklist-link">Go back to My Worklist</a-->
 
     </form>
 
