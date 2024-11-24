@@ -645,6 +645,29 @@ Select a deferral reason
         {% if (data['my_progress_later'] == 'Progress later') %}
 
         <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx injected row Starts xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+        <style>
+            .case__reason-wrapper {
+              padding: 20px 10px 14px 0; 
+              display: flex;
+              height: 100%;
+            }
+            .case__reason-wrapper__inner {
+              width: 20px;
+              height: 100%; 
+              margin-right: 10px; 
+            } 
+            .hmlr-wf-reason-dot {
+              min-width: 20px;
+              min-height: 20px;
+              display: inline-block;
+              margin: 0 10px 0 0;
+              border-radius: 50%;
+              position: relative;
+              top: -0.1rem;
+            }         
+        </style>
+
         <tbody data-case-ref="E365VWW" class="case case--parent ">
           <tr id="row_10628" class="govuk-table__row case__data_row ">
             <td class="case__date" id="E365VWW_priority_date" headers="progress_now_priority_dates">
@@ -675,11 +698,21 @@ Select a deferral reason
                 10 January 2024
             </td>
             <td id="E365VWW_next_action" class="case__next-action" headers="progress_now_next_actions">
-                  {% set savedReasonWhy = data['reason-why'] %}
-
-                  <!--p> {{ savedReasonWhy }} </p-->
-                  
                   {% include "./inc_next-actions.html" %}
+            </td>
+          </tr>
+          <tr id="row_10628_reason">
+            <td colspan="6">
+              
+              <div class="case__reason-wrapper govuk-!-font-size-16">
+
+                <span class="case__reason-wrapper__inner">
+                  <span class="hmlr-wf-reason-dot" style="background-color: {% include "./inc_display-reason-colour.html" %};"></span>
+                </span>
+              
+                Reason: {% include "./inc_display-reason.html" %}. <span class="govuk-!-display-inline-block; govuk-!-margin-left-4">(<span class="govuk-visually-hidden">Moved to Progress Later: </span>24 November 2024)</span>
+              </div>
+              
             </td>
           </tr>
           <tr id="row_10628_actions" class="govuk-table__row case__actions">

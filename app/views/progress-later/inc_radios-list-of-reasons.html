@@ -1,0 +1,158 @@
+<div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="reason-hint">
+
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+            Why is this case being moved to Progress Later?
+            <!-- Record why the application is being moved to Progress Later? -->
+        </h1>
+      </legend>
+
+      <div id="reason-hint" class="govuk-hint govuk-!-margin-bottom-7">
+        This will help you identify why applications are in your Progress Later list
+      </div>            
+
+      <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+
+        <!-- *** only use 'govuk-!-padding-bottom-1' on labels if there is a hint text *** -->
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="manual" type="radio" name="reason-why" value="manual" {% if (data['reason-why'] == 'manual') %}
+          checked
+          {% endif %}>
+          
+          <label class="govuk-label govuk-radios__label" for="manual">
+            Manual files require ordering
+          </label>
+        </div> 
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="surveys" type="radio" name="reason-why" value="surveys" {% if (data['reason-why'] == 'surveys') %}
+          checked
+          {% endif %}>
+          
+          <label class="govuk-label govuk-radios__label" for="surveys">
+            Awaiting a survey   <!-- surveys need to be carried out -->
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="subsequent" type="radio" name="reason-why" value="subsequent" aria-describedby="subsequent-hint" {% if (data['reason-why'] == 'subsequent') %}
+          checked
+          {% endif %}>
+          
+          <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-1" for="subsequent">
+            Subsequent applications
+          </label>
+          <div id="subsequent-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16">
+            <!-- Sometimes if you are working on strings, you don't want another caseworker obtaining the subsequent application, so I pull it and put it in Progress Later -->
+
+            To avoid a colleague obtaining the subsequent application <!-- when working on strings -->
+          </div>
+        </div>              
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="referral" type="radio" name="reason-why" value="referral" aria-describedby="referral-hint" {% if (data['reason-why'] == 'referral') %}
+          checked
+          {% endif %}>
+          
+          <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-1" for="referral">
+            Referral
+          </label>
+          <div id="referral-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16">
+            For example, you want to query something with a colleague
+          </div>
+        </div> 
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="telephone" type="radio" name="reason-why" value="telephone" aria-describedby="telephone-hint" {% if (data['reason-why'] == 'telephone') %}
+          checked
+          {% endif %}>
+          
+          <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-1" for="telephone">
+            Telephone conversation required
+          </label>
+          <div id="telephone-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16">
+            For example, you might be waiting to call at a specific time 
+          </div>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="cancelled" type="radio" name="reason-why" value="cancelled" aria-describedby="cancelled-hint" {% if (data['reason-why'] == 'cancelled') %}
+          checked
+          {% endif %}>
+          
+          <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-1" for="cancelled">
+            Application needs to be Cancelled and Retaken In (<abbr>CRTI</abbr>) 
+          </label>
+          <div id="cancelled-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16">
+            <!-- This would be an overtime issue. You would drop the case out of Workflow to CRTI, however I retain in Workflow for the Monday morning because I would forget if I dropped it out on the weekend -->
+
+            Retain this case within Workflow to ensure it is not forgotten <!--(when dropping the case outside of typical working hours)-->
+          </div>
+        </div> 
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="complex" type="radio" name="reason-why" value="complex" aria-describedby="complex-hint" {% if (data['reason-why'] == 'complex') %}
+          checked
+          {% endif %}>
+          
+          <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-1" for="complex">
+            Complex case
+          </label>
+          <div id="complex-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16">
+            <!-- More time than is available is required than is available
+
+            More time is required -->
+
+            More than the time that is currently available is required
+
+            <!--More than the time that available is required
+            More than the available time is required-->
+
+            <!--You need more than the available time to process this case--> <!-- application? -->    
+            <!-- Complex cases pulled at the end of the working day (Pending) -->
+          </div>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="progress" type="radio" name="reason-why" value="progress" aria-describedby="progress-hint" {% if (data['reason-why'] == 'progress') %}
+          checked
+          {% endif %}>
+          
+          <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-1" for="progress">
+            Work in progress
+          </label>
+          <div id="progress-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16">
+            This case is ongoing <!--(and requires more than a day)--> <!--taking more time than a working day-->
+          </div>
+        </div>                           
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="training" type="radio" name="reason-why" value="training" aria-describedby="training-hint" {% if (data['reason-why'] == 'training') %}
+          checked
+          {% endif %}>
+          
+          <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-1" for="training">
+            Training example
+          </label>
+          <div id="training-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16">
+            Colleagues might require this type of case for training
+             <!--. Temporarilly moving the case to Progress Later until confirmation 
+             Move to Progress Later until confirmation that the application can be moved--> <!-- to another colleague -->
+          </div>
+        </div>
+
+        <div class="govuk-radios__divider govuk-!-padding-bottom-2">or</div>
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="something" type="radio" name="reason-why" value="something" {% if (data['reason-why'] == 'something') %}
+          checked
+          {% endif %}>
+          
+          <label class="govuk-label govuk-radios__label" for="something">
+            Something else
+          </label>
+
+        </div>              
+                                                                                                                      
+
+      </div>
+        
+
+
+
+    </fieldset>
+</div>

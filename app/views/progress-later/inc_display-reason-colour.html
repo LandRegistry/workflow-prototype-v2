@@ -1,0 +1,25 @@
+{% set theReasonWhyColour = data['reason-why'] %}
+
+    {% if theReasonWhyColour == "manual" %}
+    #d53880
+    {% elif theReasonWhyColour == "surveys" %}
+    #912b88
+    {% elif theReasonWhyColour == "subsequent" %}
+    #f499be
+    {% elif theReasonWhyColour == "referral" %}
+    #5694ca 
+    {% elif theReasonWhyColour == "telephone" %}
+    #6f72af
+    {% elif theReasonWhyColour == "cancelled" %}
+    brown                    
+    {% elif theReasonWhyColour == "complex" %}
+    #d4351c
+    {% elif theReasonWhyColour == "progress" %}
+    #00703c
+    {% elif theReasonWhyColour == "training" %}
+    #ffdd00
+    {% elif theReasonWhyColour == "something" %}
+    #b1b4b6                 
+    {% else %}
+    transparent
+    {% endif %}

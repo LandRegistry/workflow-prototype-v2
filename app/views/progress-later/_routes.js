@@ -38,6 +38,37 @@ router.post('/pg-a-02_why', function (req, res) {
 })
 
 
+//flow one starts ...
+router.post('/pg-b-01', function (req, res) {
+
+    const userInput = req.session.data['my_progress_later'];
+
+    if (userInput == 'Progress later') {//selected Extension of time       
+
+        res.redirect("pg-b-02_why")  
+        
+    } 
+})
+
+router.post('/pg-b-02_why', function (req, res) {
+
+    const userInput = req.session.data['reason-why'];
+
+    if (userInput == null) {//empty
+
+        res.redirect("pg-b-02_why-error")
+
+    } else if (userInput != null) {      
+
+        res.redirect("pg-b-01")  
+        
+    } //else {
+
+        //res.redirect("end")   
+
+    //}
+})
+
 /*
 router.post('/one-defer_02-error', function (req, res) {
 
