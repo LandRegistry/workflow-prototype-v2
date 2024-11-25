@@ -17,16 +17,27 @@ Select a deferral reason
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-
     <form action="#" method="post" novalidate>
+      <fieldset class="govuk-fieldset govuk-!-margin-bottom-5" aria-describedby="pending-hint">
 
-      {% include "./inc_radios-list-of-reasons-2.html" %}
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          Select a pending reason
+        </legend>
+    
+        <div id="pending-hint" class="govuk-hint govuk-!-margin-bottom-5 govuk-!-font-size-16 govuk-visually-hidden">
+          This will help you identify why applications are in your Progress Later list
+        </div>
 
+        {% include "./inc_radios-list-pending.html" %}
+
+      </fieldset>
+
+      
+      
       <div class="govuk-button-group">
         <input type="submit" class="govuk-button" value="Save">
         <a class="govuk-link govuk-link--no-visited-state" href="pg-b-01.html">Cancel</a>
-      </div>
-
+      </div>      
 
     </form>
 

@@ -1,15 +1,14 @@
-{% set theReasonWhy = data['reason-why'] %}
+{% set thePendingReasonWhy = data['pending-why'] %}
 
-                  {% if theReasonWhy == "manual" %}
-                    Manual files require ordering{% elif theReasonWhy == "surveys" %}
-                    Awaiting a survey{% elif theReasonWhy == "subsequent" %}
-                    Subsequent applications{% elif theReasonWhy == "referral" %}
-                    Referral{% elif theReasonWhy == "telephone" %}
-                    Telephone conversation required{% elif theReasonWhy == "cancelled" %}
-                    Application needs to be Cancelled and Retaken In (CRTI){% elif theReasonWhy == "complex" %}
-                    Complex case{% elif theReasonWhy == "progress" %}
-                    Work in progress{% elif theReasonWhy == "training" %}
-                    Training example{% elif theReasonWhy == "something" %}
-                    Something else{% else %}
-                    
-                  {% endif %}
+{% if thePendingReasonWhy == "manual" %}
+  Manual files require ordering{% elif thePendingReasonWhy == "surveys" %}
+  Awaiting a survey{% elif thePendingReasonWhy == "subsequent" %}
+  Subsequent applications{% elif thePendingReasonWhy == "telephone" %}
+  Telephone conversation required{% elif thePendingReasonWhy == "cancelled" %}
+  Application needs to be Cancelled and Retaken In (CRTI){% elif thePendingReasonWhy == "complex" %}
+  Complex case{% elif thePendingReasonWhy == "progress" %}
+  Work in progress{% elif thePendingReasonWhy == "training" %}
+  Training example{% elif thePendingReasonWhy == "something" %}
+  Something else{% else %}
+  Referral
+{% endif %}

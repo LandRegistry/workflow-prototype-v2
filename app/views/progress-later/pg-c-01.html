@@ -14,7 +14,9 @@ Select a deferral reason
 
 {% block content %}
 
-  {% if (data['my_progress_later'] == 'Progress later') %}
+  {% if (data['my_progress_later'] == 'Change the reason') %}
+      DIFFERENT
+  {% elseif (data['my_progress_later'] == 'Progress later') %}
     <section id="pleaseWaitTarget" aria-live="assertive">
       <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner" id="message-banner">
         <div class="govuk-notification-banner__header">
@@ -52,7 +54,7 @@ Select a deferral reason
           <a href="#" class="govuk-link govuk-link--no-visited-state">Change your category of work</a>.
         </p>
         
-        {% if (data['my_progress_later'] != 'Progress later') %}
+        {% if (data['my_progress_later'] != 'Progress later' or data['change_the_reason'] != 'Change the reason') %}
 
           <table id="progress_now_table" class="govuk-table worklist__table ">
               
@@ -398,11 +400,35 @@ Select a deferral reason
               <th class="govuk-table__header" id="progress_later_next_actions" scope="col">Next action</th>
             </tr>
         </thead>
-        {% include "./inc_expedited-items.html" %}
 
-        {% if (data['my_progress_later'] == 'Progress later') %}
+        {% include "./inc_expedited-items.html" %}
         
+        {% if (data['my_progress_later'] == 'Progress later') %}
+
         <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx injected row Starts xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+        <style>
+            .case__reason-wrapper {
+              padding: 20px 10px 14px 0; 
+              display: flex;
+              height: 100%;
+            }
+            .case__reason-wrapper__inner {
+              width: 20px;
+              height: 100%; 
+              margin-right: 10px; 
+            } 
+            .hmlr-wf-reason-dot {
+              min-width: 20px;
+              min-height: 20px;
+              display: inline-block;
+              margin: 0 10px 0 0;
+              border-radius: 50%;
+              position: relative;
+              top: -0.1rem;
+            }         
+        </style>
+
         <tbody data-case-ref="E365VWW" class="case case--parent ">
           <tr id="row_10628" class="govuk-table__row case__data_row ">
             <td class="case__date" id="E365VWW_priority_date" headers="progress_now_priority_dates">
@@ -433,9 +459,21 @@ Select a deferral reason
                 10 January 2024
             </td>
             <td id="E365VWW_next_action" class="case__next-action" headers="progress_now_next_actions">
-                  {% set savedReasonWhy = data['reason-why'] %}
-                  
                   {% include "./inc_next-actions.html" %}
+            </td>
+          </tr>
+          <tr id="row_10628_reason">
+            <td colspan="6">
+              
+              <div class="case__reason-wrapper govuk-!-font-size-16">
+
+                <span class="case__reason-wrapper__inner">
+                  <span class="hmlr-wf-reason-dot" style="background-color: {% include "./inc_display-reason-colour.html" %};"></span>
+                </span>
+              
+                Reason: {% include "./inc_display-reason.html" %}. <span class="govuk-!-display-inline-block; govuk-!-margin-left-4">(<span class="govuk-visually-hidden">Moved to Progress Later: </span>25 November 2024</span>)
+              </div>
+              
             </td>
           </tr>
           <tr id="row_10628_actions" class="govuk-table__row case__actions">
@@ -458,8 +496,14 @@ Select a deferral reason
                       <form class="case__form" id="change_state_10628" action="#" method="post" novalidate>
   
                           <input id="hidden_value_progress_child_cases_10628" type="hidden" name="child_cases" value="1">
+
+                          <input id="btn_change_reason_10628" title="Change the reason" type="submit" name="change_the_reason" class="govuk-link case__hyperlink case__await_lawyer_btn govuk-!-display-inline-block govuk-!-text-align-centre govuk-!-padding-bottom-1 hmlr-link--min-width-48 govuk-!-font-size-16" value="Change the reason" formaction="#"> 
+                          
+                          <span class="govuk-visually-hidden">|</span>
   
                           <input id="btn_await_lawyer_10628" title="Refer case E365VWW to a lawyer" type="submit" name="Waiting_for_lawyer" class="govuk-link case__hyperlink case__await_lawyer_btn govuk-!-display-inline-block govuk-!-text-align-centre govuk-!-padding-bottom-1 hmlr-link--min-width-48 govuk-!-font-size-16" value="Waiting for lawyer" formaction="#">
+
+                          <span class="govuk-visually-hidden">|</span>
                           
       <a class="govuk-link govuk-link--no-visited-state case__refer-link case__anchor govuk-!-font-size-16" href="#">
         Refer <span class="govuk-visually-hidden">case <abbr>E365VWW</abbr></span>
@@ -517,7 +561,7 @@ Select a deferral reason
               <span class="case__inc">
                       
               </span>
-              DU164998
+              DU164998 DARREN
               
           
       </td>
@@ -626,7 +670,9 @@ Select a deferral reason
         {% endif %}
         <!-- xxxxxxxxxxxxxxxxxxx-->
 
-        {% include "./inc_standard-items.html" %}
+
+      {% include "./inc_standard-items.html" %}
+        
   
       <tfoot class="govuk-table__head">
         <tr class="govuk-table__row">

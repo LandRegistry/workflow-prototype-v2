@@ -1,25 +1,23 @@
-{% set theReasonWhyColour = data['reason-why'] %}
+{% set thePendingWhyColour = data['pending-why'] %}
 
-    {% if theReasonWhyColour == "manual" %}
+    {% if thePendingWhyColour == "manual" %}
     #d53880
-    {% elif theReasonWhyColour == "surveys" %}
+    {% elif thePendingWhyColour == "surveys" %}
     #912b88
-    {% elif theReasonWhyColour == "subsequent" %}
+    {% elif thePendingWhyColour == "subsequent" %}
     #f499be
-    {% elif theReasonWhyColour == "referral" %}
-    #5694ca 
-    {% elif theReasonWhyColour == "telephone" %}
+    {% elif thePendingWhyColour == "telephone" %}
     #6f72af
-    {% elif theReasonWhyColour == "cancelled" %}
+    {% elif thePendingWhyColour == "cancelled" %}
     brown                    
-    {% elif theReasonWhyColour == "complex" %}
+    {% elif thePendingWhyColour == "complex" %}
     #d4351c
-    {% elif theReasonWhyColour == "progress" %}
+    {% elif thePendingWhyColour == "progress" %}
     #00703c
-    {% elif theReasonWhyColour == "training" %}
+    {% elif thePendingWhyColour == "training" %}
     #ffdd00
-    {% elif theReasonWhyColour == "something" %}
+    {% elif thePendingWhyColour == "something" %}
     #b1b4b6                 
     {% else %}
-    transparent
+    #5694ca
     {% endif %}

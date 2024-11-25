@@ -1,0 +1,87 @@
+
+<div class="govuk-form-group">
+    <fieldset class="govuk-fieldset"><!--  aria-describedby="reason-hint" -->
+
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+            Why is this case being moved to Progress Later?
+            <!-- Record why the application is being moved to Progress Later? -->
+        </h1>
+      </legend>
+
+      <!--div id="reason-hint" class="govuk-hint govuk-!-margin-bottom-7">
+        This will help you identify why applications are in your Progress Later list
+      </div-->            
+
+      <div class="govuk-radios govuk-!-margin-top-4" data-module="govuk-radios">
+
+        <!-- *** only use 'govuk-!-padding-bottom-1' on labels if there is a hint text *** -->
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="referral" type="radio" name="reason-why" value="referral" aria-describedby="referral-hint" data-aria-controls="conditional-reason-1" {% if (data['reason-why'] == 'referral') %}
+          checked
+          {% endif %}>
+          
+          <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-1" for="referral">
+            Referral
+          </label>
+          <div id="referral-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16">
+            The case will be referred <!--For example, you want to query something with a colleague-->
+          </div>
+        </div>
+        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-reason-1">
+          <div class="govuk-form-group">
+
+            <fieldset class="govuk-fieldset govuk-!-margin-top-5"> <!-- aria-describedby="pending-hint" -->
+
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-font-weight-regular">
+                Select a referral reason <!--the case will be referred--> <!--and what it is awaiting-->
+              </legend>
+
+              <!--div id="pending-hint" class="govuk-hint govuk-!-margin-bottom-5 govuk-!-font-size-16 govuk-visually-hidden">
+                This will will update the Next Action
+              </div-->               
+
+              {% include "./inc_radios-list-referral.html" %}
+
+            </fieldset>
+
+          </div>
+        </div>  
+        
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="pending" type="radio" name="reason-why" value="pending" aria-describedby="pending-hint" data-aria-controls="conditional-reason-2" {% if (data['reason-why'] == 'pending') %}
+          checked
+          {% endif %}>
+          
+          <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-1" for="pending">
+            Pending
+          </label>
+          <div id="pending-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16">
+            The case will be in Progress Later temporarily
+          </div>
+        </div>
+        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-reason-2">
+          <div class="govuk-form-group">
+
+            <fieldset class="govuk-fieldset govuk-!-margin-top-5" aria-describedby="pending-hint">
+
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-font-weight-regular">
+                Select a pending reason
+              </legend>
+
+              <div id="pending-hint" class="govuk-hint govuk-!-margin-bottom-5 govuk-!-font-size-16 govuk-visually-hidden">
+                This will help you identify why applications are in your Progress Later list
+              </div>               
+
+              {% include "./inc_radios-list-pending.html" %}
+
+            </fieldset>
+
+          </div>
+        </div>        
+
+      </div>
+
+    </fieldset>
+</div>

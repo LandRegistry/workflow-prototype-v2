@@ -17,6 +17,18 @@
         <!-- *** only use 'govuk-!-padding-bottom-1' on labels if there is a hint text *** -->
 
         <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="referral" type="radio" name="reason-why" value="referral" aria-describedby="referral-hint" {% if (data['reason-why'] == 'referral') %}
+          checked
+          {% endif %}>
+          
+          <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-1" for="referral">
+            Referral
+          </label>
+          <div id="referral-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16">
+            For example, you want to query something with a colleague
+          </div>
+        </div>        
+        <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="manual" type="radio" name="reason-why" value="manual" {% if (data['reason-why'] == 'manual') %}
           checked
           {% endif %}>
@@ -48,18 +60,6 @@
             To avoid a colleague obtaining the subsequent application <!-- when working on strings -->
           </div>
         </div>              
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="referral" type="radio" name="reason-why" value="referral" aria-describedby="referral-hint" {% if (data['reason-why'] == 'referral') %}
-          checked
-          {% endif %}>
-          
-          <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-1" for="referral">
-            Referral
-          </label>
-          <div id="referral-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16">
-            For example, you want to query something with a colleague
-          </div>
-        </div> 
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="telephone" type="radio" name="reason-why" value="telephone" aria-describedby="telephone-hint" {% if (data['reason-why'] == 'telephone') %}
           checked

@@ -1,0 +1,40 @@
+<div class="govuk-radios govuk-radios--small">
+
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="tt1" type="radio" name="referred-why" value="tt1" {% if (data['referred-why'] == 'tt1') %}
+      checked
+      {% endif %}>
+      
+      <label class="govuk-label govuk-radios__label" for="tt1">
+        Awaiting <abbr>TT</abbr>1
+      </label>
+    </div>
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="tt2" type="radio" name="referred-why" value="tt2" {% if (data['referred-why'] == 'tt2') %}
+      checked
+      {% endif %}>
+      
+      <label class="govuk-label govuk-radios__label" for="tt2">
+        Awaiting <abbr>TT</abbr>2
+      </label>
+    </div>
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="tt3" type="radio" name="referred-why" value="tt3" {% if (data['referred-why'] == 'tt3') %}
+      checked
+      {% endif %}>
+      
+      <label class="govuk-label govuk-radios__label" for="tt3">
+        Awaiting <abbr>TT</abbr>3 / Lawyer
+      </label>
+    </div>
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="hro" type="radio" name="referred-why" value="hro" {% if (data['referred-why'] == 'hro') %}
+      checked
+      {% endif %}>
+      
+      <label class="govuk-label govuk-radios__label" for="hro">
+        Awaiting <abbr>HRO</abbr>
+      </label>
+    </div>                                                 
+  
+  </div>

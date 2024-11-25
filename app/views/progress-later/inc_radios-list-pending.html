@@ -1,0 +1,124 @@
+
+    <div class="govuk-radios govuk-radios--small">
+
+        <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="manual" type="radio" name="pending-why" value="manual" {% if (data['pending-why'] == 'manual') %}
+        checked
+        {% endif %}>
+        
+        <label class="govuk-label govuk-radios__label" for="manual">
+            Manual files require ordering
+        </label>
+        </div> 
+        <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="surveys" type="radio" name="pending-why" value="surveys" {% if (data['pending-why'] == 'surveys') %}
+        checked
+        {% endif %}>
+        
+        <label class="govuk-label govuk-radios__label" for="surveys">
+            Awaiting a survey   <!-- surveys need to be carried out -->
+        </label>
+        </div>
+        <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="subsequent" type="radio" name="pending-why" value="subsequent" aria-describedby="subsequent-hint" {% if (data['pending-why'] == 'subsequent') %}
+        checked
+        {% endif %}>
+        
+        <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-1" for="subsequent">
+            Subsequent applications
+        </label>
+        <div id="subsequent-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16">
+            <!-- Sometimes if you are working on strings, you don't want another caseworker obtaining the subsequent application, so I pull it and put it in Progress Later -->
+
+            To avoid a colleague obtaining the subsequent application <!-- when working on strings -->
+        </div>
+        </div>              
+        <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="telephone" type="radio" name="pending-why" value="telephone" aria-describedby="telephone-hint" {% if (data['pending-why'] == 'telephone') %}
+        checked
+        {% endif %}>
+        
+        <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-1" for="telephone">
+            Telephone conversation required
+        </label>
+        <div id="telephone-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16">
+            For example, you might be waiting to call at a specific time 
+        </div>
+        </div>
+        <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="cancelled" type="radio" name="pending-why" value="cancelled" aria-describedby="cancelled-hint" {% if (data['pending-why'] == 'cancelled') %}
+        checked
+        {% endif %}>
+        
+        <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-1" for="cancelled">
+            Application needs to be Cancelled and Retaken In (<abbr>CRTI</abbr>) 
+        </label>
+        <div id="cancelled-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16">
+            <!-- This would be an overtime issue. You would drop the case out of Workflow to CRTI, however I retain in Workflow for the Monday morning because I would forget if I dropped it out on the weekend -->
+
+            Retain this case within Workflow to ensure it is not forgotten <!--(when dropping the case outside of typical working hours)-->
+        </div>
+        </div> 
+        <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="complex" type="radio" name="pending-why" value="complex" aria-describedby="complex-hint" {% if (data['pending-why'] == 'complex') %}
+        checked
+        {% endif %}>
+        
+        <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-1" for="complex">
+            Complex case
+        </label>
+        <div id="complex-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16">
+            <!-- More time than is available is required than is available
+
+            More time is required -->
+
+            More than the time that is currently available is required
+
+            <!--More than the time that available is required
+            More than the available time is required-->
+
+            <!--You need more than the available time to process this case--> <!-- application? -->    
+            <!-- Complex cases pulled at the end of the working day (Pending) -->
+        </div>
+        </div>
+        <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="progress" type="radio" name="pending-why" value="progress" aria-describedby="progress-hint" {% if (data['pending-why'] == 'progress') %}
+        checked
+        {% endif %}>
+        
+        <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-1" for="progress">
+            Work in progress
+        </label>
+        <div id="progress-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16">
+            This case is ongoing <!--(and requires more than a day)--> <!--taking more time than a working day-->
+        </div>
+        </div>                           
+        <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="training" type="radio" name="pending-why" value="training" aria-describedby="training-hint" {% if (data['pending-why'] == 'training') %}
+        checked
+        {% endif %}>
+        
+        <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-1" for="training">
+            Training example
+        </label>
+        <div id="training-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16">
+            Colleagues might require this type of case for training
+            <!--. Temporarilly moving the case to Progress Later until confirmation 
+            Move to Progress Later until confirmation that the application can be moved--> <!-- to another colleague -->
+        </div>
+        </div>
+
+        <div class="govuk-radios__divider govuk-!-padding-bottom-2">or</div>
+
+        <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="something" type="radio" name="pending-why" value="something" {% if (data['pending-why'] == 'something') %}
+        checked
+        {% endif %}>
+        
+        <label class="govuk-label govuk-radios__label" for="something">
+            Something else
+        </label>
+
+        </div>
+    
+    </div>
