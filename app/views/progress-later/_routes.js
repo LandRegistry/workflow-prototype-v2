@@ -47,12 +47,14 @@ router.post('/pg-b-01', function (req, res) {
 
     if (userInput2 == 'Change the reason') {//the change reason button
         
+        req.session.data['forPrototype'] = null;
         req.session.data['update_next_action'] = null;
         req.session.data['change_the_reason'] = null;
         res.redirect("pg-b-02_pending") 
 
     } else if (userInput3 == 'Update next action') {//update next action button
         
+        req.session.data['forPrototype'] = null;
         req.session.data['update_next_action'] = null;
         req.session.data['change_the_reason'] = null;
         res.redirect("pg-b-02_referral")         
@@ -67,7 +69,7 @@ router.post('/pg-b-01', function (req, res) {
 router.post('/pg-b-02_why', function (req, res) {
 
     //req.session.data['my_progress_later'] = null;
-    const userInput = req.session.data['reason-why'];
+    req.session.data['forPrototype'] = null;
 
     if (userInput == null) {//empty
 
@@ -86,7 +88,7 @@ router.post('/pg-b-02_why', function (req, res) {
 
 router.post('/pg-b-02_pending', function (req, res) {
     
-    req.session.data['update_next_action'] = '';    
+    //req.session.data['update_next_action'] = '';    
     const userInput = req.session.data['pending-why'];
 
     if (userInput == null) {//empty
@@ -102,7 +104,7 @@ router.post('/pg-b-02_pending', function (req, res) {
 
 router.post('/pg-b-02_referral', function (req, res) {
 
-    req.session.data['change_the_reason'] = '';
+    //req.session.data['change_the_reason'] = '';
     const userInput = req.session.data['referred-why'];
 
     if (userInput == null) {//empty
@@ -116,41 +118,32 @@ router.post('/pg-b-02_referral', function (req, res) {
     }
 })
 
-//flow C three starts ...
+//flow C three starts ...  THE FLOW (other pages) ARE THE SAME AS B/two - but the other form pages will return to B/two. 
 router.post('/pg-c-01', function (req, res) {
 
     const userInput = req.session.data['my_progress_later'];
     const userInput2 = req.session.data['change_the_reason'];
+    const userInput3 = req.session.data['update_next_action'];
 
     if (userInput2 == 'Change the reason') {//the change reason button
         
-        req.session.data['my_progress_later'] = null;
-        res.redirect("pg-c-02_why")  
+        req.session.data['forPrototype'] = null;
+        req.session.data['update_next_action'] = null;
+        req.session.data['change_the_reason'] = null;
+        res.redirect("pg-b-02_pending") 
 
-    } else if (userInput == 'Progress later') {//selected progress later button      
+    } else if (userInput3 == 'Update next action') {//update next action button
+        
+        req.session.data['forPrototype'] = null;
+        req.session.data['update_next_action'] = null;
+        req.session.data['change_the_reason'] = null;
+        res.redirect("pg-b-02_referral")         
 
-        res.redirect("pg-c-02_why")  
+    } else if (userInput == 'Progress later') {
+
+        res.redirect("pg-b-02_why")  
         
     } 
-})
-
-router.post('/pg-c-02_why', function (req, res) {
-
-    const userInput = req.session.data['reason-why'];
-
-    if (userInput == null) {//empty
-
-        res.redirect("pg-c-02_why-error")
-
-    } else if (userInput != null) {      
-
-        res.redirect("pg-c-01")  
-        
-    } //else {
-
-        //res.redirect("end")   
-
-    //}
 })
 
 

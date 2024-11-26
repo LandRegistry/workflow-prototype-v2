@@ -16,7 +16,7 @@
 
         <!-- *** only use 'govuk-!-padding-bottom-1' on labels if there is a hint text *** -->
 
-        <div class="govuk-radios__item">
+        <!--div class="govuk-radios__item">
           <input class="govuk-radios__input" id="referral" type="radio" name="reason-why" value="referral" aria-describedby="referral-hint" {% if (data['reason-why'] == 'referral') %}
           checked
           {% endif %}>
@@ -27,7 +27,49 @@
           <div id="referral-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16">
             For example, you want to query something with a colleague
           </div>
+        </div-->
+        
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="tt1" type="radio" name="reason-why" value="tt1" {% if (data['reason-why'] == 'tt1') %}
+          checked
+          {% endif %}>
+          
+          <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-1" for="tt1">
+            Awaiting TT1
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="tt2" type="radio" name="reason-why" value="tt2" {% if (data['reason-why'] == 'tt2') %}
+          checked
+          {% endif %}>
+          
+          <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-1" for="tt2">
+            Awaiting TT2
+          </label>
         </div>        
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="tt3" type="radio" name="reason-why" value="tt3" {% if (data['reason-why'] == 'tt3') %}
+          checked
+          {% endif %}>
+          
+          <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-1" for="tt3">
+            Awaiting TT3 / Lawyer
+          </label>
+        </div>   
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="hro" type="radio" name="reason-why" value="hro" {% if (data['reason-why'] == 'hro') %}
+          checked
+          {% endif %}>
+          
+          <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-4" for="hro">
+            Awaiting HRO
+          </label>
+        </div>             
+
+
+        <div class="govuk-radios__divider govuk-!-padding-bottom-2">or</div>
+
+
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="manual" type="radio" name="reason-why" value="manual" {% if (data['reason-why'] == 'manual') %}
           checked
@@ -134,8 +176,6 @@
              Move to Progress Later until confirmation that the application can be moved--> <!-- to another colleague -->
           </div>
         </div>
-
-        <div class="govuk-radios__divider govuk-!-padding-bottom-2">or</div>
 
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="something" type="radio" name="reason-why" value="something" {% if (data['reason-why'] == 'something') %}

@@ -14,50 +14,10 @@ Select a deferral reason
 
 {% block content %}
 
+  {% include "./inc_temp-reason-css.html" %}
 
+  {% if (data['my_progress_later'] == 'Progress later' and data['forPrototype'] == 'firstBanner') %}
 
-
-{% if (data['reason-why'] == 'referral') %}
-
-referral
-
-{% elseif  (data['reason-why'] == 'pending') %}
-
-pending
-
-{% elseif (data['my_progress_later'] == 'Progress later') %}
-
-<section id="pleaseWaitTarget" aria-live="assertive">
-  <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner" id="message-banner">
-    <div class="govuk-notification-banner__header">
-      <h2 class="govuk-notification-banner__title" id="message-banner-title">
-        Success
-      </h2>
-    </div>
-    <div class="govuk-notification-banner__content" id="message-banner-content">
-      <p class="govuk-notification-banner__heading">You will progress application DU164997 / E365VWW later.</p>
-    </div>
-  </div>
-</section>
-
-{% endif %}
-
-  xxxxxxxxxxxxxxxx
- 
-  {% if (data['change-the-reason'] == 'Change the reason') %}
-  <section id="pleaseWaitTarget" aria-live="assertive">
-    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner" id="message-banner">
-      <div class="govuk-notification-banner__header">
-        <h2 class="govuk-notification-banner__title" id="message-banner-title">
-          Success
-        </h2>
-      </div>
-      <div class="govuk-notification-banner__content" id="message-banner-content">
-        <p class="govuk-notification-banner__heading">zzz You have updated why application DU164997 / E365VWW will be progressed later.</p>
-      </div>
-    </div>
-  </section> 
-  {% elseif (data['update_next_action'] == 'Update next action') %}
     <section id="pleaseWaitTarget" aria-live="assertive">
       <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner" id="message-banner">
         <div class="govuk-notification-banner__header">
@@ -66,13 +26,44 @@ pending
           </h2>
         </div>
         <div class="govuk-notification-banner__content" id="message-banner-content">
-          <p class="govuk-notification-banner__heading">xxx You have updated the next action for application DU164997 / E365VWW.</p>
+          <p class="govuk-notification-banner__heading">You will progress application DU164997 / E365VWW later.</p>
         </div>
       </div>
     </section>
 
-   
+  {% elseif (data['forPrototype'] == 'pendingBanner') %}
+
+    <section id="pleaseWaitTarget" aria-live="assertive">
+      <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner" id="message-banner">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="message-banner-title">
+            Success
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content" id="message-banner-content">
+          <p class="govuk-notification-banner__heading">You have updated why application DU164997 / E365VWW will be progressed later.</p>
+        </div>
+      </div>
+    </section> 
+
+  {% elseif (data['forPrototype'] == 'referralBanner') %} 
+
+    <section id="pleaseWaitTarget" aria-live="assertive">
+      <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner" id="message-banner">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="message-banner-title">
+            Success
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content" id="message-banner-content">
+          <p class="govuk-notification-banner__heading">You have updated the next action for application DU164997 / E365VWW.</p>
+        </div>
+      </div>
+    </section>
+
   {% endif %}
+
+  
 
 
 
@@ -234,9 +225,13 @@ pending
                                   <!--input class="case__progress-code" id="hidden_value_progress_10628" type="hidden" name="activity_code" value="PROGRESS_LATER"-->
           
                                   <input id="hidden_value_progress_child_cases_10628" type="hidden" name="child_cases" value="1">
+
+                                  <span class="govuk-visually-hidden">|</span>
           
                                   <input id="btn_await_lawyer_10628" aria-label="Refer case E365VWW to a lawyer" type="hidden" name="Waiting_for_lawyer" class="case__hyperlink case__await_lawyer_btn
                                   govuk-!-font-size-16" value="Waiting for lawyer" formaction="#">
+
+                                  <span class="govuk-visually-hidden">|</span>
                                   
               <a class="govuk-link govuk-link--no-visited-state case__refer-link case__anchor govuk-!-font-size-16" href="#">
                 Refer<span class="govuk-visually-hidden"> case <abbr>E365VWW</abbr></span>
@@ -453,28 +448,6 @@ pending
         {% if (data['my_progress_later'] == 'Progress later') %}
 
         <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx injected row Starts xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
-
-        <style>
-            .case__reason-wrapper {
-              padding: 20px 10px 14px 0; 
-              display: flex;
-              height: 100%;
-            }
-            .case__reason-wrapper__inner {
-              width: 20px;
-              height: 100%; 
-              margin-right: 10px; 
-            } 
-            .hmlr-wf-reason-dot {
-              min-width: 20px;
-              min-height: 20px;
-              display: inline-block;
-              margin: 0 10px 0 0;
-              border-radius: 50%;
-              position: relative;
-              top: -0.1rem;
-            }         
-        </style>
 
         <tbody data-case-ref="E365VWW" class="case case--parent ">
           <tr id="row_10628" class="govuk-table__row case__data_row ">
