@@ -70,6 +70,7 @@ router.post('/pg-b-02_why', function (req, res) {
 
     //req.session.data['my_progress_later'] = null;
     req.session.data['forPrototype'] = null;
+    const userInput = req.session.data['reason-why'];
 
     if (userInput == null) {//empty
 
