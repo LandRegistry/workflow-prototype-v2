@@ -6,6 +6,43 @@
 const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 
+
+
+
+router.post('/pg-1-01', function (req, res) {
+
+    const userInput = req.session.data['my_progress_later'];
+
+    if (userInput == 'Progress later') {//selected Extension of time       
+
+        res.redirect("pg-1-02_why")  
+        
+    } 
+})
+
+router.post('/pg-1-02_why', function (req, res) {
+
+    const userInput = req.session.data['reason-why'];
+
+    if (userInput == null) {//empty
+
+        res.redirect("pg-1-02_why-error")
+
+    } else if (userInput != null) {      
+
+        res.redirect("pg-1-01")  
+        
+    } //else {
+
+        //res.redirect("end")   
+
+    //}
+})
+
+
+
+
+
 //flow A one starts ...
 router.post('/pg-a-01', function (req, res) {
 

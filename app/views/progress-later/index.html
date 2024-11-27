@@ -18,45 +18,62 @@ Progress Later Index
     </h1>
 
     <p class="govuk-body">
-      All links open in a new tab.
+
     </p>
 
-    <ul class="govuk-list govuk-list--spaced">
+    <ul class="govuk-list--bullet govuk-list--spaced ">
       <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="/progress-later/pg-a-01.html" target="_blank">
-          (a) Standard functionality
+        <a class="govuk-link govuk-link--no-visited-state govuk-!-font-size-16" href="/progress-later/pg-1-01.html" target="_blank">
+          Progress Later prototype (opens in new tab)
         </a> <br>
-        Caseworker selects a reason why - this updates the 'Next action' to the appropriate state. (Schema still to be created). System genuinely updates Next action (including the status labels when cases are referred back to the caseworker). 
+        Caseworker selects 'Progress later' - and then selects a reason (from an option of two groups), which then updates the 'Next action' to the appropriate state. 
       </li>
-      <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="/progress-later/pg-b-01.html" target="_blank">
-          (b) Standard functionality &plus; display bespoke reason
-        </a> <br>
-          &plus; extra table row for displaying the bespoke reason. (And ability to edit this - does editing update the Next Action?)<br>
-          Note: ideally the <abbr>HTML</abbr> tables should be recoded to feature left col TH cells (and use inline 'headers' attributes to link to IDs in left TH cells and header TH cells)
-      </li>
-      <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="/progress-later/pg-c-01.html" target="_blank">
-          (c) Standard functionality &plus; display bespoke reason
-        </a> <br>
-          &plus; &plus; Awaiting status option on reasons form, which either updates the Next Action or is appended seperately in the new table row (as c.b).
-      </li>            
-
     </ul>
 
+    <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible govuk-!-margin-top-9 govuk-!-margin-bottom-9">
 
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text govuk-!-font-size-16">
+          Various prototypes/designs/concepts for reference
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        
+        <p class="govuk-body govuk-!-font-size-16">
+          All links open in a new tab. (Form validation pages not yet created.)
+        </p>
+    
+        <ul class="govuk-list--bullet govuk-list--spaced govuk-!-font-size-16">
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/progress-later/pg-a-01.html" target="_blank">
+              (A) Standard functionality
+            </a> <br>
+            Caseworker selects 'Progress later' and then a reason why - this updates the 'Next action' to the appropriate state. (This prototype uses dummy next actions - yet to be defined). System updates next actions appropriately, as now. 
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/progress-later/pg-b-01.html" target="_blank">
+              (B) Standard functionality &plus; display bespoke reason 
+            </a> <br>
+              &plus; extra table row for displaying the bespoke reason. (And ability to change it)<br>
+              Next action is updated - from the initial page, if a 'refer' reason is selected. Then the 'reason' and 'next action' operate independently. <br>
+              Caseworker can change/update 'reason' or 'next action' via the two menu links (with Waiting for lawyer being replaced)
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="/progress-later/pg-c-01.html" target="_blank">
+              (C) Standard functionality &plus; (as like B) all cases display a bespoke reason
+            </a> <br>
+              &plus; a standalone single page, demonstrating how the entire list might appear with 'reason' rows. The coloured dot is an inital concept to illustrate the general concept. (Note: selecting the Change/Update buttons will return you to version B, not C - amend URL to return to pg-c-01.html).
+          </li>            
+        </ul>
 
-    <p class="govuk-body">
-      Form validation pages not yet created.
-    </p>
-
-
-
+      </div>
+    </details>
 
     <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible govuk-!-margin-top-9 govuk-!-margin-bottom-9">
 
     <p class="govuk-body-s">
-      Use the 'Clear data (pop-up)' link to clear the session data. 
+      Use the '<b>Clear data (pop-up)</b>' link on any page to clear the session data (and each time you use a different version of the prototype). 
     </p>
 
   </div>

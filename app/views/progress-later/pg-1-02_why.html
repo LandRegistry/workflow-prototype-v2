@@ -1,0 +1,36 @@
+{% extends "layouts/wf_layout_legacy.html" %}
+
+{# set pageName="Select a category of work" #}
+
+{% block pageTitle %}
+Select a deferral reason
+{% endblock %}
+
+{% block beforeContent %}
+
+<a href="#" class="govuk-back-link">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <form action="#" method="post" novalidate>
+
+      {% include "./inc_radios-list-of-reasons-2.html" %}
+        
+      <input type="submit" class="govuk-button" value="Save"> 
+
+    </form>
+
+
+  </div>
+</div>
+
+
+
+
+{% endblock %}

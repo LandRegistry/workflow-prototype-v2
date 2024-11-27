@@ -1,0 +1,33 @@
+{% set theReasonWhy = data['the-reason-why'] %}
+
+      {% if theReasonWhy == "tt1" %}
+        Awaiting TT1
+      {% elif theReasonWhy == "tt2" %}
+        Awaiting TT2
+      {% elif theReasonWhy == "tt3" %}
+        Awaiting TT3 / Lawyer
+      {% elif theReasonWhy == "hro" %}
+        Awaiting HRO
+      {% elif theReasonWhy == "manual" %}
+        Manual 01
+      {% elif theReasonWhy == "surveys" %}
+        Survey 02
+      {% elif theReasonWhy == "subsequent" %}
+        Subsequent 03
+      {% elif theReasonWhy == "referral" %}
+        Referral 04
+      {% elif theReasonWhy == "telephone" %}
+        Telephone 05
+      {% elif theReasonWhy == "cancelled" %}
+        Cancelled 06
+      {% elif theReasonWhy == "complex" %}
+        Additional time required                   
+      {% elif theReasonWhy == "progress" %}
+        Progress 08
+      {% elif theReasonWhy == "training" %}
+        Training 09
+      {% elif theReasonWhy == "something" %}
+        Something 10                   
+      {% else %}
+        New - Start to process
+      {% endif %}
