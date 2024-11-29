@@ -42,6 +42,63 @@ router.post('/pg-1-02_why', function (req, res) {
 
 
 
+router.post('/pg-2-01', function (req, res) {
+
+    const userInput = req.session.data['my_progress_later'];
+    const userInputNA = req.session.data['next_action_awaiting']
+
+    
+        
+    if (userInputNA == 'Next action - awaiting') {
+
+        res.redirect("pg-2-02_referral") 
+
+    } else if (userInput == 'Progress later') {//selected Extension of time       
+
+        res.redirect("pg-2-02_why")  
+    }
+})
+
+router.post('/pg-2-02_why', function (req, res) {
+
+    const userInput = req.session.data['reason-why'];
+
+    if (userInput == null) {//empty
+
+        res.redirect("pg-2-02_why-error")
+
+    } else if (userInput != null) {      
+
+        res.redirect("pg-2-01")  
+        
+    } //else {
+
+        //res.redirect("end")   
+
+    //}
+})
+
+router.post('/pg-2-02_referral', function (req, res) {
+
+    const userInput = req.session.data['reason-why'];
+
+    if (userInput == null) {//empty
+
+        res.redirect("pg-2-02_referral-error")
+
+    } else if (userInput != null) {      
+
+        res.redirect("pg-2-01")  
+        
+    } //else {
+
+        //res.redirect("end")   
+
+    //}
+})
+
+
+
 
 //flow A one starts ...
 router.post('/pg-a-01', function (req, res) {
