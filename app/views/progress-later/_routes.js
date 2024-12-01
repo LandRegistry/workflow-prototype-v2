@@ -11,9 +11,14 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 router.post('/pg-1-01', function (req, res) {
 
-    const userInput = req.session.data['my_progress_later'];
+    const userInput = req.session.data['my_progress_later']; 
+    const userInput2 = req.session.data['Waiting_for_lawyer']; 
 
-    if (userInput == 'Progress later') {//selected Extension of time       
+    if (userInput2 == 'Waiting for lawyer'){
+
+        res.redirect("pg-1-01")  
+
+    } else if (userInput == 'Progress later') {//selected Extension of time       
 
         res.redirect("pg-1-02_why")  
         

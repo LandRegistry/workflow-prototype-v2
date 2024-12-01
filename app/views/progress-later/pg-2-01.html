@@ -14,7 +14,23 @@ Select a deferral reason
 
 {% block content %}
 
-  {% if (data['my_progress_later'] == 'Progress later') %}
+  {% if (data['forPrototype'] == 'referralBanner') %}
+    
+  <section id="pleaseWaitTarget" aria-live="assertive">
+      <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner" id="message-banner">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="message-banner-title">
+            Success
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content" id="message-banner-content">
+          <p class="govuk-notification-banner__heading">You have updated the next action for application DU164997 / E365VWW.</p>
+        </div>
+      </div>
+    </section>
+
+  {% elseif (data['my_progress_later'] == 'Progress later') %} 
+
     <section id="pleaseWaitTarget" aria-live="assertive">
       <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner" id="message-banner">
         <div class="govuk-notification-banner__header">
@@ -27,6 +43,7 @@ Select a deferral reason
         </div>
       </div>
     </section>
+
   {% endif %}
 
 <div class="govuk-grid-row">
