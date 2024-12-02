@@ -14,11 +14,11 @@ router.post('/pg-1-01', function (req, res) {
     const userInput = req.session.data['my_progress_later']; 
     const userInput2 = req.session.data['Waiting_for_lawyer']; 
 
-    if (userInput2 == 'Waiting for lawyer'){
+    /*if (userInput2 == 'Waiting for lawyer'){
 
         res.redirect("pg-1-01")  
 
-    } else if (userInput == 'Progress later') {//selected Extension of time       
+    } else */if (userInput == 'Progress later') {//selected Extension of time       
 
         res.redirect("pg-1-02_why")  
         
@@ -54,9 +54,9 @@ router.post('/pg-2-01', function (req, res) {
 
     
         
-    if (userInputNA == 'Next action - awaiting') {
+    if (userInputNA == 'Change Progress later reason') {
 
-        res.redirect("pg-2-02_referral") 
+        res.redirect("pg-2-02_why") 
 
     } else if (userInput == 'Progress later') {//selected Extension of time       
 
@@ -83,7 +83,7 @@ router.post('/pg-2-02_why', function (req, res) {
     //}
 })
 
-router.post('/pg-2-02_referral', function (req, res) {
+/*router.post('/pg-2-02_referral', function (req, res) {
 
     const userInput = req.session.data['reason-why'];
 
@@ -100,7 +100,7 @@ router.post('/pg-2-02_referral', function (req, res) {
         //res.redirect("end")   
 
     //}
-})
+})*/
 
 
 

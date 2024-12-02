@@ -14,22 +14,22 @@ Select a deferral reason
 
 {% block content %}
 
-  {% if (data['forPrototype'] == 'referralBanner') %}
+{% if (data['nextBanner'] == 'nextBanner') %}
     
-  <section id="pleaseWaitTarget" aria-live="assertive">
-      <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner" id="message-banner">
-        <div class="govuk-notification-banner__header">
-          <h2 class="govuk-notification-banner__title" id="message-banner-title">
-            Success
-          </h2>
-        </div>
-        <div class="govuk-notification-banner__content" id="message-banner-content">
-          <p class="govuk-notification-banner__heading">You have updated the next action for application DU164997 / E365VWW.</p>
-        </div>
+<section id="pleaseWaitTarget" aria-live="assertive">
+    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner" id="message-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="message-banner-title">
+          Success
+        </h2>
       </div>
-    </section>
+      <div class="govuk-notification-banner__content" id="message-banner-content">
+        <p class="govuk-notification-banner__heading">You have updated the next action for application DU164997 / E365VWW.</p>
+      </div>
+    </div>
+  </section>
 
-  {% elseif (data['my_progress_later'] == 'Progress later') %} 
+{% elseif (data['my_progress_later'] == 'Progress later') %} 
 
     <section id="pleaseWaitTarget" aria-live="assertive">
       <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner" id="message-banner">
@@ -195,7 +195,7 @@ Select a deferral reason
           
                               <form class="case__form" id="change_state_10628" action="#" method="post" novalidate>
           
-                                <input id="btn_await_lawyer_3011" title="Next action for case V444SWW - awaiting" type="submit" name="next_action_awaiting" class="govuk-link govuk-link--no-visited-state case__hyperlink case__await_lawyer_btn govuk-!-display-inline-block govuk-!-text-align-centre govuk-!-padding-bottom-1 hmlr-link--min-width-48 govuk-!-font-size-16" value="Next action - awaiting">  
+                                <input id="btn_await_lawyer_3011" title="Progress later reason for case V444SWW - awaiting" type="submit" name="next_action_awaiting" class="govuk-link govuk-link--no-visited-state case__hyperlink case__await_lawyer_btn govuk-!-display-inline-block govuk-!-text-align-centre govuk-!-padding-bottom-1 hmlr-link--min-width-48 govuk-!-font-size-16" value="Change Progress later reason">  
 
                                 <span class="govuk-visually-hidden">|</span>
                                   
@@ -444,8 +444,15 @@ Select a deferral reason
                 10 January 2024
             </td>
             <td id="E365VWW_next_action" class="case__next-action" headers="progress_now_next_actions">
+
+                  {% if (data['reason-why'] == 'referral') %}
+                    Referral - 
+                  {% else %}
+                    Other -
+                  {% endif %}
+
                   {% set savedReasonWhy = data['reason-why'] %}
-                  
+
                   {% include "./inc_next-actions-both-sets.html" %}
                   
             </td>
@@ -469,7 +476,7 @@ Select a deferral reason
   
                       <form class="case__form" id="change_state_10628" action="#" method="post" novalidate>
   
-                          <input id="btn_await_lawyer_3011" title="Next action for case E365VWW - awaiting" type="submit" name="next_action_awaiting" class="govuk-link govuk-link--no-visited-state case__hyperlink case__await_lawyer_btn govuk-!-display-inline-block govuk-!-text-align-centre govuk-!-padding-bottom-1 hmlr-link--min-width-48 govuk-!-font-size-16" value="Next action - awaiting">  
+                          <input id="btn_await_lawyer_3011" title="Change Progress later reason for case E365VWW" type="submit" name="next_action_awaiting" class="govuk-link govuk-link--no-visited-state case__hyperlink case__await_lawyer_btn govuk-!-display-inline-block govuk-!-text-align-centre govuk-!-padding-bottom-1 hmlr-link--min-width-48 govuk-!-font-size-16" value="Change Progress later reason">  
 
                           <span class="govuk-visually-hidden">|</span>
                           

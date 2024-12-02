@@ -9,25 +9,23 @@
       {% elif theReasonWhy == "hro" %}
         Awaiting HRO
       {% elif theReasonWhy == "manual" %}
-        Manual 01
+        Manual files require ordering
       {% elif theReasonWhy == "surveys" %}
-        Survey 02
+        Awaiting survey(s)
       {% elif theReasonWhy == "subsequent" %}
-        Subsequent 03
-      {% elif theReasonWhy == "referral" %}
-        Referral 04
+        Subsequent applications (colleagues can't obtain)
       {% elif theReasonWhy == "telephone" %}
-        Telephone 05
-      {% elif theReasonWhy == "cancelled" %}
-        Cancelled 06
+        Telephone conversation required
+      {% elif theReasonWhy == "cancelled" %} 
+        CRTI required
       {% elif theReasonWhy == "complex" %}
-        Additional time required                   
+        Complex - sufficent time required                   
       {% elif theReasonWhy == "progress" %}
-        Progress 08
+        In progress and ongoing
       {% elif theReasonWhy == "training" %}
-        Training 09
+        In use for training - awaiting update  
       {% elif theReasonWhy == "something" %}
         Something 10                   
       {% else %}
-        New - Start to process
+        Unknown
       {% endif %}

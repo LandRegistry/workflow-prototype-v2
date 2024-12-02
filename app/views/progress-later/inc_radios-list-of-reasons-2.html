@@ -88,16 +88,16 @@
         </div>  
         
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="pending" type="radio" name="reason-why" value="pending" aria-describedby="pending-hint" data-aria-controls="conditional-reason-2" {% if (data['reason-why'] == 'pending') %}
+          <input class="govuk-radios__input" id="pending" type="radio" name="reason-why" value="pending" data-aria-controls="conditional-reason-2" {% if (data['reason-why'] == 'pending') %}
           checked
-          {% endif %}>
+          {% endif %}>    <!--  aria-describedby="pending-hint"  -->
           
           <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-1" for="pending">
             Other
           </label>
-          <div id="pending-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16">
-            The case will be in Progress Later temporarily
-          </div>
+          <!--<div id="pending-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16">
+            Reasons other than a referral          
+          </div>-->
         </div>
         <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-reason-2">
           <div class="govuk-form-group">

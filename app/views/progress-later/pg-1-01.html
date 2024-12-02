@@ -14,20 +14,22 @@ Select a deferral reason
 
 {% block content %}
 
-  {% if (data['my_progress_later'] == 'Progress later') %}
-    <section id="pleaseWaitTarget" aria-live="assertive">
-      <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner" id="message-banner">
-        <div class="govuk-notification-banner__header">
-          <h2 class="govuk-notification-banner__title" id="message-banner-title">
-            Success
-          </h2>
-        </div>
-        <div class="govuk-notification-banner__content" id="message-banner-content">
-          <p class="govuk-notification-banner__heading">You will progress application DU164997 / E365VWW later.</p>
-        </div>
+{% if (data['my_progress_later'] == 'Progress later') %} 
+
+  <section id="pleaseWaitTarget" aria-live="assertive">
+    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner" id="message-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="message-banner-title">
+          Success
+        </h2>
       </div>
-    </section>
-  {% endif %}
+      <div class="govuk-notification-banner__content" id="message-banner-content">
+        <p class="govuk-notification-banner__heading">You will progress application DU164997 / E365VWW later.</p>
+      </div>
+    </div>
+  </section>
+
+{% endif %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
