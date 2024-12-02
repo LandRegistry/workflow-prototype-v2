@@ -12,7 +12,7 @@ const router = govukPrototypeKit.requests.setupRouter()
 router.post('/pg-1-01', function (req, res) {
 
     const userInput = req.session.data['my_progress_later']; 
-    const userInput2 = req.session.data['Waiting_for_lawyer']; 
+    //const userInput2 = req.session.data['Waiting_for_lawyer']; 
 
     /*if (userInput2 == 'Waiting for lawyer'){
 
