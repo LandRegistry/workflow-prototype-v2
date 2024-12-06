@@ -1,16 +1,25 @@
-<div class="govuk-form-group">
-    <fieldset class="govuk-fieldset"><!--  aria-describedby="reason-hint" -->
+<div class="govuk-form-group {% if (data['reason-why'] == null) %}
+govuk-form-group--error
+{% endif %}">
+
+
+    <fieldset class="govuk-fieldset" {% if (data['reason-why'] == null) %}aria-describedby="reason-why-error"{% endif %}><!--  aria-describedby="reason-hint" -->
 
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
         <h1 class="govuk-fieldset__heading">
             Why is this case being moved to Progress Later?
-            <!-- Record why the application is being moved to Progress Later? -->
         </h1>
       </legend>
 
       <!--div id="reason-hint" class="govuk-hint govuk-!-margin-bottom-7">
         This will help you identify why applications are in your Progress Later list
-      </div-->            
+      </div--> 
+
+      {% if (data['reason-why'] == null) %}
+        <p id="reason-why-error" class="govuk-error-message">
+          <span class="govuk-visually-hidden">Error:</span> Select why this case is being moved to Progress Later
+        </p>
+      {% endif %}
 
       <div class="govuk-radios govuk-!-margin-top-4" data-module="govuk-radios">
 
@@ -25,13 +34,17 @@
             Referral
           </label>
           <div id="referral-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16">
-            The case will be referred <!--For example, you want to query something with a colleague-->
+            You intend to refer the case <!--For example, you want to query something with a colleague-->
           </div>
         </div>
         <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-reason-1">
-          <div class="govuk-form-group">
+          <div class="govuk-form-group 
+          {% if (data['reason-why'] == 'referral' and data['the-reason-why'] == null) %}
+          govuk-form-group--error
+          {% endif %}
+          ">
 
-            <fieldset class="govuk-fieldset govuk-!-margin-top-5"> <!-- aria-describedby="pending-hint" -->
+            <fieldset class="govuk-fieldset govuk-!-margin-top-5" {% if (data['reason-why'] == 'referral' and data['the-reason-why'] == null) %}aria-describedby="the-reason-why-error"{% endif %}> 
 
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-font-weight-regular">
                 Select a referral reason <!--the case will be referred--> <!--and what it is awaiting-->
@@ -39,7 +52,13 @@
 
               <!--div id="pending-hint" class="govuk-hint govuk-!-margin-bottom-5 govuk-!-font-size-16 govuk-visually-hidden">
                 This will will update the Next Action
-              </div-->               
+              </div-->  
+              
+              {% if (data['reason-why'] == 'referral' and data['the-reason-why'] == null) %}
+                <p id="the-reason-why-error" class="govuk-error-message">
+                  <span class="govuk-visually-hidden">Error:</span> Select a referral reason
+                </p>
+              {% endif %}
 
               <div class="govuk-radios govuk-radios--small">
 
@@ -100,9 +119,17 @@
           </div>-->
         </div>
         <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-reason-2">
-          <div class="govuk-form-group">
+          <div class="govuk-form-group 
+          {% if (data['reason-why'] == 'pending' and data['the-reason-why'] == null) %}
+          govuk-form-group--error
+          {% endif %}
+          ">
 
-            <fieldset class="govuk-fieldset govuk-!-margin-top-5" aria-describedby="pending-hint">
+            <fieldset class="govuk-fieldset govuk-!-margin-top-5" aria-describedby="pending-hint 
+            {% if (data['reason-why'] == 'pending' and data['the-reason-why'] == null) %}
+            govuk-form-group--error
+            {% endif %}
+            ">
 
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-font-weight-regular">
                 Select a <!--pending--> reason
@@ -110,7 +137,13 @@
 
               <div id="pending-hint" class="govuk-hint govuk-!-margin-bottom-5 govuk-!-font-size-16 govuk-visually-hidden">
                 This will help you identify why applications are in your Progress Later list
-              </div>               
+              </div>
+              
+              {% if (data['reason-why'] == 'pending' and data['the-reason-why'] == null) %}
+                <p id="the-reason-why-error" class="govuk-error-message">
+                  <span class="govuk-visually-hidden">Error:</span> Select a reason
+                </p>
+              {% endif %}              
 
               <div class="govuk-radios govuk-radios--small">
 

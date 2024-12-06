@@ -1,0 +1,71 @@
+{% extends "layouts/wf_layout_legacy.html" %}
+
+{# set pageName="Select a category of work" #}
+
+{% block pageTitle %}
+Error: Select a deferral reason
+{% endblock %}
+
+{% block beforeContent %}
+
+<a href="#" class="govuk-back-link">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-error-summary" data-module="govuk-error-summary">
+  <div role="alert">
+    <h2 class="govuk-error-summary__title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+      {% if (data['reason-why'] == null) %}
+      
+        <li>
+          <a href="#referral">Select why this case is being moved to Progress Later</a>
+        </li>
+
+      {% elseif (data['reason-why'] == 'referral')  %}
+
+        {% if (data['the-reason-why'] == null) %}
+          <li>
+            <a href="#tt1">Select a referral reason</a>
+          </li>
+        {% endif %}
+      
+      {% elseif (data['reason-why'] == 'pending')  %}
+
+        {% if (data['the-reason-why'] == null) %}
+          <li>
+            <a href="#manual">Select a reason</a>
+          </li>
+        {% endif %}
+
+      {% endif %}
+      </ul>      
+    </div>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <form action="#" method="post" novalidate>
+
+      {% include "./inc_radios-list-of-reasons-2.html" %}
+        
+      <input type="submit" class="govuk-button" value="Save"> 
+
+    </form>
+
+
+  </div>
+</div>
+
+
+
+
+{% endblock %}

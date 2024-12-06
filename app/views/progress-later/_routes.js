@@ -44,6 +44,26 @@ router.post('/pg-1-02_why', function (req, res) {
     //}
 })
 
+router.post('/pg-1-02_why-error', function (req, res) {
+
+    const userInput = req.session.data['reason-why'];
+    const userInput2 = req.session.data['the-reason-why'];
+
+    if (userInput == null) {//empty
+
+        res.redirect("pg-1-02_why-error")
+
+    } else if (userInput != null) {      
+
+        if (userInput2 == null) {
+
+            res.redirect("pg-1-02_why-error")
+
+        }
+        
+    } 
+})
+
 
 
 
