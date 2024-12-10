@@ -55,7 +55,33 @@ Error: Select a deferral reason
 
     <form action="#" method="post" novalidate>
 
-      {% include "./inc_radios-list-of-reasons-2.html" %}
+      <div class="govuk-form-group {% if (data['reason-why'] == null) %}
+      govuk-form-group--error
+      {% endif %}">
+      
+      
+          <fieldset class="govuk-fieldset" {% if (data['reason-why'] == null) %}aria-describedby="reason-why-error"{% endif %}><!--  aria-describedby="reason-hint" -->
+      
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                  Why is this case being moved to Progress Later?
+              </h1>
+            </legend>
+      
+            <!--div id="reason-hint" class="govuk-hint govuk-!-margin-bottom-7">
+              This will help you identify why applications are in your Progress Later list
+            </div--> 
+      
+            {% if (data['reason-why'] == null) %}
+              <p id="reason-why-error" class="govuk-error-message">
+                <span class="govuk-visually-hidden">Error:</span> Select why this case is being moved to Progress Later
+              </p>
+            {% endif %}      
+
+            {% include "./inc_radios-list-of-reasons-2.html" %}
+
+            </fieldset>
+          </div>
         
       <input type="submit" class="govuk-button" value="Save"> 
 

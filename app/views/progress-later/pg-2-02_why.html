@@ -22,7 +22,25 @@ Select a deferral reason
 
       <input type="hidden" name="nextBanner" value="nextBanner">
 
-      {% include "./inc_radios-list-of-reasons-2.html" %}
+      <div class="govuk-form-group">
+      
+      
+        <fieldset class="govuk-fieldset"><!--  aria-describedby="reason-hint" -->
+    
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+                Why is this case being moved to Progress Later?
+            </h1>
+          </legend>
+    
+          <!--div id="reason-hint" class="govuk-hint govuk-!-margin-bottom-7">
+            This will help you identify why applications are in your Progress Later list
+          </div-->       
+
+          {% include "./inc_radios-list-of-reasons-2.html" %}
+
+          </fieldset>
+        </div>  
         
       <input type="submit" class="govuk-button" value="Save"> 
 
