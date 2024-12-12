@@ -53,15 +53,15 @@ router.post('/pg-1-02_why-error', function (req, res) {
 
         res.redirect("pg-1-02_why-error")
 
-    } else if (userInput != null) {      
+    } else if (userInput2 == null) {      
 
-        if (userInput2 == null) {
-
-            res.redirect("pg-1-02_why-error")
-
-        }
+        res.redirect("pg-1-02_why-error")
         
-    } 
+    } else {
+
+        res.redirect("pg-1-01")  
+
+    }
 })
 
 
