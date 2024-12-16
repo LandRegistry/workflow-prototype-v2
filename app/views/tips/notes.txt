@@ -1,0 +1,6 @@
+https://mozilla.github.io/nunjucks/templating.html#import
+
+https://helloyes.dev/blog/2021/parameters-in-includes-with-nunjucks-macros/
+
+https://darthmall.net/weblog/2021/includes-and-macros/
+

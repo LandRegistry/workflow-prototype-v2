@@ -1,0 +1,40 @@
+{% macro snippet1(theTitle, theDesc) %}
+    <article class="govuk-!-padding-top-5">
+
+        <h3 class="govuk-heading-s">
+            Title 1: {{ theTitle }}
+        </h3>
+
+        <div>
+            Desc for snippet 1: {{ theDesc }}
+        </div>
+
+    </article>
+{% endmacro %}
+
+
+{% macro snippet2(theTitle, theDesc) %}
+    <article style="padding: 25px 25px 10px 25px; margin-top: 40px; border: 1px solid #ccc;">
+
+        <h3 class="govuk-heading-s" style="color: red; ">
+            Title 2: {{ theTitle | safe }}
+        </h3>
+
+        <p class="govuk-body-l">
+            This is the description displayed using different HTML from snippet 2: {{ theDesc | safe }}
+        </p>
+
+    </article>
+{% endmacro %}
+
+{% macro snippet3(theTitle, theDesc) %}
+    
+    <div class="govuk-warning-text govuk-!-padding-top-6">
+    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+    <strong class="govuk-warning-text__text">
+        <span class="govuk-visually-hidden">Warning</span>
+        This is very different HTML for {{ theTitle }}!
+    </strong>
+    </div>
+    
+{% endmacro %}

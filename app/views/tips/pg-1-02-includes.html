@@ -1,0 +1,49 @@
+{% extends "layouts/wf_layout-std-new.html" %}
+
+{# set pageName="Select a category of work" #}
+
+{% block pageTitle %}
+Tips and tricks
+{% endblock %}
+
+{% block beforeContent %}
+
+  <a href="#" class="govuk-back-link">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+      
+        <h1 class="govuk-heading-l">
+          Using 'includes': page 2
+        </h1>
+
+
+
+    
+        {#% include "./inc_my-include-basic-text.html" %#}
+        
+
+        {% set thePageNumber = "2" %}
+        {% include "./inc_page-number.html" %}
+
+        <hr>
+
+
+
+
+
+
+  </div>
+</div>
+
+
+
+
+{% endblock %}
