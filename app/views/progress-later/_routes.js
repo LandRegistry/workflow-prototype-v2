@@ -28,20 +28,20 @@ router.post('/pg-1-01', function (req, res) {
 router.post('/pg-1-02_why', function (req, res) {
 
     const userInput = req.session.data['reason-why'];
+    const userInput2 = req.session.data['the-reason-why'];
 
     if (userInput == null) {//empty
 
         res.redirect("pg-1-02_why-error")
+    } else if (userInput != null && userInput2  == null) {      
 
-    } else if (userInput != null) {      
+        res.redirect("pg-1-02_why-error")
+
+    } else if (userInput2 != null) {      
 
         res.redirect("pg-1-01")  
         
-    } //else {
-
-        //res.redirect("end")   
-
-    //}
+    }
 })
 
 router.post('/pg-1-02_why-error', function (req, res) {
