@@ -75,7 +75,16 @@
                   <label class="govuk-label govuk-radios__label" for="hro">
                     Awaiting <abbr>HRO</abbr>
                   </label>
-                </div>                                                 
+                </div>  
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="eo" type="radio" name="the-reason-why" value="eo" {% if (data['the-reason-why'] == 'eo') %}
+                  checked
+                  {% endif %}>
+                  
+                  <label class="govuk-label govuk-radios__label" for="eo">
+                    Awaiting <abbr>EO</abbr>
+                  </label>
+                </div>                                                                 
               
               </div>
 
@@ -126,13 +135,23 @@
               <div class="govuk-radios govuk-radios--small">
 
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="manual" type="radio" name="the-reason-why" value="manual" {% if (data['the-reason-why'] == 'manual') %}
+                  <input class="govuk-radios__input" id="manual" type="radio" name="the-reason-why" value="manual" aria-describedby="manual-hint" {% if (data['the-reason-why'] == 'manual') %}
                   checked
                   {% endif %}>
                   
                   <label class="govuk-label govuk-radios__label" for="manual">
                       Manual files require ordering
                   </label>
+
+                  <div id="manual-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16">
+                    Files not available within the <abbr>FACs</abbr> system 
+                  </div>
+
+                  <!--div id="manual-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16">
+                    There are still some very old manual files, held in paper format, for applications lodged before the 90s and which are currently not scanned in our FACs system. If a caseworker needs to investigate these, they would need to order the files, which are then sent to the caseworker through a manual process. A user could potentially, place their application in the 'Progress Later' area of their worklist to await these files being received.
+                  </div-->
+
+
                 </div> 
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="surveys" type="radio" name="the-reason-why" value="surveys" {% if (data['the-reason-why'] == 'surveys') %}

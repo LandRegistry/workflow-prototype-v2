@@ -64,7 +64,17 @@
           <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-4" for="hro">
             Awaiting HRO
           </label>
-        </div>             
+        </div>
+        
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="eo" type="radio" name="reason-why" value="eo" {% if (data['reason-why'] == 'eo') %}
+          checked
+          {% endif %}>
+          
+          <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-4" for="eo">
+            Awaiting EO
+          </label>
+        </div>        
 
 
         <div class="govuk-radios__divider govuk-!-padding-bottom-2">or</div>
