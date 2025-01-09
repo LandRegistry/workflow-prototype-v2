@@ -1,0 +1,88 @@
+  /*
+	Max width before this PARTICULAR table gets nasty. This query will take effect for any screen smaller than 760px and also iPads specifically.
+	*/
+table.hmlr-table-dynamic {    
+    @media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px)  {
+
+		&::after, 
+		tr::after, 
+		tr td::after {
+			content: "";
+			clear: both;
+			display: table;
+		}
+    
+        /* Force table to not be like tables anymore */
+        &, thead, tbody, th, td, tr {
+            display: block;
+        }
+
+		/* Hide table headers (but not display: none;, for accessibility) */
+		thead tr {
+			position: absolute; 
+			top: -9999px;
+		}
+
+		tbody {
+			border-top: none;
+			border-bottom: 2px solid $govuk-input-border-colour !important;
+    		padding-top: govuk-spacing(2);
+			padding-bottom: govuk-spacing(2);
+
+			tr:last-child td {
+				border-bottom: none !important;
+			}
+		}
+
+        tr {
+            margin: govuk-spacing(0);
+        }
+        /*tr:nth-child(odd) {background: #ccc; }*/
+    
+		td {
+			border-bottom: 1px solid $govuk-border-colour;
+			position: relative;
+			padding: (govuk-spacing(1) + 3px) 0 (govuk-spacing(1) + 3px) 30%; 
+			width: auto;
+
+			&[colspan="6"] {/* fix the legacy buttons list */
+				div {
+					padding-top: govuk-spacing(0);
+					margin: govuk-spacing(0);
+					line-height: normal;
+				}
+				a, input {
+					padding-left: govuk-spacing(0); 
+					font-size: inherit !important;
+				}
+				input {
+					padding-top: govuk-spacing(2); 
+				}
+			}
+		} 
+
+		td:before {
+			position: absolute;
+			/*top: 1.2rem;*/
+			left: 0;
+			padding-right: govuk-spacing(2);
+			white-space: nowrap;
+		}		
+
+		/* the header text on small screens */
+        tbody tr {
+			td:before {font-weight: bold; }
+            td:nth-of-type(1):before { content: attr(data-table-dynamic); }
+            td:nth-of-type(2):before { content: attr(data-table-dynamic); }
+            td:nth-of-type(3):before { content: attr(data-table-dynamic); }
+            td:nth-of-type(4):before { content: attr(data-table-dynamic); }
+            td:nth-of-type(5):before { content: attr(data-table-dynamic); }
+            td:nth-of-type(6):before { content: attr(data-table-dynamic); }
+            td:nth-of-type(7):before { content: attr(data-table-dynamic); }
+            td:nth-of-type(8):before { content: attr(data-table-dynamic); }
+            td:nth-of-type(9):before { content: attr(data-table-dynamic); }
+            td:nth-of-type(10):before { content: attr(data-table-dynamic); }
+        }
+
+    }
+}

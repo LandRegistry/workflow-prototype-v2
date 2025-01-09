@@ -1,0 +1,411 @@
+{% extends "layouts/wf_layout-ui-designs.html" %}
+
+{% set pageName="{{ serviceName }} IA and UI work" %}
+
+{% block header %}
+  {% include "../includes/inc_top-nav-std.html" %}
+{% endblock %}
+
+{% block content %}
+    
+<div class="govuk-grid-row hmlr-min-height-header-sm">
+  <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-3">
+
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-1">
+      Workflow <span class="govuk-heading-l govuk-!-font-weight-regular govuk-!-display-inline">&dash; lorem ipsum centreitta</span>
+    </h1>
+
+    <p class="govuk-body hmlr-secondary-text">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat similique quae enim eius saepe.
+    </p>
+
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+
+  </div>      
+
+</div>
+
+
+<div class="govuk-grid-row">
+  <nav class="govuk-grid-column-one-quarter govuk-!-padding-right-0"><!-- aria-label="Secondary" -->
+
+    <a href="#page-content" class="govuk-skip-link hmlr-skip-link">
+      Skip to the main content
+    </a>
+    
+    {% include "../includes/inc_left-nav-01.html" %}
+    
+  </nav>
+
+  <section class="govuk-grid-column-three-quarters" id="page-content" role="region">
+
+
+    <!--table class="govuk-table govuk-table--small-text-until-tablet">
+      <caption class="govuk-table__caption govuk-table__caption--m">Dates and amounts</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Date</th>
+          <th scope="col" class="govuk-table__header">First amount</th>
+          <th scope="col" class="govuk-table__header">Second amount</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">First 3 weeks</th>
+          <td class="govuk-table__cell">£27.45 per week</td>
+          <td class="govuk-table__cell">£33.90 per week</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Next 6 weeks</th>
+          <td class="govuk-table__cell">£27.45 per week</td>
+          <td class="govuk-table__cell">£33.90 per week</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Next 24 weeks</th>
+          <td class="govuk-table__cell">£27.45 per week</td>
+          <td class="govuk-table__cell">£33.90 per week</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Next 33 weeks</th>
+          <td class="govuk-table__cell">£27.45 per week</td>
+          <td class="govuk-table__cell">£33.90 per week</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Total estimated pay</th>
+          <td class="govuk-table__cell">£4,282.20</td>
+          <td class="govuk-table__cell">£5,288.40</td>
+        </tr>
+      </tbody>
+    </table-->
+
+    <table class="govuk-table xxxxworklist__table    hmlr-table-dynamic">
+  
+      <caption class="govuk-table__caption govuk-table__caption--m">Work items in progress later</caption>
+
+      <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" id="progress_later_priority_dates" scope="col">Priority date</th>
+            <th class="govuk-table__header" id="progress_later_title_numbers" scope="col">Title number</th>
+            <th class="govuk-table__header" id="progress_later_abrs" scope="col"><abbr title="A B R">ABR</abbr></th>
+            <th class="govuk-table__header" id="progress_later_categories" scope="col">Category</th>
+            <th class="govuk-table__header" id="progress_later_dates_obtained" scope="col">Date obtained</th>
+            <th class="govuk-table__header" id="progress_later_next_actions" scope="col">Next action</th>
+          </tr>
+      </thead>
+      <tbody data-case-ref="V519SWW" class="case">
+        <tr id="row_6042" class="govuk-table__row case__data_row " >
+          <td class="case__date" id="V519SWW_priority_date" headers="progress_later_priority_dates" data-table-dynamic="Priority date">
+                
+                17 July 2023
+              
+          </td>
+          <td class="case__title-number" id="V519SWW_title_number" headers="progress_later_title_numbers" data-table-dynamic="Title number">
+              <span class="case__inc"></span>
+              DT102641
+
+              <strong class="govuk-tag-expedite govuk-tag">
+                Expedite
+              </strong>
+              
+          </td>
+          <td id="V519SWW_abr" class="case__abr" headers="progress_later_abrs" data-table-dynamic="ABR">
+              V519SWW
+              <div></div>
+          </td>
+          <td id="V519SWW_cat" class="case__category" headers="progress_later_categories">
+            Application Processing: Executive Register Update Standard
+          </td>
+          <td class="case__date" id="V519SWW_dobtained" headers="progress_later_dates_obtained">
+              
+              23 February 2024
+              
+          </td>
+          <td id="V519SWW_next_action" class="case__next-action" headers="progress_later_next_actions">
+              
+                  New - Start to process
+              
+          </td>
+        </tr>
+        <tr id="row_6042_actions" class="govuk-table__row case__actions">
+            <td colspan="6" data-table-dynamic="Options">
+              <div class="case__actions-wrapper">
+                <div class="case__left-hand-actions actions-spacing">
+                  <a class="govuk-link govuk-link--no-visited-state actions-spacing case__anchor govuk-!-font-size-16 govuk-!-display-inline-block"
+                    href="#">Return to <abbr title="e-serve">ESRV</abbr>
+                    <span class="govuk-visually-hidden">: case <abbr>V519SWW</abbr> to <abbr>DB2</abbr></span>
+                  </a>
+                </div>
+                <div class="case__right-hand-actions actions-spacing">
+
+                    <form class="case__form" novalidate
+                        id="change_state_6042"
+                        action="#"
+                        method="post"
+                        onsubmit="btn_await_lawyer_6042.disabled = true;
+                                  btn_progress_now_6042.disabled = true;
+                                  btn_progress_later_6042.disabled = true;">
+                      
+                      <input id="btn_await_lawyer_3011" title="Refer case V519SWW to a lawyer" type="submit" name="Waiting_for_lawyer" class="govuk-link govuk-link--no-visited-state case__hyperlink case__await_lawyer_btn govuk-!-display-inline-block govuk-!-text-align-centre govuk-!-padding-bottom-1 hmlr-link--min-width-48 govuk-!-font-size-16" value="Waiting for lawyer" formaction="await_lawyer/3011?lr_ref_number=DU164181&amp;lr_work_ref=D348RWW">
+
+                      <span class="govuk-visually-hidden">|</span>
+                        
+      <a class="govuk-link govuk-link--no-visited-state case__refer-link case__anchor govuk-!-font-size-16 govuk-!-display-inline-block"
+      href="#">Refer<span class="govuk-visually-hidden"> case <abbr>V519SWW</abbr></span>
+      </a>
+
+                        <span class="govuk-visually-hidden">|</span>
+                        
+        <input id="btn_progress_now_6042" title="Move case V519SWW into your worklist" type="submit"
+            name="Work_on_this" class="govuk-!-display-inline-block govuk-link case__hyperlink case__progress-later-btn govuk-!-font-size-16" value="Work on this">
+
+                        <span class="govuk-visually-hidden">|</span>
+                        
+        <input id="btn_progress_later_6042" title="Progress case V519SWW later" type="hidden"
+            name="Progress_later" class="govuk-link govuk-link--no-visited-state case__hyperlink case__progress-later-btn govuk-!-display-inline-block govuk-!-text-align-centre govuk-!-padding-bottom-1 hmlr-link--min-width-48 govuk-!-font-size-16" value="Progress later">
+
+                        <span class="govuk-visually-hidden">|</span>
+                        
+      <a class="govuk-link govuk-link--no-visited-state case__defer-link case__anchor govuk-!-font-size-16 govuk-!-display-inline-block"
+      href="#">Defer<span class="govuk-visually-hidden"> case <abbr>V519SWW</abbr></span>
+      </a>
+
+                        <span class="govuk-visually-hidden">|</span>
+                    
+
+                    
+                        
+      <a class="govuk-link govuk-link--no-visited-state case__activity-history-link case__anchor govuk-!-font-size-16 ga_track_event govuk-!-display-inline-block hmlr-link--min-width-48"
+      href="#"
+      id="link_activity_history_V519SWW"
+      data-ga-category="Activity_History_Link_From_Worklist"
+      data-ga-action="Activity History link clicked from worklist page"
+      data-ga-label="Worklist_Activity_History_Link"
+      >View activity history
+      <span class="govuk-visually-hidden"> for <abbr>V519SWW</abbr></span>
+      </a>
+
+                        <span class="govuk-visually-hidden">|</span>
+                        
+      <a
+        class="govuk-!-display-inline-block govuk-link govuk-link--no-visited-state case__more-info-link case__anchor govuk-!-font-size-16"
+        href="#">
+        More info
+      <span class="govuk-visually-hidden">: open daylist for case <abbr>V519SWW</abbr>. Opens in new window.</span></a>
+
+                        <span class="govuk-visually-hidden">|</span>
+                    
+
+                    
+                    </form>
+                </div>
+              </div>
+            </td>
+        </tr>
+      </tbody>
+      <tbody data-case-ref="Y674RWW" class="case">
+        <tr id="row_1075" class="govuk-table__row case__data_row" data-table-dynamic="Priority date">
+          <td class="case__date" id="Y674RWW_priority_date" headers="progress_later_priority_dates">
+            xxxxx 11 April 2022
+          </td>
+          <td class="case__title-number" id="Y674RWW_title_number" headers="progress_later_title_numbers" data-table-dynamic="Title number">
+              <span class="case__inc"></span>
+              DU164190 
+
+              <strong class="govuk-tag-expedite govuk-tag">
+                Expedite
+              </strong>
+              
+          </td>
+          <td id="Y674RWW_abr" class="case__abr" headers="progress_later_abrs" data-table-dynamic="ABR">
+              Y674RWW
+              <div></div>
+          </td>
+          <td id="Y674RWW_cat" class="case__category" headers="progress_later_categories">
+      Volume Register Update
+          </td>
+          <td class="case__date" id="Y674RWW_dobtained" headers="progress_later_dates_obtained">
+              
+              6 June 2024
+              
+          </td>
+          <td id="Y674RWW_next_action" class="case__next-action" headers="progress_later_next_actions">
+              
+                  
+                          Consider referral from<br>
+                  
+                          Michaela Webber<br>
+                  
+              
+          </td>
+        </tr>
+        <tr id="row_1075_actions" class="govuk-table__row case__actions">
+                  <td colspan="6" data-table-dynamic="Options">
+                    <div class="case__actions-wrapper">
+                      <div class="case__left-hand-actions actions-spacing">
+          
+                      <a class="govuk-link govuk-link--no-visited-state actions-spacing case__anchor govuk-!-font-size-16 govuk-!-display-inline-block" href="#">Return to <abbr title="e-serve">ESRV</abbr>
+            <span class="govuk-visually-hidden">: case <abbr>Y674RWW</abbr> to <abbr>DB2</abbr></span></a>
+
+                    
+
+                </div>
+
+                <div class="case__right-hand-actions actions-spacing">
+
+                    <form class="case__form" novalidate
+                        id="change_state_1075"
+                        action="#"
+                        method="post"
+                        onsubmit="btn_await_lawyer_1075.disabled = true;
+                                  btn_progress_now_1075.disabled = true;
+                                  btn_progress_later_1075.disabled = true;">
+                      
+                      <input id="btn_await_lawyer_3011" title="Refer case Y674RWW to a lawyer" type="submit" name="Waiting_for_lawyer" class="govuk-link govuk-link--no-visited-state case__hyperlink case__await_lawyer_btn govuk-!-display-inline-block govuk-!-text-align-centre govuk-!-padding-bottom-1 hmlr-link--min-width-48 govuk-!-font-size-16" value="Waiting for lawyer" formaction="await_lawyer/3011?lr_ref_number=DU164181&amp;lr_work_ref=D348RWW">
+
+                      <span class="govuk-visually-hidden">|</span>
+                        
+      <a class="govuk-link govuk-link--no-visited-state case__refer-link case__anchor govuk-!-font-size-16 govuk-!-display-inline-block"
+      href="#">Refer<span class="govuk-visually-hidden"> case <abbr>Y674RWW</abbr></span>
+      </a>
+
+      <span class="govuk-visually-hidden">|</span>
+
+      <input id="btn_progress_now_1075" title="Move case Y674RWW into your worklist" type="submit"
+      name="Work_on_this" class="govuk-!-display-inline-block govuk-link case__hyperlink case__progress-later-btn govuk-!-font-size-16" value="Work on this">
+
+      <span class="govuk-visually-hidden">|</span>
+
+      <input id="btn_progress_later_1075" title="Progress case Y674RWW later" type="hidden"
+      name="Progress_later" class="govuk-link govuk-link--no-visited-state case__hyperlink case__progress-later-btn govuk-!-display-inline-block govuk-!-text-align-centre govuk-!-padding-bottom-1 hmlr-link--min-width-48 govuk-!-font-size-16" value="Progress later">
+
+      <span class="govuk-visually-hidden">|</span>
+                        
+      <a class="govuk-link govuk-link--no-visited-state case__defer-link case__anchor govuk-!-font-size-16 govuk-!-display-inline-block"
+      href="#">Defer<span class="govuk-visually-hidden"> case <abbr>Y674RWW</abbr></span>
+      </a>
+
+      <span class="govuk-visually-hidden">|</span>
+                        
+      <a class="govuk-link govuk-link--no-visited-state case__activity-history-link case__anchor govuk-!-font-size-16 ga_track_event govuk-!-display-inline-block hmlr-link--min-width-48"
+      href="#"
+      id="link_activity_history_Y674RWW"
+      data-ga-category="Activity_History_Link_From_Worklist"
+      data-ga-action="Activity History link clicked from worklist page"
+      data-ga-label="Worklist_Activity_History_Link"
+      >View activity history
+      <span class="govuk-visually-hidden"> for <abbr>Y674RWW</abbr></span>
+      </a>
+
+      <span class="govuk-visually-hidden">|</span>
+                        
+      <a class="govuk-!-display-inline-block govuk-link govuk-link--no-visited-state case__more-info-link case__anchor govuk-!-font-size-16"
+        href="#">
+        More info
+      <span class="govuk-visually-hidden">: open daylist for case <abbr>Y674RWW</abbr>. Opens in new window.</span></a>
+
+      <span class="govuk-visually-hidden">|</span>
+                  </form>
+              </div>
+            </div>
+          </td>
+      </tr>
+      </tbody>
+    </table>
+
+
+<hr>
+
+
+
+<!--
+<table class="hmlr-table-dynamic">
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Job Title</th>
+      <th>Favorite Color</th>
+      <th>Wars or Trek?</th>
+      <th>Secret Alias</th>
+      <th>Date of Birth</th>
+      <th>Dream Vacation City</th>
+      <th>GPA</th>
+      <th>Arbitrary Data</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-table-dynamic="First Name">James</td>
+      <td>Matman</td>
+      <td>Chief Sandwich Eater</td>
+      <td>Lettuce Green</td>
+      <td>Trek</td>
+      <td>Digby Green</td>
+      <td>January 13, 1979</td>
+      <td>Gotham City</td>
+      <td>3.1</td>
+      <td>RBX-12</td>
+    </tr>
+    <tr>
+      <td data-table-dynamic="First Name">The</td>
+      <td>Tick</td>
+      <td>Crimefighter Sorta</td>
+      <td>Blue</td>
+      <td>Wars</td>
+      <td>John Smith</td>
+      <td>July 19, 1968</td>
+      <td>Athens</td>
+      <td>N/A</td>
+      <td>Edlund, Ben (July 1996).</td>
+    </tr>
+    <tr>
+      <td data-table-dynamic="First Name">Jokey</td>
+      <td>Smurf</td>
+      <td>Giving Exploding Presents</td>
+      <td>Smurflow</td>
+      <td>Smurf</td>
+      <td>Smurflane Smurfmutt</td>
+      <td>Smurfuary Smurfteenth, 1945</td>
+      <td>New Smurf City</td>
+      <td>4.Smurf</td>
+      <td>One</td>
+    </tr>
+    <tr>
+      <td data-table-dynamic="First Name">Cindy</td>
+      <td>Beyler</td>
+      <td>Sales Representative</td>
+      <td>Red</td>
+      <td>Wars</td>
+      <td>Lori Quivey</td>
+      <td>July 5, 1956</td>
+      <td>Paris</td>
+      <td>3.4</td>
+      <td>3451</td>
+    </tr>
+    <tr>
+      <td data-table-dynamic="First Name">Captain</td>
+      <td>Cool</td>
+      <td>Tree Crusher</td>
+      <td>Blue</td>
+      <td>Wars</td>
+      <td>Steve 42nd</td>
+      <td>December 13, 1982</td>
+      <td>Las Vegas</td>
+      <td>1.9</td>
+      <td>Under the couch</td>
+    </tr>
+  </tbody>
+</table>
+-->
+
+
+  </section>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+  </div>
+</div>
+{% endblock %}
