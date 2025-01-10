@@ -39,16 +39,17 @@ body .govuk-header__container {
 
 
 
-    .hmlr-wf-width-container--wide {
+@import "./includes/ui-hmlr-wf-dynamic-tables";
+}
+
+.hmlr-wf-width-container--wide {
+    .govuk-width-container {
         .govuk-main-wrapper > .govuk-grid-row {
             margin-right: auto;
             margin-left: auto; 
         }
         max-width: 1100px;
-    }    
-
-
-@import "./includes/ui-hmlr-wf-dynamic-tables";
+    }
 }
 
 

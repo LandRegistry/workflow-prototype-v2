@@ -2,7 +2,7 @@
 	Max width before this PARTICULAR table gets nasty. This query will take effect for any screen smaller than 760px and also iPads specifically.
 	*/
 table.hmlr-table-dynamic {    
-    @media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px)  {
+    @media only screen and (max-width: 894px), (min-device-width: 902px) and (max-device-width: 1024px)  {
 
 		&::after, 
 		tr::after, 
@@ -34,6 +34,11 @@ table.hmlr-table-dynamic {
 			}
 		}
 
+		thead + tbody, 
+		thead + tbody tr:first-child td:first-child {
+			padding-top: govuk-spacing(0);
+		}
+
         tr {
             margin: govuk-spacing(0);
         }
@@ -42,7 +47,7 @@ table.hmlr-table-dynamic {
 		td {
 			border-bottom: 1px solid $govuk-border-colour;
 			position: relative;
-			padding: (govuk-spacing(1) + 3px) 0 (govuk-spacing(1) + 3px) 30%; 
+			padding: (govuk-spacing(1) + 3px) 0 (govuk-spacing(1) + 3px) 34%; 
 			width: auto;
 
 			&[colspan="6"] {/* fix the legacy buttons list */
@@ -56,7 +61,11 @@ table.hmlr-table-dynamic {
 					font-size: inherit !important;
 				}
 				input {
-					padding-top: govuk-spacing(2); 
+					&.case__hyperlink, 
+					&.govuk-link { /* case__hyperlink is a legacy workflow class */
+						padding-top: govuk-spacing(0); 
+						margin-bottom: (- govuk-spacing(1)); 
+					}
 				}
 			}
 		} 
