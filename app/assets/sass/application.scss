@@ -38,8 +38,8 @@ body .govuk-header__container {
 @import "./includes/hmlr-wf-form-grouping";
 
 
-
-@import "./includes/ui-hmlr-wf-dynamic-tables";
+/* new ui sass begins */
+@import "./includes/hmlr-table-dynamic";
 }
 
 .hmlr-wf-width-container--wide {

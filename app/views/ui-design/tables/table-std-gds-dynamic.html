@@ -1,0 +1,74 @@
+{% extends "layouts/wf_layout-std-new.html" %}
+
+{# set pageName="Example of dynamic table" #}
+
+{% block pageTitle %}
+Example of dynamic table
+{% endblock %}
+
+{% block beforeContent %}
+
+  <a href="#" class="govuk-back-link">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <div id="worklist_page">
+
+      <div id="data-progress-now-table" data-progress-now-table="">
+      
+        <h1 id="my_worklist_header" class="govuk-heading-l worklist__header">
+          A standard <abbr>GDS</abbr> table example
+        </h1>
+    
+        <p class="govuk-body">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo ipsam culpa harum reiciendis repudiandae optio eos. Laudantium nemo omnis odio architecto voluptates consequatur, exercitationem labore dolor enim illo. Esse, nihil..
+        </p>
+
+        <table class="govuk-table hmlr-table-dynamic">
+          <caption class="govuk-table__caption govuk-table__caption--m">Months and rates</caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Month you apply</th>
+              <th scope="col" class="govuk-table__header govuk-table__header--numeric">Rate for bicycles</th>
+              <th scope="col" class="govuk-table__header govuk-table__header--numeric">Rate for vehicles</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">January</th>
+              <td class="govuk-table__cell govuk-table__cell--numeric" data-table-dynamic="Rate for bicycles">£85</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric" data-table-dynamic="Rate for vehicles">£95</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">February</th>
+              <td class="govuk-table__cell govuk-table__cell--numeric" data-table-dynamic="Rate for bicycles">£75</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric" data-table-dynamic="Rate for vehicles">£55</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">March</th>
+              <td class="govuk-table__cell govuk-table__cell--numeric" data-table-dynamic="Rate for bicycles">£165</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric" data-table-dynamic="Rate for vehicles">£125</td>
+            </tr>
+          </tbody>
+        </table>
+    
+      </div>            
+    
+
+
+    </div>
+
+  </div>
+</div>
+
+
+
+
+{% endblock %}
