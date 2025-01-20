@@ -37,8 +37,15 @@ Select a deferral reason
   
             <div class="govuk-radios govuk-radios--small govuk-!-margin-top-4" data-module="govuk-radios">
 
-              <div class="govuk-radios__divider govuk-!-display-inline-block govuk-!-width-full govuk-!-text-align-left govuk-!-padding-top-4 govuk-!-padding-bottom-2 govuk-!-font-size-24 govuk-!-font-weight-bold">
-                Referral
+              <div class="govuk-radios__divider govuk-!-display-inline-block govuk-!-padding-top-4 govuk-!-padding-bottom-2 govuk-!-width-full govuk-!-text-align-left">
+                
+                <span class="govuk-!-display-block govuk-!-font-size-24 govuk-!-font-weight-bold">
+                  Referral <span class="govuk-visually-hidden"> - </span>
+                </span>
+
+                <span class="govuk-!-display-block govuk-!-font-weight-regular govuk-!-margin-top-4">
+                  Waiting for a response from:
+                </span> 
               </div>
 
 
@@ -86,9 +93,16 @@ Select a deferral reason
               </div>
 
 
-              <div class="govuk-radios__divider govuk-!-display-inline-block govuk-!-width-full govuk-!-text-align-left govuk-!-padding-top-8 govuk-!-padding-bottom-2 govuk-!-font-size-24 govuk-!-font-weight-bold">
-                Other
-              </div>
+              <div class="govuk-radios__divider govuk-!-display-inline-block govuk-!-padding-top-8 govuk-!-padding-bottom-2 govuk-!-width-full govuk-!-text-align-left">
+                
+                <span class="govuk-!-display-block govuk-!-font-size-24 govuk-!-font-weight-bold">
+                  Other <span class="govuk-visually-hidden"> - </span>
+                </span>
+
+                <span class="govuk-!-display-block govuk-!-font-weight-regular govuk-!-margin-top-4">
+                  I need to:
+                </span> 
+              </div>              
 
     
               <div class="govuk-radios__item"> 
@@ -99,6 +113,38 @@ Select a deferral reason
                 </label>
               </div> 
               <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="paper" type="radio" name="the-reason-why" value="paper" >
+                
+                <label class="govuk-label govuk-radios__label" for="paper">
+                    Order paper files  
+                </label>
+              </div> 
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="survey" type="radio" name="the-reason-why" value="survey">
+                
+                <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-1" for="survey">
+                    Wait for a survey
+                </label>
+              </div> 
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="telephone" type="radio" name="the-reason-why" value="telephone">
+                
+                <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-1" for="telephone">
+                    Wait to make a phone call
+                </label>
+              </div>              
+              
+
+
+              <div class="govuk-radios__divider govuk-!-display-inline-block govuk-!-padding-top-8 govuk-!-padding-bottom-2 govuk-!-width-full govuk-!-text-align-left">
+                <span class="govuk-!-display-block govuk-!-font-weight-regular">
+                  I need more time because it's a: 
+                </span> 
+              </div>
+
+
+
+              <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="complex" type="radio" name="the-reason-why" value="complex">
                 
                 <label class="govuk-label govuk-radios__label" for="complex">
@@ -106,40 +152,12 @@ Select a deferral reason
                 </label>
               </div>              
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="paper" type="radio" name="the-reason-why" value="paper" >
-                
-                <label class="govuk-label govuk-radios__label" for="paper">
-                    Paper files needed  
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="telephone" type="radio" name="the-reason-why" value="telephone">
-                
-                <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-1" for="telephone">
-                    Phone call needed
-                </label>
-              </div>              
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="survey" type="radio" name="the-reason-why" value="survey">
-                
-                <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-1" for="survey">
-                    wait for a survey
-                </label>
-              </div>              
-              <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="subsequent" type="radio" name="the-reason-why" value="subsequent" >
                 
                 <label class="govuk-label govuk-radios__label" for="subsequent">
-                    Subsequent applications
+                    Subsequent application(s)
                 </label>
               </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="training" type="radio" name="the-reason-why" value="training">
-                
-                <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-1" for="training">
-                    Survey needed
-                </label>
-              </div>              
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="training" type="radio" name="the-reason-why" value="training">
                 
@@ -155,7 +173,7 @@ Select a deferral reason
                 </label>
               </div>              
       
-              <div class="govuk-radios__divider govuk-!-padding-top-4 govuk-!-padding-bottom-2 hmlr-wf-clear-left">
+              <div class="govuk-radios__divider govuk-!-display-inline-block govuk-!-width-full govuk-!-text-align-left govuk-!-padding-top-4 govuk-!-padding-bottom-2">
                 or
               </div>
       
