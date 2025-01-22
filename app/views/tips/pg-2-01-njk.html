@@ -15,16 +15,34 @@ Tips and tricks
 {% block content %}
 
 
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-      
 
-    {% set thePageNumber = "2" %}
-    {% include "./inc_page-number.html" %}
+      
+        <h1 class="govuk-heading-l">
+          Including components
+        </h1>
+
+
+        
+        {% import "./inc_my-snippets.njk" as components %}
+        {{ components.snippet1("Apples", "I love the crunch") }}
 
 
   </div>
 </div>
 
 
+
+
 {% endblock %}
+
+
+
+{#
+
+  {% set myFood = "Apples" %}
+  {% set myReason = "I love the crunch" %}
+
+#}

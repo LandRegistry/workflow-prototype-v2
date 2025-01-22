@@ -1,40 +1,41 @@
-{% macro snippet1(theTitle, theDesc) %}
-    <article class="govuk-!-padding-top-5">
+{% macro snippet1(content_01, content_02) %}
 
-        <h3 class="govuk-heading-s">
-            Title 1: {{ theTitle }}
-        </h3>
+    <p class="govuk-body-l">
+        Favourite food: {{ content_01 }}
+    </p>
 
-        <div>
-            Desc for snippet 1: {{ theDesc }}
-        </div>
+    <p class="govuk-body-l">
+        Why?: {{ content_02 }}
+    </p>
 
-    </article>
 {% endmacro %}
 
 
-{% macro snippet2(theTitle, theDesc) %}
-    <article style="padding: 25px 25px 10px 25px; margin-top: 40px; border: 1px solid #ccc;">
+{% macro snippet2(content_01, content_02) %}
+    <div class="govuk-!-padding-8">
 
-        <h3 class="govuk-heading-s" style="color: red; ">
-            Title 2: {{ theTitle | safe }}
-        </h3>
-
-        <p class="govuk-body-l">
-            This is the description displayed using different HTML from snippet 2: {{ theDesc | safe }}
+        <p class="govuk-body govuk-!-font-weight-bold">
+            What food do you like: 
+            <span class=" govuk-!-font-weight-regular">
+                {{ content_01 }}
+            </span>
         </p>
 
-    </article>
+        <p class="govuk-body govuk-!-font-weight-bold">
+            Tell us why: 
+            <span class=" govuk-!-font-weight-regular">
+                {{ content_02 }}
+            </span>
+        </p>
+
+    </div>
 {% endmacro %}
 
-{% macro snippet3(theTitle, theDesc) %}
+
+{% macro snippet3(content_01, content_02) %}
     
-    <div class="govuk-warning-text govuk-!-padding-top-6">
-    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-    <strong class="govuk-warning-text__text">
-        <span class="govuk-visually-hidden">Warning</span>
-        This is very different HTML for {{ theTitle }}!
-    </strong>
-    </div>
+    <div class="govuk-inset-text">
+        {{ content_01 }}: "{{ content_02 }}".
+    </div>    
     
 {% endmacro %}

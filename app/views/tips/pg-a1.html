@@ -1,0 +1,59 @@
+{% extends "layouts/wf_layout-std-new.html" %}
+
+{# set pageName="Select a category of work" #}
+
+{% block pageTitle %}
+Tips and tricks
+{% endblock %}
+
+{% block beforeContent %}
+
+  <a href="#" class="govuk-back-link">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+      
+        <h1 class="govuk-heading-l">
+          This is my page
+        </h1>
+        
+        <p class="govuk-body">
+          This is the text and a form which I'm going to repeat in two of my page designs.  
+        </p> 
+
+        <form action="#" novalidate>
+
+          {{ govukInput({
+
+            label: {
+              text: "This is my input field label", 
+              classes: "govuk-!-margin-top-8"
+            },
+            id: "form-name",
+            name: "formName"
+          }) }}  
+          
+
+          {{ govukButton({
+            text: "Save and continue"
+          }) }}          
+
+        </form>
+        
+
+
+  </div>
+</div>
+
+
+
+{% endblock %}
+{#% include "./inc_my-form.html" %#}
