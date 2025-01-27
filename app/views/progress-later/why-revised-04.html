@@ -1,0 +1,230 @@
+{% extends "layouts/wf_layout_legacy.html" %}
+
+{# set pageName="Select a category of work" #}
+
+{% block pageTitle %}
+Select a deferral reason
+{% endblock %}
+
+{% block beforeContent %}
+
+<a href="#" class="govuk-back-link">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <form action="#" method="post" novalidate>
+
+      <div class="govuk-form-group">
+      
+      
+          <fieldset class="govuk-fieldset">
+      
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                  Select a progress later reason
+              </h1>
+            </legend>
+
+  
+            <div class="govuk-radios govuk-!-margin-top-4" data-module="govuk-radios">
+
+
+      
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="referral" type="radio" name="reason-why" value="referral" data-aria-controls="conditional-reason-1" >
+                
+                <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-1" for="referral">
+                  Referral
+                </label>
+
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-reason-1">
+                <div class="govuk-form-group">
+      
+                  <fieldset class="govuk-fieldset govuk-!-margin-top-5" > 
+      
+                    <legend class="govuk-visually-hidden">
+                      Referral reasons:  
+                    </legend>
+      
+                    <div class="govuk-radios govuk-radios--small">
+
+ 
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="ro" type="radio" name="the-reason-why" value="ro" >
+                        
+                        <label class="govuk-label govuk-radios__label" for="ro">
+                          <abbr>RO</abbr>
+                        </label>
+                      </div> 
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="ero" type="radio" name="the-reason-why" value="ero" >
+                        
+                        <label class="govuk-label govuk-radios__label" for="ero">
+                          <abbr>ERO</abbr>
+                        </label>
+                      </div>                       
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="hro" type="radio" name="the-reason-why" value="hro" >
+                        
+                        <label class="govuk-label govuk-radios__label" for="hro">
+                          <abbr>HRO</abbr>
+                        </label>
+                      </div>                                             
+      
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="tt1" type="radio" name="the-reason-why" value="tt1" >
+                        
+                        <label class="govuk-label govuk-radios__label" for="tt1">
+                          <abbr>TT</abbr>1
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="tt2" type="radio" name="the-reason-why" value="tt2" >
+                        
+                        <label class="govuk-label govuk-radios__label" for="tt2">
+                          <abbr>TT</abbr>2
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="tt3" type="radio" name="the-reason-why" value="tt3" >
+                        
+                        <label class="govuk-label govuk-radios__label" for="tt3">
+                          <abbr>TT</abbr>3 <!-- / Lawyer -->
+                        </label>
+                      </div>
+                                                                                      
+                    
+                    </div>
+      
+                  </fieldset>
+      
+                </div>
+              </div>  
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="other" type="radio" name="reason-why" value="other" data-aria-controls="conditional-reason-2" >    
+                
+                <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-1" for="other">
+                  Other
+                </label>
+
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-reason-2">
+                <div class="govuk-form-group">
+      
+                  <fieldset class="govuk-fieldset govuk-!-margin-top-5">
+      
+                    <legend class="govuk-visually-hidden">
+                      Other reasons:
+                    </legend>
+      
+                    <div class="govuk-radios govuk-radios--small">
+
+                      <div class="govuk-radios__item"> 
+                        <input class="govuk-radios__input" id="cancel" type="radio" name="the-reason-why" value="cancel">
+                        
+                        <label class="govuk-label govuk-radios__label" for="cancel">
+                            Cancel and retake in (<abbr>CRTI</abbr>)
+                        </label>
+                      </div> 
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="complex" type="radio" name="the-reason-why" value="complex">
+                        
+                        <label class="govuk-label govuk-radios__label" for="complex">
+                          Complex case
+                        </label>
+                      </div>              
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="paper" type="radio" name="the-reason-why" value="paper" >
+                        
+                        <label class="govuk-label govuk-radios__label" for="paper">
+                            Paper files needed  
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="telephone" type="radio" name="the-reason-why" value="telephone">
+                        
+                        <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-1" for="telephone">
+                            Phone call needed
+                        </label>
+                      </div>              
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="survey" type="radio" name="the-reason-why" value="survey">
+                        
+                        <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-1" for="survey">
+                            Waiting for a survey
+                        </label>
+                      </div>              
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="subsequent" type="radio" name="the-reason-why" value="subsequent" >
+                        
+                        <label class="govuk-label govuk-radios__label" for="subsequent">
+                            Prior application
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="survey" type="radio" name="the-reason-why" value="survey">
+                        
+                        <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-1" for="survey">
+                            Survey needed
+                        </label>
+                      </div>              
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="training" type="radio" name="the-reason-why" value="training">
+                        
+                        <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-1" for="training">
+                            Training case
+                        </label>
+                      </div>                      
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="progress" type="radio" name="the-reason-why" value="progress">
+                        
+                        <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-1" for="progress">
+                            Work in progress
+                        </label>
+                      </div>              
+              
+                      <div class="govuk-radios__divider govuk-!-display-inline-block govuk-!-width-full govuk-!-text-align-left govuk-!-padding-top-4 govuk-!-padding-bottom-2">
+                        or
+                      </div>
+              
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="something" type="radio" name="the-reason-why" value="something" >
+                        
+                        <label class="govuk-label govuk-radios__label" for="something">
+                            Something else
+                        </label>
+                      </div>
+
+                    </div>
+      
+                  </fieldset>
+
+                 
+      
+                </div>
+              </div>        
+      
+            </div>
+      
+      
+                  </fieldset>
+                </div>           
+        
+      <input type="submit" class="govuk-button" value="Save"> 
+
+    </form>
+
+
+  </div>
+</div>
+
+
+{% endblock %}
