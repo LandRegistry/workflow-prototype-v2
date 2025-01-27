@@ -24,11 +24,12 @@ Tips and tricks
           Including components
         </h1>
 
-
+        {% set myFood = "Apples!" %}
+        {% set myReason = "I love the crunch" %}
         
         {% import "./inc_my-snippets.njk" as components %}
-        {{ components.snippet1("Apples", "I love the crunch") }}
-
+        {{ components.snippet1(myFood, myReason) }}
+       
 
   </div>
 </div>
@@ -42,7 +43,6 @@ Tips and tricks
 
 {#
 
-  {% set myFood = "Apples" %}
-  {% set myReason = "I love the crunch" %}
+  {{ components.snippet1("my text here", "more content here") }}
 
 #}

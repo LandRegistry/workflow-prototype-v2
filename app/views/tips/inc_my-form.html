@@ -1,0 +1,18 @@
+<form action="#" novalidate>
+
+    {{ govukInput({
+
+      label: {
+        text: "This IS MY NEW FORM LABEL", 
+        classes: "govuk-!-margin-top-8"
+      },
+      id: "form-name",
+      name: "formName"
+    }) }}  
+    
+
+    {{ govukButton({
+      text: "Save and continue"
+    }) }}          
+
+  </form>

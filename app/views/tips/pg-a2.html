@@ -25,28 +25,11 @@ Tips and tricks
         </h1>
 
         <p class="govuk-body">
-          This is the text and a form which I'm going to repeat in two of my page designs.  
+          This is the text and form which I'm going to repeat in two of my page designs.  
         </p> 
 
-        <form action="#" novalidate>
 
-          {{ govukInput({
-
-            label: {
-              text: "This is my input field label", 
-              classes: "govuk-!-margin-top-8"
-            },
-            id: "form-name",
-            name: "formName"
-          }) }}  
-          
-
-          {{ govukButton({
-            text: "Save and continue"
-          }) }}          
-
-        </form>
-        
+        {% include "./inc_my-form.html" %}
 
 
   </div>
