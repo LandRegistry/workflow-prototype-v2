@@ -24,22 +24,22 @@ Error: Select a deferral reason
       {% if (data['reason-why'] == null) %}
       
         <li>
-          <a href="#referral">Select why this case is being moved to Progress Later</a>
+          <a href="#referral">Select a progress later reason</a>
         </li>
 
       {% elseif (data['reason-why'] == 'referral')  %}
 
         {% if (data['the-reason-why'] == null) %}
           <li>
-            <a href="#tt1">Select a referral reason</a>
+            <a href="#ro">Select a referral reason</a>
           </li>
         {% endif %}
       
-      {% elseif (data['reason-why'] == 'pending')  %}
+      {% elseif (data['reason-why'] == 'other')  %}
 
         {% if (data['the-reason-why'] == null) %}
           <li>
-            <a href="#manual">Select a reason</a>
+            <a href="#cancel">Select a reason</a>
           </li>
         {% endif %}
 
@@ -64,7 +64,7 @@ Error: Select a deferral reason
       
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h1 class="govuk-fieldset__heading">
-                  Why is this case being moved to Progress Later?
+                  Select a progress later reason
               </h1>
             </legend>
       
@@ -74,11 +74,242 @@ Error: Select a deferral reason
       
             {% if (data['reason-why'] == null) %}
               <p id="reason-why-error" class="govuk-error-message">
-                <span class="govuk-visually-hidden">Error:</span> Select why this case is being moved to Progress Later
+                <span class="govuk-visually-hidden">Error:</span> Select a progress later reason
               </p>
             {% endif %}      
 
-            {% include "./inc_radios-list-of-reasons-2.html" %}
+              <div class="govuk-radios govuk-!-margin-top-4" data-module="govuk-radios">
+        
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="referral" type="radio" name="reason-why" value="referral" data-aria-controls="conditional-reason-1" {% if (data['reason-why'] == 'referral') %}
+                  checked
+                  {% endif %}>
+                  
+                  <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-1" for="referral">
+                    Referral
+                  </label>
+
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-reason-1">
+                  <div class="govuk-form-group 
+                  {% if (data['reason-why'] == 'referral' and data['the-reason-why'] == null) %}
+                  govuk-form-group--error
+                  {% endif %}
+                  ">
+        
+                    <fieldset class="govuk-fieldset govuk-!-margin-top-5" {% if (data['reason-why'] == 'referral' and data['the-reason-why'] == null) %}aria-describedby="the-reason-why-error"{% endif %}> 
+
+                      <legend class="govuk-visually-hidden">
+                        Referral reasons:  
+                      </legend>
+                      
+                      {% if (data['reason-why'] == 'referral' and data['the-reason-why'] == null) %}
+                        <p id="the-reason-why-error" class="govuk-error-message">
+                          <span class="govuk-visually-hidden">Error:</span> Select a referral reason
+                        </p>
+                      {% endif %}
+        
+                      <div class="govuk-radios govuk-radios--small">
+
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="ro" type="radio" name="the-reason-why" value="ro" {% if (data['the-reason-why'] == 'ro') %}
+                          checked
+                          {% endif %}>
+                          
+                          <label class="govuk-label govuk-radios__label" for="ro">
+                            <abbr>RO</abbr>
+                          </label>
+                        </div>  
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="ero" type="radio" name="the-reason-why" value="ero" {% if (data['the-reason-why'] == 'ero') %}
+                          checked
+                          {% endif %}>
+                          
+                          <label class="govuk-label govuk-radios__label" for="ero">
+                            <abbr>ERO</abbr>
+                          </label>
+                        </div>                       
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="hro" type="radio" name="the-reason-why" value="hro" {% if (data['the-reason-why'] == 'hro') %}
+                          checked
+                          {% endif %}>
+                          
+                          <label class="govuk-label govuk-radios__label" for="hro">
+                            <abbr>HRO</abbr>
+                          </label>
+                        </div>                                                
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="tt1" type="radio" name="the-reason-why" value="tt1" {% if (data['the-reason-why'] == 'tt1') %}
+                          checked
+                          {% endif %}>
+                          
+                          <label class="govuk-label govuk-radios__label" for="tt1">
+                            <abbr>TT</abbr>1
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="tt2" type="radio" name="the-reason-why" value="tt2" {% if (data['the-reason-why'] == 'tt2') %}
+                          checked
+                          {% endif %}>
+                          
+                          <label class="govuk-label govuk-radios__label" for="tt2">
+                            <abbr>TT</abbr>2
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="tt3" type="radio" name="the-reason-why" value="tt3" {% if (data['the-reason-why'] == 'tt3') %}
+                          checked
+                          {% endif %}>
+                          
+                          <label class="govuk-label govuk-radios__label" for="tt3">
+                            <abbr>TT</abbr>3
+                          </label>
+                        </div>
+                      
+                      </div>
+        
+                    </fieldset>
+        
+                  </div>
+                </div>  
+                
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="other" type="radio" name="reason-why" value="other" data-aria-controls="conditional-reason-2" {% if (data['reason-why'] == 'other') %}
+                  checked
+                  {% endif %}>    
+                  
+                  <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-1" for="other">
+                    Other
+                  </label>
+
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-reason-2">
+                  <div class="govuk-form-group 
+                  {% if (data['reason-why'] == 'other' and data['the-reason-why'] == null) %}
+                  govuk-form-group--error
+                  {% endif %}
+                  ">
+        
+                    <fieldset class="govuk-fieldset govuk-!-margin-top-5" {% if (data['reason-why'] == 'other' and data['the-reason-why'] == null) %}
+                      aria-describedby="govuk-form-group--error"
+                    {% endif %}
+                    >
+        
+                      <legend class="govuk-visually-hidden">
+                        Other reasons:
+                      </legend>
+
+                      {% if (data['reason-why'] == 'other' and data['the-reason-why'] == null) %}
+                      <p id="the-reason-why-error" class="govuk-error-message">
+                        <span class="govuk-visually-hidden">Error:</span> Select a reason
+                      </p>
+                    {% endif %}                        
+        
+                      <div class="govuk-radios govuk-radios--small">
+
+                        <div class="govuk-radios__item"> 
+                          <input class="govuk-radios__input" id="cancel" type="radio" name="the-reason-why" value="cancel">
+                          
+                          <label class="govuk-label govuk-radios__label" for="cancel">
+                              Cancel and retake in (<abbr>CRTI</abbr>)
+                          </label>
+                        </div> 
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="complex" type="radio" name="the-reason-why" value="complex" {% if (data['the-reason-why'] == 'complex') %}
+                          checked
+                          {% endif %}>
+                          
+                          <label class="govuk-label govuk-radios__label" for="complex">
+                            Complex case
+                          </label>
+                        </div>  
+                        
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="lam" type="radio" name="the-reason-why" value="lam">
+                          
+                          <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-1" for="lam">
+                            <abbr>LAM</abbr> referral
+                          </label>
+                        </div>                       
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="paper" type="radio" name="the-reason-why" value="paper" {% if (data['the-reason-why'] == 'paper') %}
+                          checked
+                          {% endif %}>
+                          
+                          <label class="govuk-label govuk-radios__label" for="paper">
+                              Paper files needed  
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="telephone" type="radio" name="the-reason-why" value="telephone" {% if (data['the-reason-why'] == 'telephone') %}
+                          checked
+                          {% endif %}>
+                          
+                          <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-1" for="telephone">
+                              Phone call needed
+                          </label>
+                        </div>              
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="pior" type="radio" name="the-reason-why" value="pior" {% if (data['the-reason-why'] == 'pior') %}
+                          checked
+                          {% endif %}>
+                          
+                          <label class="govuk-label govuk-radios__label" for="pior">
+                              Prior application
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="survey" type="radio" name="the-reason-why" value="survey" {% if (data['the-reason-why'] == 'survey') %}
+                          checked
+                          {% endif %}>
+                          
+                          <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-1" for="survey">
+                              Survey needed
+                          </label>
+                        </div>              
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="training" type="radio" name="the-reason-why" value="training" {% if (data['the-reason-why'] == 'training') %}
+                          checked
+                          {% endif %}>
+                          
+                          <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-1" for="training">
+                              Training case
+                          </label>
+                        </div>                      
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="progress" type="radio" name="the-reason-why" value="progress" {% if (data['the-reason-why'] == 'progress') %}
+                          checked
+                          {% endif %}>
+                          
+                          <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-1" for="progress">
+                              Work in progress
+                          </label>
+                        </div>              
+                
+                        <div class="govuk-radios__divider govuk-!-display-inline-block govuk-!-width-full govuk-!-text-align-left govuk-!-padding-top-4 govuk-!-padding-bottom-2">
+                          or
+                        </div>
+                
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="something" type="radio" name="the-reason-why" value="something" {% if (data['the-reason-why'] == 'something') %}
+                          checked
+                          {% endif %}>
+                          
+                          <label class="govuk-label govuk-radios__label" for="something">
+                              Something else
+                          </label>
+                        </div>
+
+                      </div>
+        
+                    </fieldset>
+
+                  
+        
+                  </div>
+                </div>        
+        
+              </div>
 
             </fieldset>
           </div>

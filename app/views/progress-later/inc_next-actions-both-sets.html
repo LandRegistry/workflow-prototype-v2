@@ -1,33 +1,37 @@
 {% set theReasonWhy = data['the-reason-why'] %}
 
       {% if theReasonWhy == "tt1" %}
-        Awaiting TT1
+        Referral: TT1
       {% elif theReasonWhy == "tt2" %}
-        Awaiting TT2
+        Referral: TT2
       {% elif theReasonWhy == "tt3" %}
-        Awaiting TT3 / Lawyer
+        Referral: TT3
       {% elif theReasonWhy == "hro" %}
-        Awaiting HRO
+        Referral: HRO
+      {% elif theReasonWhy == "ero" %}
+        Referral: ERO        
       {% elif theReasonWhy == "ro" %}
-        Awaiting RO        
-      {% elif theReasonWhy == "manual" %}
-        Manual files require ordering
+        Referral: RO        
+      {% elif theReasonWhy == "paper" %}
+        Paper files needed
       {% elif theReasonWhy == "surveys" %}
-        Awaiting survey(s)
-      {% elif theReasonWhy == "subsequent" %}
-        Subsequent applications (colleagues can't obtain)
+        Survey needed
+      {% elif theReasonWhy == "pior" %}
+        Pior application
       {% elif theReasonWhy == "telephone" %}
-        Telephone conversation required
+        Phone call needed
       {% elif theReasonWhy == "cancelled" %} 
-        CRTI required
+        Cancel and retake in (CRTI) 
       {% elif theReasonWhy == "complex" %}
-        Complex - sufficent time required                   
+        Complex case 
+      {% elif theReasonWhy == "lam" %}
+        LAM referral                           
       {% elif theReasonWhy == "progress" %}
-        In progress and ongoing
+        Work in progress
       {% elif theReasonWhy == "training" %}
-        In use for training - awaiting update  
+        Training case  
       {% elif theReasonWhy == "something" %}
-        Something 10                   
+        Unspecified                   
       {% else %}
         Unknown
       {% endif %}
