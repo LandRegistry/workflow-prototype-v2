@@ -1,0 +1,27 @@
+
+Changes made to the previous version
+
+The reasons list page:
+
+1. The ordering to the 'Referrals' list of radios
+2. A new radio (LAM referral) added to the 'Other' list of radios
+3. A new grade add to the 'Referrals' list. The list should include RO, ERO, HRO
+4. "TT3 / Lawyer" label text now change to just "TT3"
+5. The text in the labels for the 'Other' list have been updated (Training case, Prior application [replaces Subsequent application], Survey needed): please check against the new list
+6. The error message text has changed to "Select a progress later reason"
+7. The sub-error message text has changed to a). "Select a referral reason" and b). "Select a reason"
+8. The radio labels 'Referral' and 'Other' are no longer bold
+9. The main H1 header text has changed
+10. The 'Other' list of radio buttons run in a-z order as per the design
+
+The the user is returned to the worklist page:
+
+In the 'Next action' column of the Progress Later table, there are no changes, except to the text which is written when selecting options from the reasons list.
+
+1. The text of each radio button label is simply repeated in the 'Next action' column
+
+EXCEPT:
+
+2. All referral options text prepended with "Referral: ". e.g "Referral: TT3"
+
+3. The "Something else" option will use the text "Unspecified" in the 'Next action' column
