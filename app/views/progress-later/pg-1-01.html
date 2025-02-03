@@ -414,7 +414,7 @@ Select a deferral reason
               <span class="case__inc">
                       
               </span>
-              DU164997 ZZZZZZZZ
+              DU164997 
 
               <!--strong class="govuk-tag-reason govuk-tag">
                 Something
@@ -460,8 +460,10 @@ Select a deferral reason
                       <form class="case__form" id="change_state_10628" action="#" method="post" novalidate>
   
                           <input id="hidden_value_progress_child_cases_10628" type="hidden" name="child_cases" value="1">
-  
+                        
+                        {% if (data['the-reason-why'] != 'tt3') %}
                           <input id="btn_await_lawyer_10628" title="Refer case E365VWW to a lawyer" type="submit" name="Waiting_for_lawyer" class="govuk-link case__hyperlink case__await_lawyer_btn govuk-!-display-inline-block govuk-!-text-align-centre govuk-!-padding-bottom-1 hmlr-link--min-width-48 govuk-!-font-size-16" value="Waiting for lawyer" formaction="#">
+                        {% endif %}
                           
       <a class="govuk-link govuk-link--no-visited-state case__refer-link case__anchor govuk-!-font-size-16" href="#">
         Refer <span class="govuk-visually-hidden">case <abbr>E365VWW</abbr></span>
