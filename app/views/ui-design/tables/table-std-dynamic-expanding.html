@@ -1,0 +1,586 @@
+{% extends "layouts/wf_layout-std-new.html" %}
+
+{# set pageName="Example of dynamic table" #}
+
+{% block pageTitle %}
+Example of dynamic table
+{% endblock %}
+
+{% block beforeContent %}
+
+  <a href="#" class="govuk-back-link">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <div id="worklist_page">
+
+      <div id="data-progress-now-table" data-progress-now-table="">
+      
+        <h1 id="my_worklist_header" class="govuk-heading-l worklist__header">
+          My Worklist : 1 applications
+        </h1>
+    
+        <p class="govuk-body">
+          Your category of work is <span class="bold">Application Processing: Executive Register Update Standard</span>.
+          
+          <a href="#" class="govuk-link govuk-link--no-visited-state">Change your category of work</a>.
+        </p>
+
+        <table id="progress_now_table" class="govuk-table xxxxworklist__table    hmlr-table-dynamic">
+            
+            <caption class="govuk-table__caption govuk-table__caption--m">
+                1 application presented in a 6 column table.
+            </caption>
+      
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row worklist-black-border">
+                    <th class="govuk-table__header" id="progress_now_priority_dates" scope="col">Priority date</th>
+                    <th class="govuk-table__header" id="progress_now_title_numbers" scope="col">Title number</th>
+                    <th class="govuk-table__header" id="progress_now_abrs" scope="col"><abbr title="A B R">ABR</abbr></th>
+                    <th class="govuk-table__header" id="progress_now_categories" scope="col">Category</th>
+                    <th class="govuk-table__header" id="progress_now_dates_obtained" scope="col">Date obtained</th>
+                    <th class="govuk-table__header" id="progress_now_next_actions" scope="col">Next action</th>
+                </tr>
+            </thead>
+        
+            
+                
+            <tbody data-case-ref="E365VWW" class="case case--parent ">
+                <tr id="row_10628" class="govuk-table__row case__data_row ">
+        
+                    
+            <td class="case__date" id="E365VWW_priority_date" headers="progress_now_priority_dates" data-table-dynamic="Priority date">
+                
+                  
+                  22 January 2025
+                  
+                
+            </td>
+        
+        
+                    
+            <td class="case__title-number" id="E365VWW_title_number" headers="progress_now_title_numbers" data-table-dynamic="Title number">
+                
+                    <span class="case__inc">
+                            
+                    </span>
+                    DU164997
+                    
+                
+            </td>
+        
+        
+                    
+            <td id="E365VWW_abr" class="case__abr" headers="progress_now_abrs" data-table-dynamic="ABR">
+                
+                E365VWW
+                
+                <div>
+                      Leading application
+                </div>
+            </td>
+        
+        
+                    
+            <td id="E365VWW_cat" class="case__category" headers="progress_now_categories" data-table-dynamic="Category">
+                
+                
+                
+                
+                  Executive Register Update Standard
+  
+                
+            </td>
+        
+        
+                    
+            <td class="case__date" id="E365VWW_dobtained" headers="progress_now_dates_obtained" data-table-dynamic="Date obtained">
+                
+                10 January 2024
+                
+            </td>
+        
+        
+                    
+            <td id="E365VWW_next_action" class="case__next-action" headers="progress_now_next_actions" data-table-dynamic="Next action">
+                
+                
+                    New - Start to process
+                
+                
+            </td>
+        
+        
+                </tr>
+                
+            
+                
+            
+        
+                
+                <tr id="row_10628_actions" class="govuk-table__row case__actions">
+                    <td colspan="6" data-table-dynamic="Options">
+                      <div class="case__actions-wrapper">
+                        <div class="case__left-hand-actions actions-spacing">
+        
+                            
+                                
+                                    
+            <form class="case__form case__form--process" id="process_form_10628" action="#" method="POST" novalidate>
+                
+                  <input name="csrf_token" type="hidden" value="IjI2YzBiY2QwNzJiZjE0M2M3MDMxZGQ1M2UyMTBkMDNhMWE3YTdiZmYi.ZdYZDA.PHMOSAvho5tJKgE5EQe9HLJdBz8">
+                
+                <input aria-label="Open CORA to start processing case E365VWW" type="submit" id="open_btn_E365VWW" class="govuk-button" value="Open">
+            </form>
+        
+                                
+            <span class="govuk-visually-hidden">|</span>              
+        
+                            
+                            
+            <a class="govuk-link govuk-link--no-visited-state actions-spacing case__anchor govuk-!-font-size-16" href="#"  aria-label="return to e-serve">
+              Return to <abbr title="e-serve">ESRV</abbr><span class="govuk-visually-hidden">: case <abbr>E365VWW</abbr> to <abbr>DB2</abbr></span>
+            </a>
+        
+            <span class="govuk-visually-hidden">|</span>                
+        
+                        </div>
+        
+                        <div class="case__right-hand-actions actions-spacing">
+        
+                            <form class="case__form" id="change_state_10628" action="#" method="post" novalidate>
+                              <!--  onsubmit="btn_await_lawyer_10628.disabled = true; btn_progress_now_10628.disabled = true btn_progress_later_10628.disabled = true;" -->
+                              
+                                <input name="csrf_token" type="hidden" value="IjI2YzBiY2QwNzJiZjE0M2M3MDMxZGQ1M2UyMTBkMDNhMWE3YTdiZmYi.ZdYZDA.PHMOSAvho5tJKgE5EQe9HLJdBz8">
+                              
+                                <input class="case__progress-code" id="hidden_value_progress_10628" type="hidden" name="my_activity_code" value="my_activity_code">
+                                <!--input class="case__progress-code" id="hidden_value_progress_10628" type="hidden" name="activity_code" value="PROGRESS_LATER"-->
+        
+                                <input id="hidden_value_progress_child_cases_10628" type="hidden" name="child_cases" value="1">
+        
+                                <input id="btn_await_lawyer_10628" aria-label="Refer case E365VWW to a lawyer" type="hidden" name="Waiting_for_lawyer" class="case__hyperlink case__await_lawyer_btn
+                                govuk-!-font-size-16" value="Waiting for lawyer" formaction="#">
+                                
+            <a class="govuk-link govuk-link--no-visited-state case__refer-link case__anchor govuk-!-font-size-16" href="#">
+              Refer<span class="govuk-visually-hidden"> case <abbr>E365VWW</abbr></span>
+            </a>
+        
+            <span class="govuk-visually-hidden">|</span>
+  
+                          
+            <input aria-label="Move case E365VWW into your worklist" id="btn_progress_now_10628" type="submit" name="Work_on_this" class="govuk-link case__hyperlink case__progress-now-btn govuk-!-font-size-16" value="Work on this">
+  
+            <span class="govuk-visually-hidden">|</span>
+  
+            <!-- ********************************************************************************** -->
+                              
+                <input id="btn_progress_later_10628" aria-label="Progress case E365VWW later" type="submit" name="my_progress_later" class="govuk-link case__hyperlink case__progress-later-btn govuk-!-font-size-16" value="Progress later">
+            
+                <span class="govuk-visually-hidden">|</span>
+                                
+            <a class="govuk-link govuk-link--no-visited-state case__defer-link case__anchor govuk-!-font-size-16" href="#">
+              Defer <span class="govuk-visually-hidden">case <abbr>E365VWW</abbr></span>
+            </a>
+                            
+            <span class="govuk-visually-hidden">|</span>
+                                
+            <a class="govuk-link govuk-link--no-visited-state case__activity-history-link case__anchor govuk-!-font-size-16 ga_track_event" href="#" id="link_activity_history_E365VWW" data-ga-category="Activity_History_Link_From_Worklist" data-ga-action="Activity History link clicked from worklist page" data-ga-label="Worklist_Activity_History_Link">
+              View activity history <span class="govuk-visually-hidden">for <abbr>E365VWW</abbr></span>
+            </a>
+  
+            <span class="govuk-visually-hidden">|</span>
+                                
+            <a href="#" class="govuk-link govuk-link--no-visited-state case__more-info-link case__anchor govuk-!-font-size-16" target="_blank">
+                More info<span class="govuk-visually-hidden">: open daylist for case <abbr>N619SWW</abbr>. Opens in new tab.</span>
+            </a>
+
+            <span class="govuk-visually-hidden">|</span>
+                                
+            <a href="#" class="govuk-link govuk-link--no-visited-state case__my-notes case__anchor govuk-!-font-size-16" target="_blank">
+                My notes<span class="govuk-visually-hidden">: for case <abbr>N619SWW</abbr></span>
+            </a>            
+  
+            <!--span class="govuk-visually-hidden">|</span>
+        
+            <button id="btn_show_attached_N619SWW" class="case__expand case__hyperlink case__anchor govuk-!-font-size-16 govuk-link">
+              <span class="case__expand-verb" id="attached_apps_verb_N619SWW">Show</span> attached applications <span class="govuk-visually-hidden">for <abbr>N619SWW</abbr></span> <span class="case__expand-symbol" id="attached_apps_operator_N619SWW">&plus;</span>
+            </button-->
+                            
+                            </form>
+                        </div>
+
+                        <div class="hmlr-table-dynamic__expandable" aria-hidden="true">
+
+                          <div class="govuk-form-group">
+                            <label class="govuk-label" for="more-detail">
+                              My notes
+                            </label>
+                            <textarea class="govuk-textarea resize-ta" id="more-detail" name="moreDetail" rows="5"></textarea>
+                          </div>
+
+                        </div>
+
+
+                      </div>
+                    </td>
+                </tr>
+                
+            </tbody>
+        
+                
+                    
+            <tbody data-case-ref="D365VWW" class="case xxxxxxxxxxxxxxxhidden" data-parent="E365VWW">
+                <tr id="row_10629" class="govuk-table__row case__data_row ">
+        
+                    
+            <td class="case__date">
+                
+            </td>
+        
+        
+                    
+            <td class="case__title-number" id="D365VWW_title_number" headers="progress_now_title_numbers">
+                
+                    <span class="case__inc">
+                            
+                    </span>
+                    DU164998
+                    
+                
+            </td>
+        
+        
+                    
+            <td id="D365VWW_abr" class="case__abr" headers="progress_now_abrs">
+                
+                D365VWW
+                
+                <div>
+                      Attached to E365VWW 
+                </div>
+            </td>
+        
+        
+                    
+            <td id="D365VWW_cat" class="case__category" headers="progress_now_categories">
+                
+                
+                
+                
+                  Executive Register Update Standard
+  
+                
+            </td>
+        
+        
+                    
+            <td class="case__date" id="D365VWW_dobtained" headers="progress_now_dates_obtained">
+                
+                25 January 2024
+                
+            </td>
+        
+        
+                    
+            <td id="D365VWW_next_action" class="case__next-action" headers="progress_now_next_actions">
+                
+                
+                    New - Start to process
+                
+                
+            </td>
+        
+        
+                </tr>
+                
+            
+        
+                
+                <tr id="row_10629_actions" class="govuk-table__row case__actions">
+                    <td colspan="6">
+                      <div class="case__actions-wrapper">
+                        <div class="case__left-hand-actions actions-spacing">
+        
+                            
+                                
+                                    
+            <form class="case__form case__form--process" id="process_form_10629" action="#" method="POST" novalidate>
+                
+                  <input name="csrf_token" type="hidden" value="IjI2YzBiY2QwNzJiZjE0M2M3MDMxZGQ1M2UyMTBkMDNhMWE3YTdiZmYi.ZdYZDA.PHMOSAvho5tJKgE5EQe9HLJdBz8">
+                
+                <input aria-label="Open CORA to start processing case D365VWW" type="submit" id="open_btn_D365VWW" class="wf-button" value="Open">
+            </form>
+        
+                                
+            <span class="govuk-visually-hidden">|</span>                 
+        
+                            
+        
+                        </div>
+        
+                        <div class="case__right-hand-actions actions-spacing">
+        
+                            <form class="case__form" id="change_state_10629" action="#" method="post" onsubmit="btn_await_lawyer_10629.disabled = true;
+                                          btn_progress_now_10629.disabled = true;
+                                          btn_progress_later_10629.disabled = true;" novalidate>
+                              
+            <input name="csrf_token" type="hidden" value="IjI2YzBiY2QwNzJiZjE0M2M3MDMxZGQ1M2UyMTBkMDNhMWE3YTdiZmYi.ZdYZDA.PHMOSAvho5tJKgE5EQe9HLJdBz8">
+  
+            <input class="case__progress-code" id="hidden_value_progress_10629" type="hidden" name="activity_code" value="PROGRESS_LATER">
+  
+            <span class="govuk-visually-hidden">|</span>       
+  
+            <input id="hidden_value_progress_child_cases_10629" type="hidden" name="child_cases" value="0">
+  
+  
+        
+  
+                            
+                                
+            <a class="govuk-link govuk-link--no-visited-state case__activity-history-link case__anchor govuk-!-font-size-16 ga_track_event" href="#" id="link_activity_history_D365VWW" data-ga-category="Activity_History_Link_From_Worklist" data-ga-action="Activity History link clicked from worklist page" data-ga-label="Worklist_Activity_History_Link">
+              View activity history <span class="govuk-visually-hidden">for <abbr>D365VWW</abbr></span>
+            </a>
+        
+            <span class="govuk-visually-hidden">|</span>       
+                                
+            <a href="#" class="govuk-link govuk-link--no-visited-state case__more-info-link case__anchor govuk-!-font-size-16" target="_blank">
+              More info<span class="govuk-visually-hidden">: open daylist for case <abbr>N619XXX</abbr>. Opens in new tab.</span>
+            </a>
+  
+            <span class="govuk-visually-hidden">|</span>
+                                
+            <a href="#" class="govuk-link govuk-link--no-visited-state case__my-notes case__anchor govuk-!-font-size-16" target="_blank">
+                My notes<span class="govuk-visually-hidden">: for case <abbr>N619XXX</abbr></span>
+            </a>     
+                            
+        
+                            
+                            </form>
+                        </div>
+
+                        <div class="hmlr-table-dynamic__expandable" aria-hidden="true">
+
+                          <div class="govuk-form-group">
+                            <label class="govuk-label" for="xmore-detail">
+                              My notes
+                            </label>
+                            <textarea class="govuk-textarea" id="xmore-detail" name="xmoreDetail" rows="5">hello this is my 
+                              Different CONTENT
+                              and more 
+                              and more 
+                              and more
+                            sx
+                          x
+                        d                              and more 
+                        and more 
+                        and more
+                      sx
+                    x                              and more 
+                    and more 
+                    and more
+                  sx
+                x                              and more 
+                and more 
+                and more
+              sx
+            x                              and more 
+            and more 
+            and more
+          sx
+        x                              and more 
+        and more 
+        and more
+      sx      END</textarea>
+                          </div>
+
+                        </div>
+
+
+                      </div>
+                    </td>
+                </tr>
+                
+            </tbody>
+        
+                
+            
+        </table>
+    
+      </div>            
+    
+      <h2 id="progress_later_header" class="govuk-heading-l worklist__header">
+        Progress Later : 5 applications
+      </h2>
+      
+      {% include "../includes/inc_standard-prog-later-tbl.html" %}
+
+    </div>
+
+  </div>
+</div>
+
+<!--style>
+.case__actions-wrapper {
+  border: 2px solid red;
+  float: left;
+  width: 100%;
+  padding: 10px 0 0 0;
+}
+
+</style-->
+
+
+<script>
+
+//case__more-info-link 
+//window.onload = (event) => {
+  //alert('fired');
+//};
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+
+
+    function checkIfTblsExist() {
+      const tbl1 = document.getElementById(progress_now_table);
+      const tbl2 = document.getElementById(progress_later_table);
+      if (tbl1 || tbl2) {
+          return true;
+      } else {
+          return false;
+      }
+    }
+    
+    //*** start open/close of notes divs/textarea ... ***
+    if (checkIfTblsExist) {//only run code if we're on the right page!
+
+      var defaultHeight = 123;//default height of textarea form element (= 5 rows)
+      const extraPadding = 50;//extra needed by expandable div for bottom "padding"
+      var mainContent = document.getElementById('main-content');
+      var links = mainContent.getElementsByClassName('case__my-notes');
+      const expandableDivs = mainContent.querySelectorAll('.hmlr-table-dynamic__expandable');
+      
+      expandableDivs.forEach(function(d) {
+          d.style.maxHeight = '0px';//for slide open animation: setting now to save time later
+      });      
+      
+      for (var i = 0; i < links.length; i++) {// Add an event listener to each 'my notes' link
+      
+          links[i].addEventListener('click', function(e) {
+            e.preventDefault();
+
+            const tdEle = this.closest('td'); // Navigate dom up to the closest td element
+            const wrapEleHeight = tdEle.querySelector('.case__actions-wrapper');
+
+            if (tdEle) {
+                let expandableEle = tdEle.querySelector('.hmlr-table-dynamic__expandable');
+                
+                //textarea field start
+                let thisTextArea = expandableEle.querySelector('textarea');
+                let textAreaHeight = calcHeight(thisTextArea.value); 
+                if(textAreaHeight <= defaultHeight){
+                  textAreaHeight = defaultHeight;
+                }else{
+                  defaultHeight = textAreaHeight;//reset default height if textarea content height is greater
+                }
+                thisTextArea.style.height = textAreaHeight + 'px';//add css height to textarea. (was style.minHeight)
+                //textarea field end
+
+                expandableEle.classList.toggle('hmlr-table-dynamic__expandable--show');//add css 'slide opening' class                 
+                expandableEle.setAttribute('aria-hidden', expandableEle.getAttribute('aria-hidden') === 'true' ? 'false' : 'true');//wcag knows if its visible
+
+                let boxSize = expandableEle.getAttribute('data-divheight');//get value of the data attr
+                if (boxSize === null){//before first click/opening
+                  boxSize = defaultHeight + 'px';//set boxSize to the default height; used for updating max-height on expandable div
+                }
+                /*else{
+                  //for the smooth slide opening/closing of the expandable div we need to reset max-height to zero and reinstate it for opening (stored in the data attr)
+                  const currentMaxHeight = expandableEle.style.maxHeight;
+                  
+                  if(currentMaxHeight === '0px'){
+                    boxSize = boxSize;
+                  }else{
+                    
+                    if(parseFloat(currentMaxHeight) <= parseFloat(defaultHeight)){//if current value is less than the default height
+                      boxSize = defaultHeight
+                    }else{
+                      boxSize = currentMaxHeight;
+                    }
+                    
+                  }
+
+                }*/
+                expandableEle.setAttribute('data-divheight', boxSize);//expandableEle.style.maxHeight
+
+                if (expandableEle.style.maxHeight === '0px') {//if it is closed
+                  expandableEle.style.maxHeight = (parseFloat(boxSize) + extraPadding + 'px');//set the max-height with the data value; when first opening
+                } else {//otherwise store the height from the css max-height in the data- attr, to use for reopening next time
+                  expandableEle.setAttribute('data-divheight', expandableEle.style.maxHeight);
+                  expandableEle.style.maxHeight = '0px';
+                  wrapEleHeight.style.cssText = 'max-height: auto;';
+                }
+
+                
+            }
+          });
+      }
+      //end open/close of notes divs/textarea.
+
+      //*** start the typing keyup events to grow the size of the textarea .... ***
+      function calcHeight(value) {
+        let numberOfLineBreaks = (value.match(/\n/g) || []).length;
+        // min-height + lines x line-height + padding + border (adjust to size)
+        let newHeight = 20 + numberOfLineBreaks * 20 + 20 + 2;//defaultHeight replaced the number 20
+        return newHeight;
+      }
+
+      expandableDivs.forEach(expandableDiv => {
+        const wrapperEleHeight = expandableDiv.closest('.case__actions-wrapper');
+        const expandableEleHeight = wrapperEleHeight.offsetHeight;
+        const textarea = expandableDiv.querySelector('textarea');
+
+        if (textarea) {
+            textarea.addEventListener("keyup", () => {
+              let divHeight = calcHeight(textarea.value);
+
+              if(divHeight > defaultHeight){
+                wrapperEleHeight.style.height = (expandableEleHeight + divHeight + 12) + "px";//*** 12
+                expandableDiv.style.cssText = 'max-height: '+ (expandableEleHeight + divHeight + extraPadding) + "px;";
+                textarea.style.height = divHeight + "px";
+              }
+              
+            });
+
+/*IMPORTANT:  >>>>>> DECTECT IF COPY AND PASTED AND IF SO THEN ADD CSS INSTRUCTION FOR OVERFLOW AUTO */
+
+
+/*const handleInput = (event) => {
+  let divHeight = calcHeight(textarea.value);
+
+    if(divHeight > defaultHeight){
+      wrapperEleHeight.style.height = (expandableEleHeight + divHeight + 12) + "px";//*** 12
+      expandableDiv.style.cssText = 'max-height: '+ (expandableEleHeight + divHeight + extraPadding) + "px;";
+      textarea.style.height = divHeight + "px";
+    }
+};
+textarea.addEventListener("keyup", handleInput);
+textarea.addEventListener("paste", handleInput);*/
+
+
+        }
+      });
+      //*** end the typing keyup events to grow the size of the textarea. ***
+    }  
+
+});
+</script>
+
+{% endblock %}

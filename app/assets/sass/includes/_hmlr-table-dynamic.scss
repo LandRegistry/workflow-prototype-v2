@@ -117,3 +117,57 @@ table.hmlr-table-dynamic {
 
     }
 }
+
+
+table.hmlr-table-dynamic { /* This section is for the expandable notes in dynamic table   */
+
+	.case__my-notes {
+		display: none;
+	}
+
+	.case__left-hand-actions input[type='submit']{
+		margin: govuk-spacing(0) !important;
+	}
+
+	.case__actions-wrapper {
+		//padding-bottom: govuk-spacing(3); 
+
+		.hmlr-table-dynamic__expandable {
+			float: left; 
+			width: 100%; 
+		}		
+	}
+
+	@at-root .js-enabled {
+
+		.case__my-notes {
+			display: inline-block !important;
+		}
+
+		.hmlr-table-dynamic__expandable {//hide
+			overflow: hidden;
+
+			max-height: 0;
+			transition: max-height 0.3s ease-out;
+
+			&.hmlr-table-dynamic__expandable--show {//reveal 
+				//max-height: 300px; /* Adjust this value based on the content height */
+  				transition: max-height 0.3s ease-in;
+			}	
+			
+			textarea {
+				resize: none !important; /* Disable manual resizing */
+				overflow: hidden;
+				//@include govuk-font($size: 19, $weight: regular, $tabular: true);
+				@include govuk-font($size: 16);
+				line-height: 1.25 !important;
+				padding: govuk-spacing(2) !important;
+				margin-bottom: govuk-spacing(0) !important;
+				box-shadow: inset 0 0 10px #ccc;
+			}
+
+		}
+	
+	}
+
+}
