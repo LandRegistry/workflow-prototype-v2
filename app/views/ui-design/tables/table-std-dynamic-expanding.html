@@ -223,6 +223,7 @@ Example of dynamic table
                               My notes
                             </label>
                             <textarea class="govuk-textarea resize-ta" id="more-detail" name="moreDetail" rows="5"></textarea>
+                            <button type="submit" class="govuk-button govuk-button--secondary">Save</button>
                           </div>
 
                         </div>
@@ -378,19 +379,13 @@ Example of dynamic table
                               and more
                             sx
                           x
-                        d                              and more 
-                        and more 
-                        and more
+
                       sx
                     x                              and more 
                     and more 
                     and more
                   sx
-                x                              and more 
-                and more 
-                and more
-              sx
-            x                              and more 
+
             and more 
             and more
           sx
@@ -398,6 +393,9 @@ Example of dynamic table
         and more 
         and more
       sx      END</textarea>
+
+                              <button type="submit" class="govuk-button govuk-button--secondary">Save</button>
+
                           </div>
 
                         </div>
@@ -462,62 +460,80 @@ document.addEventListener('DOMContentLoaded', function() {
     //*** start open/close of notes divs/textarea ... ***
     if (checkIfTblsExist) {//only run code if we're on the right page!
 
-      var defaultHeight = 123;//default height of textarea form element (= 5 rows)
-      const extraPadding = 50;//extra needed by expandable div for bottom "padding"
-      var mainContent = document.getElementById('main-content');
-      var links = mainContent.getElementsByClassName('case__my-notes');
+      const defH = 123;//default height of textarea form element (= 5 rows) as a const. 
+      var defaultHeight = defH;//this var gets updated/changed regularly
+      const extraPadding = 84;//extra needed by expandable div for bottom "padding"
+
+      const mainContent = document.getElementById('main-content');
+      const links = mainContent.getElementsByClassName('case__my-notes');
       const expandableDivs = mainContent.querySelectorAll('.hmlr-table-dynamic__expandable');
       
       expandableDivs.forEach(function(d) {
           d.style.maxHeight = '0px';//for slide open animation: setting now to save time later
-      });      
+      });  
       
+      function calcHeight(value) {
+        let numberOfLineBreaks = (value.match(/\n/g) || []).length;
+        // min-height + lines x line-height + padding + border (adjust to size)
+        let newHeight = 20 + numberOfLineBreaks * 20 + 20 + 2;//defaultHeight replaced the number 20
+        return newHeight;
+      }      
+
       for (var i = 0; i < links.length; i++) {// Add an event listener to each 'my notes' link
-      
-          links[i].addEventListener('click', function(e) {
+        (function(index) {
+          links[index].addEventListener('click', function(e) {
             e.preventDefault();
 
-            const tdEle = this.closest('td'); // Navigate dom up to the closest td element
-            const wrapEleHeight = tdEle.querySelector('.case__actions-wrapper');
+
+            //var thisTextArea = null; 
+            var tdEle = this.closest('td'); // Navigate dom up to the closest td element
+            var wrapEleHeight = tdEle.querySelector('.case__actions-wrapper');
 
             if (tdEle) {
-                let expandableEle = tdEle.querySelector('.hmlr-table-dynamic__expandable');
+                var expandableEle = tdEle.querySelector('.hmlr-table-dynamic__expandable');
                 
-                //textarea field start
-                let thisTextArea = expandableEle.querySelector('textarea');
-                let textAreaHeight = calcHeight(thisTextArea.value); 
+                //textarea field start >>>>
+                var thisTextArea = expandableEle.querySelector('textarea');
+                var textAreaHeight = calcHeight(thisTextArea.value); 
+                //var upToDateHeight = thisTextArea.style.height;
+                defaultHeight = defH;//important to reset it here
+
+                //alert('Here: '+upToDateHeight);
+                
                 if(textAreaHeight <= defaultHeight){
                   textAreaHeight = defaultHeight;
                 }else{
                   defaultHeight = textAreaHeight;//reset default height if textarea content height is greater
                 }
-                thisTextArea.style.height = textAreaHeight + 'px';//add css height to textarea. (was style.minHeight)
-                //textarea field end
+                
+                thisTextArea.style.height = defaultHeight + 'px';
+                //textarea field end <<<<
 
+                
                 expandableEle.classList.toggle('hmlr-table-dynamic__expandable--show');//add css 'slide opening' class                 
                 expandableEle.setAttribute('aria-hidden', expandableEle.getAttribute('aria-hidden') === 'true' ? 'false' : 'true');//wcag knows if its visible
 
-                let boxSize = expandableEle.getAttribute('data-divheight');//get value of the data attr
+
+                var boxSize = expandableEle.getAttribute('data-divheight');
+
                 if (boxSize === null){//before first click/opening
                   boxSize = defaultHeight + 'px';//set boxSize to the default height; used for updating max-height on expandable div
-                }
-                /*else{
-                  //for the smooth slide opening/closing of the expandable div we need to reset max-height to zero and reinstate it for opening (stored in the data attr)
-                  const currentMaxHeight = expandableEle.style.maxHeight;
+                } else {//this else section starts to grow the textarea height once the default height is breached
+                  var currentMaxHeight = expandableEle.style.maxHeight;
                   
                   if(currentMaxHeight === '0px'){
                     boxSize = boxSize;
                   }else{
                     
                     if(parseFloat(currentMaxHeight) <= parseFloat(defaultHeight)){//if current value is less than the default height
-                      boxSize = defaultHeight
+                      boxSize = defaultHeight;
                     }else{
                       boxSize = currentMaxHeight;
                     }
                     
                   }
+                }
 
-                }*/
                 expandableEle.setAttribute('data-divheight', boxSize);//expandableEle.style.maxHeight
 
                 if (expandableEle.style.maxHeight === '0px') {//if it is closed
@@ -528,20 +544,16 @@ document.addEventListener('DOMContentLoaded', function() {
                   wrapEleHeight.style.cssText = 'max-height: auto;';
                 }
 
-                
             }
           });
+        })(i);
       }
       //end open/close of notes divs/textarea.
 
-      //*** start the typing keyup events to grow the size of the textarea .... ***
-      function calcHeight(value) {
-        let numberOfLineBreaks = (value.match(/\n/g) || []).length;
-        // min-height + lines x line-height + padding + border (adjust to size)
-        let newHeight = 20 + numberOfLineBreaks * 20 + 20 + 2;//defaultHeight replaced the number 20
-        return newHeight;
-      }
 
+      //XXXXXXXXXXXXXXX FIX HEIGHT GROWS WHEN REPEATEDLY OPENING AND CLOSING SAME dropdown textarea - note the padding at the bottom, below the button: might need to reset a var each time to stop it growning/adding to the previous value?
+
+      //*** start the typing keyup events to grow the size of the textarea .... ***
       expandableDivs.forEach(expandableDiv => {
         const wrapperEleHeight = expandableDiv.closest('.case__actions-wrapper');
         const expandableEleHeight = wrapperEleHeight.offsetHeight;
@@ -550,8 +562,9 @@ document.addEventListener('DOMContentLoaded', function() {
         if (textarea) {
             textarea.addEventListener("keyup", () => {
               let divHeight = calcHeight(textarea.value);
+              //alert(divHeight);
 
-              if(divHeight > defaultHeight){
+              if(divHeight > defH){
                 wrapperEleHeight.style.height = (expandableEleHeight + divHeight + 12) + "px";//*** 12
                 expandableDiv.style.cssText = 'max-height: '+ (expandableEleHeight + divHeight + extraPadding) + "px;";
                 textarea.style.height = divHeight + "px";
@@ -559,20 +572,18 @@ document.addEventListener('DOMContentLoaded', function() {
               
             });
 
-/*IMPORTANT:  >>>>>> DECTECT IF COPY AND PASTED AND IF SO THEN ADD CSS INSTRUCTION FOR OVERFLOW AUTO */
+            /*IMPORTANT WIP:  >>>>>> DECTECT IF COPY AND PASTED AND IF SO THEN ADD CSS INSTRUCTION FOR OVERFLOW AUTO */
+            /*const handleInput = (event) => {
+              let divHeight = calcHeight(textarea.value);
 
-
-/*const handleInput = (event) => {
-  let divHeight = calcHeight(textarea.value);
-
-    if(divHeight > defaultHeight){
-      wrapperEleHeight.style.height = (expandableEleHeight + divHeight + 12) + "px";//*** 12
-      expandableDiv.style.cssText = 'max-height: '+ (expandableEleHeight + divHeight + extraPadding) + "px;";
-      textarea.style.height = divHeight + "px";
-    }
-};
-textarea.addEventListener("keyup", handleInput);
-textarea.addEventListener("paste", handleInput);*/
+                if(divHeight > defaultHeight){
+                  wrapperEleHeight.style.height = (expandableEleHeight + divHeight + 12) + "px";//*** 12
+                  expandableDiv.style.cssText = 'max-height: '+ (expandableEleHeight + divHeight + extraPadding) + "px;";
+                  textarea.style.height = divHeight + "px";
+                }
+            };
+            textarea.addEventListener("keyup", handleInput);
+            textarea.addEventListener("paste", handleInput);*/
 
 
         }

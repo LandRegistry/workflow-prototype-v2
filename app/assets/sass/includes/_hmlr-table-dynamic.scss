@@ -166,6 +166,14 @@ table.hmlr-table-dynamic { /* This section is for the expandable notes in dynami
 				box-shadow: inset 0 0 10px #ccc;
 			}
 
+			input[type='submit'], 
+			button[type='submit'] {
+				border: 2px solid $govuk-input-border-colour; 
+				margin-top: govuk-spacing(2);
+				@include govuk-font($size: 16);
+				padding: (govuk-spacing(1) +1) govuk-spacing(2) govuk-spacing(1) govuk-spacing(2);
+			}
+
 		}
 	
 	}
