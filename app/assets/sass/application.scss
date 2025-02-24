@@ -35,11 +35,13 @@ body .govuk-header__container {
 @import "./includes/hmlr-wf-list-panels";
 @import "./includes/hmlr-wf-tables";
 @import "./includes/hmlr-wf-dynamic-behaviours";
-@import "./includes/hmlr-wf-form-grouping";
+
 
 
 /* new ui sass begins */
-@import "./includes/hmlr-table-dynamic";
+@import "./includes/hmlr-table-dynamic"; 
+@import "./includes/hmlr-filters-ordering";
+@import "./includes/hmlr-form-grouping"; /* already have this in the build? Need to update ? */
 }
 
 .hmlr-wf-width-container--wide {
