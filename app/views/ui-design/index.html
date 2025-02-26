@@ -1,0 +1,115 @@
+{% extends "layouts/wf_layout.html" %}
+
+{% set pageName="Workflow New Designs root index" %}
+
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "../",
+    serviceName: "Workflow",
+    serviceUrl: "../ui-designs/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-m">
+      User-interface (<abbr>UI</abbr>) &amp; Progess Later (<abbr>PL</abbr>) designs 
+    </h1>
+  </div>
+</div>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <p class="govuk-body">All links open in a new tab:</p>
+
+    <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-margin-top-7">
+      <li>
+        <a href="/ui-design/pl/table-std-dynamic-sorting" class="govuk-link govuk-link--no-visited-state" target="_blank">
+          With filters and sorting
+        </a> 
+      </li>
+      <li>
+        <a href="/ui-design/tables/table-std-my-notes" class="govuk-link govuk-link--no-visited-state" target="_blank">
+          With my notes
+        </a>
+      </li>
+      <li>
+        <a href="/ui-design/pl/table-std-dynamic-with-flagging" class="govuk-link govuk-link--no-visited-state" target="_blank">
+          With flagging
+        </a>
+      </li>  
+      <li>
+        <a href="#" class="govuk-link govuk-link--no-visited-state" target="_blank"></a>
+          With reflow option (button)
+        
+      </li>          
+    </ol>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-margin-top-7">
+      <li>
+        
+        <a href="/ui-design/tables/table-std-dynamic" class="govuk-link govuk-link--no-visited-state" target="_blank">
+          Old table with dynamic reflow
+        </a>
+        
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            <a href="/ui-design/tables/table-std-gds-dynamic" class="govuk-link govuk-link--no-visited-state" target="_blank">
+              Reflow example with standard <abbr>GDS</abbr> table
+            </a>              
+          </li>
+        </ul>
+
+      </li>
+         
+    </ol>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-margin-top-7">
+      <li>
+        
+        <a href="/new-designs/design-01/design-01-applications#" class="govuk-link govuk-link--no-visited-state" target="_blank">
+          <b>New list design</b> with side nav <!--(without dynamic reflow)--> <!-- redo with edited sass file -->
+        </a>
+        
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            <a href="/ui-design/pl/table-std-dynamic-with-nav-sorting" class="govuk-link govuk-link--no-visited-state" target="_blank">
+              <b>Old list design</b> with side nav (and filters and sorting)
+            </a> 
+          </li>
+          <li>
+            <a href="/ui-design/#" class="govuk-link govuk-link--no-visited-state" target="_blank"></a> 
+              New list design with side nav and filters and sorting
+                         
+          </li>
+          <li>
+            <a href="/ui-design/#" class="govuk-link govuk-link--no-visited-state" target="_blank"></a> 
+              New list design with side nav and filters and sorting (and my notes)
+          </li> 
+          <li>
+            <a href="/ui-design/#" class="govuk-link govuk-link--no-visited-state" target="_blank"></a> 
+              New list design with side nav and filters and sorting (and my notes); and reflow option
+          </li>                   
+        </ul>
+
+      </li>
+         
+    </ol>    
+
+
+    <!--hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"-->
+
+  </div>
+</div>
+
+{% endblock %}
