@@ -1,4 +1,4 @@
-{% extends "layouts/wf_layout-std-new.html" %}
+{% extends "layouts/wf_layout-ui-designs.html" %}
 
 {% set pageName="{{ serviceName }} IA and UI work" %}
 
@@ -40,6 +40,13 @@
   </nav>
 
   <section class="govuk-grid-column-three-quarters" id="page-content" role="region">
+    
+    <!-- *** margin top 0 *** -->
+    <!--h2 id="progress_later_header" class="govuk-heading-l worklist__header govuk-!-margin-bottom-0">
+      Progress Later : 5 applications
+    </h2-->    
+
+    {% include "../includes/inc_filters-and-sorting-01.html" %}
 
     {% include "../includes/inc_standard-prog-later-tbl.html" %}
 

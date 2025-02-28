@@ -28,20 +28,23 @@ body .govuk-header__container {
 
 .hmlr-wf {//class added to div.govuk-width-container
 @import "./includes/hmlr-wf-mixins";
+
 @import "./includes/hmlr-wf-main";
 @import "./includes/hmlr-wf-header-logo-link";
 @import "./includes/hmlr-wf-top-nav";
-@import "./includes/hmlr-wf-left-nav";
 @import "./includes/hmlr-wf-list-panels";
 @import "./includes/hmlr-wf-tables";
 @import "./includes/hmlr-wf-dynamic-behaviours";
 
 
 
-/* new ui sass begins */
+/* new ui sass begins */  /* don't for get to grab the mixins from the 'hmlr-wf-mixins' */
+@import "./includes/hmlr-wf-left-nav";
+@import "./includes/hmlr-wf-lists";/* the list tables */
 @import "./includes/hmlr-table-dynamic"; 
 /*@import "./includes/hmlr-filters-ordering";*/
 @import "./includes/hmlr-form-grouping"; /* already have this in the build? Need to update */
+@import "./includes/hmlr-flag-icon";
 }
 
 .hmlr-wf-width-container--wide {

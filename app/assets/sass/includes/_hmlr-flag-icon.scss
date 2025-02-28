@@ -1,0 +1,26 @@
+@include govuk-media-query($from: desktop){  
+    a.hmlr-flag-icon-btn {
+        margin-right: govuk-spacing(1); 
+        margin-left: (govuk-spacing(1) + 2px);
+    }
+}
+
+#progress_later_table tbody tr:last-child td {
+    position: relative;
+}
+
+.hmlr-flag-icon {
+    display: none; 
+    position: absolute;
+    top: - (govuk-spacing(2));
+    right: - (govuk-spacing(2));    
+    transform: rotate(10deg);
+
+    &.hmlr-flag-icon-show {
+        display: inline-block;
+    }    
+}
+  
+/*input.hmlr-flag-icon-btn[value="Remove flag"] {
+margin-right: -27px; 
+}*/

@@ -1,8 +1,7 @@
-/* ********* DO NOT USE THIS SASS/STYLING: it was experimental ********** */
-.hmlr-table { 
+.hmlr-wf-lists {
 
     @include govuk-media-query($from: desktop){
-        &.hmlr-table--last-col-right {
+        &.hmlr-wf-lists--last-col-right {
             thead tr th:last-of-type, 
             tfoot tr th:last-of-type, 
             tbody tr td:not([colspan]):last-of-type {
@@ -24,7 +23,7 @@
         vertical-align: top;
     }
 
-    &.hmlr-table--visually-hide-left-headers {
+    &.hmlr-wf-lists--visually-hide-left-headers {
         thead td:first-child, 
         thead th:first-child,
         tfoot td:first-child, 
@@ -35,39 +34,15 @@
         }
     } 
 
-    &.hmlr-table--tbody-dividers {
+    &.hmlr-wf-lists--tbody-dividers {
         thead, tbody tr:last-child {
             border-bottom: 2px solid $govuk-text-colour; 
         }
     }
 
-    &.hmlr-table--tbody-spacing tbody:not(:last-child) tr:last-child {/*:not(:last-child) might not be needed?*/
+    &.hmlr-wf-lists--tbody-spacing tbody:not(:last-child) tr:last-child {/*:not(:last-child) might not be needed?*/
         th, td {
             padding-bottom: govuk-spacing(7);
-        }
-    }
-
-    &.hmlr-table--highlight-first-row {
-        
-        tbody { 
-            tr:first-child {
-                background-color: govuk-colour("light-grey");
-                
-                th, td {
-                    border-top: 1px solid $govuk-border-colour; 
-                }
-            }
-
-            tr {
-                th:first-child, 
-                td:first-child, 
-                th:first-child + td {
-                    padding-left: govuk-spacing(2);
-                }
-                td:last-child {
-                    padding-right: govuk-spacing(2);
-                }
-            }
         }
     }
 
@@ -84,7 +59,6 @@
         line-height: 0;
     }
 
-
     &.govuk-\!-font-size-16 {
         .govuk-table__caption {
             margin-top: govuk-spacing(4);
@@ -99,7 +73,7 @@
                 margin-bottom: govuk-spacing(4);
             } 
 
-            .hmlr-table__menu li {
+            .hmlr-wf-lists__menu li {
                 @include govuk-font($size: 14, $weight: regular, $line-height: 1.5); 
 
                 .govuk-button {
@@ -110,7 +84,7 @@
         }    
     }
 
-    .hmlr-table__menu { 
+    .hmlr-wf-lists__menu { 
 
         li {
             display: inline-block;
@@ -142,7 +116,7 @@
             }
         } 
 
-        /*&.hmlr-table__menu--two-left {
+        /*&.hmlr-wf-lists__menu--two-left {
 
             li:nth-child(n+3) {
                 background-color: lime;
