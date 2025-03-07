@@ -476,8 +476,8 @@ In conclusion, the British weather is a complex and ever-changing phenomenon, in
             const textarea = expandableDiv.querySelector('textarea'); 
     
             if (textarea) {
-
-              let scrollPosition = window.scrollY;
+/*
+let scrollPosition = window.scrollY;
 
 textarea.addEventListener('focus', function() {
     scrollPosition = window.scrollY;
@@ -486,7 +486,7 @@ textarea.addEventListener('focus', function() {
 textarea.addEventListener('keydown', function(event) {
     window.scrollTo(0, scrollPosition);
 });
-
+*/
 //textarea.addEventListener('keyup', function(event) {
     //window.scrollTo(0, scrollPosition);
 //});
@@ -497,9 +497,9 @@ textarea.addEventListener('keydown', function(event) {
              
 
                 textarea.addEventListener("keyup", (e) => { 
-                  //e.preventDefault();
-                  scrollPosition = window.scrollY;
-                  window.scrollTo(0, scrollPosition);
+                  e.preventDefault();
+                  //scrollPosition = window.scrollY;
+                  //window.scrollTo(0, scrollPosition);
                   
 
                   let divHeight2 = calcHeight(textarea.value);

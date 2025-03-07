@@ -38,7 +38,7 @@ body .govuk-header__container {
 
 
 
-/* new ui sass begins */  /* don't for get to grab the mixins from the 'hmlr-wf-mixins' */
+/* new ui sass begins */  /* don't forget to grab the mixins from the 'hmlr-wf-mixins' */
 @import "./includes/hmlr-wf-left-nav";
 @import "./includes/hmlr-wf-lists";/* the list tables */
 @import "./includes/hmlr-table-dynamic"; 
@@ -46,6 +46,51 @@ body .govuk-header__container {
 @import "./includes/hmlr-form-grouping"; /* already have this in the build? Need to update */
 @import "./includes/hmlr-flag-icon";
 }
+
+.hmlr-sort-right {//create standalone file if this is used
+    & > .govuk-form-group {
+        margin-bottom: govuk-spacing(0) !important;
+    }
+
+    button, input[type="submit"]{
+        padding: govuk-spacing(1) govuk-spacing(1) (govuk-spacing(1) - 2) govuk-spacing(1); 
+        margin-top: govuk-spacing(1);
+    }
+
+    @at-root .js-enabled {
+        button, input[type="submit"]{
+            position: absolute; 
+            left: -3000px; 
+            top: -3000px;             
+        }
+    }
+}
+@include govuk-media-query($from: desktop){
+    .hmlr-sort-right {//create standalone file if this is used
+        float: right !important; 
+        clear: both !important; 
+        text-align: right !important; 
+        //margin-bottom: govuk-spacing(0);
+    }
+
+    .hmlr-filter-label {//create standalone file if this is used
+        display: flex;
+        align-items: flex-end; /* Align content to the bottom */
+        min-height: 70px;
+
+        p {
+            padding: govuk-spacing(0);
+            margin: govuk-spacing(0);
+            font-size: 14px; 
+            font-size: 0.9rem;
+        }
+    }
+}
+
+
+
+
+
 
 .hmlr-wf-width-container--wide {
     .govuk-width-container {

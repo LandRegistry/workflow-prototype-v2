@@ -1,6 +1,15 @@
 .hmlr-wf-lists {
 
+    &:not(:first-child){/* this is an override to resolve a legacy css instruction for the old WF 2x list page */
+        margin-top: unset;
+    }
+
     @include govuk-media-query($from: desktop){
+        
+        /*&.hmlr-wf-lists--lrg-top-margin {
+            margin-top: 120px;
+        }*/
+
         &.hmlr-wf-lists--last-col-right {
             thead tr th:last-of-type, 
             tfoot tr th:last-of-type, 
