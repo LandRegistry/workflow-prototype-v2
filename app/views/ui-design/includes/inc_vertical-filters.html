@@ -1,0 +1,62 @@
+<form action="#" name="filters">
+
+    <div id="onChangeFilter" class="hmlr-vertical-filters govuk-!-margin-top-9">
+
+        <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-font-size-16 govuk-!-font-weight-regular">
+                    Filtered to show
+                </legend>
+                <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="filtersRadio" name="filtersRadio" type="radio" value="none" checked>
+                        <label class="govuk-label govuk-radios__label govuk-!-font-size-16" for="filtersRadio">
+                            All
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="filtersRadio-2" name="filtersRadio" type="radio" value="expedites">
+                        <label class="govuk-label govuk-radios__label govuk-!-font-size-16" for="filtersRadio-2">
+                          Expedited 
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="filtersRadio-3" name="filtersRadio" type="radio" value="referred">
+                        <label class="govuk-label govuk-radios__label govuk-!-font-size-16" for="filtersRadio-3">
+                            Referred 
+                        </label>
+                    </div> 
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="filtersRadio-4" name="filtersRadio" type="radio" value="flagged">
+                        <label class="govuk-label govuk-radios__label govuk-!-font-size-16" for="filtersRadio-4">
+                            My flagged cases 
+                        </label>
+                    </div>                                       
+                </div>
+            </fieldset>
+        </div> 
+        
+        <button class="govuk-button govuk-button--secondary govuk-!-font-size-16" type="submit">
+            Submit
+        </button>        
+
+    </div>
+
+</form>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+  
+      const onChangeFilterElement = document.getElementById('onChangeFilter');
+  
+      if (onChangeFilterElement) {//only run code if the page has the onChangeFilter!
+  
+
+        //xxxxx
+  
+  
+      }
+  
+    });  
+</script>

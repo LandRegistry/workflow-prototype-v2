@@ -39,12 +39,14 @@ body .govuk-header__container {
 
 
 /* new ui sass begins */  /* don't forget to grab the mixins from the 'hmlr-wf-mixins' */
+@import "./includes/hmlr-vertical-filters";
 @import "./includes/hmlr-wf-left-nav";
 @import "./includes/hmlr-wf-lists";/* the list tables */
 @import "./includes/hmlr-table-dynamic"; 
 /*@import "./includes/hmlr-filters-ordering";*/
 @import "./includes/hmlr-form-grouping"; /* already have this in the build? Need to update */
 @import "./includes/hmlr-flag-icon";
+
 }
 
 .hmlr-sort-right {//create standalone file if this is used
@@ -57,13 +59,13 @@ body .govuk-header__container {
         margin-top: govuk-spacing(1);
     }
 
-    @at-root .js-enabled {
+    .js-enabled & {
         button, input[type="submit"]{
             position: absolute; 
             left: -3000px; 
-            top: -3000px;             
+            top: -3000px; 
         }
-    }
+    }    
 }
 @include govuk-media-query($from: desktop){
     .hmlr-sort-right {//create standalone file if this is used

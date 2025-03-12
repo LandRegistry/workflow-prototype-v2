@@ -12,6 +12,26 @@
 
 
     
+<div class="govuk-grid-row hmlr-min-height-header-sm">
+  <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-3">
+
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-1">
+      Workflow <span class="govuk-heading-l govuk-!-font-weight-regular govuk-!-display-inline">&dash; Progress Later</span>
+    </h1>
+
+    <p class="govuk-body hmlr-secondary-text">
+      There are currently 4 cases in your Progress Later list. (2 are expedites).
+    </p>
+
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+xxxxxxxxxxxx
+  </div>      
+
+</div>
+
+
 <div class="govuk-grid-row">
   <nav class="govuk-grid-column-one-quarter govuk-!-padding-right-0"><!-- aria-label="Secondary" -->
 
@@ -19,7 +39,7 @@
       Skip to the main content
     </a>
     
-    {% include "../includes/inc_left-nav-02-applications.html" %} 
+    {% include "../includes/inc_left-nav-02-applications.html" %}
 
     {% include "../includes/inc_vertical-filters.html" %}
     
@@ -28,43 +48,19 @@
   <section class="govuk-grid-column-three-quarters" id="page-content" role="region">
 
     <!-- ******************************** START MAIN RIGHT COL CONTENT ********************** -->
-
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-l govuk-!-margin-bottom-1 govuk-!-font-weight-regular">
-          Progress Later
-        </h1>
-    
-        <p class="govuk-body-s hmlr-secondary-text">
-          There are currently 4 cases in your Progress Later list. (2 are expedites).
-        </p>
-      </div>
-    </div>
-
     <form action="#" name="sorting" novalidate>
 
       <div class="govuk-grid-row">
 
-        {% include "../includes/inc_filters-statement-01.html" %}         
+        {% include "../includes/inc_filters-statement-01.html" %}    
 
         {% include "../includes/inc_basic-sorting-01.html" %}
 
       </div>
-
-    </form>
     
-                    <!-- make it work with reflow *********************************** -->
+    </form>
 
-    <table class="
-    govuk-table 
-    govuk-!-font-size-16 
-    hmlr-wf-lists 
-
-    hmlr-wf-lists--last-col-right 
-    hmlr-wf-lists--visually-hide-left-headers 
-    hmlr-wf-lists--tbody-dividers 
-    hmlr-wf-lists--tbody-spacing
-    ">
+    <table class="govuk-table govuk-!-font-size-16 hmlr-wf-lists hmlr-wf-lists--last-col-right hmlr-wf-lists--visually-hide-left-headers hmlr-wf-lists--tbody-dividers hmlr-wf-lists--tbody-spacing">
       
       <caption class="govuk-table__caption govuk-table__caption--s govuk-visually-hidden">My Progress Later list</caption>
       

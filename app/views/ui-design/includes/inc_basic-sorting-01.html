@@ -1,26 +1,10 @@
-<form action="#" name="sorting" novalidate>
-
-  <div class="govuk-grid-row">
-
-    <div class="govuk-grid-column-two-thirds">
-
-      <div class="hmlr-filter-label">
-      
-        <p class="govuk-body-s hmlr-secondary-text">
-          The <b>Expedites</b> filter is active.
-        </p>
-      
-      </div>
-
-    </div>
-
     <div class="govuk-grid-column-one-third"> 
       
       <div class="hmlr-sort-right govuk-!-margin-bottom-4">
 
         <div class="govuk-form-group">
           <label class="govuk-label govuk-!-font-size-16" for="onChangeSort">
-            Sort by
+            Sorted by
           </label>
           <select class="govuk-select govuk-!-font-size-16" id="onChangeSort" name="onChangeSort">
             <option value="priority-newest" selected>Priority date: Newest</option>
@@ -38,17 +22,18 @@
 
     </div>
     
-    
-  </div>          
-
-</form>
-
 <script>
   document.addEventListener('DOMContentLoaded', function() {
 
     const onChangeSortElement = document.getElementById('onChangeSort');
 
     if (onChangeSortElement) {//only run code if the page has the onChangeSort!
+
+      onChangeSortElement.addEventListener('change', function() {
+        alert('The select submits on change');
+        //this.closest('form').submit();
+      });
+
       
       /*const parentElement = onChangeSortElement.parentElement; // don't use, asssitive tech can't see it
       if (parentElement) {

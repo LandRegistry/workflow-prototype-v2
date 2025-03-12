@@ -14,7 +14,11 @@
     position: absolute;
     top: - (govuk-spacing(2));
     right: - (govuk-spacing(2));    
-    transform: rotate(10deg);
+    transform: rotate(10deg); 
+
+    path {
+        fill: $govuk-brand-colour;
+    }
 
     &.hmlr-flag-icon-show {
         display: inline-block;
