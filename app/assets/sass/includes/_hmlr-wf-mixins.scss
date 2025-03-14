@@ -40,13 +40,13 @@ $hmlr-tbody-bottom-padding: govuk-spacing(4);
 }
 
 @mixin menu-inset-anchors {
-    ul {
-        /*padding-left: govuk-spacing(6); 
+    ul.xxxxxxxx {
+        padding-left: govuk-spacing(6); 
         padding-bottom: govuk-spacing(1); 
 
         li {
             @include menu-inset-anchors-bullets;
-        } */     
+        }      
     }
 }
 

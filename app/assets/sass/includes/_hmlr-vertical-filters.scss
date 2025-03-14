@@ -1,14 +1,15 @@
 .hmlr-vertical-filters {
 
     .govuk-form-group {
-        margin-bottom: govuk-spacing(3);
+        margin-bottom: govuk-spacing(3); 
+        margin-right: govuk-spacing(3);
+        padding: govuk-spacing(5) govuk-spacing(1) govuk-spacing(1) govuk-spacing(0);
     }
 
-    margin-right: govuk-spacing(4);
-    padding: govuk-spacing(5) govuk-spacing(0) govuk-spacing(1) govuk-spacing(0);
+    
 
-    border-top: 2px solid $govuk-border-colour; 
-    border-bottom: 2px solid $govuk-border-colour; 
+    //border-top: 4px solid $govuk-border-colour;  //$govuk-brand-colour; 
+    //border-bottom: 2px solid $govuk-border-colour; 
 
 
     /*& > .govuk-form-group {
@@ -28,6 +29,48 @@
             left: -3000px; 
             top: -3000px; 
         }
-    }    
+    }  
+    
+    @media screen and (min-width: 70em) { //@media (min-width: 50vw) {
+        &.hmlr-vertical-filters--smaller {
+            /*legend {font-size: 96% !important; }*/
+            label, button, input[type="submit"] {
+                font-size: 80% !important;
+                line-height: 0.9 !important;
+            }        
+            label:before {
+                top: 4px !important;
+            }
+            label:after {
+                top: 11px !important;
+            } 
+        }
+    }
 
+    &.hmlr-vertical-filters--bg {
+        & > div.govuk-form-group {
+            background-color: govuk-colour("light-grey"); 
+            padding: govuk-spacing(4) govuk-spacing(1) govuk-spacing(3) govuk-spacing(3);
+        }
+    }
+
+    /*@media screen and (min-width: 70em) {
+        .hmlr-vertical-filters--bg {
+            .govuk-grid-column-one-quarter & {
+                div.govuk-form-group {
+                    //***** can't do this until we drop the '.hmlr-wf' wrap-class. So these styles are below ... *****
+                }
+            }
+        }
+    }*/
 }
+
+@media screen and (min-width: 70em) { //@media (min-width: 50vw) {
+    .govuk-grid-column-one-quarter {
+        .hmlr-vertical-filters--bg {
+            margin-left: - govuk-spacing(3); 
+            margin-right: govuk-spacing(6); 
+        }
+    }
+}
+
