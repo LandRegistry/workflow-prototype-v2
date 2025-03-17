@@ -22,15 +22,6 @@
         margin-bottom: govuk-spacing(0);
     }
 
-    @at-root .js-enabled {
-    //.js-enabled & {
-        button, input[type="submit"]{
-            position: absolute; 
-            left: -3000px; 
-            top: -3000px; 
-        }
-    }  
-    
     @media screen and (min-width: 70em) { //@media (min-width: 50vw) {
         &.hmlr-vertical-filters--smaller {
             /*legend {font-size: 96% !important; }*/
@@ -63,6 +54,15 @@
             }
         }
     }*/
+}
+
+/******** REMOVE THE '&' HERE when we kill the '.hmlr-wf' class, which wraps all of these styles ******************/
+&.js-enabled .hmlr-vertical-filters {//@at-root .js-enabled {  <- at-root is too dangerous 
+    button.govuk-button, input[type="submit"]{
+        position: absolute; 
+        left: -3000px; 
+        top: -3000px; 
+    }
 }
 
 @media screen and (min-width: 70em) { //@media (min-width: 50vw) {
