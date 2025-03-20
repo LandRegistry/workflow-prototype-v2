@@ -83,10 +83,12 @@
             } 
 
             .hmlr-wf-lists__menu li {
-                @include govuk-font($size: 14, $weight: regular, $line-height: 1.5); 
+                //@include govuk-font($size: 14, $weight: regular, $line-height: 1.5); 
+                @include hmlr-font-size($s: 14px, $l: 1.5);//gds 14 support will be removed
 
                 .govuk-button {
-                    @include govuk-font($size: 14, $weight: regular, $line-height: .5); //0.5
+                    //@include govuk-font($size: 14, $weight: regular, $line-height: .5); //0.5
+                    @include hmlr-font-size($s: 14px, $l: .5);//gds 14 support will be removed
                     margin-top: -3px;
                 }
             }
@@ -141,4 +143,95 @@
         
     }
 
+    &.html-wf-lists--split-cells {
+        /* xxx.hmlr-wf-lists td, 
+        xxx.hmlr-wf-lists th {
+          padding-top: 5px !important; 
+          padding-bottom: 5px !important; 
+        }
+        xxx.hmlr-wf-lists.hmlr-wf-lists--tbody-spacing tbody:not(:last-child) tr:last-child td {
+          padding-bottom: 30px !important; 
+        }*/
+
+        tbody tr + tr td:first-of-type[colspan="2"] {position: relative; }
+        tbody tr + tr td:first-of-type[colspan="2"]::after {
+          /*content: ' ';
+          float: right;
+          margin: -10px -10px -10px 0;
+          height: 40px;
+          border-right: 1px solid #b1b4b6;*/
+
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 10px;
+          bottom: 0;
+          width: 1px;
+          background: #b1b4b6;          
+        }
+
+        tbody tr + tr td:first-of-type[colspan="2"] {
+          /*border-right: 1px solid #b1b4b6;
+          text-align: left;*/
+          
+          width: 50%;
+        }
+
+        tbody tr + tr td:first-of-type[colspan="2"] + td {
+          /*padding-left: 10px;*/
+          text-align: left;
+        }                
+    }    
+
+    .hmlr-my-notes-textarea {
+        display: block; 
+        min-height: 200px; 
+
+        textarea {
+            @include govuk-font($size: 16, $weight: regular, $line-height: 1.5);
+            margin-bottom: govuk-spacing(2);
+
+            & + .govuk-button, 
+            & + div .govuk-button {
+                width: auto;
+                
+                margin-top: govuk-spacing(0); 
+                margin-left: govuk-spacing(0); 
+                margin-bottom: govuk-spacing(0); 
+                @include govuk-font($size: 16, $weight: regular, $line-height: .5);
+            }
+            & + div a {
+                @include hmlr-font-size($s: 14px, $l: initial);
+            }
+        }
+
+        @include govuk-media-query($from: desktop){
+            label {
+                margin-right: govuk-spacing(5);
+                float: left;            
+            }
+            .govuk-hint.govuk-\!-font-size-16, 
+            textarea + .govuk-button, 
+            textarea + div .govuk-button, 
+            & + div a {
+                @include hmlr-font-size($s: 14px, $l: 1.5);//gds 14 support will be removed
+            }
+            textarea + .govuk-button, 
+            textarea + div .govuk-button {
+                padding: (govuk-spacing(1) - 2) govuk-spacing(2) (govuk-spacing(1) - 4); 
+            }
+        }        
+
+    }
+
+}
+
+.js-enabled {
+    .hmlr-wf-lists .hmlr-hide-my-notes .hmlr-my-notes-textarea {/* class 'hmlr-hide-my-notes' needs to be hardcoded onto the 'table#hmlrListTbl' tag */
+        display: none; /* JS removes 'hmlr-hide-my-notes'. This avoids loading glitches. */
+    }/* this means 'hmlr-my-notes-textarea' is visable when there is no JS support */ 
+
+    .hmlr-wf-lists .hmlr-my-notes-textarea.hmlr-my-notes-textarea--hide {
+        display: none; 
+    }   
 }
