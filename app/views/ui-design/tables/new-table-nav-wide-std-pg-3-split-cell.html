@@ -385,10 +385,10 @@ xxxxxxxxxxxx
       textareas.forEach(function(textarea) {
 
 
-                if (localStorage.getItem(textarea.id) === 'false') {//is NOT hidden, so show on pg reload
+                /*if (localStorage.getItem(textarea.id) === 'false') {//is NOT hidden, so show on pg reload
                   textarea.closest('td').querySelector('.hmlr-my-notes-textarea').classList.remove('hmlr-my-notes-textarea--hide');
                   //document.getElementById('div-'+textarea.id).classList.remove('hmlr-my-notes-textarea--hide');
-                }
+                }*/
 
 
         // Apply stored height from localStorage when the page loads
@@ -427,12 +427,12 @@ xxxxxxxxxxxx
             textareaDiv.classList.toggle('hmlr-my-notes-textarea--hide');
 
 
-                    const textarea = parentTd.querySelector('textarea');//set storage val to maintain show/hide state on pg reload
+                    /*const textarea = parentTd.querySelector('textarea');//set storage val to maintain show/hide state on pg reload
                     if (textareaDiv.classList.contains('hmlr-my-notes-textarea--hide')) {
                       localStorage.setItem(textarea.id, 'true');//is hidden
                     } else {
                       localStorage.setItem(textarea.id, 'false');//is NOT hidden
-                    }
+                    }*/
 
 
           });
