@@ -112,8 +112,9 @@ body .govuk-header__container {
     }*/
 }
 
-
     .hmlr-filter-warning-text {
+
+        visibility: hidden;/**** <<<<< /* this style is only here for the prototype: the 'real' version will only write-in the filter statment (and not show/hide) ****/
 
         @include govuk-media-query($from: desktop){
             .govuk-warning-text {
@@ -194,10 +195,3 @@ body .govuk-header__container {
         margin-left: -15px;        
     }*/
 }
-
-
-
-
-
-
-
