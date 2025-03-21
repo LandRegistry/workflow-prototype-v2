@@ -442,7 +442,31 @@ xxxxxxxxxxxx
 
 
 
+      const onChangeFilterElement = document.getElementById('onChangeFilter');
+      if (onChangeFilterElement) {//only run code if the page has the onChangeFilter!
+        //xxxxx this code - STARTS - is ONLY for the prototype demo xxxxxxxx
+        const radioInputs = onChangeFilterElement.querySelectorAll('input[type="radio"]');
 
+        // Function to toggle visibility of div.hmlr-filter-warning-text based on radio button value
+        function toggleVisibility(event) {
+            //alert('The filters submit on click');
+
+            const warningText = document.querySelector('.hmlr-filter-warning-text');
+            if (event.target.value !== 'all') {
+                warningText.style.visibility = 'visible';
+            } else {
+                warningText.style.visibility = 'hidden';
+            }
+        }
+
+        // Add click event listener to each radio input
+        radioInputs.forEach(radio => {
+            radio.addEventListener('click', toggleVisibility);
+        });
+        //xxxxx this code - ENDS - is ONLY for the prototype demo xxxxxxxx
+      }
+
+  
 
 
 
