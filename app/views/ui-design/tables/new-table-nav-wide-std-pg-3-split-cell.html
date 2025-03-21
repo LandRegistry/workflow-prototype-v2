@@ -1,1 +1,524 @@
-hello
+{% extends "layouts/wf_layout.html" %}
+{#
+  % extends "layouts/wf_layout-ui-designs.html" %
+#}
+
+{% extends "layouts/wf_layout-ui-designs.html" %}
+
+{% set pageName="{{ serviceName }} Progress Later" %}
+
+{% block header %}
+  {% include "../includes/inc_top-nav-std.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+    
+<div class="govuk-grid-row hmlr-min-height-header-sm">
+  <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-3">
+
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-1">
+      Workflow <span class="govuk-heading-l govuk-!-font-weight-regular govuk-!-display-inline">&dash; Progress Later</span>
+    </h1>
+
+    <p class="govuk-body hmlr-secondary-text">
+      There are currently 4 cases in your Progress Later list. (2 are expedites).
+    </p>
+
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+xxxxxxxxxxxx
+  </div>      
+
+</div>
+
+
+<div class="govuk-grid-row">
+  <section class="govuk-grid-column-one-quarter govuk-!-padding-right-0">
+
+    <a href="#page-content" class="govuk-skip-link hmlr-skip-link">
+      Skip to the main content
+    </a>
+
+    {% include "../includes/inc_left-nav-02-applications.html" %}
+
+    {% include "../includes/inc_vertical-filters.html" %}
+    
+  </section>
+
+  <section class="govuk-grid-column-three-quarters" id="page-content" role="region">
+
+    <!-- ******************************** START MAIN RIGHT COL CONTENT ********************** -->
+    <form action="#" name="sorting" novalidate>
+
+      <div class="govuk-grid-row">
+
+        {% include "../includes/inc_filters-statement-01.html" %}    
+
+        {% include "../includes/inc_basic-sorting-01.html" %}
+
+      </div>
+    
+    </form>
+
+    <table id="hmlrListTbl" class="govuk-table govuk-!-font-size-16 hmlr-wf-lists html-wf-lists--split-cells hmlr-wf-lists--last-col-right hmlr-wf-lists--visually-hide-left-headers hmlr-wf-lists--tbody-dividers hmlr-wf-lists--tbody-spacing hmlr-hide-my-notes">
+      
+      <caption class="govuk-table__caption govuk-table__caption--s govuk-visually-hidden">My Progress Later list</caption>
+      
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <td></td>
+          <th scope="col" class="govuk-table__header">Priority date</th>
+          <th scope="col" class="govuk-table__header">Title number</th>
+          <th scope="col" class="govuk-table__header">
+            <abbr>ABR</abbr>
+          </th>
+          <th scope="col" class="govuk-table__header">Obtained date</th>          
+        </tr>
+      </thead>
+
+      <!-- *** This is the correct location for the TFOOT in the HTML DOM) *** -->
+      <tfoot class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <td></td>
+          <th scope="col" class="govuk-table__header">Priority date</th>
+          <th scope="col" class="govuk-table__header">Title number</th>
+          <th scope="col" class="govuk-table__header">
+            <abbr>ABR</abbr>
+          </th>
+          <th scope="col" class="govuk-table__header">Obtained date</th>          
+        </tr>
+      </tfoot>     
+      
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Meta data</th>
+            <td class="govuk-table__cell">9 Aug 2022</td>
+            <td class="govuk-table__cell">
+              <abbr class="hmlr-nowrap">DU164184</abbr>
+            </td>
+            <td class="govuk-table__cell">
+              <abbr class="hmlr-nowrap">P897RWW</abbr>
+            </td>
+            <td class="govuk-table__cell">4 Dec 2023</td>                              
+          </tr>
+
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Category and Next action</th>
+            <td class="govuk-table__cell" colspan="2">
+              <span class="hmlr-lowercase hmlr-lowercase--uppercase-first">
+                Volume Change of Ownership
+              </span>
+            </td>
+            <td class="govuk-table__cell" colspan="3">
+              New - Start to process 
+            </td>          
+          </tr>
+
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Actions</th>
+            <td class="govuk-table__cell" colspan="4"> 
+              {% include "../includes/inc_actions-menu-with-notes.html" %}
+            </td>
+          </tr>
+        </tbody>
+
+
+
+
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Meta data</th>
+            <td class="govuk-table__cell">9 Aug 2022</td>
+            <td class="govuk-table__cell">
+              <abbr class="hmlr-nowrap">DU164184</abbr>
+            </td>
+            <td class="govuk-table__cell">
+              <abbr class="hmlr-nowrap">P897RWW</abbr>
+            </td>
+            <td class="govuk-table__cell">4 Dec 2023</td>                              
+          </tr>
+
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Category and Next action</th>
+            <td class="govuk-table__cell" colspan="2">
+              <span class="hmlr-lowercase hmlr-lowercase--uppercase-first">
+                Volume Change of Ownership
+              </span>
+            </td>
+            <td class="govuk-table__cell" colspan="3">
+              New - Start to process 
+            </td>          
+          </tr>
+
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Actions</th>
+            <td class="govuk-table__cell" colspan="4"> 
+              {% include "../includes/inc_actions-menu-with-notes-2.html" %}
+            </td>
+          </tr>
+        </tbody>
+
+
+
+
+
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Meta data</th>
+            <td class="govuk-table__cell">28 Jun 2022</td>
+            <td class="govuk-table__cell">
+              <abbr class="hmlr-nowrap">CB127994</abbr>
+            </td>
+            <td class="govuk-table__cell">
+              <abbr class="hmlr-nowrap">J310SWW</abbr>
+            </td>
+            <td class="govuk-table__cell">20 Feb 2023</td>                              
+          </tr>
+      
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Category and Next action</th>
+            <td class="govuk-table__cell" colspan="2">
+              <span class="hmlr-lowercase hmlr-lowercase--uppercase-first">
+                Volume Change of Ownership
+              </span>
+            </td>
+            <td class="govuk-table__cell" colspan="3">
+              New - Start to process 
+            </td>          
+          </tr>
+      
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Actions</th>
+            <td class="govuk-table__cell" colspan="4"> 
+              {% include "../includes/inc_actions-menu-with-notes.html" %}
+            </td>
+          </tr>
+      </tbody>      
+
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Meta data</th>
+          <td class="govuk-table__cell">16 Jul 2022</td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">DU285534</abbr><sup>*</sup>
+          </td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">P458QTX</abbr>
+          </td>
+          <td class="govuk-table__cell">18 Sep 2022</td>                              
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Category and Next action</th>
+          <td class="govuk-table__cell" colspan="2">
+            <span class="hmlr-lowercase hmlr-lowercase--uppercase-first">
+              Volume Change of Ownership
+            </span>
+          </td>
+
+          <td class="govuk-table__cell" colspan="3">
+            <span class="hmlr-lowercase hmlr-lowercase--uppercase-first">
+              Consider referral from John Smith
+            </span>
+          </td>
+        </tr>
+       
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Actions</th>
+          <td class="govuk-table__cell" colspan="4">
+            {% include "../includes/inc_actions-menu-with-notes.html" %}
+          </td>
+        </tr>
+      </tbody> 
+
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Meta data</th>
+          <td class="govuk-table__cell">9 Aug 2022</td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">DU164184</abbr>
+          </td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">P897RWW</abbr>
+          </td>
+          <td class="govuk-table__cell">4 Dec 2023</td>                              
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Category and Next action</th>
+          <td class="govuk-table__cell" colspan="2">
+            <span class="hmlr-lowercase hmlr-lowercase--uppercase-first">
+              Volume Change of Ownership
+            </span>
+          </td>
+          <td class="govuk-table__cell" colspan="3">
+            New - Start to process 
+          </td>          
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Actions</th>
+          <td class="govuk-table__cell" colspan="4"> 
+            {% include "../includes/inc_actions-menu-with-notes.html" %}
+          </td>
+        </tr>
+      </tbody>
+
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Meta data</th>
+          <td class="govuk-table__cell">28 Jun 2022</td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">CB127994</abbr>
+          </td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">J310SWW</abbr>
+          </td>
+          <td class="govuk-table__cell">20 Feb 2023</td>                              
+        </tr>
+    
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Category and Next action</th>
+          <td class="govuk-table__cell" colspan="2">
+            <span class="hmlr-lowercase hmlr-lowercase--uppercase-first">
+              Volume Change of Ownership
+            </span>
+          </td>
+          <td class="govuk-table__cell" colspan="3">
+            New - Start to process 
+          </td>          
+        </tr>
+    
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Actions</th>
+          <td class="govuk-table__cell" colspan="4"> 
+            {% include "../includes/inc_actions-menu-with-notes.html" %}
+          </td>
+        </tr>
+    </tbody>      
+
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Meta data</th>
+        <td class="govuk-table__cell">16 Jul 2022</td>
+        <td class="govuk-table__cell">
+          <abbr class="hmlr-nowrap">DU285534</abbr><sup>*</sup>
+        </td>
+        <td class="govuk-table__cell">
+          <abbr class="hmlr-nowrap">P458QTX</abbr>
+        </td>
+        <td class="govuk-table__cell">18 Sep 2022</td>                              
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Category and Next action</th>
+        <td class="govuk-table__cell" colspan="2">
+          <span class="hmlr-lowercase hmlr-lowercase--uppercase-first">
+            Volume Change of Ownership
+          </span>
+        </td>
+
+        <td class="govuk-table__cell" colspan="3">
+          <span class="hmlr-lowercase hmlr-lowercase--uppercase-first">
+            Consider referral from John Smith
+          </span>
+        </td>
+      </tr>
+     
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Actions</th>
+        <td class="govuk-table__cell" colspan="4">
+          {% include "../includes/inc_actions-menu-with-notes.html" %}
+        </td>
+      </tr>
+    </tbody> 
+  </table>
+
+    <!-- ******************************** END MAIN RIGHT COL CONTENT ************************ -->
+
+  </section>
+</div>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+
+    const hmlrListTbl = document.getElementById('hmlrListTbl');
+    
+    if (hmlrListTbl) {// only run this code if 'hmlrListTbl' is present on this pg
+
+      hmlrListTbl.classList.remove('hmlr-hide-my-notes');/* stops JS loading glitches */
+
+
+      /*** record adjusted heights functionality, starts ***/
+      var textareas = hmlrListTbl.querySelectorAll('.govuk-textarea');
+
+      /*var isContentChanged = false; 
+      function handleContentChange() {
+        isContentChanged = true;
+      }
+      window.addEventListener('beforeunload', function(event) {
+        if (isContentChanged) {
+          var message = 'You have unsaved changes to "My notes". Are you sure you want to leave?';
+          event.returnValue = message; // Standard for most browsers
+          return message; // For some older browsers
+        }
+      });*/       
+
+      // Function to record the height and store it in localStorage
+      function recordHeight(textarea) {
+        var height = textarea.offsetHeight;
+        if (height != 0) {
+          textarea.style.height = height + 'px';
+          localStorage.setItem('textarea-' + textarea.id + '-height', height);
+        }
+      }
+
+      // Create a ResizeObserver to observe changes in size
+      var resizeObserver = new ResizeObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.target instanceof HTMLTextAreaElement) {
+            recordHeight(entry.target);
+          }
+        });
+      });
+
+      // Observe each textarea for resizing and apply stored height on page load
+      textareas.forEach(function(textarea) {
+
+
+                /*if (localStorage.getItem(textarea.id) === 'false') {//is NOT hidden, so show on pg reload
+                  textarea.closest('td').querySelector('.hmlr-my-notes-textarea').classList.remove('hmlr-my-notes-textarea--hide');
+                  //document.getElementById('div-'+textarea.id).classList.remove('hmlr-my-notes-textarea--hide');
+                }*/
+
+
+        // Apply stored height from localStorage when the page loads
+        var storedHeight = localStorage.getItem('textarea-' + textarea.id + '-height');
+        if (storedHeight) {
+          textarea.style.height = storedHeight + 'px';
+        }
+        
+        // Observe the textarea for resizing
+        resizeObserver.observe(textarea); 
+
+        // Add event listener for content changes
+        //textarea.addEventListener('input', handleContentChange);        
+      });
+
+
+      //Object.keys(localStorage).forEach(function(key) {if (key.startsWith('textarea-') && key.endsWith('-height')) {localStorage.removeItem(key);} }); //run this to clear textbox localstorage heights
+
+      /*** record adjusted heights functionality, ends ***/
+      
+      
+
+
+
+
+
+      
+      /*** show/hide functionality starts ***/
+      const noteLinks = hmlrListTbl.querySelectorAll('.hmlr-my-notes');//find ea link
+
+      noteLinks.forEach(function(noteLink) {
+        noteLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            const parentTd = noteLink.closest('td');
+            const textareaDiv = parentTd.querySelector('.hmlr-my-notes-textarea');
+            textareaDiv.classList.toggle('hmlr-my-notes-textarea--hide');
+
+
+                    /*const textarea = parentTd.querySelector('textarea');//set storage val to maintain show/hide state on pg reload
+                    if (textareaDiv.classList.contains('hmlr-my-notes-textarea--hide')) {
+                      localStorage.setItem(textarea.id, 'true');//is hidden
+                    } else {
+                      localStorage.setItem(textarea.id, 'false');//is NOT hidden
+                    }*/
+
+
+          });
+      });
+      /*** show/hide functionality ends ***/
+
+
+
+
+      const onChangeFilterElement = document.getElementById('onChangeFilter');
+      if (onChangeFilterElement) {//only run code if the page has the onChangeFilter!
+        //xxxxx this code - STARTS - is ONLY for the prototype demo xxxxxxxx
+        const radioInputs = onChangeFilterElement.querySelectorAll('input[type="radio"]');
+
+        // Function to toggle visibility of div.hmlr-filter-warning-text based on radio button value
+        function toggleVisibility(event) {
+            //alert('The filters submit on click');
+
+            const warningText = document.querySelector('.hmlr-filter-warning-text');
+            if (event.target.value !== 'all') {
+                warningText.style.visibility = 'visible';
+            } else {
+                warningText.style.visibility = 'hidden';
+            }
+        }
+
+        // Add click event listener to each radio input
+        radioInputs.forEach(radio => {
+            radio.addEventListener('click', toggleVisibility);
+        });
+        //xxxxx this code - ENDS - is ONLY for the prototype demo xxxxxxxx
+      }
+
+  
+
+
+
+
+
+
+
+
+
+
+      /*** record adjusted heights functionality, starts ***/
+      /*var textareas = hmlrListTbl.querySelectorAll('.govuk-textarea');
+
+      // record height in localStorage
+      function recordHeight(textarea, index) {
+        var height = textarea.offsetHeight;
+        if (height != 0) {
+          textarea.style.height = height + 'px';
+          localStorage.setItem('textarea-' + index + '-height', height);
+        }
+      }
+
+      // observe changes in textarea size when users pull drag bars
+      var resizeObserver = new ResizeObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.target instanceof HTMLTextAreaElement) {
+            var index = Array.from(textareas).indexOf(entry.target);
+            recordHeight(entry.target, index);
+          }
+        });
+      });
+
+      // apply stored height when page is loaded
+      textareas.forEach(function(textarea, index) {
+        var storedHeight = localStorage.getItem('textarea-' + index + '-height');
+        if (storedHeight) {
+          textarea.style.height = storedHeight + 'px';
+        }
+        
+        // observe textarea resizing
+        resizeObserver.observe(textarea);
+      });*/
+
+      //function clearTextareaHeights() {var textareas = document.querySelectorAll('.govuk-textarea'); textareas.forEach(function(textarea, index) {localStorage.removeItem('textarea-' + index + '-height'); }); } clearTextareaHeights();// Run the function to clear the heights 
+
+      /*** record adjusted heights functionality, ends ***/
+    }
+
+  });    
+</script>
+
+{% endblock %}
