@@ -3,7 +3,7 @@
 // https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
 // 
 
-/* hmlr mixins starts ... */
+/* hmlr mixins and globals starts ... */
 @function calculaterem($s) {
     $remsize: $s / 16px;
     @return #{$remsize}rem;
@@ -14,7 +14,17 @@
     font-size: calculaterem($s) !important;
     line-height: $l !important;
 }
-/* ... hmlr mixins ends */
+
+input.hmlr-flag-icon-btn, 
+button.hmlr-flag-icon-btn {
+    border: 0;
+    background: transparent; 
+    color: $govuk-link-colour;
+    padding-left: govuk-spacing(0);
+    padding-right: govuk-spacing(0);     
+    cursor: pointer; 
+}
+/* ... hmlr mixins and globals ends */
 
 
 /*code {

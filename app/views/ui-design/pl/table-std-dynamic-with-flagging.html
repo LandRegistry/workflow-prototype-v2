@@ -357,8 +357,10 @@ Example of dynamic table
 
       {#% include "../includes/inc_filters-and-sorting-01.html" %#}
 
-      {% set showFlagging = "true" %}
-      {% include "../includes/inc_standard-prog-later-tbl.html" %}
+      <div id="hmlrListTbl"><!-- wrapped with this div#hmlrListTbl just for this prototype page to pick up styles  -->
+        {% set showFlagging = "true" %}
+        {% include "../includes/inc_standard-prog-later-tbl.html" %}
+      </div>
 
     </div>
 
