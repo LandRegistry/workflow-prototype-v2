@@ -4,6 +4,21 @@
 // 
 
 /* hmlr mixins and globals starts ... */
+$hmlr-brand-colour: #789904 !important;
+//$std-font-family: "GDS Transport", "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif; 
+
+$hmlr-tbody-bottom-padding: govuk-spacing(4);
+
+input.hmlr-flag-icon-btn, 
+button.hmlr-flag-icon-btn {
+    border: 0;
+    background: transparent; 
+    color: $govuk-link-colour;
+    padding-left: govuk-spacing(0);
+    padding-right: govuk-spacing(0);     
+    cursor: pointer; 
+}
+
 @function calculaterem($s) {
     $remsize: $s / 16px;
     @return #{$remsize}rem;
@@ -15,14 +30,51 @@
     line-height: $l !important;
 }
 
-input.hmlr-flag-icon-btn, 
-button.hmlr-flag-icon-btn {
-    border: 0;
-    background: transparent; 
-    color: $govuk-link-colour;
-    padding-left: govuk-spacing(0);
-    padding-right: govuk-spacing(0);     
-    cursor: pointer; 
+@function calculaterem($s) {
+    $remsize: $s / 16px;
+    @return #{$remsize}rem;
+}
+
+@mixin hmlr-font-size($s, $l) {
+    font-size: $s !important;
+    font-size: calculaterem($s) !important;
+    line-height: $l !important;
+}
+
+@mixin word-wrap() {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+
+@mixin hover-underline() {
+    text-decoration-thickness: .15em !important;
+    text-decoration-thickness: .1875rem !important;
+}
+
+@mixin menu-inset-anchors-bullets {
+    &:before {
+        content: "-";
+        margin-left: - govuk-spacing(4);
+        color: $govuk-secondary-text-colour;
+    }
+}
+
+@mixin menu-inset-anchors {
+    ul.xxxxxxxx {
+        padding-left: govuk-spacing(6); 
+        padding-bottom: govuk-spacing(1); 
+
+        li {
+            @include menu-inset-anchors-bullets;
+        }      
+    }
 }
 /* ... hmlr mixins and globals ends */
 
@@ -50,8 +102,6 @@ body .govuk-header__container {
 }
 
 .hmlr-wf {//class added to div.govuk-width-container
-@import "./includes/hmlr-wf-mixins";
-
 @import "./includes/hmlr-wf-main";
 @import "./includes/hmlr-wf-header-logo-link";
 @import "./includes/hmlr-wf-top-nav";

@@ -1,0 +1,382 @@
+{% extends "layouts/wf_layout-ui-designs.html" %}
+
+{% set pageName="{{ serviceName }} Progress Later" %}
+
+{% block header %}
+  {% include "../includes/inc_top-nav-std.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+    
+<div class="govuk-grid-row hmlr-min-height-header-sm">
+  <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-3">
+
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-1">
+      My Worklist <span class="govuk-heading-l govuk-!-font-weight-regular govuk-!-display-inline">&dash; Progress Later</span>
+    </h1>
+
+    <p class="govuk-body hmlr-secondary-text">
+      There are currently 8 cases in your Progress Later list. (2 are expedites).
+    </p>
+
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+
+  </div>      
+
+</div>
+
+
+<div class="govuk-grid-row">
+  <section class="govuk-grid-column-one-quarter govuk-!-padding-right-0">
+
+    <a href="#page-content" class="govuk-skip-link hmlr-skip-link">
+      Skip to the main content
+    </a>
+
+    {% include "../includes/inc_left-nav-02-applications.html" %}
+
+    {% include "../includes/inc_vertical-filters.html" %}
+    
+  </section>
+
+  <section class="govuk-grid-column-three-quarters" id="page-content" role="region">
+
+    <!-- ******************************** START MAIN RIGHT COL CONTENT ********************** -->
+    <form action="#" name="sorting" novalidate>
+
+      <div class="govuk-grid-row">
+
+        {% include "../includes/inc_filters-statement-01.html" %}    
+
+        {% include "../includes/inc_basic-sorting-01.html" %}
+
+      </div>
+    
+    </form>
+
+    <table class="
+    govuk-table 
+    govuk-!-font-size-16 
+    hmlr-wf-lists 
+
+    hmlr-wf-lists--last-col-right 
+    hmlr-wf-lists--visually-hide-left-headers 
+    hmlr-wf-lists--tbody-dividers 
+    hmlr-wf-lists--tbody-spacing
+    ">
+      
+      <caption class="govuk-table__caption govuk-table__caption--s govuk-visually-hidden">My Progress Later list</caption>
+      
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <td></td>
+          <th scope="col" class="govuk-table__header">Priority date</th>
+          <th scope="col" class="govuk-table__header">Title number</th>
+          <th scope="col" class="govuk-table__header">
+            <abbr>ABR</abbr>
+          </th>
+          <th scope="col" class="govuk-table__header">Obtained date</th>          
+        </tr>
+      </thead>
+
+      <!-- *** This is the correct location for the TFOOT in the HTML DOM) *** -->
+      <tfoot class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <td></td>
+          <th scope="col" class="govuk-table__header">Priority date</th>
+          <th scope="col" class="govuk-table__header">Title number</th>
+          <th scope="col" class="govuk-table__header">
+            <abbr>ABR</abbr>
+          </th>
+          <th scope="col" class="govuk-table__header">Obtained date</th>          
+        </tr>
+      </tfoot>      
+
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Meta data</th>
+          <td class="govuk-table__cell">9 Aug 2022</td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">DU164184</abbr>
+          </td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">P897RWW</abbr>
+          </td>
+          <td class="govuk-table__cell">4 Dec 2023</td>                              
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Category</th>
+          <td class="govuk-table__cell" colspan="4">
+            <span class="hmlr-lowercase hmlr-lowercase--uppercase-first">
+              Volume Change of Ownership
+            </span>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Next action</th>
+          <td class="govuk-table__cell" colspan="4">
+            Consider referral from Rosie Brave
+          </td>
+        </tr>        
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Actions</th>
+          <td class="govuk-table__cell" colspan="4"> 
+            {% include "../includes/inc_actions-menu.html" %}
+          </td>
+        </tr>
+      </tbody>
+
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Meta data</th>
+          <td class="govuk-table__cell">28 Jun 2022</td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">CB127994</abbr>
+          </td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">J310SWW</abbr>
+          </td>
+          <td class="govuk-table__cell">20 Feb 2023</td>                              
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Category</th>
+          <td class="govuk-table__cell" colspan="4">
+            <span class="hmlr-lowercase hmlr-lowercase--uppercase-first">
+              Application Processing: Executive Register Update Standard
+            </span>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Next action</th>
+          <td class="govuk-table__cell" colspan="4">
+            New - Start to process
+          </td>
+        </tr>        
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Actions</th>
+          <td class="govuk-table__cell" colspan="4">
+            {% include "../includes/inc_actions-menu.html" %}
+          </td>
+        </tr>
+      </tbody>
+
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Meta data</th>
+          <td class="govuk-table__cell">16 Jul 2022</td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">DU285534</abbr><sup>*</sup>
+          </td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">P458QTX</abbr>
+          </td>
+          <td class="govuk-table__cell">18 Sep 2022</td>                              
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Category</th>
+          <td class="govuk-table__cell" colspan="4">
+            <span class="hmlr-lowercase hmlr-lowercase--uppercase-first">
+              Volume Change of Ownership
+            </span>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Next action</th>
+          <td class="govuk-table__cell" colspan="4">
+            Consider referral from John Smith
+          </td>
+        </tr>        
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Actions</th>
+          <td class="govuk-table__cell" colspan="4">
+            {% include "../includes/inc_actions-menu.html" %}
+          </td>
+        </tr>
+      </tbody>     
+
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Meta data</th>
+          <td class="govuk-table__cell">9 Aug 2022</td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">DU164184</abbr>
+          </td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">P897RWW</abbr>
+          </td>
+          <td class="govuk-table__cell">4 Dec 2023</td>                              
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Category</th>
+          <td class="govuk-table__cell" colspan="4">
+            <span class="hmlr-lowercase hmlr-lowercase--uppercase-first">
+              Volume Change of Ownership
+            </span>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Next action</th>
+          <td class="govuk-table__cell" colspan="4">
+            Consider referral from Rosie Brave
+          </td>
+        </tr>        
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Actions</th>
+          <td class="govuk-table__cell" colspan="4"> 
+            {% include "../includes/inc_actions-menu.html" %}
+          </td>
+        </tr>
+      </tbody>
+
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Meta data</th>
+          <td class="govuk-table__cell">28 Jun 2022</td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">CB127994</abbr>
+          </td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">J310SWW</abbr>
+          </td>
+          <td class="govuk-table__cell">20 Feb 2023</td>                              
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Category</th>
+          <td class="govuk-table__cell" colspan="4">
+            <span class="hmlr-lowercase hmlr-lowercase--uppercase-first">
+              Application Processing: Executive Register Update Standard
+            </span>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Next action</th>
+          <td class="govuk-table__cell" colspan="4">
+            New - Start to process
+          </td>
+        </tr>        
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Actions</th>
+          <td class="govuk-table__cell" colspan="4">
+            {% include "../includes/inc_actions-menu.html" %}
+          </td>
+        </tr>
+      </tbody>
+
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Meta data</th>
+          <td class="govuk-table__cell">16 Jul 2022</td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">DU285534</abbr><sup>*</sup>
+          </td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">P458QTX</abbr>
+          </td>
+          <td class="govuk-table__cell">18 Sep 2022</td>                              
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Category</th>
+          <td class="govuk-table__cell" colspan="4">
+            <span class="hmlr-lowercase hmlr-lowercase--uppercase-first">
+              Volume Change of Ownership
+            </span>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Next action</th>
+          <td class="govuk-table__cell" colspan="4">
+            Consider referral from John Smith
+          </td>
+        </tr>        
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Actions</th>
+          <td class="govuk-table__cell" colspan="4">
+            {% include "../includes/inc_actions-menu.html" %}
+          </td>
+        </tr>
+      </tbody>   
+      
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Meta data</th>
+          <td class="govuk-table__cell">10 Jun 2022</td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">DJ442892</abbr><sup>*</sup>
+          </td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">K346GTI</abbr>
+          </td>
+          <td class="govuk-table__cell">6 June 2022</td>                              
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Category</th>
+          <td class="govuk-table__cell" colspan="4">
+            <span class="hmlr-lowercase hmlr-lowercase--uppercase-first">
+              Volume Change of Ownership
+            </span>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Next action</th>
+          <td class="govuk-table__cell" colspan="4">
+            Consider referral from John Smith
+          </td>
+        </tr>        
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Actions</th>
+          <td class="govuk-table__cell" colspan="4">
+            {% include "../includes/inc_actions-menu.html" %}
+          </td>
+        </tr>
+      </tbody>       
+      
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Meta data</th>
+          <td class="govuk-table__cell">27 May 2022</td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">DT727786</abbr><sup>*</sup>
+          </td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">J337GYX</abbr>
+          </td>
+          <td class="govuk-table__cell">13 May 2022</td>                              
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Category</th>
+          <td class="govuk-table__cell" colspan="4">
+            <span class="hmlr-lowercase hmlr-lowercase--uppercase-first">
+              Volume Change of Ownership
+            </span>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Next action</th>
+          <td class="govuk-table__cell" colspan="4">
+            Consider referral from John Smith
+          </td>
+        </tr>        
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Actions</th>
+          <td class="govuk-table__cell" colspan="4">
+            {% include "../includes/inc_actions-menu.html" %}
+          </td>
+        </tr>
+      </tbody>             
+
+    </table>    
+
+    <!-- ******************************** END MAIN RIGHT COL CONTENT ************************ -->
+
+  </section>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+  </div>
+</div>
+{% endblock %}

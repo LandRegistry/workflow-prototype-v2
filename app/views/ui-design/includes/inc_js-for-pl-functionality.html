@@ -1,0 +1,201 @@
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+  
+      const hmlrListTbl = document.getElementById('hmlrListTbl');
+      
+      if (hmlrListTbl) {// only run this code if 'hmlrListTbl' is present on this pg
+  
+        hmlrListTbl.classList.remove('hmlr-hide-my-notes');/* stops JS loading glitches */
+  
+  
+        /*** record adjusted heights functionality, starts ***/
+        var textareas = hmlrListTbl.querySelectorAll('.govuk-textarea');
+  
+        /*var isContentChanged = false; 
+        function handleContentChange() {
+          isContentChanged = true;
+        }
+        window.addEventListener('beforeunload', function(event) {
+          if (isContentChanged) {
+            var message = 'You have unsaved changes to "My notes". Are you sure you want to leave?';
+            event.returnValue = message; // Standard for most browsers
+            return message; // For some older browsers
+          }
+        });*/       
+  
+                  // Function to record the height and store it in localStorage
+                  function recordHeight(textarea) {
+                    var height = textarea.offsetHeight;
+                    if (height != 0) {
+                      textarea.style.height = height + 'px';
+                      localStorage.setItem('textarea-' + textarea.id + '-height', height);
+                    }
+                  }
+  
+                  // Create a ResizeObserver to observe changes in size
+                  var resizeObserver = new ResizeObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                      if (entry.target instanceof HTMLTextAreaElement) {
+                        recordHeight(entry.target);
+                      }
+                    });
+                  });
+  
+        // Observe each textarea for resizing and apply stored height on page load
+        textareas.forEach(function(textarea) {
+  
+  
+                  if (localStorage.getItem(textarea.id) === 'false') {//is NOT hidden, so show on pg reload
+                    textarea.closest('td').querySelector('.hmlr-my-notes-textarea').classList.remove('hmlr-my-notes-textarea--hide');
+                    //document.getElementById('div-'+textarea.id).classList.remove('hmlr-my-notes-textarea--hide');
+                  }
+  
+  
+          // Apply stored height from localStorage when the page loads
+          var storedHeight = localStorage.getItem('textarea-' + textarea.id + '-height');
+          if (storedHeight) {
+            textarea.style.height = storedHeight + 'px';
+          }
+          
+          // Observe the textarea for resizing
+          resizeObserver.observe(textarea); 
+  
+          // Add event listener for content changes
+          //textarea.addEventListener('input', handleContentChange);        
+        });
+  
+        /*** record adjusted heights functionality, ends ***/
+        
+        
+  
+  
+  
+  
+  
+        
+        /*** show/hide functionality starts ***/
+        const noteLinks = hmlrListTbl.querySelectorAll('.hmlr-my-notes');//find ea link
+  
+        noteLinks.forEach(function(noteLink) {
+          noteLink.addEventListener('click', function(e) {
+              e.preventDefault();
+              const parentTd = noteLink.closest('td');
+              const textareaDiv = parentTd.querySelector('.hmlr-my-notes-textarea');
+              textareaDiv.classList.toggle('hmlr-my-notes-textarea--hide');
+  
+  
+                      const textarea = parentTd.querySelector('textarea');//set storage val to maintain show/hide state on pg reload
+                      if (textareaDiv.classList.contains('hmlr-my-notes-textarea--hide')) {
+                        localStorage.setItem(textarea.id, 'true');//is hidden
+                      } else {
+                        localStorage.setItem(textarea.id, 'false');//is NOT hidden
+                      }
+  
+  
+            });
+        });
+        /*** show/hide functionality ends ***/
+  
+  
+  
+        /*** add/remove flags starts ***/
+          /*function checkIfTblsExist() {
+            const tbl1 = document.getElementById(progress_now_table);
+            const tbl2 = document.getElementById(progress_later_table);
+            if (tbl1 || tbl2) {
+                return true;
+            } else {
+                return false;
+            }
+          }
+          //if (checkIfTblsExist) {//only run code if we're on the right page!*/
+  
+            const mainContent2 = document.getElementById('main-content');
+            const links = mainContent2.querySelectorAll('.hmlr-flag-icon-btn');
+            
+            links.forEach(link => {//loop through each link and add a click event 
+              link.addEventListener('click', function(e) {
+                e.preventDefault(); 
+                const svgElement = this.nextElementSibling;// Find the sibling svg element
+  
+                svgElement.classList.toggle('hmlr-flag-icon-show');
+                svgElement.setAttribute('aria-hidden', svgElement.getAttribute('aria-hidden') === 'false' ? 'true' : 'false');
+  
+                this.value = this.value.trim() === 'Remove flag' ? 'Add flag' : 'Remove flag';//toggle input/button text
+                //this.textContent = this.textContent.trim() === 'Remove flag' ? 'Add flag' : 'Remove flag';//toggle link text
+                this.blur();//remove focus
+              });
+            });
+      
+          //}
+        /*** add/remove flags ends ***/
+  
+  
+  
+  
+   
+  
+        /*** record adjusted heights functionality, starts ***/
+        /*var textareas = hmlrListTbl.querySelectorAll('.govuk-textarea');
+  
+        // record height in localStorage
+        function recordHeight(textarea, index) {
+          var height = textarea.offsetHeight;
+          if (height != 0) {
+            textarea.style.height = height + 'px';
+            localStorage.setItem('textarea-' + index + '-height', height);
+          }
+        }
+  
+        // observe changes in textarea size when users pull drag bars
+        var resizeObserver = new ResizeObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.target instanceof HTMLTextAreaElement) {
+              var index = Array.from(textareas).indexOf(entry.target);
+              recordHeight(entry.target, index);
+            }
+          });
+        });
+  
+        // apply stored height when page is loaded
+        textareas.forEach(function(textarea, index) {
+          var storedHeight = localStorage.getItem('textarea-' + index + '-height');
+          if (storedHeight) {
+            textarea.style.height = storedHeight + 'px';
+          }
+          
+          // observe textarea resizing
+          resizeObserver.observe(textarea);
+        });*/
+  
+        
+  
+        /*** record adjusted heights functionality, ends ***/
+  
+  
+  
+  
+  
+  
+        /*function isFirstDayOfSpecificMonthsAndTime() {
+            var today = new Date();
+            var months = [3, 7, 11]; // Apr, Aug, Dec (from zero)
+            var isCorrectDay = false;
+            var isCorrectTime = false;
+  
+            if(months.includes(today.getMonth())){
+              isCorrectDay = today.getDate() === 1;
+              isCorrectTime = (today.getHours() === 10 && today.getMinutes() < 45);          
+            }
+  
+            return isCorrectDay && isCorrectTime;
+        }
+        if (isFirstDayOfSpecificMonthsAndTime()) {
+          localStorage.clear(); //occasionally clear out all the old storage (used for UI displays per ea case); on this domain
+        }*/
+  
+  
+      }
+  
+    });    
+  </script>
