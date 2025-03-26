@@ -14,7 +14,7 @@ ul.hmlr-left-nav {
     & > li.hmlr-left-nav__active, 
     & > li.hmlr-left-nav__active--child {
       ul {
-        padding-left: govuk-spacing(6);
+        padding-left: govuk-spacing(7);//was 6. (6 = left aligned)
       }
     }
   

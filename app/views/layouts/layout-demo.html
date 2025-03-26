@@ -1,0 +1,152 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{% block pageTitle %}
+  Demo
+{% endblock %}
+
+{% block header %}
+<header class="govuk-header govuk-header--hmlr " role="banner" data-module="govuk-header">
+    <div class="govuk-header__container govuk-width-container">
+      <div class="govuk-header__content govuk-header__content--hmlr">
+      
+        <span style="font-size: 24px; font-size: 1.5rem; line-height: 1.25; font-weight: bold; margin: 5px 0 10px 0; display: block;">
+            Basic example
+        </span>
+     
+      </div>
+    </div>
+  </header>
+{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    
+    
+    <!-- bespoke raw css for this demo starts ... -->
+    <style>
+
+      /* make both panels the same height in a simple elegant way */
+      @media (min-width: 40.0625em) {/* use the media 'from desktop' constant. Important to only use these styles for desktop */
+        #ap-make-panels-same-height {/* using flex like this would be the simplest method */
+          display: flex;
+        }
+        #ap-left-panel, 
+        #ap-right-panel {
+          flex: 1;
+        }
+        #ap-left-panel {
+          min-height: 450px; /* or whatever height we use for the reg view */
+          overflow: auto;
+        }
+      }
+
+
+
+
+
+
+      /* *** below: these are some bespoke styles for when I was coding this on my machine as I had old AMW/Workflow styles interfering: starts *** */
+      .govuk-grid-column-one-half, .govuk-grid-column-full {padding: 20px; }.govuk-grid-row {margin-right: 0; margin-left: 0; }@media (min-width: 40.0625em) {.govuk-main-wrapper {background-color: lime; }}
+      /* *** these are some bespoke styles for when I was coding this on my machine as I had old AMW/Workflow styles interfering: ends *** */
+    </style>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <main id="main-content" class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-full" style="background-color: aqua;">
+        <h1 class="govuk-heading-l">
+          General page example
+        </h1>
+        <p class="govuk-body">
+          The left and right panels are the same height using only CSS (flex).
+        </p>
+      </div>
+
+    </div>
+
+    <div class="govuk-grid-row" id="ap-make-panels-same-height" style="background-color: yellow;">
+
+      
+        <div class="govuk-grid-column-one-half"  id="ap-left-panel" style="background-color:bisque;">
+
+          <p class="govuk-body">
+            <span class="govuk-!-font-weight-bold">Register view content</span>: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi sed quod ipsa, a consequatur at accusantium fugiat doloribus quisquam iste ratione maiores optio quas sequi quae perferendis ipsam. Dolores, laborum?
+          </p>
+
+          <p class="govuk-body">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi sed quod ipsa, a consequatur at accusantium fugiat doloribus quisquam iste ratione maiores optio quas sequi quae perferendis ipsam. Dolores, laborum?
+          </p>
+
+          <p class="govuk-body">
+            Sit amet consectetur adipisicing elit. Distinctio doloremque fugiat, voluptas sit ducimus, harum cum explicabo ratione hic dicta, quisquam quibusdam esse odio voluptatem libero eveniet nostrum veritatis? Quo! Dolor sit amet consectetur adipisicing elit. Dolores modi itaque provident nihil reiciendis autem nobis error. Nihil totam architecto doloremque, doloribus illo esse temporibus laboriosam repellendus iusto laudantium sit.
+          </p>
+
+        </div>
+
+        <div class="govuk-grid-column-one-half" id="ap-right-panel" style="background-color:cadetblue;">
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h2 class="govuk-fieldset__heading">
+                  Example form
+                </h2>
+              </legend>
+              <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+                  <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                    England
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
+                  <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+                    Scotland
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="whereDoYouLive-3" name="whereDoYouLive" type="radio" value="wales">
+                  <label class="govuk-label govuk-radios__label" for="whereDoYouLive-3">
+                    Wales
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="whereDoYouLive-4" name="whereDoYouLive" type="radio" value="northern-ireland">
+                  <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
+                    Northern Ireland
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+        </div>
+
+      </div>
+
+  </main>
+</div>
+
+
+{% endblock %}
+
+{% block footer %}
+<footer class="govuk-footer govuk-footer--hmlr" role="contentinfo">
+    <div class="govuk-width-container ">
+      
+      <div class="govuk-footer__meta">
+        <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+
+
+
+        </div>
+        
+      </div>
+    </div>
+</footer>
+{% endblock %}
