@@ -76,6 +76,13 @@
     }
 
     @include govuk-media-query($from: desktop){
+
+        &.hmlr-wf-lists--4x-cols-equal {
+            th, td {
+                width: 25%;
+            }            
+        }
+
         &.govuk-\!-font-size-16 {
             .govuk-table__caption {
                 margin-top: govuk-spacing(0);
@@ -110,7 +117,11 @@
                 @include govuk-font($size: 16, $weight: regular, $line-height: .5);
                 margin-top: -2px; 
                 margin-bottom: govuk-spacing(0);
-            }            
+            } 
+            
+            .hmlr-btn-as-link {
+                font-size: inherit !important;
+            }
         }
 
         @include govuk-media-query($from: desktop){
@@ -222,6 +233,29 @@
             }
         }        
 
+    }
+
+    .hmlr-wf-lists__tab {
+        font-size: 90%; 
+        padding: (govuk-spacing(1) - 2) govuk-spacing(1);
+        font-weight: normal; 
+        line-height: 1;
+        //border-radius: 3px;
+
+        @include govuk-media-query($from: desktop){
+            float: right;  
+        }
+
+        &.hmlr-wf-lists__tab--expedite {
+            color: govuk-colour("white");
+            background-color: govuk-colour("blue"); 
+
+            text-transform: uppercase;
+            font-size: 80%;
+            font-weight: bold;
+            line-height: 1.2;
+            padding-bottom: (govuk-spacing(1) - 3);            
+        }
     }
 
 }

@@ -9,16 +9,6 @@ $hmlr-brand-colour: #789904 !important;
 
 $hmlr-tbody-bottom-padding: govuk-spacing(4);
 
-input.hmlr-flag-icon-btn, 
-button.hmlr-flag-icon-btn {
-    border: 0;
-    background: transparent; 
-    color: $govuk-link-colour;
-    padding-left: govuk-spacing(0);
-    padding-right: govuk-spacing(0);     
-    cursor: pointer; 
-}
-
 @function calculaterem($s) {
     $remsize: $s / 16px;
     @return #{$remsize}rem;
@@ -75,6 +65,17 @@ button.hmlr-flag-icon-btn {
             @include menu-inset-anchors-bullets;
         }      
     }
+}
+
+input.hmlr-btn-as-link, 
+button.hmlr-btn-as-link {
+    border: 0;
+    background: transparent; 
+    color: $govuk-link-colour;
+    padding-left: govuk-spacing(0);
+    padding-right: govuk-spacing(0);     
+    cursor: pointer; 
+    @include hmlr-font-size($s: 16px, $l: 1.2); 
 }
 /* ... hmlr mixins and globals ends */
 
