@@ -43,6 +43,13 @@
         }
     } 
 
+    &.govuk-\!-font-size-16 {
+        .govuk-table__caption {
+            margin-top: govuk-spacing(4);
+            margin-bottom: govuk-spacing(7);
+        } 
+    }
+
     &.hmlr-wf-lists--tbody-dividers {
         thead, tbody tr:last-child {
             border-bottom: 2px solid $govuk-text-colour; 
@@ -68,20 +75,18 @@
         line-height: 0;
     }
 
-    &.govuk-\!-font-size-16 {
-        .govuk-table__caption {
-            margin-top: govuk-spacing(4);
-            margin-bottom: govuk-spacing(7);
-        } 
-    }
-
-    @include govuk-media-query($from: desktop){
-
-        &.hmlr-wf-lists--4x-cols-equal {
-            th, td {
+    @include govuk-media-query($from: tablet){//************************************ Add class that hides first col here
+        &.hmlr-wf-lists--4x-cols-equal tr {
+            th:first-child, td:first-child {
+                width: 0;
+            }
+            th:not(:first-child), td:not(:first-child) {
                 width: 25%;
             }            
         }
+    }
+
+    @include govuk-media-query($from: desktop){
 
         &.govuk-\!-font-size-16 {
             .govuk-table__caption {

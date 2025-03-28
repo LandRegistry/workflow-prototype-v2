@@ -1,0 +1,104 @@
+{% extends "layouts/wf_layout-ui-designs.html" %}
+
+{% set pageName="{{ serviceName }} Progress Later Designs" %}
+
+{% block header %}
+  {% include "../includes/inc_top-nav-std.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+    
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Worklist designs
+    </h1>
+
+    <!--p class="govuk-body hmlr-secondary-text">
+      
+    </p-->
+
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+
+  </div>      
+
+</div>
+
+
+<div class="govuk-grid-row">
+
+  <section class="govuk-grid-column-three-quarters" id="page-content" role="region">
+
+    <!-- ******************************** START MAIN RIGHT COL CONTENT ********************** -->
+
+    <p class="govuk-body-s">
+      All links open in a new tab.
+    </p>
+
+    <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-margin-top-7 govuk-!-margin-bottom-9">
+      <li>
+        <a href="/ui-design/pl/table-std-dynamic-sorting" class="govuk-link govuk-link--no-visited-state" target="_blank">
+          Standard, with filters and sorting
+        </a>
+      </li>
+      <li>
+        <a href="/ui-design/tables/table-std-my-notes" class="govuk-link govuk-link--no-visited-state" target="_blank">
+          Standard, with 'my notes'
+        </a>
+      </li>
+      <li>
+        <a href="/ui-design/pl/table-std-dynamic-with-flagging" class="govuk-link govuk-link--no-visited-state" target="_blank">
+          Standard, with flagging
+        </a>
+      </li>
+    </ol>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-margin-bottom-9">
+      <li>
+        <a href="/ui-design/designs/ui-a-standard" class="govuk-link govuk-link--no-visited-state" target="_blank">
+          a) New UI
+        </a> 
+
+        <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+          <li>
+            <a href="/ui-design/designs/ui-a-header-aligned" class="govuk-link govuk-link--no-visited-state" target="_blank">
+              a) New UI 
+            </a> (aligned)
+          </li>
+        </ul>
+
+      </li>
+      <li>
+        <a href="" class="govuk-link govuk-link--no-visited-state" target="_blank">
+          b) New UI 
+        </a> (split row)
+      </li> 
+    </ol>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-margin-bottom-9">
+      <li>
+        <a href="/ui-design/designs/ui-b-complex" class="govuk-link govuk-link--no-visited-state" target="_blank">
+          c) New UI
+        </a> (nav filters)
+      </li> 
+    </ol>
+
+    <!-- ******************************** END MAIN RIGHT COL CONTENT ************************ -->
+
+  </section>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+  </div>
+</div>
+{% endblock %}
