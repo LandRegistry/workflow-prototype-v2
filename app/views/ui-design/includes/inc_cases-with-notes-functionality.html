@@ -159,7 +159,12 @@
                 <label class="govuk-label" for="more-detail">
                   My notes
                 </label>
-                <textarea class="govuk-textarea resize-ta" id="more-detail" name="moreDetail" rows="5"></textarea>
+
+                <div id="more-detail-hint" class="govuk-hint govuk-!-font-size-16">
+                  These are not PAS notes. These are your personal notes for this case. 
+                </div>
+
+                <textarea class="govuk-textarea resize-ta" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
                 <button type="submit" class="govuk-button">Save</button>
               </div>
 
@@ -305,7 +310,12 @@
                 <label class="govuk-label" for="xmore-detail">
                   My notes
                 </label>
-<textarea class="govuk-textarea" id="xmore-detail" name="xmoreDetail" rows="5">The British weather is famously unpredictable, often changing multiple times in a single day. 
+
+                <div id="xmore-detail-hint" class="govuk-hint govuk-!-font-size-16">
+                  These are not PAS notes. These are your personal notes for this case. 
+                </div>
+
+<textarea class="govuk-textarea" id="xmore-detail" name="xmoreDetail" rows="5" aria-describedby="xmore-detail-hint">The British weather is famously unpredictable, often changing multiple times in a single day. 
     
 This variability is largely due to the UK's geographical location, which places it at the meeting point of several different air masses. These air masses bring a mix of weather conditions, from the cold, dry air from the Arctic to the warm, moist air from the Atlantic. As a result, the weather can be quite changeable, with sunny spells quickly giving way to showers and vice versa.
 
