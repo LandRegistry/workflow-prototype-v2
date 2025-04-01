@@ -17,7 +17,7 @@
         }
         window.addEventListener('beforeunload', function(event) {
           if (isContentChanged) {
-            var message = 'You have unsaved changes to "My notes". Are you sure you want to leave?';
+            var message = 'You have unsaved changes to "Show my notes". Are you sure you want to leave?';
             event.returnValue = message; // Standard for most browsers
             return message; // For some older browsers
           }
@@ -46,8 +46,9 @@
   
   
                   if (localStorage.getItem(textarea.id) === 'false') {//is NOT hidden, so show on pg reload
-                    textarea.closest('td').querySelector('.hmlr-my-notes-textarea').classList.remove('hmlr-my-notes-textarea--hide');
-                    //document.getElementById('div-'+textarea.id).classList.remove('hmlr-my-notes-textarea--hide');
+                    var myTd = textarea.closest('td');
+                    myTd.querySelector('.hmlr-my-notes-textarea').classList.remove('hmlr-my-notes-textarea--hide');
+                    myTd.querySelector('.hmlr-my-notes').textContent = 'Hide my notes';
                   }
   
   
@@ -81,7 +82,12 @@
               e.preventDefault();
               const parentTd = noteLink.closest('td');
               const textareaDiv = parentTd.querySelector('.hmlr-my-notes-textarea');
-              textareaDiv.classList.toggle('hmlr-my-notes-textarea--hide');
+              textareaDiv.classList.toggle('hmlr-my-notes-textarea--hide'); 
+              if (noteLink.classList.contains('hmlr-my-notes--update')) {//avoids updating the 'Hide' link next to the 'Save' btn
+                noteLink.textContent = noteLink.textContent.trim() === 'Show my notes' ? 'Hide my notes' : 'Show my notes';
+              }else{
+                parentTd.querySelector('.hmlr-my-notes--update').textContent = 'Show my notes';
+              }
   
   
                       const textarea = parentTd.querySelector('textarea');//set storage val to maintain show/hide state on pg reload
