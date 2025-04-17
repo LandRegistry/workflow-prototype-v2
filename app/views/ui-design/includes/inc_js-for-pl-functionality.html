@@ -83,11 +83,11 @@
               const parentTd = noteLink.closest('td');
               const textareaDiv = parentTd.querySelector('.hmlr-my-notes-textarea');
               textareaDiv.classList.toggle('hmlr-my-notes-textarea--hide'); 
-              if (noteLink.classList.contains('hmlr-my-notes--update')) {//avoids updating the 'Hide' link next to the 'Save' btn
+              /*if (noteLink.classList.contains('hmlr-my-notes--update')) {//avoids updating the 'Hide' link next to the 'Save' btn */
                 noteLink.textContent = noteLink.textContent.trim() === 'Show my notes' ? 'Hide my notes' : 'Show my notes';
-              }else{
+              /*}else{
                 parentTd.querySelector('.hmlr-my-notes--update').textContent = 'Show my notes';
-              }
+              }*/
   
   
                       const textarea = parentTd.querySelector('textarea');//set storage val to maintain show/hide state on pg reload
