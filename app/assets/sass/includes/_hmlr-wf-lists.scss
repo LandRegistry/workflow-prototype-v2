@@ -199,7 +199,26 @@
           /*padding-left: 10px;*/
           text-align: left;
         }                
-    }    
+    }   
+    
+    .hmlr-my-notes {
+        &.hmlr-my-notes--added {
+            position: relative; 
+            display: inline-block;
+
+            &::after {
+                content: ''; 
+                position: absolute; 
+                right: -7px; 
+                top: -5px; 
+                border-radius: 50%;            
+                width: 10px;
+                height: 10px;
+                background-color: $hmlr-brand-colour;
+            }
+
+        }
+    }
 
     .hmlr-my-notes-textarea {
         display: block; 
@@ -276,3 +295,37 @@
         display: none; 
     }   
 }
+
+
+
+
+/* ****** styles for adding flags link STARTs ****** */
+#hmlrListTbl tbody tr:last-child td {
+    position: relative;//important for .hmlr-flag-icon
+}
+
+@include govuk-media-query($from: desktop){  
+    a.hmlr-flag-icon-btn {
+        margin-right: govuk-spacing(1); 
+        margin-left: (govuk-spacing(1) + 2px);
+    }
+}
+
+.hmlr-flag-icon {
+    display: none; 
+    position: absolute;
+    top: - (govuk-spacing(2));
+    right: - (govuk-spacing(2));    
+    transform: rotate(10deg); 
+
+    path {
+        fill: $hmlr-brand-colour;
+    }
+
+    &.hmlr-flag-icon-show {
+        display: inline-block;
+    }    
+}
+/*input.hmlr-flag-icon-btn[value="Remove flag"] {margin-right: -27px; }*/
+
+/* ****** styles for adding flags link ENDS ****** */
