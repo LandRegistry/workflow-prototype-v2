@@ -1,0 +1,80 @@
+{% extends "layouts/wf_layout-ui-designs.html" %}
+
+{% set pageName="{{ serviceName }} Progress Later Designs" %}
+
+{% block header %}
+  {% include "../includes/inc_top-nav-std.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+    
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      New user-interface (<abbr>UI</abbr>): <br><span class="govuk-heading-m">List of design assets</span>
+    </h1>
+
+    <!--p class="govuk-body hmlr-secondary-text">
+      
+    </p-->
+
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+
+  </div>      
+
+</div>
+
+
+<div class="govuk-grid-row">
+
+  <section class="govuk-grid-column-three-quarters" id="page-content" role="region">
+
+    <p class="govuk-body-s">
+      All links open in a new tab.
+    </p>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+      <p class="govuk-body">
+        <a href="/progress-later/pg-1-01" class="govuk-link govuk-link--no-visited-state" target="_blank">
+          Progress Later - Reason list form demo
+        </a>
+      </p>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+    <!-- ******************************** START MAIN RIGHT COL CONTENT ********************** -->
+    
+    <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-margin-top-7 govuk-!-margin-bottom-9">
+      <li>
+        <a href="/ui-design/designs/ui-c-complex-2" class="govuk-link govuk-link--no-visited-state" target="_blank">Progress Now</a> 
+      </li>       
+      <li>
+        <a href="/ui-design/designs/ui-c-complex-1" class="govuk-link govuk-link--no-visited-state" target="_blank">Progress Later</a> <span class="govuk-body-s hmlr-secondary-text">(inc filter link pages, sorting, notes, flags)</span><br>
+
+        <p class="govuk-body-s hmlr-secondary-text govuk-!-margin-top-4">
+          Flat <abbr>HTML</abbr> pages with clickable: Home, Progress Now, Progress Later <br>(and, Expedited, Referred, Non-referred, Flagged) pages.
+        </p>
+      </li> 
+
+
+      <li>
+        <a href="/ui-design/designs/xxxx" class="govuk-link govuk-link--no-visited-state" target="_blank">xxxx</a> <span class="govuk-body-s hmlr-secondary-text">(xxxx)</span>
+      </li>       
+    </ol>
+
+    <!-- ******************************** END MAIN RIGHT COL CONTENT ************************ -->
+
+  </section>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+  </div>
+</div>
+{% endblock %}

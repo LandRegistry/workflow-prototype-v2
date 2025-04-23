@@ -141,6 +141,22 @@
       
           //}
         /*** add/remove flags ends ***/
+
+        /*** style last of each block of multi title cases/rows STARTS ***/
+        const tbodies = hmlrListTbl.querySelectorAll('.hmlr-wf-lists__attached');//find ea instance
+        let currentBlock = [];
+        tbodies.forEach((tbody, index) => {
+          currentBlock.push(tbody);
+
+          // Check if the next tbody is part of a new block or if it's the last tbody
+          if (!tbodies[index + 1] || !tbodies[index + 1].classList.contains("hmlr-wf-lists__attached")) {
+            // Add the class to the last tbody in the current block
+            currentBlock[currentBlock.length - 1].classList.add("hmlr-wf-lists__attached--last");
+            // Reset the current block
+            currentBlock = [];
+          }
+        });
+        /*** style last of each block of multi title cases/rows ENDS ***/
   
   
   
