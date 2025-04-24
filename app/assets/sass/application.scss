@@ -95,6 +95,12 @@ button.hmlr-btn-as-link {
     background-color: antiquewhite;
 }*/
 
+@include govuk-media-query($from: desktop){
+    main.govuk-main-wrapper {
+        min-height: 385px;
+    }
+}
+
 body .govuk-header__container {
     border-bottom-color: $hmlr-brand-colour;
     margin-bottom: -9px !important; 

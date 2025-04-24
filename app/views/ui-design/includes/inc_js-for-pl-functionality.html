@@ -75,10 +75,47 @@
         
         
   
-  
-  
-  
-  
+
+          /* *** show/hide link for multi applications STARTS *** */
+          function toggleNextTbodyWithClass(currentTbody, className) {
+              let nextTbody = currentTbody.nextElementSibling;
+              while (nextTbody) {
+                  if (nextTbody.tagName.toLowerCase() === 'tbody' && nextTbody.classList.contains(className)) {
+                      nextTbody.classList.toggle('hmlr-wf-lists__attached-show');
+                      nextTbody = nextTbody.nextElementSibling;
+                  } else {
+                      break; // Stop if the next <tbody> does not have the class
+                  }
+              }
+          }
+
+          var attachedApps = hmlrListTbl.querySelectorAll('.hmlr-wf-lists__attached-link');  
+          attachedApps.forEach(function(attachedApp) {
+              attachedApp.addEventListener('click', function(e) {
+                  e.preventDefault();  
+                  const currentTbody = attachedApp.closest('tbody');
+                  toggleNextTbodyWithClass(currentTbody, 'hmlr-wf-lists__attached');
+//aria text for show and hide???????????????
+                  const firstSpan = attachedApp.querySelector('span:first-child');
+                  if (firstSpan.textContent.trim() === 'Show attached applications') {
+                      firstSpan.textContent = 'Hide attached applications';
+                  } else {
+                      firstSpan.textContent = 'Show attached applications';
+                  }
+              });
+          });
+          /* *** show/hide link for multi applications ENDS *** */
+
+
+
+
+
+
+
+
+
+
+
         
         /*** show/hide functionality starts ***/
         const noteLinks = hmlrListTbl.querySelectorAll('.hmlr-my-notes');//find ea link

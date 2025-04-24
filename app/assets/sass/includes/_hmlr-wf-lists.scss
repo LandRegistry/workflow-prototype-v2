@@ -283,9 +283,7 @@
         }
     }
 
-
-
-
+    /* *** styles for .hmlr-wf-lists__attached (attached docs) STARTS *** */
     &.hmlr-wf-lists--tbody-dividers {
         tbody.hmlr-wf-lists__attached {
             &:not(:last-child) tr:last-child {
@@ -310,7 +308,7 @@
         .hmlr-wf-lists__menu {
             justify-content: right; 
 
-            li:not(:last-child){
+            li:not(:last-child) {
                 margin-right: govuk-spacing(4);
             }
         }           
@@ -321,25 +319,51 @@
         &::before {
             content: "\2937"; 
             display: inline-block;
-            color: $govuk-input-border-colour; 
-            font-size: 20px; 
             text-align: center;  
             position: absolute;
-            left: -15px;
-            top: 8px;     /*width: 70px; height: 100%; border-right: 1px solid $govuk-border-colour;*/
+            left: govuk-spacing(3);
+            top: govuk-spacing(2);     
+
+            font-size: govuk-spacing(3); 
+            width: govuk-spacing(4); 
+            height: govuk-spacing(4); 
+            line-height: 1.5; 
+            border-radius: 50%;
+            color: govuk-colour("white"); 
+            background-color: $govuk-input-border-colour;
+            /*width: 70px; height: 100%; border-right: 1px solid $govuk-border-colour;*/
         }        
     }
     /*.hmlr-wf-lists__attached:not(:first-of-type) {
-        th, td {
-
-            
+        th, td {            
         }
     }*/
-
-  
-
-  
-
+    .hmlr-wf-lists__attached {
+        .hmlr-wf-lists__menu {
+            margin-bottom: 3.5rem !important;
+        }
+        .hmlr-wf-lists__attached-link {
+            display: none;
+            position: absolute;
+            right: govuk-spacing(0);
+            bottom: govuk-spacing(1);
+        }
+        .hmlr-flag-icon-btn {
+            margin-right: - govuk-spacing(2);
+        }
+    }
+    .hmlr-wf-lists__attached + .hmlr-wf-lists__attached {
+        .hmlr-wf-lists__menu {
+            margin-bottom: govuk-spacing(0) !important;            
+        }
+        .hmlr-flag-icon-btn {/*not currently required: future proofing*/
+            margin-right: auto;
+        }
+    }
+    .hmlr-wf-lists__attached-show {
+        visibility: unset !important;
+    }
+    /* *** styles for .hmlr-wf-lists__attached (attached docs) ENDS *** */
 
 }
  
@@ -350,7 +374,15 @@
 
     .hmlr-wf-lists .hmlr-my-notes-textarea.hmlr-my-notes-textarea--hide {
         display: none; 
-    }   
+    } 
+    
+    .hmlr-wf-lists__attached-link {
+        display: block !important;
+    }
+
+    .hmlr-wf-lists__attached + .hmlr-wf-lists__attached {
+        visibility: collapse;
+    }    
 }
 
 
