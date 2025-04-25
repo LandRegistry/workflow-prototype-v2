@@ -9,7 +9,7 @@
   
   
         /*** record adjusted heights functionality, starts ***/
-        var textareas = hmlrListTbl.querySelectorAll('.govuk-textarea');
+        var textareas = hmlrListTbl.querySelectorAll('.govuk-textarea');//or, all textareas inside .hmlr-my-notes-textarea 
   
         /*var isContentChanged = false; 
         function handleContentChange() {
@@ -47,16 +47,16 @@
           var myTd = textarea.closest('td');
                   
                   if (localStorage.getItem(textarea.id) === 'false') {//is NOT hidden, so show on pg reload
-                    
+                    var mySpan = myTd.querySelector('.hmlr-my-notes');
+                    mySpan.querySelector('span:first-child').textContent = 'Hide my notes';
                     myTd.querySelector('.hmlr-my-notes-textarea').classList.remove('hmlr-my-notes-textarea--hide');
-                    myTd.querySelector('.hmlr-my-notes').textContent = 'Hide my notes';
                   }
 
                   if (textarea.value.trim() !== "") {//textarea is not empty
                     var myLink = myTd.querySelector('.hmlr-my-notes');
                     myLink.classList.add('hmlr-my-notes--added');//add dot icon to my notes link
                     myLink.setAttribute('aria-label', 'This case has notes');
-                  }  //else {}                
+                  }              
   
           // Apply stored height from localStorage when the page loads
           var storedHeight = localStorage.getItem('textarea-' + textarea.id + '-height');
@@ -76,74 +76,83 @@
         
   
 
-          /* *** show/hide link for multi applications STARTS *** */
-          function toggleNextTbodyWithClass(currentTbody, className) {
+          /* *** show/hide links for multi applications STARTS *** */
+          hmlrListTbl.querySelectorAll('.hmlr-wf-lists__attached + .hmlr-wf-lists__attached').forEach(tbod => {
+              tbod.setAttribute('aria-hidden', 'true');//only when there is JS are these case hidden
+          });
+
+          function toggleNextTbodyWithClass(currentTbody, className) {//targets "groups" of adjacent tbody elements
               let nextTbody = currentTbody.nextElementSibling;
               while (nextTbody) {
                   if (nextTbody.tagName.toLowerCase() === 'tbody' && nextTbody.classList.contains(className)) {
-                      nextTbody.classList.toggle('hmlr-wf-lists__attached-show');
+                      nextTbody.classList.toggle(className+'-show');
+                      nextTbody.setAttribute('aria-hidden', nextTbody.getAttribute('aria-hidden') === 'false' ? 'true' : 'false');
                       nextTbody = nextTbody.nextElementSibling;
                   } else {
-                      break; // Stop if the next <tbody> does not have the class
+                      break; // Stop when next tbody doesn't have the class
                   }
               }
           }
 
           var attachedApps = hmlrListTbl.querySelectorAll('.hmlr-wf-lists__attached-link');  
           attachedApps.forEach(function(attachedApp) {
+              
               attachedApp.addEventListener('click', function(e) {
                   e.preventDefault();  
-                  const currentTbody = attachedApp.closest('tbody');
-                  toggleNextTbodyWithClass(currentTbody, 'hmlr-wf-lists__attached');
-//aria text for show and hide???????????????
+                  toggleNextTbodyWithClass(attachedApp.closest('tbody'), 'hmlr-wf-lists__attached');
+                  
                   const firstSpan = attachedApp.querySelector('span:first-child');
                   if (firstSpan.textContent.trim() === 'Show attached applications') {
                       firstSpan.textContent = 'Hide attached applications';
+                      localStorage.setItem(attachedApp.id, 'false');//is NOT hidden
                   } else {
                       firstSpan.textContent = 'Show attached applications';
+                      localStorage.setItem(attachedApp.id, 'true');//is hidden
                   }
+
               });
+
+              if (localStorage.getItem(attachedApp.id) === 'false') {//is NOT hidden, so show on pg reload
+                attachedApp.querySelector('span:first-child').textContent = 'Hide attached applications';
+                toggleNextTbodyWithClass(attachedApp.closest('tbody'), 'hmlr-wf-lists__attached');
+              }
+
           });
-          /* *** show/hide link for multi applications ENDS *** */
-
-
-
-
-
-
-
-
-
-
+          /* *** show/hide links for multi applications ENDS *** */
 
         
-        /*** show/hide functionality starts ***/
+        /*** my notes show/hide functionality starts ***/
+        hmlrListTbl.querySelectorAll('.hmlr-my-notes-textarea').forEach(txtarea => {
+          txtarea.setAttribute('aria-hidden', 'true');//are hidden only when JS is supported
+        });
+
         const noteLinks = hmlrListTbl.querySelectorAll('.hmlr-my-notes');//find ea link
-  
+        
         noteLinks.forEach(function(noteLink) {
           noteLink.addEventListener('click', function(e) {
               e.preventDefault();
               const parentTd = noteLink.closest('td');
               const textareaDiv = parentTd.querySelector('.hmlr-my-notes-textarea');
               textareaDiv.classList.toggle('hmlr-my-notes-textarea--hide'); 
-              /*if (noteLink.classList.contains('hmlr-my-notes--update')) {//avoids updating the 'Hide' link next to the 'Save' btn */
-                noteLink.textContent = noteLink.textContent.trim() === 'Show my notes' ? 'Hide my notes' : 'Show my notes';
-              /*}else{
-                parentTd.querySelector('.hmlr-my-notes--update').textContent = 'Show my notes';
-              }*/
+              textareaDiv.setAttribute('aria-hidden', textareaDiv.getAttribute('aria-hidden') === 'false' ? 'true' : 'false');
 
+              const theSpan = noteLink.querySelector('span:first-child');
+              if (theSpan.textContent.trim() === 'Show my notes') {
+                theSpan.textContent = 'Hide my notes';
+              } else {
+                theSpan.textContent = 'Show my notes';
+              }
   
-                  const textarea = parentTd.querySelector('textarea');//set storage val to maintain show/hide state on pg reload
-                  if (textareaDiv.classList.contains('hmlr-my-notes-textarea--hide')) {
-                    localStorage.setItem(textarea.id, 'true');//is hidden
-                  } else {
-                    localStorage.setItem(textarea.id, 'false');//is NOT hidden
-                  }
-  
+              const textarea = parentTd.querySelector('textarea');//set storage val to maintain show/hide state on pg reload
+              if (textareaDiv.classList.contains('hmlr-my-notes-textarea--hide')) {
+                localStorage.setItem(textarea.id, 'true');//is hidden
+              } else {
+                localStorage.setItem(textarea.id, 'false');//is NOT hidden
+              }
   
             });
         });
-        /*** show/hide functionality ends ***/
+        /*** my notes show/hide functionality ends ***/
   
   
   
@@ -242,7 +251,7 @@
   
   
   
-        /*function isFirstDayOfSpecificMonthsAndTime() {
+        function isFirstDayOfSpecificMonthsAndTime() {
             var today = new Date();
             var months = [3, 7, 11]; // Apr, Aug, Dec (from zero)
             var isCorrectDay = false;
@@ -256,11 +265,11 @@
             return isCorrectDay && isCorrectTime;
         }
         if (isFirstDayOfSpecificMonthsAndTime()) {
-          localStorage.clear(); //occasionally clear out all the old storage (used for UI displays per ea case); on this domain
-        }*/
-  
+          localStorage.clear(); //occasionally clear old storage (used for UI displays per ea case); on this domain
+        }
+        
   
       }
-  
+//localStorage.clear(); 
     });    
   </script>

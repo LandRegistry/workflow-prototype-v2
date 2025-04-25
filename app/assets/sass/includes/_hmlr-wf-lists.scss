@@ -342,11 +342,15 @@
         .hmlr-wf-lists__menu {
             margin-bottom: 3.5rem !important;
         }
-        .hmlr-wf-lists__attached-link {
+        /*.hmlr-wf-lists__attached-link {
             display: none;
-            position: absolute;
-            right: govuk-spacing(0);
-            bottom: govuk-spacing(1);
+        }*/
+        @include govuk-media-query($from: desktop){
+            .hmlr-wf-lists__attached-link {
+                position: absolute;
+                right: govuk-spacing(0); //bottom: govuk-spacing(1);
+                top: 3.7rem;
+            }
         }
         .hmlr-flag-icon-btn {
             margin-right: - govuk-spacing(2);
@@ -366,8 +370,9 @@
     /* *** styles for .hmlr-wf-lists__attached (attached docs) ENDS *** */
 
 }
- 
+
 .js-enabled {
+
     .hmlr-wf-lists .hmlr-hide-my-notes .hmlr-my-notes-textarea {/* class 'hmlr-hide-my-notes' needs to be hardcoded onto the 'table#hmlrListTbl' tag */
         display: none; /* JS removes 'hmlr-hide-my-notes'. This avoids loading glitches. */
     }/* this means 'hmlr-my-notes-textarea' is visable when there is no JS support */ 
@@ -376,9 +381,9 @@
         display: none; 
     } 
     
-    .hmlr-wf-lists__attached-link {
+    /*.hmlr-wf-lists__attached-link {
         display: block !important;
-    }
+    }*/
 
     .hmlr-wf-lists__attached + .hmlr-wf-lists__attached {
         visibility: collapse;

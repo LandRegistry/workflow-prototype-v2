@@ -85,6 +85,13 @@ button.hmlr-btn-as-link {
     cursor: pointer; 
     @include hmlr-font-size($s: 16px, $l: 1.2); 
 }
+.hmlr-hide-when-no-js {
+    display: none !important; 
+
+    .js-enabled & {
+        display: inline-block !important;
+    }
+}
 /* ... hmlr mixins and globals ends */
 
 
