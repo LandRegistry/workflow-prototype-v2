@@ -1,6 +1,6 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-  
+
       const hmlrListTbl = document.getElementById('hmlrListTbl');
       
       if (hmlrListTbl) {// only run this code if 'hmlrListTbl' is present on this pg
@@ -256,20 +256,33 @@
             var months = [3, 7, 11]; // Apr, Aug, Dec (from zero)
             var isCorrectDay = false;
             var isCorrectTime = false;
-  
             if(months.includes(today.getMonth())){
               isCorrectDay = today.getDate() === 1;
               isCorrectTime = (today.getHours() === 10 && today.getMinutes() < 45);          
             }
-  
             return isCorrectDay && isCorrectTime;
         }
         if (isFirstDayOfSpecificMonthsAndTime()) {
-          localStorage.clear(); //occasionally clear old storage (used for UI displays per ea case); on this domain
-        }
+            //occasionally clear old local storage (used for UI displays per ea case); on this domain
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                if (key.startsWith('textarea-my-notes-')) {//textarea height
+                    localStorage.removeItem(key);
+                }
+                if (key.startsWith('my-notes-')) {//my-notes show/hide  
+                    localStorage.removeItem(key);
+                }  
+                if (key.startsWith('attached-')) {//attached cases show/hide 
+                    localStorage.removeItem(key);
+                }       
+            }          
+        }//localStorage.clear(); //Use .clear when developing
         
   
       }
+
+
+
 //localStorage.clear(); 
     });    
   </script>
