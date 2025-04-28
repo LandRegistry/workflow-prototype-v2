@@ -81,6 +81,11 @@
         }
     }
 
+    td > abbr {
+        float: left; 
+        margin-right: govuk-spacing(1);
+    }
+
     sup {
         font-size: 110%;
         font-weight: bold; 
@@ -126,7 +131,8 @@
             } 
             
             .hmlr-btn-as-link {
-                font-size: inherit !important;
+                font-size: inherit !important; 
+                margin-right: govuk-spacing(1); 
             }
         }
 
@@ -265,22 +271,35 @@
         padding: (govuk-spacing(1) - 2) govuk-spacing(1);
         font-weight: normal; 
         line-height: 1;
+        float: left;
         //border-radius: 3px;
-
-        @include govuk-media-query($from: desktop){
-            float: right;  
-        }
 
         &.hmlr-wf-lists__tab--expedite {
             color: govuk-colour("white");
             background-color: govuk-colour("blue"); 
-
             text-transform: uppercase;
             font-size: 80%;
             font-weight: bold;
             line-height: 1.2;
-            padding-bottom: (govuk-spacing(1) - 3);            
+            padding-bottom: (govuk-spacing(1) - 3);    
+            
+            @media screen and (min-width: 1024px) {//@include govuk-media-query($until: desktop){
+                float: right; 
+            }
+            @media screen and (max-width: 1023px) {
+                margin-top: govuk-spacing(1); 
+            }                        
         }
+
+        &.hmlr-wf-lists__tab--leading {
+            background-color: govuk-colour("light-grey"); 
+            padding: govuk-spacing(1) (govuk-spacing(1) + 2px); 
+            margin-top: govuk-spacing(1);
+            
+            @include govuk-media-query($from: desktop){
+                margin-left: - (govuk-spacing(1) + 1px); 
+            }
+        }        
     }
 
     /* *** styles for .hmlr-wf-lists__attached (attached docs) STARTS *** */
@@ -322,7 +341,7 @@
             text-align: center;  
             position: absolute;
             left: govuk-spacing(3);
-            top: govuk-spacing(2);     
+            top: govuk-spacing(2); /*1.6rem; */
 
             font-size: govuk-spacing(3); 
             width: govuk-spacing(4); 
@@ -342,18 +361,25 @@
         .hmlr-wf-lists__menu {
             margin-bottom: 3.5rem !important;
         }
-        /*.hmlr-wf-lists__attached-link {
-            display: none;
-        }*/
         @include govuk-media-query($from: desktop){
             .hmlr-wf-lists__attached-link {
                 position: absolute;
                 right: govuk-spacing(0); //bottom: govuk-spacing(1);
                 top: 3.7rem;
             }
+            .hmlr-flag-icon-btn {
+                margin-right: - govuk-spacing(2) !important;
+            }
         }
-        .hmlr-flag-icon-btn {
-            margin-right: - govuk-spacing(2);
+        @media screen and (max-width: 850px) {
+            .hmlr-wf-lists__attached-link {
+                top: 5.0rem;
+            }
+        }        
+        @include govuk-media-query($until: desktop){ 
+            .hmlr-wf-lists__attached-link {
+                top: 6rem; 
+            }
         }
     }
     .hmlr-wf-lists__attached + .hmlr-wf-lists__attached {
