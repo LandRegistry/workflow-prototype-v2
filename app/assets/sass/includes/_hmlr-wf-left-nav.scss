@@ -12,7 +12,7 @@ ul.hmlr-left-nav {
     }
   
     & > li.hmlr-left-nav__active, 
-    & > li.hmlr-left-nav__active--child {
+    & > li.hmlr-left-nav__active--child {/* remove .hmlr-left-nav__active--child for production */
       ul {
         padding-left: govuk-spacing(7);//was 6. (6 = left aligned)
       }
@@ -76,7 +76,7 @@ ul.hmlr-left-nav {
 }  
 
 .hmlr-left-nav__active, 
-.hmlr-left-nav__active--child {
+.hmlr-left-nav__active--child {/* remove .hmlr-left-nav__active--child for production */
     ul {
       padding-left: govuk-spacing(6);
     }

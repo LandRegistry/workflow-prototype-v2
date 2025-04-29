@@ -70,7 +70,7 @@
 
     &.hmlr-wf-lists--tbody-spacing tbody:not(:last-child) tr:last-child {/*:not(:last-child) might not be needed?*/
         th, td {
-            padding-bottom: govuk-spacing(7);
+            padding-bottom: govuk-spacing(7); 
         }
     }
 
@@ -294,7 +294,7 @@
         &.hmlr-wf-lists__tab--leading {
             background-color: govuk-colour("light-grey"); 
             padding: govuk-spacing(1) (govuk-spacing(1) + 2px); 
-            margin-top: govuk-spacing(1);
+            margin-top: govuk-spacing(1); 
             
             @include govuk-media-query($from: desktop){
                 margin-left: - (govuk-spacing(1) + 1px); 
@@ -314,7 +314,7 @@
             }
         }
     }
-    &.hmlr-wf-lists--tbody-spacing .hmlr-wf-lists__attached:not(.hmlr-wf-lists__attached--last) tr:last-child th, 
+
     &.hmlr-wf-lists--tbody-spacing .hmlr-wf-lists__attached:not(.hmlr-wf-lists__attached--last) tr:last-child td {        
         padding-bottom: govuk-spacing(0) !important; 
 
@@ -322,9 +322,9 @@
             margin-bottom: govuk-spacing(1); 
         }
     }
-    &.hmlr-wf-lists--tbody-spacing .hmlr-wf-lists__attached:not(:first-of-type) tr:last-child th, 
-    &.hmlr-wf-lists--tbody-spacing .hmlr-wf-lists__attached:not(:first-of-type) tr:last-child td {
-        .hmlr-wf-lists__menu {
+
+    &.hmlr-wf-lists--tbody-spacing .hmlr-wf-lists__attached + .hmlr-wf-lists__attached tr:last-child td {
+        .hmlr-wf-lists__menu {//attached applications
             justify-content: right; 
 
             li:not(:last-child) {
@@ -332,16 +332,28 @@
             }
         }           
     }
+
+    &.hmlr-wf-lists--tbody-spacing .hmlr-wf-lists__attached {
+        & + .hmlr-wf-lists__attached:not(.hmlr-wf-lists__attached--last) tr:last-child td {
+            .hmlr-wf-lists__menu {
+                margin-bottom: govuk-spacing(1) !important; //not first nor last tbody.hmlr-wf-lists__attached
+            }
+        }
+
+        &:first-of-type ~ .hmlr-wf-lists__attached--last tr:last-child td {
+            padding-bottom: govuk-spacing(1) !important; //targets .hmlr-wf-lists__attached--last on the Progress Now pg
+        }
+    }
+
     .hmlr-wf-lists__attached + .hmlr-wf-lists__attached tr:first-child td:first-of-type { 
         position: relative; 
-
-        &::before {
+        /*&::before {
             content: "\2937"; 
             display: inline-block;
             text-align: center;  
             position: absolute;
             left: govuk-spacing(3);
-            top: govuk-spacing(2); /*1.6rem; */
+            top: govuk-spacing(2); 
 
             font-size: govuk-spacing(3); 
             width: govuk-spacing(4); 
@@ -350,8 +362,7 @@
             border-radius: 50%;
             color: govuk-colour("white"); 
             background-color: $govuk-input-border-colour;
-            /*width: 70px; height: 100%; border-right: 1px solid $govuk-border-colour;*/
-        }        
+        }*/  
     }
     /*.hmlr-wf-lists__attached:not(:first-of-type) {
         th, td {            
@@ -386,9 +397,36 @@
         .hmlr-wf-lists__menu {
             margin-bottom: govuk-spacing(0) !important;            
         }
+
         .hmlr-flag-icon-btn {/*not currently required: future proofing*/
             margin-right: auto;
         }
+
+        /*tr:last-child {
+            border-bottom: 2px solid transparent; //Set the border width 
+            border-image: linear-gradient(to right, transparent 10%, red, blue) 1;
+
+            td:first-of-type {
+                position: relative; 
+
+                
+
+
+        
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 10%;
+                    height: 100%;
+                    border-bottom: px solid $govuk-border-colour;
+                    border-left: 3px solid $govuk-border-colour;
+                    border-bottom-left-radius: 50%;
+                }
+            } 
+        }*/    
+
     }
     .hmlr-wf-lists__attached-show {
         visibility: unset !important;
@@ -396,7 +434,19 @@
     /* *** styles for .hmlr-wf-lists__attached (attached docs) ENDS *** */
 
 }
+/*
+tbody.hmlr-wf-lists__attached {
+    border-right: 2px solid $govuk-border-colour;
+    border-left: 2px solid $govuk-border-colour; 
 
+    tr td:first-of-type {
+        padding-left: 10px !important;
+    }
+    tr td:last-of-type {
+        padding-right: 10px !important;
+    }    
+}
+*/
 .js-enabled {
 
     .hmlr-wf-lists .hmlr-hide-my-notes .hmlr-my-notes-textarea {/* class 'hmlr-hide-my-notes' needs to be hardcoded onto the 'table#hmlrListTbl' tag */

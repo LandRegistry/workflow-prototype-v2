@@ -18,7 +18,7 @@
     </h1>
 
     <p class="govuk-body hmlr-secondary-text">
-      There are currently 9 cases in your Progress Later list. 
+      There are currently 8 cases in your Progress Later list.
     </p>
 
   </div>
@@ -37,73 +37,65 @@
       Skip to the main content
     </a>
 
-    <ul class="govuk-list hmlr-left-nav">
-      <li>
-          <a href="#" class="govuk-link govuk-link--no-visited-state">
-              Home
-          </a>
-      </li>
-      <li>
-          <a href="#" class="govuk-link govuk-link--no-visited-state">
-              Progress Now&nbsp;<span>(1)</span>
-          </a>
-      </li>
-      <li class="hmlr-left-nav__active">
-          <a href="#" class="govuk-link govuk-link--no-visited-state" aria-current="page">
-              Progress Later&nbsp;<span>(9)</span>
-          </a> 
+    <nav><!-- aria-label="Secondary" -->
 
-          <ul class="govuk-list">
-              <li>
-                  <a href="#" class="govuk-link govuk-link--no-visited-state">
-                      Expedited&nbsp;<span>(3)</span>
-                  </a> 
-              </li>
-              <li>
-                  <a href="#" class="govuk-link govuk-link--no-visited-state">
-                      Referred&nbsp;<span>(3)</span>
-                  </a> 
-              </li>
-              <li>
-                  <a href="#" class="govuk-link govuk-link--no-visited-state">
-                      Non-referred&nbsp;<span>(5)</span>
-                  </a> 
-              </li>                  
-              <li>
-                  <a href="#" class="govuk-link govuk-link--no-visited-state">
-                      My flagged cases&nbsp;<span>(3)</span>
-                  </a> 
-              </li>                            
-          </ul>            
-      </li>        
-      <li>
-          <a href="#" class="govuk-link govuk-link--no-visited-state">
-              Select a category of work
-          </a>
-      </li>
-      <!--li>
-          <a href="#" class="govuk-link govuk-link--no-visited-state">
-              Production information
-          </a>
-      </li--> 
-      <li>
-          <a href="#" class="govuk-link govuk-link--no-visited-state">
-              Manage assigned work
-          </a>
-      </li> 
-      <!--li>
-          <a href="#" class="govuk-link govuk-link--no-visited-state">
-              Report an issue
-          </a>
-      </li-->
-      <li>
-          <a href="#" class="govuk-link govuk-link--no-visited-state">
-              Search
-          </a>
-      </li>         
-  </ul>
-  
-</nav>  
+      <ul class="govuk-list hmlr-left-nav">
+          <li>
+            <a href="#" class="govuk-link govuk-link--no-visited-state">
+                Home
+            </a>
+          </li>
+          <li>
+            <a href="ui-c-complex-2-multi.html" class="govuk-link govuk-link--no-visited-state">
+                Progress Now&nbsp;<span>(1)</span>
+            </a>
+          </li>
+          <li class="hmlr-left-nav__active">
+            <a href="#" class="govuk-link govuk-link--no-visited-state" aria-current="page">
+                Progress Later&nbsp;<span>(8)</span>
+            </a> 
+
+            <ul class="govuk-list">
+                <li>
+                    <a href="#" class="govuk-link govuk-link--no-visited-state">
+                        Expedited&nbsp;<span>(2)</span>
+                    </a> 
+                </li>
+                <li>
+                    <a href="#" class="govuk-link govuk-link--no-visited-state">
+                        Referred&nbsp;<span>(3)</span>
+                    </a> 
+                </li>
+                <li>
+                    <a href="#" class="govuk-link govuk-link--no-visited-state">
+                        Non-referred&nbsp;<span>(5)</span>
+                    </a> 
+                </li>                  
+                <li>
+                    <a href="#" class="govuk-link govuk-link--no-visited-state">
+                        My flagged cases&nbsp;<span>(3)</span>
+                    </a> 
+                </li>                            
+            </ul>            
+          </li>       
+          <li>
+              <a href="#" class="govuk-link govuk-link--no-visited-state">
+                  Select a category of work
+              </a>
+          </li>
+          <li>
+              <a href="#" class="govuk-link govuk-link--no-visited-state">
+                  Manage assigned work
+              </a>
+          </li> 
+          <li>
+              <a href="#" class="govuk-link govuk-link--no-visited-state">
+                  Search
+              </a>
+          </li>         
+      </ul>
+      
+    </nav>  
   
   </section>
 
@@ -116,30 +108,7 @@
 
         {% include "../includes/inc_filters-statement-01.html" %}    
 
-        <div class="govuk-grid-column-one-half"> 
-      
-          <div class="hmlr-sort-right govuk-!-margin-bottom-4">
-    
-            <div class="govuk-form-group">
-              <label class="govuk-label govuk-!-font-size-16" for="onChangeSort">
-                Sorted by 
-              </label>
-              <select class="govuk-select govuk-!-font-size-16" id="onChangeSort" name="onChangeSort">
-                <option value="priority-newest" selected>Default ordering</option>
-                <option value="priority-newest">Priority date: Newest</option>
-                <option value="priority-oldest">Priority date: Oldest</option>
-                <option value="obtained-newest">Date obtained: Newest</option>
-                <option value="obtained-oldest">Date obtained: Oldest</option>
-              </select>
-            </div>
-    
-            <button class="govuk-button govuk-button--secondary govuk-!-font-size-16" type="submit">
-              Submit
-            </button>
-    
-          </div> 
-    
-        </div>
+        {% include "../includes/inc_basic-sorting-01.html" %}
 
       </div>
     
@@ -174,8 +143,6 @@
           <th scope="col" class="govuk-table__header">Obtained date</th>          
         </tr>
       </tfoot>     
-
-        
       
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
@@ -264,7 +231,7 @@
                   These are not PAS notes and can be viewed by your team. 
               </div>
 
-              <textarea class="govuk-textarea" id="my-notes-P897RWW" name="notes" rows="5" aria-describedby="my-note-hint-P897RWW"></textarea>
+              <textarea class="govuk-textarea" id="my-notes-P897RWW" name="my-notes-P897RWW" rows="5" aria-describedby="my-note-hint-P897RWW"></textarea>
 
               <div class="govuk-button-group">
                   <input type="button" id="save-notes-P897RWW" class="govuk-button" value="Save">
@@ -277,202 +244,205 @@
         </tr>
       </tbody>
 
-      <tbody class="govuk-table__body">
+      <tbody class="govuk-table__body hmlr-wf-lists__attached">
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Meta data</th>
-          <td class="govuk-table__cell">9 Sept 2024</td>
+          <td class="govuk-table__cell">22 Nov 2025</td>
           <td class="govuk-table__cell">
-            <abbr class="hmlr-nowrap">CB127994</abbr> <span class="hmlr-wf-lists__tab hmlr-wf-lists__tab--expedite">Expedite</span>
+            <abbr class="hmlr-nowrap">DU472991</abbr>
+            <span class="hmlr-wf-lists__tab hmlr-wf-lists__tab--expedite">Expedite</span>
           </td>
           <td class="govuk-table__cell">
-            <abbr class="hmlr-nowrap">J310SWW</abbr>
+            <abbr class="hmlr-nowrap">P772GER</abbr>
+            <span class="hmlr-wf-lists__tab hmlr-wf-lists__tab--leading">Leading application</span>
           </td>
-          <td class="govuk-table__cell">4 Oct 2024</td>                              
+          <td class="govuk-table__cell">5 Nov 2025</td>                              
         </tr>
-    
+
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Category and Next action</th>
           <td class="govuk-table__cell" colspan="2">
             <span class="hmlr-lowercase hmlr-lowercase--uppercase-first">
-              Volume Change of Ownership
+              Volume Register Update
             </span>
           </td>
           <td class="govuk-table__cell" colspan="3">
             Referral: TT3
           </td>          
         </tr>
-    
+
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Actions for title CB127994</th> <!-- *** NOTE the title number in this header *** -->
+          <th scope="row" class="govuk-table__header">Actions for title DU472991</th> <!-- *** NOTE the title number in this header *** -->
           <td class="govuk-table__cell" colspan="4"> 
-    
+
             <menu class="govuk-list hmlr-wf-lists__menu">
               <!--li>
-                  <input title="Open in CORA" type="button" id="open_btn_CB127994" class="govuk-button govuk-button--secondary" value="Open">
-                  </li-->
+                  <input title="Open in CORA" type="button" id="open_btn_P772GER" class="govuk-button" value="Open">
+              </li-->
               <li>
                   <a class="govuk-link govuk-link--no-visited-state" href="#">
-                      Return to <abbr>ESRV</abbr> 
-                  </a>
-              </li>
-                            <li>
-                  <a class="govuk-link govuk-link--no-visited-state" href="#">
-                      Refer 
-                  </a>
-              </li>
-              <li>
-                <a class="govuk-link govuk-link--no-visited-state" href="#">
-                    Work on this 
-                </a>
-              </li>
-              <li>
-                  <a class="govuk-link govuk-link--no-visited-state" href="#">
-                      Defer 
+                      Return to <abbr>ESRV</abbr> <span class="govuk-visually-hidden">&ndash; DU472991</span>
                   </a>
               </li>
               <li>
                   <a class="govuk-link govuk-link--no-visited-state" href="#">
-                      Activity history 
+                      Refer <span class="govuk-visually-hidden">&ndash; DU472991</span>
+                  </a>
+              </li>
+              <li>
+                <input type="button" id="btn_progress_later_P772GER" class="govuk-link  govuk-link--no-visited-state hmlr-btn-as-link" value="Progress later">
+              </li>
+              <li>
+                  <a class="govuk-link govuk-link--no-visited-state" href="#">
+                      Defer <span class="govuk-visually-hidden">&ndash; DU472991</span>
                   </a>
               </li>
               <li>
                   <a class="govuk-link govuk-link--no-visited-state" href="#">
-                      More info <!--abbr>CSLK</abbr-->
+                      Activity history <span class="govuk-visually-hidden">&ndash; DU472991</span>
                   </a>
               </li>
               <li>
-                <a class="govuk-link govuk-link--no-visited-state hmlr-my-notes" role="button" href="#my-notes-CB127994">
-                    Show my notes 
-                </a>
-              </li>               
+                  <a class="govuk-link govuk-link--no-visited-state" href="#">
+                      More info <span class="govuk-visually-hidden">&ndash; DU472991</span>
+                  </a>
+              </li>
+              <li class="hmlr-hide-when-no-js">
+                  <a class="govuk-link govuk-link--no-visited-state hmlr-my-notes" role="button" href="#my-notes-P772GER">
+                      <span>Show my notes</span> <span class="govuk-visually-hidden">&ndash; DU472991</span>
+                  </a>
+              </li> 
               <li>
-                <input type="button" id="flag_btn_J310SWW" class="govuk-link  govuk-link--no-visited-state hmlr-flag-icon-btn hmlr-btn-as-link" value="Add flag">
-                
-                <svg xmlns="http://www.w3.org/2000/svg" height="24" width="21" viewBox="0 0 448 512" class="hmlr-flag-icon" role="img" aria-hidden="true" aria-label="Case flagged"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#0b0c0c" d="M64 32C64 14.3 49.7 0 32 0S0 14.3 0 32L0 64 0 368 0 480c0 17.7 14.3 32 32 32s32-14.3 32-32l0-128 64.3-16.1c41.1-10.3 84.6-5.5 122.5 13.4c44.2 22.1 95.5 24.8 141.7 7.4l34.7-13c12.5-4.7 20.8-16.6 20.8-30l0-247.7c0-23-24.2-38-44.8-27.7l-9.6 4.8c-46.3 23.2-100.8 23.2-147.1 0c-35.1-17.6-75.4-22-113.5-12.5L64 48l0-16z"/></svg>
 
-            </li>                  
+                <input type="button" id="flag_btn_P772GER" class="govuk-link  govuk-link--no-visited-state hmlr-flag-icon-btn hmlr-btn-as-link" value="Add flag">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" width="21" viewBox="0 0 448 512" class="hmlr-flag-icon" role="img" aria-hidden="true" aria-label="Case flagged"><path fill="#0b0c0c" d="M64 32C64 14.3 49.7 0 32 0S0 14.3 0 32L0 64 0 368 0 480c0 17.7 14.3 32 32 32s32-14.3 32-32l0-128 64.3-16.1c41.1-10.3 84.6-5.5 122.5 13.4c44.2 22.1 95.5 24.8 141.7 7.4l34.7-13c12.5-4.7 20.8-16.6 20.8-30l0-247.7c0-23-24.2-38-44.8-27.7l-9.6 4.8c-46.3 23.2-100.8 23.2-147.1 0c-35.1-17.6-75.4-22-113.5-12.5L64 48l0-16z"/></svg>
+
+              </li>  
+              <li id="attached-DU472991" class="hmlr-wf-lists__attached-link hmlr-hide-when-no-js">
+                <a href="#" class="govuk-link govuk-link--no-visited-state" role="button">
+                    <span class="hmlr-this-text">Show attached applications</span>&nbsp;<span>(2)</span> <span class="govuk-visually-hidden">&ndash; DU472991</span> 
+                </a>
+              </li>                               
             </menu>
-    
+
             <div class="govuk-form-group hmlr-my-notes-textarea hmlr-my-notes-textarea--hide">
               
-              <label class="govuk-label govuk-!-font-size-16" for="my-notes-CB127994">
+              <label class="govuk-label govuk-!-font-size-16" for="my-notes-P772GER">
                   My notes (optional)
               </label>
-    
-              <div id="my-note-hint-CB127994" class="govuk-hint govuk-!-font-size-16">
+
+              <div id="my-note-hint-P772GER" class="govuk-hint govuk-!-font-size-16">
                   These are not PAS notes and can be viewed by your team. 
               </div>
-    
-              <textarea class="govuk-textarea" id="my-notes-CB127994" name="notes" rows="5" aria-describedby="my-note-hint-CB127994"></textarea>
-    
+
+              <textarea class="govuk-textarea" id="my-notes-P772GER" name="notes" rows="5" aria-describedby="my-note-hint-P772GER"></textarea>
+
               <div class="govuk-button-group">
-                  <input type="button" id="save-notes-CB127994" class="govuk-button" value="Save">
+                  <input type="button" id="save-notes-P772GER" class="govuk-button" value="Save">
                   <!--a href="#" class="govuk-link govuk-link--no-visited-state hmlr-my-notes" role="button">Hide my notes <span class="govuk-visually-hidden">display</span></a-->
               </div>
-    
+
             </div>
-    
+
           </td>
         </tr>
-      </tbody>    
+      </tbody>
 
-      <tbody class="govuk-table__body">
+      <tbody class="govuk-table__body hmlr-wf-lists__attached">
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Meta data</th>
-          <td class="govuk-table__cell">13 Aug 2024</td>
+          <td class="govuk-table__cell"> <span class="govuk-visually-hidden">&ndash;</span> </td>
           <td class="govuk-table__cell">
-            <abbr class="hmlr-nowrap">DT102641</abbr> <span class="hmlr-wf-lists__tab hmlr-wf-lists__tab--expedite">Expedite</span>
+            <abbr class="hmlr-nowrap">DU165257</abbr>
           </td>
           <td class="govuk-table__cell">
-            <abbr class="hmlr-nowrap">V519SWW</abbr>
+            <abbr class="hmlr-nowrap">P772GER</abbr>
+            <span class="hmlr-wf-lists__tab hmlr-wf-lists__tab--leading">Attached to <abbr class="hmlr-nowrap">DU472991</abbr></span>
           </td>
-          <td class="govuk-table__cell">29 July 2024</td>                              
+          <td class="govuk-table__cell">5 Nov 2025</td>                              
         </tr>
-    
+
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Category and Next action</th>
           <td class="govuk-table__cell" colspan="2">
             <span class="hmlr-lowercase hmlr-lowercase--uppercase-first">
-              Volume Change of Ownership
+              Volume Register Update
             </span>
           </td>
           <td class="govuk-table__cell" colspan="3">
-            Phone call needed
+            Referral: TT3
           </td>          
         </tr>
-    
+
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Actions for title DT102641</th> <!-- *** NOTE the title number in this header *** -->
+          <th scope="row" class="govuk-table__header">Actions for title DU165257</th> 
           <td class="govuk-table__cell" colspan="4"> 
- 
+
             <menu class="govuk-list hmlr-wf-lists__menu">
-              <!--li>
-                  <input title="Open in CORA" type="button" id="open_btn_DT102641" class="govuk-button govuk-button--secondary" value="Open">                  
-              </li-->
               <li>
                   <a class="govuk-link govuk-link--no-visited-state" href="#">
-                      Return to <abbr>ESRV</abbr> 
-                  </a>
-              </li>
-                            <li>
-                  <a class="govuk-link govuk-link--no-visited-state" href="#">
-                      Refer 
-                  </a>
-              </li>
-              <li>
-                <a class="govuk-link govuk-link--no-visited-state" href="#">
-                    Work on this 
-                </a>
-              </li>
-              <li>
-                  <a class="govuk-link govuk-link--no-visited-state" href="#">
-                      Defer 
+                      Activity history <span class="govuk-visually-hidden">&ndash; DU165257</span>
                   </a>
               </li>
               <li>
                   <a class="govuk-link govuk-link--no-visited-state" href="#">
-                      Activity history 
+                      More info <span class="govuk-visually-hidden">&ndash; DU165257</span>
                   </a>
               </li>
-              <li>
-                  <a class="govuk-link govuk-link--no-visited-state" href="#">
-                      More info 
-                  </a>
-              </li>
-              <li>
-                <a class="govuk-link govuk-link--no-visited-state hmlr-my-notes" role="button" href="#my-notes-DT102641">
-                    Show my notes 
-                </a>
-              </li>               
-              <li>
-                <input type="button" id="flag_btn_DT102641" class="govuk-link  govuk-link--no-visited-state hmlr-flag-icon-btn hmlr-btn-as-link" value="Add flag">
-                
-                <svg xmlns="http://www.w3.org/2000/svg" height="24" width="21" viewBox="0 0 448 512" class="hmlr-flag-icon" role="img" aria-hidden="false" aria-label="Case flagged"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#0b0c0c" d="M64 32C64 14.3 49.7 0 32 0S0 14.3 0 32L0 64 0 368 0 480c0 17.7 14.3 32 32 32s32-14.3 32-32l0-128 64.3-16.1c41.1-10.3 84.6-5.5 122.5 13.4c44.2 22.1 95.5 24.8 141.7 7.4l34.7-13c12.5-4.7 20.8-16.6 20.8-30l0-247.7c0-23-24.2-38-44.8-27.7l-9.6 4.8c-46.3 23.2-100.8 23.2-147.1 0c-35.1-17.6-75.4-22-113.5-12.5L64 48l0-16z"/></svg>
-              </li>    
             </menu>
-    
-            <div class="govuk-form-group hmlr-my-notes-textarea hmlr-my-notes-textarea--hide">
-              
-              <label class="govuk-label govuk-!-font-size-16" for="my-notes-DT102641">
-                  My notes (optional)
-              </label>
-    
-              <div id="my-note-hint-DT102641" class="govuk-hint govuk-!-font-size-16">
-                  These are not PAS notes and can be viewed by your team. 
-              </div>
-    
-              <textarea class="govuk-textarea" id="my-notes-DT102641" name="notes" rows="5" aria-describedby="my-note-hint-DT102641"></textarea>
-    
-              <div class="govuk-button-group">
-                  <input type="button" id="save-notes-DT102641" class="govuk-button" value="Save">
-                  <!--a href="#" class="govuk-link govuk-link--no-visited-state hmlr-my-notes" role="button">Hide my notes <span class="govuk-visually-hidden">display</span></a-->
-              </div>
-    
-            </div>
-    
+
           </td>
         </tr>
       </tbody> 
+      
+      <tbody class="govuk-table__body hmlr-wf-lists__attached">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Meta data</th>
+          <td class="govuk-table__cell"> <span class="govuk-visually-hidden">&ndash;</span> </td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">DU165256</abbr>
+          </td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">P772GER</abbr>
+            <span class="hmlr-wf-lists__tab hmlr-wf-lists__tab--leading">Attached to <abbr class="hmlr-nowrap">DU472991</abbr></span>
+          </td>
+          <td class="govuk-table__cell">5 Nov 2025</td>                              
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Category and Next action</th>
+          <td class="govuk-table__cell" colspan="2">
+            <span class="hmlr-lowercase hmlr-lowercase--uppercase-first">
+              Volume Register Update
+            </span>
+          </td>
+          <td class="govuk-table__cell" colspan="3">
+            Referral: TT3
+          </td>          
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Actions for title DU165256</th> 
+          <td class="govuk-table__cell" colspan="4"> 
+
+            <menu class="govuk-list hmlr-wf-lists__menu">
+              <li>
+                  <a class="govuk-link govuk-link--no-visited-state" href="#">
+                      Activity history <span class="govuk-visually-hidden">&ndash; DU165256</span>
+                  </a>
+              </li>
+              <li>
+                  <a class="govuk-link govuk-link--no-visited-state" href="#">
+                      More info <span class="govuk-visually-hidden">&ndash; DU165256</span>
+                  </a>
+              </li>
+            </menu>
+
+          </td>
+        </tr>
+      </tbody>   
+       
 
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
@@ -559,7 +529,7 @@
                   These are not PAS notes and can be viewed by your team. 
               </div>
     
-              <textarea class="govuk-textarea" id="my-notes-DU779212" name="notes" rows="5" aria-describedby="my-note-hint-DU779212"></textarea>
+              <textarea class="govuk-textarea" id="my-notes-DU779212" name="my-notes-DU779212" rows="5" aria-describedby="my-note-hint-DU779212"></textarea>
     
               <div class="govuk-button-group">
                   <input type="button" id="save-notes-DU779212" class="govuk-button" value="Save">
@@ -571,6 +541,104 @@
           </td>
         </tr>
       </tbody>        
+      
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Meta data</th>
+          <td class="govuk-table__cell">13 Aug 2024</td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">DT102641</abbr>
+          </td>
+          <td class="govuk-table__cell">
+            <abbr class="hmlr-nowrap">V519SWW</abbr>
+          </td>
+          <td class="govuk-table__cell">29 July 2024</td>                              
+        </tr>
+    
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Category and Next action</th>
+          <td class="govuk-table__cell" colspan="2">
+            <span class="hmlr-lowercase hmlr-lowercase--uppercase-first">
+              Volume Change of Ownership
+            </span>
+          </td>
+          <td class="govuk-table__cell" colspan="3">
+            Phone call needed
+          </td>          
+        </tr>
+    
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Actions for title DT102641</th> <!-- *** NOTE the title number in this header *** -->
+          <td class="govuk-table__cell" colspan="4"> 
+ 
+            <menu class="govuk-list hmlr-wf-lists__menu">
+              <!--li>
+                  <input title="Open in CORA" type="button" id="open_btn_DT102641" class="govuk-button govuk-button--secondary" value="Open">                  
+              </li-->
+              <li>
+                  <a class="govuk-link govuk-link--no-visited-state" href="#">
+                      Return to <abbr>ESRV</abbr> 
+                  </a>
+              </li>
+                            <li>
+                  <a class="govuk-link govuk-link--no-visited-state" href="#">
+                      Refer 
+                  </a>
+              </li>
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="#">
+                    Work on this 
+                </a>
+              </li>
+              <li>
+                  <a class="govuk-link govuk-link--no-visited-state" href="#">
+                      Defer 
+                  </a>
+              </li>
+              <li>
+                  <a class="govuk-link govuk-link--no-visited-state" href="#">
+                      Activity history 
+                  </a>
+              </li>
+              <li>
+                  <a class="govuk-link govuk-link--no-visited-state" href="#">
+                      More info 
+                  </a>
+              </li>
+              <li class="hmlr-hide-when-no-js">
+                <a class="govuk-link govuk-link--no-visited-state hmlr-my-notes" role="button" href="#my-notes-DT102641">
+                  <span>Show my notes</span> <span class="govuk-visually-hidden">&ndash; DT102641</span>
+                </a>
+              </li>               
+              <li>
+                <input type="button" id="flag_btn_DT102641" class="govuk-link  govuk-link--no-visited-state hmlr-flag-icon-btn hmlr-btn-as-link" value="Remove flag">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" width="21" viewBox="0 0 448 512" class="hmlr-flag-icon hmlr-flag-icon-show" role="img" aria-hidden="false" aria-label="Case flagged"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#0b0c0c" d="M64 32C64 14.3 49.7 0 32 0S0 14.3 0 32L0 64 0 368 0 480c0 17.7 14.3 32 32 32s32-14.3 32-32l0-128 64.3-16.1c41.1-10.3 84.6-5.5 122.5 13.4c44.2 22.1 95.5 24.8 141.7 7.4l34.7-13c12.5-4.7 20.8-16.6 20.8-30l0-247.7c0-23-24.2-38-44.8-27.7l-9.6 4.8c-46.3 23.2-100.8 23.2-147.1 0c-35.1-17.6-75.4-22-113.5-12.5L64 48l0-16z"/></svg>
+              </li>    
+            </menu>
+    
+            <div class="govuk-form-group hmlr-my-notes-textarea hmlr-my-notes-textarea--hide">
+              
+              <label class="govuk-label govuk-!-font-size-16" for="my-notes-DT102641">
+                  My notes (optional)
+              </label>
+    
+              <div id="my-note-hint-DT102641" class="govuk-hint govuk-!-font-size-16">
+                  These are not PAS notes and can be viewed by your team. 
+              </div>
+    
+              <textarea class="govuk-textarea" id="my-notes-DT102641" name="my-notes-DT102641" rows="5" aria-describedby="my-note-hint-DT102641">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, odit rerum. Quos earum vero velit nesciunt molestiae officia aliquid voluptatibus blanditiis ipsa veniam sit, optio dignissimos minima officiis assumenda quo. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi minus est quisquam labore, optio, possimus, recusandae distinctio libero explicabo iste alias. Incidunt dolorum doloremque pariatur blanditiis omnis rem expedita nesciunt! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, provident non! Voluptas neque dolorum voluptatibus consequatur cupiditate molestiae enim ipsa, sed voluptatum quia, quasi iste nesciunt quibusdam distinctio quis reprehenderit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, odit rerum. Quos earum vero velit nesciunt molestiae officia aliquid voluptatibus blanditiis ipsa veniam sit, optio dignissimos minima officiis assumenda quo. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi minus est quisquam labore, optio, possimus, recusandae distinctio libero explicabo iste alias. Incidunt dolorum doloremque pariatur blanditiis omnis rem expedita nesciunt! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, provident non! Voluptas neque dolorum voluptatibus consequatur cupiditate molestiae enim ipsa, sed voluptatum quia, quasi iste nesciunt quibusdam distinctio quis reprehenderit.</textarea>
+    
+              <div class="govuk-button-group">
+                  <input type="button" id="save-notes-DT102641" class="govuk-button" value="Save">
+                  <!--a href="#" class="govuk-link govuk-link--no-visited-state hmlr-my-notes" role="button">Hide my notes <span class="govuk-visually-hidden">display</span></a-->
+              </div>
+    
+            </div>
+    
+          </td>
+        </tr>
+      </tbody> 
       
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
@@ -635,15 +703,15 @@
                       More info 
                   </a>
               </li>
-              <li>
+              <li class="hmlr-hide-when-no-js">
                 <a class="govuk-link govuk-link--no-visited-state hmlr-my-notes" role="button" href="#my-notes-DU164222">
-                    Show my notes 
+                  <span>Show my notes</span> <span class="govuk-visually-hidden">&ndash; DU164222</span>
                 </a>
               </li>               
               <li>
-                <input type="button" id="flag_btn_DU164222" class="govuk-link  govuk-link--no-visited-state hmlr-flag-icon-btn hmlr-btn-as-link" value="Add flag">
+                <input type="button" id="flag_btn_DU164222" class="govuk-link  govuk-link--no-visited-state hmlr-flag-icon-btn hmlr-btn-as-link" value="Remove flag">
                 
-                <svg xmlns="http://www.w3.org/2000/svg" height="24" width="21" viewBox="0 0 448 512" class="hmlr-flag-icon" role="img" aria-hidden="false" aria-label="Case flagged"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#0b0c0c" d="M64 32C64 14.3 49.7 0 32 0S0 14.3 0 32L0 64 0 368 0 480c0 17.7 14.3 32 32 32s32-14.3 32-32l0-128 64.3-16.1c41.1-10.3 84.6-5.5 122.5 13.4c44.2 22.1 95.5 24.8 141.7 7.4l34.7-13c12.5-4.7 20.8-16.6 20.8-30l0-247.7c0-23-24.2-38-44.8-27.7l-9.6 4.8c-46.3 23.2-100.8 23.2-147.1 0c-35.1-17.6-75.4-22-113.5-12.5L64 48l0-16z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" width="21" viewBox="0 0 448 512" class="hmlr-flag-icon hmlr-flag-icon-show" role="img" aria-hidden="false" aria-label="Case flagged"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#0b0c0c" d="M64 32C64 14.3 49.7 0 32 0S0 14.3 0 32L0 64 0 368 0 480c0 17.7 14.3 32 32 32s32-14.3 32-32l0-128 64.3-16.1c41.1-10.3 84.6-5.5 122.5 13.4c44.2 22.1 95.5 24.8 141.7 7.4l34.7-13c12.5-4.7 20.8-16.6 20.8-30l0-247.7c0-23-24.2-38-44.8-27.7l-9.6 4.8c-46.3 23.2-100.8 23.2-147.1 0c-35.1-17.6-75.4-22-113.5-12.5L64 48l0-16z"/></svg>
               </li>    
             </menu>
     
@@ -657,7 +725,7 @@
                   These are not PAS notes and can be viewed by your team. 
               </div>
     
-              <textarea class="govuk-textarea" id="my-notes-DU164222" name="notes" rows="5" aria-describedby="my-note-hint-DU164222"></textarea>
+              <textarea class="govuk-textarea" id="my-notes-DU164222" name="my-notes-DU164222" rows="5" aria-describedby="my-note-hint-DU164222"></textarea>
     
               <div class="govuk-button-group">
                   <input type="button" id="save-notes-DU164222" class="govuk-button" value="Save">
@@ -733,9 +801,9 @@
                       More info 
                   </a>
               </li>
-              <li>
+              <li class="hmlr-hide-when-no-js">
                 <a class="govuk-link govuk-link--no-visited-state hmlr-my-notes" role="button" href="#my-notes-DT102642">
-                    Show my notes 
+                  <span>Show my notes</span> <span class="govuk-visually-hidden">&ndash; DT102642</span>
                 </a>
               </li>              
               <li>
@@ -755,7 +823,7 @@
                   These are not PAS notes and can be viewed by your team. 
               </div>
     
-              <textarea class="govuk-textarea" id="my-notes-DT102642" name="notes" rows="5" aria-describedby="my-note-hint-DT102641"></textarea>
+              <textarea class="govuk-textarea" id="my-notes-DT102642" name="my-notes-DT102642" rows="5" aria-describedby="my-note-hint-DT102641"></textarea>
     
               <div class="govuk-button-group">
                   <input type="button" id="save-notes-DT102641" class="govuk-button" value="Save">
@@ -831,15 +899,15 @@
                       More info 
                   </a>
               </li>
-              <li>
+              <li class="hmlr-hide-when-no-js">
                 <a class="govuk-link govuk-link--no-visited-state hmlr-my-notes" role="button" href="#my-notes-DU164190">
-                    Show my notes 
+                  <span>Show my notes</span> <span class="govuk-visually-hidden">&ndash; DU164190</span>
                 </a>
               </li>              
               <li>
-                <input type="button" id="flag_btn_DU164190" class="govuk-link  govuk-link--no-visited-state hmlr-flag-icon-btn hmlr-btn-as-link" value="Add flag">
+                <input type="button" id="flag_btn_DU164190" class="govuk-link  govuk-link--no-visited-state hmlr-flag-icon-btn hmlr-btn-as-link" value="Remove flag">
                 
-                <svg xmlns="http://www.w3.org/2000/svg" height="24" width="21" viewBox="0 0 448 512" class="hmlr-flag-icon" role="img" aria-hidden="false" aria-label="Case flagged"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#0b0c0c" d="M64 32C64 14.3 49.7 0 32 0S0 14.3 0 32L0 64 0 368 0 480c0 17.7 14.3 32 32 32s32-14.3 32-32l0-128 64.3-16.1c41.1-10.3 84.6-5.5 122.5 13.4c44.2 22.1 95.5 24.8 141.7 7.4l34.7-13c12.5-4.7 20.8-16.6 20.8-30l0-247.7c0-23-24.2-38-44.8-27.7l-9.6 4.8c-46.3 23.2-100.8 23.2-147.1 0c-35.1-17.6-75.4-22-113.5-12.5L64 48l0-16z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" width="21" viewBox="0 0 448 512" class="hmlr-flag-icon hmlr-flag-icon-show" role="img" aria-hidden="false" aria-label="Case flagged"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#0b0c0c" d="M64 32C64 14.3 49.7 0 32 0S0 14.3 0 32L0 64 0 368 0 480c0 17.7 14.3 32 32 32s32-14.3 32-32l0-128 64.3-16.1c41.1-10.3 84.6-5.5 122.5 13.4c44.2 22.1 95.5 24.8 141.7 7.4l34.7-13c12.5-4.7 20.8-16.6 20.8-30l0-247.7c0-23-24.2-38-44.8-27.7l-9.6 4.8c-46.3 23.2-100.8 23.2-147.1 0c-35.1-17.6-75.4-22-113.5-12.5L64 48l0-16z"/></svg>
               </li>    
             </menu>
     
@@ -853,7 +921,7 @@
                   These are not PAS notes and can be viewed by your team. 
               </div>
     
-              <textarea class="govuk-textarea" id="my-notes-DU164190" name="notes" rows="5" aria-describedby="my-note-hint-DU164190"></textarea>
+              <textarea class="govuk-textarea" id="my-notes-DU164190" name="my-notes-DU164190" rows="5" aria-describedby="my-note-hint-DU164190">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, odit rerum. Quos earum vero velit nesciunt molestiae officia aliquid voluptatibus blanditiis ipsa veniam sit, optio dignissimos minima officiis assumenda quo. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi minus est quisquam labore, optio, possimus, recusandae distinctio libero explicabo iste alias. Incidunt dolorum doloremque pariatur blanditiis omnis rem expedita nesciunt! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, provident non! Voluptas neque dolorum voluptatibus consequatur cupiditate molestiae enim ipsa, sed voluptatum quia, quasi iste nesciunt quibusdam distinctio quis reprehenderit.</textarea>
     
               <div class="govuk-button-group">
                   <input type="button" id="save-notes-DU164190" class="govuk-button" value="Save">
@@ -931,7 +999,7 @@
               </li>
               <li class="hmlr-hide-when-no-js">
                   <a class="govuk-link govuk-link--no-visited-state hmlr-my-notes" role="button" href="#my-notes-DU178082">
-                      <span>Show my notes</span> <span class="govuk-visually-hidden">&ndash; XXXtitleNoXXX</span>
+                      <span>Show my notes</span> <span class="govuk-visually-hidden">&ndash; DU178082</span>
                   </a>
               </li> 
               <li>
@@ -951,7 +1019,7 @@
                   These are not PAS notes and can be viewed by your team. 
               </div>
     
-              <textarea class="govuk-textarea" id="my-notes-DU178082" name="notes" rows="5" aria-describedby="my-note-hint-DU178082"></textarea>
+              <textarea class="govuk-textarea" id="my-notes-DU178082" name="my-notes-DU178082" rows="5" aria-describedby="my-note-hint-DU178082"></textarea>
     
               <div class="govuk-button-group">
                   <input type="button" id="save-notes-DU178082" class="govuk-button" value="Save">
@@ -965,7 +1033,6 @@
       </tbody>   
  
   </table>
-
 
 
 
