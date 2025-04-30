@@ -92,6 +92,10 @@ button.hmlr-btn-as-link {
         display: inline-block !important;
     }
 }
+
+.hmlr-no-wrap {
+    white-space: nowrap;
+}
 /* ... hmlr mixins and globals ends */
 
 
@@ -139,7 +143,8 @@ body .govuk-header__container {
 @import "./includes/hmlr-wf-lists";/* the list tables */
 @import "./includes/hmlr-table-dynamic"; 
 /*@import "./includes/hmlr-filters-ordering";*/
-@import "./includes/hmlr-form-grouping"; /* already have this in the build? Need to update */
+@import "./includes/hmlr-form-grouping"; /* updated expedite radios */
+@import "./includes/hmlr-sort-right";
 }
 
 .hmlr-wf-width-container--wide {
@@ -152,29 +157,6 @@ body .govuk-header__container {
     }
 }
 
-.hmlr-sort-right {//create standalone file if this is used
-
-    select {
-        width: auto;
-    }
-    
-    & > .govuk-form-group {
-        margin-bottom: govuk-spacing(0) !important;
-    }
-
-    button, input[type="submit"]{
-        padding: govuk-spacing(1) govuk-spacing(1) (govuk-spacing(1) - 2) govuk-spacing(1); 
-        margin-top: govuk-spacing(1);
-    }
-
-    .js-enabled & {
-        button, input[type="submit"]{
-            position: absolute; 
-            left: -3000px; 
-            top: -3000px; 
-        }
-    }    
-}
 /*@include govuk-media-query($from: desktop){
     .hmlr-filter-label {//create standalone file if this is used
         display: flex;

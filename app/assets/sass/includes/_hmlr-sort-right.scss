@@ -1,0 +1,30 @@
+.hmlr-sort-right {
+    select {
+        width: auto;
+    }
+    
+    & > .govuk-form-group {
+        margin-bottom: govuk-spacing(0) !important;
+    }
+
+    button, input[type="submit"]{
+        padding: govuk-spacing(1) govuk-spacing(1) (govuk-spacing(1) - 2) govuk-spacing(1); 
+        margin-top: govuk-spacing(1);
+    }
+
+    /*.js-enabled & {
+        button, input[type="submit"]{
+            position: absolute; 
+            left: -3000px; 
+            top: -3000px; 
+        }
+    }*/    
+}
+
+.js-enabled .hmlr-sort-right {
+    button, input[type="submit"]{
+        position: absolute; 
+        left: -3000px; 
+        top: -3000px; 
+    }
+}

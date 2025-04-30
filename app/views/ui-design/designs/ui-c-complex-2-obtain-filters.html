@@ -1,0 +1,144 @@
+{% extends "layouts/wf_layout-ui-designs.html" %}
+
+{% set pageName="{{ serviceName }} Progress Later" %}
+
+{% block header %}
+  {% include "../includes/inc_top-nav-std.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+    
+<div class="govuk-grid-row hmlr-min-height-header-sm">
+  <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-3">
+
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-1">
+      Progress Now
+    </h1>
+
+    <p class="govuk-body hmlr-secondary-text">
+      Executive Register Update Complex is your current <a href="#" class="govuk-link govuk-link--no-visited-state">category of work</a>.
+    </p>
+
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+
+  </div>      
+
+</div>
+
+
+<div class="govuk-grid-row">
+  <section class="govuk-grid-column-one-quarter govuk-!-padding-right-0">
+
+    <a href="#page-content" class="govuk-skip-link hmlr-skip-link">
+      Skip to the main content
+    </a>
+
+    <nav><!-- aria-label="Secondary" -->
+
+      <ul class="govuk-list hmlr-left-nav">
+          <li>
+              <a href="#" class="govuk-link govuk-link--no-visited-state">
+                  Home
+              </a>
+          </li>
+          <li class="hmlr-left-nav__active">
+              <a href="#" class="govuk-link govuk-link--no-visited-state" aria-current="page">
+                  Progress Now&nbsp;<span>(0)</span>
+              </a>
+          </li>
+          <li>
+              <a href="#" class="govuk-link govuk-link--no-visited-state">
+                  Progress Later&nbsp;<span>(8)</span>
+              </a> 
+          </li>        
+          <li>
+              <a href="#" class="govuk-link govuk-link--no-visited-state">
+                  Select a category of work
+              </a>
+          </li>
+          <li>
+              <a href="#" class="govuk-link govuk-link--no-visited-state">
+                  Manage assigned work
+              </a>
+          </li> 
+          <li>
+              <a href="#" class="govuk-link govuk-link--no-visited-state">
+                  Search
+              </a>
+          </li>         
+      </ul>
+      
+    </nav>
+  
+  </section>
+
+  <section class="govuk-grid-column-three-quarters" id="page-content" role="region">
+
+    <!-- ******************************** START MAIN RIGHT COL CONTENT ********************** -->
+
+
+    <!--p class="govuk-body-s">
+        
+      Your category of work is <span class="bold">Executive Register Update Complex</span>.
+      
+      <a href="#" class="govuk-link govuk-link--no-visited-state">Change your category of work</a>.
+    </p-->
+
+    <div class="govuk-inset-text govuk-!-margin-top-2 govuk-!-margin-bottom-4 govuk-!-padding-top-2 govuk-!-padding-bottom-2">
+      <p class="govuk-body-s">
+        Executive Register Update Complex. <a href="#" class="govuk-link govuk-link--no-visited-state hmlr-no-wrap">Change your category of work</a>.
+      </p>
+    </div>
+
+    <div class="govuk-form-group">
+      <form action="#" method="post" novalidate="novalidate">
+
+        <div class="govuk-form-group hmlr-form-grouping">
+          <fieldset class="govuk-fieldset">
+
+            <legend class="govuk-fieldset__legend--s govuk-visually-hidden">
+              Select which type of application to obtain
+            </legend>
+
+            <div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="expedited" name="expedited" type="radio" value="expedited-oldest" checked="">
+                <label class="govuk-label govuk-radios__label govuk-!-font-size-16" for="expedited">
+                  Expedited: Oldest
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="expedited-2" name="expedited" type="radio" value="expedited-newest">
+                <label class="govuk-label govuk-radios__label govuk-!-font-size-16" for="expedited-2">
+                  Expedited: Newest
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="expedited-3" name="expedited" type="radio" value="non-expedited">
+                <label class="govuk-label govuk-radios__label govuk-!-font-size-16" for="expedited-3">
+                  Non-expedited
+                </label>
+              </div>
+            </div>
+          </fieldset>
+
+          <input name="csrf_token" type="hidden" value="IjI2YzBiY2QwNzJiZjE0M2M3MDMxZGQ1M2UyMTBkMDNhMWE3YTdiZmYi.ZddyBQ.PDWdSpYFF66m1bvmIBfGNnQ9gwY">
+
+          <input type="submit" id="button_obtain" value="Obtain" class="govuk-button" data-double-click-prevention="true">           
+        </div>
+        
+      </form>
+    </div>
+
+    <!-- ******************************** END MAIN RIGHT COL CONTENT ************************ -->
+
+  </section>
+</div>
+
+{% include "../includes/inc_js-for-pl-functionality.html" %}
+
+{% endblock %}
