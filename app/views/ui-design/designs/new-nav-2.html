@@ -1,0 +1,116 @@
+{% extends "layouts/wf_layout-ui-designs.html" %}
+
+{% set pageName="{{ serviceName }} Progress Later" %}
+
+{% block header %}
+  {% include "../includes/inc_top-nav-std.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+    
+<div class="govuk-grid-row hmlr-min-height-header-sm">
+  <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-3">
+
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-1">
+      Progress Now
+    </h1>
+
+    <p class="govuk-body hmlr-secondary-text">
+      Executive Register Update Complex is your current <a href="#" class="govuk-link govuk-link--no-visited-state">category of work</a>.
+    </p>
+
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+
+  </div>      
+
+</div>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter govuk-!-padding-right-0">
+
+    <a href="#page-content" class="govuk-skip-link hmlr-skip-link">
+      Skip to the main content
+    </a>
+
+    <nav>
+      <ul class="govuk-list hmlr-left-nav">
+          <li>
+              <a href="" class="govuk-link govuk-link--no-visited-state">
+                  Home
+              </a>
+          </li>
+          <li>
+              <a href="new-nav-1.html" class="govuk-link govuk-link--no-visited-state">
+                  Progress Now&nbsp;<span>(1)</span>
+              </a>
+          </li>
+          <li class="hmlr-left-nav__active">
+              <a href="#" class="govuk-link govuk-link--no-visited-state" aria-current="page">
+                  Progress Later&nbsp;<span>(8)</span>
+              </a> 
+  
+              <ul class="govuk-list">
+                  <li>
+                      <a href="#" class="govuk-link govuk-link--no-visited-state">
+                          Expedited&nbsp;<span>(2)</span>
+                      </a> 
+                  </li>
+                  <li>
+                      <a href="#" class="govuk-link govuk-link--no-visited-state">
+                          Referred&nbsp;<span>(3)</span>
+                      </a> 
+                  </li>
+                  <li>
+                      <a href="#" class="govuk-link govuk-link--no-visited-state">
+                          Non-referred&nbsp;<span>(5)</span>
+                      </a> 
+                  </li>                  
+                  <li>
+                      <a href="#" class="govuk-link govuk-link--no-visited-state">
+                          My flagged cases&nbsp;<span>(3)</span>
+                      </a> 
+                  </li>                            
+              </ul>            
+          </li>        
+          <li>
+              <a href="#" class="govuk-link govuk-link--no-visited-state">
+                  Select a category of work
+              </a>
+          </li>
+          <li>
+              <a href="#" class="govuk-link govuk-link--no-visited-state">
+                  Manage assigned work
+              </a>
+          </li> 
+          <li>
+              <a href="#" class="govuk-link govuk-link--no-visited-state">
+                  Search
+              </a>
+          </li>         
+      </ul>
+    </nav>    
+  
+  </div>
+
+  <section id="page-content" class="govuk-grid-column-three-quarters" role="region">
+
+    <!-- ******************************** START MAIN RIGHT COL CONTENT ********************** -->
+
+
+
+
+
+
+    <!-- ******************************** END MAIN RIGHT COL CONTENT ************************ -->
+
+  </section>
+</div>
+
+{% include "../includes/inc_js-for-pl-functionality.html" %}
+
+{% endblock %}
