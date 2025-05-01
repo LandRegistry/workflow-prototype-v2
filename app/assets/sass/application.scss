@@ -139,7 +139,7 @@ body .govuk-header__container {
 
 /* new ui sass begins */  /* don't forget to grab the mixins from the 'hmlr-wf-mixins' */
 @import "./includes/hmlr-vertical-filters";
-@import "./includes/hmlr-wf-left-nav";
+@import "./includes/hmlr-left-nav";
 @import "./includes/hmlr-wf-lists";/* the list tables */
 @import "./includes/hmlr-table-dynamic"; 
 /*@import "./includes/hmlr-filters-ordering";*/
