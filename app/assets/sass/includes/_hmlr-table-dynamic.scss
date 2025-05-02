@@ -59,7 +59,7 @@ table.hmlr-table-dynamic {
         tr {
             margin: govuk-spacing(0);
         }
-        /*tr:nth-child(odd) {background: #ccc; }*/
+        /*tr:nth-child(odd) {background-color: #ccc; }*/
     
 		td {
 			border-bottom: 1px solid $govuk-border-colour;

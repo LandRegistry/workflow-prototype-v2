@@ -1,0 +1,54 @@
+/* wrap a std gds banner in a div with .hmlr-wf-notification-banner */
+.govuk-main-wrapper > .govuk-grid-row > div.hmlr-wf-notification-banner .govuk-notification-banner:first-of-type {
+    margin-top: - govuk-spacing(3);
+}
+
+.hmlr-wf-notification-banner { 
+
+    margin-bottom: govuk-spacing(4);
+
+    .govuk-notification-banner {
+        margin-bottom: govuk-spacing(0);
+    }    
+
+    .govuk-notification-banner__content > * {
+        max-width: none;
+    }
+
+    &.hmlr-wf-notification-banner--centered {
+        float: none;
+        margin-right: auto; 
+        margin-left: auto;
+    }
+
+    &.hmlr-wf-notification-banner--normal {
+        .govuk-notification-banner__heading {
+            font-weight: normal;
+        }
+    }
+
+    &.hmlr-wf-notification-banner--low-padding {
+        .govuk-notification-banner__content {
+            padding: govuk-spacing(2) govuk-spacing(4);
+        }
+    }
+    
+    &.hmlr-wf-notification-banner--font-size-19 {
+        margin-bottom: govuk-spacing(6);
+        
+        .govuk-notification-banner__heading, 
+        .govuk-body {
+            @include govuk-font($size: 19, $weight: inherit, $line-height: 1.3);
+        }
+    }
+
+    &.hmlr-wf-notification-banner--font-size-16 {
+        margin-bottom: govuk-spacing(4);
+
+        .govuk-notification-banner__heading, 
+        .govuk-body {
+            @include govuk-font($size: 16, $weight: inherit, $line-height: 1.2);
+        }
+    }    
+
+}

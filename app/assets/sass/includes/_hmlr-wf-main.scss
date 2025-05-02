@@ -37,8 +37,8 @@
 .hmlr-lowercase {
     text-transform: lowercase;
     display: inline-block; 
-    &.hmlr-lowercase--uppercase-first:first-letter {
-        text-transform: capitalize;
+    &.hmlr-lowercase--uppercase-first:first-child {//uppercase on very first letter
+        text-transform: capitalize; 
     }    
 }
 
