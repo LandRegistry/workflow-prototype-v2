@@ -21,6 +21,12 @@
         margin-left: auto;
     }
 
+    @include govuk-media-query($from: desktop){
+        &.hmlr-wf-notification-banner--right {
+            float: right;
+        }    
+    }
+
     &.hmlr-wf-notification-banner--normal {
         .govuk-notification-banner__heading {
             font-weight: normal;

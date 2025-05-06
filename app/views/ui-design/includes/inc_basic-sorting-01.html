@@ -1,24 +1,26 @@
-    <div class="govuk-grid-column-one-half"> 
+    <div class="govuk-grid-column-one-third"> 
       
-      <div class="hmlr-sort-right govuk-!-margin-bottom-4">
+      <div class="hmlr-sort-right">
+        <form action="#" name="sorting" novalidate>
 
-        <div class="govuk-form-group">
-          <label class="govuk-label govuk-!-font-size-16" for="onChangeSort">
-            Sorted by
-          </label>
-          <select class="govuk-select govuk-!-font-size-16" id="onChangeSort" name="onChangeSort">
-            <option value="priority-newest" selected>Default ordering</option>
-            <option value="priority-newest">Priority date: Newest</option>
-            <option value="priority-oldest">Priority date: Oldest</option>
-            <option value="obtained-newest">Date obtained: Newest</option>
-            <option value="obtained-oldest">Date obtained: Oldest</option>
-          </select>
-        </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-size-16" for="onChangeSort">
+              Sorted by
+            </label>
+            <select class="govuk-select govuk-!-font-size-16" id="onChangeSort" name="onChangeSort">
+              <option value="priority-newest" selected>Default ordering</option>
+              <option value="priority-newest">Priority date: Newest</option>
+              <option value="priority-oldest">Priority date: Oldest</option>
+              <option value="obtained-newest">Date obtained: Newest</option>
+              <option value="obtained-oldest">Date obtained: Oldest</option>
+            </select>
+          </div>
 
-        <button class="govuk-button govuk-button--secondary govuk-!-font-size-16" type="submit">
-          Submit
-        </button>
+          <button class="govuk-button govuk-button--secondary govuk-!-font-size-16" type="submit">
+            Submit
+          </button>
 
+        </form>
       </div> 
 
     </div>
@@ -35,7 +37,6 @@
         //this.closest('form').submit();
       });
 
-      
       /*const parentElement = onChangeSortElement.parentElement; // don't use, asssitive tech can't see it
       if (parentElement) {
           let nextElement = parentElement.nextElementSibling;
@@ -47,16 +48,12 @@
               nextElement = nextElement.nextElementSibling;
           }
       }*/
-
-
       //add onChange submit form stuff here
-
-
     }
 
   });  
 </script>
-
+{#
   <!-- *** must be inside form after the 'section' tag if special css required *** -->
   <!--div class="govuk-warning-text"> 
     <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
@@ -65,3 +62,4 @@
       You have applied a filter or sorting to the list.
     </strong>
   </div--> 
+#}
