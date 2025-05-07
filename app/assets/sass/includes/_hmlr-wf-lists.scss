@@ -147,10 +147,12 @@
             }
         }
 
-        @include govuk-media-query($from: desktop){
-            display: flex; 
-            justify-content: space-between;
+        @media only screen and (min-width: 820px) {// styles moved from 'desktop' media-query (below)  
+            display: flex; // to 820px, because 'white-space: nowrap' on 'notes' link creates 
+            justify-content: space-between; // horizontal scrolling momentarily before 'desktop' breakpoint       
+        }
 
+        @include govuk-media-query($from: desktop){
             li {/*flex: 1 1 0; width: 0;*/
                 margin-right: 0;
                 padding-right: govuk-spacing(2); 
@@ -160,20 +162,6 @@
                 }                 
             }
         } 
-
-        /*&.hmlr-wf-lists__menu--two-left {
-
-            li:nth-child(n+3) {
-                background-color: lime;
-            }            
-            li:nth-child(-n+2)  {
-                border: 1px solid red; 
-            }
-            li:nth-child(2) {
-                margin-right: 50px;
-            }
-
-        }*/
         
     }
 
@@ -257,7 +245,8 @@
             & + .govuk-button, 
             & + div .govuk-button {
                 /*width: auto;*/
-                
+                transition: background-color 0.5s ease, color 0.2s ease;
+               
                 margin-top: govuk-spacing(0); 
                 margin-left: govuk-spacing(0); 
                 margin-bottom: govuk-spacing(0); 

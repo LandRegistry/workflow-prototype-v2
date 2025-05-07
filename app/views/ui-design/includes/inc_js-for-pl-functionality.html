@@ -6,8 +6,7 @@
       if (hmlrListTbl) {// only run this code if 'hmlrListTbl' is present on this pg
   
         hmlrListTbl.classList.remove('hmlr-hide-my-notes');/* stops JS loading glitches */
-  
-  
+
         /*** record adjusted heights functionality, starts ***/
         var textareas = hmlrListTbl.querySelectorAll('.govuk-textarea');//or, all textareas inside .hmlr-my-notes-textarea 
   
@@ -124,7 +123,19 @@
         /*** my notes show/hide functionality starts ***/
         hmlrListTbl.querySelectorAll('.hmlr-my-notes-textarea').forEach(txtarea => {
           txtarea.setAttribute('aria-hidden', 'true');//are hidden only when JS is supported
-        });
+
+          //make button green if textarea content changes
+          const thisTxtArea = txtarea.querySelector('.govuk-textarea');
+          const thisBtn = txtarea.querySelector('.govuk-button');
+          if (thisTxtArea && thisBtn) {
+            const removeClassOnce = () => {
+              thisBtn.classList.remove('govuk-button--secondary');
+                thisTxtArea.removeEventListener('input', removeClassOnce);
+              };
+              thisTxtArea.addEventListener('input', removeClassOnce);
+            }
+          });
+
 
         const noteLinks = hmlrListTbl.querySelectorAll('.hmlr-my-notes');//find ea link
         
