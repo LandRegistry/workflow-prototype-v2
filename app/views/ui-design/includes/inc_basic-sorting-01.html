@@ -3,11 +3,13 @@
       <div class="hmlr-sort-right hmlr-sort-right--move-up">
         <form action="#" name="sorting" novalidate>
 
-          <div class="govuk-form-group">
+          <div class="govuk-form-group govuk-!-margin-bottom-1">
             <label class="govuk-label govuk-!-font-size-16" for="onChangeSort">
               Sorted by
             </label>
-            <select class="govuk-select govuk-!-font-size-16" id="onChangeSort" name="onChangeSort">
+
+            <!-- *** IF THE ID IS CHANGED WE NEED TO UPDATE THAT ID IN THE JAVASCRIPT !!! ***-->
+            <select class="govuk-select govuk-!-font-size-16" id="onChangeSort" name="onChangeSort" >
               <option value="priority-newest" selected>Default ordering</option>
               <option value="priority-newest">Priority date: Newest</option>
               <option value="priority-oldest">Priority date: Oldest</option>
@@ -16,7 +18,7 @@
             </select>
           </div>
 
-          <button class="govuk-button govuk-button--secondary govuk-!-font-size-16" type="submit">
+          <button class="govuk-button govuk-!-font-size-16" type="submit">
             Submit
           </button>
 
@@ -30,25 +32,16 @@
 
     const onChangeSortElement = document.getElementById('onChangeSort');
 
-    if (onChangeSortElement) {//only run code if the page has the onChangeSort!
+    if (onChangeSortElement) {//only run code if the page has the element!
+
+      onChangeSortElement.setAttribute('aria-label', 'The form is submitted automatically when a selection is made.');
 
       onChangeSortElement.addEventListener('change', function() {
         alert('The select submits on change');
         //this.closest('form').submit();
       });
-
-      /*const parentElement = onChangeSortElement.parentElement; // don't use, asssitive tech can't see it
-      if (parentElement) {
-          let nextElement = parentElement.nextElementSibling;
-          while (nextElement) {
-              if ((nextElement.tagName === 'BUTTON') || (nextElement.tagName === 'INPUT' && nextElement.type === 'submit')) {
-                  nextElement.setAttribute('aria-hidden', 'true');// Add aria-hidden attribute set to true
-                  break;
-              }
-              nextElement = nextElement.nextElementSibling;
-          }
-      }*/
-      //add onChange submit form stuff here
+      //var sortForm = onChangeSortElement.closest('form'); //not needed now the button is display: none
+      //sortForm.querySelector('button').setAttribute('tabindex', '-1');
     }
 
   });  

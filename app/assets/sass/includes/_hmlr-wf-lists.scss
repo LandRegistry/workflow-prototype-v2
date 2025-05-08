@@ -445,8 +445,8 @@
         tr:nth-of-type(-n+2) {//background-color: govuk-colour("light-grey"); 
             background: linear-gradient(to right, 
                 rgba(243, 242, 241, 0) 0%, 
-                rgba(243, 242, 241, 1) 15%, 
-                rgba(243, 242, 241, 1) calc(100% - 15%), 
+                rgba(243, 242, 241, 1) 5%, 
+                rgba(243, 242, 241, 1) calc(100% - 5%), 
                 rgba(243, 242, 241, 0) 100%);
         }
         tr:first-child td:nth-of-type(2) > abbr:first-child {

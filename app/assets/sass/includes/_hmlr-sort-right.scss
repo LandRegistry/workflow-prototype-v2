@@ -15,10 +15,9 @@
     }
 
     .hmlr-sort-right {
-        button, input[type="submit"]{
-            position: absolute; 
-            left: -3000px; 
-            top: -3000px; 
+        button, 
+        input[type="submit"]{//position: absolute; left: -3000px; top: -3000px; 
+            display: none;
         }
     }
 }
