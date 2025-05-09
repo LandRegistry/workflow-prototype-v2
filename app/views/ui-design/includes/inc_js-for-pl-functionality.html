@@ -1,4 +1,5 @@
 <script>
+
     document.addEventListener('DOMContentLoaded', function() {
 
       const hmlrListTbl = document.getElementById('hmlrListTbl');
@@ -9,6 +10,127 @@
 
         /*** record adjusted heights functionality, starts ***/
         var textareas = hmlrListTbl.querySelectorAll('.govuk-textarea');//or, all textareas inside .hmlr-my-notes-textarea 
+
+
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+/*
+- Client-side - Captures the textarea input and sends it via fetch() to the server
+- Server-side - Receives the data, stores it (e.g., in a database), and returns a JSON response
+- UI feedback - Displays a success or error message based on the server's response
+
+
+The '/save-my-notes' is the URL endpoint on the server. Relative path, and on the same server as the web page.
+We need to set up a handle requests sent to '/save-my-notes'
+
+On the server, using Node.js for example we'd define a route... 
+listen for POST requests to /save-my-notes, extracts the text from the request body, saves it to db and send a JSON response back, like { success: true }. For example:
+
+app.post('/save-my-notes', (req, res) => {
+  const { text } = req.body;
+  // Save the text to the db
+  res.json({ success: true });
+});
+
+//OR example with Node.js and Express
+
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
+const PORT = 3000;
+
+app.use(bodyParser.json());
+app.use(express.static(__dirname)); // Serves index.html and other static files
+
+// In-memory "database"
+let notes = [];
+
+app.post('/save-note', (req, res) => {
+  const { text } = req.body;
+  if (text && text.trim() !== '') {
+    notes.push({ text, timestamp: new Date() });
+    res.json({ success: true });
+  } else {
+    res.json({ success: false });
+  }
+});
+
+app.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}`);
+});
+
+//to run ...
+npm init -y
+npm install express body-parser
+node server.js
+
+
+*/
+//hmlrListTbl
+
+
+
+    /*
+    const forms = document.querySelectorAll('form.hmlr-my-notes-form');
+
+    forms.forEach(form => {
+      form.addEventListener('submit', function (event) {
+        event.preventDefault(); // Stop form submission
+        form.classList.add('hello'); // Add class to the form
+        console.log('Class "hello" added to:', form);
+      });
+    });
+    */
+  
+
+
+
+//document.getElementById('my-notes-form-P772GER').addEventListener('submit', function(e) {
+document.getElementById('save-notes-P772GER').addEventListener('click', function(e){//click the save btn
+
+  
+  e.preventDefault(); // prevents pg reloading
+
+  
+  const note = document.getElementById('my-notes-P772GER').value;//target this specific textarea for now: ui-c-complex-2.html
+  
+  fetch('/save-my-notes', { //the URL endpoint on the server 
+
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ text: note })
+
+  }).then(response => response.json()).then(data => {
+
+    const myNotesResponse = document.getElementById('temp-response-txt-P772GER');
+
+    if (data.success) {
+      myNotesResponse.textContent = 'My notes were saved successfully!';
+      myNotesResponse.classList.remove('hmlr-my-notes--fail');
+      myNotesResponse.classList.add('hmlr-my-notes--success');
+    } else {
+      myNotesResponse.textContent = 'Failed - My notes were not saved.'; // test for irregular characters
+      myNotesResponse.classList.remove('hmlr-my-notes--fail');
+      myNotesResponse.classList.add('hmlr-my-notes--success');
+    }
+
+  }).catch(error => {  //console.error('Error:', error);
+    document.getElementById('temp-response-txt-P772GER').textContent = 'xxx There was an error.';//status msg
+  });
+  
+});
+
+
+
+
+
+
+
+
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
   
         /*var isContentChanged = false; 
         function handleContentChange() {
@@ -45,17 +167,22 @@
   
           var myTd = textarea.closest('td');
                   
-                  if (localStorage.getItem(textarea.id) === 'false') {//is NOT hidden, so show on pg reload
-                    var mySpan = myTd.querySelector('.hmlr-my-notes');
-                    mySpan.querySelector('span:first-child').textContent = 'Hide my notes';
-                    myTd.querySelector('.hmlr-my-notes-textarea').classList.remove('hmlr-my-notes-textarea--hide');
-                  }
+            if (localStorage.getItem(textarea.id) === 'false') {//is NOT hidden, so show on pg reload
+              var mySpan = myTd.querySelector('.hmlr-my-notes');
+              mySpan.querySelector('span:first-child').textContent = 'Hide my notes';
+              myTd.querySelector('.hmlr-my-notes-textarea').classList.remove('hmlr-my-notes-textarea--hide');
+              myTd.querySelector('.hmlr-my-notes-textarea').setAttribute('aria-hidden', 'false');
+            }else if (localStorage.getItem(textarea.id) === 'true'){//IS hidden
+              myTd.querySelector('.hmlr-my-notes-textarea').setAttribute('aria-hidden', 'true');
+            }else{//are hidden only when js is supported. First pg load, before localStorage set.
+              myTd.querySelector('.hmlr-my-notes-textarea').setAttribute('aria-hidden', 'true');
+            }
 
-                  if (textarea.value.trim() !== "") {//textarea is not empty
-                    var myLink = myTd.querySelector('.hmlr-my-notes');
-                    myLink.classList.add('hmlr-my-notes--added');//add dot icon to my notes link
-                    myLink.setAttribute('aria-label', 'This case has notes');
-                  }              
+            if (textarea.value.trim() !== "") {//textarea is not empty
+              var myLink = myTd.querySelector('.hmlr-my-notes');
+              myLink.classList.add('hmlr-my-notes--added');//add dot icon to my notes link
+              myLink.setAttribute('aria-label', 'This case has notes');
+            }    
   
           // Apply stored height from localStorage when the page loads
           var storedHeight = localStorage.getItem('textarea-' + textarea.id + '-height');
@@ -120,32 +247,50 @@
           /* *** show/hide links for multi applications ENDS *** */
 
         
-        /*** my notes show/hide functionality starts ***/
+        /*** button colour and my notes show/hide functionality starts ***/
         hmlrListTbl.querySelectorAll('.hmlr-my-notes-textarea').forEach(txtarea => {
-          txtarea.setAttribute('aria-hidden', 'true');//are hidden only when JS is supported
-
-          //make button green if textarea content changes
           const thisTxtArea = txtarea.querySelector('.govuk-textarea');
           const thisBtn = txtarea.querySelector('.govuk-button');
-          if (thisTxtArea && thisBtn) {
-            const removeClassOnce = () => {
-              thisBtn.classList.remove('govuk-button--secondary');
-                thisTxtArea.removeEventListener('input', removeClassOnce);
-              };
-              thisTxtArea.addEventListener('input', removeClassOnce);
-            }
-          });
+          const responseTxt = thisBtn.parentElement.querySelector('.hmlr-response-text');
 
+          if (thisTxtArea && thisBtn) {
+            const btnClass = 'govuk-button--secondary';
+
+            const removeClassOnce = () => {//reset btn and remove success/fail msg
+              thisBtn.classList.remove(btnClass);
+
+// set timer on this message - add live aria dynamically to the div (does this count?)
+
+              responseTxt.textContent = '';
+              responseTxt.classList.remove('hmlr-my-notes--success');
+              responseTxt.classList.remove('hmlr-my-notes--fail');
+
+              thisTxtArea.removeEventListener('input', removeClassOnce);
+            };
+
+            const setupRemoveClassOnce = () => {
+              thisTxtArea.addEventListener('input', removeClassOnce);
+            };
+
+            setupRemoveClassOnce();
+
+            thisBtn.addEventListener('click', () => {
+              thisBtn.classList.add(btnClass); // Add the class back
+              thisBtn.blur();//remove focus
+              setupRemoveClassOnce();           // Reattach the input listener
+            });
+          }
+        });
 
         const noteLinks = hmlrListTbl.querySelectorAll('.hmlr-my-notes');//find ea link
         
         noteLinks.forEach(function(noteLink) {
-          noteLink.addEventListener('click', function(e) {
+          noteLink.addEventListener('click', function(e){
               e.preventDefault();
               const parentTd = noteLink.closest('td');
               const textareaDiv = parentTd.querySelector('.hmlr-my-notes-textarea');
               textareaDiv.classList.toggle('hmlr-my-notes-textarea--hide'); 
-              textareaDiv.setAttribute('aria-hidden', textareaDiv.getAttribute('aria-hidden') === 'false' ? 'true' : 'false');
+              textareaDiv.setAttribute('aria-hidden', textareaDiv.getAttribute('aria-hidden') === 'true' ? 'false' : 'true');
 
               const theSpan = noteLink.querySelector('span:first-child');
               if (theSpan.textContent.trim() === 'Show my notes') {
@@ -161,42 +306,27 @@
                 localStorage.setItem(textarea.id, 'false');//is NOT hidden
               }
   
-            });
+          });
         });
-        /*** my notes show/hide functionality ends ***/
-  
-  
-  
+        /*** button colour and my notes show/hide functionality ends ***/
+
         /*** add/remove flags starts ***/
-          /*function checkIfTblsExist() {
-            const tbl1 = document.getElementById(progress_now_table);
-            const tbl2 = document.getElementById(progress_later_table);
-            if (tbl1 || tbl2) {
-                return true;
-            } else {
-                return false;
-            }
-          }
-          //if (checkIfTblsExist) {//only run code if we're on the right page!*/
-  
-            const mainContent2 = document.getElementById('main-content');
-            const links = mainContent2.querySelectorAll('.hmlr-flag-icon-btn');
-            
-            links.forEach(link => {//loop through each link and add a click event 
-              link.addEventListener('click', function(e) {
-                e.preventDefault(); 
-                const svgElement = this.nextElementSibling;// Find the sibling svg element
-  
-                svgElement.classList.toggle('hmlr-flag-icon-show');
-                svgElement.setAttribute('aria-hidden', svgElement.getAttribute('aria-hidden') === 'false' ? 'true' : 'false');
-  
-                this.value = this.value.trim() === 'Remove flag' ? 'Add flag' : 'Remove flag';//toggle input/button text
-                //this.textContent = this.textContent.trim() === 'Remove flag' ? 'Add flag' : 'Remove flag';//toggle link text
-                this.blur();//remove focus
-              });
-            });
-      
-          //}
+        const mainContent2 = document.getElementById('main-content');
+        const links = mainContent2.querySelectorAll('.hmlr-flag-icon-btn');
+        
+        links.forEach(link => {//loop through each link and add a click event 
+          link.addEventListener('click', function(e) {
+            e.preventDefault(); 
+            const svgElement = this.nextElementSibling;// Find the sibling svg element
+
+            svgElement.classList.toggle('hmlr-flag-icon-show');
+            svgElement.setAttribute('aria-hidden', svgElement.getAttribute('aria-hidden') === 'true' ? 'false' : 'true');
+
+            this.value = this.value.trim() === 'Remove flag' ? 'Add flag' : 'Remove flag';//toggle input/button text
+            //this.textContent = this.textContent.trim() === 'Remove flag' ? 'Add flag' : 'Remove flag';//toggle link text
+            this.blur();//remove focus
+          });
+        });
         /*** add/remove flags ends ***/
 
         /*** style last of each block of multi title cases/rows STARTS ***/
@@ -287,7 +417,8 @@
                     localStorage.removeItem(key);
                 }       
             }          
-        }//localStorage.clear(); //Use .clear when developing
+        }
+        //localStorage.clear(); //Use .clear when developing
         
   
       }

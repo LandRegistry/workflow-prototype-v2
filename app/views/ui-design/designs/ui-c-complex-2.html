@@ -154,21 +154,25 @@
             </menu>
 
             <div class="govuk-form-group hmlr-my-notes-textarea hmlr-my-notes-textarea--hide">
-              
-              <label class="govuk-label govuk-!-font-size-16" for="my-notes-P772GER">
-                  My notes (optional)
-              </label>
 
-              <div id="my-note-hint-P772GER" class="govuk-hint govuk-!-font-size-16">
-                  These are not PAS notes and can be viewed by your team. 
-              </div>
+              <form id="my-notes-form-P772GER" class="hmlr-my-notes-form">
+                <label class="govuk-label govuk-!-font-size-16" for="my-notes-P772GER">
+                    My notes (optional)
+                </label>
 
-              <textarea class="govuk-textarea" id="my-notes-P772GER" name="notes" rows="5" aria-describedby="my-note-hint-P772GER"></textarea>
+                <div id="my-note-hint-P772GER" class="govuk-hint govuk-!-font-size-16">
+                    These are not PAS notes and can be viewed by your team. 
+                </div>
 
-              <div class="govuk-button-group">
-                  <input type="button" id="save-notes-P772GER" class="govuk-button govuk-button--secondary" value="Save">
-                  <!--a href="#" class="govuk-link govuk-link--no-visited-state hmlr-my-notes" role="button">Hide my notes <span class="govuk-visually-hidden">display</span></a-->
-              </div>
+                <textarea class="govuk-textarea" id="my-notes-P772GER" name="notes" rows="5" aria-describedby="my-note-hint-P772GER"></textarea>
+
+                <div class="govuk-button-group">
+                    <input type="button" id="save-notes-P772GER" class="govuk-button govuk-button--secondary" value="Save">
+                    <!--a href="#" class="govuk-link govuk-link--no-visited-state hmlr-my-notes" role="button">Hide my notes <span class="govuk-visually-hidden">display</span></a-->
+
+                    <div id="temp-response-txt-P772GER" class="hmlr-response-text hmlr-my-notes--success"></div>
+                </div>
+              </form>
 
             </div>
 

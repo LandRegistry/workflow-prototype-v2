@@ -1,0 +1,148 @@
+{% extends "layouts/wf_layout-ui-designs.html" %}
+
+{% set pageName="{{ serviceName }} Progress Later" %}
+
+{% block header %}
+  {% include "../includes/inc_top-nav-std.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+    
+<div class="govuk-grid-row hmlr-min-height-header-sm">
+  <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-3">
+
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-1">
+      Saving my notes example
+    </h1>
+
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+
+  </div>      
+
+</div>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter govuk-!-padding-right-0">
+
+    <a href="#page-content" class="govuk-skip-link hmlr-skip-link">
+      Skip to the main content
+    </a>
+ 
+  </div>
+
+  <section id="page-content" class="govuk-grid-column-three-quarters" role="region">
+
+    <!-- ******************************** START MAIN RIGHT COL CONTENT ********************** -->
+
+      <style>
+        .hmlr-my-notes--success { color: green; font-weight: bold; }
+        .hmlr-my-notes--fail { color: red; font-weight: bold; }
+      </style>
+
+      <form id="my-notes-form-P772GER">
+
+        <textarea id="my-notes-P772GER" class="govuk-textarea" name="notes" rows="5" id="noteText" rows="5"></textarea>
+        
+        <input type="hidden" id="noteId-P772GER" value="P772GER" />
+        
+        <br>
+
+        <input type="submit" class="govuk-button" value="Save" />
+
+        <p id="temp-response-txt-P772GER"></p>
+
+      </form>
+
+      <script>
+        document.getElementById('my-notes-form-P772GER').addEventListener('submit', function(e) {
+          e.preventDefault();
+
+          const note = document.getElementById('my-notes-P772GER').value;
+          const noteID = document.getElementById('noteId-P772GER').value;
+          const myNotesResponse = document.getElementById('temp-response-txt-P772GER');
+      
+          fetch('/save-my-notes', {
+
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ 
+              id: noteID,
+              text: note 
+            })
+            
+          }).then(res => res.json()).then(data => {
+
+            if (data.success) {
+
+              myNotesResponse.textContent = 'My notes were saved successfully!';
+              myNotesResponse.classList.remove('hmlr-my-notes--fail');
+              myNotesResponse.classList.add('hmlr-my-notes--success');
+
+            } else {
+
+              myNotesResponse.textContent = 'Failed to save note.';
+              myNotesResponse.classList.remove('hmlr-my-notes--success');
+              myNotesResponse.classList.add('hmlr-my-notes--fail');
+
+            }
+
+          }).catch(err => {
+
+            myNotesResponse.textContent = 'Error: My notes failed to save.';
+            myNotesResponse.classList.remove('hmlr-my-notes--success');
+            myNotesResponse.classList.add('hmlr-my-notes--fail');
+
+          });
+        });
+      </script>
+
+<!--
+On the server with Node.js and Express
+
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
+const PORT = 3000;
+
+app.use(bodyParser.json());
+app.use(express.static(__dirname)); // serves static html files
+
+// In-memory "database"
+let notes = [];
+
+app.post('/save-note', (req, res) => {
+  const { id, text } = req.body;
+  if (text && text.trim() !== '') {
+    notes.push({ text, timestamp: new Date() });
+    res.json({ success: true });
+  } else {
+    res.json({ success: false });
+  }
+});
+
+app.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}`);
+});
+
+//to run ...
+npm init -y
+npm install express body-parser
+node server.js
+
+-->
+
+
+
+    <!-- ******************************** END MAIN RIGHT COL CONTENT ************************ -->
+
+  </section>
+</div>
+
+{% include "../includes/inc_js-for-pl-functionality.html" %}
+
+{% endblock %}
