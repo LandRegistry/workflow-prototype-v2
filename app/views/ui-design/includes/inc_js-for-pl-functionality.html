@@ -87,13 +87,10 @@ node server.js
 
 //document.getElementById('my-notes-form-P772GER').addEventListener('submit', function(e) {
 document.getElementById('save-notes-P772GER').addEventListener('click', function(e){//click the save btn
-
-  
-  e.preventDefault(); // prevents pg reloading
-
+  e.preventDefault(); // prevents pg reloading (and form submitting)
   
   const note = document.getElementById('my-notes-P772GER').value;//target this specific textarea for now: ui-c-complex-2.html
-  
+
   fetch('/save-my-notes', { //the URL endpoint on the server 
 
     method: 'POST',
@@ -107,17 +104,18 @@ document.getElementById('save-notes-P772GER').addEventListener('click', function
     const myNotesResponse = document.getElementById('temp-response-txt-P772GER');
 
     if (data.success) {
-      myNotesResponse.textContent = 'My notes were saved successfully!';
+      myNotesResponse.textContent = 'My notes were saved';
       myNotesResponse.classList.remove('hmlr-my-notes--fail');
       myNotesResponse.classList.add('hmlr-my-notes--success');
     } else {
-      myNotesResponse.textContent = 'Failed - My notes were not saved.'; // test for irregular characters
-      myNotesResponse.classList.remove('hmlr-my-notes--fail');
-      myNotesResponse.classList.add('hmlr-my-notes--success');
+      myNotesResponse.textContent = 'Failed - the notes were not saved'; // test for irregular characters
+      myNotesResponse.classList.add('hmlr-my-notes--fail');
+      myNotesResponse.classList.remove('hmlr-my-notes--success');
     }
 
-  }).catch(error => {  //console.error('Error:', error);
-    document.getElementById('temp-response-txt-P772GER').textContent = 'xxx There was an error.';//status msg
+  }).catch(error => {  
+    document.getElementById('temp-response-txt-P772GER').textContent = 'Error: the notes were not saved.';//status msg
+    console.error('Error:', error);
   });
   
 });
@@ -260,6 +258,7 @@ document.getElementById('save-notes-P772GER').addEventListener('click', function
               thisBtn.classList.remove(btnClass);
 
 // set timer on this message - add live aria dynamically to the div (does this count?)
+//NO DON@T set timer due to WCAG. When closing the my notes, also remove the response text
 
               responseTxt.textContent = '';
               responseTxt.classList.remove('hmlr-my-notes--success');
@@ -277,7 +276,7 @@ document.getElementById('save-notes-P772GER').addEventListener('click', function
             thisBtn.addEventListener('click', () => {
               thisBtn.classList.add(btnClass); // Add the class back
               thisBtn.blur();//remove focus
-              setupRemoveClassOnce();           // Reattach the input listener
+              setupRemoveClassOnce(); // Reattach the input listener
             });
           }
         });
