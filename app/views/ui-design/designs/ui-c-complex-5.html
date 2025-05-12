@@ -18,7 +18,7 @@
     </h1>
 
     <p class="govuk-body hmlr-secondary-text">
-      There are currently 3 flagged cases in your Progress Later list. 
+      There are currently <span id="wf-flag-hint">3</span> flagged cases in your Progress Later list. 
     </p>
 
   </div>
@@ -48,7 +48,7 @@
 
         {#% include "../includes/inc_filters-statement-01.html" %#}    
 
-                {% include "../includes/inc_basic-sorting-01.html" %}
+        {% include "../includes/inc_basic-sorting-01.html" %}
 
       </div>
 
