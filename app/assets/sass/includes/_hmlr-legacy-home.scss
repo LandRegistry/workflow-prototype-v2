@@ -1,0 +1,44 @@
+.hmlr-legacy-home {//styles for the legacy home page styles
+
+    .hmlr-legacy-home__panel {
+        background-color: #bfbfbf;
+        height: 250px;
+        margin-bottom: govuk-spacing(6);
+        padding: govuk-spacing(0) !important;
+        transition: background-color .3s ease; 
+
+        &:hover {
+            background-color: #cccccc;
+        }
+
+        & .hmlr-legacy-home__link {
+            display: table;
+            font-weight: 700;
+            height: 100%;
+            text-align: center;
+            width: 100%; 
+
+            &:link, &:visited {
+                color: govuk-colour("black") !important;
+            }
+
+            @media (min-width: 40.0625em) {
+                .hmlr-legacy-home__text {
+                    font-size: 140% !important;
+                }
+            }
+
+            .hmlr-legacy-home__text {
+                display: table-cell;
+                font-family: Arial, sans-serif;
+                font-size: 1.2rem;
+                font-weight: 700;
+                padding-left: govuk-spacing(2);
+                padding-right: govuk-spacing(2);
+                vertical-align: middle; 
+            }
+        }
+    }
+
+
+}

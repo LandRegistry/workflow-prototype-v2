@@ -137,7 +137,8 @@ body .govuk-header__container {
 
 
 
-/* new ui sass begins */  /* don't forget to grab the mixins from the 'hmlr-wf-mixins' */
+/* new ui sass begins */  
+@import "./includes/hmlr-legacy-home";
 @import "./includes/hmlr-vertical-filters";
 @import "./includes/hmlr-left-nav";
 @import "./includes/hmlr-wf-lists";/* the list tables */

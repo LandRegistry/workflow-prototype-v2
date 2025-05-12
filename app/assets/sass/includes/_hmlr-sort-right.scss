@@ -1,15 +1,17 @@
 .js-enabled {
     @include govuk-media-query($from: tablet){
-        #page-content {//can kill this block anytime
-            & > .govuk-grid-row:first-of-type {
-                & > div[class*="govuk-grid-column"] {//ensure we target the column divs (whichever type they might be)
+        #page-content {//div[class*="govuk-grid-column"] ensure we target the column divs (whichever type they might be)
+            //& > .govuk-grid-row:first-of-type {
+                ///& > 
+                div.hmlr-grid-column-collapse {
                     height: 0.1px; 
                     overflow: visible;
-                    /*.hmlr-sort-right, */
-                    .hmlr-sort-right--move-up {// hmlr-sort-right--move-up moves the select element up into the upper row
-                        margin-top: -5rem;
-                    }
                 }
+            //}
+
+            /*.hmlr-sort-right, */
+            .hmlr-sort-right--move-up {// hmlr-sort-right--move-up moves the select element up into the upper row
+                margin-top: -5rem;
             }
         }
     }
