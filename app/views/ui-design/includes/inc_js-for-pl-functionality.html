@@ -85,50 +85,6 @@ node server.js
 
 
 
-//document.getElementById('my-notes-form-P772GER').addEventListener('submit', function(e) {
-/*
-document.getElementById('save-notes-P772GER').addEventListener('click', function(e){//click the save btn
-  e.preventDefault(); // prevents pg reloading (and form submitting)
-  
-  const note = document.getElementById('my-notes-P772GER').value;//target this specific textarea for now: ui-c-complex-2.html
-
-  fetch('/save-my-notes', { //the URL endpoint on the server 
-
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({ text: note })
-
-  }).then(response => response.json()).then(data => {
-
-    const myNotesResponse = document.getElementById('temp-response-txt-P772GER');
-
-    if (data.success) {
-      myNotesResponse.textContent = 'My notes were saved';
-      myNotesResponse.classList.remove('hmlr-my-notes--fail');
-      myNotesResponse.classList.add('hmlr-my-notes--success');
-    } else {
-      myNotesResponse.textContent = 'Failed - the notes were not saved'; // test for irregular characters
-      myNotesResponse.classList.add('hmlr-my-notes--fail');
-      myNotesResponse.classList.remove('hmlr-my-notes--success');
-    }
-
-  }).catch(error => {  
-    document.getElementById('temp-response-txt-P772GER').textContent = 'Error: the notes were not saved.';//status msg
-    console.error('Error:', error);
-  });
-  
-});
-
-*/
-
-
-
-
-
-
-/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
 
   
         /*var isContentChanged = false; 
@@ -246,11 +202,58 @@ document.getElementById('save-notes-P772GER').addEventListener('click', function
           /* *** show/hide links for multi applications ENDS *** */
 
         
-        /*** button colour and my notes show/hide functionality starts ***/
+        /*** ajax save, button colour and my notes show/hide functionality starts ***/
         hmlrListTbl.querySelectorAll('.hmlr-my-notes-textarea').forEach(txtarea => {
           const thisTxtArea = txtarea.querySelector('.govuk-textarea');
           const thisBtn = txtarea.querySelector('.govuk-button');
-          const responseTxt = thisBtn.parentElement.querySelector('.hmlr-response-text');
+          const responseTxt = thisBtn.parentElement.querySelector('.hmlr-response-text'); 
+
+
+
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+//document.getElementById('my-notes-form-P772GER').addEventListener('submit', function(e) {
+
+
+
+thisBtn.addEventListener('click', function(e){//click the save btn
+  e.preventDefault(); // prevents pg reloading (and form submitting)
+
+  //alert(thisTxtArea.value);
+
+  fetch('/save-my-notes', { //<<<<<<<<<<<<<<<<<< the URL endpoint on the server 
+
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ text: thisTxtArea.value })
+
+  }).then(response => response.json()).then(data => {
+
+    //const myNotesResponse = document.getElementById('temp-response-txt-P772GER');
+
+    if (data.success) {
+      responseTxt.textContent = 'My notes were saved';
+      responseTxt.classList.remove('hmlr-my-notes--fail');
+      responseTxt.classList.add('hmlr-my-notes--success');
+    } else {
+      responseTxt.textContent = 'Failed - the notes were not saved'; // test for irregular characters?
+      responseTxt.classList.add('hmlr-my-notes--fail');
+      responseTxt.classList.remove('hmlr-my-notes--success');
+    }
+
+  }).catch(error => {  
+    responseTxt.textContent = 'Error: the notes were not saved.';//status msg
+    //console.error('Error:', error);
+  });
+  
+});
+
+
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+
+
 
           if (thisTxtArea && thisBtn) {
             const btnClass = 'govuk-button--secondary';
