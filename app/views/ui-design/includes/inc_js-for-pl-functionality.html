@@ -202,72 +202,68 @@ node server.js
           /* *** show/hide links for multi applications ENDS *** */
 
         
-        /*** ajax save, button colour and my notes show/hide functionality starts ***/
+        /*** ajax db save, button colour and my notes show/hide functionality starts ***/
         hmlrListTbl.querySelectorAll('.hmlr-my-notes-textarea').forEach(txtarea => {
           const thisTxtArea = txtarea.querySelector('.govuk-textarea');
           const thisBtn = txtarea.querySelector('.govuk-button');
-          const responseTxt = thisBtn.parentElement.querySelector('.hmlr-response-text'); 
+          const thisResponseTxt = txtarea.querySelector('.hmlr-response-text');
+          const thisCaseRef = txtarea.querySelector("input[name='my-notes-ref']"); 
 
+          if (thisTxtArea && thisCaseRef) {//not used on search results pg for example
 
+            /* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx save to db starts xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+            thisBtn.addEventListener('click', function(e){//click the save btn
+              e.preventDefault(); // prevent reloading (and form submitting)
 
-/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
-//document.getElementById('my-notes-form-P772GER').addEventListener('submit', function(e) {
+              const thisTxtAreaValue = thisTxtArea.value.trim();
 
+              if(thisTxtAreaValue !== ""){//if textarea is NOT empty
 
+                fetch('http://localhost:3000/ui-design/designs/saving-my-notes', {//   /save-my-notes  <<< the URL endpoint on the server 
 
-thisBtn.addEventListener('click', function(e){//click the save btn
-  e.preventDefault(); // prevents pg reloading (and form submitting)
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify({
+                    id: thisCaseRef.value,   
+                    text: thisTxtAreaValue 
+                  })
 
-  //alert(thisTxtArea.value);
+                }).then(response => response.json()).then(data => {
 
- /* fetch('/save-my-notes', { //<<<<<<<<<<<<<<<<<< the URL endpoint on the server 
+                  if (data.success) {
+                    thisResponseTxt.textContent = 'My notes were saved';
+                    thisResponseTxt.classList.remove('hmlr-my-notes--fail');
+                    thisResponseTxt.classList.add('hmlr-my-notes--success');
+                  } else {
+                    thisResponseTxt.textContent = 'Failed - the notes were not saved'; // test for irregular characters?
+                    thisResponseTxt.classList.add('hmlr-my-notes--fail');
+                    thisResponseTxt.classList.remove('hmlr-my-notes--success');
+                  }
 
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({ text: thisTxtArea.value })
+                }).catch(error => {//console.error('Error:', error); 
+                  //thisResponseTxt.textContent = 'Error: the notes were not saved.';//status msg
 
-  }).then(response => response.json()).then(data => {
+                  //XXXX temp included here ....
+                  thisResponseTxt.textContent = 'My notes were saved';
+                    thisResponseTxt.classList.remove('hmlr-my-notes--fail');
+                    thisResponseTxt.classList.add('hmlr-my-notes--success');  
+                  
+                });
+              }
+              
+            });
+            /* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx save to db ends xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
 
-    //const myNotesResponse = document.getElementById('temp-response-txt-P772GER');
-
-    if (data.success) {
-      responseTxt.textContent = 'My notes were saved';
-      responseTxt.classList.remove('hmlr-my-notes--fail');
-      responseTxt.classList.add('hmlr-my-notes--success');
-    } else {
-      responseTxt.textContent = 'Failed - the notes were not saved'; // test for irregular characters?
-      responseTxt.classList.add('hmlr-my-notes--fail');
-      responseTxt.classList.remove('hmlr-my-notes--success');
-    }
-
-  }).catch(error => {  
-    responseTxt.textContent = 'Error: the notes were not saved.';//status msg
-    //console.error('Error:', error);
-  });
-  */
-  
-});
-
-
-/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
-
-
-
-
-          if (thisTxtArea && thisBtn) {
             const btnClass = 'govuk-button--secondary';
 
             const removeClassOnce = () => {//reset btn and remove success/fail msg
               thisBtn.classList.remove(btnClass);
 
-// set timer on this message - add live aria dynamically to the div (does this count?)
-//NO DON@T set timer due to WCAG. When closing the my notes, also remove the response text
-
-              responseTxt.textContent = '';
-              responseTxt.classList.remove('hmlr-my-notes--success');
-              responseTxt.classList.remove('hmlr-my-notes--fail');
+              thisResponseTxt.textContent = '';
+              thisResponseTxt.classList.remove('hmlr-my-notes--success');
+              thisResponseTxt.classList.remove('hmlr-my-notes--fail');
 
               thisTxtArea.removeEventListener('input', removeClassOnce);
             };
@@ -283,7 +279,9 @@ thisBtn.addEventListener('click', function(e){//click the save btn
               thisBtn.blur();//remove focus
               setupRemoveClassOnce(); // Reattach the input listener
             });
+
           }
+
         });
 
         const noteLinks = hmlrListTbl.querySelectorAll('.hmlr-my-notes');//find ea link
