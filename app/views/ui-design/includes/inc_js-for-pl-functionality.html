@@ -234,22 +234,38 @@ node server.js
                 }).then(response => response.json()).then(data => {
 
                   if (data.success) {
-                    thisResponseTxt.textContent = 'My notes were saved';
+                    thisResponseTxt.innerHTML = '<span>Success</span> My notes were saved.';
+                    thisResponseTxt.setAttribute('tabindex', '0');
                     thisResponseTxt.classList.remove('hmlr-my-notes--fail');
                     thisResponseTxt.classList.add('hmlr-my-notes--success');
+                    thisResponseTxt.focus();
                   } else {
-                    thisResponseTxt.textContent = 'Failed - the notes were not saved'; // test for irregular characters?
+                    thisResponseTxt.innerHTML = '<span>Failed</span> The notes were not saved.'; // test for irregular characters?
+                    thisResponseTxt.setAttribute('tabindex', '0');
                     thisResponseTxt.classList.add('hmlr-my-notes--fail');
                     thisResponseTxt.classList.remove('hmlr-my-notes--success');
+                    thisResponseTxt.focus();
                   }
 
                 }).catch(error => {//console.error('Error:', error); 
-                  //thisResponseTxt.textContent = 'Error: the notes were not saved.';//status msg
+                  /*                    
+                  thisResponseTxt.innerHTML = '<span>System error</span> The notes could not be saved.';
+                  thisResponseTxt.setAttribute('tabindex', '0');
+                  thisResponseTxt.classList.add('hmlr-my-notes--fail');
+                  thisResponseTxt.classList.remove('hmlr-my-notes--success');
+                  thisResponseTxt.focus();
+                  */
 
                   //XXXX temp included here ....
-                  thisResponseTxt.textContent = 'My notes were saved';
-                    thisResponseTxt.classList.remove('hmlr-my-notes--fail');
-                    thisResponseTxt.classList.add('hmlr-my-notes--success');  
+                  //thisResponseTxt.textContent = 'My notes were saved';
+                  thisResponseTxt.innerHTML = '<span>Success</span> My notes were saved.';
+                  thisResponseTxt.setAttribute('tabindex', '0');
+                  thisResponseTxt.classList.remove('hmlr-my-notes--fail');
+                  thisResponseTxt.classList.add('hmlr-my-notes--success');  
+                  thisResponseTxt.focus();
+                  //xxxxxxxxxxxxxx + create no-JS page top banner design
+
+                
                   
                 });
               }
@@ -262,9 +278,11 @@ node server.js
             const removeClassOnce = () => {//reset btn and remove success/fail msg
               thisBtn.classList.remove(btnClass);
 
-              thisResponseTxt.textContent = '';
+              thisResponseTxt.removeAttribute('tabindex');
               thisResponseTxt.classList.remove('hmlr-my-notes--success');
               thisResponseTxt.classList.remove('hmlr-my-notes--fail');
+              thisResponseTxt.blur();
+              thisResponseTxt.innerHTML = '';
 
               thisTxtArea.removeEventListener('input', removeClassOnce);
             };

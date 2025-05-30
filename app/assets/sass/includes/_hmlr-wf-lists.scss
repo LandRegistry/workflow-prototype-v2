@@ -272,6 +272,42 @@
             textarea + div .govuk-button {
                 padding: (govuk-spacing(1) - 2) govuk-spacing(2) (govuk-spacing(1) - 4); 
             }
+        } 
+        
+        .hmlr-response-text.hmlr-my-notes--success, 
+        .hmlr-response-text.hmlr-my-notes--fail {
+            @include hmlr-font-size($s: 16px, $l: 1.5);
+            //margin-top: - (govuk-spacing(1) - 2);
+            //margin-bottom: - govuk-spacing(3);
+            min-width: 400px; 
+            display: inline-block;
+            
+            &:focus {
+                box-shadow: outset 0 0 0 2px;
+                outline: 3px solid $govuk-focus-colour;
+                outline-offset: 0;
+            }
+
+            & > span {
+                color: govuk-colour("white"); 
+                padding: govuk-spacing(1) govuk-spacing(2) govuk-spacing(1) govuk-spacing(1); 
+                margin-right: govuk-spacing(1);
+                letter-spacing: 0.3px;//font-weight: bold; 
+            }
+        }
+
+        .hmlr-my-notes--success {
+            border: (govuk-spacing(1) - 1) solid $govuk-success-colour; 
+            & > span {
+                background-color: $govuk-success-colour; 
+            }
+        }
+
+        .hmlr-my-notes--fail {
+            border: (govuk-spacing(1) - 1) solid $govuk-error-colour; 
+            & > span {
+                background-color: $govuk-error-colour; 
+            }
         }        
 
     }
