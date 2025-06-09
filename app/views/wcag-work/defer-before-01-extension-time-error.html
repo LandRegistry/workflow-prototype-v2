@@ -1,0 +1,235 @@
+{% extends "layouts/wf_layout_legacy.html" %}
+
+{# set pageName="Select a category of work" #}
+
+{% block pageTitle %}
+Error: Extension of time
+{% endblock %}
+
+{% block beforeContent %}
+
+<a href="#" class="govuk-back-link">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-error-summary" data-module="govuk-error-summary">
+  <div role="alert">
+    <h2 class="govuk-error-summary__title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <!--li>
+          <a href="#exe-day">The date entered is the same as the current cancellation date.</a>
+        </li-->
+        <li>
+          <a href="#exe-day">The new cancellation cannot be the old cancellation date</a>
+
+        </li> 
+        
+        <!--
+
+        ??? REMOVE the CONFIRM DATE button AND change 'Cancellation date' from 'New cancellation date'. 
+        If changed, remove 'new' from error msgs below... A reason is the error msg stating "The new cancellation date ..." 
+
+          Enter a new cancellation date   (When all are blank)
+          
+          The new cancellation date must include a day and month   (missing day and month input, for example)
+
+          The new cancellation date must be a real date     (for example, month entered was 13)
+
+          Year must include 4 numbers    (such a msg only required for the year)
+
+          The new cancellation date must be today or in the future    (if it is required? Remove 'today or', if required)
+
+          
+          'Error: in title tag. Correct fieldset and aria linking with hint text'
+          Update hint text
+          
+          The new cancellation must be after 1 September 2025
+            or
+          The new cancellation cannot be 1 September 2025
+            or
+          The new cancellation cannot be the old cancellation date
+
+
+
+          
+        
+        
+        -->
+
+
+
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <form action="#" method="post" novalidate>
+
+      <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-margin-bottom-5">
+              <h1 class="govuk-fieldset__heading">
+                  Select a deferral reason
+              </h1>
+            </legend>
+
+
+            <div class="govuk-radios" data-module="govuk-radios">
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="id_DIS" type="radio" name="category_code" value="DIS">
+                
+                <label class="govuk-label govuk-radios__label" for="id_DIS">
+                  Awaiting discharge only (no requisition)
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="id_REQN" type="radio" name="category_code" value="REQN">
+                <label class="govuk-label govuk-radios__label" for="id_REQN">
+                  Requisition
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="id_NOTICE" type="radio" name="category_code" value="NOTICE">
+
+                <label class="govuk-label govuk-radios__label" for="id_NOTICE">
+                  Partial reply
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="id_REQNNOTICE" type="radio" name="category_code" value="REQNNOTICE">
+
+                <label class="govuk-label govuk-radios__label" for="id_REQNNOTICE">
+                  Reminder issued
+                </label>
+              </div>
+
+<!-- ****************************************************************************************** -->              
+
+
+              <div class="govuk-radios__item" data-module="govuk-radios">
+                <input class="govuk-radios__input" id="id_PL" type="radio" name="category_code" value="PL" data-aria-controls="conditional-time" checked>
+
+                <label class="govuk-label govuk-radios__label" for="id_PL">
+                  Extension of time 
+                </label>
+              </div>
+
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-time">
+
+                <div class="govuk-form-group govuk-form-group--error">
+                  <fieldset class="govuk-fieldset" role="group" aria-describedby="exe-hint exe-day-error">
+                    
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                        New cancellation date
+                    </legend>
+
+                    <div id="ext-hint" class="govuk-hint">
+                      For example, 06 03 2026
+                    </div>
+
+                    <p id="exe-day-error" class="govuk-error-message">
+                      <span class="govuk-visually-hidden">Error:</span> The new cancellation cannot be the old cancellation date
+                    </p>
+
+                    <div class="govuk-date-input" id="passport-issued">
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="exe-day">
+                            Day
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error" id="exe-day" name="exe-day" type="text" inputmode="numeric">
+                        </div>
+                      </div>
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="exe-mth">
+                            Month
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error" id="exe-mth" name="exe-mth" type="text" inputmode="numeric">
+                        </div>
+                      </div>
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="exe-year">
+                            Year
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-4 govuk-input--error" id="exe-year" name="exe-year" type="text" inputmode="numeric">
+                        </div>
+                      </div>
+                    </div>
+
+                  </fieldset>
+                </div>              
+
+              </div>
+<!-- ****************************************************************************************** -->              
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="x1" type="radio" name="category_code" value="x1">
+
+                <label class="govuk-label govuk-radios__label" for="x1">
+                  Objection notice (15 days) and Requisition
+                </label>
+              </div>
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="x2" type="radio" name="category_code" value="x2">
+
+                <label class="govuk-label govuk-radios__label" for="x2">
+                  Objection notice (15 days) and Requisition
+                </label>
+              </div> 
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="x3" type="radio" name="category_code" value="x3">
+
+                <label class="govuk-label govuk-radios__label" for="x3">
+                  Progress later
+                </label>
+              </div>           
+
+            </div>
+              
+            <!-- if users navs back this will clear session value if no selection made -->
+            <!--input type="hidden" name="category_code" value=""-->
+
+
+          </fieldset>
+      </div>
+
+        <!--input type="hidden" name="lr_ref_number" value="DU164184">
+        <input type="hidden" name="lr_work_ref" value="L967RWW">
+        <input type="hidden" name="client" value="False"-->
+        <input type="hidden" name="days" value="">
+        
+
+        
+        <input type="submit" class="govuk-button" value="Select"> 
+
+        <!-- removed 'ID' and 'data-double-click-prevention' from btn = can remove all javascript from js files also -->
+        <!--a id="btn_back" href="/worklist-ui/worklist" class="govuk-link worklist-link">Go back to My Worklist</a-->
+
+    </form>
+
+
+  </div>
+</div>
+
+
+
+
+{% endblock %}
