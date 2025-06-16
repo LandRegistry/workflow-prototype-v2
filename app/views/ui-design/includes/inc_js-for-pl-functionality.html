@@ -248,7 +248,7 @@ node server.js
                   }
 
                 }).catch(error => {//console.error('Error:', error); 
-                  /*                    
+                  /*     XXXX temp commented out for demos              
                   thisResponseTxt.innerHTML = '<span>System error</span> The notes could not be saved.';
                   thisResponseTxt.setAttribute('tabindex', '0');
                   thisResponseTxt.classList.add('hmlr-my-notes--fail');
@@ -329,7 +329,15 @@ node server.js
               } else {
                 localStorage.setItem(textarea.id, 'false');//is NOT hidden
               }
-  
+
+              /* remove any success/error message. start */
+              const thisResponseTxt = textareaDiv.querySelector('.hmlr-response-text');
+              thisResponseTxt.removeAttribute('tabindex');
+              thisResponseTxt.classList.remove('hmlr-my-notes--success');
+              thisResponseTxt.classList.remove('hmlr-my-notes--fail');
+              thisResponseTxt.blur();
+              thisResponseTxt.innerHTML = '';
+              /* remove any success/error message. end   */
           });
         });
         /*** button colour and my notes show/hide functionality ends ***/
