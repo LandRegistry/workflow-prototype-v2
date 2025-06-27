@@ -1,0 +1,364 @@
+{% extends "layouts/wf_layout-ui-designs.html" %}
+
+{% set pageName="{{ serviceName }} Progress Later" %}
+
+{% block header %}
+  {% include "../includes/inc_top-nav-std.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+    
+<div class="govuk-grid-row hmlr-min-height-header-sm">
+  <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-3">
+
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-1">
+      Progress Later 
+    </h1>
+
+    <p class="govuk-body hmlr-secondary-text">
+      There are currently 8 cases in your Progress Later list.
+    </p>
+
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+
+  </div>      
+
+</div>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter govuk-!-padding-right-0">
+
+    <a href="#page-content" class="govuk-skip-link hmlr-skip-link">
+      Skip to the main content
+    </a>
+
+    {% include "../includes/inc_left-nav-04-1.html" %}
+  
+  </div>
+
+  <section class="govuk-grid-column-three-quarters" id="page-content" role="region">
+
+    <!-- ******************************** START MAIN RIGHT COL CONTENT ********************** -->
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    
+    <h1 class="govuk-heading-xl">
+test
+    </h1>
+
+    <p class="govuk-body">
+      Ask questions about the data below or get help with your application.
+    </p>
+
+    <div class="data-section" style="margin: 20px 0; padding: 15px; background: #f8f9fa; border-radius: 10px; border: 1px solid #e9ecef;">
+      <h3 style="margin-bottom: 10px; color: #333;">Sales Data</h3>
+      <table id="dataTable" style="width: 100%; border-collapse: collapse; font-size: 14px;">
+          <thead>
+              <tr style="background: #e9ecef;">
+                  <th style="padding: 8px; border: 1px solid #ddd; text-align: left;">Product</th>
+                  <th style="padding: 8px; border: 1px solid #ddd; text-align: left;">Q1 Sales</th>
+                  <th style="padding: 8px; border: 1px solid #ddd; text-align: left;">Q2 Sales</th>
+                  <th style="padding: 8px; border: 1px solid #ddd; text-align: left;">Q3 Sales</th>
+                  <th style="padding: 8px; border: 1px solid #ddd; text-align: left;">Q4 Sales</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td style="padding: 8px; border: 1px solid #ddd;">Widget A</td>
+                  <td style="padding: 8px; border: 1px solid #ddd;">$125,000</td>
+                  <td style="padding: 8px; border: 1px solid #ddd;">$150,000</td>
+                  <td style="padding: 8px; border: 1px solid #ddd;">$175,000</td>
+                  <td style="padding: 8px; border: 1px solid #ddd;">$200,000</td>
+              </tr>
+              <tr>
+                  <td style="padding: 8px; border: 1px solid #ddd;">Widget B</td>
+                  <td style="padding: 8px; border: 1px solid #ddd;">$80,000</td>
+                  <td style="padding: 8px; border: 1px solid #ddd;">$95,000</td>
+                  <td style="padding: 8px; border: 1px solid #ddd;">$85,000</td>
+                  <td style="padding: 8px; border: 1px solid #ddd;">$90,000</td>
+              </tr>
+              <tr>
+                  <td style="padding: 8px; border: 1px solid #ddd;">Widget C</td>
+                  <td style="padding: 8px; border: 1px solid #ddd;">$60,000</td>
+                  <td style="padding: 8px; border: 1px solid #ddd;">$70,000</td>
+                  <td style="padding: 8px; border: 1px solid #ddd;">$110,000</td>
+                  <td style="padding: 8px; border: 1px solid #ddd;">$130,000</td>
+              </tr>
+              <tr>
+                  <td style="padding: 8px; border: 1px solid #ddd;">Widget D</td>
+                  <td style="padding: 8px; border: 1px solid #ddd;">$45,000</td>
+                  <td style="padding: 8px; border: 1px solid #ddd;">$40,000</td>
+                  <td style="padding: 8px; border: 1px solid #ddd;">$35,000</td>
+                  <td style="padding: 8px; border: 1px solid #ddd;">$30,000</td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+
+<!-- Data table that Claude will analyze -->
+<div class="govuk-!-margin-bottom-6">
+<h2 class="govuk-heading-m">Application Data</h2>
+
+<table class="govuk-table" id="dataTable">
+<thead class="govuk-table__head">
+<tr class="govuk-table__row">
+  <th scope="col" class="govuk-table__header">Application Type</th>
+  <th scope="col" class="govuk-table__header">Submitted</th>
+  <th scope="col" class="govuk-table__header">Processed</th>
+  <th scope="col" class="govuk-table__header">Approved</th>
+  <th scope="col" class="govuk-table__header">Success Rate</th>
+</tr>
+</thead>
+<tbody class="govuk-table__body">
+<tr class="govuk-table__row">
+  <td class="govuk-table__cell">Passport Renewal</td>
+  <td class="govuk-table__cell">1,250</td>
+  <td class="govuk-table__cell">1,200</td>
+  <td class="govuk-table__cell">1,180</td>
+  <td class="govuk-table__cell">98.3%</td>
+</tr>
+<tr class="govuk-table__row">
+  <td class="govuk-table__cell">First Time Passport</td>
+  <td class="govuk-table__cell">850</td>
+  <td class="govuk-table__cell">820</td>
+  <td class="govuk-table__cell">780</td>
+  <td class="govuk-table__cell">95.1%</td>
+</tr>
+<tr class="govuk-table__row">
+  <td class="govuk-table__cell">Emergency Travel</td>
+  <td class="govuk-table__cell">95</td>
+  <td class="govuk-table__cell">95</td>
+  <td class="govuk-table__cell">92</td>
+  <td class="govuk-table__cell">96.8%</td>
+</tr>
+<tr class="govuk-table__row">
+  <td class="govuk-table__cell">Name Change</td>
+  <td class="govuk-table__cell">180</td>
+  <td class="govuk-table__cell">165</td>
+  <td class="govuk-table__cell">155</td>
+  <td class="govuk-table__cell">93.9%</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<!-- Chat interface -->
+<div class="govuk-!-margin-bottom-6">
+<h2 class="govuk-heading-m">AI Assistant</h2>
+
+<div id="chatContainer" class="chat-container" style="border: 2px solid #b1b4b6; border-radius: 4px; background: #f3f2f1; padding: 20px; height: 400px; overflow-y: auto; margin-bottom: 20px;">
+<div id="chatMessages">
+<div class="govuk-inset-text">
+  Hello! I'm your AI assistant. I can help analyze the data above or answer questions about government services.
+</div>
+</div>
+
+<div id="typingIndicator" style="display: none;" class="govuk-body-s">
+<em>AI is thinking...</em>
+</div>
+</div>
+
+<div class="govuk-form-group">
+<label class="govuk-label" for="messageInput">
+Ask a question
+</label>
+<div style="display: flex; gap: 10px;">
+<textarea class="govuk-textarea" id="messageInput" rows="2" style="flex: 1;" placeholder="Type your question here..."></textarea>
+<button class="govuk-button" id="sendButton" style="align-self: flex-end;">
+  Send
+</button>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<script>
+const chatMessages = document.getElementById('chatMessages');
+const messageInput = document.getElementById('messageInput');
+const sendButton = document.getElementById('sendButton');
+const typingIndicator = document.getElementById('typingIndicator');
+const chatContainer = document.getElementById('chatContainer');
+
+let conversationHistory = [];
+
+function addMessage(message, isUser = false) {
+const messageDiv = document.createElement('div');
+messageDiv.className = isUser ? 'govuk-!-margin-bottom-3' : 'govuk-!-margin-bottom-3';
+
+if (isUser) {
+messageDiv.innerHTML = `
+<div style="background: #1d70b8; color: white; padding: 15px; border-radius: 4px; margin-left: 20%;">
+<strong>You:</strong><br>
+${message}
+</div>
+`;
+} else {
+messageDiv.innerHTML = `
+<div style="background: white; border: 2px solid #b1b4b6; padding: 15px; border-radius: 4px; margin-right: 20%;">
+<strong>AI Assistant:</strong><br>
+${message}
+</div>
+`;
+}
+
+chatMessages.appendChild(messageDiv);
+chatContainer.scrollTop = chatContainer.scrollHeight;
+}
+
+function showTypingIndicator() {
+typingIndicator.style.display = 'block';
+chatContainer.scrollTop = chatContainer.scrollHeight;
+}
+
+function hideTypingIndicator() {
+typingIndicator.style.display = 'none';
+}
+
+function extractTableData() {
+const table = document.getElementById('dataTable');
+if (!table) return '';
+
+let tableText = '';
+const rows = table.rows;
+
+for (let i = 0; i < rows.length; i++) {
+const cells = rows[i].cells;
+const rowData = [];
+for (let j = 0; j < cells.length; j++) {
+rowData.push(cells[j].textContent.trim());
+}
+tableText += rowData.join(' | ') + '\n';
+}
+
+return tableText;
+}
+
+async function callClaude(userMessage) {
+conversationHistory.push({
+role: "user",
+content: userMessage
+});
+
+try {
+const response = await fetch('/api/claude', {
+method: 'POST',
+headers: {
+'Content-Type': 'application/json',
+},
+body: JSON.stringify({
+messages: conversationHistory
+})
+});
+
+if (!response.ok) {
+throw new Error(`HTTP error! status: ${response.status}`);
+}
+
+const data = await response.json();
+
+conversationHistory.push({
+role: "assistant",
+content: data.response
+});
+
+return data.response;
+} catch (error) {
+console.error('Claude API Error:', error);
+throw error;
+}
+}
+
+async function analyzeDataOnLoad() {
+const tableData = extractTableData();
+if (!tableData) return;
+
+const analysisPrompt = `Please analyze this government application data and provide insights about processing efficiency, trends, and recommendations for improvement:
+
+${tableData}
+
+Focus on: processing rates, approval rates, potential bottlenecks, and recommendations for better service delivery.`;
+
+try {
+showTypingIndicator();
+const analysis = await callClaude(analysisPrompt);
+
+const analysisDiv = document.createElement('div');
+analysisDiv.className = 'govuk-!-margin-bottom-3';
+analysisDiv.innerHTML = `
+<div style="background: #f3f2f1; border-left: 4px solid #1d70b8; padding: 15px; border-radius: 4px;">
+<strong>📊 Automatic Data Analysis:</strong><br><br>
+${analysis}
+</div>
+`;
+chatMessages.appendChild(analysisDiv);
+chatContainer.scrollTop = chatContainer.scrollHeight;
+
+} catch (error) {
+console.error('Auto-analysis error:', error);
+addMessage('I noticed there\'s data on this page, but I couldn\'t analyze it automatically. Feel free to ask me about it!', false);
+} finally {
+hideTypingIndicator();
+}
+}
+
+async function sendMessage() {
+const message = messageInput.value.trim();
+if (!message) return;
+
+messageInput.disabled = true;
+sendButton.disabled = true;
+
+addMessage(message, true);
+messageInput.value = '';
+
+showTypingIndicator();
+
+try {
+const response = await callClaude(message);
+addMessage(response, false);
+} catch (error) {
+addMessage(`Sorry, I'm having trouble right now. ${error.message}`, false);
+console.error('Error:', error);
+} finally {
+hideTypingIndicator();
+messageInput.disabled = false;
+sendButton.disabled = false;
+messageInput.focus();
+}
+}
+
+// Event listeners
+sendButton.addEventListener('click', sendMessage);
+messageInput.addEventListener('keypress', (e) => {
+if (e.key === 'Enter' && !e.shiftKey) {
+e.preventDefault();
+sendMessage();
+}
+});
+
+// Auto-analyze data on load
+setTimeout(() => {
+analyzeDataOnLoad();
+}, 1000);
+</script>
+
+
+
+
+    <!-- ******************************** END MAIN RIGHT COL CONTENT ************************ -->
+
+  </section>
+</div>
+
+{% include "../includes/inc_js-for-pl-functionality.html" %}
+
+{% endblock %}

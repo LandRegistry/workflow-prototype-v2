@@ -1,0 +1,58 @@
+    <div class="govuk-grid-column-full hmlr-grid-column-collapse"> {# was originally .govuk-grid-column-one-third #}
+      
+      <div class="hmlr-sort-right hmlr-sort-right--move-up">
+        <form action="#" name="sorting" novalidate>
+
+          <div class="govuk-form-group govuk-!-margin-bottom-1">
+            <label class="govuk-label govuk-!-font-size-16" for="onChangeSort">
+              Sorted by
+            </label>
+
+            <!-- *** IF THE ID IS CHANGED WE NEED TO UPDATE THAT ID IN THE JAVASCRIPT !!! ***-->
+            <select class="govuk-select govuk-!-font-size-16" id="onChangeSort" name="onChangeSort" >
+              <option value="priority-newest" selected>Default ordering</option>
+              <option value="priority-newest">Priority date: Newest</option>
+              <option value="priority-oldest">Priority date: Oldest</option>
+              <option value="obtained-newest">Date obtained: Newest</option>
+              <option value="obtained-oldest">Date obtained: Oldest</option>
+            </select>
+          </div>
+
+          <button class="govuk-button govuk-!-font-size-16" type="submit">
+            Submit
+          </button>
+
+        </form>
+      </div> 
+
+    </div>
+    
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+
+    const onChangeSortElement = document.getElementById('onChangeSort');
+
+    if (onChangeSortElement) {//only run code if the page has the element!
+
+      onChangeSortElement.setAttribute('aria-label', 'The form is submitted automatically when a selection is made.');
+
+      onChangeSortElement.addEventListener('change', function() {
+        alert('The select submits on change');
+        //this.closest('form').submit();
+      });
+      //var sortForm = onChangeSortElement.closest('form'); //not needed now the button is display: none
+      //sortForm.querySelector('button').setAttribute('tabindex', '-1');
+    }
+
+  });  
+</script>
+{#
+  <!-- *** must be inside form after the 'section' tag if special css required *** -->
+  <!--div class="govuk-warning-text"> 
+    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+    <strong class="govuk-warning-text__text govuk-!-font-weight-regular govuk-!-font-size-16">
+      <span class="govuk-visually-hidden">Warning</span>
+      You have applied a filter or sorting to the list.
+    </strong>
+  </div--> 
+#}

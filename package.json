@@ -9,7 +9,7 @@
     "@govuk-prototype-kit/step-by-step": "2.2.2",
     "@hmlr/frontend": "^1.1.0",
     "@x-govuk/govuk-prototype-filters": "^1.2.0",
-    "govuk-frontend": "4.7.0",
+    "govuk-frontend": "^5.11.0",
     "govuk-prototype-kit": "13.13.6",
     "jquery": "3.7.1"
   }
