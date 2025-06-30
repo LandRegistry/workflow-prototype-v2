@@ -22,9 +22,13 @@
     }
 
     @include govuk-media-query($from: desktop){
-        &.hmlr-wf-notification-banner--right {
+        /*&.hmlr-wf-notification-banner--right {
             float: right;
-        }    
+        }*/
+        &.hmlr-wf-notification-banner--centered {/* use in conjunction with a grid width: e.g. govuk-grid-column-three-quarters */
+            margin-left: auto; 
+            margin-right: auto;
+       }            
     }
 
     &.hmlr-wf-notification-banner--normal {
