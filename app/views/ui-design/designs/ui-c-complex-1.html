@@ -115,7 +115,7 @@
 
             <menu class="govuk-list hmlr-wf-lists__menu">
               <!--li>
-                  <input title="Open in CORA" type="button" id="open_btn_P897RWW" class="govuk-button govuk-button--secondary" value="Open">
+                  <input title="Open in CORA" type="button" id="open_btn_P897RWW" class="govuk-button govuk-button--secondary hmlr-save-notes-btn" value="Open">
               </li-->
               <li>
                   <a class="govuk-link govuk-link--no-visited-state" href="#">
@@ -164,7 +164,7 @@
             <div class="govuk-form-group hmlr-my-notes-textarea hmlr-my-notes-textarea--hide">
               
               <label class="govuk-label govuk-!-font-size-16" for="my-notes-P897RWW">
-                  My notes (optional)
+                  My notes (optional) 
               </label>
 
               <div id="my-note-hint-P897RWW" class="govuk-hint govuk-!-font-size-16">
@@ -175,9 +175,14 @@
               <textarea class="govuk-textarea" id="my-notes-P897RWW" name="my-notes-P897RWW" rows="5" aria-describedby="my-note-hint-P897RWW"></textarea>
 
               <div class="govuk-button-group">
-                  <input type="button" id="save-notes-P897RWW" class="govuk-button govuk-button--secondary" value="Save">
+                  <input type="button" id="save-notes-P897RWW" class="govuk-button govuk-button--secondary hmlr-save-notes-btn" value="Save">
                   <!--a href="#" class="govuk-link govuk-link--no-visited-state hmlr-my-notes" role="button">Hide my notes <span class="govuk-visually-hidden">display</span></a-->
+
+                                <div class="hmlr-response-text" aria-live="assertive"></div>
               </div>
+
+              <!-- hidden inputs for 'my notes' must go here (not between the displayed elements) -->
+              <input type="hidden" name="my-notes-ref" value="P897RWW" />
 
             </div>
 
@@ -217,7 +222,7 @@
     
             <menu class="govuk-list hmlr-wf-lists__menu">
               <!--li>
-                  <input title="Open in CORA" type="button" id="open_btn_CB127994" class="govuk-button govuk-button--secondary" value="Open">
+                  <input title="Open in CORA" type="button" id="open_btn_CB127994" class="govuk-button govuk-button--secondary hmlr-save-notes-btn" value="Open">
                   </li-->
               <li>
                   <a class="govuk-link govuk-link--no-visited-state" href="#">
@@ -276,11 +281,13 @@
               <textarea class="govuk-textarea" id="my-notes-CB127994" name="my-notes-CB127994" rows="5" aria-describedby="my-note-hint-CB127994"></textarea>
     
               <div class="govuk-button-group">
-                  <input type="button" id="save-notes-CB127994" class="govuk-button govuk-button--secondary" value="Save">
+                  <input type="button" id="save-notes-CB127994" class="govuk-button govuk-button--secondary hmlr-save-notes-btn" value="Save">
                   <!--a href="#" class="govuk-link govuk-link--no-visited-state hmlr-my-notes" role="button">Hide my notes <span class="govuk-visually-hidden">display</span></a-->
-              </div>
+                            <div class="hmlr-response-text" aria-live="assertive"></div>
     
             </div>
+
+            <input type="hidden" name="my-notes-ref" value="CB127994" />
     
           </td>
         </tr>
@@ -318,7 +325,7 @@
     
             <menu class="govuk-list hmlr-wf-lists__menu">
               <!--li>
-                  <input title="Open in CORA" type="button" id="open_btn_DU779212" class="govuk-button govuk-button--secondary" value="Open">
+                  <input title="Open in CORA" type="button" id="open_btn_DU779212" class="govuk-button govuk-button--secondary hmlr-save-notes-btn" value="Open">
                   </li-->
               <li>
                   <a class="govuk-link govuk-link--no-visited-state" href="#">
@@ -361,7 +368,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" height="24" width="21" viewBox="0 0 448 512" class="hmlr-flag-icon" role="img" aria-hidden="true" aria-label="Case flagged"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#0b0c0c" d="M64 32C64 14.3 49.7 0 32 0S0 14.3 0 32L0 64 0 368 0 480c0 17.7 14.3 32 32 32s32-14.3 32-32l0-128 64.3-16.1c41.1-10.3 84.6-5.5 122.5 13.4c44.2 22.1 95.5 24.8 141.7 7.4l34.7-13c12.5-4.7 20.8-16.6 20.8-30l0-247.7c0-23-24.2-38-44.8-27.7l-9.6 4.8c-46.3 23.2-100.8 23.2-147.1 0c-35.1-17.6-75.4-22-113.5-12.5L64 48l0-16z"/></svg>                
               </li>                  
             </menu>
-    
+  
             <div class="govuk-form-group hmlr-my-notes-textarea hmlr-my-notes-textarea--hide">
               
               <label class="govuk-label govuk-!-font-size-16" for="my-notes-DU779212">
@@ -376,10 +383,15 @@
               <textarea class="govuk-textarea" id="my-notes-DU779212" name="my-notes-DU779212" rows="5" aria-describedby="my-note-hint-DU779212"></textarea>
     
               <div class="govuk-button-group">
-                  <input type="button" id="save-notes-DU779212" class="govuk-button govuk-button--secondary" value="Save">
+                  <input type="button" id="save-notes-DU779212" class="govuk-button govuk-button--secondary hmlr-save-notes-btn" value="Save">
                   <!--a href="#" class="govuk-link govuk-link--no-visited-state hmlr-my-notes" role="button">Hide my notes <span class="govuk-visually-hidden">display</span></a-->
+                  
+                  <div class="hmlr-response-text" aria-live="assertive"></div>
+
               </div>
-    
+
+              <input type="hidden" name="my-notes-ref" value="DU779212" />
+
             </div>
     
           </td>
@@ -418,7 +430,7 @@
  
             <menu class="govuk-list hmlr-wf-lists__menu">
               <!--li>
-                  <input title="Open in CORA" type="button" id="open_btn_DT102641" class="govuk-button govuk-button--secondary" value="Open">                  
+                  <input title="Open in CORA" type="button" id="open_btn_DT102641" class="govuk-button govuk-button--secondary hmlr-save-notes-btn" value="Open">                  
               </li-->
               <li>
                   <a class="govuk-link govuk-link--no-visited-state" href="#">
@@ -476,12 +488,16 @@
               <textarea class="govuk-textarea" id="my-notes-DT102641" name="my-notes-DT102641" rows="5" aria-describedby="my-note-hint-DT102641">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, odit rerum. Quos earum vero velit nesciunt molestiae officia aliquid voluptatibus blanditiis ipsa veniam sit, optio dignissimos minima officiis assumenda quo. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi minus est quisquam labore, optio, possimus, recusandae distinctio libero explicabo iste alias. Incidunt dolorum doloremque pariatur blanditiis omnis rem expedita nesciunt! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, provident non! Voluptas neque dolorum voluptatibus consequatur cupiditate molestiae enim ipsa, sed voluptatum quia, quasi iste nesciunt quibusdam distinctio quis reprehenderit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, odit rerum. Quos earum vero velit nesciunt molestiae officia aliquid voluptatibus blanditiis ipsa veniam sit, optio dignissimos minima officiis assumenda quo. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi minus est quisquam labore, optio, possimus, recusandae distinctio libero explicabo iste alias. Incidunt dolorum doloremque pariatur blanditiis omnis rem expedita nesciunt! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, provident non! Voluptas neque dolorum voluptatibus consequatur cupiditate molestiae enim ipsa, sed voluptatum quia, quasi iste nesciunt quibusdam distinctio quis reprehenderit.</textarea>
     
               <div class="govuk-button-group">
-                  <input type="button" id="save-notes-DT102641" class="govuk-button govuk-button--secondary" value="Save">
+                  <input type="button" id="save-notes-DT102641" class="govuk-button govuk-button--secondary hmlr-save-notes-btn" value="Save">
                   <!--a href="#" class="govuk-link govuk-link--no-visited-state hmlr-my-notes" role="button">Hide my notes <span class="govuk-visually-hidden">display</span></a-->
+                            <div class="hmlr-response-text" aria-live="assertive"></div>
+
               </div>
+
+              <input type="hidden" name="my-notes-ref" value="DT102641" />
     
             </div>
-    
+
           </td>
         </tr>
       </tbody> 
@@ -518,7 +534,7 @@
     
             <menu class="govuk-list hmlr-wf-lists__menu">
               <!--li>
-                  <input title="Open in CORA" type="button" id="open_btn_DU164222" class="govuk-button govuk-button--secondary" value="Open">
+                  <input title="Open in CORA" type="button" id="open_btn_DU164222" class="govuk-button govuk-button--secondary hmlr-save-notes-btn" value="Open">
                   </li-->
               <li>
                   <a class="govuk-link govuk-link--no-visited-state" href="#">
@@ -576,12 +592,16 @@
               <textarea class="govuk-textarea" id="my-notes-DU164222" name="my-notes-DU164222" rows="5" aria-describedby="my-note-hint-DU164222"></textarea>
     
               <div class="govuk-button-group">
-                  <input type="button" id="save-notes-DU164222" class="govuk-button govuk-button--secondary" value="Save">
+                  <input type="button" id="save-notes-DU164222" class="govuk-button govuk-button--secondary hmlr-save-notes-btn" value="Save">
                   <!--a href="#" class="govuk-link govuk-link--no-visited-state hmlr-my-notes" role="button">Hide my notes <span class="govuk-visually-hidden">display</span></a-->
+                            <div class="hmlr-response-text" aria-live="assertive"></div>
+
               </div>
+
+              <input type="hidden" name="my-notes-ref" value="DU164222" />              
     
             </div>
-    
+
           </td>
         </tr>
       </tbody>   
@@ -618,7 +638,7 @@
     
             <menu class="govuk-list hmlr-wf-lists__menu">
               <!--li>
-                  <input title="Open in CORA" type="button" id="open_btn_DT102641" class="govuk-button govuk-button--secondary" value="Open">                  
+                  <input title="Open in CORA" type="button" id="open_btn_DT102641" class="govuk-button govuk-button--secondary hmlr-save-notes-btn" value="Open">                  
               </li-->
               <li>
                   <a class="govuk-link govuk-link--no-visited-state" href="#">
@@ -676,9 +696,13 @@
               <textarea class="govuk-textarea" id="my-notes-DT102642" name="my-notes-DT102642" rows="5" aria-describedby="my-note-hint-DT102641"></textarea>
     
               <div class="govuk-button-group">
-                  <input type="button" id="save-notes-DT102641" class="govuk-button govuk-button--secondary" value="Save">
+                  <input type="button" id="save-notes-DT102641" class="govuk-button govuk-button--secondary hmlr-save-notes-btn" value="Save">
                   <!--a href="#" class="govuk-link govuk-link--no-visited-state hmlr-my-notes" role="button">Hide my notes <span class="govuk-visually-hidden">display</span></a-->
+                            <div class="hmlr-response-text" aria-live="assertive"></div>
+
               </div>
+
+              <input type="hidden" name="my-notes-ref" value="DT102642" />
     
             </div>
     
@@ -718,7 +742,7 @@
     
             <menu class="govuk-list hmlr-wf-lists__menu">
               <!--li>
-                  <input title="Open in CORA" type="button" id="open_btn_DU164190" class="govuk-button govuk-button--secondary" value="Open">
+                  <input title="Open in CORA" type="button" id="open_btn_DU164190" class="govuk-button govuk-button--secondary hmlr-save-notes-btn" value="Open">
               </li-->
               <li>
                   <a class="govuk-link govuk-link--no-visited-state" href="#">
@@ -776,11 +800,15 @@
               <textarea class="govuk-textarea" id="my-notes-DU164190" name="my-notes-DU164190" rows="5" aria-describedby="my-note-hint-DU164190">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, odit rerum. Quos earum vero velit nesciunt molestiae officia aliquid voluptatibus blanditiis ipsa veniam sit, optio dignissimos minima officiis assumenda quo. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi minus est quisquam labore, optio, possimus, recusandae distinctio libero explicabo iste alias. Incidunt dolorum doloremque pariatur blanditiis omnis rem expedita nesciunt! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, provident non! Voluptas neque dolorum voluptatibus consequatur cupiditate molestiae enim ipsa, sed voluptatum quia, quasi iste nesciunt quibusdam distinctio quis reprehenderit.</textarea>
     
               <div class="govuk-button-group">
-                  <input type="button" id="save-notes-DU164190" class="govuk-button govuk-button--secondary" value="Save">
+                  <input type="button" id="save-notes-DU164190" class="govuk-button govuk-button--secondary hmlr-save-notes-btn" value="Save">
                   <!--a href="#" class="govuk-link govuk-link--no-visited-state hmlr-my-notes" role="button">Hide my notes <span class="govuk-visually-hidden">display</span></a-->
+                            <div class="hmlr-response-text" aria-live="assertive"></div>
+
               </div>
+
+              <input type="hidden" name="my-notes-ref" value="DU164190" />
     
-            </div>
+            </div>  
     
           </td>
         </tr>
@@ -818,7 +846,7 @@
     
             <menu class="govuk-list hmlr-wf-lists__menu">
               <!--li>
-                  <input title="Open in CORA" type="button" id="open_btn_DU178082" class="govuk-button govuk-button--secondary" value="Open">
+                  <input title="Open in CORA" type="button" id="open_btn_DU178082" class="govuk-button govuk-button--secondary hmlr-save-notes-btn" value="Open">
                   </li-->
               <li>
                   <a class="govuk-link govuk-link--no-visited-state" href="#">
@@ -876,9 +904,13 @@
               <textarea class="govuk-textarea" id="my-notes-DU178082" name="my-notes-DU178082" rows="5" aria-describedby="my-note-hint-DU178082"></textarea>
     
               <div class="govuk-button-group">
-                  <input type="button" id="save-notes-DU178082" class="govuk-button govuk-button--secondary" value="Save">
+                  <input type="button" id="save-notes-DU178082" class="govuk-button govuk-button--secondary hmlr-save-notes-btn" value="Save">
                   <!--a href="#" class="govuk-link govuk-link--no-visited-state hmlr-my-notes" role="button">Hide my notes <span class="govuk-visually-hidden">display</span></a-->
+                            <div class="hmlr-response-text" aria-live="assertive"></div>
+
               </div>
+
+              <input type="hidden" name="my-notes-ref" value="DU178082" />
     
             </div>
     

@@ -8,7 +8,32 @@
 
 {% block content %}
 
+<div class="govuk-grid-row">
+  
+  <!-- 
+    this banner is served for non-JavaScript support.
+    
+    without JavaScript support the 'ajax' for updating the My Notes feature simply does not work, and the 'Save' button for My Notes is allowed to function as a normal submit button. The page is returned with a normal banner notification confirmation, as normal.   
+  -->
 
+  <div class="govuk-grid-column-three-quarters-from-desktop hmlr-wf-notification-banner hmlr-wf-notification-banner--centered hmlr-wf-notification-banner--normal hmlr-wf-notification-banner--font-size-19 hmlr-wf-notification-banner--low-padding">
+
+      <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Success
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <h3 class="govuk-notification-banner__heading">
+            My notes were saved for application DU472991.
+          </h3>
+        </div>
+      </div>
+
+  </div>
+
+</div>  
     
 <div class="govuk-grid-row hmlr-min-height-header-sm">
   <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-3">
