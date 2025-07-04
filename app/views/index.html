@@ -70,7 +70,7 @@
 
 
 <!-- ***********************  display none added on this div ********************** -->
-    <div class="govuk-grid-row" style="display: none;">
+    <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
         <p class="govuk-body-s">
@@ -81,7 +81,7 @@
     </div>   
 
 <!-- ***********************  display none added on this div ********************** -->    
-    <div class="govuk-accordion govuk-!-margin-top-4" data-module="govuk-accordion" id="accordion-with-summary-sections"  style="display: none;">
+    <div class="govuk-accordion govuk-!-margin-top-4" data-module="govuk-accordion" id="accordion-with-summary-sections">
       <div class="govuk-accordion__section">
         <div class="govuk-accordion__section-header">
           <h2 class="govuk-accordion__section-heading">
@@ -269,7 +269,38 @@
                 </td>                            
               </tr>                  
                           
-            </tbody> 
+            </tbody>
+            
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell" colspan="4">
+                    <span class="govuk-!-padding-right-4">Cancellations</span> <span class="govuk-!-font-weight-regular">(filtering/order when obtaining cancelled <abbr>ADR</abbr> applications )</span>
+                </td>
+              </tr>
+              July 2025
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  Cancelled/Extended filter designs
+                </td>
+                <td class="govuk-table__cell">
+                  
+                  <ul class="govuk-list govuk-!-margin-0">
+                    <li class="govuk-!-display-inline-block govuk-!-margin-right-1">
+                      <a class="govuk-link govuk-link--no-visited-state" href="/cancellation/index">Designs</a>
+                    </li>
+                  </ul>
+
+                </td>
+
+                <td class="govuk-table__cell">
+                  July 2025
+                </td>                 
+                <td class="govuk-table__cell">
+                  &mdash;
+                </td>                            
+              </tr>                  
+                          
+            </tbody>             
             
             <tbody class="govuk-table__body">
               <tr class="govuk-table__row">
@@ -419,7 +450,7 @@
   </div>
 </div>
 
-<script>
+<script>// quiz/clear-local-storage 
 /*window.onload = function() {
   var hideIndexValue = localStorage.getItem('hideIndex');// Retrieve the value 
   

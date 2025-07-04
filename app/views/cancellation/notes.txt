@@ -1,0 +1,27 @@
+1). 'hmlr-no-wrap' class added to the 'a' link for "Change your category of work" 
+
+sass: 
+
+@include govuk-media-query($from: desktop){
+    .hmlr-no-wrap {
+        white-space: nowrap;
+    }
+}
+
+
+2). Note the hidden content and HTML (fieldset/legend), etc
+
+3). Note 'abbr' tag for ADR inside the form label (if the label is ADR)
+
+4). If a 'cancelled' ADR application is selected and a 'cancelled' case is not available, we fallback to serving a non-cancelled ADR case AND the success banner includes the additional text sentence, as demonstrated in the prototype.
+
+5). ADR radio is pre-selected
+
+
+
+
+
+* designs 3 and 4: the second checkbox is pre-selected
+
+** design 5, note: hint and input aria linking
+

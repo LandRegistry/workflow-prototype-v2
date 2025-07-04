@@ -16,3 +16,9 @@
 .row-paddding__worklist {
   padding-top: 20px;
 }
+
+
+/* some legacy css is impacting upon the new GDS footer, so this hack resolves it */
+footer.govuk-footer .govuk-footer__link {
+  padding: 0 !important; 
+}

@@ -1,6 +1,6 @@
 {% extends "layouts/wf_layout-std-new.html" %}
 
-{% set pageName="Expedites" %}
+{% set pageName="ADR" %}
 
 {% block beforeContent %}
 <div class="govuk-breadcrumbs">
@@ -19,21 +19,7 @@
 
 {% block content %}
 
-<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
-aria-labelledby="govuk-notification-banner-title"
-data-module="govuk-notification-banner"
-id="message-banner">
-<div class="govuk-notification-banner__header">
-  <h2 class="govuk-notification-banner__title" id="message-banner-title">
-    Success
-  </h2>
-</div>
-<div class="govuk-notification-banner__content" id="message-banner-content">
-  <p class="govuk-notification-banner__heading">You have obtained application DU164181 / <abbr>D348RWW</abbr>.</p>
 
-  <p class="govuk-body">An expedited application is not currently available.</p>
-</div>
-</div>
 
 <section id="pleaseWaitTarget" aria-live="assertive"></section>
  
@@ -47,7 +33,7 @@ id="message-banner">
   
       <h1 id="my_worklist_header" class="govuk-heading-l worklist__header">
   
-          My Worklist : 1 applications
+          My Worklist : 0 applications
   
       </h1>
       
@@ -55,197 +41,50 @@ id="message-banner">
   
       <p class="govuk-body">
         
-        Your category of work is <span class="bold">Executive Register Update Complex</span>.
+        Your category of work is <span class="bold">Volume Change of Ownership Actionable Deferral: Requisition</span>.
         
-        <a href="#" class="govuk-link govuk-link--no-visited-state">Change your category of work</a>.
+        <a href="#" class="govuk-link govuk-link--no-visited-state hmlr-no-wrap">Change your category of work</a>.
       </p>
-
-      <!--div class="govuk-inset-text govuk-!-font-size-16">
-        An expedited application is not currently available. 
-      </div-->
   
 
-      <table id="progress_now_table" class="govuk-table worklist__table">
+      <div class="govuk-form-group">
+          <form action="/cancellation/msg-5" method="post" novalidate>
 
-        <caption class="govuk-table__caption govuk-table__caption--m">Work items in My Worklist</caption>
-          <thead class="govuk-table__head">
-              <tr class="govuk-table__row worklist-black-border">
-                <th class="govuk-table__header" id="progress_now_priority_dates" scope="col">Priority date</th>
-                <th class="govuk-table__header" id="progress_now_title_numbers" scope="col">Title number</th>
-                <th class="govuk-table__header" id="progress_now_abrs" scope="col"><abbr title="A B R">ABR</abbr></th>
-                <th class="govuk-table__header" id="progress_now_categories" scope="col">Category</th>
-                <th class="govuk-table__header" id="progress_now_dates_obtained" scope="col">Date obtained</th>
-                <th class="govuk-table__header" id="progress_now_next_actions" scope="col">Next action</th>
-              </tr>
-          </thead>
-  
-          
-              
-      <tbody data-case-ref="D348RWW" class="case  ">
-          <tr id="row_3011" class="govuk-table__row case__data_row ">
-  
-              
-      <td class="case__date" id="D348RWW_priority_date" headers="progress_now_priority_dates">
-          
-            
-            17 August 2024
-            
-          
-      </td>
-  
-  
-              
-      <td class="case__title-number" id="D348RWW_title_number" headers="progress_now_title_numbers">
-          <span class="case__inc">
-                  
-          </span>
-          DU164181
-          
-      </td>
-  
-  
-              
-      <td id="D348RWW_abr" class="case__abr" headers="progress_now_abrs">
-          D348RWW
-          <div>
-               
-          </div>
-      </td>
-  
-  
-              
-      <td id="D348RWW_cat" class="case__category" headers="progress_now_categories">
-          
-          
-          Volume Change of Ownership
-      </td>
-  
-  
-              
-      <td class="case__date" id="D348RWW_dobtained" headers="progress_now_dates_obtained">
-          
-          21 October 2024
-          
-      </td>
-  
-  
-              
-      <td id="D348RWW_next_action" class="case__next-action" headers="progress_now_next_actions">
-          
-              New - Start to process
-          
-      </td>
-  
-  
-          </tr>
-          
-      
-          
-      
-  
-          
-          <tr id="row_3011_actions" class="govuk-table__row case__actions">
-              <td colspan="6">
-                <div class="case__actions-wrapper">
-                  <div class="case__left-hand-actions actions-spacing">
-  
-                      
-                          
-                              
-      <form class="case__form case__form--process" id="process_form_3011" action="#" method="POST" novalidate="">
-          
-            <input name="csrf_token" type="hidden" value="ImVlODVjZjllNDQyMTEzZmYzZTg5YzZhMDhhOGZmYWIzNTA2ODg0MDci.ZxZFwg.s8Mt3_2aq8cHAQT3x3Klq7bYsy4">
-          
-          <input aria-label="Open CORA to start processing case D348RWW" type="submit" id="open_btn_D348RWW" class="wf-button" value="Open">
-      </form>
-  
-                          
-                      
-  
-                      
-                      
-      <a class="govuk-link govuk-link--no-visited-state actions-spacing case__anchor govuk-!-font-size-16 govuk-!-display-inline-block" href="esrv-return-reason?work-item-id=3011">Return to <abbr title="e-serve">ESRV</abbr>
-         <span class="govuk-visually-hidden">: case <abbr>D348RWW</abbr> to <abbr>DB2</abbr></span>
-      </a>
-  
-                      
-  
+            <div class="govuk-form-group hmlr-form-grouping govuk-!-display-inline-block govuk-!-margin-bottom-3 govuk-!-padding-top-2 govuk-!-padding-right-3">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend--s govuk-visually-hidden">
+                  Select which type of application to obtain
+                </legend>
+
+                <div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios">
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="adr" name="adr" type="radio" value="adr">
+                    <label class="govuk-label govuk-radios__label govuk-!-font-size-16" for="adr">
+                      <abbr>ADR</abbr>
+                    </label>
                   </div>
-  
-                  <div class="case__right-hand-actions actions-spacing">
-  
-                      <form class="case__form" novalidate="" id="change_state_3011" action="change_state/3011?lr_ref_number=DU164181&amp;lr_work_ref=D348RWW" method="post" onsubmit="btn_await_lawyer_3011.disabled = true;
-                                    btn_progress_now_3011.disabled = true;
-                                    btn_progress_later_3011.disabled = true;">
-                        
-                          <input name="csrf_token" type="hidden" value="ImVlODVjZjllNDQyMTEzZmYzZTg5YzZhMDhhOGZmYWIzNTA2ODg0MDci.ZxZFwg.s8Mt3_2aq8cHAQT3x3Klq7bYsy4">
-                        
-                        
-                          
-                        
-  
-                          <input class="case__progress-code" id="hidden_value_progress_3011" type="hidden" name="activity_code" value="PROGRESS_LATER">
-  
-                          <input id="hidden_value_progress_child_cases_3011" type="hidden" name="child_cases" value="0">
-  
-  
-                      
-  
-                          
-          <input id="btn_await_lawyer_3011" title="Refer case D348RWW to a lawyer" type="hidden" name="Waiting_for_lawyer" class="case__hyperlink case__await_lawyer_btn govuk-!-display-inline-block govuk-!-text-align-centre govuk-!-padding-bottom-1 hmlr-link--min-width-48 govuk-!-font-size-16" value="Waiting for lawyer" formaction="await_lawyer/3011?lr_ref_number=DU164181&amp;lr_work_ref=D348RWW">
-  
-                          <span class="govuk-visually-hidden">|</span>
-                          
-      <a class="govuk-link govuk-link--no-visited-state case__refer-link case__anchor govuk-!-font-size-16 govuk-!-display-inline-block" href="refer?lr_work_ref=D348RWW&amp;lr_ref_number=DU164181">Refer<span class="govuk-visually-hidden"> case <abbr>D348RWW</abbr></span>
-      </a>
-  
-                          <span class="govuk-visually-hidden">|</span>
-                          
-          <input id="btn_progress_now_3011" title="Move case D348RWW into your worklist" type="hidden" name="Work_on_this" class="govuk-!-display-inline-block govuk-link case__hyperlink case__progress-later-btn govuk-!-font-size-16" value="Work on this">
-  
-                          <span class="govuk-visually-hidden">|</span>
-                          
-          <input id="btn_progress_later_3011" title="Progress case D348RWW later" type="submit" name="Progress_later" class="govuk-link govuk-link--no-visited-state case__hyperlink case__progress-later-btn govuk-!-display-inline-block govuk-!-text-align-centre govuk-!-padding-bottom-1 hmlr-link--min-width-48 govuk-!-font-size-16" value="Progress later">
-  
-                          <span class="govuk-visually-hidden">|</span>
-                          
-      <a class="govuk-link govuk-link--no-visited-state case__defer-link case__anchor govuk-!-font-size-16 govuk-!-display-inline-block" href="deferral-category-option?lr_work_ref=D348RWW&amp;lr_ref_number=DU164181&amp;client=">Defer<span class="govuk-visually-hidden"> case <abbr>D348RWW</abbr></span>
-      </a>
-  
-                          <span class="govuk-visually-hidden">|</span>
-                      
-  
-                      
-                          
-      <a class="govuk-link govuk-link--no-visited-state case__activity-history-link case__anchor govuk-!-font-size-16 ga_track_event govuk-!-display-inline-block hmlr-link--min-width-48" href="activity-history/3011?page_no=1&amp;return_to=worklist" id="link_activity_history_D348RWW" data-ga-category="Activity_History_Link_From_Worklist" data-ga-action="Activity History link clicked from worklist page" data-ga-label="Worklist_Activity_History_Link">View activity history
-         <span class="govuk-visually-hidden"> for <abbr>D348RWW</abbr></span>
-      </a>
-  
-                          <span class="govuk-visually-hidden">|</span>
-                          
-      <a class="govuk-!-display-inline-block govuk-link govuk-link--no-visited-state case__more-info-link case__anchor govuk-!-font-size-16" href="cslk:titleno=DU164181&amp;appnref=D348RWW&amp;appntype=ENQ">
-          More info
-      <span class="govuk-visually-hidden">: open daylist for case <abbr>D348RWW</abbr>. Opens in new window.</span></a>
-  
-                          <span class="govuk-visually-hidden">|</span>
-                      
-  
-                      
-                      </form>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="adr-2" name="adr" type="radio" value="adr-cancellation" aria-describedby="extended-hint" checked>
+                    <label class="govuk-label govuk-radios__label govuk-!-font-size-16" for="adr-2">
+                      Extended
+                    </label>
+                    <div id="extended-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16">
+                      Cancellation date has been reached.
+                    </div>                    
                   </div>
+
                 </div>
-              </td>
-          </tr>
-          
-      </tbody>
-  
+              </fieldset>
+
+              <input name="csrf_token" type="hidden" value="IjI2YzBiY2QwNzJiZjE0M2M3MDMxZGQ1M2UyMTBkMDNhMWE3YTdiZmYi.ZddyBQ.PDWdSpYFF66m1bvmIBfGNnQ9gwY">
+
+              <input type="submit" id="button_obtain" value="Obtain" class="govuk-button button-large govuk-!-margin-top-2" data-double-click-prevention="true">           
               
-          
-  
-      </table>
-
-
-
+            </div>
+            
+          </form>
+      </div>
   
   
   </div>      
@@ -256,7 +95,7 @@ id="message-banner">
 
 
     <!--script type="application/json" id="action_messages">
-      {"deferred": "You have deferred application <span class=\"bold\">{title_no} / {abr}</span>.", "deferred_MT": "You have deferred lead application <span class=\"bold\">{title_no} / {abr}</span> and <span class=\"bold\">{children}</span> attached applications.", "returned": "You have returned application <span class=\"bold\">{title_no} / {abr}</span> to ESRV.", "returned_MT": "You have returned lead application <span class=\"bold\">{title_no} / {abr}</span> and <span class=\"bold\">{children}</span> attached applications to ESRV.", "obtain": "You have obtained application <span class=\"bold\">{title_no} / {abr}</span>.", "obtain_MT": "You have obtained lead application <span class=\"bold\">{title_no} / {abr}</span> and <span class=\"bold\">{children}</span> attached applications.", "cancelled": "You have cancelled application <span class=\"bold\">{title_no} / {abr}</span>.", "cancel": "You have cancelled application <span class=\"bold\">{title_no} / {abr}</span>.", "cancel_MT": "You have cancelled lead application <span class=\"bold\">{title_no} / {abr}</span>.", "markoff": "You have marked off application <span class=\"bold\">{title_no} / {abr}</span>.", "markoff_MT": "You have marked off lead application <span class=\"bold\">{title_no} / {abr}</span>.", "prior_pending_fail": "There is no longer a prior pending item. You cannot defer application <span class=\"bold\">{title_no} / {abr}</span> for this reason.", "progress_now": "You have added application <span class=\"bold\">{title_no} / {abr}</span> to your worklist.", "progress_now_MT": "You have added lead application <span class=\"bold\">{title_no} / {abr}</span> and <span class=\"bold\">{children}</span> attached applications to your worklist.", "progress_later": "You will progress application <span class=\"bold\">{title_no} / {abr}</span> later.", "progress_later_MT": "You will progress lead application <span class=\"bold\">{title_no} / {abr}</span> and <span class=\"bold\">{children}</span> attached applications later.", "active": "You are drafting attached application <span class=\"bold\">{title_no} / {abr}</span>.", "active_MT": "You are drafting lead application <span class=\"bold\">{title_no} / {abr}</span>.", "partially_drafted": "You have partially drafted attached application <span class=\"bold\">{title_no} / {abr}</span>.", "fully_drafted": "You have fully drafted attached application <span class=\"bold\">{title_no} / {abr}</span>.", "partially_drafted_MT": "You have partially drafted lead application <span class=\"bold\">{title_no} / {abr}</span>.", "fully_drafted_MT": "You have fully drafted lead application <span class=\"bold\">{title_no} / {abr}</span>.", "refer": "You have referred application <span class=\"bold\">{title_no} / {abr}</span>.", "refer_MT": "You have referred lead application <span class=\"bold\">{title_no} / {abr}</span> and <span class=\"bold\">{children}</span> attached applications.", "await_lawyer": "You have referred application <span class=\"bold\">{title_no} / {abr}</span> to a lawyer.", "await_lawyer_MT": "You have referred lead application <span class=\"bold\">{title_no} / {abr}</span> and <span class=\"bold\">{children}</span> attached applications to a lawyer."}
+      {"deferred": "You have deferred application <span class=\"bold\">{title_no} / {abr}</span>.", "deferred_MT": "You have deferred lead application <span class=\"bold\">{title_no} / {abr}</span> and <span class=\"bold\">{children}</span> attached applications.", "returned": "You have returned application <span class=\"bold\">{title_no} / {abr}</span> to ESRV.", "returned_MT": "You have returned lead application <span class=\"bold\">{title_no} / {abr}</span> and <span class=\"bold\">{children}</span> attached applications to ESRV.", "obtain": "You have obtained application <span class=\"bold\">{title_no} / {abr}</span>.", "obtain_MT": "You have obtained lead application <span class=\"bold\">{title_no} / {abr}</span> and <span class=\"bold\">{children}</span> attached applications.", "cancellation": "You have cancellation application <span class=\"bold\">{title_no} / {abr}</span>.", "cancel": "You have cancellation application <span class=\"bold\">{title_no} / {abr}</span>.", "cancel_MT": "You have cancellation lead application <span class=\"bold\">{title_no} / {abr}</span>.", "markoff": "You have marked off application <span class=\"bold\">{title_no} / {abr}</span>.", "markoff_MT": "You have marked off lead application <span class=\"bold\">{title_no} / {abr}</span>.", "prior_pending_fail": "There is no longer a prior pending item. You cannot defer application <span class=\"bold\">{title_no} / {abr}</span> for this reason.", "progress_now": "You have added application <span class=\"bold\">{title_no} / {abr}</span> to your worklist.", "progress_now_MT": "You have added lead application <span class=\"bold\">{title_no} / {abr}</span> and <span class=\"bold\">{children}</span> attached applications to your worklist.", "progress_later": "You will progress application <span class=\"bold\">{title_no} / {abr}</span> later.", "progress_later_MT": "You will progress lead application <span class=\"bold\">{title_no} / {abr}</span> and <span class=\"bold\">{children}</span> attached applications later.", "active": "You are drafting attached application <span class=\"bold\">{title_no} / {abr}</span>.", "active_MT": "You are drafting lead application <span class=\"bold\">{title_no} / {abr}</span>.", "partially_drafted": "You have partially drafted attached application <span class=\"bold\">{title_no} / {abr}</span>.", "fully_drafted": "You have fully drafted attached application <span class=\"bold\">{title_no} / {abr}</span>.", "partially_drafted_MT": "You have partially drafted lead application <span class=\"bold\">{title_no} / {abr}</span>.", "fully_drafted_MT": "You have fully drafted lead application <span class=\"bold\">{title_no} / {abr}</span>.", "refer": "You have referred application <span class=\"bold\">{title_no} / {abr}</span>.", "refer_MT": "You have referred lead application <span class=\"bold\">{title_no} / {abr}</span> and <span class=\"bold\">{children}</span> attached applications.", "await_lawyer": "You have referred application <span class=\"bold\">{title_no} / {abr}</span> to a lawyer.", "await_lawyer_MT": "You have referred lead application <span class=\"bold\">{title_no} / {abr}</span> and <span class=\"bold\">{children}</span> attached applications to a lawyer."}
     </script-->
 
 
@@ -631,5 +470,15 @@ id="message-banner">
   </div>
 
 </div>
+
+<!--script>
+
+
+  document.getElementById('button_obtain').addEventListener('click', function() {
+      window.location.href = '/expedites/message';
+  });
+
+
+</script-->
 
 {% endblock %}
