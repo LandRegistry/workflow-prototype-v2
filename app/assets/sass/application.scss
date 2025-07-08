@@ -19,7 +19,9 @@ footer.govuk-footer .govuk-footer__link {/* play nicely with latest gds lib, as 
 }
 
 $hmlr-brand-colour: #789904 !important;
-//$std-font-family: "GDS Transport", "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif; 
+//$std-font-family: "GDS Transport", "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+
+$govuk-text-colour:#0b0c0c; //fix as upgrading gds seems to have missed $govuk-text-colour ?
 
 $hmlr-tbody-bottom-padding: govuk-spacing(4);
 
