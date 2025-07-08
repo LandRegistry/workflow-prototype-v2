@@ -75,7 +75,7 @@
 
     &.hmlr-wf-lists--tbody-dividers {
         thead, tbody tr:last-child {
-            border-bottom: 2px solid $hmlr-govuk-text-colour; 
+            border-bottom: 2px solid $govuk-text-colour; 
         }
     }
 
@@ -356,7 +356,7 @@
             }
 
             & + tbody:not(.hmlr-wf-lists__attached) tr:first-child {
-                border-top: 2px solid $hmlr-govuk-text-colour;
+                border-top: 2px solid $govuk-text-colour;
             }
         }
     }
