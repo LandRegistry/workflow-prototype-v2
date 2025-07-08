@@ -21,11 +21,10 @@ footer.govuk-footer .govuk-footer__link {/* play nicely with latest gds lib, as 
 $hmlr-brand-colour: #789904 !important;
 //$std-font-family: "GDS Transport", "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
 
-@mixin govuk-text-colour {
-    color: $govuk-text-colour;
+@mixin hmlr-govuk-text-colour {
+    color: #0b0c0c; //fix as upgrading gds seems to have missed the default $govuk-text-colour ?
 }
-
-//$govuk-text-colour:#0b0c0c; //fix as upgrading gds seems to have missed $govuk-text-colour ?
+$hmlr-govuk-text-colour: #0b0c0c; // as above
 
 $hmlr-tbody-bottom-padding: govuk-spacing(4);
 
