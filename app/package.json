@@ -3,6 +3,10 @@
     "version": "1.0.0",
     "description": "GOV.UK Prototype Kit interfacing with Claude ai",
     "main": "app.js",
+    "engines": {
+      "node": "18.x", 
+      "npm": "9.x"
+    },
     "scripts": {
       "dev": "govuk-prototype-kit dev",
       "serve": "govuk-prototype-kit serve",
