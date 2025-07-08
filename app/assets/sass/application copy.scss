@@ -1,0 +1,289 @@
+//
+// For guidance on how to add CSS and SCSS see:
+// https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
+// 
+
+
+footer.govuk-footer .govuk-footer__link {/* play nicely with latest gds lib, as we don't have extra footer links */
+    padding: 0 !important; 
+}
+
+
+/* hmlr mixins and globals starts ... */
+* {
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+.govuk-footer {//fixes gds screen resizing fault: horizontal scrollbars
+    overflow-x: hidden;
+}
+
+$hmlr-brand-colour: #789904 !important;
+//$std-font-family: "GDS Transport", "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+
+@mixin hmlr-govuk-text-colour {
+    color: #0b0c0c; //fix as upgrading gds seems to have missed the default $govuk-text-colour ?
+}
+$hmlr-govuk-text-colour: #0b0c0c; // as above
+
+$hmlr-tbody-bottom-padding: govuk-spacing(4);
+
+@function calculaterem($s) {//no idea why this function and mixin needs to be repeated? will investigate
+    $remsize: $s / 16px;
+    @return #{$remsize}rem;
+}
+@function calculaterem($s) {
+    $remsize: $s / 16px;
+    @return #{$remsize}rem;
+}
+@mixin hmlr-font-size($s, $l) {
+    font-size: $s !important;
+    font-size: calculaterem($s) !important;
+    line-height: $l !important;
+}
+@mixin hmlr-font-size($s, $l) {
+    font-size: $s !important;
+    font-size: calculaterem($s) !important;
+    line-height: $l !important;
+}
+
+@mixin word-wrap() {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+
+@mixin hover-underline() {
+    text-decoration-thickness: .15em !important;
+    text-decoration-thickness: .1875rem !important;
+}
+
+@mixin menu-inset-anchors-bullets {
+    &:before {
+        content: "-";
+        margin-left: - govuk-spacing(4);
+        color: $govuk-secondary-text-colour;
+    }
+}
+
+@mixin menu-inset-anchors {
+    ul.xxxxxxxx {
+        padding-left: govuk-spacing(6); 
+        padding-bottom: govuk-spacing(1); 
+
+        li {
+            @include menu-inset-anchors-bullets;
+        }      
+    }
+}
+
+input.hmlr-btn-as-link, 
+button.hmlr-btn-as-link {
+    border: 0;
+    background: transparent; 
+    color: $govuk-link-colour;
+    padding-left: govuk-spacing(0);
+    padding-right: govuk-spacing(0);     
+    cursor: pointer; 
+    @include hmlr-font-size($s: 16px, $l: 1.2); 
+}
+.hmlr-hide-when-no-js {
+    display: none !important; 
+
+    .js-enabled & {
+        display: inline-block !important;
+    }
+}
+
+@include govuk-media-query($from: desktop){
+    .hmlr-no-wrap {
+        white-space: nowrap;
+    }
+}
+/* ... hmlr mixins and globals ends */
+
+/* legacy support for our designs whenu up: starts */
+main.govuk-main-wrapper .govuk-\!-font-size-16, 
+main.govuk-main-wrapper .hmlr-wf-font-size-16 {
+    font-size: 16px !important;
+    font-size: 1rem !important;
+    line-height: 1.25 !important;
+}
+/* legacy support for our designs whenu up: ends */
+
+/*code {
+    font-family: monospace !important;
+    font-weight: normal;
+    font-size: 1.1rem;
+    background-color: antiquewhite;
+}*/
+
+@include govuk-media-query($from: desktop){
+    main.govuk-main-wrapper {
+        min-height: 385px;
+    }
+}
+
+body .govuk-header__container {
+    border-bottom-color: $hmlr-brand-colour;
+    margin-bottom: -9px !important; 
+}
+
+//using a grey pg bg means the faux form elements require a solid bg colour. DH
+.govuk-radios__label:before, 
+.govuk-checkboxes__label:before {
+    background-color: govuk-colour("white");
+} 
+
+.hmlr-link--min-width-48 {
+    min-width: 48px;
+}
+
+.hmlr-wf {//class added to div.govuk-width-container
+@import "./includes/hmlr-wf-main";
+@import "./includes/hmlr-wf-header-logo-link";
+@import "./includes/hmlr-wf-top-nav";
+@import "./includes/hmlr-wf-list-panels";
+@import "./includes/hmlr-wf-tables";
+@import "./includes/hmlr-wf-dynamic-behaviours";
+
+
+
+/* new ui sass begins */  
+@import "./includes/hmlr-legacy-home";
+@import "./includes/hmlr-vertical-filters";
+@import "./includes/hmlr-left-nav";
+@import "./includes/hmlr-wf-lists";/* the list tables */
+@import "./includes/hmlr-table-dynamic"; 
+/*@import "./includes/hmlr-filters-ordering";*/
+@import "./includes/hmlr-form-grouping"; /* updated expedite radios */
+@import "./includes/hmlr-sort-right";
+@import "./includes/hmlr-wf-notification-banner";
+}
+
+.hmlr-wf-width-container--wide {
+    .govuk-width-container {
+        .govuk-main-wrapper > .govuk-grid-row {
+            margin-right: auto;
+            margin-left: auto; 
+        }
+        max-width: 1100px;
+    }
+}
+
+/*@include govuk-media-query($from: desktop){
+    .hmlr-filter-label {//create standalone file if this is used
+        display: flex;
+        align-items: flex-end; 
+        min-height: 70px;
+
+        p {
+            padding: govuk-spacing(0);
+            margin: govuk-spacing(0);
+            font-size: 14px; 
+            font-size: 0.9rem;
+        }
+    }
+}*/
+@include govuk-media-query($from: tablet){
+    .hmlr-sort-right {//create standalone file if this is used
+        float: right !important; 
+        clear: both !important; 
+        text-align: right !important; 
+
+        select {
+            width: 100%;
+        }
+    }  
+}
+
+
+    .hmlr-filter-warning-text {
+
+        visibility: hidden;/**** <<<<< /* this style is only here for the prototype: the 'real' version will only write-in the filter statment (and not show/hide) ****/
+
+        @include govuk-media-query($from: desktop){
+            .govuk-warning-text {
+                display: flex;
+                align-items: flex-end; /* Align content to the bottom */
+            }
+            &.hmlr-filter-warning-text--inverse {
+                .govuk-warning-text {
+                    & > span {
+                        top: 41px !important;
+                    }
+                }
+            }
+        }
+
+        .govuk-warning-text {
+            padding: govuk-spacing(0); 
+            margin: govuk-spacing(0); 
+            min-height: 66px; 
+
+            strong {
+                padding-left: 35px; 
+            }
+
+            & > span {
+                line-height: 21px; 
+                min-width: 26px; 
+                min-height: 26px; 
+                font-size: 16px; 
+                background: $govuk-brand-colour; 
+                border-color: $govuk-brand-colour;
+            }
+
+        } 
+
+        &.hmlr-filter-warning-text--inverse {
+            .govuk-warning-text {
+                & > span {
+                    background: govuk-colour("white");
+                    border-color: govuk-colour("white");
+                    color: $govuk-brand-colour;   
+                    top: 10px;
+                    left: 7px;             
+                }
+
+                strong {
+                    background: $govuk-brand-colour;
+                    color: govuk-colour("white");
+                    padding: 7px 8px 7px 40px; 
+
+                    &.govuk-\!-font-size-16 {
+                        font-size: 90% !important;
+                        line-height: 1.5 !important;
+                    }
+                }
+            }
+        }
+
+        &.govuk-\!-font-size-16 {
+            strong {
+                /*font-size: 90% !important;*/
+                @include hmlr-font-size($s: 16px, $l: 1.2); /* @include govuk-font-size($size: 16); line-height: 1.5 !important; */
+            }
+        }
+        
+        &.govuk-\!-font-weight-regular {
+            strong {
+                font-weight: normal;
+            }
+        }         
+        
+
+    /*label {
+        background: $govuk-brand-colour;
+        color: white;
+        padding: 10px 5px 8px 10px;
+        width: 100%;
+        margin-left: -15px;        
+    }*/
+}
