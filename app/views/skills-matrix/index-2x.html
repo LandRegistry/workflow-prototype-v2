@@ -1,0 +1,510 @@
+{% extends "layouts/wf_layout-ui-designs.html" %}
+
+{# set pageName="ADR" #}
+
+{% block pageTitle %}
+Expedites index
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+          <h1 class="govuk-heading-l govuk-!-margin-bottom-9">
+            
+            Scatter chart - skill levels <abbr>v</abbr>s case complexity
+            
+          </h1>
+
+          <p class="govuk-body">A Scatter chart to visualise caseworker skill levels, and aptitude, against case complexity. </p>          
+
+
+              <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+              <style>
+                  /*body {
+                      font-family: Arial, sans-serif;
+                      margin: 20px;
+                      background-color: #f5f5f5;
+                  }*/
+                  .container {
+                      max-width: 1400px;
+                      margin: 0 auto;
+                      /*background: white;
+                      padding: 20px;
+                      border-radius: 8px;
+                      box-shadow: 0 2px 10px rgba(0,0,0,0.1);*/
+                  }
+                  .chart-container {
+                      position: relative;
+                      height: 700px;
+                      width: 100%;
+                      margin-bottom: 20px;
+                  }
+                  .controls {
+                      display: flex;
+                      gap: 15px;
+                      margin-bottom: 20px;
+                      flex-wrap: wrap;
+                  }
+                  .control-group {
+                      display: flex;
+                      flex-direction: column;
+                      gap: 5px;
+                  }
+                  .control-group label {
+                      font-weight: bold;
+                      font-size: 12px;
+                  }
+                  .control-group select, .control-group input {
+                      padding: 5px;
+                      border: 1px solid #ddd;
+                      border-radius: 4px;
+                  }
+                  .legend {
+                      display: flex;
+                      justify-content: center;
+                      gap: 20px;
+                      margin-top: 15px;
+                      flex-wrap: wrap;
+                  }
+                  .legend-item {
+                      display: flex;
+                      align-items: center;
+                      gap: 8px;
+                      font-size: 14px;
+                  }
+                  .legend-color {
+                      width: 16px;
+                      height: 16px;
+                      border-radius: 50%;
+                      border: 1px solid #333;
+                  }
+                  .data-editor {
+                      background: #f9f9f9;
+                      padding: 15px;
+                      border-radius: 5px;
+                      margin-top: 20px;
+                  }
+                  .data-editor h3 {
+                      margin-top: 0;
+                      color: #333;
+                  }
+                  .stats-grid {
+                      display: grid;
+                      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                      gap: 15px;
+                      margin-bottom: 20px;
+                  }
+                  .stat-card {
+                      background: #e3f2fd;
+                      padding: 15px;
+                      border-radius: 8px;
+                      text-align: center;
+                  }
+                  .stat-number {
+                      font-size: 24px;
+                      font-weight: bold;
+                      color: #1976d2;
+                  }
+                  .stat-label {
+                      color: #666;
+                      font-size: 14px;
+                  }
+                  .update-btn {
+                      background: #007bff;
+                      color: white;
+                      border: none;
+                      padding: 10px 20px;
+                      border-radius: 5px;
+                      cursor: pointer;
+                      margin-top: 10px;
+                  }
+                  .update-btn:hover {
+                      background: #0056b3;
+                  }
+              </style>
+
+              <div class="container">
+
+                  
+                  <div class="stats-grid" id="statsGrid">
+                      <!-- Stats will be populated by JavaScript -->
+                  </div>
+                  
+                  <div class="controls">
+                      <div class="control-group">
+                          <label>Chart Type:</label>
+                          <select id="chartType" onchange="updateChart()">
+                              <option value="scatter">Scatter Plot</option>
+                              <option value="bubble">Bubble Chart</option>
+                          </select>
+                      </div>
+                      <div class="control-group">
+                          <label>Point Size:</label>
+                          <input type="range" id="pointSize" min="8" max="25" value="15" onchange="updateChart()">
+                      </div>
+                      <div class="control-group">
+                          <label>Show Grid:</label>
+                          <input type="checkbox" id="showGrid" checked onchange="updateChart()">
+                      </div>
+                      <div class="control-group">
+                          <label>Show Unassigned:</label>
+                          <input type="checkbox" id="showUnassigned" checked onchange="updateChart()">
+                      </div>
+                  </div>
+          
+                  <div class="chart-container">
+                      <canvas id="assignmentChart"></canvas>
+                  </div>
+          
+                  <div class="legend">
+                      <div class="legend-item">
+                          <div class="legend-color" style="background-color: #22c55e;"></div>
+                          <span>Primary Assignment</span>
+                      </div>
+                      <div class="legend-item">
+                          <div class="legend-color" style="background-color: #3b82f6;"></div>
+                          <span>Secondary Assignment</span>
+                      </div>
+                      <div class="legend-item">
+                          <div class="legend-color" style="background-color: #f59e0b;"></div>
+                          <span>Support Role</span>
+                      </div>
+                      <div class="legend-item">
+                          <div class="legend-color" style="background-color: #ef4444;"></div>
+                          <span>Specialist Consultation</span>
+                      </div>
+                      <div class="legend-item">
+                          <div class="legend-color" style="background-color: #6b7280;"></div>
+                          <span>Unassigned</span>
+                      </div>
+                  </div>
+          
+                  <div class="data-editor" style="display: none;">
+                      <h3>📊 Case Assignment Data</h3>
+                      <p><strong>Matrix Shows:</strong> Each caseworker appears once, assigned to their current active case. Some cases have multiple workers assigned.</p>
+                      <button class="update-btn" onclick="regenerateAssignments()">🔄 Generate New Random Assignments</button>
+                  </div>
+              </div>
+          
+              <script>
+                  // ========================================
+                  // 🔧 EDIT THESE VARIABLES TO UPDATE DATA
+                  // ========================================
+                  
+                  // Define caseworkers (each appears exactly once in matrix)
+                  const caseworkers = [
+                      { id: 1, name: 'John Smith', level: 3, specialty: 'Housing' },
+                      { id: 2, name: 'Sarah Jones', level: 7, specialty: 'Family Law' },
+                      { id: 3, name: 'Mike Wilson', level: 5, specialty: 'Employment' },
+                      { id: 4, name: 'Emma Davis', level: 2, specialty: 'Immigration' },
+                      { id: 5, name: 'David Brown', level: 8, specialty: 'Benefits' },
+                      { id: 6, name: 'Lisa Chen', level: 4, specialty: 'Mental Health' },
+                      { id: 7, name: 'James Taylor', level: 9, specialty: 'Legal Rep' },
+                      { id: 8, name: 'Anna Rodriguez', level: 6, specialty: 'Consumer Rights' },
+                      { id: 9, name: 'Tom Anderson', level: 1, specialty: 'General' },
+                      { id: 10, name: 'Rachel Green', level: 10, specialty: 'Disability' },
+                      { id: 11, name: 'Mark Johnson', level: 11, specialty: 'Criminal Justice' },
+                      { id: 12, name: 'Sophie White', level: 12, specialty: 'Policy/Training' }
+                  ];
+          
+                  // Define active cases (multiple workers can be assigned to same case)
+                  const activeCases = [
+                      { id: 1, name: 'Housing Dispute #2024-001', type: 'Housing', complexity: 2, priority: 'High' },
+                      { id: 2, name: 'Immigration Appeal #2024-002', type: 'Immigration', complexity: 4, priority: 'Urgent' },
+                      { id: 3, name: 'Benefits Review #2024-003', type: 'Benefits', complexity: 3, priority: 'Medium' },
+                      { id: 4, name: 'Family Court #2024-004', type: 'Family Law', complexity: 3, priority: 'High' },
+                      { id: 5, name: 'Employment Tribunal #2024-005', type: 'Employment', complexity: 4, priority: 'Medium' },
+                      { id: 6, name: 'Mental Health Advocacy #2024-006', type: 'Mental Health', complexity: 2, priority: 'High' },
+                      { id: 7, name: 'Disability Rights #2024-007', type: 'Disability', complexity: 4, priority: 'Medium' },
+                      { id: 8, name: 'Consumer Complaint #2024-008', type: 'Consumer', complexity: 1, priority: 'Low' },
+                      { id: 9, name: 'Criminal Justice Support #2024-009', type: 'Criminal', complexity: 4, priority: 'Urgent' },
+                      { id: 10, name: 'Housing Emergency #2024-010', type: 'Housing', complexity: 3, priority: 'Urgent' },
+                      { id: 11, name: 'Immigration Detention #2024-011', type: 'Immigration', complexity: 4, priority: 'Urgent' },
+                      { id: 12, name: 'Benefits Crisis #2024-012', type: 'Benefits', complexity: 2, priority: 'High' },
+                      { id: 13, name: 'Family Violence #2024-013', type: 'Family Law', complexity: 4, priority: 'Urgent' },
+                      { id: 14, name: 'Employment Discrimination #2024-014', type: 'Employment', complexity: 3, priority: 'Medium' },
+                      { id: 15, name: 'Mental Health Crisis #2024-015', type: 'Mental Health', complexity: 3, priority: 'Urgent' }
+                  ];
+          
+                  // Assignment role types with colors
+                  const assignmentTypes = [
+                      { id: 1, name: 'Primary', color: '#22c55e', description: 'Lead caseworker responsible for case' },
+                      { id: 2, name: 'Secondary', color: '#3b82f6', description: 'Supporting caseworker' },
+                      { id: 3, name: 'Support', color: '#f59e0b', description: 'Specialist support role' },
+                      { id: 4, name: 'Consultant', color: '#ef4444', description: 'Expert consultation only' },
+                      { id: 0, name: 'Unassigned', color: '#6b7280', description: 'No current assignment' }
+                  ];
+          
+                  // ========================================
+                  // ASSIGNMENT GENERATION
+                  // ========================================
+                  let currentAssignments = [];
+          
+                  function generateSampleAssignments() {
+                      const assignments = [];
+                      const usedCaseworkers = new Set();
+                      
+                      // Create sample assignments ensuring each caseworker appears only once
+                      const sampleData = [
+                          { caseworkerId: 1, caseId: 1, role: 1 }, // John -> Housing Dispute (Primary)
+                          { caseworkerId: 2, caseId: 4, role: 1 }, // Sarah -> Family Court (Primary)  
+                          { caseworkerId: 3, caseId: 5, role: 1 }, // Mike -> Employment Tribunal (Primary)
+                          { caseworkerId: 4, caseId: 2, role: 2 }, // Emma -> Immigration Appeal (Secondary)
+                          { caseworkerId: 5, caseId: 3, role: 1 }, // David -> Benefits Review (Primary)
+                          { caseworkerId: 6, caseId: 6, role: 1 }, // Lisa -> Mental Health (Primary)
+                          { caseworkerId: 7, caseId: 2, role: 1 }, // James -> Immigration Appeal (Primary)
+                          { caseworkerId: 8, caseId: 8, role: 1 }, // Anna -> Consumer Complaint (Primary)
+                          { caseworkerId: 9, caseId: 1, role: 3 }, // Tom -> Housing Dispute (Support)
+                          { caseworkerId: 10, caseId: 7, role: 1 }, // Rachel -> Disability Rights (Primary)
+                          { caseworkerId: 11, caseId: 9, role: 1 }, // Mark -> Criminal Justice (Primary)
+                          { caseworkerId: 12, caseId: 13, role: 4 }, // Sophie -> Family Violence (Consultant)
+                      ];
+          
+                      return sampleData.map(assignment => {
+                          const caseworker = caseworkers.find(c => c.id === assignment.caseworkerId);
+                          const caseItem = activeCases.find(c => c.id === assignment.caseId);
+                          const roleType = assignmentTypes.find(r => r.id === assignment.role);
+                          
+                          return {
+                              x: assignment.caseId,
+                              y: assignment.caseworkerId,
+                              caseworkerName: caseworker.name,
+                              caseName: caseItem.name,
+                              caseType: caseItem.type,
+                              casePriority: caseItem.priority,
+                              role: roleType.name,
+                              roleColor: roleType.color,
+                              roleId: assignment.role,
+                              caseworkerLevel: caseworker.level,
+                              caseworkerSpecialty: caseworker.specialty
+                          };
+                      });
+                  }
+          
+                  function generateRandomAssignments() {
+                      const assignments = [];
+                      const availableCaseworkers = [...caseworkers];
+                      const availableCases = [...activeCases];
+                      
+                      // Randomly assign caseworkers to cases
+                      availableCaseworkers.forEach(worker => {
+                          if (availableCases.length > 0) {
+                              const randomCaseIndex = Math.floor(Math.random() * availableCases.length);
+                              const selectedCase = availableCases[randomCaseIndex];
+                              
+                              // Determine role based on worker level and case complexity
+                              let role = 1; // Primary by default
+                              if (worker.level < selectedCase.complexity) role = 2; // Secondary if underqualified
+                              if (worker.level > selectedCase.complexity + 2) role = 4; // Consultant if overqualified
+                              if (Math.random() < 0.2) role = 3; // 20% chance of support role
+                              
+                              const roleType = assignmentTypes.find(r => r.id === role);
+                              
+                              assignments.push({
+                                  x: selectedCase.id,
+                                  y: worker.id,
+                                  caseworkerName: worker.name,
+                                  caseName: selectedCase.name,
+                                  caseType: selectedCase.type,
+                                  casePriority: selectedCase.priority,
+                                  role: roleType.name,
+                                  roleColor: roleType.color,
+                                  roleId: role,
+                                  caseworkerLevel: worker.level,
+                                  caseworkerSpecialty: worker.specialty
+                              });
+                              
+                              // Don't remove case - allow multiple assignments
+                          }
+                      });
+                      
+                      return assignments;
+                  }
+          
+                  // ========================================
+                  // CHART IMPLEMENTATION
+                  // ========================================
+                  let chart;
+          
+                  function updateStats() {
+                      const totalCases = activeCases.length;
+                      const assignedCases = new Set(currentAssignments.map(a => a.x)).size;
+                      const totalWorkers = caseworkers.length;
+                      const activeWorkers = currentAssignments.length;
+                      const primaryAssignments = currentAssignments.filter(a => a.roleId === 1).length;
+                      
+                      const statsGrid = document.getElementById('statsGrid');
+                      statsGrid.innerHTML = `
+                          <div class="stat-card">
+                              <div class="stat-number">${totalCases}</div>
+                              <div class="stat-label">Total Cases</div>
+                          </div>
+                          <div class="stat-card">
+                              <div class="stat-number">${assignedCases}</div>
+                              <div class="stat-label">Cases with Assignments</div>
+                          </div>
+                          <div class="stat-card">
+                              <div class="stat-number">${activeWorkers}</div>
+                              <div class="stat-label">Active Workers</div>
+                          </div>
+                          <div class="stat-card">
+                              <div class="stat-number">${primaryAssignments}</div>
+                              <div class="stat-label">Primary Assignments</div>
+                          </div>
+                      `;
+                  }
+          
+                  function createChart(chartType = 'scatter') {
+                      const ctx = document.getElementById('assignmentChart').getContext('2d');
+                      const pointSize = parseInt(document.getElementById('pointSize').value);
+                      const showGrid = document.getElementById('showGrid').checked;
+                      const showUnassigned = document.getElementById('showUnassigned').checked;
+                      
+                      // Group data by role type
+                      const datasets = [];
+                      
+                      assignmentTypes.forEach(roleType => {
+                          if (!showUnassigned && roleType.id === 0) return;
+                          
+                          const roleData = currentAssignments.filter(a => a.roleId === roleType.id);
+                          
+                          if (roleData.length === 0) return;
+                          
+                          const dataset = {
+                              label: roleType.name,
+                              data: roleData,
+                              backgroundColor: roleType.color,
+                              borderColor: roleType.color,
+                              borderWidth: 2
+                          };
+                          
+                          if (chartType === 'bubble') {
+                              dataset.data = roleData.map(d => ({
+                                  x: d.x,
+                                  y: d.y,
+                                  r: pointSize + (d.roleId === 1 ? 5 : 0), // Primary assignments are larger
+                                  caseworkerName: d.caseworkerName,
+                                  caseName: d.caseName,
+                                  role: d.role,
+                                  caseType: d.caseType,
+                                  casePriority: d.casePriority,
+                                  caseworkerLevel: d.caseworkerLevel,
+                                  caseworkerSpecialty: d.caseworkerSpecialty
+                              }));
+                          } else {
+                              dataset.pointRadius = pointSize;
+                              dataset.pointHoverRadius = pointSize + 5;
+                          }
+                          
+                          datasets.push(dataset);
+                      });
+          
+                      chart = new Chart(ctx, {
+                          type: chartType === 'bubble' ? 'bubble' : 'scatter',
+                          data: { datasets },
+                          options: {
+                              responsive: true,
+                              maintainAspectRatio: false,
+                              scales: {
+                                  x: {
+                                      title: {
+                                          display: true,
+                                          text: 'Active Cases →',
+                                          font: { size: 14, weight: 'bold' }
+                                      },
+                                      min: 0.5,
+                                      max: activeCases.length + 0.5,
+                                      ticks: {
+                                          stepSize: 1,
+                                          callback: function(value) {
+                                              const caseItem = activeCases.find(c => c.id === value);
+                                              return caseItem ? `Case ${caseItem.id}` : '';
+                                          }
+                                      },
+                                      grid: { display: showGrid }
+                                  },
+                                  y: {
+                                      title: {
+                                          display: true,
+                                          text: '↑ Caseworkers',
+                                          font: { size: 14, weight: 'bold' }
+                                      },
+                                      min: 0.5,
+                                      max: caseworkers.length + 0.5,
+                                      ticks: {
+                                          stepSize: 1,
+                                          callback: function(value) {
+                                              const worker = caseworkers.find(w => w.id === value);
+                                              return worker ? worker.name : '';
+                                          }
+                                      },
+                                      grid: { display: showGrid }
+                                  }
+                              },
+                              plugins: {
+                                  title: {
+                                      display: true,
+                                      text: 'Case Assignment Matrix: Who is Working on What',
+                                      font: { size: 16, weight: 'bold' }
+                                  },
+                                  legend: {
+                                      display: true,
+                                      position: 'top'
+                                  },
+                                  tooltip: {
+                                      callbacks: {
+                                          title: function(context) {
+                                              const point = context[0].raw;
+                                              return `${point.caseworkerName} assigned to ${point.caseName}`;
+                                          },
+                                          label: function(context) {
+                                              const point = context.raw;
+                                              return [
+                                                  `Role: ${point.role}`,
+                                                  `Case Type: ${point.caseType}`,
+                                                  `Priority: ${point.casePriority}`,
+                                                  `Worker Level: ${point.caseworkerLevel}`,
+                                                  `Specialty: ${point.caseworkerSpecialty}`
+                                              ];
+                                          }
+                                      }
+                                  }
+                              },
+                              interaction: {
+                                  intersect: false
+                              }
+                          }
+                      });
+                  }
+          
+                  function updateChart() {
+                      if (chart) {
+                          chart.destroy();
+                      }
+                      const chartType = document.getElementById('chartType').value;
+                      createChart(chartType);
+                  }
+          
+                  function regenerateAssignments() {
+                      currentAssignments = generateRandomAssignments();
+                      updateStats();
+                      updateChart();
+                  }
+          
+                  // Initialize with sample data
+                  function init() {
+                      currentAssignments = generateSampleAssignments();
+                      updateStats();
+                      createChart();
+                  }
+          
+                  // Initialize when page loads
+                  window.addEventListener('load', init);
+              </script>
+
+
+
+  </div>
+</div>
+{% endblock %}

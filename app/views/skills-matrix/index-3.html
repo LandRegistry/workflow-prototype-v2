@@ -1,0 +1,556 @@
+{% extends "layouts/wf_layout-ui-designs.html" %}
+
+{# set pageName="ADR" #}
+
+{% block pageTitle %}
+Expedites index
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-9">
+            
+            Scatter chart - skill levels <abbr>v</abbr>s case complexity
+        
+        </h1>
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                    <p class="govuk-body-s">
+                        A scatter chart to visualise caseworker skill levels, and aptitude, against case complexity. 
+                    </p>     
+                    
+                    <p class="govuk-body-s">
+                        Case types are represented by skill levels: 6 skills levels/types of case. Plus, the same 6 skill levels/types of case, which are 'harder' examples. ('b' = hard). Currently 18 case workers are shown - their skill level is recorded and whether they are likely to try 'harder' examples. The heat map indicates where most caseworker's skills are and how many are prepared to try harder cases within their skill level.
+                    </p>
+            </div>
+        </div>
+
+                   
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <style>
+       /* body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }*/
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            /*background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);*/
+        }
+        .chart-container {
+            position: relative;
+            height: 800px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .controls {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .control-group label {
+            font-weight: bold;
+            font-size: 12px;
+        }
+        .control-group select, .control-group input {
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+        }
+        .legend-color {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            border: 1px solid #333;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .stat-card {
+            /*background: #e3f2fd;*/
+            padding: 6px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: #1976d2;
+        }
+        .stat-label {
+            /*color: #666;*/
+            font-size: 0.9rem;
+        }
+        .update-btn {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 5px;
+        }
+        .update-btn:hover {
+            background: #0056b3;
+        }
+        .matrix-table {
+            border-collapse: collapse;
+            margin: 20px auto;
+            font-size: 11px;
+        }
+        .matrix-table th, .matrix-table td {
+            border: 1px solid #ddd;
+            padding: 6px;
+            text-align: center;
+            min-width: 40px;
+            height: 35px;
+        }
+        .matrix-table th {
+            background: #4CAF50;
+            color: white;
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        .matrix-table .row-header {
+            background: #2196F3 !important;
+            color: white !important;
+            font-weight: bold;
+            position: sticky;
+            left: 0;
+            z-index: 5;
+            text-align: left !important;
+            min-width: 120px;
+        }
+        .matrix-table .corner-cell {
+            background: #333 !important;
+            color: white !important;
+            z-index: 15;
+        }
+    </style>
+
+    <div class="container">
+
+        
+        <div class="stats-grid" id="statsGrid">
+            <!-- Stats will be populated by JavaScript -->
+        </div>
+        
+        <div class="controls">
+            <div class="control-group" style="display: none;">
+                <label>Chart Type:</label>
+                <select id="chartType" onchange="updateChart()">
+                    <option value="scatter">Scatter Plot</option>
+                    <option value="bubble">Bubble Chart</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label>Point Size:</label>
+                <input type="range" id="pointSize" min="8" max="25" value="12" onchange="updateChart()">
+            </div>
+            <div class="control-group" style="display: none;">
+                <label>Show Grid:</label>
+                <input type="checkbox" id="showGrid" checked onchange="updateChart()">
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <canvas id="matchingChart"></canvas>
+        </div>
+
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #22c55e;"></div>
+                <span>1 Worker (Cool)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #eab308;"></div>
+                <span>2 Workers (Warm)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #f97316;"></div>
+                <span>3 Workers (Hot)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #ef4444;"></div>
+                <span>4+ Workers (Very Hot)</span>
+            </div>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h3>Caseworkers and their skills</h3>
+            <div style="overflow-x: auto;">
+                <table class="matrix-table" id="matrixTable">
+                    <!-- Table will be populated by JavaScript -->
+                </table>
+            </div>
+        </div>
+
+        <div style="margin-top: 20px; text-align: center; display: none;">
+            <button class="update-btn" onclick="regenerateWorkers()">🔄 Generate New Worker Skills</button>
+            <button class="update-btn" onclick="rematchCases()">🎯 Re-Match Cases</button>
+            <button class="update-btn" onclick="resetToOptimal()">✨ Show Optimal Matching</button>
+        </div>
+    </div>
+
+    <script>
+        // Case types (12 total: 6 standard + 6 hard)
+        const caseTypes = [
+            { id: 1, name: 'Level 1', skillRequired: 1, isHard: false },
+            { id: 2, name: 'Level 1b', skillRequired: 1, isHard: true },
+            { id: 3, name: 'Level 2', skillRequired: 2, isHard: false },
+            { id: 4, name: 'Level 2b', skillRequired: 2, isHard: true },
+            { id: 5, name: 'Level 3', skillRequired: 3, isHard: false },
+            { id: 6, name: 'Level 3b', skillRequired: 3, isHard: true },
+            { id: 7, name: 'Level 4', skillRequired: 4, isHard: false },
+            { id: 8, name: 'Level 4b', skillRequired: 4, isHard: true },
+            { id: 9, name: 'Level 5', skillRequired: 5, isHard: false },
+            { id: 10, name: 'Level 5b', skillRequired: 5, isHard: true },
+            { id: 11, name: 'Level 6', skillRequired: 6, isHard: false },
+            { id: 12, name: 'Level 6b', skillRequired: 6, isHard: true }
+        ];
+
+        // Caseworkers (18 total)
+        let caseworkers = [];
+        let currentMatches = [];
+        let chart;
+
+        // Heat map color functions
+        function getHeatColor(workerCount) {
+            if (workerCount === 0) return '#f8f9fa';
+            if (workerCount === 1) return '#22c55e';
+            if (workerCount === 2) return '#eab308';
+            if (workerCount === 3) return '#f97316';
+            return '#ef4444';
+        }
+
+        function generateCaseworkers() {
+            const names = [
+                'Alice Johnson', 'Bob Smith', 'Carol Davis', 'David Wilson', 'Emma Brown',
+                'Frank Miller', 'Grace Lee', 'Henry Garcia', 'Ivy Martinez', 'Jack Taylor',
+                'Kate Anderson', 'Liam Thompson', 'Maya Patel', 'Noah Rodriguez', 'Olivia Chen',
+                'Paul Jackson', 'Quinn O\'Connor', 'Ruby Kim'
+            ];
+
+            caseworkers = names.map((name, index) => {
+                const skillLevel = Math.floor(Math.random() * 6) + 1;
+                const hasHardAptitude = index < 8;
+                
+                return {
+                    id: index + 1,
+                    name: name,
+                    skillLevel: skillLevel,
+                    aptitude: hasHardAptitude ? 'hard' : 'standard'
+                };
+            });
+        }
+
+        function matchCaseworkersToCase() {
+            // Fixed assignments to ensure all 12 case types are covered
+            const fixedMatches = [
+                { workerId: 1, caseId: 2 },   // Alice -> Level 1
+                { workerId: 2, caseId: 2 },   // Bob -> Level 1b
+                { workerId: 3, caseId: 12 },   // Carol -> Level 2
+                { workerId: 4, caseId: 12 },   // David -> Level 2b
+                { workerId: 5, caseId: 6 },   // Emma -> Level 3
+                { workerId: 6, caseId: 6 },   // Frank -> Level 3b
+                { workerId: 7, caseId: 7 },   // Grace -> Level 4
+                { workerId: 8, caseId: 3 },   // Henry -> Level 4b
+                { workerId: 9, caseId: 9 },   // Ivy -> Level 5
+                { workerId: 10, caseId: 10 }, // Jack -> Level 5b
+                { workerId: 11, caseId: 11 }, // Kate -> Level 6
+                { workerId: 12, caseId: 12 }, // Liam -> Level 6b
+                // Add some additional assignments for remaining workers
+                { workerId: 13, caseId: 3 },  // Maya -> Level 1 (multiple workers)
+                { workerId: 14, caseId: 3 },  // Noah -> Level 2 (multiple workers)
+                { workerId: 15, caseId: 3 },  // Olivia -> Level 3 (multiple workers)
+                { workerId: 16, caseId: 7 },  // Paul -> Level 4 (multiple workers)
+                { workerId: 17, caseId: 9 },  // Quinn -> Level 5 (multiple workers)
+                { workerId: 18, caseId: 11 }  // Ruby -> Level 6 (multiple workers)
+            ];
+            
+            const matches = [];
+            
+            fixedMatches.forEach(assignment => {
+                const worker = caseworkers.find(w => w.id === assignment.workerId);
+                const caseType = caseTypes.find(c => c.id === assignment.caseId);
+                
+                if (worker && caseType) {
+                    matches.push({
+                        x: caseType.id,
+                        y: worker.id,
+                        caseworkerName: worker.name,
+                        caseName: caseType.name,
+                        skillLevel: worker.skillLevel,
+                        aptitude: worker.aptitude,
+                        caseSkillRequired: caseType.skillRequired,
+                        caseIsHard: caseType.isHard,
+                        matchScore: worker.aptitude === 'hard' && caseType.isHard ? 4 : 3
+                    });
+                }
+            });
+            
+            return matches;
+        }
+
+        function updateStats() {
+            const perfectMatches = currentMatches.filter(m => m.matchScore === 4).length;
+            const goodMatches = currentMatches.filter(m => m.matchScore === 3).length;
+            const overqualified = currentMatches.filter(m => m.matchScore === 2).length;
+            const underqualified = currentMatches.filter(m => m.matchScore === 1).length;
+            const hardAptitudeWorkers = caseworkers.filter(w => w.aptitude === 'hard').length;
+            
+            const statsGrid = document.getElementById('statsGrid');
+            statsGrid.innerHTML = `
+                <div class="stat-card">
+                    <div class="stat-number">${perfectMatches}</div>
+                    <div class="stat-label">Perfect Matches</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">${goodMatches}</div>
+                    <div class="stat-label">Good Matches</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">${overqualified}</div>
+                    <div class="stat-label">Overqualified</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">${underqualified}</div>
+                    <div class="stat-label">Underqualified</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">${hardAptitudeWorkers}</div>
+                    <div class="stat-label">Workers will try 'hard' cases</div>
+                </div>
+            `;
+        }
+
+        function createChart(chartType = 'scatter') {
+            const ctx = document.getElementById('matchingChart').getContext('2d');
+            const pointSize = parseInt(document.getElementById('pointSize').value);
+            const showGrid = document.getElementById('showGrid').checked;
+            
+            // DEBUG: Log the data to see what X values we actually have
+            console.log('Current matches:', currentMatches);
+            const xValues = currentMatches.map(m => m.x);
+            console.log('X values in data:', xValues);
+            console.log('Unique X values:', [...new Set(xValues)]);
+            
+            const caseWorkerCounts = {};
+            caseTypes.forEach(caseType => {
+                caseWorkerCounts[caseType.id] = currentMatches.filter(m => m.x === caseType.id).length;
+            });
+            
+            const dataset = {
+                label: 'Case Assignments',
+                data: currentMatches.map(match => ({
+                    x: caseTypes.find(c => c.id === match.x).name, // Use category name instead of number
+                    y: match.y,
+                    r: chartType === 'bubble' ? pointSize + 5 : undefined,
+                    caseworkerName: match.caseworkerName,
+                    caseName: match.caseName,
+                    skillLevel: match.skillLevel,
+                    aptitude: match.aptitude,
+                    workerCount: caseWorkerCounts[match.x]
+                })),
+                backgroundColor: currentMatches.map(match => {
+                    const count = caseWorkerCounts[match.x];
+                    return getHeatColor(count);
+                }),
+                borderColor: currentMatches.map(match => {
+                    const count = caseWorkerCounts[match.x];
+                    return getHeatColor(count);
+                }),
+                borderWidth: 2,
+                pointRadius: chartType === 'scatter' ? pointSize : undefined,
+                pointHoverRadius: chartType === 'scatter' ? pointSize + 3 : undefined
+            };
+
+            chart = new Chart(ctx, {
+                type: chartType === 'bubble' ? 'bubble' : 'scatter',
+                data: { datasets: [dataset] },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Case Types (12 Total) →',
+                                font: { size: 14, weight: 'bold' }
+                            },
+                            type: 'category',
+                            labels: ['Level 1', 'Level 1b', 'Level 2', 'Level 2b', 'Level 3', 'Level 3b', 'Level 4', 'Level 4b', 'Level 5', 'Level 5b', 'Level 6', 'Level 6b'],
+                            ticks: {
+                                maxRotation: 45,
+                                minRotation: 45,
+                                font: { size: 8 }
+                            },
+                            grid: { display: showGrid }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: '↑ Caseworkers (18 Total)',
+                                font: { size: 14, weight: 'bold' }
+                            },
+                            min: 0.5,
+                            max: 18.5,
+                            ticks: {
+                                stepSize: 1,
+                                callback: function(value) {
+                                    const worker = caseworkers.find(w => w.id === value);
+                                    if (worker) {
+                                        return `${worker.id}: ${worker.name} (L${worker.skillLevel}-${worker.aptitude})`;
+                                    }
+                                    return '';
+                                },
+                                font: { size: 9 },
+                                autoSkip: false,
+                                maxTicksLimit: 18
+                            },
+                            grid: { display: showGrid }
+                        }
+                    },
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Skill-Based Case Matching: Heat Map by Worker Density',
+                            font: { size: 16, weight: 'bold' }
+                        },
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: function(context) {
+                                    const point = context[0].raw;
+                                    return `${point.caseworkerName} → ${point.caseName}`;
+                                },
+                                label: function(context) {
+                                    const point = context.raw;
+                                    return [
+                                        `Worker: Level ${point.skillLevel}, ${point.aptitude} aptitude`,
+                                        `Total workers on this case: ${point.workerCount}`,
+                                        `Heat level: ${point.workerCount === 1 ? 'Cool' : point.workerCount === 2 ? 'Warm' : point.workerCount === 3 ? 'Hot' : 'Very Hot'}`
+                                    ];
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function updateMatrixTable() {
+            const matrixTable = document.getElementById('matrixTable');
+            
+            const caseWorkerCounts = {};
+            caseTypes.forEach(caseType => {
+                caseWorkerCounts[caseType.id] = currentMatches.filter(m => m.x === caseType.id).length;
+            });
+            
+            let tableHTML = '<thead><tr><th class="corner-cell">Caseworker \\ Case Type</th>';
+            
+            caseTypes.forEach(caseType => {
+                tableHTML += `<th>${caseType.name.replace(' - ', '<br>')}</th>`;
+            });
+            tableHTML += '</tr></thead><tbody>';
+            
+            caseworkers.forEach(worker => {
+                tableHTML += `<tr><td class="row-header">${worker.name}<br>(L${worker.skillLevel}, ${worker.aptitude})</td>`;
+                
+                caseTypes.forEach(caseType => {
+                    const match = currentMatches.find(m => m.y === worker.id && m.x === caseType.id);
+                    const workerCount = caseWorkerCounts[caseType.id];
+                    const bgColor = getHeatColor(workerCount);
+                    
+                    if (match) {
+                        tableHTML += `<td style="background-color: ${bgColor};">✓</td>`;
+                    } else {
+                        tableHTML += `<td style="background-color: #f8f9fa;">-</td>`;
+                    }
+                });
+                tableHTML += '</tr>';
+            });
+            
+            tableHTML += '</tbody>';
+            matrixTable.innerHTML = tableHTML;
+        }
+
+        function updateChart() {
+            if (chart) chart.destroy();
+            const chartType = document.getElementById('chartType').value;
+            createChart(chartType);
+            updateMatrixTable();
+        }
+
+        function regenerateWorkers() {
+            generateCaseworkers();
+            currentMatches = matchCaseworkersToCase();
+            updateStats();
+            updateChart();
+        }
+
+        function rematchCases() {
+            currentMatches = matchCaseworkersToCase();
+            updateStats();
+            updateChart();
+        }
+
+        function resetToOptimal() {
+            caseworkers.forEach((worker, index) => {
+                worker.skillLevel = (index % 6) + 1;
+                worker.aptitude = index < 8 ? 'hard' : 'standard';
+            });
+            currentMatches = matchCaseworkersToCase();
+            updateStats();
+            updateChart();
+        }
+
+        function init() {
+            generateCaseworkers();
+            currentMatches = matchCaseworkersToCase();
+            updateStats();
+            createChart();
+            updateMatrixTable();
+        }
+
+        window.addEventListener('load', init);
+    </script>
+  
+
+  </div>
+</div>
+{% endblock %}

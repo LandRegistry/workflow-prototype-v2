@@ -2,10 +2,10 @@
 // For guidance on how to add CSS and SCSS see:
 // https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
 // 
-@import "node_modules/govuk-frontend/dist/govuk/all";
-@mixin govuk-text-colour {
-    color: $govuk-text-colour;
-}
+//@import "node_modules/govuk-frontend/dist/govuk/all";
+//@mixin govuk-text-colour {
+    //color: $govuk-text-colour;
+//}
 
 footer.govuk-footer .govuk-footer__link {/* play nicely with latest gds lib, as we don't have extra footer links */
     padding: 0 !important; 
@@ -23,11 +23,6 @@ footer.govuk-footer .govuk-footer__link {/* play nicely with latest gds lib, as 
 
 $hmlr-brand-colour: #789904 !important;
 //$std-font-family: "GDS Transport", "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
-
-//@mixin govuk-text-colour {
-//    color: #0b0c0c; //fix as upgrading gds seems to have missed the default $govuk-text-colour ?
-//}
-//$govuk-text-colour: #0b0c0c; // as above
 
 $hmlr-tbody-bottom-padding: govuk-spacing(4);
 
