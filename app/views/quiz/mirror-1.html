@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mirror</title>
+    
+</head>
+<body>
+    
+<div style="width: 60%; margin: 0 auto 100px auto;">
+
+    <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+        <!-- Background -->
+        <rect width="400" height="300" fill="#f0f0f0"/>
+        
+        <!-- Wall -->
+        <rect x="0" y="0" width="400" height="220" fill="#e8e8e8"/>
+        
+        <!-- Floor -->
+        <rect x="0" y="220" width="400" height="80" fill="#d4d4d4"/>
+        
+        <!-- Mirror frame -->
+        <rect x="250" y="40" width="120" height="160" fill="#8b4513" stroke="#654321" stroke-width="3"/>
+        
+        <!-- Mirror surface -->
+        <rect x="260" y="50" width="100" height="140" fill="#ffffff"/>
+        
+        <!-- Man positioned facing the mirror -->
+        <!-- Man's body -->
+        <ellipse cx="180" cy="180" rx="25" ry="40" fill="#4a90e2"/>
+        
+        <!-- Man's head (back view since he's facing the mirror) -->
+        <circle cx="180" cy="120" r="25" fill="#fdbcb4"/>
+        
+        <!-- Man's hair (back view) -->
+        <ellipse cx="180" cy="110" rx="22" ry="18" fill="#8b4513"/>
+        
+        <!-- Man's left arm (our left when viewing from behind) - raised -->
+        <line x1="155" y1="155" x2="140" y2="130" stroke="#fdbcb4" stroke-width="8" stroke-linecap="round"/>
+        
+        <!-- Man's left hand (raised) -->
+        <circle cx="140" cy="130" r="8" fill="#fdbcb4"/>
+        
+        <!-- Man's fingers (left hand) -->
+        <circle cx="135" cy="125" r="2" fill="#fdbcb4"/>
+        <circle cx="138" cy="122" r="2" fill="#fdbcb4"/>
+        <circle cx="142" cy="122" r="2" fill="#fdbcb4"/>
+        <circle cx="145" cy="125" r="2" fill="#fdbcb4"/>
+        
+        <!-- Man's right arm -->
+        <line x1="205" y1="155" x2="220" y2="170" stroke="#fdbcb4" stroke-width="8" stroke-linecap="round"/>
+        
+        <!-- Man's right hand -->
+        <circle cx="220" cy="170" r="8" fill="#fdbcb4"/>
+        
+        <!-- Man's legs -->
+        <line x1="165" y1="210" x2="165" y2="250" stroke="#333" stroke-width="10" stroke-linecap="round"/>
+        <line x1="195" y1="210" x2="195" y2="250" stroke="#333" stroke-width="10" stroke-linecap="round"/>
+        
+        <!-- Man's feet -->
+        <ellipse cx="165" cy="255" rx="12" ry="5" fill="#000"/>
+        <ellipse cx="195" cy="255" rx="12" ry="5" fill="#000"/>
+        
+        <!-- Mirror reflection of man (front view in mirror) -->
+        <g transform="translate(310, 70)" opacity="0.9">
+          <!-- Reflected body -->
+          <ellipse cx="0" cy="75" rx="18" ry="28" fill="#4a90e2"/>
+          
+          <!-- Reflected head (front view) - positioned at front of body -->
+          <circle cx="0" cy="47" r="20" fill="#fdbcb4"/>
+          
+          <!-- Reflected hair (front view) -->
+          <path d="M-18 32 Q0 17 18 32 Q15 25 0 22 Q-15 25 -18 32" fill="#8b4513"/>
+          
+          <!-- Reflected eyes -->
+          <circle cx="-6" cy="42" r="2" fill="#000"/>
+          <circle cx="6" cy="42" r="2" fill="#000"/>
+          
+          <!-- Reflected nose -->
+          <path d="M0 47 L-2 52 L2 52 Z" fill="#f4a6a6"/>
+          
+          <!-- Reflected mouth -->
+          <path d="M-5 55 Q0 59 5 55" stroke="#000" stroke-width="1" fill="none"/>
+          
+          <!-- Reflected right hand (appears as left hand in mirror) - raised -->
+          <line x1="-20" y1="55" x2="-35" y2="35" stroke="#fdbcb4" stroke-width="6" stroke-linecap="round"/>
+          <circle cx="-35" cy="35" r="6" fill="#fdbcb4"/>
+          
+          <!-- Reflected fingers -->
+          <circle cx="-40" cy="30" r="1.5" fill="#fdbcb4"/>
+          <circle cx="-37" cy="28" r="1.5" fill="#fdbcb4"/>
+          <circle cx="-33" cy="28" r="1.5" fill="#fdbcb4"/>
+          <circle cx="-30" cy="30" r="1.5" fill="#fdbcb4"/>
+          
+          <!-- Reflected left arm (appears as right arm in mirror) -->
+          <line x1="18" y1="60" x2="28" y2="75" stroke="#fdbcb4" stroke-width="5" stroke-linecap="round"/>
+          <circle cx="28" cy="75" r="5" fill="#fdbcb4"/>
+        </g>
+        
+      </svg>
+
+</div>
+
+
+
+<div style="width: 60%; margin: 0 auto 100px auto;">
+
+    <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+        <!-- Background -->
+        <rect width="400" height="300" fill="#f0f0f0"/>
+        
+        <!-- Wall -->
+        <rect x="0" y="0" width="400" height="220" fill="#e8e8e8"/>
+        
+        <!-- Floor -->
+        <rect x="0" y="220" width="400" height="80" fill="#d4d4d4"/>
+        
+        <!-- Mirror frame -->
+        <rect x="250" y="40" width="120" height="160" fill="#8b4513" stroke="#654321" stroke-width="3"/>
+        
+        <!-- Mirror surface -->
+        <rect x="260" y="50" width="100" height="140" fill="#ffffff"/>
+        
+        <!-- Man positioned facing the mirror -->
+        <!-- Man's body -->
+        <ellipse cx="180" cy="180" rx="25" ry="40" fill="#4a90e2"/>
+        
+        <!-- Man's head (back view since he's facing the mirror) -->
+        <circle cx="180" cy="120" r="25" fill="#fdbcb4"/>
+        
+        <!-- Man's hair (back view) -->
+        <ellipse cx="180" cy="110" rx="22" ry="18" fill="#8b4513"/>
+        
+        <!-- Man's left arm (our left when viewing from behind) - raised -->
+        <line x1="155" y1="155" x2="140" y2="130" stroke="#fdbcb4" stroke-width="8" stroke-linecap="round"/>
+        
+        <!-- Man's left hand (raised) -->
+        <circle cx="140" cy="130" r="8" fill="#fdbcb4"/>
+        
+        <!-- Man's fingers (left hand) -->
+        <circle cx="135" cy="125" r="2" fill="#fdbcb4"/>
+        <circle cx="138" cy="122" r="2" fill="#fdbcb4"/>
+        <circle cx="142" cy="122" r="2" fill="#fdbcb4"/>
+        <circle cx="145" cy="125" r="2" fill="#fdbcb4"/>
+        
+        <!-- Man's right arm -->
+        <line x1="205" y1="155" x2="220" y2="170" stroke="#fdbcb4" stroke-width="8" stroke-linecap="round"/>
+        
+        <!-- Man's right hand -->
+        <circle cx="220" cy="170" r="8" fill="#fdbcb4"/>
+        
+        <!-- Man's legs -->
+        <line x1="165" y1="210" x2="165" y2="250" stroke="#333" stroke-width="10" stroke-linecap="round"/>
+        <line x1="195" y1="210" x2="195" y2="250" stroke="#333" stroke-width="10" stroke-linecap="round"/>
+        
+        <!-- Man's feet -->
+        <ellipse cx="165" cy="255" rx="12" ry="5" fill="#000"/>
+        <ellipse cx="195" cy="255" rx="12" ry="5" fill="#000"/>
+        
+        <!-- Mirror reflection of man (front view in mirror) - UPSIDE DOWN -->
+        <g transform="translate(310, 120) rotate(180)" opacity="0.9">
+          <!-- Reflected body -->
+          <ellipse cx="0" cy="35" rx="15" ry="25" fill="#4a90e2"/>
+          
+          <!-- Reflected head (front view) - positioned at front of body -->
+          <circle cx="0" cy="15" r="16" fill="#fdbcb4"/>
+          
+          <!-- Reflected hair (front view) -->
+          <path d="M-14 3 Q0 -8 14 3 Q12 -2 0 -5 Q-12 -2 -14 3" fill="#8b4513"/>
+          
+          <!-- Reflected eyes -->
+          <circle cx="-5" cy="10" r="1.5" fill="#000"/>
+          <circle cx="5" cy="10" r="1.5" fill="#000"/>
+          
+          <!-- Reflected nose -->
+          <path d="M0 15 L-1.5 19 L1.5 19 Z" fill="#f4a6a6"/>
+          
+          <!-- Reflected mouth -->
+          <path d="M-4 22 Q0 25 4 22" stroke="#000" stroke-width="1" fill="none"/>
+          
+          <!-- Reflected right hand (appears as left hand in mirror) - NOW DOWN -->
+          <line x1="-16" y1="25" x2="-22" y2="40" stroke="#fdbcb4" stroke-width="5" stroke-linecap="round"/>
+          <circle cx="-22" cy="40" r="5" fill="#fdbcb4"/>
+          
+          <!-- Reflected fingers for down hand -->
+          <circle cx="-25" cy="43" r="1.2" fill="#fdbcb4"/>
+          <circle cx="-23" cy="45" r="1.2" fill="#fdbcb4"/>
+          <circle cx="-21" cy="45" r="1.2" fill="#fdbcb4"/>
+          <circle cx="-19" cy="43" r="1.2" fill="#fdbcb4"/>
+          
+          <!-- Reflected left arm (appears as right arm in mirror) - NOW UP -->
+          <line x1="15" y1="30" x2="25" y2="10" stroke="#fdbcb4" stroke-width="5" stroke-linecap="round"/>
+          <circle cx="25" cy="10" r="5" fill="#fdbcb4"/>
+          
+          <!-- Reflected fingers for up hand -->
+          <circle cx="28" cy="7" r="1.2" fill="#fdbcb4"/>
+          <circle cx="26" cy="5" r="1.2" fill="#fdbcb4"/>
+          <circle cx="24" cy="5" r="1.2" fill="#fdbcb4"/>
+          <circle cx="22" cy="7" r="1.2" fill="#fdbcb4"/>
+          
+          <!-- Reflected legs -->
+          <line x1="-8" y1="55" x2="-8" y2="70" stroke="#333" stroke-width="4" stroke-linecap="round"/>
+          <line x1="8" y1="55" x2="8" y2="70" stroke="#333" stroke-width="4" stroke-linecap="round"/>
+          
+          <!-- Reflected feet -->
+          <ellipse cx="-8" cy="72" rx="6" ry="3" fill="#000"/>
+          <ellipse cx="8" cy="72" rx="6" ry="3" fill="#000"/>
+        </g>
+        
+      </svg>
+
+</div>
+
+
+<div style="width: 60%; margin: 0 auto 100px auto;">
+
+    <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+        <!-- Background -->
+        <rect width="400" height="300" fill="#f0f0f0"/>
+        
+        <!-- Wall -->
+        <rect x="0" y="0" width="400" height="220" fill="#e8e8e8"/>
+        
+        <!-- Floor -->
+        <rect x="0" y="220" width="400" height="80" fill="#d4d4d4"/>
+        
+        <!-- Mirror frame -->
+        <rect x="250" y="40" width="120" height="160" fill="#8b4513" stroke="#654321" stroke-width="3"/>
+        
+        <!-- Mirror surface -->
+        <rect x="260" y="50" width="100" height="140" fill="#ffffff"/>
+        
+        <!-- Man positioned lying on his side facing the mirror -->
+        <!-- Man's body (lying horizontally) -->
+        <ellipse cx="150" cy="200" rx="40" ry="25" fill="#4a90e2"/>
+        
+        <!-- Man's head (back of head since he's facing away from us) -->
+        <circle cx="110" cy="200" r="25" fill="#fdbcb4"/>
+        
+        <!-- Man's hair (back view) -->
+        <ellipse cx="110" cy="195" rx="22" ry="18" fill="#8b4513"/>
+        
+        <!-- Man's left arm (top arm when lying on side) - raised -->
+        <line x1="130" y1="185" x2="115" y2="160" stroke="#fdbcb4" stroke-width="8" stroke-linecap="round"/>
+        
+        <!-- Man's left hand (raised) -->
+        <circle cx="115" cy="160" r="8" fill="#fdbcb4"/>
+        
+        <!-- Man's fingers (left hand) -->
+        <circle cx="110" cy="155" r="2" fill="#fdbcb4"/>
+        <circle cx="113" cy="152" r="2" fill="#fdbcb4"/>
+        <circle cx="117" cy="152" r="2" fill="#fdbcb4"/>
+        <circle cx="120" cy="155" r="2" fill="#fdbcb4"/>
+        
+        <!-- Man's right arm (bottom arm when lying on side) -->
+        <line x1="130" y1="215" x2="155" y2="230" stroke="#fdbcb4" stroke-width="8" stroke-linecap="round"/>
+        
+        <!-- Man's right hand -->
+        <circle cx="155" cy="230" r="8" fill="#fdbcb4"/>
+        
+        <!-- Man's legs (horizontal) -->
+        <line x1="185" y1="190" x2="220" y2="190" stroke="#333" stroke-width="10" stroke-linecap="round"/>
+        <line x1="185" y1="210" x2="220" y2="210" stroke="#333" stroke-width="10" stroke-linecap="round"/>
+        
+        <!-- Man's feet -->
+        <ellipse cx="225" cy="190" rx="5" ry="12" fill="#000"/>
+        <ellipse cx="225" cy="210" rx="5" ry="12" fill="#000"/>
+        
+        <!-- Mirror reflection of man (lying on his side) - UPSIDE DOWN -->
+        <g transform="translate(310, 120) rotate(180)" opacity="0.9">
+          <!-- Reflected body (lying horizontally) -->
+          <ellipse cx="0" cy="0" rx="25" ry="15" fill="#4a90e2"/>
+          
+          <!-- Reflected head (front view showing face) - at top of body -->
+          <circle cx="-25" cy="0" r="16" fill="#fdbcb4"/>
+          
+          <!-- Reflected hair (front view) -->
+          <path d="M-38 -12 Q-25 -25 -12 -12 Q-15 -18 -25 -20 Q-35 -18 -38 -12" fill="#8b4513"/>
+          
+          <!-- Reflected eyes -->
+          <circle cx="-30" cy="-3" r="1.5" fill="#000"/>
+          <circle cx="-20" cy="-3" r="1.5" fill="#000"/>
+          
+          <!-- Reflected nose -->
+          <path d="M-25 0 L-27 4 L-23 4 Z" fill="#f4a6a6"/>
+          
+          <!-- Reflected mouth -->
+          <path d="M-29 7 Q-25 10 -21 7" stroke="#000" stroke-width="1" fill="none"/>
+          
+          <!-- Reflected right arm (top arm when lying on side) - NOW DOWN -->
+          <line x1="-10" y1="-10" x2="-5" y2="-5" stroke="#fdbcb4" stroke-width="5" stroke-linecap="round"/>
+          <circle cx="-5" cy="-5" r="5" fill="#fdbcb4"/>
+          
+          <!-- Reflected fingers for down hand -->
+          <circle cx="-2" cy="-2" r="1.2" fill="#fdbcb4"/>
+          <circle cx="-4" cy="0" r="1.2" fill="#fdbcb4"/>
+          <circle cx="-6" cy="0" r="1.2" fill="#fdbcb4"/>
+          <circle cx="-8" cy="-2" r="1.2" fill="#fdbcb4"/>
+          
+          <!-- Reflected left arm (bottom arm when lying on side) - NOW UP -->
+          <line x1="-10" y1="10" x2="-5" y2="25" stroke="#fdbcb4" stroke-width="5" stroke-linecap="round"/>
+          <circle cx="-5" cy="25" r="5" fill="#fdbcb4"/>
+          
+          <!-- Reflected fingers for up hand -->
+          <circle cx="-2" cy="28" r="1.2" fill="#fdbcb4"/>
+          <circle cx="-4" cy="30" r="1.2" fill="#fdbcb4"/>
+          <circle cx="-6" cy="30" r="1.2" fill="#fdbcb4"/>
+          <circle cx="-8" cy="28" r="1.2" fill="#fdbcb4"/>
+          
+          <!-- Reflected legs (horizontal) -->
+          <line x1="20" y1="-8" x2="35" y2="-8" stroke="#333" stroke-width="4" stroke-linecap="round"/>
+          <line x1="20" y1="8" x2="35" y2="8" stroke="#333" stroke-width="4" stroke-linecap="round"/>
+          
+          <!-- Reflected feet -->
+          <ellipse cx="37" cy="-8" rx="3" ry="6" fill="#000"/>
+          <ellipse cx="37" cy="8" rx="3" ry="6" fill="#000"/>
+        </g>
+        
+      </svg>
+
+</div>
+
+<div style="width: 60%; margin: 0 auto 100px auto;">
+    <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+        <!-- Background -->
+        <rect width="400" height="300" fill="#f0f0f0"/>
+        
+        <!-- Wall -->
+        <rect x="0" y="0" width="400" height="220" fill="#e8e8e8"/>
+        
+        <!-- Floor -->
+        <rect x="0" y="220" width="400" height="80" fill="#d4d4d4"/>
+        
+        <!-- Mirror frame -->
+        <rect x="250" y="40" width="120" height="160" fill="#8b4513" stroke="#654321" stroke-width="3"/>
+        
+        <!-- Mirror surface -->
+        <rect x="260" y="50" width="100" height="140" fill="#ffffff"/>
+        
+        <!-- Man positioned lying on his side facing the mirror -->
+        <!-- Man's body (lying horizontally) -->
+        <ellipse cx="150" cy="200" rx="40" ry="25" fill="#4a90e2"/>
+        
+        <!-- Man's head (back of head since he's facing away from us) -->
+        <circle cx="110" cy="200" r="25" fill="#fdbcb4"/>
+        
+        <!-- Man's hair (back view) -->
+        <ellipse cx="110" cy="195" rx="22" ry="18" fill="#8b4513"/>
+        
+        <!-- Man's left arm (top arm when lying on side) - raised -->
+        <line x1="130" y1="185" x2="115" y2="160" stroke="#fdbcb4" stroke-width="8" stroke-linecap="round"/>
+        
+        <!-- Man's left hand (raised) -->
+        <circle cx="115" cy="160" r="8" fill="#fdbcb4"/>
+        
+        <!-- Man's fingers (left hand) -->
+        <circle cx="110" cy="155" r="2" fill="#fdbcb4"/>
+        <circle cx="113" cy="152" r="2" fill="#fdbcb4"/>
+        <circle cx="117" cy="152" r="2" fill="#fdbcb4"/>
+        <circle cx="120" cy="155" r="2" fill="#fdbcb4"/>
+        
+        <!-- Man's right arm (bottom arm when lying on side) -->
+        <line x1="130" y1="215" x2="155" y2="230" stroke="#fdbcb4" stroke-width="8" stroke-linecap="round"/>
+        
+        <!-- Man's right hand -->
+        <circle cx="155" cy="230" r="8" fill="#fdbcb4"/>
+        
+        <!-- Man's legs (horizontal) -->
+        <line x1="185" y1="190" x2="220" y2="190" stroke="#333" stroke-width="10" stroke-linecap="round"/>
+        <line x1="185" y1="210" x2="220" y2="210" stroke="#333" stroke-width="10" stroke-linecap="round"/>
+        
+        <!-- Man's feet -->
+        <ellipse cx="225" cy="190" rx="5" ry="12" fill="#000"/>
+        <ellipse cx="225" cy="210" rx="5" ry="12" fill="#000"/>
+        
+        <!-- Mirror reflection of man (lying on his side) - UPSIDE DOWN -->
+        <g transform="translate(310, 120) rotate(180)" opacity="0.9">
+          <!-- Reflected body (lying horizontally) -->
+          <ellipse cx="0" cy="0" rx="25" ry="15" fill="#4a90e2"/>
+          
+          <!-- Reflected head (front view showing face) - head on left -->
+          <circle cx="25" cy="0" r="16" fill="#fdbcb4"/>
+          
+          <!-- Reflected hair (front view) -->
+          <path d="M12 -12 Q25 -25 38 -12 Q35 -18 25 -20 Q15 -18 12 -12" fill="#8b4513"/>
+          
+          <!-- Reflected eyes -->
+          <circle cx="20" cy="-3" r="1.5" fill="#000"/>
+          <circle cx="30" cy="-3" r="1.5" fill="#000"/>
+          
+          <!-- Reflected nose -->
+          <path d="M25 0 L23 4 L27 4 Z" fill="#f4a6a6"/>
+          
+          <!-- Reflected mouth -->
+          <path d="M21 7 Q25 10 29 7" stroke="#000" stroke-width="1" fill="none"/>
+          
+          <!-- Reflected right arm (top arm when lying on side) - DOWN -->
+          <line x1="10" y1="-10" x2="15" y2="-5" stroke="#fdbcb4" stroke-width="5" stroke-linecap="round"/>
+          <circle cx="15" cy="-5" r="5" fill="#fdbcb4"/>
+          
+          <!-- Reflected fingers for down hand -->
+          <circle cx="18" cy="-2" r="1.2" fill="#fdbcb4"/>
+          <circle cx="16" cy="0" r="1.2" fill="#fdbcb4"/>
+          <circle cx="14" cy="0" r="1.2" fill="#fdbcb4"/>
+          <circle cx="12" cy="-2" r="1.2" fill="#fdbcb4"/>
+          
+          <!-- Reflected left arm (bottom arm when lying on side) - UP -->
+          <line x1="10" y1="10" x2="15" y2="25" stroke="#fdbcb4" stroke-width="5" stroke-linecap="round"/>
+          <circle cx="15" cy="25" r="5" fill="#fdbcb4"/>
+          
+          <!-- Reflected fingers for up hand -->
+          <circle cx="18" cy="28" r="1.2" fill="#fdbcb4"/>
+          <circle cx="16" cy="30" r="1.2" fill="#fdbcb4"/>
+          <circle cx="14" cy="30" r="1.2" fill="#fdbcb4"/>
+          <circle cx="12" cy="28" r="1.2" fill="#fdbcb4"/>
+          
+          <!-- Reflected legs (horizontal) - feet on right -->
+          <line x1="-20" y1="-8" x2="-35" y2="-8" stroke="#333" stroke-width="4" stroke-linecap="round"/>
+          <line x1="-20" y1="8" x2="-35" y2="8" stroke="#333" stroke-width="4" stroke-linecap="round"/>
+          
+          <!-- Reflected feet -->
+          <ellipse cx="-37" cy="-8" rx="3" ry="6" fill="#000"/>
+          <ellipse cx="-37" cy="8" rx="3" ry="6" fill="#000"/>
+        </g>
+        
+      </svg>
+</div>
+
+
+<div style="width: 60%; margin: 0 auto 100px auto; display: none;">
+
+    <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+        <!-- Background -->
+        <rect width="400" height="300" fill="#f0f0f0"/>
+        
+        <!-- Wall -->
+        <rect x="0" y="0" width="400" height="220" fill="#e8e8e8"/>
+        
+        <!-- Floor -->
+        <rect x="0" y="220" width="400" height="80" fill="#d4d4d4"/>
+        
+        <!-- Mirror frame -->
+        <rect x="250" y="40" width="120" height="160" fill="#8b4513" stroke="#654321" stroke-width="3"/>
+        
+        <!-- Mirror surface -->
+        <rect x="260" y="50" width="100" height="140" fill="#ffffff"/>
+        
+        <!-- Man positioned facing the mirror -->
+        <!-- Man's body -->
+        <ellipse cx="180" cy="180" rx="25" ry="40" fill="#4a90e2"/>
+        
+        <!-- Man's head (back view since he's facing the mirror) -->
+        <circle cx="180" cy="120" r="25" fill="#fdbcb4"/>
+        
+        <!-- Man's hair (back view) -->
+        <ellipse cx="180" cy="110" rx="22" ry="18" fill="#8b4513"/>
+        
+        <!-- Man's left arm (our left when viewing from behind) - raised -->
+        <line x1="155" y1="155" x2="140" y2="130" stroke="#fdbcb4" stroke-width="8" stroke-linecap="round"/>
+        
+        <!-- Man's left hand (raised) -->
+        <circle cx="140" cy="130" r="8" fill="#fdbcb4"/>
+        
+        <!-- Man's fingers (left hand) -->
+        <circle cx="135" cy="125" r="2" fill="#fdbcb4"/>
+        <circle cx="138" cy="122" r="2" fill="#fdbcb4"/>
+        <circle cx="142" cy="122" r="2" fill="#fdbcb4"/>
+        <circle cx="145" cy="125" r="2" fill="#fdbcb4"/>
+        
+        <!-- Man's right arm -->
+        <line x1="205" y1="155" x2="220" y2="170" stroke="#fdbcb4" stroke-width="8" stroke-linecap="round"/>
+        
+        <!-- Man's right hand -->
+        <circle cx="220" cy="170" r="8" fill="#fdbcb4"/>
+        
+        <!-- Man's legs -->
+        <line x1="165" y1="210" x2="165" y2="250" stroke="#333" stroke-width="10" stroke-linecap="round"/>
+        <line x1="195" y1="210" x2="195" y2="250" stroke="#333" stroke-width="10" stroke-linecap="round"/>
+        
+        <!-- Man's feet -->
+        <ellipse cx="165" cy="255" rx="12" ry="5" fill="#000"/>
+        <ellipse cx="195" cy="255" rx="12" ry="5" fill="#000"/>
+        
+        <!-- Mirror reflection of man (front view in mirror) - UPSIDE DOWN -->
+        <g transform="translate(310, 120) rotate(180)" opacity="0.9">
+          <!-- Reflected body -->
+          <ellipse cx="0" cy="35" rx="15" ry="25" fill="#4a90e2"/>
+          
+          <!-- Reflected head (front view) - positioned at front of body -->
+          <circle cx="0" cy="15" r="16" fill="#fdbcb4"/>
+          
+          <!-- Reflected hair (front view) -->
+          <path d="M-14 3 Q0 -8 14 3 Q12 -2 0 -5 Q-12 -2 -14 3" fill="#8b4513"/>
+          
+          <!-- Reflected eyes -->
+          <circle cx="-5" cy="10" r="1.5" fill="#000"/>
+          <circle cx="5" cy="10" r="1.5" fill="#000"/>
+          
+          <!-- Reflected nose -->
+          <path d="M0 15 L-1.5 19 L1.5 19 Z" fill="#f4a6a6"/>
+          
+          <!-- Reflected mouth -->
+          <path d="M-4 22 Q0 25 4 22" stroke="#000" stroke-width="1" fill="none"/>
+          
+          <!-- Reflected right hand (appears as left hand in mirror) - raised -->
+          <line x1="-16" y1="25" x2="-25" y2="10" stroke="#fdbcb4" stroke-width="5" stroke-linecap="round"/>
+          <circle cx="-25" cy="10" r="5" fill="#fdbcb4"/>
+          
+          <!-- Reflected fingers -->
+          <circle cx="-28" cy="7" r="1.2" fill="#fdbcb4"/>
+          <circle cx="-26" cy="5" r="1.2" fill="#fdbcb4"/>
+          <circle cx="-24" cy="5" r="1.2" fill="#fdbcb4"/>
+          <circle cx="-22" cy="7" r="1.2" fill="#fdbcb4"/>
+          
+          <!-- Reflected left arm (appears as right arm in mirror) -->
+          <line x1="15" y1="30" x2="22" y2="40" stroke="#fdbcb4" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="22" cy="40" r="4" fill="#fdbcb4"/>
+          
+          <!-- Reflected legs -->
+          <line x1="-8" y1="55" x2="-8" y2="70" stroke="#333" stroke-width="4" stroke-linecap="round"/>
+          <line x1="8" y1="55" x2="8" y2="70" stroke="#333" stroke-width="4" stroke-linecap="round"/>
+          
+          <!-- Reflected feet -->
+          <ellipse cx="-8" cy="72" rx="6" ry="3" fill="#000"/>
+          <ellipse cx="8" cy="72" rx="6" ry="3" fill="#000"/>
+        </g>
+        
+      </svg>
+
+</div>
+
+
+<div style="width: 60%; margin: 0 auto 100px auto; display: none;">
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Three Mirrors with Arrows</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: Arial, sans-serif;
+                background-color: #f0f0f0;
+            }
+            
+            .container {
+                width: 600px;
+                height: 300px;
+                background: linear-gradient(to bottom, #e8e8e8 0%, #e8e8e8 73%, #d4d4d4 73%, #d4d4d4 100%);
+                margin: 20px auto;
+                position: relative;
+            }
+            
+            .mirror {
+                position: absolute;
+                width: 120px;
+                height: 120px;
+                background-color: #8b4513;
+                border: 3px solid #654321;
+                top: 60px;
+            }
+            
+            .mirror-surface {
+                width: 100px;
+                height: 100px;
+                background-color: white;
+                margin: 10px;
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .left-mirror {
+                left: 50px;
+            }
+            
+            .middle-mirror {
+                left: 240px;
+            }
+            
+            .right-mirror {
+                left: 430px;
+            }
+            
+            .arrow {
+                fill: #2196F3;
+            }
+            
+            /* Special styling for the middle mirror image div */
+            .image-placeholder {
+                width: 80px;
+                height: 80px;
+                background-color: #ffeeee;
+                border: 2px dashed #ff0000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 12px;
+                color: #ff0000;
+                text-align: center;
+                line-height: 1.2;
+            }
+            
+            .image-placeholder img {
+                max-width: 100%;
+                max-height: 100%;
+                object-fit: contain;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <!-- Left Mirror -->
+            <div class="mirror left-mirror">
+                <div class="mirror-surface">
+                    <svg width="80" height="80" viewBox="0 0 80 80">
+                        <!-- Left Arrow (pointing left) -->
+                        <path d="M40 40 L15 25 L15 32 L5 32 L5 48 L15 48 L15 55 Z" class="arrow"/>
+                    </svg>
+                </div>
+            </div>
+            
+            <!-- Middle Mirror -->
+            <div class="mirror middle-mirror">
+                <div class="mirror-surface">
+                    <!-- THIS IS WHERE YOU CAN EMBED YOUR IMAGE -->
+                    <div class="image-placeholder" id="imageDiv">
+                        Place your<br>image here
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Mirror -->
+            <div class="mirror right-mirror">
+                <div class="mirror-surface">
+                    <svg width="80" height="80" viewBox="0 0 80 80">
+                        <!-- Right Arrow (pointing right) -->
+                        <path d="M40 40 L65 25 L65 32 L75 32 L75 48 L65 48 L65 55 Z" class="arrow"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            // Example of how to add an image programmatically
+            function addImageToMiddleMirror(imageUrl) {
+                const imageDiv = document.getElementById('imageDiv');
+                imageDiv.innerHTML = `<img src="${imageUrl}" alt="Arrow Image">`;
+            }
+            
+            // Uncomment and modify the line below to add your image:
+            // addImageToMiddleMirror('path/to/your/image.jpg');
+        </script>
+    </body>
+    </html>
+
+</div>
+
+    
+</body>
+</html>
