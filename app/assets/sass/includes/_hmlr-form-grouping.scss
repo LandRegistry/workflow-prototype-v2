@@ -1,3 +1,21 @@
+/* old version for legacy use STARTS */
+.hmlr-wf-form-grouping{border:1px solid #b1b4b6;padding:15px 15px 8px;position:relative;width:-webkit-fit-content;width:-moz-fit-content;width:fit-content}
+.hmlr-wf-form-grouping button,
+.hmlr-wf-form-grouping input[type=button],
+.hmlr-wf-form-grouping input[type=submit]{margin:0 0 10px}
+.hmlr-wf-form-grouping div[class$=checkboxes--small] 
+label[class$=font-size-16]{line-height:1.6rem!important}
+.hmlr-wf-form-grouping.hmlr-wf-form-grouping--width-01{min-width:363px}
+.hmlr-wf-form-grouping.hmlr-wf-form-grouping--width-02{min-width:33%}
+.hmlr-wf-form-grouping.hmlr-wf-form-grouping--width-03{min-width:50%}
+.hmlr-wf-form-grouping.hmlr-wf-form-grouping--width-04{min-width:66%}
+.hmlr-wf-form-grouping .hmlr-wf-from-grouping__header{background-color:#fff;color:#505a5f;display:inline-block;font-weight:400;margin:0 0 0 -5px;padding:0 5px;position:absolute;top:-16px}
+.hmlr-wf-form-grouping .hmlr-wf-from-grouping__header.govuk-\!-font-size-16{top:-11px}
+.hmlr-wf-form-grouping .hmlr-wf-from-grouping__header.govuk-\!-font-size-19{top:-15px}
+/* old version for legacy use ENDS */
+
+
+
 .hmlr-form-grouping {
 
     /*button, input[type='submit'], input[type='button'] {
