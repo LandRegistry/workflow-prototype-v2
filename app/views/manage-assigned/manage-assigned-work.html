@@ -1,0 +1,108 @@
+{% extends "layouts/wf_layout_legacy_wcag_updates-new-autocomplete.html" %}
+
+{% set pageName="Index template example for legacy designs" %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+        
+  <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="#">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        Manage assigned work
+      </li>
+  </ol>
+
+</div>
+{% endblock %}
+
+{% block content %}
+
+
+<div id="manage_work">
+  <form action="/worklist-ui/manage-assigned-work"  method='post' id="manage_form" novalidate>
+    
+      <input name="csrf_token" type="hidden" value="Ijc5MDRlYjA1ODc2ZTJmZjJjMTc4YWFkMDQzMjdkMTgzZjBjMTE1ZWIi.ZaaQpA.io0GFcT5bEQTcPXAf6unUtECieg">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-l">
+              Manage assigned work
+            </h1>
+        </div>
+      </div>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-half" data-box>
+
+          <!-- this CSS only goes directly into this page (and the results page); these are styles for this page only. -->
+          <style>
+            .govuk-button.hmlr-wf-button-auto-complete {
+              top: -40px;
+            }
+            .js-enabled .govuk-button.hmlr-wf-button-auto-complete {
+              top: auto;
+            }
+            body:not(.js-enabled) .autocomplete-wrapper {
+              display: none; 
+            }
+            /*.search-bar {
+              padding-left: 0;
+            }*/
+          </style>
+
+          <div class="govuk-form-group">  
+
+            <label class="manage-labels govuk-label govuk-!-font-weight-bold" for="name">
+              Find a user who can obtain applications
+            </label>
+          
+            <noscript>
+              <div class="manage-bar search-container">
+                  <input class="search-bar manage-search govuk-input govuk-!-padding-left-0" id="name" name="name" size="30" type="text" value="">
+              </div>
+            </noscript>
+
+            <input class="hidden-result" id="caseworker_id_from" name="caseworker_id_from" type="hidden" value=""> 
+            <input class="hidden-name" id="caseworker_name_from" name="caseworker_name_from" type="hidden" value="">
+
+            <div class="manage-bar search-container">
+              <div id="tt-autoselect" class="autocomplete-wrapper search-bar manage-search govuk-!-padding-left-0"></div>
+            </div>
+            <input class="search-button govuk-button govuk-!-margin-bottom-0 hmlr-wf-button-auto-complete" type="submit" id="search_button" value="Search" style="min-width: 40px; max-height: 38px;">
+
+          </div>
+
+        </div>
+
+        <div class="govuk-grid-column-one-half" data-box>
+
+          <div class="govuk-form-group">
+            <label class="manage-labels govuk-label govuk-!-font-weight-bold" for="assignee">Assign to a user who can obtain applications</label>
+          
+            <noscript>
+              <div class="manage-bar search-container">
+                <input class="search-bar manage-search govuk-input" id="assignee" name="assignee" size="30" type="text" value="">
+              </div>              
+            </noscript>
+          
+            <input class="hidden-result" id="caseworker_id_to" name="caseworker_id_to" type="hidden" value=""> <input class="hidden-name" id="caseworker_name_to" name="caseworker_name_to" type="hidden" value="">
+
+            <div class="manage-bar search-container">
+              <div id="tt2-autoselect" class="autocomplete-wrapper search-bar manage-search govuk-!-padding-left-0"></div>
+            </div>
+            <input class="wf-button govuk-button govuk-!-margin-bottom-0 hmlr-wf-button-auto-complete" type="submit" id="assign_button" value="Assign" formaction="/worklist-ui/reassign">
+          </div>
+
+        </div>
+    </div>
+
+    <!--div id="results-container"></div-->      
+    
+  </form>
+</div>
+
+
+
+{% endblock %}
