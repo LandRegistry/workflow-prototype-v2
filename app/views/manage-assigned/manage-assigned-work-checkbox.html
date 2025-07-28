@@ -18,19 +18,18 @@
 {% endblock %}
 
 {% block content %}
-  <style>  
-  /* these styles work in prototype and in the live/preview site: starts */
-  .hmlr-wf-button-auto-complete#search_button {
-    max-width: 40px !important;
-  }
-  @media (max-width: 40.0625em) {
-    #assign_button {
-      margin-top: 10px;
-      width: 80%;
-    }
-  }
-  /* these styles work in prototype and in the live/preview site: ends */
-  </style>
+
+<style>
+/* legacy: prototype out of sync with live. these styles are for the prototype to mimic live/preview: starts */
+.hmlr-wf-button-auto-complete#search_button {max-width: 40px !important;}
+@media (max-width: 40.0625em) {
+  #assign_button {margin-top: 10px;width: auto;}
+}
+.govuk-button.hmlr-wf-button-auto-complete {top: -40px;}
+.js-enabled .govuk-button.hmlr-wf-button-auto-complete {top: auto;}
+body:not(.js-enabled) 
+.autocomplete-wrapper {display: none;}
+</style>
 
 <div id="manage_work">
   <form action="/worklist-ui/manage-assigned-work"  method='post' id="manage_form" novalidate>
@@ -48,21 +47,6 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-one-half" data-box>
 
-          <!-- this CSS only goes directly into this page (and the results page); these are styles for this page only. -->
-          <style>
-            .govuk-button.hmlr-wf-button-auto-complete {
-              top: -40px;
-            }
-            .js-enabled .govuk-button.hmlr-wf-button-auto-complete {
-              top: auto;
-            }
-            body:not(.js-enabled) .autocomplete-wrapper {
-              display: none; 
-            }
-            /*.search-bar {
-              padding-left: 0;
-            }*/
-          </style>
 
           <div class="govuk-form-group">  
 
@@ -103,12 +87,12 @@
 
             <div id="new-me-wrapper">
 
-                <!-- old HTML remains unchange here: starts -->
+                <!-- *** old HTML remains unchange here: starts *** -->
                 <div class="manage-bar search-container">
-                  <div id="tt2-autoselect" class="autocomplete-wrapper search-bar manage-search govuk-!-padding-left-0"></div>
+                  <div id="tt2-autoselect" class="autocomplete-wrapper search-bar manage-search govuk-!-padding-left-0 govuk-!-margin-bottom-1"></div>
                 </div>
                 <input class="wf-button govuk-button govuk-!-margin-bottom-0 hmlr-wf-button-auto-complete" type="submit" id="assign_button" value="Assign" formaction="/worklist-ui/reassign">
-                <!-- old HTML remains unchange here: ends -->
+                <!-- *** old HTML remains unchange here: ends *** -->
 
                 <div id="new-me-checkbox">
                   <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
