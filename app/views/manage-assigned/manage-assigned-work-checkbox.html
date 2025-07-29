@@ -107,14 +107,16 @@ body:not(.js-enabled)
                 </div>
 
                 <script>
-                  document.addEventListener('DOMContentLoaded', () => {
-                    const usersName = 'Darren Harridence';
-                    const newMeWrapper = document.getElementById('new-me-wrapper');
-                    const assignToInput = document.getElementById('assignee');
-                    const assignListBox = document.getElementById('assignee__listbox');
+                  document.addEventListener('DOMContentLoaded', () => {//init this code, if placed directly in this pg
+
                     const theMeCheckbox = document.getElementById('me');
 
-                    if (theMeCheckbox) {
+                    if (theMeCheckbox) {//first check the pg has this checkbox: saves running the code on all the other pgs
+                      const usersName = 'Darren Harridence';
+                      const newMeWrapper = document.getElementById('new-me-wrapper');
+                      const assignToInput = document.getElementById('assignee');
+                      const assignListBox = document.getElementById('assignee__listbox');
+
                       theMeCheckbox.type = 'checkbox';
                       theMeCheckbox.value = usersName;
 
@@ -129,17 +131,15 @@ body:not(.js-enabled)
 
                         if (!isChecked) {
                           assignToInput.blur();
-
                           // Reset and hide the assignListBox
                           assignListBox.classList.remove('autocomplete__menu--visible');
                           assignListBox.classList.add('autocomplete__menu--hidden');
                           assignListBox.innerHTML = '';
                         }
-
-                        // assignToInput.setAttribute('placeholder', isChecked ? 'Disabled' : '');
                       });
                     }
-                  });
+
+                  });//end init
                 </script>
                 <style>
                   #new-me-wrapper.hide-assignee__listbox #assignee__listbox,
