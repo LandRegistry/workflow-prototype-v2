@@ -129,6 +129,12 @@ body:not(.js-enabled)
 
                         newMeWrapper.classList.toggle('hide-assignee__listbox', isChecked);
 
+                        setTimeout(() => {
+                          assignToInput.setAttribute('aria-expanded', 'false');
+                          assignListBox.classList.remove('autocomplete__menu--visible');
+                          assignListBox.classList.add('autocomplete__menu--hidden');//remove default 
+                        }, 500);//500 ms = 0.5 sec
+
                         /* if we use a hidden input to submit a value, use this code. Starts */
                         //const caseworkerNameID = 'whatever caseworker data is sent';//the logged in caseworker. const //usersName?
                         //const rememberAssignee = document.getElementById('remember_assignee');//the hidden input
@@ -137,11 +143,9 @@ body:not(.js-enabled)
 
                         if (!isChecked) {//un-check
                           //rememberAssignee.value = ''; //And this code. Remove the value from the hidden input
-                          
+
                           //Reset and hide the assignListBox
                           assignToInput.blur();
-                          assignListBox.classList.remove('autocomplete__menu--visible');
-                          assignListBox.classList.add('autocomplete__menu--hidden');
                           assignListBox.innerHTML = '';
                         }
                       });
