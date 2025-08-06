@@ -123,8 +123,7 @@ body:not(.js-enabled)
                       theMeCheckbox.addEventListener('change', () => {
                         const isChecked = theMeCheckbox.checked;
 
-                        assignToInput.toggleAttribute('disabled', isChecked);
-                        assignToInput.classList.toggle('now-disabled', isChecked);
+                        assignToInput.toggleAttribute('disabled', isChecked);//assignToInput.classList.toggle('now-disabled', isChecked);
                         assignToInput.value = isChecked ? usersName : '';
 
                         newMeWrapper.classList.toggle('hide-assignee__listbox', isChecked);
@@ -161,6 +160,15 @@ body:not(.js-enabled)
                   .js-enabled #new-me-checkbox {
                     display: block;
                   }
+                  
+                  
+                  /*
+                  #new-me-wrapper.hide-assignee__listbox .now-disabled {
+                    visibility: hidden;
+                  }
+                  #new-me-wrapper.hide-assignee__listbox .autocomplete__hint {
+                    border: 2px solid rgba(11, 12, 12, 0.1); 
+                  }*/
                 </style>                
             </div>
               
