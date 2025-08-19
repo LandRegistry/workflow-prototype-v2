@@ -143,7 +143,25 @@ body .govuk-header__container {
     min-width: 48px;
 }
 
-.hmlr-wf {//class added to div.govuk-width-container
+
+.hmlr-bg-gry {
+    background-color: govuk-colour("light-grey");
+}
+
+.hmlr-left-minus-4 {
+    margin-left: - govuk-spacing(4); 
+}
+
+@include govuk-media-query($from: desktop){
+    .hmlr-width-90pc {
+        width: 90%; 
+    }
+} 
+/*@include govuk-media-query($until: desktop){
+
+} */   
+
+.hmlr-wf {//class added to div.govuk-width-container <<<<<<<<<< !!!!!!!
 @import "./includes/hmlr-wf-main";
 @import "./includes/hmlr-wf-header-logo-link";
 @import "./includes/hmlr-wf-top-nav";
@@ -189,17 +207,17 @@ body .govuk-header__container {
         }
     }
 }*/
-@include govuk-media-query($from: tablet){
-    .hmlr-sort-right {//create standalone file if this is used
-        float: right !important; 
-        clear: both !important; 
-        text-align: right !important; 
+    @include govuk-media-query($from: tablet){
+        .hmlr-sort-right {//create standalone file if this is used
+            float: right !important; 
+            clear: both !important; 
+            text-align: right !important; 
 
-        select {
-            width: 100%;
-        }
-    }  
-}
+            select {
+                width: 100%;
+            }
+        }  
+    }
 
 
     .hmlr-filter-warning-text {
@@ -276,12 +294,13 @@ body .govuk-header__container {
             }
         }         
         
+        /*label {
+            background: $govuk-brand-colour;
+            color: white;
+            padding: 10px 5px 8px 10px;
+            width: 100%;
+            margin-left: -15px;        
+        }*/
+    }
+   
 
-    /*label {
-        background: $govuk-brand-colour;
-        color: white;
-        padding: 10px 5px 8px 10px;
-        width: 100%;
-        margin-left: -15px;        
-    }*/
-}

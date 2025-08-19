@@ -98,21 +98,21 @@ body:not(.js-enabled)
                 <div id="new-me-checkbox">
                   <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                     <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="me" name="me" type="hidden" value="">
+                      <input class="govuk-checkboxes__input" id="me" name="me" type="hidden" value="Darren whatever Harridence ID">
                       <label class="govuk-label govuk-checkboxes__label" for="me">
                         Assign to me
                       </label>
                     </div>
                   </div>
                 </div>
-                <input id="remember_assignee" name="remember_assignee" type="hidden" value="">
+                <!--input id="remember_assignee" name="remember_assignee" type="hidden"-->
                 <script>
                   document.addEventListener('DOMContentLoaded', () => {//init this code
 
                     const theMeCheckbox = document.getElementById('me');
 
                     if (theMeCheckbox) {//first check the pg has this checkbox: saves running the code unnecessarily
-                      const usersName = 'Darren Harridence';//caseworker needs to be written in the pg HTML output
+                      const usersName = 'Darren Harridence (Darren.Harridence ), Information Systems';//caseworker needs to be written in the pg HTML output
                       const newMeWrapper = document.getElementById('new-me-wrapper');
                       const assignToInput = document.getElementById('assignee');
                       const assignListBox = document.getElementById('assignee__listbox');
@@ -161,9 +161,13 @@ body:not(.js-enabled)
                   .js-enabled #new-me-checkbox {
                     display: block;
                   }
-                  #new-me-wrapper.hide-assignee__listbox .now-disabled {
+
+
+
+
+                  /*#new-me-wrapper.hide-assignee__listbox .now-disabled {
                     visibility: hidden;
-                  }
+                  }*/
                   /*#new-me-wrapper.hide-assignee__listbox .autocomplete__hint {
                     border: 2px solid rgba(11, 12, 12, 0.1); 
                   }*/
