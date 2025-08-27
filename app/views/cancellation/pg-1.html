@@ -46,9 +46,9 @@
         <a href="#" class="govuk-link govuk-link--no-visited-state hmlr-no-wrap">Change your category of work</a>.
       </p>
   
-
+      <!-- original HTML 
       <div class="govuk-form-group">
-          <form action="#" method="post" novalidate> <!-- /cancellation/msg-1 -->
+          <form action="#" method="post" novalidate> 
 
             <div class="govuk-form-group hmlr-form-grouping govuk-!-display-inline-block govuk-!-margin-bottom-3 govuk-!-padding-top-2 govuk-!-padding-right-3">
               <fieldset class="govuk-fieldset">
@@ -82,13 +82,44 @@
             
           </form>
       </div>
+    -->
   
   
   </div>      
-
-    
 </div>
 
+<!-- actual HTML used on live, starts... -->
+<div class="hmlr-wf-form-grouping" aria-hidden="false" id="buttons_form">
+  <form action="/worklist-ui/orchestrations" method="post" novalidate>
+    <div class="govuk-form-group govuk-!-display-inline-block govuk-!-margin-bottom-0 govuk-!-padding-right-3">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-visually-hidden">
+          Select which type of application to obtain
+        </legend>
+        <div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="adr" name="adr" type="radio" value="adr" checked>
+            <label class="govuk-label govuk-radios__label govuk-!-font-size-16" for="adr">
+              <abbr>ADR</abbr>
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="adr-2" name="adr" type="radio" value="cancellation">
+            <label class="govuk-label govuk-radios__label govuk-!-font-size-16" for="adr-2">
+              Cancellation
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+          
+    <div>
+      <input name="csrf_token" type="hidden" value="IjhhMmU0ZWVjYjNhYjVjY2VmYjUxZjk3MDQ1N2IyZDEwMGMwODJiZjgi.aKbxDw.O3BQ0bEWxHJUQIQsw7aL7OX13Ms">
+      <input type="submit" id="button_obtain" value="Obtain" class="govuk-button button-large hmlr-wf-display-wait-notification hmlr-wf-prevent-double-click govuk-!-margin-top-2" data-prevent-double-click="true" >
+    </div>
+  </form>
+</div>
+<!-- actual HTML used on live, ends. -->
 
 
     <!--script type="application/json" id="action_messages">

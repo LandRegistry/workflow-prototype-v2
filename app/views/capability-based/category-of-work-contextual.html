@@ -1,0 +1,666 @@
+{% extends "layouts/wf_layout.html" %}
+
+{% set pageName="Select a category of work" %}
+
+{% block pageTitle %}
+Select a category of work
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="#">Home</a>
+      </li>
+      
+      <li class="govuk-breadcrumbs__list-item">
+          Select a category of work
+      </li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+<style>
+  @media (min-width: 40.0625em) {/* from desktop */
+    .hmlr-checkboxes-2-col {
+      width: 80%; 
+      display: flex; 
+      flex-wrap: wrap;
+    }                
+    .hmlr-checkboxes-2-col .govuk-checkboxes__item {
+      width: 50%; 
+      box-sizing: border-box; 
+    }
+    .hmlr-checkboxes-2-col .govuk-checkboxes__item label {/* use sass constants in prod */
+      font-size: 16px !important;
+      font-size: 1rem !important;
+      line-height: 1.25 !important;
+    }
+  }
+  .hmlr-checkboxes-2-col {
+    background-color: #f3f2f1;
+    padding: 0 5px 0 10px;
+  }
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <form action="#" method="post" novalidate>
+
+      <div class="govuk-form-group">
+
+        <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-margin-bottom-6">
+              <h1 class="govuk-fieldset__heading">
+                Select a category of work
+              </h1>
+            </legend>
+
+             
+              <fieldset class="govuk-fieldset govuk-!-margin-bottom-4">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  <h2 class="govuk-fieldset__heading">
+                    Advanced Volume
+                  </h2>
+                </legend>
+                <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="volumeOptions-ap" name="work_allocation_code" type="radio" value="VCO-ap">
+                    <label class="govuk-label govuk-radios__label" for="volumeOptions-ap">
+                      Advanced Volume Change of Ownership (VCO)
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="volumeOptions-ap-2" name="work_allocation_code" type="radio" value="VRU-ap">
+                    <label class="govuk-label govuk-radios__label" for="volumeOptions-ap-2">
+                      Advanced Volume Register Update (VRU)
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="volumeOptions-ap-3" name="work_allocation_code" type="radio" value="VCO_ADR-ap">
+                    <label class="govuk-label govuk-radios__label" for="volumeOptions-ap-3">
+                      Advanced Volume Change of Ownership Actionable Deferral: Requisition (VCO ADR)
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="volumeOptions-ap-4" name="work_allocation_code" type="radio" value="VRU_ADR-ap">
+                    <label class="govuk-label govuk-radios__label" for="volumeOptions-ap-4">
+                      Advanced Volume Register Update Actionable Deferral: Requisition (VRU ADR)
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="volumeOptions-ap-5" name="work_allocation_code" type="radio" value="V_ADN-ap">
+                    <label class="govuk-label govuk-radios__label" for="volumeOptions-ap-5">
+                      Advanced Volume Actionable Deferral: Objection Notice
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+
+              <fieldset class="govuk-fieldset govuk-!-margin-bottom-4">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  <h2 class="govuk-fieldset__heading">
+                    Advanced Executive
+                  </h2>
+                </legend>
+                <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="executiveOptions-ad" name="work_allocation_code" type="radio" value="SRU-ap">
+                    <label class="govuk-label govuk-radios__label" for="executiveOptions-ad">
+                      Advanced Executive Register Update Standard (SRU)
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="executiveOptions-ad-2" name="work_allocation_code" type="radio" value="CRU-ap" data-aria-controls="conditional-executiveOptions-ad-2">
+                    <label class="govuk-label govuk-radios__label" for="executiveOptions-ad-2">
+                      Advanced Executive Register Update Complex (CRU)
+                    </label>
+                  </div>
+
+
+
+                  <div class="govuk-radios__conditional" id="conditional-executiveOptions-ad-2">
+                    <div class="govuk-form-group">
+                      <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+  
+                      <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset">
+                          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                            <h3 class="govuk-fieldset__heading govuk-visually-hidden">
+                              Sub-categories 
+                            </h3>
+                          </legend>
+                          <div class="govuk-radios" data-module="govuk-radios">
+                            <div class="govuk-radios__item">
+                              
+                              <input class="govuk-radios__input" id="ipsum-a" name="ipsum" type="radio" value="ipsum-a" checked data-aria-controls="conditional-ipsum-a">
+                              
+                              <label class="govuk-label govuk-radios__label" for="ipsum-a">
+                                Lorem ipsum a
+                              </label>
+  
+                            </div>
+  
+                            <div class="govuk-radios__conditional" id="conditional-ipsum-a">
+  
+                                <div class="govuk-form-group">
+                                  <fieldset class="govuk-fieldset">
+                                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                                      <h1 class="govuk-fieldset__heading govuk-visually-hidden">
+                                        Filter options
+                                      </h1>
+                                    </legend>
+                                    <div class="govuk-checkboxes govuk-checkboxes--small hmlr-checkboxes-2-col" data-module="govuk-checkboxes">
+                                      
+                                      <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="ipsum-a-1" name="ipsum-a-sub" type="checkbox" value="ipsum-a-1">
+                                        <label class="govuk-label govuk-checkboxes__label" for="ipsum-a-1">
+                                          Consectetur adipisicing 
+                                        </label>
+                                      </div>
+                                      <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="ipsum-a-2" name="ipsum-a-sub" type="checkbox" value="ipsum-a-2">
+                                        <label class="govuk-label govuk-checkboxes__label" for="ipsum-a-2">
+                                          Nemo dolore laudantium 
+                                        </label>
+                                      </div>
+                                      <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="ipsum-a-3" name="ipsum-a-sub" type="checkbox" value="ipsum-a-3">
+                                        <label class="govuk-label govuk-checkboxes__label" for="ipsum-a-3">
+                                          Sapiente ducimus
+                                        </label>
+                                      </div>
+                                      <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="ipsum-a-4" name="ipsum-a-sub" type="checkbox" value="ipsum-a-4">
+                                        <label class="govuk-label govuk-checkboxes__label" for="ipsum-a-4">
+                                          Sapiente iusto expedita
+                                        </label>
+                                      </div>
+                                      <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="ipsum-a-5" name="ipsum-a-sub" type="checkbox" value="ipsum-a-5">
+                                        <label class="govuk-label govuk-checkboxes__label" for="ipsum-a-5">
+                                          Consectetur adipisicing 
+                                        </label>
+                                      </div>
+                                      <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="ipsum-a-6" name="ipsum-a-sub" type="checkbox" value="ipsum-a-6">
+                                        <label class="govuk-label govuk-checkboxes__label" for="ipsum-a-6">
+                                          Nemo dolore laudantium 
+                                        </label>
+                                      </div>
+                                      <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="ipsum-a-7" name="ipsum-a-sub" type="checkbox" value="ipsum-a-7">
+                                        <label class="govuk-label govuk-checkboxes__label" for="ipsum-a-7">
+                                          Sapiente ducimus
+                                        </label>
+                                      </div>
+                                      <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="ipsum-a-8" name="ipsum-a-sub" type="checkbox" value="ipsum-a-8">
+                                        <label class="govuk-label govuk-checkboxes__label" for="ipsum-a-8">
+                                          Sapiente iusto expedita
+                                        </label>
+                                      </div>
+  
+                                    </div>
+                                  </fieldset>
+                                </div>
+                              
+                            </div>
+  
+                            <div class="govuk-radios__item">
+                              
+                              <input class="govuk-radios__input" id="ipsum-b" name="ipsum" type="radio" value="ipsum-b" data-aria-controls="conditional-ipsum-b">
+                              
+                              <label class="govuk-label govuk-radios__label" for="ipsum-b">
+                                Lorem ipsum b
+                              </label>
+  
+                            </div>
+  
+                            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-ipsum-b">
+                              <div class="govuk-form-group">
+                                <div class="govuk-checkboxes govuk-checkboxes--small hmlr-checkboxes-2-col" data-module="govuk-checkboxes">
+                                      
+                                  <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="ipsum-b-1" name="ipsum-b-sub" type="checkbox" value="ipsum-b-1">
+                                    <label class="govuk-label govuk-checkboxes__label" for="ipsum-b-1">
+                                      Nemo dolore laudantium 
+                                    </label>
+                                  </div>
+                                  <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="ipsum-b-2" name="ipsum-b-sub" type="checkbox" value="ipsum-b-2">
+                                    <label class="govuk-label govuk-checkboxes__label" for="ipsum-b-2">
+                                      Nemo dolore laudantium 
+                                    </label>
+                                  </div>
+                                  <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="ipsum-b-3" name="ipsum-b-sub" type="checkbox" value="ipsum-b-3">
+                                    <label class="govuk-label govuk-checkboxes__label" for="ipsum-b-3">
+                                      Sapiente ducimus
+                                    </label>
+                                  </div>
+                                  <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="ipsum-b-4" name="ipsum-b-sub" type="checkbox" value="ipsum-b-4">
+                                    <label class="govuk-label govuk-checkboxes__label" for="ipsum-b-4">
+                                      Sapiente iusto expedita
+                                    </label>
+                                  </div>
+                                  <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="ipsum-b-5" name="ipsum-b-sub" type="checkbox" value="ipsum-b-5">
+                                    <label class="govuk-label govuk-checkboxes__label" for="ipsum-b-5">
+                                      Consectetur adipisicing 
+                                    </label>
+                                  </div>
+  
+                                </div>
+                              </div>
+                            </div>
+  
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="ipsum-c" name="ipsum" type="radio" value="text" data-aria-controls="conditional-ipsum-c">
+                              <label class="govuk-label govuk-radios__label" for="ipsum-c">
+                                Lorem ipsum c
+                              </label>
+                            </div>
+                            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-ipsum-c">
+                              <div class="govuk-form-group">
+  
+                                <div class="govuk-checkboxes govuk-checkboxes--small hmlr-checkboxes-2-col" data-module="govuk-checkboxes">
+                                      
+                                  <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="ipsum-c-1" name="ipsum-c-sub" type="checkbox" value="ipsum-c-1">
+                                    <label class="govuk-label govuk-checkboxes__label" for="ipsum-c-1">
+                                      Consectetur adipisicing 
+                                    </label>
+                                  </div>
+                                  <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="ipsum-c-2" name="ipsum-c-sub" type="checkbox" value="ipsum-c-2">
+                                    <label class="govuk-label govuk-checkboxes__label" for="ipsum-c-2">
+                                      Nemo laudantium 
+                                    </label>
+                                  </div>
+                                  <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="ipsum-c-3" name="ipsum-c-sub" type="checkbox" value="ipsum-c-3">
+                                    <label class="govuk-label govuk-checkboxes__label" for="ipsum-c-3">
+                                      Sapiente ducimus
+                                    </label>
+                                  </div>
+                                  <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="ipsum-c-4" name="ipsum-c-sub" type="checkbox" value="ipsum-c-4">
+                                    <label class="govuk-label govuk-checkboxes__label" for="ipsum-c-4">
+                                      Sapiente adipisicing 
+                                    </label>
+                                  </div>
+  
+                                </div>
+  
+                              </div>
+                            </div>
+<!-- -->
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="ipsum-d" name="ipsum" type="radio" value="text" data-aria-controls="conditional-ipsum-d">
+                              <label class="govuk-label govuk-radios__label" for="ipsum-d">
+                                Lorem ipsum d
+                              </label>
+                            </div>
+                            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-ipsum-d">
+                              <div class="govuk-form-group">
+  
+                                <div class="govuk-checkboxes govuk-checkboxes--small hmlr-checkboxes-2-col" data-module="govuk-checkboxes">
+                                      
+                                  <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="ipsum-d-1" name="ipsum-d-sub" type="checkbox" value="ipsum-d-1">
+                                    <label class="govuk-label govuk-checkboxes__label" for="ipsum-d-1">
+                                      Consectetur adipisicing 
+                                    </label>
+                                  </div>
+                                  <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="ipsum-d-2" name="ipsum-d-sub" type="checkbox" value="ipsum-d-2">
+                                    <label class="govuk-label govuk-checkboxes__label" for="ipsum-d-2">
+                                      Eaque provident illo nisi
+                                    </label>
+                                  </div>
+                                  <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="ipsum-d-3" name="ipsum-d-sub" type="checkbox" value="ipsum-d-3">
+                                    <label class="govuk-label govuk-checkboxes__label" for="ipsum-d-3">
+                                      Sapiente ducimus
+                                    </label>
+                                  </div>
+                                  <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="ipsum-d-4" name="ipsum-d-sub" type="checkbox" value="ipsum-d-4">
+                                    <label class="govuk-label govuk-checkboxes__label" for="ipsum-d-4">
+                                      Nemo laudantium 
+                                    </label>
+                                  </div>
+  
+                                </div>
+  
+                              </div>
+                            </div>                            
+<!-- -->
+
+<div class="govuk-radios__item">
+  <input class="govuk-radios__input" id="ipsum-e" name="ipsum" type="radio" value="text" data-aria-controls="conditional-ipsum-e">
+  <label class="govuk-label govuk-radios__label" for="ipsum-e">
+    Lorem ipsum e
+  </label>
+</div>
+<div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-ipsum-e">
+  <div class="govuk-form-group">
+
+    <div class="govuk-checkboxes govuk-checkboxes--small hmlr-checkboxes-2-col" data-module="govuk-checkboxes">
+          
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="ipsum-e-1" name="ipsum-e-sub" type="checkbox" value="ipsum-e-1">
+        <label class="govuk-label govuk-checkboxes__label" for="ipsum-e-1">
+          Consectetur adipisicing 
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="ipsum-e-2" name="ipsum-e-sub" type="checkbox" value="ipsum-e-2">
+        <label class="govuk-label govuk-checkboxes__label" for="ipsum-e-2">
+          Eaque provident illo nisi
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="ipsum-e-3" name="ipsum-e-sub" type="checkbox" value="ipsum-e-3">
+        <label class="govuk-label govuk-checkboxes__label" for="ipsum-e-3">
+          Sapiente ducimus
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="ipsum-e-4" name="ipsum-e-sub" type="checkbox" value="ipsum-e-4">
+        <label class="govuk-label govuk-checkboxes__label" for="ipsum-e-4">
+          Nemo laudantium 
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="ipsum-e-5" name="ipsum-e-sub" type="checkbox" value="ipsum-e-5">
+        <label class="govuk-label govuk-checkboxes__label" for="ipsum-e-5">
+          Deleniti amet maxime
+        </label>
+      </div>      
+
+    </div>
+
+  </div>
+</div>  
+
+
+                            
+                          </div>
+                        </fieldset>
+                      </div>                    
+  
+                      <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+                    </div>
+                  </div>
+
+
+
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="executiveOptions-ad-3" name="work_allocation_code" type="radio" value="E_ADN-ap">
+                    <label class="govuk-label govuk-radios__label" for="executiveOptions-ad-3">
+                      Advanced Executive Register Update Actionable Deferral: Objection Notice
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="executiveOptions-ad-4" name="work_allocation_code" type="radio" value="E_ADR-ap">
+                    <label class="govuk-label govuk-radios__label" for="executiveOptions-ad-4">
+                      Advanced Executive Register Update Actionable Deferral: Requisition (Exec ADR)
+                    </label>
+                  </div>
+                  
+                </div>
+              </fieldset>  
+              
+              <fieldset class="govuk-fieldset govuk-!-margin-bottom-4">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  <h2 class="govuk-fieldset__heading">
+                    Advanced Application Processing Volume
+                  </h2>
+                </legend>
+                <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="apOptions-ad" name="work_allocation_code" type="radio" value="VCO_AP-ap">
+                    <label class="govuk-label govuk-radios__label" for="apOptions-ad">
+                      Advanced Volume Change of Ownership (AP VCO)
+                    </label>              
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="apOptions-ad-2" name="work_allocation_code" type="radio" value="VRU_AP-ap">
+                    <label class="govuk-label govuk-radios__label" for="apOptions-ad-2">
+                      Advanced Volume Register Update (AP VRU)
+                    </label>              
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="apOptions-ad-3" name="work_allocation_code" type="radio" value="VCO_ADR_AP-ap">
+                    <label class="govuk-label govuk-radios__label" for="apOptions-ad-3">
+                      Advanced Volume Change of Ownership Actionable Deferral: Requisition (AP VCO ADR)
+                    </label>              
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="apOptions-ad-4" name="work_allocation_code" type="radio" value="VRU_ADR_AP-ap">
+                    <label class="govuk-label govuk-radios__label" for="apOptions-ad-4">
+                      Advanced Volume Register Update Actionable Deferral: Requisition (AP VRU ADR)
+                    </label>              
+                  </div>
+                  
+                </div>
+              </fieldset>  
+              
+              <fieldset class="govuk-fieldset govuk-!-margin-bottom-4">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  <h2 class="govuk-fieldset__heading">
+                    Advanced Application Processing Executive
+                  </h2>
+                </legend>
+                <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="apOptionsExecutive-ad" name="work_allocation_code" type="radio" value="SRU_AP-ap">
+                    <label class="govuk-label govuk-radios__label" for="apOptionsExecutive-ad">
+                      Advanced Executive Register Update Standard (AP SRU)
+                    </label>           
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="apOptionsExecutive-ad-2" name="work_allocation_code" type="radio" value="CRU_AP-ap">
+                    <label class="govuk-label govuk-radios__label" for="apOptionsExecutive-ad-2">
+                      Advanced Executive Register Update Complex (AP CRU)
+                    </label>            
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="apOptionsExecutive-ad-3" name="work_allocation_code" type="radio" value="E_ADR_AP-ap">
+                    <label class="govuk-label govuk-radios__label" for="apOptionsExecutive-ad-3">
+                      Advanced Executive Actionable Deferral: Requisition (AP Exec ADR)
+                    </label>              
+                  </div>
+  
+                </div>
+              </fieldset>              
+
+            </div-->
+
+          
+            <fieldset class="govuk-fieldset govuk-!-margin-bottom-6">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                <h2 class="govuk-fieldset__heading">
+                  Volume
+                </h2>
+              </legend>
+              <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="volumeOptions" name="work_allocation_code" type="radio" value="VCO">
+                  <label class="govuk-label govuk-radios__label" for="volumeOptions">
+                    Volume Change of Ownership (VCO)
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="volumeOptions-2" name="work_allocation_code" type="radio" value="VRU">
+                  <label class="govuk-label govuk-radios__label" for="volumeOptions-2">
+                    Volume Register Update (VRU)
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="volumeOptions-3" name="work_allocation_code" type="radio" value="VCO_ADR">
+                  <label class="govuk-label govuk-radios__label" for="volumeOptions-3">
+                    Volume Change of Ownership Actionable Deferral: Requisition (VCO ADR)
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="volumeOptions-4" name="work_allocation_code" type="radio" value="VRU_ADR">
+                  <label class="govuk-label govuk-radios__label" for="volumeOptions-4">
+                    Volume Register Update Actionable Deferral: Requisition (VRU ADR)
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="volumeOptions-5" name="work_allocation_code" type="radio" value="V_ADN">
+                  <label class="govuk-label govuk-radios__label" for="volumeOptions-5">
+                    Volume Actionable Deferral: Objection Notice
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="govuk-fieldset govuk-!-margin-bottom-6">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                <h2 class="govuk-fieldset__heading">
+                  Executive
+                </h2>
+              </legend>
+              <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="executiveOptions" name="work_allocation_code" type="radio" value="SRU">
+                  <label class="govuk-label govuk-radios__label" for="executiveOptions">
+                    Executive Register Update Standard (SRU)
+                  </label>
+                </div>
+                
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="executiveOptions-2" name="work_allocation_code" type="radio" value="CRU">
+                  <label class="govuk-label govuk-radios__label" for="executiveOptions-2">
+                    Executive Register Update Complex (CRU) 
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="executiveOptions-3" name="work_allocation_code" type="radio" value="E_ADN">
+                  <label class="govuk-label govuk-radios__label" for="executiveOptions-3">
+                    Executive Register Update Actionable Deferral: Objection Notice
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="executiveOptions-4" name="work_allocation_code" type="radio" value="E_ADR">
+                  <label class="govuk-label govuk-radios__label" for="executiveOptions-4">
+                    Executive Register Update Actionable Deferral: Requisition (Exec ADR)
+                  </label>
+                </div>
+                
+              </div>
+            </fieldset>
+
+            <fieldset class="govuk-fieldset govuk-!-margin-bottom-6">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                <h2 class="govuk-fieldset__heading">
+                  Application Processing Volume
+                </h2>
+              </legend>
+              <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="apOptions" name="work_allocation_code" type="radio" value="VCO_AP">
+                  <label class="govuk-label govuk-radios__label" for="apOptions">
+                    Volume Change of Ownership (AP VCO)
+                  </label>              
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="apOptions-2" name="work_allocation_code" type="radio" value="VRU_AP">
+                  <label class="govuk-label govuk-radios__label" for="apOptions-2">
+                    Volume Register Update (AP VRU)
+                  </label>              
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="apOptions-3" name="work_allocation_code" type="radio" value="VCO_ADR_AP">
+                  <label class="govuk-label govuk-radios__label" for="apOptions-3">
+                    Volume Change of Ownership Actionable Deferral: Requisition (AP VCO ADR)
+                  </label>              
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="apOptions-4" name="work_allocation_code" type="radio" value="VRU_ADR_AP">
+                  <label class="govuk-label govuk-radios__label" for="apOptions-4">
+                    Volume Register Update Actionable Deferral: Requisition (AP VRU ADR)
+                  </label>              
+                </div>
+                
+              </div>
+            </fieldset>
+
+            <fieldset class="govuk-fieldset govuk-!-margin-bottom-6">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                <h2 class="govuk-fieldset__heading">
+                  Application Processing Executive
+                </h2>
+              </legend>
+              <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="apOptionsExecutive" name="work_allocation_code" type="radio" value="SRU_AP">
+                  <label class="govuk-label govuk-radios__label" for="apOptionsExecutive">
+                    Executive Register Update Standard (AP SRU)
+                  </label>           
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="apOptionsExecutive-2" name="work_allocation_code" type="radio" value="CRU_AP">
+                  <label class="govuk-label govuk-radios__label" for="apOptionsExecutive-2">
+                    Executive Register Update Complex (AP CRU)
+                  </label>            
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="apOptionsExecutive-3" name="work_allocation_code" type="radio" value="E_ADR_AP">
+                  <label class="govuk-label govuk-radios__label" for="apOptionsExecutive-3">
+                    Executive Actionable Deferral: Requisition (AP Exec ADR)
+                  </label>              
+                </div>
+
+              </div>
+            </fieldset>
+            
+            <fieldset class="govuk-fieldset govuk-!-margin-bottom-6">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                <h2 class="govuk-fieldset__heading">
+                  No Category
+                </h2>
+              </legend>
+              <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="noCat" name="work_allocation_code" type="radio" value="NONE">
+                  <label class="govuk-label govuk-radios__label" for="noCat">
+                    No Category
+                  </label>          
+                </div>
+
+              </div>
+            </fieldset> 
+         
+        </fieldset>
+      </div>
+
+      <button value="y" type="submit" name="save" class="govuk-button" id="save">
+        Select
+      </button>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
