@@ -32,12 +32,15 @@ Select a category of work
       width: 50%; 
       box-sizing: border-box; 
     }
-    /* use sass constants in prod */
-    /*.hmlr-checkboxes-2-col .govuk-checkboxes__item label {
+    .hmlr-checkboxes-2-col .govuk-checkboxes__item label {/* use sass constants in prod */
       font-size: 16px !important;
       font-size: 1rem !important;
       line-height: 1.25 !important;
-    }*/
+    }
+
+    .hmlr-width-70pc {
+      width: 70%;
+    }
   }
   .hmlr-checkboxes-2-col {
     background-color: #f3f2f1;
@@ -48,7 +51,7 @@ Select a category of work
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-    <form action="#" method="post" novalidate>
+    <form action="category-of-work-flow-02b" method="post" novalidate>
 
       <div class="govuk-form-group">
 
@@ -114,294 +117,73 @@ Select a category of work
                       Advanced Executive Register Update Standard (SRU)
                     </label>
                   </div>
-                  <div class="govuk-radios__item">
+                  <!--div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="executiveOptions-ad-2" name="work_allocation_code" type="radio" value="CRU-ap" data-aria-controls="conditional-executiveOptions-ad-2">
                     <label class="govuk-label govuk-radios__label" for="executiveOptions-ad-2">
-                      Advanced Executive Register Update Complex (CRU)
+                      Advanced Executive Register Update Complex (CRU) 
                     </label>
-                  </div>
+                  </div-->
 
 
-
-                  <div class="govuk-radios__conditional" id="conditional-executiveOptions-ad-2">
-                    <div class="govuk-form-group">
                       <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
-  
+                    <div class="
+                    govuk-!-margin-left-3 
+                    govuk-!-padding-top-1 
+                    govuk-!-padding-right-2 
+                    govuk-!-padding-bottom-3 
+                    govuk-!-padding-left-4 
+                    hmlr-bg-gry 
+                    hmlr-bg-gry--govuk-radios 
+                    hmlr-width-70pc">
                       <div class="govuk-form-group">
                         <fieldset class="govuk-fieldset">
                           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                            <h3 class="govuk-fieldset__heading govuk-visually-hidden">
-                              Sub-categories 
+                            <h3 class="govuk-fieldset__heading govuk-!-font-weight-regular">
+                              Advanced Executive Register Update Complex (CRU) 
                             </h3>
                           </legend>
                           <div class="govuk-radios" data-module="govuk-radios">
-                            
-                            <!--div class="govuk-radios__item">
-                              .......
-                              <input class="govuk-radios__input" id="ipsum-a-0" name="ipsum-a-sub" type="radio" value="ipsum-a-0" checked data-aria-controls="conditional-ipsum-a">
-                              .......
-                              <label class="govuk-label govuk-radios__label" for="ipsum-a-0">
-                                Lorem ipsum a XXXXXXXXXXXXXXXXX
-                              </label>
-  
-                            </div-->
+
                             <div class="govuk-radios__item">
                               
-                              <input class="govuk-radios__input" id="ipsum-a" name="ipsum" type="radio" value="ipsum-a" data-aria-controls="conditional-ipsum-a">
+                              <input class="govuk-radios__input" id="ipsum-a" name="ipsum" type="radio" value="ipsum-a">
                               
                               <label class="govuk-label govuk-radios__label" for="ipsum-a">
-                                Lorem ipsum a
+                                Lorem ipsum a quaerat tempora
                               </label>
   
                             </div>                            
-  
-                            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-ipsum-a">
-
-                              <div class="govuk-form-group">
-                                <fieldset class="govuk-fieldset">
-                                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                                    <h1 class="govuk-fieldset__heading govuk-visually-hidden">
-                                      Filter options
-                                    </h1>
-                                  </legend>
-                                  <div class="govuk-checkboxes govuk-checkboxes--small hmlr-checkboxes-2-col" data-module="govuk-checkboxes">
-                                    
-                                    <div class="govuk-checkboxes__item">
-                                      <input class="govuk-checkboxes__input" id="ipsum-a-1" name="ipsum-a-sub" type="checkbox" value="ipsum-a-1">
-                                      <label class="govuk-label govuk-checkboxes__label" for="ipsum-a-1">
-                                        Consectetur adipisicing 
-                                      </label>
-                                    </div>
-                                    <div class="govuk-checkboxes__item">
-                                      <input class="govuk-checkboxes__input" id="ipsum-a-2" name="ipsum-a-sub" type="checkbox" value="ipsum-a-2">
-                                      <label class="govuk-label govuk-checkboxes__label" for="ipsum-a-2">
-                                        Nemo dolore laudantium 
-                                      </label>
-                                    </div>
-                                    <div class="govuk-checkboxes__item">
-                                      <input class="govuk-checkboxes__input" id="ipsum-a-3" name="ipsum-a-sub" type="checkbox" value="ipsum-a-3">
-                                      <label class="govuk-label govuk-checkboxes__label" for="ipsum-a-3">
-                                        Sapiente ducimus
-                                      </label>
-                                    </div>
-                                    <div class="govuk-checkboxes__item">
-                                      <input class="govuk-checkboxes__input" id="ipsum-a-4" name="ipsum-a-sub" type="checkbox" value="ipsum-a-4">
-                                      <label class="govuk-label govuk-checkboxes__label" for="ipsum-a-4">
-                                        Sapiente iusto expedita
-                                      </label>
-                                    </div>
-                                    <div class="govuk-checkboxes__item">
-                                      <input class="govuk-checkboxes__input" id="ipsum-a-5" name="ipsum-a-sub" type="checkbox" value="ipsum-a-5">
-                                      <label class="govuk-label govuk-checkboxes__label" for="ipsum-a-5">
-                                        Consectetur adipisicing 
-                                      </label>
-                                    </div>
-                                    <div class="govuk-checkboxes__item">
-                                      <input class="govuk-checkboxes__input" id="ipsum-a-6" name="ipsum-a-sub" type="checkbox" value="ipsum-a-6">
-                                      <label class="govuk-label govuk-checkboxes__label" for="ipsum-a-6">
-                                        Nemo dolore laudantium 
-                                      </label>
-                                    </div>
-                                    <div class="govuk-checkboxes__item">
-                                      <input class="govuk-checkboxes__input" id="ipsum-a-7" name="ipsum-a-sub" type="checkbox" value="ipsum-a-7">
-                                      <label class="govuk-label govuk-checkboxes__label" for="ipsum-a-7">
-                                        Sapiente ducimus
-                                      </label>
-                                    </div>
-                                    <div class="govuk-checkboxes__item">
-                                      <input class="govuk-checkboxes__input" id="ipsum-a-8" name="ipsum-a-sub" type="checkbox" value="ipsum-a-8">
-                                      <label class="govuk-label govuk-checkboxes__label" for="ipsum-a-8">
-                                        Sapiente iusto expedita
-                                      </label>
-                                    </div>
-
-                                  </div>
-                                </fieldset>
-                              </div>
-                              
-                            </div>
   
                             <div class="govuk-radios__item">
                               
                               <input class="govuk-radios__input" id="ipsum-b" name="ipsum" type="radio" value="ipsum-b" data-aria-controls="conditional-ipsum-b">
                               
                               <label class="govuk-label govuk-radios__label" for="ipsum-b">
-                                Lorem ipsum b
+                                Lorem ipsum b minima pariatur (CEW)
                               </label>
   
-                            </div>
-  
-                            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-ipsum-b">
-                              <div class="govuk-form-group">
-                                <div class="govuk-checkboxes govuk-checkboxes--small hmlr-checkboxes-2-col" data-module="govuk-checkboxes">
-                                      
-                                  <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="ipsum-b-1" name="ipsum-b-sub" type="checkbox" value="ipsum-b-1">
-                                    <label class="govuk-label govuk-checkboxes__label" for="ipsum-b-1">
-                                      Nemo dolore laudantium 
-                                    </label>
-                                  </div>
-                                  <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="ipsum-b-2" name="ipsum-b-sub" type="checkbox" value="ipsum-b-2">
-                                    <label class="govuk-label govuk-checkboxes__label" for="ipsum-b-2">
-                                      Nemo dolore laudantium 
-                                    </label>
-                                  </div>
-                                  <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="ipsum-b-3" name="ipsum-b-sub" type="checkbox" value="ipsum-b-3">
-                                    <label class="govuk-label govuk-checkboxes__label" for="ipsum-b-3">
-                                      Sapiente ducimus
-                                    </label>
-                                  </div>
-                                  <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="ipsum-b-4" name="ipsum-b-sub" type="checkbox" value="ipsum-b-4">
-                                    <label class="govuk-label govuk-checkboxes__label" for="ipsum-b-4">
-                                      Sapiente iusto expedita
-                                    </label>
-                                  </div>
-                                  <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="ipsum-b-5" name="ipsum-b-sub" type="checkbox" value="ipsum-b-5">
-                                    <label class="govuk-label govuk-checkboxes__label" for="ipsum-b-5">
-                                      Consectetur adipisicing 
-                                    </label>
-                                  </div>
-  
-                                </div>
-                              </div>
                             </div>
   
                             <div class="govuk-radios__item">
                               <input class="govuk-radios__input" id="ipsum-c" name="ipsum" type="radio" value="text" data-aria-controls="conditional-ipsum-c">
                               <label class="govuk-label govuk-radios__label" for="ipsum-c">
-                                Lorem ipsum c
+                                Lorem ipsum c inventore
                               </label>
                             </div>
 
-                            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-ipsum-c">
-                              <div class="govuk-form-group">
-  
-                                <div class="govuk-checkboxes govuk-checkboxes--small hmlr-checkboxes-2-col" data-module="govuk-checkboxes">
-                                      
-                                  <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="ipsum-c-1" name="ipsum-c-sub" type="checkbox" value="ipsum-c-1">
-                                    <label class="govuk-label govuk-checkboxes__label" for="ipsum-c-1">
-                                      Consectetur adipisicing 
-                                    </label>
-                                  </div>
-                                  <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="ipsum-c-2" name="ipsum-c-sub" type="checkbox" value="ipsum-c-2">
-                                    <label class="govuk-label govuk-checkboxes__label" for="ipsum-c-2">
-                                      Nemo laudantium 
-                                    </label>
-                                  </div>
-                                  <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="ipsum-c-3" name="ipsum-c-sub" type="checkbox" value="ipsum-c-3">
-                                    <label class="govuk-label govuk-checkboxes__label" for="ipsum-c-3">
-                                      Sapiente ducimus
-                                    </label>
-                                  </div>
-                                  <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="ipsum-c-4" name="ipsum-c-sub" type="checkbox" value="ipsum-c-4">
-                                    <label class="govuk-label govuk-checkboxes__label" for="ipsum-c-4">
-                                      Sapiente adipisicing 
-                                    </label>
-                                  </div>
-  
-                                </div>
-  
-                              </div>
-                            </div>
-<!-- -->
                             <div class="govuk-radios__item">
                               <input class="govuk-radios__input" id="ipsum-d" name="ipsum" type="radio" value="text" data-aria-controls="conditional-ipsum-d">
                               <label class="govuk-label govuk-radios__label" for="ipsum-d">
-                                Lorem ipsum d
+                                Lorem ipsum d velit at 
                               </label>
                             </div>
 
-                            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-ipsum-d">
-                              <div class="govuk-form-group">
-  
-                                <div class="govuk-checkboxes govuk-checkboxes--small hmlr-checkboxes-2-col" data-module="govuk-checkboxes">
-                                      
-                                  <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="ipsum-d-1" name="ipsum-d-sub" type="checkbox" value="ipsum-d-1">
-                                    <label class="govuk-label govuk-checkboxes__label" for="ipsum-d-1">
-                                      Consectetur adipisicing 
-                                    </label>
-                                  </div>
-                                  <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="ipsum-d-2" name="ipsum-d-sub" type="checkbox" value="ipsum-d-2">
-                                    <label class="govuk-label govuk-checkboxes__label" for="ipsum-d-2">
-                                      Eaque provident illo nisi
-                                    </label>
-                                  </div>
-                                  <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="ipsum-d-3" name="ipsum-d-sub" type="checkbox" value="ipsum-d-3">
-                                    <label class="govuk-label govuk-checkboxes__label" for="ipsum-d-3">
-                                      Sapiente ducimus
-                                    </label>
-                                  </div>
-                                  <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="ipsum-d-4" name="ipsum-d-sub" type="checkbox" value="ipsum-d-4">
-                                    <label class="govuk-label govuk-checkboxes__label" for="ipsum-d-4">
-                                      Nemo laudantium 
-                                    </label>
-                                  </div>
-  
-                                </div>
-  
-                              </div>
-                            </div>                            
-<!-- -->
                             <div class="govuk-radios__item">
                               <input class="govuk-radios__input" id="ipsum-e" name="ipsum" type="radio" value="text" data-aria-controls="conditional-ipsum-e">
                               <label class="govuk-label govuk-radios__label" for="ipsum-e">
-                                Lorem ipsum e
+                                Lorem ipsum e obcaecati (WDX)
                               </label>
                             </div>
-
-                            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-ipsum-e">
-                              <div class="govuk-form-group">
-
-                                <div class="govuk-checkboxes govuk-checkboxes--small hmlr-checkboxes-2-col" data-module="govuk-checkboxes">
-                                      
-                                  <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="ipsum-e-1" name="ipsum-e-sub" type="checkbox" value="ipsum-e-1">
-                                    <label class="govuk-label govuk-checkboxes__label" for="ipsum-e-1">
-                                      Consectetur adipisicing 
-                                    </label>
-                                  </div>
-                                  <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="ipsum-e-2" name="ipsum-e-sub" type="checkbox" value="ipsum-e-2">
-                                    <label class="govuk-label govuk-checkboxes__label" for="ipsum-e-2">
-                                      Eaque provident illo nisi
-                                    </label>
-                                  </div>
-                                  <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="ipsum-e-3" name="ipsum-e-sub" type="checkbox" value="ipsum-e-3">
-                                    <label class="govuk-label govuk-checkboxes__label" for="ipsum-e-3">
-                                      Sapiente ducimus
-                                    </label>
-                                  </div>
-                                  <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="ipsum-e-4" name="ipsum-e-sub" type="checkbox" value="ipsum-e-4">
-                                    <label class="govuk-label govuk-checkboxes__label" for="ipsum-e-4">
-                                      Nemo laudantium 
-                                    </label>
-                                  </div>
-                                  <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="ipsum-e-5" name="ipsum-e-sub" type="checkbox" value="ipsum-e-5">
-                                    <label class="govuk-label govuk-checkboxes__label" for="ipsum-e-5">
-                                      Deleniti amet maxime
-                                    </label>
-                                  </div>      
-
-                                </div>
-
-                              </div>
-                            </div>  
-
                             
                           </div>
                         </fieldset>
@@ -409,8 +191,6 @@ Select a category of work
   
                       <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
                     </div>
-                  </div>
-
 
 
 

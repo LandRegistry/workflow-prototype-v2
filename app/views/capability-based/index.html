@@ -1,0 +1,121 @@
+{% extends "layouts/wf_layout.html" %}
+
+{% set pageName="Select a category of work" %}
+
+{% block pageTitle %}
+Select a category of work
+{% endblock %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+    
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-m">Category of work: sub-categories</h1>
+
+    <p class="govuk-body-s">
+      All links open in a new tab.
+    </p>
+
+    <p class="govuk-body-s">
+      Figma grabs: <a href="https://www.figma.com/design/1e0WkZyeGukOcHZMqxK9mp/AMW?node-id=1-2&t=76Jc4uEzSmNY7bi0-1" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">
+        Figam board
+      </a>
+    </p>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+    <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+
+      <li>
+        <a href="/capability-based/category-of-work-contextual" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">
+          category-of-work-contextual
+        </a><br>
+        <span class="govuk-!-font-size-16 govuk-hint">Contextual reveals: nested radios and nested checkbox filters. (Select the first CRU)</span>
+      </li>
+
+      <li>
+        <a href="/capability-based/category-of-work-flow-02a" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">
+          category-of-work-flow-02a
+        </a><br>
+        <span class="govuk-!-font-size-16 govuk-hint">Nested radios only (fixed): 1st page</span>
+      </li>
+
+      <li>
+        <a href="/capability-based/category-of-work-flow-02c" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">
+          category-of-work-flow-02c
+        </a><br>
+        <span class="govuk-!-font-size-16 govuk-hint">Checkbox filters - 2nd page</span>
+
+        <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+          <li>
+            <a href="/capability-based/category-of-work-flow-02b" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-16" rel="noreferrer noopener" target="_blank">
+              category-of-work-flow-02b
+            </a><br>
+            <span class="govuk-!-font-size-16 govuk-hint">Checkbox filters - 2nd page (2x cols)</span>
+          </li>
+        </ul> 
+
+      </li>
+
+    </ul>    
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+    <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+
+      <li>
+        <a href="/capability-based/category-of-work-extra-list-all" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">
+          category-of-work-extra-list-all
+        </a><br>
+        <span class="govuk-!-font-size-16 govuk-hint">Alt 'Advanced' blocks inline</span>
+      </li>
+      <li>
+        <a href="/capability-based/category-of-work-extra-list" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">
+          category-of-work-extra-list
+        </a><br>
+        <span class="govuk-!-font-size-16 govuk-hint">Single block of alt 'Advanced' inline options</span>
+
+        <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+          <li>
+            <a href="/capability-based/category-of-work-extra-list-b" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-16" rel="noreferrer noopener" target="_blank">
+              category-of-work-extra-list-b
+            </a><br>
+            <span class="govuk-!-font-size-16 govuk-hint">Indented</span>
+          </li>
+        </ul>
+
+      </li>      
+      
+      <li>
+        <a href="/capability-based/category-of-work-extra-list-block" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">
+          category-of-work-extra-list-block
+        </a><br>
+        <span class="govuk-!-font-size-16 govuk-hint">Block of alt 'Advanced' (together)</span>
+      </li>
+
+      <li>
+        <a href="/capability-based/category-of-work-extra-list-block-titles" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">
+          category-of-work-extra-list-block-titles
+        </a><br>
+        <span class="govuk-!-font-size-16 govuk-hint">Block of alt 'Advanced' (together), with inline header titles</span>
+      </li>   
+      
+      <li>
+        <a href="/expedites/design-category-01" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">
+          expedites/design-category-01.html
+        </a><br>
+        <span class="govuk-!-font-size-16 govuk-hint">Simple (white / nested radios)</span>
+      </li>       
+      
+
+    </ul>
+
+  </div>
+</div>
+
+{% endblock %}
