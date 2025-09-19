@@ -18,6 +18,10 @@
 {% endblock %}
 
 {% block content %}
+<!--div class="" id="event-name-hint">Enter a name</div> 
+
+<input aria-describedby="event-name-hint"id="name" name="input-autocomplete" placeholder="" type="text"-->
+
 
 <style>
 /* legacy: prototype out of sync with live. these styles are for the prototype to mimic live/preview: starts */
@@ -29,10 +33,41 @@
 .js-enabled .govuk-button.hmlr-wf-button-auto-complete {top: auto;}
 body:not(.js-enabled) 
 .autocomplete-wrapper {display: none;}
+
+
+
+
+/* span overlays typed text over the input field */
+.autocomplete__wrapper .autocomplete__status + span {/* fix for fuzzy text */
+  width: 100%;
+  position: absolute; 
+  top: 0; 
+  left: -0.5px;
+  left: .03125rem;
+}
+
+/*
+.autocomplete__input.autocomplete__input--default {
+  text-indent: -0.5px;
+  text-indent: .03125rem;
+}
+.autocomplete__input.autocomplete__input--default.autocomplete__input--focused {
+  xxxbackground-color: #fff; 
+}
+
+ddddiv[aria-expanded="true"] {
+  background-color: lime;
+  color: red;
+  border: 3px solid blue; 
+}
+  */
+
 </style>
 
 <div id="manage_work">
   <form action="/worklist-ui/manage-assigned-work"  method='post' id="manage_form" novalidate>
+
+
     
       <input name="csrf_token" type="hidden" value="Ijc5MDRlYjA1ODc2ZTJmZjJjMTc4YWFkMDQzMjdkMTgzZjBjMTE1ZWIi.ZaaQpA.io0GFcT5bEQTcPXAf6unUtECieg">
 
@@ -53,12 +88,12 @@ body:not(.js-enabled)
             <label class="manage-labels govuk-label govuk-!-font-weight-bold" for="name">
               Find a user who can obtain applications
             </label>
-          
-            <noscript>
+
+            <!--noscript>
               <div class="manage-bar search-container">
                   <input class="search-bar manage-search govuk-input govuk-!-padding-left-0" id="name" name="name" size="30" type="text" value="">
               </div>
-            </noscript>
+            </noscript-->
 
             <input class="hidden-result" id="caseworker_id_from" name="caseworker_id_from" type="hidden" value=""> 
             <input class="hidden-name" id="caseworker_name_from" name="caseworker_name_from" type="hidden" value="">
@@ -66,6 +101,8 @@ body:not(.js-enabled)
             <div class="manage-bar search-container">
               <div id="tt-autoselect" class="autocomplete-wrapper search-bar manage-search govuk-!-padding-left-0"></div>
             </div>
+
+<!--div aria-labelledby="" id="name__assistiveHint">test</div-->
             <input class="search-button govuk-button govuk-!-margin-bottom-0 hmlr-wf-button-auto-complete" type="submit" id="search_button" value="Search" style="min-width: 40px; max-height: 38px;">
 
           </div>
@@ -77,11 +114,11 @@ body:not(.js-enabled)
           <div class="govuk-form-group">
             <label class="manage-labels govuk-label govuk-!-font-weight-bold" for="assignee">Assign to a user who can obtain applications</label>
           
-            <noscript>
+            <!--noscript>
               <div class="manage-bar search-container">
                 <input class="search-bar manage-search govuk-input" id="assignee" name="assignee" size="30" type="text" value="">
               </div>              
-            </noscript>
+            </noscript-->
           
             <input class="hidden-result" id="caseworker_id_to" name="caseworker_id_to" type="hidden" value=""> <input class="hidden-name" id="caseworker_name_to" name="caseworker_name_to" type="hidden" value="">
 
@@ -185,6 +222,172 @@ body:not(.js-enabled)
   </form>
 </div>
 
+
+
+
+<!--div class="govuk-form-group">
+  <h1 class="govuk-label-wrapper">
+    <label class="govuk-label govuk-label--l" for="event-name">
+      What is the name of the event?
+    </label>
+  </h1>
+  <div id="event-name-hint" class="govuk-hint">
+    The name you’ll use on promotional material
+  </div>
+  <input class="govuk-input" id="event-name" name="eventName" type="text" aria-describedby="event-name-hint">
+</div-->
+<!--script>
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    const form = document.getElementById('manage_form');
+    if (form) {
+      const nameHint = document.createElement('div');
+      nameHint.className = 'govuk-visually-hidden';
+      nameHint.id = 'name__assistiveHint';
+      nameHint.textContent = 'Enter a name';
+
+      const assigneeHint = document.createElement('div');
+      assigneeHint.className = 'govuk-visually-hidden';
+      assigneeHint.id = 'assignee__assistiveHint';
+      assigneeHint.textContent = 'Enter a name';
+
+      // Insert at the beginning of the form
+      form.insertBefore(assigneeHint, form.firstChild);
+      form.insertBefore(nameHint, form.firstChild);
+    }
+  }, 2000); // 2-second delay
+});
+
+</script-->
+
+<script>
+/*document.addEventListener('DOMContentLoaded', function () {
+  var assigneeElement = document.getElementById('assignee');
+  if (assigneeElement) {
+    assigneeElement.removeAttribute('aria-describedby');
+    assigneeElement.removeAttribute('aria-owns');
+    assigneeElement.removeAttribute('aria-autocomplete');
+    assigneeElement.removeAttribute('role');
+  }
+});*/
+
+/*setTimeout(function () {
+  document.querySelectorAll('*').forEach(function (el) {
+    Array.from(el.attributes).forEach(function (attr) {
+      if (attr.name.startsWith('aria-')) {
+        el.removeAttribute(attr.name);
+      }
+    });
+  });
+}, 0);*/
+
+/*setTimeout(function () {
+  const ariaAttributesToRemove = ['aria-describedby', 'aria-label', 'aria-owns', 'aria-autocomplete','role']; // Add or remove as needed
+
+  const main = document.querySelector('main');
+  if (main) {
+    main.querySelectorAll('*').forEach(function (el) {
+      ariaAttributesToRemove.forEach(function (attr) {
+        if (el.hasAttribute(attr)) {
+          el.removeAttribute(attr);
+        }
+      });
+    });
+  }
+}, 500);*/
+
+/*setTimeout(function () {
+  const allowedAriaAttributes = new Set([
+    'aria-expanded',
+    'aria-describedby',
+    'aria-label',
+    'aria-owns',
+    'aria-autocomplete',
+    'aria-atomic',
+    'aria-live'//,
+    //'aria-labelledby'
+  ]);
+
+  const main = document.querySelector('main');
+  if (main) {
+    main.querySelectorAll('*').forEach(function (el) {
+      Array.from(el.attributes).forEach(function (attr) {
+        if (attr.name.startsWith('aria-') && !allowedAriaAttributes.has(attr.name)) {
+          el.removeAttribute(attr.name);
+        }
+      });
+    });
+  }
+}, 500);*/
+
+/*setTimeout(function () {
+  const ariaAttributes = new Set();
+
+  document.querySelectorAll('*').forEach(function (el) {
+    Array.from(el.attributes).forEach(function (attr) {
+      if (attr.name.startsWith('aria-')) {
+        ariaAttributes.add(attr.name);
+      }
+    });
+  });
+
+  if (ariaAttributes.size > 0) {
+    alert('ARIA attributes found:\n\n' + Array.from(ariaAttributes).join('\n'));
+  } else {
+    alert('No ARIA attributes found on the page.');
+  }
+}, 1000);*/
+
+
+
+/*setTimeout(function () {
+  ['name', 'assignee'].forEach(function (id) {
+    var el = document.getElementById(id);
+    if (el) {
+      el.removeAttribute('aria-describedby');
+    }
+  });
+}, 500);*/
+
+/*setTimeout(function () {
+  document.querySelectorAll('div.search-container').forEach(function (container) {
+    container.querySelectorAll('[aria-labelledby]').forEach(function (el) {
+      el.removeAttribute('aria-labelledby');
+    });
+  });
+}, 1000);*/
+
+
+
+const manageForm = document.getElementById('manage_form');//ID on the autocomplete form tag
+if (manageForm) {
+  setTimeout(function () {
+
+    // fix may not be needed after upgrading autocomplete version
+    const ids = ['caseworker_from-select', 'caseworker_to-select'];
+
+    ids.forEach(id => {//fix for autocomplete bug
+      const element = document.getElementById(id);
+      if (element) {
+        const label = document.createElement('label');
+        label.textContent = 'List';
+        label.setAttribute('for', id);
+        label.hidden = true;
+        element.parentNode.insertBefore(label, element);
+      }
+    });
+
+    // fix may not be needed after upgrading autocomplete version
+    manageForm.querySelectorAll('.search-container').forEach(function (container) {
+      container.querySelectorAll('[aria-labelledby]').forEach(function (el) {
+        el.removeAttribute('aria-labelledby');//fix for autocomplete bug v3.+
+      });
+    });
+  }, 500);
+}
+
+
+</script>
 
 
 {% endblock %}

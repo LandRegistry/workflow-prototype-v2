@@ -1,0 +1,318 @@
+{% extends "layouts/wf_layout.html" %}
+
+{% set pageName="Select a category of work" %}
+
+{% block pageTitle %}
+Select a category of work
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="#">Home</a>
+      </li>
+      
+      <li class="govuk-breadcrumbs__list-item">
+          Select a category of work
+      </li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+<style>
+  @media (min-width: 40.0625em) {/* from desktop */
+    /*.hmlr-checkboxes-2-col {
+      width: 80%; 
+      display: flex; 
+      flex-wrap: wrap;
+    }                
+    .hmlr-checkboxes-2-col .govuk-checkboxes__item {
+      width: 50%; 
+      box-sizing: border-box; 
+    }*/
+
+    /* use sass constants in prod */
+    /*.hmlr-checkboxes-2-col .govuk-checkboxes__item label {
+      font-size: 16px !important;
+      font-size: 1rem !important;
+      line-height: 1.25 !important;
+    }*/
+  }
+  /*.hmlr-checkboxes-2-col {
+    background-color: #f3f2f1;
+    padding: 0 5px 0 10px;
+  }*/
+</style>
+
+<form action="#" method="post" novalidate>
+  
+  
+  <div class="govuk-form-group hmlr-form-group--twin-cols">
+
+    <fieldset class="govuk-fieldset">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-margin-bottom-6">
+            <h1 class="govuk-fieldset__heading">
+              Select a category of work
+            </h1>
+          </legend>
+        </div>
+      </div>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-half">
+
+          <fieldset class="govuk-fieldset govuk-!-margin-bottom-9">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              <h2 class="govuk-fieldset__heading">
+                Volume
+              </h2>
+            </legend>
+            <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="volumeOptions-ap" name="work_allocation_code" type="radio" value="VCO-ap">
+                <label class="govuk-label govuk-radios__label" for="volumeOptions-ap">
+                  Volume Change of Ownership (VCO)
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="volumeOptions-ap-2" name="work_allocation_code" type="radio" value="VRU-ap">
+                <label class="govuk-label govuk-radios__label" for="volumeOptions-ap-2">
+                  Volume Register Update (VRU)
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="volumeOptions-ap-3" name="work_allocation_code" type="radio" value="VCO_ADR-ap">
+                <label class="govuk-label govuk-radios__label" for="volumeOptions-ap-3">
+                  Volume Change of Ownership Actionable Deferral: Requisition (VCO ADR)
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="volumeOptions-ap-4" name="work_allocation_code" type="radio" value="VRU_ADR-ap">
+                <label class="govuk-label govuk-radios__label" for="volumeOptions-ap-4">
+                  Volume Register Update Actionable Deferral: Requisition (VRU ADR)
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="volumeOptions-ap-5" name="work_allocation_code" type="radio" value="V_ADN-ap">
+                <label class="govuk-label govuk-radios__label" for="volumeOptions-ap-5">
+                  Volume Actionable Deferral: Objection Notice
+                </label>
+              </div>
+            </div>
+          </fieldset>
+
+        </div>
+
+        <div class="govuk-grid-column-one-half">
+
+          <fieldset class="govuk-fieldset govuk-!-margin-bottom-9">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              <h2 class="govuk-fieldset__heading">
+                Executive
+              </h2>
+            </legend>
+            <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="executiveOptions-ad-2" name="work_allocation_code" type="radio" value="email" data-aria-controls="conditional-executiveOptions-ad-2">
+                <label class="govuk-label govuk-radios__label" for="executiveOptions-ad-2">
+                  Executive Register Update Complex (CRU) 
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-executiveOptions-ad-2">
+                <div class="govuk-form-group">
+
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-font-weight-regular govuk-visually-hidden">
+                      Sub-categories 
+                    </legend>
+
+                    <div class="govuk-radios">
+          
+                      <div class="govuk-radios__item">
+                        
+                        <input class="govuk-radios__input" id="ipsum-a" name="ipsum" type="radio" value="ipsum-a">
+                        
+                        <label class="govuk-label govuk-radios__label" for="ipsum-a">
+                          Lorem ipsum a quaerat tempora
+                        </label>
+          
+                      </div>                            
+                      
+                      <div class="govuk-radios__item">
+                        
+                        <input class="govuk-radios__input" id="ipsum-b" name="ipsum" type="radio" value="ipsum-b">
+                        
+                        <label class="govuk-label govuk-radios__label" for="ipsum-b">
+                          Lorem ipsum b minima pariatur (CEW)
+                        </label>
+          
+                      </div>
+          
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="ipsum-c" name="ipsum" type="radio" value="text">
+                        <label class="govuk-label govuk-radios__label" for="ipsum-c">
+                          Lorem ipsum c inventore
+                        </label>
+                      </div>
+
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="ipsum-d" name="ipsum" type="radio" value="text">
+                        <label class="govuk-label govuk-radios__label" for="ipsum-d">
+                          Lorem ipsum d velit at 
+                        </label>
+                      </div>
+          
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="ipsum-e" name="ipsum" type="radio" value="text">
+                        <label class="govuk-label govuk-radios__label" for="ipsum-e">
+                          Lorem ipsum e obcaecati (WDX)
+                        </label>
+                      </div>
+
+                    </div>
+                  </fieldset>
+
+                </div>
+              </div>
+
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="executiveOptions-ad-3" name="work_allocation_code" type="radio" value="E_ADN-ap">
+                <label class="govuk-label govuk-radios__label" for="executiveOptions-ad-3">
+                  Executive Register Update Actionable Deferral: Objection Notice 
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="executiveOptions-ad-4" name="work_allocation_code" type="radio" value="E_ADR-ap">
+                <label class="govuk-label govuk-radios__label" for="executiveOptions-ad-4">
+                  Executive Register Update Actionable Deferral: Requisition (Exec ADR)
+                </label>
+              </div>              
+
+            </div>
+          </fieldset>
+
+        </div>
+      </div>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-half">
+          
+          <fieldset class="govuk-fieldset govuk-!-margin-bottom-9">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              <h2 class="govuk-fieldset__heading">
+                  Application Processing Volume   
+              </h2>
+            </legend>
+            <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="apOptions-ad" name="work_allocation_code" type="radio" value="VCO_AP-ap">
+                <label class="govuk-label govuk-radios__label" for="apOptions-ad">
+                    Volume Change of Ownership (AP VCO)
+                </label>              
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="apOptions-ad-2" name="work_allocation_code" type="radio" value="VRU_AP-ap">
+                <label class="govuk-label govuk-radios__label" for="apOptions-ad-2">
+                    Volume Register Update (AP VRU)
+                </label>              
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="apOptions-ad-3" name="work_allocation_code" type="radio" value="VCO_ADR_AP-ap">
+                <label class="govuk-label govuk-radios__label" for="apOptions-ad-3">
+                    Volume Change of Ownership Actionable Deferral: Requisition (AP VCO ADR)
+                </label>              
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="apOptions-ad-4" name="work_allocation_code" type="radio" value="VRU_ADR_AP-ap">
+                <label class="govuk-label govuk-radios__label" for="apOptions-ad-4">
+                    Volume Register Update Actionable Deferral: Requisition (AP VRU ADR)
+                </label>              
+              </div>
+              
+            </div>
+          </fieldset>  
+
+        </div>
+
+        <div class="govuk-grid-column-one-half">
+
+          <fieldset class="govuk-fieldset govuk-!-margin-bottom-9">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              <h2 class="govuk-fieldset__heading">
+                  Application Processing Executive
+              </h2>
+            </legend>
+            <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="apOptionsExecutive-ad" name="work_allocation_code" type="radio" value="SRU_AP-ap">
+                <label class="govuk-label govuk-radios__label" for="apOptionsExecutive-ad">
+                    Executive Register Update Standard (AP SRU)
+                </label>           
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="apOptionsExecutive-ad-2" name="work_allocation_code" type="radio" value="CRU_AP-ap">
+                <label class="govuk-label govuk-radios__label" for="apOptionsExecutive-ad-2">
+                    Executive Register Update Complex (AP CRU)
+                </label>            
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="apOptionsExecutive-ad-3" name="work_allocation_code" type="radio" value="E_ADR_AP-ap">
+                <label class="govuk-label govuk-radios__label" for="apOptionsExecutive-ad-3">
+                    Executive Actionable Deferral: Requisition (AP Exec ADR)
+                </label>              
+              </div>
+
+            </div>
+          </fieldset>
+
+        </div>
+      </div>   
+      
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-half">      
+
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              <h2 class="govuk-fieldset__heading">
+                No Category
+              </h2>
+            </legend>
+            <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="noCat" name="work_allocation_code" type="radio" value="NONE">
+                <label class="govuk-label govuk-radios__label" for="noCat">
+                  No Category
+                </label>          
+              </div>
+
+            </div>
+          </fieldset> 
+
+        </div>
+
+        <div class="govuk-grid-column-one-half">
+          &nbsp; 
+        </div>        
+      </div> 
+
+    </fieldset>
+
+  </div>
+
+  <button value="y" type="submit" name="save" class="govuk-button" id="save">
+    Select
+  </button>
+
+</form>
+
+{% endblock %}

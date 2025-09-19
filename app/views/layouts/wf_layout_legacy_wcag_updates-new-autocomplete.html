@@ -113,6 +113,52 @@
 //# sourceMappingURL=accessible-autocomplete.min.js.map
       
 //window.onload = (event) => {     };
+
+/*window.addEventListener('load', function() {
+  setTimeout(function() {
+    const form = document.getElementById('manage_form');
+    if (form) {
+
+
+
+      const nameHint = document.createElement('div');
+      nameHint.className = 'govuk-visually-hidden';
+      nameHint.id = 'name__assistiveHint';
+      nameHint.textContent = 'Enter a name';
+
+      const assigneeHint = document.createElement('div');
+      assigneeHint.className = 'govuk-visually-hidden';
+      assigneeHint.id = 'assignee__assistiveHint';
+      assigneeHint.textContent = 'Enter a name';
+
+      // Insert at the beginning of the form
+      form.insertBefore(assigneeHint, form.firstChild);
+      form.insertBefore(nameHint, form.firstChild);
+    }
+  }, 1000); // 2-second delay
+});*/
+
+/*window.addEventListener('load', function() {
+  setTimeout(function() {
+    const body = document.body;
+    if (body) {
+      const nameHint = document.createElement('div');
+      nameHint.className = 'govuk-visually-hidden';
+      nameHint.id = 'name__assistiveHint';
+      nameHint.textContent = 'Enter a name';
+
+      const assigneeHint = document.createElement('div');
+      assigneeHint.className = 'govuk-visually-hidden';
+      assigneeHint.id = 'assignee__assistiveHint';
+      assigneeHint.textContent = 'Enter a name';
+
+      // Insert at the beginning of the body
+      body.insertBefore(assigneeHint, body.firstChild);
+      body.insertBefore(nameHint, body.firstChild);
+    }
+  }, 0); // 5-second delay
+});*/
+
 </script>
 
 <script type="text/javascript">
@@ -131,7 +177,12 @@
 </script>
 
 <script type="text/javascript">
+  //window.onload = function() {
+      //alert('Page has loaded!');
+    //};
   //FIND
+
+  //element = document.getElementById('#tt-autoselect')
   element = document.querySelector('#tt-autoselect')
   id = 'name'
 
@@ -142,18 +193,18 @@
     minLength: 2,
     source: namesExamples, // Provide your remote data source here.
     menuAttributes: {
-      "aria-labelledby": 'find-field-label'
+      "aria-labelledby": 'my-hint-name'
     }//,
     //inputClasses: "govuk-input"
   })
 
   //ASSIGN
-  element = document.querySelector('#tt2-autoselect')
+  element2 = document.querySelector('#tt2-autoselect')
   id = 'assignee'
 
   accessibleAutocomplete({
     autoselect: true,//remove this line if decided not required
-    element: element,
+    element: element2,
     id: id, 
     minLength: 2,    
     source: namesExamples, // Provide your remote data source here.
