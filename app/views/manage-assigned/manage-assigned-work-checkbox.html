@@ -46,6 +46,24 @@ body:not(.js-enabled)
   left: .03125rem;
 }
 
+
+@media (max-width: 40.0625em) {
+  #manage_work .govuk-grid-column-one-half + .govuk-grid-column-one-half #new-me-wrapper {
+    background: lime; 
+    width: 110%;
+  }
+  #manage_work .govuk-grid-column-one-half + .govuk-grid-column-one-half .autocomplete-wrapper {
+    background-color: red;
+    width: 410px;
+    float: left; 
+  }
+}
+
+/*#new-me-checkbox {/*aron needed this for his versin
+  position: relative;
+  top: -60px
+}*/
+
 /*
 .autocomplete__input.autocomplete__input--default {
   text-indent: -0.5px;

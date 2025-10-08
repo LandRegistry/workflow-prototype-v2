@@ -34,6 +34,10 @@ router.use("/progress-later/", (req, res, next) => {
   return require("./views/progress-later/_routes")(req, res, next);
 });
 
+router.use("/capability-based/", (req, res, next) => {
+  return require("./views/capability-based/_routes")(req, res, next);
+});
+
 // router.use("/quiz/", (req, res, next) => {
 //   return require("./views/quiz/_routes")(req, res, next);
 // });

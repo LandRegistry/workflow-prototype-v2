@@ -1,0 +1,152 @@
+{% extends "layouts/wf_layout.html" %}
+
+{% set pageName="Select a category of work" %}
+
+{% block pageTitle %}
+Select a category of work
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="#">Home</a>
+      </li>
+      
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="category-of-work-pt1.html">Select a category of work</a>
+      </li>
+
+      <li class="govuk-breadcrumbs__list-item">
+        Executive
+    </li>      
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+<style>
+  @media (min-width: 40.0625em) {/* from desktop */
+
+  }
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <form action="#" method="post" novalidate>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-margin-bottom-6">
+            
+            <span class="govuk-caption-m">Select a category of work<span class="govuk-visually-hidden">: </span></span>
+            
+            <h1 class="govuk-fieldset__heading">
+              Executive
+            </h1>
+
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="categoryExecutive" name="categoryExecutive" type="radio" value="changeOfOwnership">
+              <label class="govuk-label govuk-radios__label" for="categoryExecutive">
+                Executive Register Update Standard (SRU)
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="categoryExecutive-2" name="categoryExecutive" type="radio" value="registerUpdate" data-aria-controls="register-update-options">
+              <label class="govuk-label govuk-radios__label" for="categoryExecutive-2">
+                Executive Register Update Complex (CRU)
+              </label>
+            </div>
+
+            <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+            <div class="govuk-radios__conditional" id="register-update-options">
+
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                      <h3 class="govuk-fieldset__heading govuk-visually-hidden">
+                        Sub-categories 
+                      </h3>
+                    </legend>
+                    <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                      
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="ipsum-a" name="ipsum" type="radio" value="ipsum-a">
+                        <label class="govuk-label govuk-radios__label" for="ipsum-a">
+                          Lorem ipsum a
+                        </label>
+                      </div>                            
+
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="ipsum-b" name="ipsum" type="radio" value="ipsum-b">
+                        <label class="govuk-label govuk-radios__label" for="ipsum-b">
+                          Lorem ipsum b
+                        </label>
+                      </div>
+
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="ipsum-c" name="ipsum" type="radio" value="text">
+                        <label class="govuk-label govuk-radios__label" for="ipsum-c">
+                          Lorem ipsum c
+                        </label>
+                      </div>
+
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="ipsum-d" name="ipsum" type="radio" value="text">
+                        <label class="govuk-label govuk-radios__label" for="ipsum-d">
+                          Lorem ipsum d
+                        </label>
+                      </div>
+
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="ipsum-e" name="ipsum" type="radio" value="text">
+                        <label class="govuk-label govuk-radios__label" for="ipsum-e">
+                          Lorem ipsum e
+                        </label>
+                      </div>
+
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="ipsum-std" name="ipsum" type="radio" value="ipsum-std" >
+                        <label class="govuk-label govuk-radios__label" for="ipsum-std">
+                          Any
+                        </label>
+                      </div>                       
+                      
+                    </div>
+                  </fieldset>
+                </div>                    
+
+            </div>            
+
+            <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="categoryExecutive-3" name="categoryExecutive" type="radio" value="updateRequisition">
+              <label class="govuk-label govuk-radios__label" for="categoryExecutive-3">
+                Executive Register Update Actionable Deferral: Objection Notice
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="categoryExecutive-4" name="categoryExecutive" type="radio" value="ActionableRequisition">
+              <label class="govuk-label govuk-radios__label" for="categoryExecutive-4">
+                Executive Register Update Actionable Deferral: Requisition (Exec ADR)
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <button value="y" type="submit" name="save" class="govuk-button" id="save">
+        Select
+      </button>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

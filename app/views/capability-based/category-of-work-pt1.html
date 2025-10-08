@@ -1,0 +1,86 @@
+{% extends "layouts/wf_layout.html" %}
+
+{% set pageName="Select a category of work" %}
+
+{% block pageTitle %}
+Select a category of work
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="#">Home</a>
+      </li>
+      
+      <li class="govuk-breadcrumbs__list-item">
+          Select a category of work
+      </li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+<style>
+  @media (min-width: 40.0625em) {/* from desktop */
+
+  }
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <form action="#" method="post" novalidate>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-margin-bottom-6">
+            <h1 class="govuk-fieldset__heading">
+              Select a category of work
+            </h1>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="categoryOfWork" name="categoryOfWork" type="radio" value="volume">
+              <label class="govuk-label govuk-radios__label" for="categoryOfWork">
+                Volume
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="categoryOfWork-2" name="categoryOfWork" type="radio" value="executive">
+              <label class="govuk-label govuk-radios__label" for="categoryOfWork-2">
+                Executive
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="categoryOfWork-3" name="categoryOfWork" type="radio" value="processingVolume">
+              <label class="govuk-label govuk-radios__label" for="categoryOfWork-3">
+                Application Processing Volume
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="categoryOfWork-4" name="categoryOfWork" type="radio" value="processingExecutive">
+              <label class="govuk-label govuk-radios__label" for="categoryOfWork-4">
+                Application Processing Executive
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="categoryOfWork-5" name="categoryOfWork" type="radio" value="noCategory">
+              <label class="govuk-label govuk-radios__label" for="categoryOfWork-5">
+                No Category
+              </label>
+            </div>          
+          </div>
+        </fieldset>
+      </div>
+
+      <button value="y" type="submit" name="save" class="govuk-button" id="save">
+        Select
+      </button>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
