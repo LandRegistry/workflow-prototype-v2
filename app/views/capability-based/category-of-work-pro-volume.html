@@ -1,9 +1,9 @@
 {% extends "layouts/wf_layout.html" %}
 
-{% set pageName="Volume" %}
+{% set pageName="Application Processing Volume" %}
 
 {% block pageTitle %}
-Volume
+Application Processing Volume
 {% endblock %}
 
 {% block beforeContent %}
@@ -18,7 +18,7 @@ Volume
       </li>
 
       <li class="govuk-breadcrumbs__list-item">
-        Volume
+        Application Processing Volume
     </li>      
   </ol>
 </div>
@@ -39,45 +39,40 @@ Volume
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-margin-bottom-6">
-                        
+            
             <span class="govuk-caption-m">Select a category of work<span class="govuk-visually-hidden">: </span></span>
             
             <h1 class="govuk-fieldset__heading">
-              Volume
+              Application Processing Volume
             </h1>
-            
+
           </legend>
+
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="categoryVolume" name="categoryVolume" type="radio" value="changeOfOwnership">
-              <label class="govuk-label govuk-radios__label" for="categoryVolume">
-                Volume Change of Ownership (VCO)
+              <input class="govuk-radios__input" id="pro-volume" name="pro-volume" type="radio" value="changeOfOwnership">
+              <label class="govuk-label govuk-radios__label" for="pro-volume">
+                Volume Change of Ownership (AP VCO)
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="categoryVolume-2" name="categoryVolume" type="radio" value="registerUpdate">
-              <label class="govuk-label govuk-radios__label" for="categoryVolume-2">
-                Volume Register Update (VRU)
+              <input class="govuk-radios__input" id="pro-volume-2" name="pro-volume" type="radio" value="registerUpdate">
+              <label class="govuk-label govuk-radios__label" for="pro-volume-2">
+                Volume Register Update (AP VRU)
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="categoryVolume-3" name="categoryVolume" type="radio" value="updateRequisition">
-              <label class="govuk-label govuk-radios__label" for="categoryVolume-3">
-                Volume Change of Ownership Actionable Deferral: Requisition (VCO ADR)
+              <input class="govuk-radios__input" id="pro-volume-3" name="pro-volume" type="radio" value="updateRequisition">
+              <label class="govuk-label govuk-radios__label" for="pro-volume-3">
+                Volume Change of Ownership Actionable Deferral: Requisition (AP VCO ADR)
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="categoryVolume-4" name="categoryVolume" type="radio" value="ActionableRequisition">
-              <label class="govuk-label govuk-radios__label" for="categoryVolume-4">
-                Volume Register Update Actionable Deferral: Requisition (VRU ADR)
+              <input class="govuk-radios__input" id="pro-volume-4" name="pro-volume" type="radio" value="ActionableRequisition">
+              <label class="govuk-label govuk-radios__label" for="pro-volume-4">
+                Volume Register Update Actionable Deferral: Requisition (AP VRU ADR)
               </label>
             </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="categoryVolume-5" name="categoryVolume" type="radio" value="objectionNotice">
-              <label class="govuk-label govuk-radios__label" for="categoryVolume-5">
-                Volume Actionable Deferral: Objection Notice
-              </label>
-            </div>          
           </div>
         </fieldset>
       </div>

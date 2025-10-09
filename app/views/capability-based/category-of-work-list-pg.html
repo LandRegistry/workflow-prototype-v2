@@ -1,0 +1,42 @@
+{% extends "layouts/wf_layout.html" %}
+
+{% set pageName="Worklist page" %}
+
+{% block pageTitle %}
+Worklist page
+{% endblock %}
+
+{% block beforeContent %}
+<!--div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="#">Home</a>
+      </li>
+      
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="category-of-work-pt1.html">Select a category of work</a>
+      </li>
+
+      <li class="govuk-breadcrumbs__list-item">
+        Application Processing Volume
+    </li>      
+  </ol>
+</div-->
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <p class="govuk-body-l">
+      Directed to the worklist page: <br>"You have changed your category of work".
+    </p>
+
+    <p class="govuk-body-s">
+      <a href="category-of-work-pt1.html" target="_self" class="govuk-link--no-visited-state">Return to start page</a>
+    </p>    
+
+  </div>
+</div>
+
+{% endblock %}

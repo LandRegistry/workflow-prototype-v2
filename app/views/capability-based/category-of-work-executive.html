@@ -1,9 +1,9 @@
 {% extends "layouts/wf_layout.html" %}
 
-{% set pageName="Select a category of work" %}
+{% set pageName="Executive" %}
 
 {% block pageTitle %}
-Select a category of work
+Executive
 {% endblock %}
 
 {% block beforeContent %}
@@ -19,7 +19,7 @@ Select a category of work
 
       <li class="govuk-breadcrumbs__list-item">
         Executive
-    </li>      
+      </li>      
   </ol>
 </div>
 {% endblock %}
@@ -49,13 +49,13 @@ Select a category of work
           </legend>
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="categoryExecutive" name="categoryExecutive" type="radio" value="changeOfOwnership">
+              <input class="govuk-radios__input" id="categoryExecutive" name="categoryExecutive" type="radio" value="registerUpdateStd">
               <label class="govuk-label govuk-radios__label" for="categoryExecutive">
                 Executive Register Update Standard (SRU)
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="categoryExecutive-2" name="categoryExecutive" type="radio" value="registerUpdate" data-aria-controls="register-update-options">
+              <input class="govuk-radios__input" id="categoryExecutive-2" name="categoryExecutive" type="radio" value="registerUpdateComplex" data-aria-controls="register-update-options">
               <label class="govuk-label govuk-radios__label" for="categoryExecutive-2">
                 Executive Register Update Complex (CRU)
               </label>
@@ -125,13 +125,13 @@ Select a category of work
             <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="categoryExecutive-3" name="categoryExecutive" type="radio" value="updateRequisition">
+              <input class="govuk-radios__input" id="categoryExecutive-3" name="categoryExecutive" type="radio" value="registerUpdateDeferralObj">
               <label class="govuk-label govuk-radios__label" for="categoryExecutive-3">
                 Executive Register Update Actionable Deferral: Objection Notice
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="categoryExecutive-4" name="categoryExecutive" type="radio" value="ActionableRequisition">
+              <input class="govuk-radios__input" id="categoryExecutive-4" name="categoryExecutive" type="radio" value="registerUpdateDeferralReq">
               <label class="govuk-label govuk-radios__label" for="categoryExecutive-4">
                 Executive Register Update Actionable Deferral: Requisition (Exec ADR)
               </label>

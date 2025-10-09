@@ -1,0 +1,114 @@
+{% extends "layouts/wf_layout.html" %}
+
+{% set pageName="Select a category of work" %}
+
+{% block pageTitle %}
+Select a category of work
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="#">Home</a>
+      </li>
+      
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="category-of-work-pt1.html">Select a category of work</a>
+      </li>
+
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="category-of-work-executive.html">Executive</a>
+      </li>      
+
+      <li class="govuk-breadcrumbs__list-item">
+        Select a lorem ipsum dolor sit
+      </li> 
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <form action="#" method="post" novalidate>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="ipsum-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-margin-bottom-3">
+            <h1 class="govuk-fieldset__heading">
+              Select a lorem ipsum dolor sit
+            </h1>
+          </legend>
+          
+          <div id="ipsum-hint" class="govuk-hint">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+          </div>
+
+          <div class="govuk-checkboxes govuk-checkboxes--small govuk-!-margin-top-6" data-module="govuk-checkboxes">
+            
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="ipsum-b-1" name="ipsum-b-sub" type="checkbox" value="ipsum-b-1">
+              <label class="govuk-label govuk-checkboxes__label" for="ipsum-b-1">
+                Consectetur adipisicing 
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="ipsum-b-2" name="ipsum-b-sub" type="checkbox" value="ipsum-b-2">
+              <label class="govuk-label govuk-checkboxes__label" for="ipsum-b-2">
+                Nemo dolore laudantium 
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="ipsum-b-3" name="ipsum-b-sub" type="checkbox" value="ipsum-b-3">
+              <label class="govuk-label govuk-checkboxes__label" for="ipsum-b-3">
+                Sapiente ducimus
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="ipsum-b-4" name="ipsum-b-sub" type="checkbox" value="ipsum-b-4">
+              <label class="govuk-label govuk-checkboxes__label" for="ipsum-b-4">
+                Sapiente iusto expedita
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="ipsum-b-5" name="ipsum-b-sub" type="checkbox" value="ipsum-b-5">
+              <label class="govuk-label govuk-checkboxes__label" for="ipsum-b-5">
+                Consectetur adipisicing 
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="ipsum-b-6" name="ipsum-b-sub" type="checkbox" value="ipsum-b-6">
+              <label class="govuk-label govuk-checkboxes__label" for="ipsum-b-6">
+                Nemo dolore laudantium 
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="ipsum-b-7" name="ipsum-b-sub" type="checkbox" value="ipsum-b-7">
+              <label class="govuk-label govuk-checkboxes__label" for="ipsum-b-7">
+                Sapiente ducimus
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="ipsum-b-8" name="ipsum-b-sub" type="checkbox" value="ipsum-b-8">
+              <label class="govuk-label govuk-checkboxes__label" for="ipsum-b-8">
+                Sapiente iusto expedita
+              </label>
+            </div>
+
+          </div>
+        </fieldset>
+      </div>      
+
+      <button value="y" type="submit" name="save" class="govuk-button" id="save">
+        Select
+      </button>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
