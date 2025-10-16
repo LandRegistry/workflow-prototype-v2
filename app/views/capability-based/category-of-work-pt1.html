@@ -7,7 +7,7 @@ Select a category of work
 {% endblock %}
 
 {% block beforeContent %}
-<div class="govuk-breadcrumbs">
+<!--div class="govuk-breadcrumbs">
   <ol class="govuk-breadcrumbs__list">
       <li class="govuk-breadcrumbs__list-item">
           <a class="govuk-breadcrumbs__link" href="#">Home</a>
@@ -17,7 +17,8 @@ Select a category of work
           Select a category of work
       </li>
   </ol>
-</div>
+</div-->
+<a href="index.html" class="govuk-back-link">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -68,10 +69,13 @@ Select a category of work
                 Application Processing Executive
               </label>
             </div>
+
+            <div class="govuk-radios__divider">or</div>
+
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="categoryOfWork-5" name="categoryOfWork" type="radio" value="noCategory">
               <label class="govuk-label govuk-radios__label" for="categoryOfWork-5">
-                No Category
+                No category
               </label>
             </div>          
           </div>
