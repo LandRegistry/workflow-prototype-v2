@@ -3,7 +3,7 @@
 {% set pageName="Application Processing Volume" %}
 
 {% block pageTitle %}
-Application Processing Volume
+Error: Application Processing Volume
 {% endblock %}
 
 {% block beforeContent %}
@@ -26,19 +26,29 @@ Application Processing Volume
 {% endblock %}
 
 {% block content %}
-<style>
-  @media (min-width: 40.0625em) {/* from desktop */
 
-  }
-</style>
+<div class="govuk-error-summary" data-module="govuk-error-summary">
+  <div role="alert">
+    <h2 class="govuk-error-summary__title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li>
+          <a href="#pro-volume">Select an an Application Processing Volume category of work</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
     <form action="#" method="post" novalidate>
 
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset">
+      <div class="govuk-form-group govuk-form-group--error">
+        <fieldset class="govuk-fieldset" aria-describedby="pro-volume-error">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-margin-bottom-6">
             
             <span class="govuk-caption-m">Select a category of work<span class="govuk-visually-hidden">: </span></span>
@@ -49,35 +59,31 @@ Application Processing Volume
 
           </legend>
 
+          <p id="pro-volume-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Select an an Application Processing Volume category of work
+          </p>          
+
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="pro-volume" name="pro-volume" type="radio" value="changeOfOwnership" {% if (data['pro-volume'] == 'changeOfOwnership') %}
-              checked
-              {% endif %}>
+              <input class="govuk-radios__input" id="pro-volume" name="pro-volume" type="radio" value="changeOfOwnership">
               <label class="govuk-label govuk-radios__label" for="pro-volume">
                 Volume Change of Ownership (AP VCO)
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="pro-volume-2" name="pro-volume" type="radio" value="registerUpdate" {% if (data['pro-volume'] == 'registerUpdate') %}
-              checked
-              {% endif %}>
+              <input class="govuk-radios__input" id="pro-volume-2" name="pro-volume" type="radio" value="registerUpdate">
               <label class="govuk-label govuk-radios__label" for="pro-volume-2">
                 Volume Register Update (AP VRU)
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="pro-volume-3" name="pro-volume" type="radio" value="updateRequisition" {% if (data['pro-volume'] == 'updateRequisition') %}
-              checked
-              {% endif %}>
+              <input class="govuk-radios__input" id="pro-volume-3" name="pro-volume" type="radio">
               <label class="govuk-label govuk-radios__label" for="pro-volume-3">
                 Volume Change of Ownership Actionable Deferral: Requisition (AP VCO ADR)
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="pro-volume-4" name="pro-volume" type="radio" value="actionableRequisition" {% if (data['pro-volume'] == 'actionableRequisition') %}
-              checked
-              {% endif %}>
+              <input class="govuk-radios__input" id="pro-volume-4" name="pro-volume" type="radio" value="actionableRequisition">
               <label class="govuk-label govuk-radios__label" for="pro-volume-4">
                 Volume Register Update Actionable Deferral: Requisition (AP VRU ADR)
               </label>

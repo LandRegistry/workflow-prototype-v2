@@ -3,7 +3,7 @@
 {% set pageName="Select a category of work" %}
 
 {% block pageTitle %}
-Select a category of work
+Error: Select a category of work
 {% endblock %}
 
 {% block beforeContent %}
@@ -22,19 +22,35 @@ Select a category of work
 {% endblock %}
 
 {% block content %}
-<style>
-  @media (min-width: 40.0625em) {/* from desktop */
 
-  }
-</style>
+{# commented out ...
+  {% if (data['categoryOfWork'] != '') %}
+    {% set categoryOfWork = null %}
+  {% endif %}
+#}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
+    <div class="govuk-error-summary" data-module="govuk-error-summary">
+      <div role="alert">
+        <h2 class="govuk-error-summary__title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#categoryOfWork">Select a category of work</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
     <form action="#" method="post" novalidate>
 
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset">
+      <div class="govuk-form-group govuk-form-group--error">
+        <fieldset class="govuk-fieldset" aria-describedby="categoryOfWork-error">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-margin-bottom-6">
 
             <span class="govuk-caption-m">&nbsp;</span>
@@ -44,35 +60,32 @@ Select a category of work
             </h1>
             
           </legend>
+
+          <p id="categoryOfWork-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Select a category of work
+          </p>
+
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="categoryOfWork" name="categoryOfWork" type="radio" value="volume" {% if (data['categoryOfWork'] == 'volume') %}
-              checked
-              {% endif %}>
+              <input class="govuk-radios__input" id="categoryOfWork" name="categoryOfWork" type="radio" value="volume">
               <label class="govuk-label govuk-radios__label" for="categoryOfWork">
                 Volume
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="categoryOfWork-2" name="categoryOfWork" type="radio" value="executive" {% if (data['categoryOfWork'] == 'executive') %}
-              checked
-              {% endif %}>
+              <input class="govuk-radios__input" id="categoryOfWork-2" name="categoryOfWork" type="radio" value="executive">
               <label class="govuk-label govuk-radios__label" for="categoryOfWork-2">
                 Executive
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="categoryOfWork-3" name="categoryOfWork" type="radio" value="processingVolume" {% if (data['categoryOfWork'] == 'processingVolume') %}
-              checked
-              {% endif %}>
+              <input class="govuk-radios__input" id="categoryOfWork-3" name="categoryOfWork" type="radio" value="processingVolume">
               <label class="govuk-label govuk-radios__label" for="categoryOfWork-3">
                 Application Processing Volume
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="categoryOfWork-4" name="categoryOfWork" type="radio" value="processingExecutive" {% if (data['categoryOfWork'] == 'processingExecutive') %}
-              checked
-              {% endif %}>
+              <input class="govuk-radios__input" id="categoryOfWork-4" name="categoryOfWork" type="radio" value="processingExecutive">
               <label class="govuk-label govuk-radios__label" for="categoryOfWork-4">
                 Application Processing Executive
               </label>
@@ -81,9 +94,7 @@ Select a category of work
             <div class="govuk-radios__divider">or</div>
 
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="categoryOfWork-5" name="categoryOfWork" type="radio" value="noCategory" {% if (data['categoryOfWork'] == 'noCategory') %}
-              checked
-              {% endif %}>
+              <input class="govuk-radios__input" id="categoryOfWork-5" name="categoryOfWork" type="radio" value="noCategory">
               <label class="govuk-label govuk-radios__label" for="categoryOfWork-5">
                 No category
               </label>

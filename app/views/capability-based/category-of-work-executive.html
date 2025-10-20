@@ -50,13 +50,17 @@ Executive
           </legend>
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="categoryExecutive" name="categoryExecutive" type="radio" value="registerUpdateStd">
+              <input class="govuk-radios__input" id="categoryExecutive" name="categoryExecutive" type="radio" value="registerUpdateStd" {% if (data['categoryExecutive'] == 'registerUpdateStd') %}
+              checked
+              {% endif %}>
               <label class="govuk-label govuk-radios__label" for="categoryExecutive">
                 Executive Register Update Standard (SRU)
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="categoryExecutive-2" name="categoryExecutive" type="radio" value="registerUpdateComplex" data-aria-controls="register-update-options">
+              <input class="govuk-radios__input" id="categoryExecutive-2" name="categoryExecutive" type="radio" value="registerUpdateComplex" data-aria-controls="register-update-options" {% if (data['categoryExecutive'] == 'registerUpdateComplex') %}
+              checked
+              {% endif %}>
               <label class="govuk-label govuk-radios__label" for="categoryExecutive-2">
                 Executive Register Update Complex (CRU)
               </label>
@@ -68,50 +72,62 @@ Executive
 
                 <div class="govuk-form-group">
                   <fieldset class="govuk-fieldset">
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                      <h3 class="govuk-fieldset__heading govuk-visually-hidden">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-visually-hidden">
+                      <!--h2 class="govuk-fieldset__heading"-->
                         Sub-categories 
-                      </h3>
+                      <!--/h2-->
                     </legend>
                     <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
                       
                       <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="ipsum-a" name="ipsum" type="radio" value="ipsum-a">
+                        <input class="govuk-radios__input" id="ipsum-a" name="ipsum" type="radio" value="ipsum-a" {% if (data['ipsum'] == 'ipsum-a') %}
+                        checked
+                        {% endif %}>
                         <label class="govuk-label govuk-radios__label" for="ipsum-a">
                           Lorem ipsum a
                         </label>
                       </div>                            
 
                       <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="ipsum-b" name="ipsum" type="radio" value="ipsum-b">
+                        <input class="govuk-radios__input" id="ipsum-b" name="ipsum" type="radio" value="ipsum-b" {% if (data['ipsum'] == 'ipsum-b') %}
+                        checked
+                        {% endif %}>
                         <label class="govuk-label govuk-radios__label" for="ipsum-b">
                           Lorem ipsum b
                         </label>
                       </div>
 
                       <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="ipsum-c" name="ipsum" type="radio" value="text">
+                        <input class="govuk-radios__input" id="ipsum-c" name="ipsum" type="radio" value="text" {% if (data['ipsum'] == 'ipsum-c') %}
+                        checked
+                        {% endif %}>
                         <label class="govuk-label govuk-radios__label" for="ipsum-c">
                           Lorem ipsum c
                         </label>
                       </div>
 
                       <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="ipsum-d" name="ipsum" type="radio" value="text">
+                        <input class="govuk-radios__input" id="ipsum-d" name="ipsum" type="radio" value="text" {% if (data['ipsum'] == 'ipsum-d') %}
+                        checked
+                        {% endif %}>
                         <label class="govuk-label govuk-radios__label" for="ipsum-d">
                           Lorem ipsum d
                         </label>
                       </div>
 
                       <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="ipsum-e" name="ipsum" type="radio" value="text">
+                        <input class="govuk-radios__input" id="ipsum-e" name="ipsum" type="radio" value="text" {% if (data['ipsum'] == 'ipsum-e') %}
+                        checked
+                        {% endif %}>
                         <label class="govuk-label govuk-radios__label" for="ipsum-e">
                           Lorem ipsum e
                         </label>
                       </div>
 
                       <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="ipsum-std" name="ipsum" type="radio" value="ipsum-std" >
+                        <input class="govuk-radios__input" id="ipsum-std" name="ipsum" type="radio" value="ipsum-std" {% if (data['ipsum'] == 'ipsum-std') %}
+                        checked
+                        {% endif %}>
                         <label class="govuk-label govuk-radios__label" for="ipsum-std">
                           Any
                         </label>
@@ -126,13 +142,17 @@ Executive
             <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="categoryExecutive-3" name="categoryExecutive" type="radio" value="registerUpdateDeferralObj">
+              <input class="govuk-radios__input" id="categoryExecutive-3" name="categoryExecutive" type="radio" value="registerUpdateDeferralObj" {% if (data['categoryExecutive'] == 'registerUpdateDeferralObj') %}
+              checked
+              {% endif %}>
               <label class="govuk-label govuk-radios__label" for="categoryExecutive-3">
                 Executive Register Update Actionable Deferral: Objection Notice
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="categoryExecutive-4" name="categoryExecutive" type="radio" value="registerUpdateDeferralReq">
+              <input class="govuk-radios__input" id="categoryExecutive-4" name="categoryExecutive" type="radio" value="registerUpdateDeferralReq" {% if (data['categoryExecutive'] == 'registerUpdateDeferralReq') %}
+              checked
+              {% endif %}>
               <label class="govuk-label govuk-radios__label" for="categoryExecutive-4">
                 Executive Register Update Actionable Deferral: Requisition (Exec ADR)
               </label>

@@ -3,7 +3,7 @@
 {% set pageName="Select a category of work" %}
 
 {% block pageTitle %}
-Select a category of work
+Error: Select a lorem ipsum dolor sit
 {% endblock %}
 
 {% block beforeContent %}
@@ -31,23 +31,38 @@ Select a category of work
 
 {% block content %}
 
-{% set options = ['ipsum-b-1', 'ipsum-b-2', 'ipsum-b-3', 'ipsum-b-4', 'ipsum-b-5', 'ipsum-b-6', 'ipsum-b-7', 'ipsum-b-8'] %}
-{% set raw = data['ipsum-b'] | default([]) %}
-{% set selected = raw if raw is iterable else [raw] %}
+<div class="govuk-error-summary" data-module="govuk-error-summary">
+  <div role="alert">
+    <h2 class="govuk-error-summary__title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li>
+          <a href="#ipsum-b-1">Select a lorem ipsum dolor sit</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
     <form action="#" method="post" novalidate>
 
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" aria-describedby="ipsum-hint">
+      <div class="govuk-form-group govuk-form-group--error">
+        <fieldset class="govuk-fieldset" aria-describedby="ipsum-hint ipsum-error">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-margin-bottom-3">
             <h1 class="govuk-fieldset__heading">
               Select a lorem ipsum dolor sit
             </h1>
           </legend>
-          
+
+          <p id="ipsum-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Select a lorem ipsum dolor sit
+          </p> 
+
           <div id="ipsum-hint" class="govuk-hint">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
           </div>
@@ -55,49 +70,49 @@ Select a category of work
           <div class="govuk-checkboxes govuk-checkboxes--small govuk-!-margin-top-6" data-module="govuk-checkboxes">
             
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="ipsum-b-1" name="ipsum-b" type="checkbox" value="ipsum-b-1" {% if 'ipsum-b-1' in selected %}checked{% endif %}>
+              <input class="govuk-checkboxes__input" id="ipsum-b-1" name="ipsum-b-sub" type="checkbox" value="ipsum-b-1">
               <label class="govuk-label govuk-checkboxes__label" for="ipsum-b-1">
                 Consectetur adipisicing 
               </label>
             </div>
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="ipsum-b-2" name="ipsum-b" type="checkbox" value="ipsum-b-2" {% if 'ipsum-b-2' in selected %}checked{% endif %}>
+              <input class="govuk-checkboxes__input" id="ipsum-b-2" name="ipsum-b-sub" type="checkbox" value="ipsum-b-2">
               <label class="govuk-label govuk-checkboxes__label" for="ipsum-b-2">
                 Nemo dolore laudantium 
               </label>
             </div>
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="ipsum-b-3" name="ipsum-b" type="checkbox" value="ipsum-b-3" {% if 'ipsum-b-3' in selected %}checked{% endif %}>
+              <input class="govuk-checkboxes__input" id="ipsum-b-3" name="ipsum-b-sub" type="checkbox" value="ipsum-b-3">
               <label class="govuk-label govuk-checkboxes__label" for="ipsum-b-3">
                 Sapiente ducimus
               </label>
             </div>
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="ipsum-b-4" name="ipsum-b" type="checkbox" value="ipsum-b-4" {% if 'ipsum-b-4' in selected %}checked{% endif %}>
+              <input class="govuk-checkboxes__input" id="ipsum-b-4" name="ipsum-b-sub" type="checkbox" value="ipsum-b-4">
               <label class="govuk-label govuk-checkboxes__label" for="ipsum-b-4">
                 Sapiente iusto expedita
               </label>
             </div>
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="ipsum-b-5" name="ipsum-b" type="checkbox" value="ipsum-b-5" {% if 'ipsum-b-5' in selected %}checked{% endif %}>
+              <input class="govuk-checkboxes__input" id="ipsum-b-5" name="ipsum-b-sub" type="checkbox" value="ipsum-b-5">
               <label class="govuk-label govuk-checkboxes__label" for="ipsum-b-5">
                 Consectetur adipisicing 
               </label>
             </div>
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="ipsum-b-6" name="ipsum-b" type="checkbox" value="ipsum-b-6" {% if 'ipsum-b-6' in selected %}checked{% endif %}>
+              <input class="govuk-checkboxes__input" id="ipsum-b-6" name="ipsum-b-sub" type="checkbox" value="ipsum-b-6">
               <label class="govuk-label govuk-checkboxes__label" for="ipsum-b-6">
                 Nemo dolore laudantium 
               </label>
             </div>
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="ipsum-b-7" name="ipsum-b" type="checkbox" value="ipsum-b-7" {% if 'ipsum-b-7' in selected %}checked{% endif %}>
+              <input class="govuk-checkboxes__input" id="ipsum-b-7" name="ipsum-b-sub" type="checkbox" value="ipsum-b-7">
               <label class="govuk-label govuk-checkboxes__label" for="ipsum-b-7">
                 Sapiente ducimus
               </label>
             </div>
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="ipsum-b-8" name="ipsum-b" type="checkbox" value="ipsum-b-8" {% if 'ipsum-b-8' in selected %}checked{% endif %}>
+              <input class="govuk-checkboxes__input" id="ipsum-b-8" name="ipsum-b-sub" type="checkbox" value="ipsum-b-8">
               <label class="govuk-label govuk-checkboxes__label" for="ipsum-b-8">
                 Sapiente iusto expedita
               </label>
