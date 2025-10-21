@@ -6,7 +6,6 @@
 const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 
-//there 7 error pages to create
 
 router.post('/category-of-work-pt1', function (req, res) {
 
@@ -110,13 +109,13 @@ router.post('/category-of-work-executive', function (req, res) {
 
         res.redirect("category-of-work-executive-error")
 
-    } else {//one parent was selected
+    } else {//a parent was selected
 
         if (userInput == 'registerUpdateComplex' && userSubInput == null) {//empty. ie, parent and no subs selected      
             
             res.redirect("category-of-work-executive-subs-error")
 
-        } else if (userInput == 'registerUpdateComplex' && userSubInput == 'ipsum-b') {//parent and any of the other subs selected
+        } else if (userInput == 'registerUpdateComplex' && userSubInput == 'ipsum-b') {//parent and the second sub (b) has been selected
             
             res.redirect("category-of-work-executive-tertiary")//to tertiary form pg           
 
@@ -129,7 +128,6 @@ router.post('/category-of-work-executive', function (req, res) {
     }
 })
 
-/*
 router.post('/category-of-work-executive-error', function (req, res) {
 
     const userInput = req.session.data['categoryExecutive'];
@@ -156,9 +154,27 @@ router.post('/category-of-work-executive-error', function (req, res) {
         }
 
     }
-})*/
+})
 
+router.post('/category-of-work-executive-subs-error', function (req, res) {
 
+    const userInput = req.session.data['categoryExecutive'];
+    const userSubInput = req.session.data['ipsum'];
+
+    if (userInput == 'registerUpdateComplex' && userSubInput == null) {//subs are showing and are empty
+
+        res.redirect("category-of-work-executive-subs-error")
+
+    } else if (userInput == 'registerUpdateComplex' && userSubInput != null) {//subs are showing and are NOT empty
+
+        res.redirect("category-of-work-list-pg") 
+
+    } else {//the user changed the parent selection (without subs)
+
+        res.redirect("category-of-work-list-pg") 
+
+    }
+})
 
 router.post('/category-of-work-pro-volume', function (req, res) {
 
@@ -228,7 +244,7 @@ router.post('/category-of-work-pro-executive-error', function (req, res) {
 
 router.post('/category-of-work-executive-tertiary', function (req, res) {
 
-    const userInput = req.session.data['ipsum-b-sub'];
+    const userInput = req.session.data['ipsum-b'];
 
     if (userInput == null) {//empty
 

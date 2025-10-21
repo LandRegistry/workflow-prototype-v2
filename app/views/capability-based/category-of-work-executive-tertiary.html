@@ -31,9 +31,15 @@ Select a category of work
 
 {% block content %}
 
+
+{% set data = { ipsum_b: null } %}
+
+
+
 {% set options = ['ipsum-b-1', 'ipsum-b-2', 'ipsum-b-3', 'ipsum-b-4', 'ipsum-b-5', 'ipsum-b-6', 'ipsum-b-7', 'ipsum-b-8'] %}
 {% set raw = data['ipsum-b'] | default([]) %}
 {% set selected = raw if raw is iterable else [raw] %}
+
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
