@@ -1,0 +1,47 @@
+{% extends "layouts/wf_layout_legacy.html" %}
+
+{% block pageTitle %}
+There is a problem with the service
+{% endblock %}
+
+{% block beforeContent %}
+
+{#
+    <!-- extra content before the Main tag goes here ... -->
+#}
+<style>.hmlr-wf-lowercase {text-transform: lowercase;}.hmlr-wf-lowercase abbr {text-transform: none;}</style>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    
+    <div class="govuk-grid-column-two-thirds">
+        
+        <h1 class="govuk-heading-l">
+          Sorry, there is a problem with the service
+        </h1>
+        
+        <p class="govuk-body"> <!-- Try again later. -->
+          <!--The number of working days must be 100 or fewer.-->
+
+          The cancellation date must be 100 working days or fewer.
+
+          <!--br>The cancellation date must be 100 days or fewer.-->
+        </p>
+        
+        <p class="govuk-body">
+          If you need support for this problem, <a href="#" target="_blank" class="govuk-link govuk-link--no-visited-state">report an issue using 4me (opens in new tab)</a>. 
+        </p>
+
+        <p class="govuk-body">
+            You'll need to tell them it's an error 500, <span class="hmlr-wf-lowercase">'Deferral unsuccessful'</span>.
+        </p>        
+
+        <p class="govuk-body govuk-!-margin-top-9">
+            <a href="#" class="govuk-link govuk-link--no-visited-state">Go to Homepage</a>
+        </p>
+
+    </div>
+
+</div>
+{% endblock %}
