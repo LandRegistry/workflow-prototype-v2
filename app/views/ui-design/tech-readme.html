@@ -16,50 +16,33 @@ The solution uses AJAX (fetch API) to send requests to your server when a user c
 - **No page refresh**: Updates happen asynchronously
 - **Optimistic UI updates**: UI changes immediately for better UX
 - **Error handling**: Reverts changes if database update fails
-- **Loading states**: Shows "Updating..." while processing
-- **Multiple links support**: Works with any number of flag links on the page
 
 ## Implementation Steps
 
 ### 1. Frontend JavaScript Changes
 
 The updated JavaScript includes:
-- `updateFlagInDatabase()` function that makes AJAX requests
+- updateFlagInDatabase() function that makes the AJAX requests
 - Error handling that reverts UI changes on failure
-- Loading state management
-- Extraction of record ID from link attributes
+- Gets/extracts the ID from link ID //const recordId = this.id.replace('add_flag_', '');
 
-Key changes from original code:
-```javascript
-// Extract record ID
-const recordId = this.getAttribute('data-record-id') || 
-                this.id.replace('add_flag_', '');
 
-// Determine new state
+// The JS determines new state
 const willBeFlagged = currentText === 'Add flag';
-
-// Call database update function
+// The JS calls database update function
 updateFlagInDatabase(recordId, willBeFlagged, this);
-```
 
 ### 2. HTML Structure
 
-Update your links to include `data-record-id` attribute:
-
-```html
-<a class="govuk-link govuk-link--no-visited-state govuk-!-font-size-16 ga_track_event govuk-!-display-inline-block hmlr-link--min-width-48 hmlr-flag-icon-btn" 
-   href="#" 
-   id="add_flag_V667KXL"
-   data-record-id="V667KXL">Add flag</a>
+<a class="govuk-link govuk-link--no-visited-state govuk-!-font-size-16 govuk-!-display-inline-block hmlr-link--min-width-48 hmlr-flag-icon-btn" href="#" id="add_flag_V667KXL">Add flag</a>
 
 <svg class="hmlr-flag-icon" aria-hidden="true"></svg>
-```
 
 ### 3. Database Schema
 
-Create a table to store flag status. Example SQL:
+Create a table to store flag status. Example SQL: for example ...
 
-#### MySQL/MariaDB
+#### MySQL/MariaDB syntax example
 ```sql
 CREATE TABLE records (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -70,8 +53,7 @@ CREATE TABLE records (
     INDEX idx_record_id (record_id)
 );
 ```
-
-#### PostgreSQL
+#### PostgreSQL syntax
 ```sql
 CREATE TABLE records (
     id SERIAL PRIMARY KEY,
@@ -96,7 +78,7 @@ CREATE TRIGGER update_records_updated_at BEFORE UPDATE
 ON records FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
 ```
 
-#### SQLite
+#### SQLite syntax
 ```sql
 CREATE TABLE records (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -109,7 +91,7 @@ CREATE TABLE records (
 CREATE INDEX idx_record_id ON records(record_id);
 ```
 
-#### MongoDB
+#### MongoDB syntax
 ```javascript
 // MongoDB collection structure
 {
@@ -126,7 +108,7 @@ db.records.createIndex({ recordId: 1 }, { unique: true })
 
 ### 4. API Endpoint
 
-Your server needs to expose a POST endpoint at `/api/update-flag` that:
+Your server needs to expose a POST endpoint at '/api/update-flag' that:
 - Accepts JSON with `recordId` and `isFlagged` fields
 - Updates the database
 - Returns success/error response
@@ -216,7 +198,7 @@ Test these scenarios:
 
 ### 8. Optional Enhancements
 
-#### Loading Initial State from Database
+#### We'll be loading the Initial State from Database when first serving the page
 
 When page loads, fetch current flag states:
 
