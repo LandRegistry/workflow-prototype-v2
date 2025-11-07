@@ -1,0 +1,953 @@
+{% extends "layouts/wf_layout.html" %}
+
+{% set pageName="Workflow New Designs root index" %}
+
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "../",
+    serviceName: "Workflow",
+    serviceUrl: "../ui-designs/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-m">
+      Enhancements index list page 
+    </h1>
+  </div>
+</div>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <p class="govuk-body-s">Enhancement designs for Progress Later: commencing Nov 2025. <br><small>(This is not the index page for <em>all</em> <abbr>UI</abbr> designs and work).</small></p>
+
+    <p class="govuk-body-s">All links open in a new tab.</p>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    <h2 class="govuk-heading-s">
+      The features added to current <abbr>UI</abbr> worklist page
+    </h2>
+
+    <p class="govuk-body-s">Nov 2025: potential global adjustment to Progress Later list styling and adjustments to the filters/sorting dimentions. And, potential reflow table improvement.</p>
+
+    <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-margin-top-7 govuk-!-font-size-16">
+      <li>
+        <a href="/ui-design/pl/table-std-dynamic-with-flagging" class="govuk-link govuk-link--no-visited-state" target="_blank">With flagging</a>: <br>Examples of the 'add flag' option added to the first two applications in the Progress Later list.
+      </li>       
+      <li>
+        <a href="/ui-design/pl/table-std-dynamic-sorting" class="govuk-link govuk-link--no-visited-state" target="_blank">With filters and sorting</a>: <br>Example of both filtering and sorting within the current Progress Later list<abbr>UI</abbr>.
+      </li>      
+    </ol>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    <h2 class="govuk-heading-s">
+      Flagging - details
+    </h2>
+
+    <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-margin-top-7 govuk-!-font-size-16">
+      <li>
+        Possibly best to impliment 'flagging' functionality first, ready for the filtering
+      </li>
+      <li>
+        'Add flag' links will only be added to the parent application for multi applications
+      </li>
+      <li>
+        The page first loads with the correct state of the flag still showing
+      </li>
+      <li>
+        ---
+      </li>
+    </ul>
+
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">     
+
+
+    <style>
+      code, pre {
+        font-family: "Times New Roman" !important; 
+        font-weight: normal;
+      }
+
+    </style>
+
+<p class="govuk-body-s">
+  Instrumental in the success of this feature is how it is implimented. Adding a flag should update the database via AJAX, without the need to refresh the page. (Used for filtering of list on 'flags' and setting the correct state when serving the page). We need to implement a server endpoint and these serverside examples (below) have been created just as explanatory examples: Assumes a database table matching the schema. 
+</p>
+
+<p class="govuk-body-s">
+  As a non-JavaScript fallback we may need to change the 'add flag' links to buttons which submit the value in a 'round-trip' submit and refresh form model. 
+</p>    
+    
+
+    <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-margin-top-7 govuk-!-font-size-16">
+      <li>This example makes AJAX requests to '<b>/api/update-flag</b>' when 'add flag' links are clicked</li>
+      <!--li>Shows loading state ("Updating...") while processing</li-->
+      <li>Handles errors gracefully by reverting UI changes if the database update fails</li>
+      <li>Prevents duplicate clicks during updates</li>
+      <li>Extracts record IDs from either data-record-id attribute or the link's ID</li>
+    </ol> 
+
+
+    <h3 class="govuk-heading-s">
+      HTML and JavaScript
+    </h3>   
+    
+    <details class="govuk-details govuk-!-font-size-16 govuk-!-margin-top-5">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          The 'Add flag' link HMTL (as per the prototype)
+        </span>
+      </summary>
+      <div class="govuk-details__text">      
+
+    <code>
+      <pre>
+
+        &lt;a class="govuk-link govuk-link--no-visited-state govuk-!-font-size-16 govuk-!-display-inline-block hmlr-link--min-width-48 hmlr-flag-icon-btn"
+        href="#" id="add_flag_V667KXL"&gt;Add flag&lt;/a&gt;
+
+      </pre>
+    </code>
+
+    </div>
+    </details>
+
+
+
+    <details class="govuk-details govuk-!-font-size-16 govuk-!-margin-top-5">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          The 'Flagging' JavaScript (with update to database via AJAX)
+        </span>
+      </summary>
+      <div class="govuk-details__text">       
+
+<!--
+         data-record-id="V667KXL"
+
+          const recordId = this.getAttribute('data-record-id') || this.id.replace('add_flag_', '');        
+-->
+
+   <code>
+    <pre>
+      
+        document.addEventListener('DOMContentLoaded', function() {//page has loaded...
+            
+            function checkIfTblsExist() {
+                const tbl1 = document.getElementById(progress_now_table);
+                const tbl2 = document.getElementById(progress_later_table);
+                if (tbl1 || tbl2) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+    
+            // Function to update database via AJAX
+            function updateFlagInDatabase(recordId, isFlagged, linkElement) {
+                // Show loading state (optional)
+                const originalText = linkElement.textContent.trim();
+                //linkElement.textContent = 'Updating...'; //we don't like this ...
+                //linkElement.style.opacity = '0.6';      //or this!
+                linkElement.style.pointerEvents = 'none'; // Prevent multiple clicks
+                
+                // Make AJAX request
+                fetch('/api/update-flag', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        // Add CSRF token if required by your framework
+                        // 'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').content
+                    },
+                    body: JSON.stringify({
+                        recordId: recordId,
+                        isFlagged: isFlagged
+                    })
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not OK');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Success - update UI
+                    console.log('Flag updated successfully:', data);
+                    
+                    // Update link text based on new state
+                    linkElement.textContent = isFlagged ? 'Remove flag' : 'Add flag';
+                    linkElement.style.opacity = '1';
+                    linkElement.style.pointerEvents = 'auto';
+                    
+                    // Optional: Show success message
+                    // showNotification('Flag updated successfully', 'success');
+                })
+                .catch(error => {
+                    // Error - revert UI changes
+                    console.error('Error updating flag:', error);
+                    
+                    // Revert the UI to previous state
+                    linkElement.textContent = originalText;
+                    linkElement.style.opacity = '1';
+                    linkElement.style.pointerEvents = 'auto';
+                    
+                    // Revert SVG visibility
+                    const svgElement = linkElement.nextElementSibling;
+                    if (svgElement && svgElement.tagName.toLowerCase() === 'svg') {
+                        svgElement.classList.toggle('hmlr-flag-icon-show');
+                        svgElement.setAttribute('aria-hidden', 
+                            svgElement.getAttribute('aria-hidden') === 'false' ? 'true' : 'false');
+                    }
+                    
+                    // Optional: Show error message
+                    //alert('Failed to update flag. Please try again.');
+                    // showNotification('Failed to update flag', 'error');
+                });
+            }
+    
+            if (checkIfTblsExist) { // only run code if we're on the right page!
+                const mainContent2 = document.getElementById('main-content');
+                const links = mainContent2.querySelectorAll('.hmlr-flag-icon-btn');
+                
+                links.forEach(link => { // loop through each link and add a click event 
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault(); 
+                        
+                        // Get the record ID from the link's ID 
+                        const recordId = this.id.replace('add_flag_', '');
+                        
+                        // Determine the new flag state
+                        const currentText = this.textContent.trim();
+                        const willBeFlagged = currentText === 'Add flag';
+                        
+                        // Update UI immediately for better UX
+                        const svgElement = this.nextElementSibling;
+                        if (svgElement && svgElement.tagName.toLowerCase() === 'svg') {
+                            svgElement.classList.toggle('hmlr-flag-icon-show');
+                            svgElement.setAttribute('aria-hidden', 
+                                svgElement.getAttribute('aria-hidden') === 'false' ? 'true' : 'false');
+                        }
+                        
+                        // Update database
+                        updateFlagInDatabase(recordId, willBeFlagged, this);
+                        
+                        this.blur(); // remove focus
+                    });
+                });
+            }
+        });
+        
+    </pre>
+   </code>
+
+</div>
+</details>
+
+<h3 class="govuk-heading-s">
+  Serverside code examples (for different stacks)
+</h3>
+
+  <details class="govuk-details govuk-!-font-size-16 govuk-!-margin-top-5">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        Using Node.js with Express example
+      </span>
+    </summary>
+    <div class="govuk-details__text">    
+
+  <code>
+    <pre>
+      // Node.js with Express Example
+      // Install required packages: npm install express body-parser
+
+      const express = require('express');
+      const bodyParser = require('body-parser');
+      const app = express();
+
+      // Middleware
+      app.use(bodyParser.json());
+
+      // Database connection example (adjust based on your database)
+      // For MySQL:
+      // const mysql = require('mysql');
+      // const db = mysql.createConnection({
+      //     host: 'localhost',
+      //     user: 'your_username',
+      //     password: 'your_password',
+      //     database: 'your_database'
+      // });
+
+      // For PostgreSQL:
+      // const { Pool } = require('pg');
+      // const db = new Pool({
+      //     host: 'localhost',
+      //     user: 'your_username',
+      //     password: 'your_password',
+      //     database: 'your_database'
+      // });
+
+      // For MongoDB:
+      // const { MongoClient } = require('mongodb');
+      // const client = new MongoClient('mongodb://localhost:27017');
+      // const db = client.db('your_database');
+
+      // API endpoint to update flag status
+      app.post('/api/update-flag', async (req, res) => {
+          try {
+              const { recordId, isFlagged } = req.body;
+              
+              // Validate input
+              if (!recordId) {
+                  return res.status(400).json({ 
+                      success: false, 
+                      error: 'Record ID is required' 
+                  });
+              }
+              
+              if (typeof isFlagged !== 'boolean') {
+                  return res.status(400).json({ 
+                      success: false, 
+                      error: 'isFlagged must be a boolean value' 
+                  });
+              }
+              
+              // Log the request (optional)
+              console.log(`Updating flag for record ${recordId} to ${isFlagged}`);
+              
+              // ===== MySQL Example =====
+              /*
+              const query = 'UPDATE records SET is_flagged = ?, updated_at = NOW() WHERE record_id = ?';
+              db.query(query, [isFlagged ? 1 : 0, recordId], (error, results) => {
+                  if (error) {
+                      console.error('Database error:', error);
+                      return res.status(500).json({ 
+                          success: false, 
+                          error: 'Database error occurred' 
+                      });
+                  }
+                  
+                  if (results.affectedRows === 0) {
+                      return res.status(404).json({ 
+                          success: false, 
+                          error: 'Record not found' 
+                      });
+                  }
+                  
+                  res.json({ 
+                      success: true, 
+                      recordId: recordId,
+                      isFlagged: isFlagged,
+                      message: 'Flag updated successfully'
+                  });
+              });
+              */
+              
+              // ===== PostgreSQL Example =====
+              /*
+              const query = 'UPDATE records SET is_flagged = $1, updated_at = NOW() WHERE record_id = $2 RETURNING *';
+              const result = await db.query(query, [isFlagged, recordId]);
+              
+              if (result.rowCount === 0) {
+                  return res.status(404).json({ 
+                      success: false, 
+                      error: 'Record not found' 
+                  });
+              }
+              
+              res.json({ 
+                  success: true, 
+                  recordId: recordId,
+                  isFlagged: isFlagged,
+                  message: 'Flag updated successfully',
+                  updatedRecord: result.rows[0]
+              });
+              */
+              
+              // ===== MongoDB Example =====
+              /*
+              const collection = db.collection('records');
+              const result = await collection.updateOne(
+                  { recordId: recordId },
+                  { 
+                      $set: { 
+                          isFlagged: isFlagged,
+                          updatedAt: new Date()
+                      } 
+                  }
+              );
+              
+              if (result.matchedCount === 0) {
+                  return res.status(404).json({ 
+                      success: false, 
+                      error: 'Record not found' 
+                  });
+              }
+              
+              res.json({ 
+                  success: true, 
+                  recordId: recordId,
+                  isFlagged: isFlagged,
+                  message: 'Flag updated successfully'
+              });
+              */
+              
+              // ===== Simple in-memory example for testing =====
+              // Remove this and use one of the database examples above
+              res.json({ 
+                  success: true, 
+                  recordId: recordId,
+                  isFlagged: isFlagged,
+                  message: 'Flag updated successfully (in-memory test)'
+              });
+              
+          } catch (error) {
+              console.error('Server error:', error);
+              res.status(500).json({ 
+                  success: false, 
+                  error: 'Internal server error' 
+              });
+          }
+      });
+
+      // Optional: GET endpoint to retrieve flag status
+      app.get('/api/get-flag/:recordId', async (req, res) => {
+          try {
+              const { recordId } = req.params;
+              
+              // Query database for flag status
+              // Example for MySQL:
+              /*
+              const query = 'SELECT is_flagged FROM records WHERE record_id = ?';
+              db.query(query, [recordId], (error, results) => {
+                  if (error) {
+                      return res.status(500).json({ success: false, error: 'Database error' });
+                  }
+                  
+                  if (results.length === 0) {
+                      return res.status(404).json({ success: false, error: 'Record not found' });
+                  }
+                  
+                  res.json({ 
+                      success: true, 
+                      recordId: recordId,
+                      isFlagged: results[0].is_flagged === 1
+                  });
+              });
+              */
+              
+              res.json({ 
+                  success: true, 
+                  recordId: recordId,
+                  isFlagged: false // placeholder
+              });
+              
+          } catch (error) {
+              console.error('Server error:', error);
+              res.status(500).json({ 
+                  success: false, 
+                  error: 'Internal server error' 
+              });
+          }
+      });
+
+      // Start server
+      const PORT = process.env.PORT || 3000;
+      app.listen(PORT, () => {
+          console.log(`Server is running on port ${PORT}`);
+      });
+
+    </pre>
+  </code>
+
+</div>
+</details>
+
+  <details class="govuk-details govuk-!-font-size-16 govuk-!-margin-top-5">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        Using Python with Flask example
+      </span>
+    </summary>
+    <div class="govuk-details__text">  
+
+  <code>
+    <pre>
+      # Python with Flask Example
+      # Install required packages: pip install flask flask-cors
+      
+      from flask import Flask, request, jsonify
+      from flask_cors import CORS
+      from datetime import datetime
+      
+      app = Flask(__name__)
+      CORS(app)  # Enable CORS for development
+      
+      # Database connection examples:
+      
+      # For MySQL:
+      # import mysql.connector
+      # db = mysql.connector.connect(
+      #     host="localhost",
+      #     user="your_username",
+      #     password="your_password",
+      #     database="your_database"
+      # )
+      
+      # For PostgreSQL:
+      # import psycopg2
+      # db = psycopg2.connect(
+      #     host="localhost",
+      #     database="your_database",
+      #     user="your_username",
+      #     password="your_password"
+      # )
+      
+      # For SQLite:
+      # import sqlite3
+      # db = sqlite3.connect('your_database.db', check_same_thread=False)
+      
+      # For MongoDB:
+      # from pymongo import MongoClient
+      # client = MongoClient('mongodb://localhost:27017/')
+      # db = client['your_database']
+      
+      @app.route('/api/update-flag', methods=['POST'])
+      def update_flag():
+          try:
+              # Get JSON data from request
+              data = request.get_json()
+              
+              if not data:
+                  return jsonify({
+                      'success': False,
+                      'error': 'No data provided'
+                  }), 400
+              
+              record_id = data.get('recordId')
+              is_flagged = data.get('isFlagged')
+              
+              # Validate input
+              if not record_id:
+                  return jsonify({
+                      'success': False,
+                      'error': 'Record ID is required'
+                  }), 400
+              
+              if not isinstance(is_flagged, bool):
+                  return jsonify({
+                      'success': False,
+                      'error': 'isFlagged must be a boolean value'
+                  }), 400
+              
+              # Log the request (optional)
+              print(f'Updating flag for record {record_id} to {is_flagged}')
+              
+              # ===== MySQL Example =====
+              '''
+              cursor = db.cursor()
+              query = "UPDATE records SET is_flagged = %s, updated_at = NOW() WHERE record_id = %s"
+              cursor.execute(query, (1 if is_flagged else 0, record_id))
+              db.commit()
+              
+              if cursor.rowcount == 0:
+                  return jsonify({
+                      'success': False,
+                      'error': 'Record not found'
+                  }), 404
+              
+              cursor.close()
+              '''
+              
+              # ===== PostgreSQL Example =====
+              '''
+              cursor = db.cursor()
+              query = "UPDATE records SET is_flagged = %s, updated_at = NOW() WHERE record_id = %s"
+              cursor.execute(query, (is_flagged, record_id))
+              db.commit()
+              
+              if cursor.rowcount == 0:
+                  return jsonify({
+                      'success': False,
+                      'error': 'Record not found'
+                  }), 404
+              
+              cursor.close()
+              '''
+              
+              # ===== SQLite Example =====
+              '''
+              cursor = db.cursor()
+              query = "UPDATE records SET is_flagged = ?, updated_at = ? WHERE record_id = ?"
+              cursor.execute(query, (1 if is_flagged else 0, datetime.now(), record_id))
+              db.commit()
+              
+              if cursor.rowcount == 0:
+                  return jsonify({
+                      'success': False,
+                      'error': 'Record not found'
+                  }), 404
+              
+              cursor.close()
+              '''
+              
+              # ===== MongoDB Example =====
+              '''
+              collection = db['records']
+              result = collection.update_one(
+                  {'recordId': record_id},
+                  {
+                      '$set': {
+                          'isFlagged': is_flagged,
+                          'updatedAt': datetime.now()
+                      }
+                  }
+              )
+              
+              if result.matched_count == 0:
+                  return jsonify({
+                      'success': False,
+                      'error': 'Record not found'
+                  }), 404
+              '''
+              
+              # Return success response
+              return jsonify({
+                  'success': True,
+                  'recordId': record_id,
+                  'isFlagged': is_flagged,
+                  'message': 'Flag updated successfully'
+              }), 200
+              
+          except Exception as e:
+              print(f'Server error: {str(e)}')
+              return jsonify({
+                  'success': False,
+                  'error': 'Internal server error'
+              }), 500
+      
+      @app.route('/api/get-flag/<record_id>', methods=['GET'])
+      def get_flag(record_id):
+          """Optional: GET endpoint to retrieve flag status"""
+          try:
+              # Query database for flag status
+              # Example for MySQL:
+              '''
+              cursor = db.cursor(dictionary=True)
+              query = "SELECT is_flagged FROM records WHERE record_id = %s"
+              cursor.execute(query, (record_id,))
+              result = cursor.fetchone()
+              cursor.close()
+              
+              if not result:
+                  return jsonify({
+                      'success': False,
+                      'error': 'Record not found'
+                  }), 404
+              
+              return jsonify({
+                  'success': True,
+                  'recordId': record_id,
+                  'isFlagged': result['is_flagged'] == 1
+              }), 200
+              '''
+              
+              # Placeholder response
+              return jsonify({
+                  'success': True,
+                  'recordId': record_id,
+                  'isFlagged': False
+              }), 200
+              
+          except Exception as e:
+              print(f'Server error: {str(e)}')
+              return jsonify({
+                  'success': False,
+                  'error': 'Internal server error'
+              }), 500
+      
+      if __name__ == '__main__':
+          app.run(debug=True, port=3000)
+      
+
+    </pre>
+  </code>
+
+</div>
+</details>
+
+  <details class="govuk-details govuk-!-font-size-16 govuk-!-margin-top-5">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        An example using good old PHP!
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+
+  <code>
+    <pre>
+
+      // PHP Example
+      // update-flag.php
+      
+      // Enable error reporting for development (disable in production)
+      error_reporting(E_ALL);
+      ini_set('display_errors', 1);
+      
+      // Set headers for JSON response and CORS
+      header('Content-Type: application/json');
+      header('Access-Control-Allow-Origin: *'); // Adjust for production
+      header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
+      header('Access-Control-Allow-Headers: Content-Type');
+      
+      // Handle preflight OPTIONS request
+      if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+          http_response_code(200);
+          exit();
+      }
+      
+      // Database connection
+      // ===== MySQL Example =====
+      /*
+      $host = 'localhost';
+      $dbname = 'your_database';
+      $username = 'your_username';
+      $password = 'your_password';
+      
+      try {
+          $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
+          $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      } catch(PDOException $e) {
+          http_response_code(500);
+          echo json_encode([
+              'success' => false,
+              'error' => 'Database connection failed'
+          ]);
+          exit();
+      }
+      */
+      
+      // ===== PostgreSQL Example =====
+      /*
+      $host = 'localhost';
+      $dbname = 'your_database';
+      $username = 'your_username';
+      $password = 'your_password';
+      
+      try {
+          $pdo = new PDO("pgsql:host=$host;dbname=$dbname", $username, $password);
+          $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      } catch(PDOException $e) {
+          http_response_code(500);
+          echo json_encode([
+              'success' => false,
+              'error' => 'Database connection failed'
+          ]);
+          exit();
+      }
+      */
+      
+      // ===== SQLite Example =====
+      /*
+      try {
+          $pdo = new PDO('sqlite:your_database.db');
+          $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      } catch(PDOException $e) {
+          http_response_code(500);
+          echo json_encode([
+              'success' => false,
+              'error' => 'Database connection failed'
+          ]);
+          exit();
+      }
+      */
+      
+      // Handle POST request to update flag
+      if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+          try {
+              // Get JSON input
+              $input = file_get_contents('php://input');
+              $data = json_decode($input, true);
+              
+              // Validate input
+              if (!$data) {
+                  http_response_code(400);
+                  echo json_encode([
+                      'success' => false,
+                      'error' => 'Invalid JSON data'
+                  ]);
+                  exit();
+              }
+              
+              $recordId = isset($data['recordId']) ? $data['recordId'] : null;
+              $isFlagged = isset($data['isFlagged']) ? $data['isFlagged'] : null;
+              
+              // Validate required fields
+              if (empty($recordId)) {
+                  http_response_code(400);
+                  echo json_encode([
+                      'success' => false,
+                      'error' => 'Record ID is required'
+                  ]);
+                  exit();
+              }
+              
+              if (!is_bool($isFlagged)) {
+                  http_response_code(400);
+                  echo json_encode([
+                      'success' => false,
+                      'error' => 'isFlagged must be a boolean value'
+                  ]);
+                  exit();
+              }
+              
+              // Log the request (optional)
+              error_log("Updating flag for record $recordId to " . ($isFlagged ? 'true' : 'false'));
+              
+              // ===== Database Update Example =====
+              /*
+              $stmt = $pdo->prepare("UPDATE records SET is_flagged = :is_flagged, updated_at = NOW() WHERE record_id = :record_id");
+              $stmt->execute([
+                  ':is_flagged' => $isFlagged ? 1 : 0,
+                  ':record_id' => $recordId
+              ]);
+              
+              if ($stmt->rowCount() === 0) {
+                  http_response_code(404);
+                  echo json_encode([
+                      'success' => false,
+                      'error' => 'Record not found'
+                  ]);
+                  exit();
+              }
+              */
+              
+              // Success response
+              http_response_code(200);
+              echo json_encode([
+                  'success' => true,
+                  'recordId' => $recordId,
+                  'isFlagged' => $isFlagged,
+                  'message' => 'Flag updated successfully'
+              ]);
+              
+          } catch (Exception $e) {
+              error_log("Server error: " . $e->getMessage());
+              http_response_code(500);
+              echo json_encode([
+                  'success' => false,
+                  'error' => 'Internal server error'
+              ]);
+          }
+      }
+      
+      // Handle GET request to retrieve flag status
+      elseif ($_SERVER['REQUEST_METHOD'] === 'GET') {
+          try {
+              $recordId = isset($_GET['recordId']) ? $_GET['recordId'] : null;
+              
+              if (empty($recordId)) {
+                  http_response_code(400);
+                  echo json_encode([
+                      'success' => false,
+                      'error' => 'Record ID is required'
+                  ]);
+                  exit();
+              }
+              
+              // ===== Database Query Example =====
+              /*
+              $stmt = $pdo->prepare("SELECT is_flagged FROM records WHERE record_id = :record_id");
+              $stmt->execute([':record_id' => $recordId]);
+              $result = $stmt->fetch(PDO::FETCH_ASSOC);
+              
+              if (!$result) {
+                  http_response_code(404);
+                  echo json_encode([
+                      'success' => false,
+                      'error' => 'Record not found'
+                  ]);
+                  exit();
+              }
+              
+              http_response_code(200);
+              echo json_encode([
+                  'success' => true,
+                  'recordId' => $recordId,
+                  'isFlagged' => $result['is_flagged'] == 1
+              ]);
+              */
+              
+              // Placeholder response
+              http_response_code(200);
+              echo json_encode([
+                  'success' => true,
+                  'recordId' => $recordId,
+                  'isFlagged' => false
+              ]);
+              
+          } catch (Exception $e) {
+              error_log("Server error: " . $e->getMessage());
+              http_response_code(500);
+              echo json_encode([
+                  'success' => false,
+                  'error' => 'Internal server error'
+              ]);
+          }
+      }
+      
+      else {
+          http_response_code(405);
+          echo json_encode([
+              'success' => false,
+              'error' => 'Method not allowed'
+          ]);
+      }
+      
+      
+    </pre>
+  </code>
+
+</div>
+</details> 
+
+<p class="govuk-body-s">
+  <a href="/ui-design/tech-readme.html" class="govuk-link govuk-link--no-visited-state" download>tech-readme file</a> (includes db schema that works with these code examples)
+</p> 
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+<h2 class="govuk-heading-s">
+  Filtering and sorting - details
+</h2>
+
+<ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-margin-top-7 govuk-!-font-size-16">
+  <li>
+    Discuss '<b>user session</b>': the user's choices on both filter and sorting maintain state during the session. If/when Workflow is closed and reopened or when logging back in, each day, the settings return to the default settings
+  </li>
+  <li>
+    The 'Default ordering' option, continues how the Progress Later list currently orders its lists (as is); expedits at the top
+  </li>
+  <li>
+    ---
+  </li>
+  <li>
+    ---
+  </li>
+</ul>     
+
+
+    
+
+  </div>
+</div>
+
+{% endblock %}
