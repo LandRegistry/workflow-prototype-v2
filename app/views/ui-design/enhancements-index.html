@@ -947,6 +947,228 @@
   </li>
 </ul>     
 
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+<h2 class="govuk-heading-s">
+  Dynamic reflow of the table
+</h2>
+
+<p class="govuk-body-s">
+    Resizing the page (window) to a smaller width, flips the table headers to the left so that the data can be read horizontally.
+</p>
+
+<p class="govuk-body-s">
+    <a href="/ui-design/pl/table-std-dynamic-with-flagging_tbl-reflow" class="govuk-link govuk-link--no-visited-state" target="_blank">Example with dynmaic table headers reflow 
+</p>
+
+<ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-margin-top-7 govuk-!-font-size-16">
+  <li>
+    Add class <code>hmlr-table-dynamic</code> to the table tag
+  </li>
+  <li>
+    Add class <code>govuk-!-static-margin-top-5</code> to the table tag
+  </li>
+  <li>
+    Add attribute <code> data-table-dynamic="Table header name"</code> to the <code>TD</code> table cells (as per design example)
+  </li>
+  <li>
+    Add scss file: _hmlr-table-dynamic.scss <br>
+    <details class="govuk-details govuk-!-font-size-16 govuk-!-margin-top-3">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            SASS
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          Add/import a standalone scs file, of this sass code: <br>
+
+          <pre>
+            <code>
+                table.hmlr-table-dynamic {    
+                    @media only screen and (max-width: 894px), (min-device-width: 902px) and (max-device-width: 1024px)  {
+                
+                        &::after, 
+                        tr::after, 
+                        tr td::after {
+                            content: "";
+                            clear: both;
+                            display: table;
+                        }
+                    
+                        /* Force table to not be like tables anymore */
+                        &, thead, tbody, th, td, tr {
+                            display: block;
+                        }
+                
+                        /* Hide table headers (but not display: none;, for accessibility) */
+                        thead tr {
+                            position: absolute; 
+                            top: -9999px;
+                        }
+                
+                        tbody {
+                            border-top: none;
+                            padding-top: govuk-spacing(2);
+                
+                            tr:last-child td {
+                                border-bottom: none !important;
+                            }
+                
+                            tr th[scope="row"]:first-child {
+                                padding-top: govuk-spacing(6); 
+                                border-bottom: 2px solid $govuk-input-border-colour;
+                            }
+                        }
+                
+                        /* Start avoiding styling std gds tbls: for wf only (when 'case' classes aren't added) */
+                        thead + tbody {
+                            padding-bottom: govuk-spacing(2);
+                        }
+                        thead + tbody + tbody {
+                            border-top: 2px solid $govuk-input-border-colour !important; 
+                            padding-top: govuk-spacing(2);
+                        }		
+                        tbody + tbody tr:last-child {
+                            border-bottom: 2px solid $govuk-input-border-colour !important; 
+                            padding-bottom: govuk-spacing(2);
+                        }		
+                
+                        thead + tbody, 
+                        thead + tbody tr:first-child td:first-child {
+                            padding-top: govuk-spacing(0);
+                        }
+                        /* End avoiding styling std gds tbls: for wf only */
+                
+                        tr {
+                            margin: govuk-spacing(0);
+                        }
+                        /*tr:nth-child(odd) {background-color: #ccc; }*/
+                    
+                        td {
+                            border-bottom: 1px solid $govuk-border-colour;
+                            position: relative;
+                            padding: (govuk-spacing(1) + 3px) 0 (govuk-spacing(1) + 3px) 34%; 
+                            width: auto;
+                
+                            &[colspan="6"] {/* fix the legacy buttons list */
+                                div {
+                                    padding-top: govuk-spacing(0);
+                                    margin: govuk-spacing(0);
+                                    line-height: normal;
+                                }
+                                a, input {
+                                    padding-left: govuk-spacing(0); 
+                                    font-size: inherit !important;
+                                }
+                                input {
+                                    &.case__hyperlink, 
+                                    &.govuk-link { /* case__hyperlink is a legacy workflow class */
+                                        padding-top: govuk-spacing(0); 
+                                        margin-bottom: (- govuk-spacing(1)); 
+                                    }
+                                    &.govuk-button {
+                                        padding-left: govuk-spacing(2);
+                                        padding-right: govuk-spacing(2); 
+                                        margin-bottom: govuk-spacing(1);
+                                    }
+                                }
+                            }
+                        } 
+                
+                        td:before {
+                            position: absolute;
+                            /*top: 1.2rem;*/
+                            left: 0;
+                            padding-right: govuk-spacing(2);
+                            white-space: nowrap;
+                        }		
+                
+                        /* the header text on small screens */
+                        tbody tr {
+                            td:before {font-weight: bold; }
+                            td:nth-of-type(1):before { content: attr(data-table-dynamic); }
+                            td:nth-of-type(2):before { content: attr(data-table-dynamic); }
+                            td:nth-of-type(3):before { content: attr(data-table-dynamic); }
+                            td:nth-of-type(4):before { content: attr(data-table-dynamic); }
+                            td:nth-of-type(5):before { content: attr(data-table-dynamic); }
+                            td:nth-of-type(6):before { content: attr(data-table-dynamic); }
+                            td:nth-of-type(7):before { content: attr(data-table-dynamic); }
+                            td:nth-of-type(8):before { content: attr(data-table-dynamic); }
+                            td:nth-of-type(9):before { content: attr(data-table-dynamic); }
+                            td:nth-of-type(10):before { content: attr(data-table-dynamic); }
+                        }
+                
+                    }
+                }
+                
+                
+                table.hmlr-table-dynamic { /* *** This section is for the expandable notes in dynamic table *** */
+                
+                    .case__my-notes {
+                        display: none;
+                    }
+                
+                    .case__left-hand-actions input[type='submit']{
+                        margin: govuk-spacing(0) !important;
+                    }
+                
+                    .case__actions-wrapper {
+                        //padding-bottom: govuk-spacing(3); 
+                
+                        .hmlr-table-dynamic__expandable {
+                            float: left; 
+                            width: 100%; 
+                        }		
+                    }
+                
+                    @at-root .js-enabled {
+                
+                        .case__my-notes {
+                            display: inline-block !important;
+                        }
+                
+                        .hmlr-table-dynamic__expandable {//hide
+                            overflow: hidden;
+                
+                            max-height: 0;
+                            transition: max-height 0.3s ease-out;
+                
+                            &.hmlr-table-dynamic__expandable--show {//reveal 
+                                //max-height: 300px; /* Adjust this value based on the content height */
+                                  transition: max-height 0.3s ease-in;
+                            }	
+                            
+                            textarea {
+                                resize: none !important; /* Disable manual resizing */
+                                overflow: hidden;
+                                //@include govuk-font($size: 19, $weight: regular, $tabular: true);
+                                @include govuk-font($size: 16);
+                                line-height: 1.25 !important;
+                                padding: govuk-spacing(2) !important;
+                                margin-bottom: govuk-spacing(0) !important;
+                                /*box-shadow: inset 0 0 10px govuk-colour("mid-grey");*/
+                            }
+                
+                            input[type='submit'], 
+                            button[type='submit'] {
+                                border: 2px solid $govuk-input-border-colour; 
+                                margin-top: govuk-spacing(2);
+                                @include govuk-font($size: 16);
+                                padding: (govuk-spacing(1) +1) govuk-spacing(2) govuk-spacing(1) govuk-spacing(2);
+                            }
+                
+                        }
+                    
+                    }
+                
+                }
+            </code>
+          </pre>
+        </div>
+      </details>
+  </li>
+</ul>     
+
 
     
 
