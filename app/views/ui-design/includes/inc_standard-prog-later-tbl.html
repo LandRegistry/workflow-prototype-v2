@@ -251,9 +251,10 @@
   document.addEventListener('DOMContentLoaded', function() {
   
   function checkIfTblsExist() {
-    const tbl1 = document.getElementById(progress_now_table);
+    //const tbl1 = document.getElementById(progress_now_table);
     const tbl2 = document.getElementById(progress_later_table);
-    if (tbl1 || tbl2) {
+    //if (tbl1 || tbl2) {
+    if (tbl2) {
       return true;
     } else {
       return false;
@@ -268,12 +269,14 @@
     const stored = localStorage.getItem('flag_' + buttonId);
     if (stored) {
       const data = JSON.parse(stored);
-      // Check if data has expired
-      if (data.expiry && new Date().getTime() < data.expiry) {
+
+      if (data.expiry && new Date().getTime() < data.expiry) {// Check if data has expired 
         return data.isFlagged;
       } else {
-        // Remove expired data
-        localStorage.removeItem('flag_' + buttonId);
+        localStorage.removeItem('flag_' + buttonId);// Remove expired data
+
+        /*let buttonIdValue = document.getElementById(buttonId).value;//not needed!
+        if (buttonIdValue == 'Remove flag'){return data.isFlagged;}*/
       }
     }
     return false; // Default state
@@ -281,7 +284,7 @@
   
   // Function to save flag state to localStorage
   function saveFlagState(buttonId, isFlagged) {
-    const expiry = new Date().getTime() + (EXPIRY_DAYS * 24 * 60 * 60 * 1000);
+    const expiry = new Date().getTime() + (EXPIRY_DAYS * 24 * 60 * 60 * 1000);// a year
     const data = {
       isFlagged: isFlagged,
       expiry: expiry
@@ -294,14 +297,12 @@
     const svgElement = link.nextElementSibling;
     const titleElement = svgElement.querySelector('title');
     
-    if (isFlagged) {
-      // Set to flagged state
+    if (isFlagged) {// Set to flagged state
       svgElement.classList.add('hmlr-flag-icon-show');
       svgElement.setAttribute('aria-hidden', 'false');
       titleElement.textContent = 'This case has been flagged';
       link.value = 'Remove flag';
-    } else {
-      // Set to unflagged state
+    } else {// Set to unflagged state
       svgElement.classList.remove('hmlr-flag-icon-show');
       svgElement.setAttribute('aria-hidden', 'true');
       titleElement.textContent = 'Not flagged';

@@ -67,7 +67,10 @@
       </li>
       <li>
         When asigning a flagged case, the flag is not maintained. (It is wiped when it is assigned/deferred). (Consider for the future).
-      </li>                 
+      </li> 
+      <li>
+        Note: the flag icon does not feature alt (or title attribute text): it is the title tag with in the <abbr>SVG</abbr> which is displayed in Chrome.
+      </li>                
     </ul>
 
 
@@ -82,21 +85,21 @@
 
     </style>
 
-<p class="govuk-body-s">
-  Instrumental in the success of this feature is how it is implimented. Adding a flag should update the database via AJAX, without the need to refresh the page. (Used for filtering of list on 'flags' and setting the correct state when serving the page). We need to implement a server endpoint and these serverside examples (below) have been created just as explanatory examples: Assumes a database table matching the schema. 
-</p>
+    <p class="govuk-body-s">
+    Instrumental in the success of this feature is how it is implimented. Adding a flag should update the database via AJAX, without the need to refresh the page. (Used for filtering of list on 'flags' and setting the correct state when serving the page). We need to implement a server endpoint and these serverside examples (below) have been created just as explanatory examples: Assumes a database table matching the schema. 
+    </p>
 
-<p class="govuk-body-s">
-  As a non-JavaScript fallback we may need to change the 'add flag' links to buttons which submit the value in a 'round-trip' submit and refresh form model. 
-</p>    
+    <p class="govuk-body-s">
+    As the <b>non-JavaScript fallback</b>: the 'link' is in fact an <abbr>HTML</abbr> 'input' button. Clicking it will submit the form to update the database, in a 'round-trip' submit and refresh form model. The returned <abbr>HTML</abbr> is updated to reflect the status: 1). The 'value' text is updated on the 'input' element. 2). The 'aria-hidden' value on the <abbr>SVG</abbr> element is updated. 3). A class value on the <abbr>SVG</abbr> is added/removed. 4). The text content in the 'title' element (within the <abbr>SVG</abbr>) element is updated.
+    </p>    
     
 
     <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-margin-top-7 govuk-!-font-size-16">
       <li>This example makes AJAX requests to '<b>/api/update-flag</b>' when 'add flag' links are clicked</li>
       <!--li>Shows loading state ("Updating...") while processing</li-->
-      <li>Handles errors gracefully by reverting UI changes if the database update fails</li>
+      <li>Handles errors gracefully by reverting <abbr>UI</abbr> changes if the database update fails</li>
       <li>Prevents duplicate clicks during updates</li>
-      <li>Extracts record IDs from either data-record-id attribute or the link's ID</li>
+      <li>Extracts record IDs from either data-record-id attribute or the link's <abbr>ID</abbr></li>
     </ol> 
 
 
@@ -939,12 +942,12 @@
   <li>
     The 'Default ordering' option, continues how the Progress Later list currently orders its lists (as is); expedits at the top
   </li>
-  <li>
+  <!--li>
     ---
   </li>
   <li>
     ---
-  </li>
+  </li-->
 </ul>     
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
@@ -958,7 +961,7 @@
 </p>
 
 <p class="govuk-body-s">
-    <a href="/ui-design/pl/table-std-dynamic-with-flagging_tbl-reflow" class="govuk-link govuk-link--no-visited-state" target="_blank">Example with dynmaic table headers reflow 
+    <a href="/ui-design/pl/table-std-dynamic-with-flagging_tbl-reflow" class="govuk-link govuk-link--no-visited-state" target="_blank">Example with dynmaic table headers reflow</a> 
 </p>
 
 <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-margin-top-7 govuk-!-font-size-16">
