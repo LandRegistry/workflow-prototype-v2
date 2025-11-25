@@ -57,6 +57,22 @@ label[class$=font-size-16]{line-height:1.6rem!important}
         margin-bottom: govuk-spacing(4); 
     }
 
+    /*input.hmlr-btn-as-link, 
+    button.hmlr-btn-as-link {
+        text-decoration: underline;
+        text-decoration-thickness: max(1px, 0.0625rem) !important;
+        text-underline-offset: 0.1578em !important;
+
+        &:hover {
+            text-decoration-thickness: max(3px, 0.1875rem, 0.12em) !important;
+            text-underline-offset: 0.1578em !important;
+        } 
+        
+        &:focus {
+            @include govuk-focused-text;
+        }        
+    }*/    
+
     &.hmlr-form-grouping--width-01 {
         min-width: 363px; 
     }
@@ -181,7 +197,23 @@ label[class$=font-size-16]{line-height:1.6rem!important}
     button.hmlr-btn-as-link {
         margin-top: govuk-spacing(2);
         margin-bottom: govuk-spacing(4); 
-    }
+    } 
+
+    /*input.hmlr-btn-as-link, 
+    button.hmlr-btn-as-link {
+        text-decoration: underline;
+        text-decoration-thickness: max(1px, 0.0625rem) !important;
+        text-underline-offset: 0.1578em !important;
+
+        &:hover {
+            text-decoration-thickness: max(3px, 0.1875rem, 0.12em) !important;
+            text-underline-offset: 0.1578em !important;
+        } 
+        
+        &:focus {
+            @include govuk-focused-text;
+        }        
+    }*/
 
     &.hmlr-form-grouping--width-01 {
         min-width: 363px; 
@@ -287,3 +319,154 @@ label[class$=font-size-16]{line-height:1.6rem!important}
     }*/  
 
 } 
+
+/* ******************************** alt style C starts *************************************** */
+.hmlr-form-grouping-c {
+
+    padding: 0 !important; 
+    overflow: hidden;
+
+    div[class$="checkboxes--small"] {
+        label[class$="font-size-16"] {
+            line-height: 1.6rem !important;
+        }
+    }
+
+    .govuk-radios--small {
+        label.govuk-radios__label.govuk-\!-font-size-16 {
+            padding: (govuk-spacing(3) - 2px) govuk-spacing(3) govuk-spacing(2) (govuk-spacing(1) - 4px) !important;
+            min-width: 100% !important;
+        }
+    }
+
+    /*position: relative; width: fit-content; */
+    border: 2px solid $govuk-brand-colour;
+
+    .govuk-button, 
+    input.hmlr-btn-as-link, 
+    button.hmlr-btn-as-link {
+        margin-top: govuk-spacing(2);
+        margin-bottom: govuk-spacing(4); 
+    }
+
+    /*input.hmlr-btn-as-link, 
+    button.hmlr-btn-as-link {
+        text-decoration: underline;
+        text-decoration-thickness: max(1px, 0.0625rem) !important;
+        text-underline-offset: 0.1578em !important;
+
+        &:hover {
+            text-decoration-thickness: max(3px, 0.1875rem, 0.12em) !important;
+            text-underline-offset: 0.1578em !important;
+        } 
+        
+        &:focus {
+            @include govuk-focused-text;
+        }        
+    }*/   
+
+    &.hmlr-form-grouping--width-01 {
+        min-width: 363px; 
+    }
+    &.hmlr-form-grouping--width-02 {
+        min-width: 33%;
+    }     
+    &.hmlr-form-grouping--width-03 {
+        min-width: 50%;
+    } 
+    &.hmlr-form-grouping--width-04 {
+        min-width: 66%;
+    }  
+    &.hmlr-form-grouping--full-width {
+        width: inherit; 
+    }  
+    
+    &.hmlr-form-grouping--curved {/* curved corners */
+        border-radius: govuk-spacing(1); 
+    }
+
+    .hmlr-from-grouping__header {
+        background-color: $govuk-brand-colour; //#789904;
+        color: govuk-colour("white");
+        font-weight: normal; 
+        @include hmlr-font-size($s: 17px, $l: 1.2);
+        display: inline-block; 
+
+        width: 100%; 
+        margin: govuk-spacing(0) !important; 
+        padding: govuk-spacing(1) govuk-spacing(1) govuk-spacing(1) govuk-spacing(2); 
+        
+        /*position: absolute; 
+        top: - (govuk-spacing(3) + 1px); */
+
+        /*&.govuk-\!-font-size-16 { 
+            top: - (govuk-spacing(2) + 1px);  
+        } */       
+
+        /*&.govuk-\!-font-size-19 {
+            top: - govuk-spacing(3);  
+        }
+
+        /*&.hmlr-from-grouping__header--right {
+            right: govuk-spacing(2);   
+        }*/
+    }
+
+    .hmlr-form-grouping__form {
+        padding: govuk-spacing(2) govuk-spacing(3) govuk-spacing(0) govuk-spacing(3);  
+        margin: govuk-spacing(0); 
+    }
+
+    @include govuk-media-query($until: desktop){
+        select {
+            margin-top: govuk-spacing(2);
+
+            &.govuk-\!-width-full {
+                width: auto !important;
+            }
+        }
+        .govuk-button-group {
+            margin-top: govuk-spacing(3); 
+            margin-bottom: - (govuk-spacing(2));
+        }  
+
+        .govuk-grid-column-one-third.govuk-\!-padding-left-0 {
+            padding-left: govuk-spacing(3) !important;
+        }
+
+       //.govuk-select.govuk-\!-width-full {/* pt1: fix for a brief moment when select escapes border at certain resize width */
+            //position: relative; 
+            //left: - (govuk-spacing(2));
+        //}
+    }
+
+    //@media (max-width: 40em) {/* pt2: fix for a brief moment when select escapes border at certain resize width */
+        //.govuk-select.govuk-\!-width-full {
+            //position: unset; 
+            //left: inherit;
+        //}
+    //}
+
+    @include govuk-media-query($from: desktop){
+        .govuk-button-group {
+            margin-top: govuk-spacing(0); 
+            margin-bottom: govuk-spacing(0);
+        }
+
+        button, input[type='submit'], input[type='button'] {
+            padding: govuk-spacing(1) (govuk-spacing(1) + 2px) (govuk-spacing(1) - 2px) (govuk-spacing(1) + 2px);
+        }        
+    }
+
+    /*& + .govuk-warning-text.govuk-\!-font-weight-regular strong {
+        font-weight: normal !important; 
+    }*/    
+
+    /*& + .govuk-warning-text {
+        .govuk-\!-font-size-16 {
+            line-height: 1.5 !important;
+        }
+    }*/  
+
+} 
+
