@@ -470,3 +470,17 @@ label[class$=font-size-16]{line-height:1.6rem!important}
 
 } 
 
+/* ******************************************************************************************* */
+
+.hmlr-form-grouping, 
+.hmlr-form-grouping-b, 
+.hmlr-form-grouping-c {
+    &.hmlr-for-grouping-colour-hmlr {//HMLR colour
+        border-color: #789904 !important;
+
+        .hmlr-from-grouping__header {
+            background-color: #789904 !important;
+        }
+    }
+}
+
