@@ -273,4 +273,88 @@ router.post('/category-of-work-executive-tertiary-error', function (req, res) {
 })
 
 
+// *******************************************************************************************
+
+router.post('/select-a-category-of-work-b', function (req, res) {
+
+    const userInput = req.session.data['category'];
+
+    if (userInput == null) {//empty
+
+        res.redirect("select-a-category-of-work-b-error")
+
+    } else if (userInput == 'category-std') {//userInput == 'category-std'. The standard forms/flow
+
+        res.redirect("category-of-work-by-category")        
+
+    } else {//userInput == 'category-all'
+
+        res.redirect("category-of-work-by-all-categories")  
+
+    }
+})
+router.post('/select-a-category-of-work-b-error', function (req, res) {
+
+    const userInput = req.session.data['category'];
+
+    if (userInput == null) {//empty
+
+        res.redirect("select-a-category-of-work-b-error")
+
+    } else if (userInput == 'category-std') {//userInput == 'category-std'. The standard forms/flow
+
+        res.redirect("category-of-work-by-category")        
+
+    } else {//userInput == 'category-all'
+
+        res.redirect("category-of-work-by-all-categories")  
+
+    }
+})
+
+router.post('/category-of-work-by-category', function (req, res) {
+
+    const userInput = req.session.data['my-work_allocation_code'];
+
+    if (userInput == null) {//empty
+
+        res.redirect("category-of-work-by-category-error")
+
+    } else {//not empty
+
+        res.redirect("category-of-work-list-pg")  
+
+    }
+})
+router.post('/category-of-work-by-category-error', function (req, res) {
+
+    const userInput = req.session.data['my-work_allocation_code'];
+
+    if (userInput == null) {//empty
+
+        res.redirect("category-of-work-by-category-error")
+
+    } else {//not empty
+
+        res.redirect("category-of-work-list-pg")  
+
+    }
+})
+
+router.post('/category-of-work-by-all-categories', function (req, res) {
+
+    const userInput = req.session.data['category'];
+
+    if (userInput == null) {//empty
+
+        res.redirect("category-of-work-by-all-categories-error")
+
+    } else {//userInput == 'category-all'
+
+        res.redirect("category-of-work-list-pg")  
+
+    }
+})
+
+
 module.exports = router
