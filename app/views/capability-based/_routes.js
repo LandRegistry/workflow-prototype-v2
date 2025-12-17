@@ -33,7 +33,7 @@ router.post('/category-of-work-pt1', function (req, res) {
               
     } else {
 
-        res.redirect("category-of-work-list-pg")  //No Category 
+        res.redirect("category-changed-confirmation")  //No Category 
 
     }
 })
@@ -65,7 +65,7 @@ router.post('/category-of-work-pt1-error', function (req, res) {
               
     } else {
 
-        res.redirect("category-of-work-list-pg")  //No Category 
+        res.redirect("category-changed-confirmation")  //No Category 
 
     }
 })
@@ -80,7 +80,7 @@ router.post('/category-of-work-volume', function (req, res) {
 
     } else {
 
-        res.redirect("category-of-work-list-pg")  
+        res.redirect("category-changed-confirmation")  
 
     }
 })
@@ -95,7 +95,7 @@ router.post('/category-of-work-volume-error', function (req, res) {
 
     } else {
 
-        res.redirect("category-of-work-list-pg")  
+        res.redirect("category-changed-confirmation")  
 
     }
 })
@@ -121,7 +121,7 @@ router.post('/category-of-work-executive', function (req, res) {
 
         } else {
             
-            res.redirect("category-of-work-list-pg")//std return to worklist 
+            res.redirect("category-changed-confirmation")//std return to worklist 
 
         }
 
@@ -149,7 +149,7 @@ router.post('/category-of-work-executive-error', function (req, res) {
 
         } else {
             
-            res.redirect("category-of-work-list-pg")//std return to worklist 
+            res.redirect("category-changed-confirmation")//std return to worklist 
 
         }
 
@@ -167,11 +167,11 @@ router.post('/category-of-work-executive-subs-error', function (req, res) {
 
     } else if (userInput == 'registerUpdateComplex' && userSubInput != null) {//subs are showing and are NOT empty
 
-        res.redirect("category-of-work-list-pg") 
+        res.redirect("category-changed-confirmation") 
 
     } else {//the user changed the parent selection (without subs)
 
-        res.redirect("category-of-work-list-pg") 
+        res.redirect("category-changed-confirmation") 
 
     }
 })
@@ -186,7 +186,7 @@ router.post('/category-of-work-pro-volume', function (req, res) {
 
     } else {
 
-        res.redirect("category-of-work-list-pg")  //No Category 
+        res.redirect("category-changed-confirmation")  //No Category 
 
     }
 })
@@ -201,7 +201,7 @@ router.post('/category-of-work-pro-volume-error', function (req, res) {
 
     } else {
 
-        res.redirect("category-of-work-list-pg")  //No Category 
+        res.redirect("category-changed-confirmation")  //No Category 
 
     }
 })
@@ -216,7 +216,7 @@ router.post('/category-of-work-pro-executive', function (req, res) {
 
     } else {
 
-        res.redirect("category-of-work-list-pg")  //No Category 
+        res.redirect("category-changed-confirmation")  //No Category 
 
     }
 })
@@ -231,7 +231,7 @@ router.post('/category-of-work-pro-executive-error', function (req, res) {
 
     } else {
 
-        res.redirect("category-of-work-list-pg")  //No Category 
+        res.redirect("category-changed-confirmation")  //No Category 
 
     }
 })
@@ -252,7 +252,7 @@ router.post('/category-of-work-executive-tertiary', function (req, res) {
 
     } else {
 
-        res.redirect("category-of-work-list-pg")  //No Category 
+        res.redirect("category-changed-confirmation")  //No Category 
 
     }
 })
@@ -267,7 +267,7 @@ router.post('/category-of-work-executive-tertiary-error', function (req, res) {
 
     } else {
 
-        res.redirect("category-of-work-list-pg")  //No Category 
+        res.redirect("category-changed-confirmation")  //No Category 
 
     }
 })
@@ -322,7 +322,7 @@ router.post('/category-of-work-by-category', function (req, res) {
 
     } else {//not empty
 
-        res.redirect("category-of-work-list-pg")  
+        res.redirect("category-changed-confirmation")  
 
     }
 })
@@ -336,7 +336,7 @@ router.post('/category-of-work-by-category-error', function (req, res) {
 
     } else {//not empty
 
-        res.redirect("category-of-work-list-pg")  
+        res.redirect("category-changed-confirmation")  
 
     }
 })
@@ -351,7 +351,7 @@ router.post('/category-of-work-by-all-categories', function (req, res) {
 
     } else {//userInput == 'category-all'
 
-        res.redirect("category-of-work-list-pg")  
+        res.redirect("category-changed-confirmation")  
 
     }
 })

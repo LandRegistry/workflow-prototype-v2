@@ -1,0 +1,880 @@
+{% extends "layouts/wf_layout-std-new.html" %}
+
+{% set pageName="Test page" %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+        
+  <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="#">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        My Worklist
+      </li>
+  </ol>
+
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+  
+    <h3 class="govuk-notification-banner__heading">Your category of work is now Lorem Ipsum.</h3>
+  
+  </div>
+</div>
+
+<section id="pleaseWaitTarget" aria-live="assertive"></section>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+ 
+  <div id="worklist_page">
+    <meta property="proc_party" content="1510">
+
+
+    <div id="data-progress-now-table" data-progress-now-table="">
+      
+      
+      <h1 id="my_worklist_header" class="govuk-heading-l worklist__header">
+        My Worklist : 1 application
+      </h1>
+
+
+
+
+  <p class="govuk-body">
+    
+    Your category of work is <span class="bold">Lorem Ipsum</span>.
+    
+    <a href="#" class="govuk-link govuk-link--no-visited-state">Change your category of work</a>.
+  </p>
+
+    
+
+
+
+  <table id="progress_now_table" class="govuk-table worklist__table">
+
+    <caption class="govuk-table__caption govuk-table__caption--m">Work items in My Worklist</caption>
+      <thead class="govuk-table__head">
+          <tr class="govuk-table__row worklist-black-border">
+            <th class="govuk-table__header" id="progress_now_priority_dates" scope="col">Priority date</th>
+            <th class="govuk-table__header" id="progress_now_title_numbers" scope="col">Title number</th>
+            <th class="govuk-table__header" id="progress_now_abrs" scope="col"><abbr title="A B R">ABR</abbr></th>
+            <th class="govuk-table__header" id="progress_now_categories" scope="col">Category</th>
+            <th class="govuk-table__header" id="progress_now_dates_obtained" scope="col">Date obtained</th>
+            <th class="govuk-table__header" id="progress_now_next_actions" scope="col">Next action</th>
+          </tr>
+      </thead>
+
+      
+          
+  <tbody data-case-ref="W853BXW" class="case  ">
+      <tr id="row_17094" class="govuk-table__row case__data_row ">
+
+          
+  <td class="case__date" id="W853BXW_priority_date" headers="progress_now_priority_dates">
+      
+        
+        14 February 2025
+        
+      
+  </td>
+
+
+          
+  <td class="case__title-number" id="W853BXW_title_number" headers="progress_now_title_numbers">
+      <span class="case__inc">
+              
+      </span>
+      DU165132
+      
+  </td>
+
+
+          
+  <td id="W853BXW_abr" class="case__abr" headers="progress_now_abrs">
+      W853BXW
+      <div>
+          
+      </div>
+  </td>
+
+
+          
+  <td id="W853BXW_cat" class="case__category" headers="progress_now_categories">
+      
+      
+      Volume Change of Ownership
+  </td>
+
+
+          
+  <td class="case__date" id="W853BXW_dobtained" headers="progress_now_dates_obtained">
+      
+      26 November 2025
+      
+  </td>
+
+
+          
+      
+      
+      
+        <td id="W853BXW_next_action" class="case__next-action" headers="progress_now_next_actions">
+          New - Start to process
+        </td>
+      
+
+
+      </tr>
+      
+
+      
+
+
+      
+      <tr id="row_17094_actions" class="govuk-table__row case__actions">
+          <td colspan="6">
+            <div class="case__actions-wrapper">
+              <div class="case__left-hand-actions actions-spacing">
+                
+                    
+                        
+  <form class="case__form case__form--process" id="process_form_17094" action="cslk:titleno=DU165132&amp;appnref=W853BXW&amp;appntype=DLG" method="POST" novalidate="">
+      
+        <input name="csrf_token" type="hidden" value="IjdmNjQ5MTkxMGZmYWE1YzI1MmNjNjA4OTlhYTVkMDBkYTFhNjgxMzEi.aUKzzQ.1VlNYRMqyt1nCQs5RL0s4jJqjV0">
+      
+      <input aria-label="Opens the CORA Desktop application to start processing case W853BXW" type="submit" id="open_btn_W853BXW" class="wf-button" value="Open">
+  </form>
+
+                    
+                
+
+                
+                    
+  <a class="govuk-link govuk-link--no-visited-state actions-spacing case__anchor govuk-!-font-size-16 govuk-!-display-inline-block" href="esrv-return-reason?work-item-id=17094">Return to <abbr>ESRV</abbr>
+    <span class="govuk-visually-hidden">: case <abbr>W853BXW</abbr> to <abbr>DB2</abbr></span>
+  </a>
+
+                
+            </div>
+              <div class="case__right-hand-actions actions-spacing">
+
+                  <form class="case__form" novalidate="" id="change_state_17094" action="change_state/17094" method="post" onsubmit="btn_await_lawyer_17094.disabled = true;
+                                btn_progress_now_17094.disabled = true;
+                                lnk_progress_later_17094.disabled = true;">
+                    
+                      <input name="csrf_token" type="hidden" value="IjdmNjQ5MTkxMGZmYWE1YzI1MmNjNjA4OTlhYTVkMDBkYTFhNjgxMzEi.aUKzzQ.1VlNYRMqyt1nCQs5RL0s4jJqjV0">
+                    
+                    
+                      
+                    
+
+                      
+
+                  
+
+                      
+      <input id="btn_await_lawyer_17094" type="hidden" name="Waiting_for_lawyer" class="govuk-link govuk-link--no-visited-state case__hyperlink case__await_lawyer_btn govuk-!-display-inline-block govuk-!-text-align-centre govuk-!-padding-bottom-1 hmlr-link--min-width-48 govuk-!-font-size-16" value="Waiting for lawyer" data-formaction="await_lawyer/17094?lr_work_ref=W853BXW">
+
+                      <span class="govuk-visually-hidden">|</span>
+                      
+  <a class="govuk-link govuk-link--no-visited-state case__refer-link case__anchor govuk-!-font-size-16 govuk-!-display-inline-block" href="refer?lr_work_ref=W853BXW&amp;lr_ref_number=DU165132">Refer<span class="govuk-visually-hidden"> case <abbr>W853BXW</abbr></span>
+  </a>
+
+                      <span class="govuk-visually-hidden">|</span>
+                      
+      <input id="btn_progress_now_17094" type="hidden" name="Work_on_this" class="govuk-!-display-inline-block govuk-link case__hyperlink case__progress-later-btn govuk-!-font-size-16" value="Work on this">
+
+                      <span class="govuk-visually-hidden">|</span>
+                      
+  <a id="lnk_progress_later_17094" class="govuk-link govuk-link--no-visited-state case__progress-later-btn case__anchor govuk-!-font-size-16 govuk-!-display-inline-block" href="/worklist-ui/progress-later-option/17094">Progress later
+  </a>
+
+                      <span class="govuk-visually-hidden">|</span>
+                      
+  <a class="govuk-link govuk-link--no-visited-state case__defer-link case__anchor govuk-!-font-size-16 govuk-!-display-inline-block" href="deferral-category-option?lr_work_ref=W853BXW&amp;lr_ref_number=DU165132&amp;client=">Defer<span class="govuk-visually-hidden"> case <abbr>W853BXW</abbr></span>
+  </a>
+
+                      <span class="govuk-visually-hidden">|</span>
+                  
+
+                  
+                      
+  <a class="govuk-link govuk-link--no-visited-state case__activity-history-link case__anchor govuk-!-font-size-16 ga_track_event govuk-!-display-inline-block hmlr-link--min-width-48" href="activity-history/17094?page_no=1&amp;return_to=worklist" id="link_activity_history_W853BXW" data-ga-category="Activity_History_Link_From_Worklist" data-ga-action="Activity History link clicked from worklist page" data-ga-label="Worklist_Activity_History_Link">View activity history
+    <span class="govuk-visually-hidden"> for <abbr>W853BXW</abbr></span>
+  </a>
+
+                      <span class="govuk-visually-hidden">|</span>
+                      
+  <a class="govuk-!-display-inline-block govuk-link govuk-link--no-visited-state case__more-info-link case__anchor govuk-!-font-size-16" href="cslk:titleno=DU165132&amp;appnref=W853BXW&amp;appntype=ENQ">
+      More info
+  <span class="govuk-visually-hidden">: open daylist for case <abbr>W853BXW</abbr>. Opens in new window.</span></a>
+
+                      <span class="govuk-visually-hidden">|</span>
+                  
+
+                  
+                  </form>
+              </div>
+            </div>
+          </td>
+      </tr>
+      
+  </tbody>
+
+          
+      
+
+  </table>
+
+
+
+  </div>
+
+
+
+  </div>
+
+
+
+
+    
+    <div class="govuk-form-group">
+      <form action="/worklist-ui/ap-orchestrations" method="post">
+        
+          <input name="csrf_token" type="hidden" value="IjI2YzBiY2QwNzJiZjE0M2M3MDMxZGQ1M2UyMTBkMDNhMWE3YTdiZmYi.ZdYZDA.PHMOSAvho5tJKgE5EQe9HLJdBz8">
+        
+        <input type="submit" id="button_obtain" value="Obtain" class="govuk-button button-large hidden" data-double-click-prevention="" hidden="">
+      </form>
+    </div>
+    
+
+
+  <div id="data-progress-later-table" data-progress-later-table="">
+    
+    
+        <h2 id="progress_later_header" class="govuk-heading-l worklist__header ">
+    
+    Progress Later : 4 applications
+    
+        </h2>
+    
+
+    <table id="progress_later_table" class="govuk-table worklist__table ">
+            
+      <caption class="govuk-table__caption govuk-table__caption--m">
+          2 applications presented in a 6 column table.
+          
+          <!--Work items in progress later-->
+      </caption>
+    
+      <thead class="govuk-table__head">
+          <tr class="govuk-table__row worklist-black-border">
+              <th class="govuk-table__header" id="progress_later_priority_dates" scope="col">Priority date</th>
+              <th class="govuk-table__header" id="progress_later_title_numbers" scope="col">Title number</th>
+              <th class="govuk-table__header" id="progress_later_abrs" scope="col"><abbr title="A B R">ABR</abbr></th>
+              <th class="govuk-table__header" id="progress_later_categories" scope="col">Category</th>
+              <th class="govuk-table__header" id="progress_later_dates_obtained" scope="col">Date obtained</th>
+              <th class="govuk-table__header" id="progress_later_next_actions" scope="col">Next action</th>
+          </tr>
+      </thead>
+    
+      <tbody data-case-ref="F275GXW" class="case  ">
+        <tr id="row_35530" class="govuk-table__row case__data_row ">
+
+            
+    <td class="case__date" id="F275GXW_priority_date" headers="progress_later_priority_dates">
+        
+          
+          21 October 2025
+          
+        
+    </td>
+
+
+            
+    <td class="case__title-number" id="F275GXW_title_number" headers="progress_later_title_numbers">
+        <span class="case__inc">
+                
+        </span>
+        DU165333
+        
+    </td>
+
+
+            
+    <td id="F275GXW_abr" class="case__abr" headers="progress_later_abrs">
+        F275GXW
+        <div>
+            
+        </div>
+    </td>
+
+
+            
+    <td id="F275GXW_cat" class="case__category" headers="progress_later_categories">
+        
+        
+        Volume Change of Ownership
+    </td>
+
+
+            
+    <td class="case__date" id="F275GXW_dobtained" headers="progress_later_dates_obtained">
+        
+        17 December 2025
+        
+    </td>
+
+
+            
+        
+        
+        
+          <td id="F275GXW_next_action" class="case__next-action" headers="progress_later_next_actions" data-original-value="New - Start to process">
+            <span>Training case</span>
+          </td>
+        
+
+
+        </tr>
+        
+
+        
+
+
+        
+        <tr id="row_35530_actions" class="govuk-table__row case__actions">
+            <td colspan="6">
+              <div class="case__actions-wrapper">
+                <div class="case__left-hand-actions actions-spacing">
+                  
+
+                  
+                      
+    <a class="govuk-link govuk-link--no-visited-state actions-spacing case__anchor govuk-!-font-size-16 govuk-!-display-inline-block" href="esrv-return-reason?work-item-id=35530">Return to <abbr>ESRV</abbr>
+      <span class="govuk-visually-hidden">: case <abbr>F275GXW</abbr> to <abbr>DB2</abbr></span>
+    </a>
+
+                  
+              </div>
+                <div class="case__right-hand-actions actions-spacing">
+
+                    <form class="case__form" novalidate="" id="change_state_35530" action="change_state/35530" method="post" onsubmit="btn_await_lawyer_35530.disabled = true;
+                                  btn_progress_now_35530.disabled = true;
+                                  lnk_progress_later_35530.disabled = true;">
+                      
+                        <input name="csrf_token" type="hidden" value="IjdmNjQ5MTkxMGZmYWE1YzI1MmNjNjA4OTlhYTVkMDBkYTFhNjgxMzEi.aULKcw.EQymdlzLe-6HhLdtCnatLHrUvUc">
+                      
+                      
+                      
+
+                        
+
+                    
+
+                        
+        <input id="btn_await_lawyer_35530" type="submit" name="Waiting_for_lawyer" class="govuk-link govuk-link--no-visited-state case__hyperlink case__await_lawyer_btn govuk-!-display-inline-block govuk-!-text-align-centre govuk-!-padding-bottom-1 hmlr-link--min-width-48 govuk-!-font-size-16" value="Waiting for lawyer" formaction="await_lawyer/35530?lr_work_ref=F275GXW">
+
+                        <span class="govuk-visually-hidden">|</span>
+                        
+    <a class="govuk-link govuk-link--no-visited-state case__refer-link case__anchor govuk-!-font-size-16 govuk-!-display-inline-block" href="refer?lr_work_ref=F275GXW&amp;lr_ref_number=DU165333">Refer<span class="govuk-visually-hidden"> case <abbr>F275GXW</abbr></span>
+    </a>
+
+                        <span class="govuk-visually-hidden">|</span>
+                        
+        <input id="btn_progress_now_35530" type="submit" name="Work_on_this" class="govuk-!-display-inline-block govuk-link case__hyperlink case__progress-later-btn govuk-!-font-size-16" value="Work on this">
+
+                        <span class="govuk-visually-hidden">|</span>
+                        
+    <a id="lnk_progress_later_35530" class="govuk-link govuk-link--no-visited-state case__progress-later-btn case__anchor govuk-!-font-size-16" hidden="hidden" href="/worklist-ui/progress-later-option/35530">Progress later
+    </a>
+
+                        <span class="govuk-visually-hidden">|</span>
+                        
+    <a class="govuk-link govuk-link--no-visited-state case__defer-link case__anchor govuk-!-font-size-16 govuk-!-display-inline-block" href="deferral-category-option?lr_work_ref=F275GXW&amp;lr_ref_number=DU165333&amp;client=">Defer<span class="govuk-visually-hidden"> case <abbr>F275GXW</abbr></span>
+    </a>
+
+                        <span class="govuk-visually-hidden">|</span>
+                    
+
+                    
+                        
+    <a class="govuk-link govuk-link--no-visited-state case__activity-history-link case__anchor govuk-!-font-size-16 ga_track_event govuk-!-display-inline-block hmlr-link--min-width-48" href="activity-history/35530?page_no=1&amp;return_to=worklist" id="link_activity_history_F275GXW" data-ga-category="Activity_History_Link_From_Worklist" data-ga-action="Activity History link clicked from worklist page" data-ga-label="Worklist_Activity_History_Link">View activity history
+      <span class="govuk-visually-hidden"> for <abbr>F275GXW</abbr></span>
+    </a>
+
+                        <span class="govuk-visually-hidden">|</span>
+                        
+    <a class="govuk-!-display-inline-block govuk-link govuk-link--no-visited-state case__more-info-link case__anchor govuk-!-font-size-16" href="cslk:titleno=DU165333&amp;appnref=F275GXW&amp;appntype=ENQ">
+        More info
+    <span class="govuk-visually-hidden">: open daylist for case <abbr>F275GXW</abbr>. Opens in new window.</span></a>
+
+                        <span class="govuk-visually-hidden">|</span>
+                    
+
+                    
+                    </form>
+                </div>
+              </div>
+            </td>
+        </tr>
+        
+      </tbody>    
+      
+      <tbody data-case-ref="T375GXW" class="case  ">
+        <tr id="row_35541" class="govuk-table__row case__data_row ">
+
+            
+    <td class="case__date" id="T375GXW_priority_date" headers="progress_later_priority_dates">
+        
+          
+          21 October 2025
+          
+        
+    </td>
+
+
+            
+    <td class="case__title-number" id="T375GXW_title_number" headers="progress_later_title_numbers">
+        <span class="case__inc">
+                
+        </span>
+        DU165333
+        
+    </td>
+
+
+            
+    <td id="T375GXW_abr" class="case__abr" headers="progress_later_abrs">
+        T375GXW
+        <div>
+             
+        </div>
+    </td>
+
+
+            
+    <td id="T375GXW_cat" class="case__category" headers="progress_later_categories">
+        
+        
+        Volume Change of Ownership
+    </td>
+
+
+            
+    <td class="case__date" id="T375GXW_dobtained" headers="progress_later_dates_obtained">
+        
+        17 December 2025
+        
+    </td>
+
+
+            
+        
+        
+        
+          <td id="T375GXW_next_action" class="case__next-action" headers="progress_later_next_actions" data-original-value="New - Start to process">
+            <span>Unspecified</span>
+          </td>
+        
+
+
+        </tr>
+        
+    
+        
+    
+
+        
+        <tr id="row_35541_actions" class="govuk-table__row case__actions">
+            <td colspan="6">
+              <div class="case__actions-wrapper">
+                <div class="case__left-hand-actions actions-spacing">
+                  
+
+                  
+                      
+    <a class="govuk-link govuk-link--no-visited-state actions-spacing case__anchor govuk-!-font-size-16 govuk-!-display-inline-block" href="esrv-return-reason?work-item-id=35541">Return to <abbr>ESRV</abbr>
+       <span class="govuk-visually-hidden">: case <abbr>T375GXW</abbr> to <abbr>DB2</abbr></span>
+    </a>
+
+                  
+              </div>
+                <div class="case__right-hand-actions actions-spacing">
+
+                    <form class="case__form" novalidate="" id="change_state_35541" action="change_state/35541" method="post" onsubmit="btn_await_lawyer_35541.disabled = true;
+                                  btn_progress_now_35541.disabled = true;
+                                  lnk_progress_later_35541.disabled = true;">
+                      
+                        <input name="csrf_token" type="hidden" value="IjdmNjQ5MTkxMGZmYWE1YzI1MmNjNjA4OTlhYTVkMDBkYTFhNjgxMzEi.aULLUQ.uaGpewchZGsjb08bBQvnKjeM8gc">
+                      
+                       
+                      
+
+                        
+
+                    
+
+                        
+        <input id="btn_await_lawyer_35541" type="submit" name="Waiting_for_lawyer" class="govuk-link govuk-link--no-visited-state case__hyperlink case__await_lawyer_btn govuk-!-display-inline-block govuk-!-text-align-centre govuk-!-padding-bottom-1 hmlr-link--min-width-48 govuk-!-font-size-16" value="Waiting for lawyer" formaction="await_lawyer/35541?lr_work_ref=T375GXW">
+
+                        <span class="govuk-visually-hidden">|</span>
+                        
+    <a class="govuk-link govuk-link--no-visited-state case__refer-link case__anchor govuk-!-font-size-16 govuk-!-display-inline-block" href="refer?lr_work_ref=T375GXW&amp;lr_ref_number=DU165333">Refer<span class="govuk-visually-hidden"> case <abbr>T375GXW</abbr></span>
+    </a>
+
+                        <span class="govuk-visually-hidden">|</span>
+                        
+        <input id="btn_progress_now_35541" type="submit" name="Work_on_this" class="govuk-!-display-inline-block govuk-link case__hyperlink case__progress-later-btn govuk-!-font-size-16" value="Work on this">
+
+                        <span class="govuk-visually-hidden">|</span>
+                        
+    <a id="lnk_progress_later_35541" class="govuk-link govuk-link--no-visited-state case__progress-later-btn case__anchor govuk-!-font-size-16" hidden="hidden" href="/worklist-ui/progress-later-option/35541">Progress later
+    </a>
+
+                        <span class="govuk-visually-hidden">|</span>
+                        
+    <a class="govuk-link govuk-link--no-visited-state case__defer-link case__anchor govuk-!-font-size-16 govuk-!-display-inline-block" href="deferral-category-option?lr_work_ref=T375GXW&amp;lr_ref_number=DU165333&amp;client=">Defer<span class="govuk-visually-hidden"> case <abbr>T375GXW</abbr></span>
+    </a>
+
+                        <span class="govuk-visually-hidden">|</span>
+                    
+
+                    
+                        
+    <a class="govuk-link govuk-link--no-visited-state case__activity-history-link case__anchor govuk-!-font-size-16 ga_track_event govuk-!-display-inline-block hmlr-link--min-width-48" href="activity-history/35541?page_no=1&amp;return_to=worklist" id="link_activity_history_T375GXW" data-ga-category="Activity_History_Link_From_Worklist" data-ga-action="Activity History link clicked from worklist page" data-ga-label="Worklist_Activity_History_Link">View activity history
+       <span class="govuk-visually-hidden"> for <abbr>T375GXW</abbr></span>
+    </a>
+
+                        <span class="govuk-visually-hidden">|</span>
+                        
+    <a class="govuk-!-display-inline-block govuk-link govuk-link--no-visited-state case__more-info-link case__anchor govuk-!-font-size-16" href="cslk:titleno=DU165333&amp;appnref=T375GXW&amp;appntype=ENQ">
+        More info
+    <span class="govuk-visually-hidden">: open daylist for case <abbr>T375GXW</abbr>. Opens in new window.</span></a>
+
+                        <span class="govuk-visually-hidden">|</span>
+                    
+
+                    
+                    </form>
+                </div>
+              </div>
+            </td>
+        </tr>
+        
+      </tbody>      
+
+      <tbody data-case-ref="N475GXW" class="case  ">
+        <tr id="row_35548" class="govuk-table__row case__data_row ">
+
+            
+    <td class="case__date" id="N475GXW_priority_date" headers="progress_later_priority_dates">
+        
+          
+          21 October 2025
+          
+        
+    </td>
+
+
+            
+    <td class="case__title-number" id="N475GXW_title_number" headers="progress_later_title_numbers">
+        <span class="case__inc">
+                
+        </span>
+        DU164996
+        
+    </td>
+
+
+            
+    <td id="N475GXW_abr" class="case__abr" headers="progress_later_abrs">
+        N475GXW
+        <div>
+             
+        </div>
+    </td>
+
+
+            
+    <td id="N475GXW_cat" class="case__category" headers="progress_later_categories">
+        
+        
+        Volume Change of Ownership
+    </td>
+
+
+            
+    <td class="case__date" id="N475GXW_dobtained" headers="progress_later_dates_obtained">
+        
+        17 December 2025
+        
+    </td>
+
+
+            
+        
+        
+        
+          <td id="N475GXW_next_action" class="case__next-action" headers="progress_later_next_actions" data-original-value="Waiting lawyer's response">
+            <span>Referral: <abbr>TT</abbr>3</span>
+          </td>
+        
+
+
+        </tr>
+        
+    
+        
+    
+
+        
+        <tr id="row_35548_actions" class="govuk-table__row case__actions">
+            <td colspan="6">
+              <div class="case__actions-wrapper">
+                <div class="case__left-hand-actions actions-spacing">
+                  
+
+                  
+                      
+    <a class="govuk-link govuk-link--no-visited-state actions-spacing case__anchor govuk-!-font-size-16 govuk-!-display-inline-block" href="esrv-return-reason?work-item-id=35548">Return to <abbr>ESRV</abbr>
+       <span class="govuk-visually-hidden">: case <abbr>N475GXW</abbr> to <abbr>DB2</abbr></span>
+    </a>
+
+                  
+              </div>
+                <div class="case__right-hand-actions actions-spacing">
+
+                    <form class="case__form" novalidate="" id="change_state_35548" action="change_state/35548" method="post" onsubmit="btn_await_lawyer_35548.disabled = true;
+                                  btn_progress_now_35548.disabled = true;
+                                  lnk_progress_later_35548.disabled = true;">
+                      
+                        <input name="csrf_token" type="hidden" value="IjdmNjQ5MTkxMGZmYWE1YzI1MmNjNjA4OTlhYTVkMDBkYTFhNjgxMzEi.aULLhQ.YEJIIubM__aPVnRmv1TqULLCZZY">
+                      
+                       
+                      
+
+                        
+
+                    
+
+                        
+        <input id="btn_await_lawyer_35548" type="hidden" name="Waiting_for_lawyer" class="govuk-link govuk-link--no-visited-state case__hyperlink case__await_lawyer_btn govuk-!-display-inline-block govuk-!-text-align-centre govuk-!-padding-bottom-1 hmlr-link--min-width-48 govuk-!-font-size-16" value="Waiting for lawyer" data-formaction="await_lawyer/35548?lr_work_ref=N475GXW">
+
+                        <span class="govuk-visually-hidden">|</span>
+                        
+    <a class="govuk-link govuk-link--no-visited-state case__refer-link case__anchor govuk-!-font-size-16 govuk-!-display-inline-block" href="refer?lr_work_ref=N475GXW&amp;lr_ref_number=DU164996">Refer<span class="govuk-visually-hidden"> case <abbr>N475GXW</abbr></span>
+    </a>
+
+                        <span class="govuk-visually-hidden">|</span>
+                        
+        <input id="btn_progress_now_35548" type="submit" name="Work_on_this" class="govuk-!-display-inline-block govuk-link case__hyperlink case__progress-later-btn govuk-!-font-size-16" value="Work on this">
+
+                        <span class="govuk-visually-hidden">|</span>
+                        
+    <a id="lnk_progress_later_35548" class="govuk-link govuk-link--no-visited-state case__progress-later-btn case__anchor govuk-!-font-size-16" hidden="hidden" href="/worklist-ui/progress-later-option/35548">Progress later
+    </a>
+
+                        <span class="govuk-visually-hidden">|</span>
+                        
+    <a class="govuk-link govuk-link--no-visited-state case__defer-link case__anchor govuk-!-font-size-16 govuk-!-display-inline-block" href="deferral-category-option?lr_work_ref=N475GXW&amp;lr_ref_number=DU164996&amp;client=">Defer<span class="govuk-visually-hidden"> case <abbr>N475GXW</abbr></span>
+    </a>
+
+                        <span class="govuk-visually-hidden">|</span>
+                    
+
+                    
+                        
+    <a class="govuk-link govuk-link--no-visited-state case__activity-history-link case__anchor govuk-!-font-size-16 ga_track_event govuk-!-display-inline-block hmlr-link--min-width-48" href="activity-history/35548?page_no=1&amp;return_to=worklist" id="link_activity_history_N475GXW" data-ga-category="Activity_History_Link_From_Worklist" data-ga-action="Activity History link clicked from worklist page" data-ga-label="Worklist_Activity_History_Link">View activity history
+       <span class="govuk-visually-hidden"> for <abbr>N475GXW</abbr></span>
+    </a>
+
+                        <span class="govuk-visually-hidden">|</span>
+                        
+    <a class="govuk-!-display-inline-block govuk-link govuk-link--no-visited-state case__more-info-link case__anchor govuk-!-font-size-16" href="cslk:titleno=DU164996&amp;appnref=N475GXW&amp;appntype=ENQ">
+        More info
+    <span class="govuk-visually-hidden">: open daylist for case <abbr>N475GXW</abbr>. Opens in new window.</span></a>
+
+                        <span class="govuk-visually-hidden">|</span>
+                    
+
+                    
+                    </form>
+                </div>
+              </div>
+            </td>
+        </tr>
+        
+      </tbody>
+
+      <tbody data-case-ref="N913HXW" class="case  ">
+        <tr id="row_38907" class="govuk-table__row case__data_row ">
+
+            
+    <td class="case__date" id="N913HXW_priority_date" headers="progress_later_priority_dates">
+        
+          
+          15 December 2025
+          
+        
+    </td>
+
+
+            
+    <td class="case__title-number" id="N913HXW_title_number" headers="progress_later_title_numbers">
+        <span class="case__inc">
+                
+        </span>
+        BK504227
+        
+    </td>
+
+
+            
+    <td id="N913HXW_abr" class="case__abr" headers="progress_later_abrs">
+        N913HXW
+        <div>
+             
+        </div>
+    </td>
+
+
+            
+    <td id="N913HXW_cat" class="case__category" headers="progress_later_categories">
+        
+        
+        Volume Change of Ownership
+    </td>
+
+
+            
+    <td class="case__date" id="N913HXW_dobtained" headers="progress_later_dates_obtained">
+        
+        17 December 2025
+        
+    </td>
+
+
+            
+        
+        
+        
+          <td id="N913HXW_next_action" class="case__next-action" headers="progress_later_next_actions" data-original-value="New - Start to process">
+            <span>Paper files needed</span>
+          </td>
+        
+
+
+        </tr>
+        
+    
+        
+    
+
+        
+        <tr id="row_38907_actions" class="govuk-table__row case__actions">
+            <td colspan="6">
+              <div class="case__actions-wrapper">
+                <div class="case__left-hand-actions actions-spacing">
+                  
+
+                  
+                      
+    <a class="govuk-link govuk-link--no-visited-state actions-spacing case__anchor govuk-!-font-size-16 govuk-!-display-inline-block" href="esrv-return-reason?work-item-id=38907">Return to <abbr>ESRV</abbr>
+       <span class="govuk-visually-hidden">: case <abbr>N913HXW</abbr> to <abbr>DB2</abbr></span>
+    </a>
+
+                  
+              </div>
+                <div class="case__right-hand-actions actions-spacing">
+
+                    <form class="case__form" novalidate="" id="change_state_38907" action="change_state/38907" method="post" onsubmit="btn_await_lawyer_38907.disabled = true;
+                                  btn_progress_now_38907.disabled = true;
+                                  lnk_progress_later_38907.disabled = true;">
+                      
+                        <input name="csrf_token" type="hidden" value="IjdmNjQ5MTkxMGZmYWE1YzI1MmNjNjA4OTlhYTVkMDBkYTFhNjgxMzEi.aULLvg.SQS_Z6i1Cz2amFiKP4Uw6mHWt70">
+                      
+                       
+                      
+
+                        
+
+                    
+
+                        
+        <input id="btn_await_lawyer_38907" type="submit" name="Waiting_for_lawyer" class="govuk-link govuk-link--no-visited-state case__hyperlink case__await_lawyer_btn govuk-!-display-inline-block govuk-!-text-align-centre govuk-!-padding-bottom-1 hmlr-link--min-width-48 govuk-!-font-size-16" value="Waiting for lawyer" formaction="await_lawyer/38907?lr_work_ref=N913HXW">
+
+                        <span class="govuk-visually-hidden">|</span>
+                        
+    <a class="govuk-link govuk-link--no-visited-state case__refer-link case__anchor govuk-!-font-size-16 govuk-!-display-inline-block" href="refer?lr_work_ref=N913HXW&amp;lr_ref_number=BK504227">Refer<span class="govuk-visually-hidden"> case <abbr>N913HXW</abbr></span>
+    </a>
+
+                        <span class="govuk-visually-hidden">|</span>
+                        
+        <input id="btn_progress_now_38907" type="submit" name="Work_on_this" class="govuk-!-display-inline-block govuk-link case__hyperlink case__progress-later-btn govuk-!-font-size-16" value="Work on this">
+
+                        <span class="govuk-visually-hidden">|</span>
+                        
+    <a id="lnk_progress_later_38907" class="govuk-link govuk-link--no-visited-state case__progress-later-btn case__anchor govuk-!-font-size-16" hidden="hidden" href="/worklist-ui/progress-later-option/38907">Progress later
+    </a>
+
+                        <span class="govuk-visually-hidden">|</span>
+                        
+    <a class="govuk-link govuk-link--no-visited-state case__defer-link case__anchor govuk-!-font-size-16 govuk-!-display-inline-block" href="deferral-category-option?lr_work_ref=N913HXW&amp;lr_ref_number=BK504227&amp;client=">Defer<span class="govuk-visually-hidden"> case <abbr>N913HXW</abbr></span>
+    </a>
+
+                        <span class="govuk-visually-hidden">|</span>
+                    
+
+                    
+                        
+    <a class="govuk-link govuk-link--no-visited-state case__activity-history-link case__anchor govuk-!-font-size-16 ga_track_event govuk-!-display-inline-block hmlr-link--min-width-48" href="activity-history/38907?page_no=1&amp;return_to=worklist" id="link_activity_history_N913HXW" data-ga-category="Activity_History_Link_From_Worklist" data-ga-action="Activity History link clicked from worklist page" data-ga-label="Worklist_Activity_History_Link">View activity history
+       <span class="govuk-visually-hidden"> for <abbr>N913HXW</abbr></span>
+    </a>
+
+                        <span class="govuk-visually-hidden">|</span>
+                        
+    <a class="govuk-!-display-inline-block govuk-link govuk-link--no-visited-state case__more-info-link case__anchor govuk-!-font-size-16" href="cslk:titleno=BK504227&amp;appnref=N913HXW&amp;appntype=ENQ">
+        More info
+    <span class="govuk-visually-hidden">: open daylist for case <abbr>N913HXW</abbr>. Opens in new window.</span></a>
+
+                        <span class="govuk-visually-hidden">|</span>
+                    
+
+                    
+                    </form>
+                </div>
+              </div>
+            </td>
+        </tr>
+        
+      </tbody>      
+
+    </table>
+
+  </div>
+
+</div>
+
+<!--script>
+
+
+  document.getElementById('button_obtain').addEventListener('click', function() {
+      window.location.href = '/expedites/message';
+  });
+
+
+</script-->
+
+{% endblock %}
