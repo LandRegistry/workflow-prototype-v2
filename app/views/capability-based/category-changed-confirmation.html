@@ -27,7 +27,7 @@
   </div>
   <div class="govuk-notification-banner__content">
   
-    <h3 class="govuk-notification-banner__heading">Your category of work is now Lorem Ipsum.</h3>
+    <h3 class="govuk-notification-banner__heading">Your category of work is now {{ data['ipsum-sub1'] or data['ipsum'] | replace("_", " ") }}.</h3>
   
   </div>
 </div>

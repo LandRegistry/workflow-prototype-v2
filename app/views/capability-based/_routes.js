@@ -314,7 +314,7 @@ router.post('/select-a-category-of-work-b-error', function (req, res) {
 
 router.post('/category-of-work-by-category', function (req, res) {
 
-    const userInput = req.session.data['my-work_allocation_code'];
+    const userInput = req.session.data['ipsum'];
 
     if (userInput == null) {//empty
 
@@ -328,7 +328,7 @@ router.post('/category-of-work-by-category', function (req, res) {
 })
 router.post('/category-of-work-by-category-error', function (req, res) {
 
-    const userInput = req.session.data['my-work_allocation_code'];
+    const userInput = req.session.data['ipsum'];
 
     if (userInput == null) {//empty
 
@@ -343,7 +343,22 @@ router.post('/category-of-work-by-category-error', function (req, res) {
 
 router.post('/category-of-work-by-all-categories', function (req, res) {
 
-    const userInput = req.session.data['category'];
+    const userInput = req.session.data['cat'];
+
+    if (userInput == null) {//empty
+
+        res.redirect("category-of-work-by-all-categories-error")
+
+    } else {//userInput == 'category-all'
+
+        res.redirect("category-changed-confirmation")  
+
+    }
+})
+
+router.post('/category-of-work-by-all-categories-error', function (req, res) {
+
+    const userInput = req.session.data['cat'];
 
     if (userInput == null) {//empty
 
