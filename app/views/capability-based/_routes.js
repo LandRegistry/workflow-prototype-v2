@@ -343,7 +343,7 @@ router.post('/category-of-work-by-category-error', function (req, res) {
 
 router.post('/category-of-work-by-all-categories', function (req, res) {
 
-    const userInput = req.session.data['cat'];
+    const userInput = req.session.data['ipsum'];
 
     if (userInput == null) {//empty
 
@@ -358,7 +358,7 @@ router.post('/category-of-work-by-all-categories', function (req, res) {
 
 router.post('/category-of-work-by-all-categories-error', function (req, res) {
 
-    const userInput = req.session.data['cat'];
+    const userInput = req.session.data['ipsum'];
 
     if (userInput == null) {//empty
 
