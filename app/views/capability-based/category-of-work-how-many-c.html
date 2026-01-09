@@ -1,0 +1,149 @@
+{% extends "layouts/wf_layout.html" %}
+
+{% set pageName="Select a category of work by all categories" %}
+
+{% block pageTitle %}
+Select a category of work by all categories
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="landing.html">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="select-a-category-of-work-c.html">Select a category of work</a>
+      </li>      
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="category-of-work-by-all-categories-c.html">Select a category of work by all categories</a>
+      </li> 
+      <li class="govuk-breadcrumbs__list-item">
+        How many cases?
+    </li>    
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+
+
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+
+    <form action="#" method="post" novalidate>
+
+      <div class="govuk-form-group govuk-!-margin-bottom-5">
+
+        <fieldset class="govuk-fieldset" aria-describedby="how-many-cases-hint">
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <span class="govuk-caption-l">Academy training</span>
+              <h1 class="govuk-fieldset__heading">
+                How many cases?
+              </h1>
+            </legend>
+
+            <div id="how-many-hint" class="govuk-hint">
+              There are 33 cases matching the sub-category
+            </div>            
+
+            <div class="govuk-radios govuk-!-margin-top-6" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="qty-case" name="qty-case" type="radio" value="1" {% if (data['qty-case'] == '1') %}
+                checked
+                {% endif %}>
+                <label class="govuk-label govuk-radios__label" for="qty-case">
+                  Retrieve a case 
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="qty-case-2" name="qty-case" type="radio" value="25" {% if (data['qty-case'] == '25') %}
+                checked
+                {% endif %}>
+                <label class="govuk-label govuk-radios__label" for="qty-case-2">
+                  Retrieve 25 cases 
+                </label>
+              </div>     
+              
+              <div class="govuk-radios__divider">or</div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="var-case" name="qty-case" type="radio" value="var-case" data-aria-controls="conditional-var-case-2" {% if (data['qty-case'] == 'var-case') %}
+                checked
+                {% endif %}>
+                <label class="govuk-label govuk-radios__label" for="var-case">
+                  <!-- Enter how many cases -->
+                   Retrieve a custom number of cases
+                </label>
+              </div>
+
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-var-case-2">
+                <div class="govuk-form-group">
+
+                  <label class="govuk-label govuk-visually-hidden" for="how-many">
+                    Enter how many cases to retrieve
+                  </label>
+
+                  <!-- 
+                  Enter a number xxxxxxxxxxxxxxxxxxxxx 
+                  Enter only valid number characters
+                  -->
+                  
+                  <div id="how-many-hint" class="govuk-hint govuk-!-font-size-16">
+                    Enter 33 or less
+                    <!-- 
+                    Enter a number less than 34
+                    Enter 33 or less 
+                    -->
+                  </div>
+                  
+                  <input class="govuk-input govuk-input--width-3" id="how-many" name="how-many" inputmode="numeric" type="text" value="{{data['how-many']}}" aria-describedby="how-many-hint">
+
+                </div>     
+              </div>
+
+
+              
+              
+
+            </div>
+        </fieldset>
+
+      </div>
+        
+
+      <!--div class="govuk-form-group govuk-!-margin-bottom-6">
+        <label class="govuk-label" for="qty">
+          How many
+        </label>
+
+        <div class="govuk-hint govuk-!-font-size-16" id="qty-hint">
+          Select how many applications identified in the sub-category to target
+        </div>
+
+        <select class="govuk-select govuk-!-font-size-16" id="qty" name="qty" aria-describedby="qty-hint">
+          <option value="priority-newest" selected="">1</option>
+          <option value="priority-newest">10</option>
+          <option value="priority-oldest">30</option>
+          <option value="obtained-newest">60</option>
+          <option value="obtained-oldest">All</option>
+        </select>
+      </div-->      
+
+      <button value="y" type="submit" name="save" class="govuk-button" id="save">
+        Select
+      </button>
+
+    </form>
+
+  </div>
+
+  
+</div>
+
+{% endblock %}

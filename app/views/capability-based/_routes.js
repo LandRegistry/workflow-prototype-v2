@@ -371,5 +371,65 @@ router.post('/category-of-work-by-all-categories-error', function (req, res) {
     }
 })
 
+/* ************************************************************************************************ */
+
+router.post('/select-a-category-of-work-c', function (req, res) {
+
+    const userInput = req.session.data['category'];
+
+    if (userInput == null) {//empty
+
+        res.redirect("select-a-category-of-work-c")//this will be an -error pg
+
+    } else if (userInput == 'category-std') {
+
+        res.redirect("select-a-category-of-work-c")//for now, just redirect back to the same pg     
+
+    } else {//value == 'category-all'
+
+        res.redirect("category-of-work-by-all-categories-c")  
+
+    }
+})
+
+router.post('/category-of-work-by-all-categories-c', function (req, res) {
+
+    const userInput = req.session.data['ipsum'];
+
+    if (userInput == null) {//empty
+
+        res.redirect("category-of-work-by-all-categories-c")//this will be an -error pg
+
+    } else {
+
+        res.redirect("category-of-work-how-many-c")  
+
+    }
+})
+
+router.post('/category-of-work-how-many-c', function (req, res) {
+
+    const userInput = req.session.data['qty-case'];
+
+    if (userInput == null) {//empty
+
+        res.redirect("category-of-work-how-many-c")//this will be an -error pg
+
+        //this switch branching will need updating to accomidate the 3rd choice with its nested text input field
+
+
+    } else {
+
+        res.redirect("category-of-work-retrieved-c")  
+
+    }
+})
+
+router.post('/category-of-work-retrieved-c', function (req, res) {
+
+    //I added the URL pg of 'category-of-work-create-list-c' to the form action in the 'category-of-work-retrieved-c' pg
+
+})
+
 
 module.exports = router

@@ -1,0 +1,621 @@
+{% extends "layouts/wf_layout-std-new.html" %}
+
+{% set pageName="Select a category of work by all categories" %}
+
+{% block pageTitle %}
+Select a category of work by all categories
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="landing.html">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="select-a-category-of-work-c.html">Select a category of work</a>
+      </li>      
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="category-of-work-by-all-categories-c.html">Select a category of work by all categories</a>
+      </li> 
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="category-of-work-how-many-c.html">How many cases?</a>
+      </li> 
+      <li class="govuk-breadcrumbs__list-item">
+        Retrieved cases
+      </li>     
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+
+
+<style>
+  .hmlr-equal-height-columns {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .hmlr-equal-height-columns > div {
+    display: flex;
+    flex-direction: column;
+  }
+  .hmlr-equal-height-columns .hmlr-equal-height-columns__content-bottom {
+    justify-content: flex-end;
+  }
+
+  .hmlr-lock-select-all .govuk-checkboxes__item {
+    float: right;
+    margin-right: -15px;
+  }
+  .hmlr-lock-select-all .govuk-checkboxes__item label {
+    white-space: nowrap;
+  }
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <span class="govuk-caption-l">Academy training</span>
+    <h1 class="govuk-heading-l">Retrieved cases</h1>
+
+
+    <div class="govuk-grid-row hmlr-equal-height-columns">
+      
+      <div class="govuk-grid-column-two-thirds">
+
+        <p class="govuk-body">
+          33 cases were retrieved. Select which cases you want to use.
+        </p> 
+
+        <p class="govuk-body" id="lock-select-txt">
+          Locked cases are locked for 3 working days. This allows time for a colleague to xxxx the case.
+        </p>          
+
+      </div>
+
+      <div class="govuk-grid-column-one-third hmlr-equal-height-columns__content-bottom">
+
+        <div class="govuk-checkboxes govuk-checkboxes--small hmlr-lock-select-all hmlr-hide-when-no-js" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="lock-select-all" name="lock-select-all" type="checkbox" value="lock-select-all" aria-describedby="lock-select-txt">
+            <label class="govuk-label govuk-checkboxes__label govuk-!-font-size-16 govuk-!-text-align-right " for="lock-select-all">
+              Lock and select all
+            </label>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <form action="category-of-work-create-list-c" novalidate>
+
+      <table id="retrieve-table" class="govuk-table worklist__table govuk-!-margin-top-6">
+
+        <caption class="govuk-table__caption govuk-table__caption--m govuk-visually-hidden">The retrieved cases</caption>
+          <thead class="govuk-table__head">
+              <tr class="govuk-table__row worklist-black-border">
+                <th class="govuk-table__header" id="tbl_priority_dates" scope="col">Priority date</th>
+                <th class="govuk-table__header" id="tbl_title_numbers" scope="col">Title number</th>
+                <th class="govuk-table__header" id="tbl_abrs" scope="col"><abbr>ABR</abbr></th>
+                <th class="govuk-table__header" id="tbl_categories" scope="col">Category</th>
+                <th class="govuk-table__header" id="tbl_lock" scope="col">Lock</th>
+                <th class="govuk-table__header" id="tbl_select" scope="col">Select</th>
+              </tr>
+          </thead>
+
+          
+              
+      <tbody data-case-ref="K275GXW" class="case case--parent">
+          <tr id="row_35527" class="govuk-table__row case__data_row">
+            <td class="case__date" id="K275GXW_priority_date" headers="tbl_priority_dates">
+          
+            
+            21 October 2025
+            
+          
+      </td>
+
+
+              
+      <td class="case__title-number" id="K275GXW_title_number" headers="tbl_title_numbers">
+          <span class="case__inc">
+                  
+          </span>
+          DU165333
+          
+            <strong class="govuk-tag-expedite govuk-tag">
+            Expedite
+            </strong>
+          
+      </td>
+
+
+              
+      <td id="K275GXW_abr" class="case__abr" headers="tbl_abrs">
+          K275GXW
+      </td>
+
+
+              
+      <td id="K275GXW_cat" class="case__category" headers="tbl_categories">
+          
+          
+          Volume Change of Ownership
+      </td>
+
+
+              
+      <td class="case__date" id="K275GXW_dobtained" headers="tbl_lock">
+          
+        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+              
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="lock-K275GXW" name="lock" type="checkbox" value="K275GXW-lock">
+            <label class="govuk-label govuk-checkboxes__label" for="lock-K275GXW">
+              Lock <span class="govuk-visually-hidden">K275GXW</span>
+            </label>
+          </div>
+          <!--span class="govuk-!-display-inline-block govuk-hint govuk-!-font-size-16">
+            For 5 working days
+          </span-->
+
+        </div>
+          
+      </td>
+      <td id="K275GXW_select" class="case__next-action" headers="tbl_select">
+      
+        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="select-K275GXW" name="lock" type="checkbox" value="K275GXW-select">
+            <label class="govuk-label govuk-checkboxes__label" for="select-K275GXW">
+              Select <span class="govuk-visually-hidden">K275GXW</span>
+            </label>
+          </div>
+        </div>      
+
+      </td>
+          
+
+
+          </tr>
+
+          
+      </tbody>
+      <tbody data-case-ref="Z375GXW" class="case case--parent ">
+          <tr id="row_35537" class="govuk-table__row case__data_row">
+            <td class="case__date" id="Z375GXW_priority_date" headers="tbl_priority_dates">
+          
+            
+            21 October 2025
+            
+          
+      </td>
+
+
+              
+      <td class="case__title-number" id="Z375GXW_title_number" headers="tbl_title_numbers">
+          <span class="case__inc">
+                  
+          </span>
+          DU165333
+          
+            <strong class="govuk-tag-expedite govuk-tag">
+            Expedite
+            </strong>
+          
+      </td>
+
+
+              
+      <td id="Z375GXW_abr" class="case__abr" headers="tbl_abrs">
+          Z375GXW
+      </td>
+
+
+              
+      <td id="Z375GXW_cat" class="case__category" headers="tbl_categories">
+          
+          
+          Volume Change of Ownership
+      </td>
+
+
+              
+      <td class="case__date" id="Z375GXW_dobtained" headers="tbl_lock">
+          
+        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+              
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="lock-Z375GXW" name="lock" type="checkbox" value="Z375GXW-lock">
+            <label class="govuk-label govuk-checkboxes__label" for="lock-Z375GXW">
+              Lock <span class="govuk-visually-hidden">Z375GXW</span>
+            </label>
+          </div>
+
+        </div>
+          
+      </td>
+      <td id="Z375GXW_select" class="case__next-action" headers="tbl_select">
+
+        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="select-Z375GXW" name="lock" type="checkbox" value="Z375GXW-select">
+            <label class="govuk-label govuk-checkboxes__label" for="select-Z375GXW">
+              Select <span class="govuk-visually-hidden">Z375GXW</span>
+            </label>
+          </div>
+        </div>
+
+      </td>
+          
+
+
+          </tr>
+      </tbody>
+
+
+
+
+
+      <tbody data-case-ref="Z375UIP" class="case case--parent ">
+        <tr id="row_35537" class="govuk-table__row case__data_row ">
+
+            
+    <td class="case__date" id="Z375UIP_priority_date" headers="tbl_priority_dates">
+        
+          
+          19 October 2025
+          
+        
+    </td>
+
+
+            
+    <td class="case__title-number" id="Z375UIP_title_number" headers="tbl_title_numbers">
+        <span class="case__inc">
+                
+        </span>
+        DU164332
+        
+          <strong class="govuk-tag-expedite govuk-tag">
+          Expedite
+          </strong>
+        
+    </td>
+
+
+            
+          <td id="Z375UIP_abr" class="case__abr" headers="tbl_abrs">
+              Z375UIP
+              <div>
+                    Leading application
+              </div>
+          </td>
+
+
+            
+          <td id="Z375UIP_cat" class="case__category" headers="tbl_categories">
+              
+              
+              Volume Change of Ownership
+          </td>
+            
+          <td class="case__date" id="Z375UIP_dobtained" headers="tbl_lock">
+              
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+              
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="lock-Z375UIP" name="lock" type="checkbox" value="Z375UIP-lock">
+                <label class="govuk-label govuk-checkboxes__label" for="lock-Z375UIP">
+                  Lock <span class="govuk-visually-hidden">Z375UIP</span>
+                </label>
+              </div>
+
+            </div>
+              
+          </td>
+          <td id="Z375UIP_select" class="case__next-action" headers="tbl_select">
+
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="select-Z375UIP" name="lock" type="checkbox" value="Z375UIP-select">
+                <label class="govuk-label govuk-checkboxes__label" for="select-Z375UIP">
+                  Select <span class="govuk-visually-hidden">Z375UIP</span>
+                </label>
+              </div>
+            </div>
+
+          </td>
+
+        </tr>
+        
+    </tbody>
+    <tbody data-case-ref="Y375GXW" class="case  hmlr-wf-!-display-none--if-js hmlr-wf-attached-tbody-Z375UIP" data-parent="Z375UIP">
+      <tr id="row_35538" class="govuk-table__row case__data_row ">
+
+          
+  <td class="case__date">
+      
+  </td>
+
+
+          
+  <td class="case__title-number" id="Y375GXW_title_number" headers="tbl_title_numbers">
+      <span class="case__inc">
+              
+      </span>
+      DU165334
+      
+  </td>
+
+
+          
+  <td id="Y375GXW_abr" class="case__abr" headers="tbl_abrs">
+      Y375GXW
+      <div>
+            Attached to Z375UIP 
+      </div>
+  </td>
+
+
+          
+  <td id="Y375GXW_cat" class="case__category" headers="tbl_categories">
+      
+      
+      Volume Change of Ownership
+  </td>
+
+
+          
+  <td class="case__date" id="Y375GXW_dobtained" headers="tbl_lock">
+      
+    &nbsp;
+      
+  </td>
+
+
+          
+      
+      
+      
+        <td id="Y375GXW_select" class="case__next-action" headers="tbl_select">
+          &nbsp;
+        </td>
+      
+
+
+      </tr>
+  </tbody>
+
+
+
+
+      <tbody data-case-ref="W853BXW" class="case  ">
+          <tr id="row_17094" class="govuk-table__row case__data_row">
+            <td class="case__date" id="W853BXW_priority_date" headers="tbl_priority_dates">
+          
+            
+            14 February 2025
+            
+          
+      </td>
+
+
+              
+      <td class="case__title-number" id="W853BXW_title_number" headers="tbl_title_numbers">
+          <span class="case__inc">
+                  
+          </span>
+          DU165132
+          
+      </td>
+
+
+              
+      <td id="W853BXW_abr" class="case__abr" headers="tbl_abrs">
+          W853BXW
+          <div>
+              
+          </div>
+      </td>
+
+
+              
+      <td id="W853BXW_cat" class="case__category" headers="tbl_categories">
+          
+          
+          Volume Change of Ownership
+      </td>
+
+
+              
+      <td class="case__date" id="W853BXW_dobtained" headers="tbl_lock">
+          
+        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+              
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="lock-W853BXW" name="lock" type="checkbox" value="W853BXW-lock">
+            <label class="govuk-label govuk-checkboxes__label" for="lock-W853BXW">
+              Lock <span class="govuk-visually-hidden">W853BXW</span>
+            </label>
+          </div>
+
+        </div>
+          
+      </td>
+      <td id="W853BXW_select" class="case__next-action" headers="tbl_select">
+
+        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="select-W853BXW" name="lock" type="checkbox" value="W853BXW-select">
+            <label class="govuk-label govuk-checkboxes__label" for="select-W853BXW">
+              Select <span class="govuk-visually-hidden">W853BXW</span>
+            </label>
+          </div>
+        </div>      
+
+      </td>
+          
+
+
+          </tr>
+      </tbody>
+                  
+      <tbody data-case-ref="E462FXW" class="case  hmlr-wf-!-display-none--if-js hmlr-wf-attached-tbody-F462FXW">
+          <tr id="row_30418" class="govuk-table__row case__data_row">
+            <td class="case__date">
+
+              12 February 2025
+          
+      </td>
+
+
+              
+      <td class="case__title-number" id="E462FXW_title_number" headers="tbl_title_numbers">
+          <span class="case__inc">
+                  
+          </span>
+          GR541577
+          
+      </td>
+
+
+              
+      <td id="E462FXW_abr" class="case__abr" headers="tbl_abrs">
+          E462FXW
+      </td>
+
+
+              
+      <td id="E462FXW_cat" class="case__category" headers="tbl_categories">
+          
+          
+          Volume Change of Ownership
+      </td>
+
+
+              
+      <td class="case__date" id="E462FXW_dobtained" headers="tbl_lock">
+          
+        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+              
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="lock-E462FXW" name="lock" type="checkbox" value="E462FXW-lock">
+            <label class="govuk-label govuk-checkboxes__label" for="lock-E462FXW">
+              Lock <span class="govuk-visually-hidden">E462FXW</span>
+            </label>
+          </div>
+
+        </div>
+          
+      </td>
+      <td id="E462FXW_select" class="case__next-action" headers="tbl_select">
+
+        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="select-E462FXW" name="lock" type="checkbox" value="E462FXW-select">
+            <label class="govuk-label govuk-checkboxes__label" for="select-E462FXW">
+              Select <span class="govuk-visually-hidden">E462FXW</span>
+            </label>
+          </div>
+        </div>
+
+      </td>
+          
+
+
+          </tr>
+        
+      </tbody>
+                  
+      <tbody data-case-ref="G462FXW" class="case  hmlr-wf-!-display-none--if-js hmlr-wf-attached-tbody-H462FXW">
+          <tr id="row_30420" class="govuk-table__row case__data_row">
+            <td class="case__date">
+          8 February 2025
+      </td>
+
+
+              
+      <td class="case__title-number" id="G462FXW_title_number" headers="tbl_title_numbers">
+          <span class="case__inc">
+                  
+          </span>
+          GR541575
+          
+      </td>
+
+
+              
+      <td id="G462FXW_abr" class="case__abr" headers="tbl_abrs">
+          G462FXW
+      </td>
+
+
+              
+      <td id="G462FXW_cat" class="case__category" headers="tbl_categories">
+          
+          
+          Volume Change of Ownership
+      </td>
+
+
+              
+      <td class="case__date" id="G462FXW_dobtained" headers="tbl_lock">
+          
+        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+              
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="lock-G462FXW" name="lock" type="checkbox" value="G462FXW-lock">
+            <label class="govuk-label govuk-checkboxes__label" for="lock-G462FXW">
+              Lock <span class="govuk-visually-hidden">G462FXW</span>
+            </label>
+          </div>
+
+        </div>
+          
+      </td>
+      <td id="G462FXW_select" class="case__next-action" headers="tbl_select">
+
+        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="select-G462FXW" name="lock" type="checkbox" value="G462FXW-select">
+            <label class="govuk-label govuk-checkboxes__label" for="select-G462FXW">
+              Select <span class="govuk-visually-hidden">G462FXW</span>
+            </label>
+          </div>
+        </div>
+
+      </td>
+          
+
+
+          </tr>
+      </tbody>
+      </table>
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Create your list of retrieved cases
+      </button>
+
+    </form>
+
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('lock-select-all').addEventListener('change', function() {
+    const checkboxes = document.querySelectorAll('#retrieve-table input[type="checkbox"]');
+    
+    checkboxes.forEach(function(checkbox) {
+      checkbox.checked = this.checked;
+    }.bind(this));
+  });
+});
+</script>
+
+
+{% endblock %}

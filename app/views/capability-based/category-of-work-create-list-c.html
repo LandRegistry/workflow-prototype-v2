@@ -1,0 +1,310 @@
+{% extends "layouts/wf_layout-std-new.html" %}
+
+{% set pageName="Select a category of work by all categories" %}
+
+{% block pageTitle %}
+Select a category of work by all categories
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="landing.html">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="select-a-category-of-work-c.html">Select a category of work</a>
+      </li>      
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="category-of-work-by-all-categories-c.html">Select a category of work by all categories</a>
+      </li> 
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="category-of-work-how-many-c.html">How many cases?</a>
+      </li> 
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="category-of-work-retrieved-c.html">Retrieved cases</a>
+      </li>       
+      <li class="govuk-breadcrumbs__list-item">
+        Selected cases
+      </li>           
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+
+
+<style>
+
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <span class="govuk-caption-l">Academy training</span>
+    <h1 class="govuk-heading-l">Selected cases</h1>
+
+
+    <div class="govuk-grid-row hmlr-equal-height-columns">
+      
+      <div class="govuk-grid-column-two-thirds">
+
+      </div>
+
+      <div class="govuk-grid-column-one-third hmlr-equal-height-columns__content-bottom">
+
+      </div>
+
+    </div>
+
+
+    <table id="retrieve-table" class="govuk-table govuk-!-margin-top-6">
+
+        <caption class="govuk-table__caption govuk-table__caption--m govuk-visually-hidden">
+          The list of retrieved cases
+        </caption>
+
+        <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header" scope="col">Priority date</th>
+              <th class="govuk-table__header" scope="col">Title number</th>
+              <th class="govuk-table__header" scope="col"><abbr>ABR</abbr></th>
+              <th class="govuk-table__header" scope="col">Category</th>
+            </tr>
+        </thead>
+
+          
+              
+      <tbody class="case case--parent">
+          <tr class="govuk-table__row case__data_row">
+            <td>
+              21 October 2025
+            </td>
+            <td>
+
+                DU165333 Expedite
+            </td>
+            <td>
+                K275GXW
+            </td>
+            <td>
+                Volume Change of Ownership
+            </td>
+          </tr>
+      </tbody>
+      <tbody class="case case--parent">
+          <tr class="govuk-table__row case__data_row">
+            <td>
+              21 October 2025
+            </td>
+            <td>
+              DU165333 Expedite
+            </td>
+            <td>
+              Z375GXW
+            </td>
+            <td>
+              Volume Change of Ownership
+            </td>
+          </tr>
+      </tbody>
+      <tbody class="case case--parent">
+        <tr class="govuk-table__row case__data_row">
+          <td>
+            19 October 2025
+          </td>
+          <td>
+            DU164332 Expedite
+          </td>
+          <td>
+            Z375UIP Leading application
+          </td>
+          <td>
+            Volume Change of Ownership
+          </td>
+        </tr>
+      </tbody>
+      <tbody class="case case--parent">
+        <tr class="govuk-table__row case__data_row">
+          <td>
+              &nbsp;
+          </td>
+          <td>
+              DU165334 
+          </td>
+          <td>
+              Y375GXW Attached to Z375UIP 
+          </td>
+          <td>
+              Volume Change of Ownership
+          </td>
+        </tr>
+      </tbody>
+      <tbody class="case case--parent">
+        <tr class="govuk-table__row case__data_row">
+            <td>
+              14 February 2025
+            </td>
+            <td>
+              DU165132
+            </td>
+            <td>
+                W853BXW
+            </td>
+            <td>
+                Volume Change of Ownership
+            </td>
+          </tr>
+      </tbody>
+
+    </table>
+                 
+    
+    <div class="govuk-form-group">
+
+        <label class="govuk-label govuk-label--s govuk-!-font-weight-regular" for="my-list">
+          Your selected cases  
+        </label>
+
+      <div id="my-list-hint" class="govuk-hint govuk-!-font-size-16">
+        The content of this textarea can be copied and pasted directly into a <abbr>MS</abbr> Excel spreadsheet
+      </div>
+
+      <!--
+      In code (any server-side language): Use the escape sequence \t in the string - this creates an actual tab character. In our HTML source (if writing by hand) we'd  press the actual Tab key on your keyboard. Literal Tabs are not just white space - the excel will need them. (Copy a character and check its ASCII/Unicode value - tab is decimal 9 or hex 0x09).
+      -->
+
+      <textarea class="govuk-textarea govuk-!-font-size-16" id="my-list" name="my-list" rows="5" aria-describedby="my-list-hint">
+        Priority date	Title number	ABR	Category
+21 October 2025	DU165333 Expedite	K275GXW	Volume Change of Ownership
+21 October 2025	DU165333 Expedite	Z375GXW	Volume Change of Ownership
+19 October 2025	DU164332 Expedite	Z375UIP Leading application	Volume Change of Ownership
+ 	DU165334	Y375GXW Attached to Z375UIP	Volume Change of Ownership
+14 February 2025	DU165132	W853BXW	Volume Change of Ownership
+      </textarea>
+    </div>   
+
+      <div class="govuk-button-group">
+
+        <input id="copy-to-clipboard" type="submit" class="govuk-button hmlr-hide-when-no-js" value="Copy to your clipboard" />
+
+        <a id="download-spreadsheet" href="#" class="govuk-button govuk-button--secondary hmlr-hide-when-no-js" download role="button" draggable="false">
+          Download as a spreadsheet
+        </a>
+
+        <span class="govuk-visually-hidden">|</span>
+
+        <a class="govuk-link govuk-link--no-visited-state" href="select-a-category-of-work-c">Return to the start</a>
+
+      </div>      
+
+
+
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+
+
+// Copy to clipboard button
+document.getElementById('copy-to-clipboard').addEventListener('click', function() {
+  const table = document.getElementById('retrieve-table');
+  
+  // Clone the table to avoid modifying the original
+  const tableClone = table.cloneNode(true);
+  
+  // Remove all <thead> elements
+  const theads = tableClone.querySelectorAll('thead');
+  theads.forEach(thead => thead.remove());
+  
+  // Also remove any <th> elements that might be in the body
+  const headerCells = tableClone.querySelectorAll('th');
+  headerCells.forEach(th => th.remove());
+  
+  // Create a temporary container and append the cloned table
+  const tempDiv = document.createElement('div');
+  tempDiv.style.position = 'absolute';
+  tempDiv.style.left = '-9999px';
+  tempDiv.appendChild(tableClone);
+  document.body.appendChild(tempDiv);
+  
+  // Create a range and selection to copy
+  const range = document.createRange();
+  range.selectNodeContents(tempDiv);
+  
+  const selection = window.getSelection();
+  selection.removeAllRanges();
+  selection.addRange(range);
+  
+  try {
+    // Copy to clipboard
+    document.execCommand('copy');
+  } catch (err) {
+    console.error('Failed to copy table:', err);
+  }
+  
+  // Clear the selection and remove temporary element
+  selection.removeAllRanges();
+  document.body.removeChild(tempDiv);
+});
+
+// Download spreadsheet button
+document.getElementById('download-spreadsheet').addEventListener('click', function(e) {
+  //e.preventDefault();//stops the link working
+  
+  const table = document.getElementById('retrieve-table');
+  
+  // Get header cells
+  const headerCells = Array.from(table.querySelectorAll('thead th, thead td'));
+  const headerRow = headerCells.map(cell => {
+    let content = cell.textContent.trim();
+    if (content.includes(',') || content.includes('"') || content.includes('\n')) {
+      content = '"' + content.replace(/"/g, '""') + '"';
+    }
+    return content;
+  }).join(',');
+  
+  // Get all data rows
+  const rows = Array.from(table.querySelectorAll('tbody tr'));
+  
+  const dataRows = rows.map(row => {
+    const cells = Array.from(row.querySelectorAll('td'));
+    return cells.map(cell => {
+      let content = cell.textContent.trim();
+      if (content.includes(',') || content.includes('"') || content.includes('\n')) {
+        content = '"' + content.replace(/"/g, '""') + '"';
+      }
+      return content;
+    }).join(',');
+  }).join('\n');
+  
+  const csvData = headerRow + '\n' + dataRows;
+  
+  // Create Blob
+  const blob = new Blob([csvData], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  
+  // Generate timestamp for filename
+  const now = new Date();
+  const day = now.getDate().toString().padStart(2, '0');
+  const month = (now.getMonth() + 1).toString().padStart(2, '0');
+  const year = now.getFullYear();
+  const hours = now.getHours().toString().padStart(2, '0');
+  const minutes = now.getMinutes().toString().padStart(2, '0');
+  const seconds = now.getSeconds().toString().padStart(2, '0');
+  const timestamp = `${day}-${month}-${year}_${hours}-${minutes}-${seconds}`;
+  const filename = `selected-cases_${timestamp}.csv`;
+  
+  // Update this link
+  this.href = url;
+  this.download = filename;
+});
+
+
+});
+</script>
+
+
+{% endblock %}

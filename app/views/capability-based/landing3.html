@@ -1,0 +1,133 @@
+{% extends "layouts/wf_layout_legacy.html" %}
+
+{% set pageName="Index template example for legacy designs" %}
+
+{% block content %}
+
+<div id="homepage-columns" class="content-wrapper">
+
+        
+    
+    <!--div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds"-->
+            <div class="govuk-grid-row">
+                
+                    <div class="govuk-grid-column-one-third">
+                        <div class="nav-panel">
+                            
+                                <a class="govuk-link nav-panel__link" href="#">
+                                    <span class="nav-panel__text">My Worklist</span>
+                                </a>
+                            
+                        </div>
+                    </div>
+                
+                    <div class="govuk-grid-column-one-third">
+                        <div class="nav-panel">
+                            
+                                <a class="govuk-link nav-panel__link" href="#">
+                                    <span class="nav-panel__text">Select category of work</span>
+                                </a>
+                            
+                        </div>
+                    </div>
+
+                    <div class="govuk-grid-column-one-third">
+                        <div class="nav-panel">
+                            
+<style>
+    .nav-panel__link {
+        height: -webkit-fill-available;
+        height: stretch;
+    }
+</style>
+
+                            <a class="govuk-link 
+                            govuk-!-padding-top-6 
+                            nav-panel__link" href="select-a-category-of-work-c.html">
+                                <span class="nav-panel__text">
+                                    Select category of work
+                                    
+                                    <br><span class="govuk-!-display-inline-block govuk-!-padding-top-2 govuk-!-font-size-19 govuk-!-font-weight-regular">Academy training</span>
+                                    
+                                </span> 
+                            </a>
+                            
+                        </div>
+                    </div>                    
+                
+            </div>
+        <!--/div>
+    </div-->
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <div class="govuk-grid-row">
+                
+                    <div class="govuk-grid-column-one-half">
+                        <div class="nav-panel">
+                            
+                                <a class="govuk-link nav-panel__link" href="#">
+                                    <span class="nav-panel__text">Search</span>
+                                </a>
+                            
+                        </div>
+                    </div>
+                
+                    <div class="govuk-grid-column-one-half">
+                        <div class="nav-panel">
+                            
+                                <a class="govuk-link nav-panel__link" href="#">
+                                    <span class="nav-panel__text">Manage assigned work</span>
+                                </a>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+  <style>
+    /* grid-row > grid-column-two-thirds then add a new row and change two-thirds classes to one-half, as below */
+    /* drop this 'style' block into the top of THIS page. (Important: This page only) */
+    @media (min-width: 40.0625em){
+        .content-wrapper > .govuk-grid-row > .govuk-grid-column-two-thirds {
+            margin-left: auto; 
+            margin-right: auto; 
+            float: none;
+        }    
+    }
+  </style>
+    <!-- *** new styles which can be added to the CSS output (at the end) *** -->
+    <style>
+        .nav-panel {
+            padding: 0 !important; 
+        }
+        .govuk-link.nav-panel__link {
+            color: #0b0c0c; /* or $govuk-text-colour is sass */
+        }
+        .nav-panel {
+            background-color: #bfbfbf; /*legacy colour*/
+            transition: background-color 0.3s ease;
+        }
+        .nav-panel:hover {
+            background-color: #cccccc; /*legacy colour*/
+        }
+        .nav-panel__text {
+            padding-left: 10px;
+            padding-right: 10px;
+        }  
+        @media (min-width: 40.0625em) { 
+            .nav-panel__text {
+                font-size: 140% !important;
+            } 
+        }
+    </style>  
+
+
+{% endblock %}

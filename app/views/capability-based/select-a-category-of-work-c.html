@@ -1,0 +1,70 @@
+{% extends "layouts/wf_layout.html" %}
+
+{% set pageName="Select a category of work" %}
+
+{% block pageTitle %}
+Select a category of work
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="landing.html">Home</a>
+      </li>
+      
+      <li class="govuk-breadcrumbs__list-item">
+          Select a category of work
+      </li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="#" method="post" novalidate>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-margin-bottom-6">
+            <span class="govuk-caption-l">Academy training</span>
+            <h1 class="govuk-fieldset__heading">
+              Select a category of work 
+            </h1>
+          </legend>
+
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="category-std" name="category" type="radio" value="category-std" {% if (data['category'] == 'category-std') %}
+              checked
+              {% endif %}>
+              <label class="govuk-label govuk-radios__label" for="category-std">
+                By category 
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="category-all" name="category" type="radio" value="category-all" {% if (data['category'] == 'category-all') %}
+              checked
+              {% endif %}>
+              <label class="govuk-label govuk-radios__label" for="category-all">
+                By all categories
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <button value="y" type="submit" name="save" class="govuk-button" id="save">
+        Select
+      </button>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

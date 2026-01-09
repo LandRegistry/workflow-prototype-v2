@@ -1,0 +1,44 @@
+
+
+
+
+
+
+
+Page: How many cases?
+
+Only add radion 'Retrieve 25 cases' if there are at least 25 cases available
+Only add radion 'Retrieve a custom number of cases' if there is more than 1 case available
+
+On attached cases - these show by default, so don't include  aria-hidden="true"
+
+Selected a complex case automatically includes the attached cases
+
+Q: if we lock a case for 5x working days... how can the recipient access them? Will 'lock' simply mean 'hidden' from others unless you explicitly enter the ABR to assign it to yourself? 
+
+
+Retrieved cases which have been locked, but not selected are prioritised as being included in the returned list of cases.
+If a case is locked but not selected, it will not be locked. The case can reappear in the retrieved list and the user can unlock them there.
+
+
+
+Dev may want to update headers and IDs to match 'lock' and 'select'
+Don't forget about the table caption content
+
+5 Working days starts from the next working day
+
+Remove  data-original-value="New - Start to process",  data-parent="F462FXW", and  aria-hidden="true"
+
+are table captions hidden inappropriately in some bespoke global CSS? They shouldn't be display: none
+
+If/when the user uses the breadcrumb or back button to return to the retrieved table, their previous selections should persist. They are unselected when arriving at the page via the sumbitting the previous page form (how many? page)
+
+
+Important: class 'hmlr-hide-when-no-js' is on the lock-select-all checkbox
+
+
+
+In code (any server-side language): Use the escape sequence \t in the string - this creates an actual tab character. In our HTML source (if writing by hand) we'd  press the actual Tab key on your keyboard. Literal Tabs are not just white space - the excel will need them. (Copy a character and check its ASCII/Unicode value - tab is decimal 9 or hex 0x09).
+
+
+
