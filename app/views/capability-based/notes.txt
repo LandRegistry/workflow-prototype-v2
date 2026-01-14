@@ -37,6 +37,8 @@ If/when the user uses the breadcrumb or back button to return to the retrieved t
 Important: class 'hmlr-hide-when-no-js' is on the lock-select-all checkbox
 
 
+BIZ RULE: regarding Expedites ... we might want to flip the logic used on the Worklist page. ie, prioritise non-expedite cases first and only picking up on expedites as a last resort. OR ignore all expedited cases?
+
 
 In code (any server-side language): Use the escape sequence \t in the string - this creates an actual tab character. In our HTML source (if writing by hand) we'd  press the actual Tab key on your keyboard. Literal Tabs are not just white space - the excel will need them. (Copy a character and check its ASCII/Unicode value - tab is decimal 9 or hex 0x09).
 

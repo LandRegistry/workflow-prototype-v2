@@ -47,10 +47,12 @@ Select a category of work by all categories
 
   .hmlr-lock-select-all .govuk-checkboxes__item {
     float: right;
-    margin-right: -15px;
+    min-width: 4rem;
   }
   .hmlr-lock-select-all .govuk-checkboxes__item label {
     white-space: nowrap;
+    min-width: inherit;
+    padding-right: 0;
   }
 </style>
 
@@ -70,7 +72,7 @@ Select a category of work by all categories
         </p> 
 
         <p class="govuk-body" id="lock-select-txt">
-          Locked cases are locked for 3 working days. This allows time for a colleague to xxxx the case.
+          Locking a case locks it for [X] working days. 
         </p>          
 
       </div>
@@ -79,12 +81,20 @@ Select a category of work by all categories
 
         <div class="govuk-checkboxes govuk-checkboxes--small hmlr-lock-select-all hmlr-hide-when-no-js" data-module="govuk-checkboxes">
           <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="lock-select-all" name="lock-select-all" type="checkbox" value="lock-select-all" aria-describedby="lock-select-txt">
-            <label class="govuk-label govuk-checkboxes__label govuk-!-font-size-16 govuk-!-text-align-right " for="lock-select-all">
-              Lock and select all
+            <input class="govuk-checkboxes__input" id="lock-all" name="lock-all" type="checkbox" value="lock-all" aria-describedby="lock-txt">
+            <label class="govuk-label govuk-checkboxes__label govuk-!-font-size-16 govuk-!-text-align-right " for="lock-all">
+              Lock all
             </label>
           </div>
         </div>
+        <div class="govuk-checkboxes govuk-checkboxes--small hmlr-lock-select-all hmlr-hide-when-no-js" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="select-all" name="select-all" type="checkbox" value="select-all" aria-describedby="lock-select-txt">
+            <label class="govuk-label govuk-checkboxes__label govuk-!-font-size-16 govuk-!-text-align-right " for="select-all">
+              Select all
+            </label>
+          </div>
+        </div>        
 
       </div>
 
@@ -169,7 +179,7 @@ Select a category of work by all categories
       
         <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
           <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="select-K275GXW" name="lock" type="checkbox" value="K275GXW-select">
+            <input class="govuk-checkboxes__input" id="select-K275GXW" name="select" type="checkbox" value="K275GXW-select">
             <label class="govuk-label govuk-checkboxes__label" for="select-K275GXW">
               Select <span class="govuk-visually-hidden">K275GXW</span>
             </label>
@@ -201,10 +211,6 @@ Select a category of work by all categories
                   
           </span>
           DU165333
-          
-            <strong class="govuk-tag-expedite govuk-tag">
-            Expedite
-            </strong>
           
       </td>
 
@@ -242,7 +248,7 @@ Select a category of work by all categories
 
         <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
           <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="select-Z375GXW" name="lock" type="checkbox" value="Z375GXW-select">
+            <input class="govuk-checkboxes__input" id="select-Z375GXW" name="select" type="checkbox" value="Z375GXW-select">
             <label class="govuk-label govuk-checkboxes__label" for="select-Z375GXW">
               Select <span class="govuk-visually-hidden">Z375GXW</span>
             </label>
@@ -279,10 +285,6 @@ Select a category of work by all categories
                 
         </span>
         DU164332
-        
-          <strong class="govuk-tag-expedite govuk-tag">
-          Expedite
-          </strong>
         
     </td>
 
@@ -321,7 +323,7 @@ Select a category of work by all categories
 
             <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="select-Z375UIP" name="lock" type="checkbox" value="Z375UIP-select">
+                <input class="govuk-checkboxes__input" id="select-Z375UIP" name="select" type="checkbox" value="Z375UIP-select">
                 <label class="govuk-label govuk-checkboxes__label" for="select-Z375UIP">
                   Select <span class="govuk-visually-hidden">Z375UIP</span>
                 </label>
@@ -450,7 +452,7 @@ Select a category of work by all categories
 
         <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
           <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="select-W853BXW" name="lock" type="checkbox" value="W853BXW-select">
+            <input class="govuk-checkboxes__input" id="select-W853BXW" name="select" type="checkbox" value="W853BXW-select">
             <label class="govuk-label govuk-checkboxes__label" for="select-W853BXW">
               Select <span class="govuk-visually-hidden">W853BXW</span>
             </label>
@@ -516,7 +518,7 @@ Select a category of work by all categories
 
         <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
           <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="select-E462FXW" name="lock" type="checkbox" value="E462FXW-select">
+            <input class="govuk-checkboxes__input" id="select-E462FXW" name="select" type="checkbox" value="E462FXW-select">
             <label class="govuk-label govuk-checkboxes__label" for="select-E462FXW">
               Select <span class="govuk-visually-hidden">E462FXW</span>
             </label>
@@ -581,7 +583,7 @@ Select a category of work by all categories
 
         <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
           <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="select-G462FXW" name="lock" type="checkbox" value="G462FXW-select">
+            <input class="govuk-checkboxes__input" id="select-G462FXW" name="select" type="checkbox" value="G462FXW-select">
             <label class="govuk-label govuk-checkboxes__label" for="select-G462FXW">
               Select <span class="govuk-visually-hidden">G462FXW</span>
             </label>
@@ -607,13 +609,28 @@ Select a category of work by all categories
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById('lock-select-all').addEventListener('change', function() {
-    const checkboxes = document.querySelectorAll('#retrieve-table input[type="checkbox"]');
-    
-    checkboxes.forEach(function(checkbox) {
-      checkbox.checked = this.checked;
-    }.bind(this));
-  });
+  
+  const tbl = document.getElementById('retrieve-table'); 
+
+  if(tbl){
+    document.getElementById('lock-all').addEventListener('change', function() {
+      const checkbox1 = tbl.querySelectorAll('input[name="lock"]');
+      checkbox1.forEach(function(checkbox1) {
+        checkbox1.checked = this.checked;
+      }.bind(this));
+    });
+
+    document.getElementById('select-all').addEventListener('change', function() {
+      const checkbox2 = tbl.querySelectorAll('input[name="select"]');
+      checkbox2.forEach(function(checkbox2) {
+        checkbox2.checked = this.checked;
+      }.bind(this));
+    });    
+  }
+
+  
+
+
 });
 </script>
 

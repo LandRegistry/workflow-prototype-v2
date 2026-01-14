@@ -57,19 +57,19 @@ Select a category of work by all categories
                 checked
                 {% endif %}>
                 <label class="govuk-label govuk-radios__label" for="qty-case">
-                  Retrieve a case 
+                  1 case 
                 </label>
               </div>
 
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="qty-case-2" name="qty-case" type="radio" value="25" {% if (data['qty-case'] == '25') %}
+                <input class="govuk-radios__input" id="qty-case-2" name="qty-case" type="radio" value="all" {% if (data['qty-case'] == '25') %}
                 checked
                 {% endif %}>
                 <label class="govuk-label govuk-radios__label" for="qty-case-2">
-                  Retrieve 25 cases 
+                  All cases 
                 </label>
               </div>     
-              
+<!-- Retrieve -->              
               <div class="govuk-radios__divider">or</div>
 
               <div class="govuk-radios__item">
@@ -78,7 +78,7 @@ Select a category of work by all categories
                 {% endif %}>
                 <label class="govuk-label govuk-radios__label" for="var-case">
                   <!-- Enter how many cases -->
-                   Retrieve a custom number of cases
+                   A custom number of cases
                 </label>
               </div>
 
