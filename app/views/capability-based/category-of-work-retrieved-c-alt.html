@@ -54,23 +54,6 @@ Select a category of work by all categories
     min-width: inherit;
     padding-right: 0;
   }
-
-  table.hmlr-equal-widths {
-    table-layout: fixed;
-    width: 100%;
-  }
-
-  .hmlr-hide-checkbox-labels .govuk-checkboxes__label {
-    text-indent: -3000px; 
-    padding: 0; 
-    width: 0; 
-    position: absolute; 
-  }
-
-  .hmlr-hide-checkbox-labels .govuk-checkboxes__item {
-    padding-left: 56px; 
-  }
-
 </style>
 
 <div class="govuk-grid-row">
@@ -86,17 +69,28 @@ Select a category of work by all categories
 
         <p class="govuk-body">
           33 cases were retrieved. Select which cases you want to use.
-        </p>         
+        </p> 
+
+        <p class="govuk-body" id="lock-select-txt">
+          Locking a case locks it for [X] working days. 
+        </p>          
 
       </div>
 
       <div class="govuk-grid-column-one-third hmlr-equal-height-columns__content-bottom">
 
-        
+        <div class="govuk-checkboxes govuk-checkboxes--small hmlr-lock-select-all hmlr-hide-when-no-js" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="lock-all" name="lock-all" type="checkbox" value="lock-all" aria-describedby="lock-txt">
+            <label class="govuk-label govuk-checkboxes__label govuk-!-font-size-16 govuk-!-text-align-right " for="lock-all">
+              Lock all
+            </label>
+          </div>
+        </div>
         <div class="govuk-checkboxes govuk-checkboxes--small hmlr-lock-select-all hmlr-hide-when-no-js" data-module="govuk-checkboxes">
           <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="select-all" name="select-all" type="checkbox" value="select-all" aria-describedby="lock-select-txt">
-            <label class="govuk-label govuk-checkboxes__label govuk-!-text-align-right " for="select-all">
+            <label class="govuk-label govuk-checkboxes__label govuk-!-font-size-16 govuk-!-text-align-right " for="select-all">
               Select all
             </label>
           </div>
@@ -108,7 +102,7 @@ Select a category of work by all categories
 
     <form action="category-of-work-create-list-c" novalidate>
 
-      <table id="retrieve-table" class="govuk-table worklist__table hmlr-equal-widths hmlr-hide-checkbox-labels govuk-!-margin-top-6">
+      <table id="retrieve-table" class="govuk-table worklist__table govuk-!-margin-top-6">
 
         <caption class="govuk-table__caption govuk-table__caption--m govuk-visually-hidden">The retrieved cases</caption>
           <thead class="govuk-table__head">
@@ -117,7 +111,8 @@ Select a category of work by all categories
                 <th class="govuk-table__header" id="tbl_title_numbers" scope="col">Title number</th>
                 <th class="govuk-table__header" id="tbl_abrs" scope="col"><abbr>ABR</abbr></th>
                 <th class="govuk-table__header" id="tbl_categories" scope="col">Category</th>
-                <th class="govuk-table__header govuk-!-padding-left-7" id="tbl_select" scope="col">Select</th>
+                <th class="govuk-table__header" id="tbl_lock" scope="col">Lock</th>
+                <th class="govuk-table__header" id="tbl_select" scope="col">Select</th>
               </tr>
           </thead>
 
@@ -160,13 +155,33 @@ Select a category of work by all categories
           
           Volume Change of Ownership
       </td>
+
+
+              
+      <td class="case__date" id="K275GXW_dobtained" headers="tbl_lock">
+          
+        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+              
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="lock-K275GXW" name="lock" type="checkbox" value="K275GXW-lock">
+            <label class="govuk-label govuk-checkboxes__label" for="lock-K275GXW">
+              Lock <span class="govuk-visually-hidden">K275GXW</span>
+            </label>
+          </div>
+          <!--span class="govuk-!-display-inline-block govuk-hint govuk-!-font-size-16">
+            For 5 working days
+          </span-->
+
+        </div>
+          
+      </td>
       <td id="K275GXW_select" class="case__next-action" headers="tbl_select">
       
         <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
           <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="select-K275GXW" name="select" type="checkbox" value="K275GXW-select">
             <label class="govuk-label govuk-checkboxes__label" for="select-K275GXW">
-              Select K275GXW
+              Select <span class="govuk-visually-hidden">K275GXW</span>
             </label>
           </div>
         </div>      
@@ -211,6 +226,23 @@ Select a category of work by all categories
           
           
           Volume Change of Ownership
+      </td>
+
+
+              
+      <td class="case__date" id="Z375GXW_dobtained" headers="tbl_lock">
+          
+        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+              
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="lock-Z375GXW" name="lock" type="checkbox" value="Z375GXW-lock">
+            <label class="govuk-label govuk-checkboxes__label" for="lock-Z375GXW">
+              Lock <span class="govuk-visually-hidden">Z375GXW</span>
+            </label>
+          </div>
+
+        </div>
+          
       </td>
       <td id="Z375GXW_select" class="case__next-action" headers="tbl_select">
 
@@ -272,6 +304,21 @@ Select a category of work by all categories
               
               Volume Change of Ownership
           </td>
+            
+          <td class="case__date" id="Z375UIP_dobtained" headers="tbl_lock">
+              
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+              
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="lock-Z375UIP" name="lock" type="checkbox" value="Z375UIP-lock">
+                <label class="govuk-label govuk-checkboxes__label" for="lock-Z375UIP">
+                  Lock <span class="govuk-visually-hidden">Z375UIP</span>
+                </label>
+              </div>
+
+            </div>
+              
+          </td>
           <td id="Z375UIP_select" class="case__next-action" headers="tbl_select">
 
             <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -323,6 +370,19 @@ Select a category of work by all categories
       Volume Change of Ownership
   </td>
 
+
+          
+  <td class="case__date" id="Y375GXW_dobtained" headers="tbl_lock">
+      
+    &nbsp;
+      
+  </td>
+
+
+          
+      
+      
+      
         <td id="Y375GXW_select" class="case__next-action" headers="tbl_select">
           &nbsp;
         </td>
@@ -370,6 +430,23 @@ Select a category of work by all categories
           
           
           Volume Change of Ownership
+      </td>
+
+
+              
+      <td class="case__date" id="W853BXW_dobtained" headers="tbl_lock">
+          
+        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+              
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="lock-W853BXW" name="lock" type="checkbox" value="W853BXW-lock">
+            <label class="govuk-label govuk-checkboxes__label" for="lock-W853BXW">
+              Lock <span class="govuk-visually-hidden">W853BXW</span>
+            </label>
+          </div>
+
+        </div>
+          
       </td>
       <td id="W853BXW_select" class="case__next-action" headers="tbl_select">
 
@@ -420,6 +497,23 @@ Select a category of work by all categories
           
           Volume Change of Ownership
       </td>
+
+
+              
+      <td class="case__date" id="E462FXW_dobtained" headers="tbl_lock">
+          
+        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+              
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="lock-E462FXW" name="lock" type="checkbox" value="E462FXW-lock">
+            <label class="govuk-label govuk-checkboxes__label" for="lock-E462FXW">
+              Lock <span class="govuk-visually-hidden">E462FXW</span>
+            </label>
+          </div>
+
+        </div>
+          
+      </td>
       <td id="E462FXW_select" class="case__next-action" headers="tbl_select">
 
         <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -468,6 +562,23 @@ Select a category of work by all categories
           
           Volume Change of Ownership
       </td>
+
+
+              
+      <td class="case__date" id="G462FXW_dobtained" headers="tbl_lock">
+          
+        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+              
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="lock-G462FXW" name="lock" type="checkbox" value="G462FXW-lock">
+            <label class="govuk-label govuk-checkboxes__label" for="lock-G462FXW">
+              Lock <span class="govuk-visually-hidden">G462FXW</span>
+            </label>
+          </div>
+
+        </div>
+          
+      </td>
       <td id="G462FXW_select" class="case__next-action" headers="tbl_select">
 
         <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -487,25 +598,6 @@ Select a category of work by all categories
       </tbody>
       </table>
 
-      <div class="govuk-form-group">
-
-        <div class="govuk-checkboxes govuk-checkboxes--small">
-          <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="lock-all" name="lock-all" type="checkbox" value="lock-all" aria-describedby="lock-hint">
-
-            <label class="govuk-label govuk-checkboxes__label" for="lock-all">
-              Lock all selected cases
-            </label>
-
-            <div id="lock-hint" class="govuk-hint govuk-checkboxes__hint govuk-!-font-size-16">
-              These will be locked for [X] working days. 
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-
       <button type="submit" class="govuk-button" data-module="govuk-button">
         Create your list of retrieved cases
       </button>
@@ -521,13 +613,23 @@ document.addEventListener('DOMContentLoaded', function() {
   const tbl = document.getElementById('retrieve-table'); 
 
   if(tbl){
+    document.getElementById('lock-all').addEventListener('change', function() {
+      const checkbox1 = tbl.querySelectorAll('input[name="lock"]');
+      checkbox1.forEach(function(checkbox1) {
+        checkbox1.checked = this.checked;
+      }.bind(this));
+    });
+
     document.getElementById('select-all').addEventListener('change', function() {
-      const checkbox = tbl.querySelectorAll('input[name="select"]');
-      checkbox.forEach(function(checkbox) {
-        checkbox.checked = this.checked;
+      const checkbox2 = tbl.querySelectorAll('input[name="select"]');
+      checkbox2.forEach(function(checkbox2) {
+        checkbox2.checked = this.checked;
       }.bind(this));
     });    
   }
+
+  
+
 
 });
 </script>

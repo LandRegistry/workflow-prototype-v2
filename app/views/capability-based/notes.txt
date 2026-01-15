@@ -42,5 +42,5 @@ BIZ RULE: regarding Expedites ... we might want to flip the logic used on the Wo
 
 In code (any server-side language): Use the escape sequence \t in the string - this creates an actual tab character. In our HTML source (if writing by hand) we'd  press the actual Tab key on your keyboard. Literal Tabs are not just white space - the excel will need them. (Copy a character and check its ASCII/Unicode value - tab is decimal 9 or hex 0x09).
 
-
+Note the padding left added to the 'Select' header in the table
 
