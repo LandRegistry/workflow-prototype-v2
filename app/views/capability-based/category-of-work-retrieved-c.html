@@ -71,6 +71,20 @@ Select a category of work by all categories
     padding-left: 56px; 
   }
 
+  .hmlr-first-col-numbers {
+    
+  }
+
+  .hmlr-first-col-numbers thead tr th:first-child {
+    overflow: hidden;
+    width: 1rem; 
+  }
+  .hmlr-first-col-numbers thead tr th:first-child span {
+    position: absolute; 
+    left: -3000px; 
+    top: -3000px;
+  }  
+
 </style>
 
 <div class="govuk-grid-row">
@@ -85,7 +99,7 @@ Select a category of work by all categories
       <div class="govuk-grid-column-two-thirds">
 
         <p class="govuk-body">
-          33 cases were retrieved. Select which cases you want to use.
+          6 cases were retrieved. Select which cases you want to use.
         </p>         
 
       </div>
@@ -108,11 +122,12 @@ Select a category of work by all categories
 
     <form action="category-of-work-create-list-c" novalidate>
 
-      <table id="retrieve-table" class="govuk-table worklist__table hmlr-equal-widths hmlr-hide-checkbox-labels govuk-!-margin-top-6">
+      <table id="retrieve-table" class="govuk-table worklist__table hmlr-equal-widths hmlr-hide-checkbox-labels hmlr-first-col-numbers govuk-!-margin-top-6">
 
         <caption class="govuk-table__caption govuk-table__caption--m govuk-visually-hidden">The retrieved cases</caption>
           <thead class="govuk-table__head">
               <tr class="govuk-table__row worklist-black-border">
+                <th class="govuk-table__header" id="tbl_row_no" scope="col"><span>Row number</span></th>
                 <th class="govuk-table__header" id="tbl_priority_dates" scope="col">Priority date</th>
                 <th class="govuk-table__header" id="tbl_title_numbers" scope="col">Title number</th>
                 <th class="govuk-table__header" id="tbl_abrs" scope="col"><abbr>ABR</abbr></th>
@@ -125,10 +140,13 @@ Select a category of work by all categories
               
       <tbody data-case-ref="K275GXW" class="case case--parent">
           <tr id="row_35527" class="govuk-table__row case__data_row">
+            <td class="case__date" id="K275GXW_row_number" headers="tbl_row_no">
+              1
+            </td>
             <td class="case__date" id="K275GXW_priority_date" headers="tbl_priority_dates">
           
             
-            21 October 2025
+            8 February 2025
             
           
       </td>
@@ -181,10 +199,13 @@ Select a category of work by all categories
       </tbody>
       <tbody data-case-ref="Z375GXW" class="case case--parent ">
           <tr id="row_35537" class="govuk-table__row case__data_row">
+            <td class="case__date" id="Z375GXW_row_number" headers="tbl_row_no">
+              2
+            </td>
             <td class="case__date" id="Z375GXW_priority_date" headers="tbl_priority_dates">
           
             
-            21 October 2025
+              16 June 2025
             
           
       </td>
@@ -195,7 +216,7 @@ Select a category of work by all categories
           <span class="case__inc">
                   
           </span>
-          DU165333
+          DU165389
           
       </td>
 
@@ -234,14 +255,16 @@ Select a category of work by all categories
 
 
 
-      <tbody data-case-ref="Z375UIP" class="case case--parent ">
+      <tbody data-case-ref="Z375UIP" class="case">
         <tr id="row_35537" class="govuk-table__row case__data_row ">
-
+          <td class="case__date" id="Z375UIP_row_number" headers="tbl_row_no">
+            3
+          </td>
             
     <td class="case__date" id="Z375UIP_priority_date" headers="tbl_priority_dates">
         
           
-          19 October 2025
+      3 July 2025
           
         
     </td>
@@ -288,8 +311,11 @@ Select a category of work by all categories
         </tr>
         
     </tbody>
-    <tbody data-case-ref="Y375GXW" class="case  hmlr-wf-!-display-none--if-js hmlr-wf-attached-tbody-Z375UIP" data-parent="Z375UIP">
+    <tbody class="case" data-parent="Z375UIP">
       <tr id="row_35538" class="govuk-table__row case__data_row ">
+        <td class="case__date" id="Y375GXW_row_number" headers="tbl_row_no">
+          &nbsp;
+        </td>
 
           
   <td class="case__date">
@@ -337,10 +363,13 @@ Select a category of work by all categories
 
       <tbody data-case-ref="W853BXW" class="case  ">
           <tr id="row_17094" class="govuk-table__row case__data_row">
+            <td class="case__date" id="W853BXW_row_number" headers="tbl_row_no">
+              4
+            </td>
             <td class="case__date" id="W853BXW_priority_date" headers="tbl_priority_dates">
           
             
-            14 February 2025
+              22 August 2025 
             
           
       </td>
@@ -391,9 +420,12 @@ Select a category of work by all categories
                   
       <tbody data-case-ref="E462FXW" class="case  hmlr-wf-!-display-none--if-js hmlr-wf-attached-tbody-F462FXW">
           <tr id="row_30418" class="govuk-table__row case__data_row">
+            <td class="case__date" id="E462FXW_row_number" headers="tbl_row_no">
+              5
+            </td>            
             <td class="case__date">
 
-              12 February 2025
+              10 October 2025
           
       </td>
 
@@ -441,8 +473,11 @@ Select a category of work by all categories
                   
       <tbody data-case-ref="G462FXW" class="case  hmlr-wf-!-display-none--if-js hmlr-wf-attached-tbody-H462FXW">
           <tr id="row_30420" class="govuk-table__row case__data_row">
+            <td class="case__date" id="G462FXW_row_number" headers="tbl_row_no">
+              6
+            </td>             
             <td class="case__date">
-          8 February 2025
+              22 December 2025 
       </td>
 
 
