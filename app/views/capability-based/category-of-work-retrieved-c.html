@@ -85,6 +85,11 @@ Select a category of work by all categories
     top: -3000px;
   }  
 
+  .hmlr-width-100pc, 
+  .hmlr-width-100pc .govuk-checkboxes__item, 
+  .hmlr-width-100pc .govuk-radios__item {
+    width: 100% !important;
+  }
 </style>
 
 <div class="govuk-grid-row">
@@ -524,7 +529,7 @@ Select a category of work by all categories
 
       <div class="govuk-form-group">
 
-        <div class="govuk-checkboxes govuk-checkboxes--small">
+        <div class="govuk-checkboxes govuk-checkboxes--small hmlr-width-100pc">
           <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="lock-all" name="lock-all" type="checkbox" value="lock-all" aria-describedby="lock-hint">
 
@@ -542,7 +547,7 @@ Select a category of work by all categories
       </div>
 
       <button type="submit" class="govuk-button" data-module="govuk-button">
-        Create your list of retrieved cases
+        Create my list of retrieved cases
       </button>
 
     </form>
