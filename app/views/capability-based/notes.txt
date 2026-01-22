@@ -44,3 +44,6 @@ In code (any server-side language): Use the escape sequence \t in the string - t
 
 Note the padding left added to the 'Select' header in the table
 
+----
+
+Expedites are prioritised as usual and shown at the top but oldest first: then followed by non-expedites shown in oldest first and newestest last.
