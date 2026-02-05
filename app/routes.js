@@ -15,68 +15,25 @@ router.get('/index', function (req, res) {
 })
 
 // Handle password submission
-router.post('/index', function (req, res) {
+router.post(['/', '/index'], function (req, res) {
   const password = req.body.password
   
-  if (password === 'workf1ow') {//<<<<<<<<<< THE PASSWORD <<<<<<<<<<<
-    
-    // Password correct - set cookie for 3 years
+  if (password === 'workf1ow') {//<<<<<<< THE PASSWORD
     res.cookie('authenticated', 'true', {
       maxAge: 1000 * 60 * 60 * 24 * 365 * 3
     })
     res.render('index', { authenticated: true })
-
   } else {
-
-    // Password incorrect - show error
     res.render('index', { error: true, authenticated: false })
-
   }
 })
 
-//to delete the cookie, uncomment this code (the 2 forward slashes), and visit http://localhost:3000/delete-cookie (then recomment it)
-//router.get('/delete-cookie', function (req, res) {
-  //res.clearCookie('authenticated')
-  //res.redirect('/index')
-//})
-
-/*
-// Show password page or protected content
-router.get('/password', function (req, res) {
-  // Check if user has valid authentication cookie
-  const authenticated = req.cookies.authenticated === 'true'
-  
-  res.render('password', {
-    authenticated: authenticated
-  })
+//to delete the cookie, visit localhost:3000/delete-cookie 
+router.get('/delete-cookie', function (req, res) {
+  res.clearCookie('authenticated')
+  res.redirect('/index')
 })
 
-// Handle homepage password 
-router.post('/password', function (req, res) {
-  const password = req.body.password
-  
-  switch (password) {
-    case 'workf1ow': //<<<<<<<<<<<<<< THIS IS THE PASSWORD
-      // Password correct - set cookie for 3 years
-      res.cookie('authenticated', 'true', {
-        //maxAge: 1000 * 60 * 60 * 24 * 365 * 3, // 3 years in milliseconds
-        httpOnly: true
-      })
-      res.render('password', {
-        authenticated: true
-      })
-      break
-    
-    default:
-      // Password incorrect - show error
-      res.render('password', {
-        error: true,
-        authenticated: false
-      })
-      break
-  }
-})
-*/
 
 // ***********************************************
 // Flow routes
