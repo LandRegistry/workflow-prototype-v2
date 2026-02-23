@@ -7,8 +7,11 @@
         
   <ol class="govuk-breadcrumbs__list">
       <li class="govuk-breadcrumbs__list-item">
-          <a class="govuk-breadcrumbs__link" href="#">Home</a>
+          <a class="govuk-breadcrumbs__link" href="landing4">Home</a>
       </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="select-a-category-by-sub-cat-form-f">Target cases using sub-categories</a>
+    </li>      
       <li class="govuk-breadcrumbs__list-item">
         My Worklist
       </li>
@@ -18,6 +21,19 @@
 {% endblock %}
 
 {% block content %}
+
+
+  <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+    <div class="govuk-notification-banner__header">
+      <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+        Success
+      </h2>
+    </div>
+    <div class="govuk-notification-banner__content">
+      <h3 class="govuk-notification-banner__heading">You are targeting cases using sub-category <abbr>AN</abbr>1.</h3>
+    </div>
+  </div>
+
 
 
 
@@ -37,22 +53,21 @@
       </h1>
       
   
-  
-      <p class="govuk-body">
-        
-        Your category of work is <span class="bold">Executive Register Update Complex</span>.
-        
-        <a href="#" class="govuk-link govuk-link--no-visited-state">Change your category of work</a>.
-      </p>
-  
+      <!-- XXXXXXXXXXXXXXXXXXXXX contextual link text below XXXXXXXXXXXXXXXXXXXXXX -->
+        <p class="govuk-body">
+          You are targeting cases using sub-category <span class="bold"><abbr>AN</abbr>1</span>.
 
-      <style>
-
-      </style>
+          {% if (data['sub-cat-f'] != null) %}
+            <a href="#" class="govuk-link govuk-link--no-visited-state">Select a category of work</a>.
+          {% else %}
+            <a href="#" class="govuk-link govuk-link--no-visited-state">Change your category of work</a>.
+          {% endif %}
+        </p>
 
 
 
-          <form action="/expedites/message" method="post" novalidate>
+
+          <form action="#" method="post" novalidate>
 
             <div class="hmlr-form-grouping govuk-!-display-inline-block govuk-!-margin-bottom-3 govuk-!-padding-top-2 govuk-!-padding-right-3">
 
@@ -86,39 +101,20 @@
                 </fieldset>
 
               </div>
-
-              <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-top-2 govuk-!-margin-bottom-2">
-
-              <div class="govuk-form-group govuk-!-margin-bottom-0">
-
-                <div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios">
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="sub-cat-1" name="sub-cat" type="radio" value="expedited-oldest">
-                    <label class="govuk-label govuk-radios__label govuk-!-font-size-16" for="sub-cat-1">
-                      <abbr>AN</abbr>1
-                    </label>
-                  </div>
-                </div>
-
-                <!-- ***** WE MUST ENSURE THE PADDING ON THE BUTTONS IS THE SAME AS THESE DESIGNS ***** -->
               
-              </div>
-
               <div>
                 <input name="csrf_token" type="hidden" value="IjI2YzBiY2QwNzJiZjE0M2M3MDMxZGQ1M2UyMTBkMDNhMWE3YTdiZmYi.ZddyBQ.PDWdSpYFF66m1bvmIBfGNnQ9gwY">
                 <input type="submit" id="button_obtain" value="Obtain" class="govuk-button button-large govuk-!-margin-top-2" 
                 data-double-click-prevention="true">   
-              </div>              
+              </div>
 
+              <!-- ***** WE MUST ENSURE THE PADDING ON THE BUTTONS IS THE SAME AS THESE DESIGNS ***** -->
+ 
             </div>  
 
             
           </form>
       
-  
-  
-    
-
     
 </div>
 

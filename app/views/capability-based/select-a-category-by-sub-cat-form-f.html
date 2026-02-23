@@ -1,0 +1,106 @@
+{% extends "layouts/wf_layout.html" %}
+
+{% set pageName="Select a category of work by all categories" %}
+
+{% block pageTitle %}
+Select a category of work by all categories
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="landing6.html">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+          Target cases using sub-categories
+      </li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+<style>
+  @media (min-width: 40.0625em) {/* from desktop */
+    .hmlr-checkboxes-2-col {
+      width: 80%; 
+      display: flex; 
+      flex-wrap: wrap;
+    }                
+    .hmlr-checkboxes-2-col .govuk-checkboxes__item {
+      width: 50%; 
+      box-sizing: border-box; 
+    }
+    /* use sass constants in prod */
+    /*.hmlr-checkboxes-2-col .govuk-checkboxes__item label {
+      font-size: 16px !important;
+      font-size: 1rem !important;
+      line-height: 1.25 !important;
+    }*/
+  }
+  .hmlr-checkboxes-2-col {
+    background-color: #f3f2f1;
+    padding: 0 5px 0 10px;
+  }
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <form action="#" method="post" novalidate>
+
+      <div class="govuk-form-group">
+
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-margin-bottom-6">
+            <h1 class="govuk-fieldset__heading">
+              Target cases using sub-categories
+            </h1>
+          </legend>
+
+          <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="cat-01" name="sub-cat-f" type="radio" value="cat-1">
+              <label class="govuk-label govuk-radios__label" for="cat-01">
+                  <abbr>AN</abbr>1
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="cat-02" name="sub-cat-f" type="radio" value="cat-2">
+              <label class="govuk-label govuk-radios__label" for="cat-02">
+                  Overseas tempore sed quidem
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="cat-03" name="sub-cat-f" type="radio" value="cat-3">
+              <label class="govuk-label govuk-radios__label" for="cat-03">
+                  Lorem ipsum dolor sit amet 
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="cat-04" name="sub-cat-f" type="radio" value="cat-4">
+              <label class="govuk-label govuk-radios__label" for="cat-04">
+                  Eligendi praesentium tempore officiis
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="cat-05" name="sub-cat-f" type="radio" value="cat-5">
+              <label class="govuk-label govuk-radios__label" for="cat-05">
+                  Natus veniam assumenda error at quasi
+              </label>
+            </div>
+          </div>
+        </fieldset>
+
+      </div>
+
+      <button value="y" type="submit" name="save" class="govuk-button" id="save">
+        Select
+      </button>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

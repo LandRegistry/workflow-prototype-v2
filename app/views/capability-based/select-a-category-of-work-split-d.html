@@ -1,0 +1,78 @@
+{% extends "layouts/wf_layout.html" %}
+
+{% set pageName="Select a category of work" %}
+
+{% block pageTitle %}
+Select a category of work
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="landing4.html">Home</a>
+      </li>
+      
+      <li class="govuk-breadcrumbs__list-item">
+          Select a category
+      </li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="#" method="post" novalidate>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-margin-bottom-6">
+            <h1 class="govuk-fieldset__heading">
+              Select a category <!--of work-->
+            </h1>
+          </legend>
+
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="category-std-d" name="category-d" type="radio" value="category-std-d" {% if (data['category'] == 'category-std-d') %}
+              checked
+              {% endif %}>
+              <label class="govuk-label govuk-radios__label" for="category-std-d">
+                By a category of work 
+              </label>
+              <div id="category-std-d-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16">
+                For example, Application Processing Volume
+              </div>
+            </div>
+
+            <div class="govuk-radios__divider govuk-!-margin-bottom-4">or</div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="sub-category-d" name="category-d" type="radio" value="sub-category-d" {% if (data['category'] == 'sub-category-d') %}
+              checked
+              {% endif %}>
+              <label class="govuk-label govuk-radios__label" for="sub-category-d">
+                By a sub-category
+              </label>
+              <div id="sub-category-d-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16">
+                For example, <abbr>AN</abbr>1
+              </div>              
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <button value="y" type="submit" name="save" class="govuk-button" id="save">
+        Select
+      </button>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
