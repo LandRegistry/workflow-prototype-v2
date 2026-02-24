@@ -1,0 +1,145 @@
+{% extends "layouts/wf_layout.html" %}
+
+{% set pageName="Volume" %}
+
+{% block pageTitle %}
+Volume
+{% endblock %}
+
+{% block beforeContent %}
+<!--div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="#">Home</a>
+      </li>
+      
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="category-of-work-pt1.html">Select a category of work</a>
+      </li>
+
+      <li class="govuk-breadcrumbs__list-item">
+        Volume
+    </li>      
+  </ol>
+</div-->
+<a href="select-a-category-of-work-g.html" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+<style>
+  @media (min-width: 40.0625em) {/* from desktop */
+
+  }
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <form action="#" method="post" novalidate>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-margin-bottom-6">
+                        
+            <span class="govuk-caption-m">Select a category of work<span class="govuk-visually-hidden">: </span></span>
+            
+            <h1 class="govuk-fieldset__heading">
+              Volume 
+            </h1>
+            
+          </legend>
+
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="categoryVolume" name="cat-volume" type="radio" value="changeOfOwnership">
+              <label class="govuk-label govuk-radios__label" for="categoryVolume">
+                Volume Change of Ownership (VCO)
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="categoryVolume-2" name="cat-volume" type="radio" value="registerUpdate">
+              <label class="govuk-label govuk-radios__label" for="categoryVolume-2">
+                Volume Register Update (VRU)
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="categoryVolume-3" name="cat-volume" type="radio" value="updateRequisition">
+              <label class="govuk-label govuk-radios__label" for="categoryVolume-3">
+                Volume Change of Ownership Actionable Deferral: Requisition (VCO ADR)
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="categoryVolume-4" name="cat-volume" type="radio" value="actionableRequisition">
+              <label class="govuk-label govuk-radios__label" for="categoryVolume-4">
+                Volume Register Update Actionable Deferral: Requisition (VRU ADR)
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="categoryVolume-5" name="cat-volume" type="radio" value="objectionNotice">
+              <label class="govuk-label govuk-radios__label" for="categoryVolume-5">
+                Volume Actionable Deferral: Objection Notice
+              </label>
+            </div> 
+            
+
+
+            <div class="govuk-radios__divider">or</div>
+
+
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="categoryVolume-6" name="cat-volume" type="radio" value="vol-sub-cats" aria-describedby="sub-cat-option-hint" data-aria-controls="conditional-contact">
+              <label class="govuk-label govuk-radios__label" for="categoryVolume-6">
+                Select a sub-category of work
+              </label>
+              <div id="sub-cat-option-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit 
+              </div>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-visually-hidden">
+                      Sub-categories
+                  </legend>
+                  <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="sub-cats-option-g" name="sub-cats-option-g" type="radio" value="an1">
+                      <label class="govuk-label govuk-radios__label" for="sub-cats-option-g">
+                        <abbr>AN</abbr>1
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="sub-cats-option-g-2" name="sub-cats-option-g" type="radio" value="consectetur">
+                      <label class="govuk-label govuk-radios__label" for="sub-cats-option-g-2">
+                        Consectetur elit
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="sub-cats-option-g-3" name="sub-cats-option-g" type="radio" value="adipisci">
+                      <label class="govuk-label govuk-radios__label" for="sub-cats-option-g-3">
+                        Adipisci dolorem
+                      </label>
+                    </div>                    
+                  </div>
+                </fieldset>
+              </div>
+            </div> 
+
+
+
+
+          </div>
+        </fieldset>
+      </div>
+
+      <button value="y" type="submit" name="save" class="govuk-button" id="save">
+        Select
+      </button>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

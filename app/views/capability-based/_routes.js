@@ -460,23 +460,50 @@ router.post('/select-a-category-by-sub-cat-form-f', function (req, res) {
 
 })
 
+//landing7 hyperlink links to ...
+router.post('/select-a-category-of-work-g', function (req, res) {
+    const userInput = req.session.data['cat-of-work'];
 
+    if (userInput != null) {//not empty
 
-//router.post('/select-a-category-of-work-d', function (req, res) {
+        if (userInput == 'volume') {
+            res.redirect("select-a-category-of-work-g-volume") 
+        } else {
+            res.redirect("select-a-category-of-work-g")//select-a-category-of-work-g-worklist 
+        } 
 
-    //const userInput = req.session.data['cat-type'];
+    } else {
+        res.redirect("select-a-category-of-work-g")
+    }
+})
 
-    //if (userInput == 'option-1') {//empty
+router.post('/select-a-category-of-work-g-volume', function (req, res) {
+    const userInput = req.session.data['cat-volume'];
+    const userInputSubs = req.session.data['sub-cats-option-g'];
 
-        //res.redirect("")
+    if (userInput == null) {//not empty
 
-    //} else {
+        res.redirect("select-a-category-of-work-g-volume")//empty - do nothing
 
-        //res.redirect("select-a-category-of-work-d-worklist")//option-2  
+    } else {
+        
+        if (userInput !== 'vol-sub-cats') {//selected from main cats
+            
+            res.redirect("select-a-category-of-work-g-worklist") 
 
-    //} 
+          } else if ((userInput === 'vol-sub-cats') && (userInputSubs == null)) {//selected subs group section but no subs selected
+            
+            res.redirect("select-a-category-of-work-g-volume")   
+            
+          } else {//selected sub cats section AND a sub cat: all good for sub-cats choice
 
-//})
+            res.redirect("select-a-category-of-work-g-worklist")  
+
+          }
+
+    }
+})
+
 
 
 module.exports = router

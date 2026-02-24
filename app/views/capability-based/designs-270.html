@@ -17,6 +17,10 @@ Select a category of work
 
     <h1 class="govuk-heading-m">Category of work: sub-categories #270</h1>
 
+    <p class="govuk-body govuk-!-font-weight-bold">
+      Do not share this link with caseworkers.
+    </p>
+
     <p class="govuk-body-s">
       All links open in a new tab.
     </p>
@@ -69,20 +73,71 @@ Select a category of work
     
     <ul class="govuk-list govuk-list--bullet govuk-list--spaced" style="margin-top: 50px;">
       <li>
-        <span class="govuk-!-font-size-16">Part contextual 'select category' list page, with sub-categories as filters on worklist page:</span> <a class="govuk-link govuk-link--no-visited-state" href="/capability-based/landing4" target="_blank">
+        <b>2d:</b> <span class="govuk-!-font-size-16">Part contextual 'select category' list page, with sub-categories as filters on worklist page:</span> <a class="govuk-link govuk-link--no-visited-state" href="/capability-based/landing4" target="_blank">
           <span class="govuk-!-font-weight-bold">2d:</span> Select category page - part contextual
         </a>  <!-- Or split them into separate pages: select-a-category-of-work-split-d -->
+
+        
+        <details class="govuk-details govuk-!-font-size-16 govuk-!-margin-top-3">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Notes about 2d
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
+              <li>Sub-cat filters on worklist page: 1 must be selected by default. (Reasons include avoiding error msgs here and unexpected results. Even if there is only one filter option, it is selected. The 'change' link is available)</li>
+              <li>Business  rules: what is the fallback if suddenly an <abbr>AN</abbr>1 is not available (having been selected), for example</li>
+              <li>Business  rules: only show filter if such cases are available</li>
+              <li>Business  rules: if no sub-categories are available we show a fallback statement. (We keep the option on the previous list page)</li>
+              <li>As like 'expedite' filters, there are no further banners</li>
+            </ul>
+          </div>
+        </details>
+
       </li>
       <li>
-        <span class="govuk-!-font-size-16">Fully contextual 'select category' list page, with <em>no</em> sub-category filters on worklist page:</span> <a class="govuk-link govuk-link--no-visited-state" href="/capability-based/landing5" target="_blank">
+        <b>2e:</b> <span class="govuk-!-font-weight-bold">Best:</span> <span class="govuk-!-font-size-16">Fully contextual 'select category' list page, with <em>no</em> sub-category filters on worklist page:</span> <a class="govuk-link govuk-link--no-visited-state" href="/capability-based/landing5" target="_blank">
           <span class="govuk-!-font-weight-bold">2e:</span> Select category page - full contextual
         </a>
       </li>
       <li>
-        <span class="govuk-!-font-size-16">Separate 'target by sub-category' panel on home page, with standalone sub-category page:</span> <a class="govuk-link govuk-link--no-visited-state" href="/capability-based/landing6" target="_blank">
+        <b>2f:</b> <span class="govuk-!-font-size-16">Separate 'target by sub-category' panel on home page, with standalone sub-category page:</span> <a class="govuk-link govuk-link--no-visited-state" href="/capability-based/landing6" target="_blank">
           <span class="govuk-!-font-weight-bold">2f:</span> Separate panel and separate sub-category form page (list)
         </a>
-      </li>      
+
+        <details class="govuk-details govuk-!-font-size-16 govuk-!-margin-top-3">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Notes about 2d
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
+              <li>An unsatisfactory consequence of this design is that the 'Select a category of work' link is inadequate in this context.</li>
+            </ul>
+          </div>
+        </details>        
+      </li>
+      <li>
+        <b>2g:</b> <span class="govuk-!-font-size-16">Separated pages for categories (which feature sub categories):</span> <a class="govuk-link govuk-link--no-visited-state" href="/capability-based/landing7" target="_blank">
+          <span class="govuk-!-font-weight-bold">2g:</span> Categories with own pages
+        </a>
+
+        <details class="govuk-details govuk-!-font-size-16 govuk-!-margin-top-3">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Notes about 2g
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
+              <li>For this prototype: follow 'Volume'</li>
+              <li>Must confirm if sub-categories are explicit to the parent category, otherwise this architecture will likely cause confusion.</li>
+            </ul>
+          </div>
+        </details>        
+      </li>            
     </ul>
 
   </div>
