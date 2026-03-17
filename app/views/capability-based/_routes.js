@@ -433,7 +433,7 @@ router.post('/category-of-work-retrieved-c', function (req, res) {
 
 /* *************************************** D ****************************************************** */
 
-//landing4 hyperlink links to ...
+//landing4x hyperlink links to ...
 router.post('/select-a-category-of-work-d', function (req, res) {
 
     res.redirect("select-a-category-of-work-d-worklist")  
@@ -447,7 +447,7 @@ router.post('/select-a-category-of-work-e', function (req, res) {
 
 })
 
-//landing6 hyperlink links to ...
+//landing6x hyperlink links to ...
 router.post('/select-a-category-by-sub-cat-form-f', function (req, res) {
 
     const userInput = req.session.data['sub-cat-f'];
@@ -460,7 +460,7 @@ router.post('/select-a-category-by-sub-cat-form-f', function (req, res) {
 
 })
 
-//landing7 hyperlink links to ...
+//landing7x hyperlink links to ...
 router.post('/select-a-category-of-work-g', function (req, res) {
     const userInput = req.session.data['cat-of-work'];
 
