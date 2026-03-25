@@ -1,0 +1,109 @@
+{% extends "layouts/wf_layout-std-new.html" %}
+
+{# set pageName="Select a category of work" #}
+
+{% block pageTitle %}
+Select a deferral reason
+{% endblock %}
+
+{% block beforeContent %}
+
+  <a href="#" class="govuk-back-link">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h1 id="my_worklist_header" class="govuk-heading-l worklist__header">
+      Feedback link: designs
+    </h1>
+
+    <p class="govuk-body-s">
+      Link added only to the worklist page.
+    </p>
+
+    <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+    
+      <li>
+        <a href="/feedback/feedback-01" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">
+          Feedback 1 - standard
+        </a>
+      </li>
+      <!--li>
+        <a href="/feedback/feedback-02" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">
+          Feedback 2 - standard
+        </a>
+      </li--> 
+      <li>
+        <a href="/feedback/feedback-02-obtain" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">
+          Feedback 2 - obtain
+        </a>
+      </li>      
+      <li>
+        <a href="/feedback/feedback-02-obtain-expedites" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">
+          Feedback 2 - obtain expedites
+        </a>
+      </li>
+      <li>
+        <a href="/feedback/feedback-02-obtained" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">
+          Feedback 2 - obtained
+        </a>
+      </li> 
+    </ul>
+    
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    <p class="govuk-body">
+      Design 3 - Preferred design(s): 
+    </p>
+
+    <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+      <li>
+        <a href="/feedback/feedback-03-obtain" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">
+          Feedback 3 - obtain
+        </a>
+      </li>      
+      <li>
+        <a href="/feedback/feedback-03-obtain-expedites" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">
+          Feedback 3 - obtain expedites
+        </a>
+      </li>
+      <li>
+        <a href="/feedback/feedback-03-obtained" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">
+          Feedback 3 - obtained
+        </a>
+      </li> 
+    </ul>
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    <p class="govuk-body-s">
+      Required <abbr>CSS</abbr>/SASS styling: (for design 3)
+    </p>
+
+    <code style="font-weight: normal;">
+      <pre>
+          .hmlr-give-your-feedback + table {
+            margin-top: 30px !important;
+          }
+          .hmlr-wf-form-grouping + .hmlr-give-your-feedback {
+            padding-top: 30px !important; 
+          }
+          .govuk-form-group + .hmlr-give-your-feedback {
+            margin-top: -10px !important; 
+            padding-top: 0 !important;
+          }          
+      </pre>
+    </code>
+
+
+
+
+
+  </div>
+</div>
+
+{% endblock %}
