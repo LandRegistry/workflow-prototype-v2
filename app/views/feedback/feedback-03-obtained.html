@@ -53,11 +53,24 @@ Select a deferral reason
         </style>
 
         <p class="govuk-body-s govuk-!-padding-top-3 hmlr-give-your-feedback">     
-          <a href="#" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">
+          <a href="https://dictionary.cambridge.org/dictionary/english/feedback" id="open-only-one-tab" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">
             Give your feedback (opens in new tab)
           </a>
           <span class="govuk-visually-hidden">.</span>
         </p> 
+
+        <script>
+          let targetTab = null;
+        
+          document.getElementById('open-only-one-tab').addEventListener('click', function(e) {
+            e.preventDefault();
+            if (!targetTab || targetTab.closed) {
+              targetTab = window.open(this.getAttribute('href'), '_blank');
+            } else {
+              targetTab.focus();
+            }
+          });
+        </script>            
         
         <table id="progress_now_table" class="govuk-table worklist__table">
 

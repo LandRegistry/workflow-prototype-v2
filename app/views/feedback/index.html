@@ -107,6 +107,28 @@ Select a deferral reason
               }          
           </pre>
         </code>
+
+        <p class="govuk-body-s">
+          Required JavaScript for progressive enhancement (for design 3). <br>
+          Add <abbr>ID</abbr> 'open-only-one-tab' to the feedback hyperlink.
+        </p>
+
+        <code style="font-weight: normal;">
+          <pre>
+            let targetTab = null;
+        
+            document.getElementById('open-only-one-tab').addEventListener('click', function(e) {
+              e.preventDefault();
+              if (!targetTab || targetTab.closed) {
+                targetTab = window.open(this.getAttribute('href'), '_blank');
+              } else {
+                targetTab.focus();
+              }
+            });
+          </pre>
+        </code>
+
+
       </div>
     </details>
 
