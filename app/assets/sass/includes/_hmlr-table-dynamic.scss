@@ -92,6 +92,26 @@ table.hmlr-table-dynamic {
 			}
 		} 
 
+
+		/* ****** start special styles for 'details' comp (Drop-outs / Returned to me rows) ****** */
+		.govuk-inset-text {
+			border-left: none !important; 
+			padding: 0 !important; 
+			padding-left: 0 !important; 
+		}
+	
+		div.govuk-inset-text.govuk-\!-font-size-16 {
+			font-size: 19px !important;
+			font-size: 1.1875rem !important;
+			line-height: 1.3157894737 !important;
+		}
+	
+		td.govuk-table__cell[class*="govuk-!-padding"] {
+			padding: 8px 0 8px 34% !important; 
+		}
+		/* ****** end special styles for 'details' comp (Drop-outs / Returned to me rows) ****** */
+	
+
 		td:before {
 			position: absolute;
 			/*top: 1.2rem;*/

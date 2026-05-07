@@ -1,0 +1,82 @@
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+
+function checkIfTblsExist() {
+  const tbl1 = document.getElementById('progress_now_table');
+  const tbl2 = document.getElementById('progress_later_table');
+  return tbl1 || tbl2;
+}
+
+//*** start open/close of notes divs/textarea ... ***
+if (checkIfTblsExist()) {
+
+  const mainContent = document.getElementById('main-content');
+  const links = mainContent.getElementsByClassName('case__my-notes');
+
+  for (var i = 0; i < links.length; i++) {
+    (function(index) {
+      const link = links[index];
+      const tbody = link.closest('tbody[data-case-ref]');
+      const caseRef = tbody ? tbody.getAttribute('data-case-ref') : null;
+      const storageKey = caseRef ? 'notes_open_' + caseRef : null;
+
+      // Restore state on load
+      if (storageKey && localStorage.getItem(storageKey) === 'true') {
+        const tdEle = link.closest('td');
+        if (tdEle) {
+          const expandableEle = tdEle.querySelector('.hmlr-table-dynamic__expand');
+          if (expandableEle) {
+            expandableEle.classList.add('hmlr-table-dynamic__expanded');
+            expandableEle.setAttribute('aria-hidden', 'false');
+            const textNode = Array.from(link.childNodes).find(n => n.nodeType === Node.TEXT_NODE);
+            if (textNode) textNode.textContent = 'Hide my notes';
+          }
+        }
+      }
+
+      // Auto-expand textarea rows to fit content on load
+      const tdEle = link.closest('td');
+      if (tdEle) {
+        const textarea = tdEle.querySelector('textarea');
+        if (textarea) {
+          const lineHeight = parseInt(window.getComputedStyle(textarea).lineHeight);
+          const paddingTop = parseInt(window.getComputedStyle(textarea).paddingTop);
+          const paddingBottom = parseInt(window.getComputedStyle(textarea).paddingBottom);
+          const defaultRows = parseInt(textarea.getAttribute('rows')) || 5;
+
+          textarea.style.height = 'auto';
+          const contentRows = Math.ceil((textarea.scrollHeight - paddingTop - paddingBottom) / lineHeight);
+
+          if (contentRows > defaultRows) {
+            textarea.setAttribute('rows', contentRows);
+          }
+          textarea.style.height = '';
+        }
+      }
+
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        const tdEle = this.closest('td');
+        if (tdEle) {
+          const expandableEle = tdEle.querySelector('.hmlr-table-dynamic__expand');
+          if (expandableEle) {
+            expandableEle.classList.toggle('hmlr-table-dynamic__expanded');
+            const isNowOpen = expandableEle.classList.contains('hmlr-table-dynamic__expanded');
+
+            expandableEle.setAttribute('aria-hidden', isNowOpen ? 'false' : 'true');
+
+            const textNode = Array.from(this.childNodes).find(n => n.nodeType === Node.TEXT_NODE);
+            if (textNode) textNode.textContent = isNowOpen ? 'Hide my notes' : 'Show my notes';
+
+            if (storageKey) localStorage.setItem(storageKey, isNowOpen);
+          }
+        }
+      });
+    })(i);
+  }
+  //end open/close of notes divs/textarea.
+}
+
+});
+    </script>
