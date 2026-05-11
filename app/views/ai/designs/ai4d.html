@@ -3,14 +3,59 @@
 {% set pageName="{{ serviceName }} Progress Later" %}
 
 {% block header %}
-  {% include "./includes/inc_top-nav-std.html" %}
+  {% include "../includes/inc_top-nav-std.html" %}
 {% endblock %}
 
 {% block content %}
 
+<style>
 
-    
+  @media (min-width: 48.0625em) {
+    .hmlr-wf .hmlr-min-height-header-sm {
+        min-height: 100px !important;
+    }
+
+    .govuk-grid-column-one-quarter nav:first-of-type {
+      margin-top: -85px !important;
+    }
+
+    .govuk-details__summary {
+      font-size: 14px !important;
+      font-size: 0.875rem !important;
+      line-height: 1.5 !important;
+    }
+
+    /*.you {
+      max-width: 590px;
+      margin-left: 97px;
+    }*/
+  }
+
+  .govuk-textarea {
+    font-size: 17px !important;
+    font-size: 1.0625rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .you {
+    background: #f3f2f1; border: 2px solid #b1b4b6; padding: 15px 15px 5px 15px; border-radius: 4px;  
+  }
+
+  .response {
+    background: #fff; border: 2px solid #b1b4b6; padding:  15px 15px 5px 15px; border-radius: 4px; margin-right: 50px;
+  }
+
+  br {display: none; }
+
+  ul {margin-bottom: 0; }
+
+  #chatMessages > div > div > strong:first-of-type {display: none;}
+
+  #chatMessages h2 ~ ul:first-of-type {margin-top: 20px; }
+</style>
+
 <div class="govuk-grid-row hmlr-min-height-header-sm">
+
   <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-3">
 
     <h1 class="govuk-heading-l govuk-!-margin-bottom-1">
@@ -21,12 +66,50 @@
       There are currently 8 cases in your Progress Later list.
     </p>
 
+    <div class="govuk-grid-column-one-third"></div>
+
   </div>
+  
+</div>
 
-  <div class="govuk-grid-column-one-third">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter">&nbsp;</div>
+  
+  <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-3">
 
-  </div>      
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          About this list
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <div id="chatContainer" class="xxxxgovuk-form-group">
 
+          <div id="chatMessages"></div>
+    
+          <div id="typingIndicator" style="display: none; color: #505a5f;" class="govuk-body-s govuk-!-padding-top-4">
+            <em>Working on a response now&hellip;</em>
+          </div>
+    
+        </div>
+    
+        <div class="govuk-form-group" style="margin-top: 30px;">
+    
+          <label class="govuk-label govuk-label--s govuk-!-font-weight-regular" for="messageInput">
+            Ask a question about this Progress Later list
+          </label>
+    
+          <textarea class="govuk-textarea" id="messageInput" name="messageInput" rows="3"></textarea>
+    
+          <button class="govuk-button" id="sendButton" style="align-self: flex-end;">
+            Submit
+          </button>
+        </div>
+      </div>
+    </details>    
+
+  </div>
 </div>
 
 
@@ -37,7 +120,7 @@
       Skip to the main content
     </a>
 
-    {% include "./includes/inc_left-nav-04-1.html" %}
+    {% include "../includes/inc_left-nav-04-1.html" %}
   
   </div>
 
@@ -45,11 +128,12 @@
 
     <!-- ******************************** START MAIN RIGHT COL CONTENT ********************** -->
 
+
     <div class="govuk-grid-row">
 
-      {% include "./includes/inc_basic-sorting-01.html" %}
+      {% include "../includes/inc_basic-sorting-01.html" %}
 
-      {#% include "./includes/inc_filters-statement-01.html" %#}    
+      {#% include "../includes/inc_filters-statement-01.html" %#}    
 
     </div>
 
@@ -161,25 +245,28 @@
               </li>                  
             </menu>
 
-            <div class="govuk-form-group hmlr-my-notes-textarea hmlr-my-notes-textarea--hide">
-              
-              <label class="govuk-label govuk-!-font-size-16" for="my-notes-P897RWW">
-                  My notes (optional)
-              </label>
+            <form id="my-form-P897RWW" action="#" novalidate>
 
-              <div id="my-note-hint-P897RWW" class="govuk-hint govuk-!-font-size-16">
-                  <!-- These are not PAS notes and can be viewed by your team. -->
-                  These are not PAS notes. 
+              <div class="govuk-form-group hmlr-my-notes-textarea hmlr-my-notes-textarea--hide">
+                
+                <label class="govuk-label govuk-!-font-size-16" for="my-notes-P897RWW">
+                    My notes (optional)
+                </label>
+
+                <div id="my-note-hint-P897RWW" class="govuk-hint govuk-!-font-size-16">
+                    These are not PAS notes. 
+                </div>
+
+                <textarea class="govuk-textarea" id="my-notes-P897RWW" name="my-notes-P897RWW" rows="5" aria-describedby="my-note-hint-P897RWW"></textarea>
+
+                <div class="govuk-button-group">
+                  <input type="button" id="format-notes-P897RWW" class="govuk-button govuk-button--secondary" value="Format my notes">
+                  <input type="button" id="save-notes-P897RWW" class="govuk-button govuk-button" value="Yes - save" style="display: none;">
+                </div>
+
               </div>
 
-              <textarea class="govuk-textarea" id="my-notes-P897RWW" name="my-notes-P897RWW" rows="5" aria-describedby="my-note-hint-P897RWW"></textarea>
-
-              <div class="govuk-button-group">
-                  <input type="button" id="save-notes-P897RWW" class="govuk-button govuk-button--secondary" value="Save">
-                  <!--a href="#" class="govuk-link govuk-link--no-visited-state hmlr-my-notes" role="button">Hide my notes <span class="govuk-visually-hidden">display</span></a-->
-              </div>
-
-            </div>
+            </form>
 
           </td>
         </tr>
@@ -261,26 +348,30 @@
 
             </li>                  
             </menu>
+
+            <form id="my-form-CB127994" action="#" novalidate>
     
-            <div class="govuk-form-group hmlr-my-notes-textarea hmlr-my-notes-textarea--hide">
-              
-              <label class="govuk-label govuk-!-font-size-16" for="my-notes-CB127994">
-                  My notes (optional)
-              </label>
-    
-              <div id="my-note-hint-CB127994" class="govuk-hint govuk-!-font-size-16">
-                  <!-- These are not PAS notes and can be viewed by your team. -->
-                  These are not PAS notes. 
+              <div class="govuk-form-group hmlr-my-notes-textarea hmlr-my-notes-textarea--hide">
+                
+                <label class="govuk-label govuk-!-font-size-16" for="my-notes-CB127994">
+                    My notes (optional)
+                </label>
+      
+                <div id="my-note-hint-CB127994" class="govuk-hint govuk-!-font-size-16">
+                    <!-- These are not PAS notes and can be viewed by your team. -->
+                    These are not PAS notes. 
+                </div>
+      
+                <textarea class="govuk-textarea" id="my-notes-CB127994" name="my-notes-CB127994" rows="5" aria-describedby="my-note-hint-CB127994"></textarea>
+      
+                <div class="govuk-button-group">
+                  <input type="button" id="format-notes-CB127994" class="govuk-button govuk-button--secondary" value="Format my notes">
+                  <input type="button" id="save-notes-CB127994" class="govuk-button govuk-button" value="Yes - save" style="display: none;">
+                </div>
+      
               </div>
-    
-              <textarea class="govuk-textarea" id="my-notes-CB127994" name="my-notes-CB127994" rows="5" aria-describedby="my-note-hint-CB127994"></textarea>
-    
-              <div class="govuk-button-group">
-                  <input type="button" id="save-notes-CB127994" class="govuk-button govuk-button--secondary" value="Save">
-                  <!--a href="#" class="govuk-link govuk-link--no-visited-state hmlr-my-notes" role="button">Hide my notes <span class="govuk-visually-hidden">display</span></a-->
-              </div>
-    
-            </div>
+
+            </form>
     
           </td>
         </tr>
@@ -361,26 +452,30 @@
                 <svg xmlns="http://www.w3.org/2000/svg" height="24" width="21" viewBox="0 0 448 512" class="hmlr-flag-icon" role="img" aria-hidden="true" aria-label="Case flagged"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#0b0c0c" d="M64 32C64 14.3 49.7 0 32 0S0 14.3 0 32L0 64 0 368 0 480c0 17.7 14.3 32 32 32s32-14.3 32-32l0-128 64.3-16.1c41.1-10.3 84.6-5.5 122.5 13.4c44.2 22.1 95.5 24.8 141.7 7.4l34.7-13c12.5-4.7 20.8-16.6 20.8-30l0-247.7c0-23-24.2-38-44.8-27.7l-9.6 4.8c-46.3 23.2-100.8 23.2-147.1 0c-35.1-17.6-75.4-22-113.5-12.5L64 48l0-16z"/></svg>                
               </li>                  
             </menu>
+
+            <form id="my-form-DU779212" action="#" novalidate>
     
-            <div class="govuk-form-group hmlr-my-notes-textarea hmlr-my-notes-textarea--hide">
-              
-              <label class="govuk-label govuk-!-font-size-16" for="my-notes-DU779212">
-                  My notes (optional)
-              </label>
-    
-              <div id="my-note-hint-DU779212" class="govuk-hint govuk-!-font-size-16">
-                  <!-- These are not PAS notes and can be viewed by your team. -->
-                  These are not PAS notes. 
+              <div class="govuk-form-group hmlr-my-notes-textarea hmlr-my-notes-textarea--hide">
+                
+                <label class="govuk-label govuk-!-font-size-16" for="my-notes-DU779212">
+                    My notes (optional)
+                </label>
+      
+                <div id="my-note-hint-DU779212" class="govuk-hint govuk-!-font-size-16">
+                    <!-- These are not PAS notes and can be viewed by your team. -->
+                    These are not PAS notes. 
+                </div>
+      
+                <textarea class="govuk-textarea" id="my-notes-DU779212" name="my-notes-DU779212" rows="5" aria-describedby="my-note-hint-DU779212"></textarea>
+      
+                <div class="govuk-button-group">
+                  <input type="button" id="format-notes-DU779212" class="govuk-button govuk-button--secondary" value="Format my notes">
+                  <input type="button" id="save-notes-DU779212" class="govuk-button govuk-button" value="Yes - save" style="display: none;">
+                </div>
+      
               </div>
-    
-              <textarea class="govuk-textarea" id="my-notes-DU779212" name="my-notes-DU779212" rows="5" aria-describedby="my-note-hint-DU779212"></textarea>
-    
-              <div class="govuk-button-group">
-                  <input type="button" id="save-notes-DU779212" class="govuk-button govuk-button--secondary" value="Save">
-                  <!--a href="#" class="govuk-link govuk-link--no-visited-state hmlr-my-notes" role="button">Hide my notes <span class="govuk-visually-hidden">display</span></a-->
-              </div>
-    
-            </div>
+
+            </form>
     
           </td>
         </tr>
@@ -461,26 +556,30 @@
                 <svg xmlns="http://www.w3.org/2000/svg" height="24" width="21" viewBox="0 0 448 512" class="hmlr-flag-icon hmlr-flag-icon-show" role="img" aria-hidden="false" aria-label="Case flagged"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#0b0c0c" d="M64 32C64 14.3 49.7 0 32 0S0 14.3 0 32L0 64 0 368 0 480c0 17.7 14.3 32 32 32s32-14.3 32-32l0-128 64.3-16.1c41.1-10.3 84.6-5.5 122.5 13.4c44.2 22.1 95.5 24.8 141.7 7.4l34.7-13c12.5-4.7 20.8-16.6 20.8-30l0-247.7c0-23-24.2-38-44.8-27.7l-9.6 4.8c-46.3 23.2-100.8 23.2-147.1 0c-35.1-17.6-75.4-22-113.5-12.5L64 48l0-16z"/></svg>
               </li>    
             </menu>
+
+            <form id="my-form-DT102641" action="#" novalidate>
     
-            <div class="govuk-form-group hmlr-my-notes-textarea hmlr-my-notes-textarea--hide">
-              
-              <label class="govuk-label govuk-!-font-size-16" for="my-notes-DT102641">
-                  My notes (optional)
-              </label>
-    
-              <div id="my-note-hint-DT102641" class="govuk-hint govuk-!-font-size-16">
-                  <!-- These are not PAS notes and can be viewed by your team. -->
-                  These are not PAS notes. 
+              <div class="govuk-form-group hmlr-my-notes-textarea hmlr-my-notes-textarea--hide">
+                
+                <label class="govuk-label govuk-!-font-size-16" for="my-notes-DT102641">
+                    My notes (optional)
+                </label>
+      
+                <div id="my-note-hint-DT102641" class="govuk-hint govuk-!-font-size-16">
+                    <!-- These are not PAS notes and can be viewed by your team. -->
+                    These are not PAS notes. 
+                </div>
+      
+                <textarea class="govuk-textarea" id="my-notes-DT102641" name="my-notes-DT102641" rows="5" aria-describedby="my-note-hint-DT102641">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, odit rerum. Quos earum vero velit nesciunt molestiae officia aliquid voluptatibus blanditiis ipsa veniam sit, optio dignissimos minima officiis assumenda quo. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi minus est quisquam labore, optio, possimus, recusandae distinctio libero explicabo iste alias. Incidunt dolorum doloremque pariatur blanditiis omnis rem expedita nesciunt! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, provident non! Voluptas neque dolorum voluptatibus consequatur cupiditate molestiae enim ipsa, sed voluptatum quia, quasi iste nesciunt quibusdam distinctio quis reprehenderit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, odit rerum. Quos earum vero velit nesciunt molestiae officia aliquid voluptatibus blanditiis ipsa veniam sit, optio dignissimos minima officiis assumenda quo. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi minus est quisquam labore, optio, possimus, recusandae distinctio libero explicabo iste alias. Incidunt dolorum doloremque pariatur blanditiis omnis rem expedita nesciunt! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, provident non! Voluptas neque dolorum voluptatibus consequatur cupiditate molestiae enim ipsa, sed voluptatum quia, quasi iste nesciunt quibusdam distinctio quis reprehenderit.</textarea>
+      
+                <div class="govuk-button-group">
+                  <input type="button" id="format-notes-DT102641" class="govuk-button govuk-button--secondary" value="Format my notes">
+                  <input type="button" id="save-notes-DT102641" class="govuk-button govuk-button" value="Yes - save" style="display: none;">
+                </div>
+      
               </div>
-    
-              <textarea class="govuk-textarea" id="my-notes-DT102641" name="my-notes-DT102641" rows="5" aria-describedby="my-note-hint-DT102641">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, odit rerum. Quos earum vero velit nesciunt molestiae officia aliquid voluptatibus blanditiis ipsa veniam sit, optio dignissimos minima officiis assumenda quo. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi minus est quisquam labore, optio, possimus, recusandae distinctio libero explicabo iste alias. Incidunt dolorum doloremque pariatur blanditiis omnis rem expedita nesciunt! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, provident non! Voluptas neque dolorum voluptatibus consequatur cupiditate molestiae enim ipsa, sed voluptatum quia, quasi iste nesciunt quibusdam distinctio quis reprehenderit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, odit rerum. Quos earum vero velit nesciunt molestiae officia aliquid voluptatibus blanditiis ipsa veniam sit, optio dignissimos minima officiis assumenda quo. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi minus est quisquam labore, optio, possimus, recusandae distinctio libero explicabo iste alias. Incidunt dolorum doloremque pariatur blanditiis omnis rem expedita nesciunt! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, provident non! Voluptas neque dolorum voluptatibus consequatur cupiditate molestiae enim ipsa, sed voluptatum quia, quasi iste nesciunt quibusdam distinctio quis reprehenderit.</textarea>
-    
-              <div class="govuk-button-group">
-                  <input type="button" id="save-notes-DT102641" class="govuk-button govuk-button--secondary" value="Save">
-                  <!--a href="#" class="govuk-link govuk-link--no-visited-state hmlr-my-notes" role="button">Hide my notes <span class="govuk-visually-hidden">display</span></a-->
-              </div>
-    
-            </div>
+
+            </form>
     
           </td>
         </tr>
@@ -561,26 +660,30 @@
                 <svg xmlns="http://www.w3.org/2000/svg" height="24" width="21" viewBox="0 0 448 512" class="hmlr-flag-icon hmlr-flag-icon-show" role="img" aria-hidden="false" aria-label="Case flagged"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#0b0c0c" d="M64 32C64 14.3 49.7 0 32 0S0 14.3 0 32L0 64 0 368 0 480c0 17.7 14.3 32 32 32s32-14.3 32-32l0-128 64.3-16.1c41.1-10.3 84.6-5.5 122.5 13.4c44.2 22.1 95.5 24.8 141.7 7.4l34.7-13c12.5-4.7 20.8-16.6 20.8-30l0-247.7c0-23-24.2-38-44.8-27.7l-9.6 4.8c-46.3 23.2-100.8 23.2-147.1 0c-35.1-17.6-75.4-22-113.5-12.5L64 48l0-16z"/></svg>
               </li>    
             </menu>
+
+            <form id="my-form-DU164222" action="#" novalidate>
     
-            <div class="govuk-form-group hmlr-my-notes-textarea hmlr-my-notes-textarea--hide">
-              
-              <label class="govuk-label govuk-!-font-size-16" for="my-notes-DU164222">
-                  My notes (optional)
-              </label>
-    
-              <div id="my-note-hint-DU164222" class="govuk-hint govuk-!-font-size-16">
-                  <!-- These are not PAS notes and can be viewed by your team. -->
-                  These are not PAS notes. 
+              <div class="govuk-form-group hmlr-my-notes-textarea hmlr-my-notes-textarea--hide">
+                
+                <label class="govuk-label govuk-!-font-size-16" for="my-notes-DU164222">
+                    My notes (optional)
+                </label>
+      
+                <div id="my-note-hint-DU164222" class="govuk-hint govuk-!-font-size-16">
+                    <!-- These are not PAS notes and can be viewed by your team. -->
+                    These are not PAS notes. 
+                </div>
+      
+                <textarea class="govuk-textarea" id="my-notes-DU164222" name="my-notes-DU164222" rows="5" aria-describedby="my-note-hint-DU164222"></textarea>
+      
+                <div class="govuk-button-group">
+                  <input type="button" id="format-notes-DU164222" class="govuk-button govuk-button--secondary" value="Format my notes">
+                  <input type="button" id="save-notes-DU164222" class="govuk-button govuk-button" value="Yes - save" style="display: none;">
+                </div>
+      
               </div>
-    
-              <textarea class="govuk-textarea" id="my-notes-DU164222" name="my-notes-DU164222" rows="5" aria-describedby="my-note-hint-DU164222"></textarea>
-    
-              <div class="govuk-button-group">
-                  <input type="button" id="save-notes-DU164222" class="govuk-button govuk-button--secondary" value="Save">
-                  <!--a href="#" class="govuk-link govuk-link--no-visited-state hmlr-my-notes" role="button">Hide my notes <span class="govuk-visually-hidden">display</span></a-->
-              </div>
-    
-            </div>
+
+            </form>
     
           </td>
         </tr>
@@ -662,25 +765,29 @@
               </li>    
             </menu>
     
-            <div class="govuk-form-group hmlr-my-notes-textarea hmlr-my-notes-textarea--hide">
-              
-              <label class="govuk-label govuk-!-font-size-16" for="my-notes-DT102642">
-                  My notes (optional)
-              </label>
-    
-              <div id="my-note-hint-DT102641" class="govuk-hint govuk-!-font-size-16">
-                  <!-- These are not PAS notes and can be viewed by your team. -->
-                  These are not PAS notes. 
+            <form id="my-form-DT102641" action="#" novalidate>
+
+              <div class="govuk-form-group hmlr-my-notes-textarea hmlr-my-notes-textarea--hide">
+                
+                <label class="govuk-label govuk-!-font-size-16" for="my-notes-DT102642">
+                    My notes (optional)
+                </label>
+      
+                <div id="my-note-hint-DT102641" class="govuk-hint govuk-!-font-size-16">
+                    <!-- These are not PAS notes and can be viewed by your team. -->
+                    These are not PAS notes. 
+                </div>
+      
+                <textarea class="govuk-textarea" id="my-notes-DT102642" name="my-notes-DT102642" rows="5" aria-describedby="my-note-hint-DT102641"></textarea>
+      
+                <div class="govuk-button-group">
+                  <input type="button" id="format-notes-DT102641" class="govuk-button govuk-button--secondary" value="Format my notes">
+                  <input type="button" id="save-notes-DT102641" class="govuk-button govuk-button" value="Yes - save" style="display: none;">
+                </div>
+      
               </div>
-    
-              <textarea class="govuk-textarea" id="my-notes-DT102642" name="my-notes-DT102642" rows="5" aria-describedby="my-note-hint-DT102641"></textarea>
-    
-              <div class="govuk-button-group">
-                  <input type="button" id="save-notes-DT102641" class="govuk-button govuk-button--secondary" value="Save">
-                  <!--a href="#" class="govuk-link govuk-link--no-visited-state hmlr-my-notes" role="button">Hide my notes <span class="govuk-visually-hidden">display</span></a-->
-              </div>
-    
-            </div>
+
+            </form>
     
           </td>
         </tr>
@@ -761,26 +868,30 @@
                 <svg xmlns="http://www.w3.org/2000/svg" height="24" width="21" viewBox="0 0 448 512" class="hmlr-flag-icon hmlr-flag-icon-show" role="img" aria-hidden="false" aria-label="Case flagged"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#0b0c0c" d="M64 32C64 14.3 49.7 0 32 0S0 14.3 0 32L0 64 0 368 0 480c0 17.7 14.3 32 32 32s32-14.3 32-32l0-128 64.3-16.1c41.1-10.3 84.6-5.5 122.5 13.4c44.2 22.1 95.5 24.8 141.7 7.4l34.7-13c12.5-4.7 20.8-16.6 20.8-30l0-247.7c0-23-24.2-38-44.8-27.7l-9.6 4.8c-46.3 23.2-100.8 23.2-147.1 0c-35.1-17.6-75.4-22-113.5-12.5L64 48l0-16z"/></svg>
               </li>    
             </menu>
+
+            <form id="my-form-DU164190" action="#" novalidate>
     
-            <div class="govuk-form-group hmlr-my-notes-textarea hmlr-my-notes-textarea--hide">
-              
-              <label class="govuk-label govuk-!-font-size-16" for="my-notes-DU164190">
-                  My notes (optional)
-              </label>
-    
-              <div id="my-note-hint-DU164190" class="govuk-hint govuk-!-font-size-16">
-                  <!-- These are not PAS notes and can be viewed by your team. -->
-                  These are not PAS notes. 
+              <div class="govuk-form-group hmlr-my-notes-textarea hmlr-my-notes-textarea--hide">
+                
+                <label class="govuk-label govuk-!-font-size-16" for="my-notes-DU164190">
+                    My notes (optional)
+                </label>
+      
+                <div id="my-note-hint-DU164190" class="govuk-hint govuk-!-font-size-16">
+                    <!-- These are not PAS notes and can be viewed by your team. -->
+                    These are not PAS notes. 
+                </div>
+      
+                <textarea class="govuk-textarea" id="my-notes-DU164190" name="my-notes-DU164190" rows="5" aria-describedby="my-note-hint-DU164190">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, odit rerum. Quos earum vero velit nesciunt molestiae officia aliquid voluptatibus blanditiis ipsa veniam sit, optio dignissimos minima officiis assumenda quo. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi minus est quisquam labore, optio, possimus, recusandae distinctio libero explicabo iste alias. Incidunt dolorum doloremque pariatur blanditiis omnis rem expedita nesciunt! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, provident non! Voluptas neque dolorum voluptatibus consequatur cupiditate molestiae enim ipsa, sed voluptatum quia, quasi iste nesciunt quibusdam distinctio quis reprehenderit.</textarea>
+      
+                <div class="govuk-button-group">
+                  <input type="button" id="format-notes-DU164190" class="govuk-button govuk-button--secondary" value="Format my notes">
+                  <input type="button" id="save-notes-DU164190" class="govuk-button govuk-button" value="Yes - save" style="display: none;">
+                </div>
+      
               </div>
-    
-              <textarea class="govuk-textarea" id="my-notes-DU164190" name="my-notes-DU164190" rows="5" aria-describedby="my-note-hint-DU164190">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, odit rerum. Quos earum vero velit nesciunt molestiae officia aliquid voluptatibus blanditiis ipsa veniam sit, optio dignissimos minima officiis assumenda quo. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi minus est quisquam labore, optio, possimus, recusandae distinctio libero explicabo iste alias. Incidunt dolorum doloremque pariatur blanditiis omnis rem expedita nesciunt! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, provident non! Voluptas neque dolorum voluptatibus consequatur cupiditate molestiae enim ipsa, sed voluptatum quia, quasi iste nesciunt quibusdam distinctio quis reprehenderit.</textarea>
-    
-              <div class="govuk-button-group">
-                  <input type="button" id="save-notes-DU164190" class="govuk-button govuk-button--secondary" value="Save">
-                  <!--a href="#" class="govuk-link govuk-link--no-visited-state hmlr-my-notes" role="button">Hide my notes <span class="govuk-visually-hidden">display</span></a-->
-              </div>
-    
-            </div>
+
+            </form>
     
           </td>
         </tr>
@@ -861,40 +972,337 @@
                 <svg xmlns="http://www.w3.org/2000/svg" height="24" width="21" viewBox="0 0 448 512" class="hmlr-flag-icon" role="img" aria-hidden="true" aria-label="Case flagged"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#0b0c0c" d="M64 32C64 14.3 49.7 0 32 0S0 14.3 0 32L0 64 0 368 0 480c0 17.7 14.3 32 32 32s32-14.3 32-32l0-128 64.3-16.1c41.1-10.3 84.6-5.5 122.5 13.4c44.2 22.1 95.5 24.8 141.7 7.4l34.7-13c12.5-4.7 20.8-16.6 20.8-30l0-247.7c0-23-24.2-38-44.8-27.7l-9.6 4.8c-46.3 23.2-100.8 23.2-147.1 0c-35.1-17.6-75.4-22-113.5-12.5L64 48l0-16z"/></svg>                
               </li>   
             </menu>
+
+            <form id="my-form-DU178082" action="#" novalidate>
     
-            <div class="govuk-form-group hmlr-my-notes-textarea hmlr-my-notes-textarea--hide">
-              
-              <label class="govuk-label govuk-!-font-size-16" for="my-notes-DU178082">
-                  My notes (optional)
-              </label>
-    
-              <div id="my-note-hint-DU178082" class="govuk-hint govuk-!-font-size-16">
-                  <!-- These are not PAS notes and can be viewed by your team. -->
-                  These are not PAS notes. 
+              <div class="govuk-form-group hmlr-my-notes-textarea hmlr-my-notes-textarea--hide">
+                
+                <label class="govuk-label govuk-!-font-size-16" for="my-notes-DU178082">
+                    My notes (optional)
+                </label>
+      
+                <div id="my-note-hint-DU178082" class="govuk-hint govuk-!-font-size-16">
+                    <!-- These are not PAS notes and can be viewed by your team. -->
+                    These are not PAS notes. 
+                </div>
+      
+                <textarea class="govuk-textarea" id="my-notes-DU178082" name="my-notes-DU178082" rows="5" aria-describedby="my-note-hint-DU178082"></textarea>
+      
+                <div class="govuk-button-group">
+                  <input type="button" id="format-notes-DU178082" class="govuk-button govuk-button--secondary" value="Format my notes">
+                  <input type="button" id="save-notes-DU178082" class="govuk-button govuk-button" value="Yes - save" style="display: none;">
+                </div>
+      
               </div>
-    
-              <textarea class="govuk-textarea" id="my-notes-DU178082" name="my-notes-DU178082" rows="5" aria-describedby="my-note-hint-DU178082"></textarea>
-    
-              <div class="govuk-button-group">
-                  <input type="button" id="save-notes-DU178082" class="govuk-button govuk-button--secondary" value="Save">
-                  <!--a href="#" class="govuk-link govuk-link--no-visited-state hmlr-my-notes" role="button">Hide my notes <span class="govuk-visually-hidden">display</span></a-->
-              </div>
-    
-            </div>
+
+            </form>
     
           </td>
         </tr>
       </tbody>   
  
-  </table>
+    </table>
 
 
+<script>
+const chatMessages = document.getElementById('chatMessages');
+const messageInput = document.getElementById('messageInput');
+const sendButton = document.getElementById('sendButton');
+const typingIndicator = document.getElementById('typingIndicator');
+const chatContainer = document.getElementById('chatContainer');
+const hmlrTable = document.getElementById('hmlrListTbl');
+
+let conversationHistory = [];
+
+// Simple markdown parser for basic formatting
+function parseMarkdown(text) {
+    return text
+        .replace(/^### (.*$)/gim, '<h3 class="govuk-heading-s">$1</h3>')
+        .replace(/^## (.*$)/gim, '<h2 class="govuk-heading-s">$1</h2>')
+        .replace(/^# (.*$)/gim, '<h1 class="govuk-heading-s">$1</h1>')
+        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+        .replace(/\*(.*?)\*/g, '<em>$1</em>')
+        .replace(/```(.*?)```/gs, '<pre class="govuk-body-s" style="background: #f3f2f1; padding: 10px; border-radius: 4px; overflow-x: auto;"><code>$1</code></pre>')
+        .replace(/`(.*?)`/g, '<code style="background: #f3f2f1; padding: 2px 4px; border-radius: 2px; font-family: monospace;">$1</code>')
+        .replace(/^\- (.*$)/gim, '<li>$1</li>')
+        .replace(/^\* (.*$)/gim, '<li>$1</li>')
+        .replace(/^\d+\. (.*$)/gim, '<li>$1</li>')
+        .replace(/^---$/gim, '<hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible">')
+        .replace(/\n\n/g, '</p><p class="govuk-body-s">')
+        .replace(/\n/g, '<br>');
+}
+
+function wrapLists(html) {
+    html = html.replace(/(<li[^>]*>.*?<\/li>)(\s*<li[^>]*>.*?<\/li>)*/gs, function(match) {
+        return '<ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">' + match + '</ul>';
+    });
+    return html;
+}
+
+function formatMessage(text) {
+    let formatted = parseMarkdown(text);
+    formatted = wrapLists(formatted);
+    
+    if (!formatted.includes('<h1>') && !formatted.includes('<h2>') && !formatted.includes('<h3>') && !formatted.includes('<ul>') && !formatted.includes('<pre>')) {
+        formatted = '<p class="govuk-body-s">' + formatted + '</p>';
+    }
+    
+    return formatted;
+}
+
+function addMessage(message, isUser = false) {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = 'govuk-!-margin-bottom-1';
+
+    if (isUser) {
+        messageDiv.innerHTML = `
+            <div class="you">
+                <strong>You:</strong><br>
+                <div style="margin-top: 10px;">${formatMessage(message)}</div>
+            </div>
+        `;
+    } else {
+        messageDiv.innerHTML = `
+            <div class="response">
+                <strong>Response:</strong><br>
+                <div style="margin-top: 10px;">${formatMessage(message)}</div>
+            </div>
+        `;
+    }
+
+    chatMessages.appendChild(messageDiv);
+    chatContainer.scrollTop = chatContainer.scrollHeight;
+}
+
+function showTypingIndicator() {
+    typingIndicator.style.display = 'block';
+    chatContainer.scrollTop = chatContainer.scrollHeight;
+}
+
+function hideTypingIndicator() {
+    typingIndicator.style.display = 'none';
+}
+
+function extractTableData() {
+    if (!hmlrTable) return '';
+
+    let tableText = '';
+    const rows = hmlrTable.rows;
+
+    for (let i = 0; i < rows.length; i++) {
+        const cells = rows[i].cells;
+        const rowData = [];
+        for (let j = 0; j < cells.length; j++) {
+            rowData.push(cells[j].textContent.trim());
+        }
+        tableText += rowData.join(' | ') + '\n';
+    }
+
+    return tableText;
+}
+
+async function callClaude(userMessage) {
+    conversationHistory.push({
+        role: "user",
+        content: userMessage
+    });
+
+    try {
+        const response = await fetch('/api/claude', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                messages: conversationHistory
+            })
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        conversationHistory.push({
+            role: "assistant",
+            content: data.response
+        });
+
+        return data.response;
+    } catch (error) {
+        console.error('Claude API Error:', error);
+        throw error;
+    }
+}
+
+async function sendMessage() {
+    const message = messageInput.value.trim();
+    if (!message) return;
+
+    messageInput.disabled = true;
+    sendButton.disabled = true;
+
+    addMessage(message, true);
+    messageInput.value = '';
+
+    showTypingIndicator();
+
+    try {
+        let response;
+        const lower = message.toLowerCase();
+        if (lower.includes('analyz') || lower.includes('analys') || lower.includes('data') || lower.includes('cases') || lower.includes('expedit')) {
+            const tableData = extractTableData();
+            const fullMessage = tableData
+                ? `Analyze this government application data. Each tbody represents a case. Reference each case via its title number. How many cases which are expedited have a priority date older than one month and list them? How many cases which are not expedited have a priority date older than one month? Which case has the oldest priority date, or which cases share the oldest date (without summary overview). In the "Summary Statistics" only include "Cases over 1 month old" and "Oldest case age" only.\n\nFormat your response with:\n- Clear headers using ## for sections\n- Bullet points for lists using - or *\n- **Bold text** for emphasis on case numbers\n- Horizontal rules (---) to separate sections\n\nFocus on: dates, and highlighting cases which are old.\n\nData:\n${tableData}`
+                : message;
+            response = await callClaude(fullMessage);
+        } else {
+            response = await callClaude(message);
+        }
+        addMessage(response, false);
+    } catch (error) {
+        addMessage(`Sorry, I'm having trouble right now. ${error.message}`, false);
+    } finally {
+        hideTypingIndicator();
+        messageInput.disabled = false;
+        sendButton.disabled = false;
+        messageInput.focus();
+    }
+}
+
+sendButton.addEventListener('click', sendMessage);
+messageInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        sendMessage();
+    }
+});
+
+// ***********************************************
+// Notes formatter - all instances
+// ***********************************************
+
+if (hmlrTable) {
+
+    function getUKDateTime() {
+        const now = new Date();
+        const dd = String(now.getDate()).padStart(2, '0');
+        const mm = String(now.getMonth() + 1).padStart(2, '0');
+        const yyyy = now.getFullYear();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        return `${dd}/${mm}/${yyyy} ${hours}:${minutes}`;
+    }
+
+    async function matchFruitNote(input) {
+        try {
+            const response = await fetch('/api/claude', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    messages: [{
+                        role: 'user',
+                        content: `A user has written a note. Based on the meaning and context of the note, match it to the most appropriate option from the list below. Only respond with the exact text of the matching option, nothing else, no explanation. If you genuinely cannot determine a reasonable match, respond with only the word NOMATCH.
+
+1. I like Apples.
+2. I like Grapes.
+3. I like Peaches.
+
+User's note: "${input}"`
+                    }]
+                })
+            });
+
+            const data = await response.json();
+            const matched = data.response.trim();
+
+            if (matched === 'NOMATCH') {
+                return { success: false, text: input };
+            }
+
+            return { success: true, text: matched };
+
+        } catch (error) {
+            console.error('Matching error:', error);
+            return { success: false, text: input };
+        }
+    }
+
+    document.querySelectorAll('.hmlr-my-notes-textarea').forEach(wrapper => {
+        const textarea = wrapper.querySelector('textarea');
+        const formatBtn = wrapper.querySelector('[id^="format-notes-"]');
+        const saveBtn = wrapper.querySelector('[id^="save-notes-"]');
+        const form = wrapper.closest('form');
+
+        if (!textarea || !formatBtn || !saveBtn) return;
+
+        let confirmedSnapshot = null;
+
+        formatBtn.addEventListener('click', async () => {
+            const userInput = textarea.value.trim();
+            if (!userInput) return;
+
+            const lastSeparator = userInput.lastIndexOf('\n---');
+            const existing = lastSeparator !== -1 ? userInput.substring(0, lastSeparator + 4).trim() : '';
+            const currentInput = lastSeparator !== -1 ? userInput.substring(lastSeparator + 4).trim() : userInput;
+
+            if (!currentInput) return;
+
+            formatBtn.disabled = true;
+            formatBtn.value = 'Matching...';
+
+            const result = await matchFruitNote(currentInput);
+
+            if (result.success) {
+                const timestamp = getUKDateTime();
+                const newEntry = `\u25B6 ${timestamp}\n\n${result.text}\n\n---`;
+                const fullContent = existing ? `${existing}\n${newEntry}` : newEntry;
+                textarea.value = fullContent;
+                confirmedSnapshot = fullContent;
+                formatBtn.disabled = false;
+                formatBtn.value = 'Format my notes';
+                formatBtn.style.display = 'none';
+                saveBtn.style.display = '';
+            } else {
+                const newEntry = `\u25CF This does not match any options - please add more details and try again.\n\n${currentInput}`;
+                textarea.value = existing ? `${existing}\n${newEntry}` : newEntry;
+                formatBtn.disabled = false;
+                formatBtn.value = 'Format my notes';
+            }
+        });
+
+        saveBtn.addEventListener('click', () => {
+            if (confirmedSnapshot !== null) {
+                textarea.value = confirmedSnapshot;
+            }
+            if (form) form.submit();
+        });
+
+        textarea.addEventListener('keydown', (e) => {
+            if (e.key !== ' ' && e.key !== 'Enter') {
+                if (formatBtn.style.display === 'none') {
+                    formatBtn.style.display = '';
+                    formatBtn.disabled = false;
+                    formatBtn.value = 'Format my notes';
+                    saveBtn.style.display = 'none';
+                }
+                if (textarea.value.startsWith('\u25CF')) {
+                    const clean = textarea.value.replace(/^\u25CF.*?\n\n/s, '');
+                    textarea.value = clean;
+                }
+            }
+        });
+    });
+
+}
+</script>
 
     <!-- ******************************** END MAIN RIGHT COL CONTENT ************************ -->
 
   </section>
 </div>
 
-{% include "./includes/inc_js-for-pl-functionality.html" %}
+{% include "../includes/inc_js-for-pl-functionality.html" %}
 
 {% endblock %}

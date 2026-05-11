@@ -3,14 +3,59 @@
 {% set pageName="{{ serviceName }} Progress Later" %}
 
 {% block header %}
-  {% include "./includes/inc_top-nav-std.html" %}
+  {% include "../includes/inc_top-nav-std.html" %}
 {% endblock %}
 
 {% block content %}
 
+<style>
 
-    
+  @media (min-width: 48.0625em) {
+    .hmlr-wf .hmlr-min-height-header-sm {
+        min-height: 100px !important;
+    }
+
+    .govuk-grid-column-one-quarter nav:first-of-type {
+      margin-top: -85px !important;
+    }
+
+    .govuk-details__summary {
+      font-size: 14px !important;
+      font-size: 0.875rem !important;
+      line-height: 1.5 !important;
+    }
+
+    /*.you {
+      max-width: 590px;
+      margin-left: 97px;
+    }*/
+  }
+
+  .govuk-textarea {
+    font-size: 17px !important;
+    font-size: 1.0625rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .you {
+    background: #f3f2f1; border: 2px solid #b1b4b6; padding: 15px 15px 5px 15px; border-radius: 4px;  
+  }
+
+  .response {
+    background: #fff; border: 2px solid #b1b4b6; padding:  15px 15px 5px 15px; border-radius: 4px; margin-right: 50px;
+  }
+
+  br {display: none; }
+
+  ul {margin-bottom: 0; }
+
+  #chatMessages > div > div > strong:first-of-type {display: none;}
+
+  #chatMessages h2 ~ ul:first-of-type {margin-top: 20px; }
+</style>
+
 <div class="govuk-grid-row hmlr-min-height-header-sm">
+
   <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-3">
 
     <h1 class="govuk-heading-l govuk-!-margin-bottom-1">
@@ -21,12 +66,50 @@
       There are currently 8 cases in your Progress Later list.
     </p>
 
+    <div class="govuk-grid-column-one-third"></div>
+
   </div>
+  
+</div>
 
-  <div class="govuk-grid-column-one-third">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter">&nbsp;</div>
+  
+  <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-3">
 
-  </div>      
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          About this list
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <div id="chatContainer" class="xxxxgovuk-form-group">
 
+          <div id="chatMessages"></div>
+    
+          <div id="typingIndicator" style="display: none; color: #505a5f;" class="govuk-body-s govuk-!-padding-top-4">
+            <em>Working on a response now&hellip;</em>
+          </div>
+    
+        </div>
+    
+        <div class="govuk-form-group" style="margin-top: 30px;">
+    
+          <label class="govuk-label govuk-label--s govuk-!-font-weight-regular" for="messageInput">
+            Ask a question about this Progress Later list
+          </label>
+    
+          <textarea class="govuk-textarea" id="messageInput" name="messageInput" rows="3"></textarea>
+    
+          <button class="govuk-button" id="sendButton" style="align-self: flex-end;">
+            Submit
+          </button>
+        </div>
+      </div>
+    </details>    
+
+  </div>
 </div>
 
 
@@ -37,7 +120,7 @@
       Skip to the main content
     </a>
 
-    {% include "./includes/inc_left-nav-04-1.html" %}
+    {% include "../includes/inc_left-nav-04-1.html" %}
   
   </div>
 
@@ -45,11 +128,12 @@
 
     <!-- ******************************** START MAIN RIGHT COL CONTENT ********************** -->
 
+
     <div class="govuk-grid-row">
 
-      {% include "./includes/inc_basic-sorting-01.html" %}
+      {% include "../includes/inc_basic-sorting-01.html" %}
 
-      {#% include "./includes/inc_filters-statement-01.html" %#}    
+      {#% include "../includes/inc_filters-statement-01.html" %#}    
 
     </div>
 
@@ -886,15 +970,256 @@
         </tr>
       </tbody>   
  
-  </table>
+    </table>
 
 
+<script>
+const chatMessages = document.getElementById('chatMessages');
+const messageInput = document.getElementById('messageInput');
+const sendButton = document.getElementById('sendButton');
+const typingIndicator = document.getElementById('typingIndicator');
+const chatContainer = document.getElementById('chatContainer');
+
+let conversationHistory = [];
+
+// Simple markdown parser for basic formatting
+function parseMarkdown(text) {
+    return text
+        // Headers
+        .replace(/^### (.*$)/gim, '<h3 class="govuk-heading-s">$1</h3>')
+        .replace(/^## (.*$)/gim, '<h2 class="govuk-heading-s">$1</h2>')
+        .replace(/^# (.*$)/gim, '<h1 class="govuk-heading-s">$1</h1>')
+        
+        // Bold
+        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+        
+        // Italic
+        .replace(/\*(.*?)\*/g, '<em>$1</em>')
+        
+        // Code blocks
+        .replace(/```(.*?)```/gs, '<pre class="govuk-body-s" style="background: #f3f2f1; padding: 10px; border-radius: 4px; overflow-x: auto;"><code>$1</code></pre>')
+        
+        // Inline code
+        .replace(/`(.*?)`/g, '<code style="background: #f3f2f1; padding: 2px 4px; border-radius: 2px; font-family: monospace;">$1</code>')
+        
+        // Bullet points
+        .replace(/^\- (.*$)/gim, '<li>$1</li>')
+        .replace(/^\* (.*$)/gim, '<li>$1</li>')
+        
+        // Numbered lists
+        .replace(/^\d+\. (.*$)/gim, '<li>$1</li>')
+        
+        // Horizontal rules
+        .replace(/^---$/gim, '<hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible">')
+        
+        // Line breaks
+        .replace(/\n\n/g, '</p><p class="govuk-body-s">')
+        .replace(/\n/g, '<br>');
+}
+
+// Wrap lists in proper HTML
+function wrapLists(html) {
+    // Wrap consecutive <li> elements in <ul>
+    html = html.replace(/(<li[^>]*>.*?<\/li>)(\s*<li[^>]*>.*?<\/li>)*/gs, function(match) {
+        return '<ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">' + match + '</ul>';
+    });
+    
+    return html;
+}
+
+// Process the full markdown text
+function formatMessage(text) {
+    let formatted = parseMarkdown(text);
+    formatted = wrapLists(formatted);
+    
+    // Wrap in paragraph tags if not already wrapped
+    if (!formatted.includes('<h1>') && !formatted.includes('<h2>') && !formatted.includes('<h3>') && !formatted.includes('<ul>') && !formatted.includes('<pre>')) {
+        formatted = '<p class="govuk-body-s">' + formatted + '</p>';
+    }
+    
+    return formatted;
+}
+
+function addMessage(message, isUser = false) {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = 'govuk-!-margin-bottom-1';
+
+    if (isUser) {
+        messageDiv.innerHTML = `
+            <div class="you">
+                <strong>You:</strong><br>
+                <div style="margin-top: 10px;">${formatMessage(message)}</div>
+            </div>
+        `;
+    } else {
+        messageDiv.innerHTML = `
+            <div class="response">
+                <strong>Response:</strong><br>
+                <div style="margin-top: 10px;">${formatMessage(message)}</div>
+            </div>
+        `;
+    }
+
+    chatMessages.appendChild(messageDiv);
+    chatContainer.scrollTop = chatContainer.scrollHeight;
+}
+
+function showTypingIndicator() {
+    typingIndicator.style.display = 'block';
+    chatContainer.scrollTop = chatContainer.scrollHeight;
+}
+
+function hideTypingIndicator() {
+    typingIndicator.style.display = 'none';
+}
+
+function extractTableData() {
+    const table = document.getElementById('hmlrListTbl');
+    if (!table) return '';
+
+    let tableText = '';
+    const rows = table.rows;
+
+    for (let i = 0; i < rows.length; i++) {
+        const cells = rows[i].cells;
+        const rowData = [];
+        for (let j = 0; j < cells.length; j++) {
+            rowData.push(cells[j].textContent.trim());
+        }
+        tableText += rowData.join(' | ') + '\n';
+    }
+
+    return tableText;
+}
+
+async function callClaude(userMessage) {
+    conversationHistory.push({
+        role: "user",
+        content: userMessage
+    });
+
+    try {
+        const response = await fetch('/api/claude', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                messages: conversationHistory
+            })
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        conversationHistory.push({
+            role: "assistant",
+            content: data.response
+        });
+
+        return data.response;
+    } catch (error) {
+        console.error('Claude API Error:', error);
+        throw error;
+    }
+}
+
+async function analyzeDataOnLoad() {
+    const tableData = extractTableData();
+    if (!tableData) return;
+
+    const analysisPrompt = `Analyze this government application data. Each tbody represents a case. Reference each case via its title number. How many cases which are expedited have a priority date older than one month and list them? How many cases which are not expedited have a priority date older than one month? Which case has the oldest priority date, or which cases share the oldest date (without summary overview). In the "Summary Statistics" only include "Cases over 1 month old" and "Oldest case age" only. 
+
+Format your response with:
+- Clear headers using ## for sections
+- Bullet points for lists using - or *
+- **Bold text** for emphasis on case numbers
+- Horizontal rules (---) to separate sections
+
+
+Focus on: dates, and highlighting cases which are old.
+
+Data:
+${tableData}`;
+
+    try {
+        showTypingIndicator();
+        const analysis = await callClaude(analysisPrompt);
+
+        const analysisDiv = document.createElement('div');
+        analysisDiv.className = 'govuk-!-margin-bottom-3';
+        analysisDiv.innerHTML = `
+            <div style="background: #f3f2f1; border-left: 4px solid #1d70b8; padding: 15px; border-radius: 4px;">
+                <strong>📊 Automatic Data Analysis:</strong><br><br>
+                <div>${formatMessage(analysis)}</div>
+            </div>
+        `;
+        chatMessages.appendChild(analysisDiv);
+        chatContainer.scrollTop = chatContainer.scrollHeight;
+
+    } catch (error) {
+        console.error('Auto-analysis error:', error);
+        addMessage('I noticed there\'s data on this page, but I couldn\'t analyze it automatically. Feel free to ask me about it!', false);
+    } finally {
+        hideTypingIndicator();
+    }
+}
+
+async function sendMessage() {
+    const message = messageInput.value.trim();
+    if (!message) return;
+
+    messageInput.disabled = true;
+    sendButton.disabled = true;
+
+    addMessage(message, true);
+    messageInput.value = '';
+
+    showTypingIndicator();
+
+    try {
+        let response;
+        const lower = message.toLowerCase();
+        if (lower.includes('analyz') || lower.includes('analys') || lower.includes('data') || lower.includes('cases') || lower.includes('expedit')) {
+            const tableData = extractTableData();
+            const fullMessage = tableData
+                ? `Analyze this government application data. Each tbody represents a case. Reference each case via its title number. How many cases which are expedited have a priority date older than one month and list them? How many cases which are not expedited have a priority date older than one month? Which case has the oldest priority date, or which cases share the oldest date (without summary overview). In the "Summary Statistics" only include "Cases over 1 month old" and "Oldest case age" only.\n\nFormat your response with:\n- Clear headers using ## for sections\n- Bullet points for lists using - or *\n- **Bold text** for emphasis on case numbers\n- Horizontal rules (---) to separate sections\n\nFocus on: dates, and highlighting cases which are old.\n\nData:\n${tableData}`
+                : message;
+            response = await callClaude(fullMessage);
+        } else {
+            response = await callClaude(message);
+        }
+        addMessage(response, false);
+    } catch (error) {
+        addMessage(`Sorry, I'm having trouble right now. ${error.message}`, false);
+    } finally {
+        hideTypingIndicator();
+        messageInput.disabled = false;
+        sendButton.disabled = false;
+        messageInput.focus();
+    }
+}
+
+// Event listeners
+sendButton.addEventListener('click', sendMessage);
+messageInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        sendMessage();
+    }
+});
+
+
+</script>
 
     <!-- ******************************** END MAIN RIGHT COL CONTENT ************************ -->
 
   </section>
 </div>
 
-{% include "./includes/inc_js-for-pl-functionality.html" %}
+{% include "../includes/inc_js-for-pl-functionality.html" %}
 
 {% endblock %}
