@@ -31,10 +31,14 @@
     }*/
   }
 
-  .govuk-textarea {
-    font-size: 17px !important;
+  .hmlr-my-notes-textarea .govuk-textarea {
+    /*font-size: 17px !important;
     font-size: 1.0625rem !important;
-    line-height: 1.2 !important;
+    line-height: 1.2 !important;*/
+
+    font-size: 14px !important;
+    font-size: 0.875rem !important;
+    line-height: 0.9 !important;
   }
 
   .you {
@@ -231,7 +235,8 @@
 
                 <div class="govuk-button-group">
                   <input type="button" id="format-notes-P897RWW" class="govuk-button govuk-button--secondary" value="Format my notes">
-                  <input type="button" id="save-notes-P897RWW" class="govuk-button govuk-button" value="Save" style="display: none;">
+                  <input type="button" id="save-notes-P897RWW" class="govuk-button govuk-button" value="Save the new note(s)" style="display: none;">
+                  <input type="button" id="clear-notes-P897RWW" class="govuk-button govuk-button--secondary" value="Clear the new note(s)" style="display: none;">
                 </div>
 
               </div>
@@ -336,7 +341,8 @@
       
                 <div class="govuk-button-group">
                   <input type="button" id="format-notes-CB127994" class="govuk-button govuk-button--secondary" value="Format my notes">
-                  <input type="button" id="save-notes-CB127994" class="govuk-button govuk-button" value="Save" style="display: none;">
+                  <input type="button" id="save-notes-CB127994" class="govuk-button govuk-button" value="Save the new note(s)" style="display: none;">
+                  <input type="button" id="clear-notes-CB127994" class="govuk-button govuk-button--secondary" value="Clear the new note(s)" style="display: none;">
                 </div>
       
               </div>
@@ -440,7 +446,8 @@
       
                 <div class="govuk-button-group">
                   <input type="button" id="format-notes-DU779212" class="govuk-button govuk-button--secondary" value="Format my notes">
-                  <input type="button" id="save-notes-DU779212" class="govuk-button govuk-button" value="Save" style="display: none;">
+                  <input type="button" id="save-notes-DU779212" class="govuk-button govuk-button" value="Save the new note(s)" style="display: none;">
+                  <input type="button" id="clear-notes-DU779212" class="govuk-button govuk-button--secondary" value="Clear the new note(s)" style="display: none;">                  
                 </div>
       
               </div>
@@ -544,7 +551,8 @@
       
                 <div class="govuk-button-group">
                   <input type="button" id="format-notes-DT102641" class="govuk-button govuk-button--secondary" value="Format my notes">
-                  <input type="button" id="save-notes-DT102641" class="govuk-button govuk-button" value="Save" style="display: none;">
+                  <input type="button" id="save-notes-DT102641" class="govuk-button govuk-button" value="Save the new note(s)" style="display: none;">
+                  <input type="button" id="clear-notes-DT102641" class="govuk-button govuk-button--secondary" value="Clear the new note(s)" style="display: none;">                  
                 </div>
       
               </div>
@@ -648,7 +656,8 @@
       
                 <div class="govuk-button-group">
                   <input type="button" id="format-notes-DU164222" class="govuk-button govuk-button--secondary" value="Format my notes">
-                  <input type="button" id="save-notes-DU164222" class="govuk-button govuk-button" value="Save" style="display: none;">
+                  <input type="button" id="save-notes-DU164222" class="govuk-button govuk-button" value="Save the new note(s)" style="display: none;">
+                  <input type="button" id="clear-notes-DU164222" class="govuk-button govuk-button--secondary" value="Clear the new note(s)" style="display: none;">                  
                 </div>
       
               </div>
@@ -752,7 +761,8 @@
       
                 <div class="govuk-button-group">
                   <input type="button" id="format-notes-DT102641" class="govuk-button govuk-button--secondary" value="Format my notes">
-                  <input type="button" id="save-notes-DT102641" class="govuk-button govuk-button" value="Save" style="display: none;">
+                  <input type="button" id="save-notes-DT102641" class="govuk-button govuk-button" value="Save the new note(s)" style="display: none;">
+                  <input type="button" id="clear-notes-DT102641" class="govuk-button govuk-button--secondary" value="Clear the new note(s)" style="display: none;">                  
                 </div>
       
               </div>
@@ -856,7 +866,8 @@
       
                 <div class="govuk-button-group">
                   <input type="button" id="format-notes-DU164190" class="govuk-button govuk-button--secondary" value="Format my notes">
-                  <input type="button" id="save-notes-DU164190" class="govuk-button govuk-button" value="Save" style="display: none;">
+                  <input type="button" id="save-notes-DU164190" class="govuk-button govuk-button" value="Save the new note(s)" style="display: none;">
+                  <input type="button" id="clear-notes-DU164190" class="govuk-button govuk-button--secondary" value="Clear the new note(s)" style="display: none;">                  
                 </div>
       
               </div>
@@ -960,7 +971,8 @@
       
                 <div class="govuk-button-group">
                   <input type="button" id="format-notes-DU178082" class="govuk-button govuk-button--secondary" value="Format my notes">
-                  <input type="button" id="save-notes-DU178082" class="govuk-button govuk-button" value="Save" style="display: none;">
+                  <input type="button" id="save-notes-DU178082" class="govuk-button govuk-button" value="Save the new note(s)" style="display: none;">
+                  <input type="button" id="clear-notes-DU178082" class="govuk-button govuk-button--secondary" value="Clear the new note(s)" style="display: none;">                  
                 </div>
       
               </div>
@@ -1012,11 +1024,11 @@ function wrapLists(html) {
 function formatMessage(text) {
     let formatted = parseMarkdown(text);
     formatted = wrapLists(formatted);
-    
+
     if (!formatted.includes('<h1>') && !formatted.includes('<h2>') && !formatted.includes('<h3>') && !formatted.includes('<ul>') && !formatted.includes('<pre>')) {
         formatted = '<p class="govuk-body-s">' + formatted + '</p>';
     }
-    
+
     return formatted;
 }
 
@@ -1178,16 +1190,23 @@ if (hmlrTable) {
         return value.substring(0, idx).trimEnd();
     }
 
-
     async function matchNotesReasons(input) {
-    try {
-        const matchResponse = await fetch('/api/claude', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                messages: [{
-                    role: 'user',
-                    content: `A user has written a note. Based on the meaning and context of the note, match it to the most appropriate option from the list below. Only respond with the exact text of the matching option, nothing else, no explanation, no 3 dashes together. If you genuinely cannot determine a reasonable match, respond with only the word NOMATCH.
+        try {
+            const today = new Date();
+            const dd = String(today.getDate()).padStart(2, '0');
+            const mm = String(today.getMonth() + 1).padStart(2, '0');
+            const yyyy = today.getFullYear();
+            const todayStr = `${dd}/${mm}/${yyyy}`;
+
+            const matchResponse = await fetch('/api/claude', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    messages: [{
+                        role: 'user',
+                        content: `A user has written a note. Based on the meaning and context of the note, match it to one or more appropriate options from the list below. Only return multiple matches if the note clearly and genuinely covers more than one distinct situation. Return each matching option on its own line, using the exact text from the list. No explanation, no numbering, no dashes. If you genuinely cannot determine a reasonable match, respond with only the word NOMATCH.
+
+Note: "I am taking annual leave" covers any planned time off work including holidays, trips, vacations, and leisure travel. "I have been on sickness leave" covers only illness, injury, or medical absence. Do not match holiday or travel language to sickness leave.
 
 1. Trying to contact solicitor
 2. Awaiting solicitor response
@@ -1199,33 +1218,56 @@ if (hmlrTable) {
 8. Application needs further information, advice or review before sign-off
 9. Holding application for The Academy or/and my future training requirements
 10. Complex case: passing notes on to senior colleague
+11. Complex case: further enquiries required
+12. Referring this case
 
 User's note: "${input}"`
-                }]
-            })
-        });
+                    }]
+                })
+            });
 
-        const matchData = await matchResponse.json();
-        const matched = matchData.response.trim().replace(/^---$/gm, '').trim();
+            const matchData = await matchResponse.json();
+            const matchedRaw = matchData.response.trim().replace(/^---$/gm, '').trim();
 
-        if (matched === 'NOMATCH') {
-            return { success: false, text: input };
-        }
+            if (matchedRaw === 'NOMATCH') {
+                return { success: false, text: input };
+            }
 
-        if (matched === 'I am taking annual leave') {
-            const today = new Date();
-            const dd = String(today.getDate()).padStart(2, '0');
-            const mm = String(today.getMonth() + 1).padStart(2, '0');
-            const yyyy = today.getFullYear();
-            const todayStr = `${dd}/${mm}/${yyyy}`;
+            const validOptions = [
+                'Trying to contact solicitor',
+                'Awaiting solicitor response',
+                'I am taking annual leave',
+                'I have been on sickness leave',
+                'Awaiting approval from senior caseworker for application sign-off',
+                'Query in application requires senior caseworker advice before sign-off',
+                "Senior caseworker checking 'points' before sign-off",
+                'Application needs further information, advice or review before sign-off',
+                'Holding application for The Academy or/and my future training requirements',
+                'Complex case: passing notes on to senior colleague', 
+                'Complex case: further enquiries required', 
+                'Referring this case'
+            ];
 
-            const leaveResponse = await fetch('/api/claude', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    messages: [{
-                        role: 'user',
-                        content: `Today's date is ${todayStr}. A user has written a note about annual leave. The note may refer to leave in the past or future tense. Extract any date or duration information and produce a single formatted line of text following these rules:
+            const matches = matchedRaw
+                .split('\n')
+                .map(line => line.trim())
+                .filter(line => validOptions.includes(line));
+
+            if (matches.length === 0) {
+                return { success: false, text: input };
+            }
+
+            const results = [];
+
+            for (const matched of matches) {
+                if (matched === 'I am taking annual leave') {
+                    const leaveResponse = await fetch('/api/claude', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            messages: [{
+                                role: 'user',
+                                content: `Today's date is ${todayStr}. A user has written a note about annual leave. The note may refer to leave in the past or future tense. Extract any date or duration information and produce a single formatted line of text following these rules:
 
 - If two dates are given or inferable, count the weekdays (Monday to Friday) inclusive between them. Format as: "I am on annual leave for X: dd/mm/yyyy - dd/mm/yyyy" (future) or "I was on annual leave for X: dd/mm/yyyy - dd/mm/yyyy" (past) where X is "a week" if 5 weekdays, "two weeks" if 10 weekdays, otherwise "N days".
 - If only a start date is given or inferable, and the note clearly indicates one week, format as: "I am taking annual leave for a week: from dd/mm/yyyy" (future) or "I was on annual leave for a week: from dd/mm/yyyy" (past).
@@ -1238,30 +1280,33 @@ User's note: "${input}"`
 - Respond with the formatted line only, nothing else.
 
 User's note: "${input}"`
-                    }]
-                })
-            });
+                            }]
+                        })
+                    });
 
-            const leaveData = await leaveResponse.json();
-            return { success: true, text: leaveData.response.trim() };
+                    const leaveData = await leaveResponse.json();
+                    results.push(leaveData.response.trim());
+                } else {
+                    results.push(matched);
+                }
+            }
+
+            return { success: true, multiple: results };
+
+        } catch (error) {
+            console.error('Matching error:', error);
+            return { success: false, text: input };
         }
-
-        return { success: true, text: matched };
-
-    } catch (error) {
-        console.error('Matching error:', error);
-        return { success: false, text: input };
     }
-}    
-
 
     document.querySelectorAll('.hmlr-my-notes-textarea').forEach(wrapper => {
         const textarea = wrapper.querySelector('textarea');
         const formatBtn = wrapper.querySelector('[id^="format-notes-"]');
         const saveBtn = wrapper.querySelector('[id^="save-notes-"]');
+        const clearBtn = wrapper.querySelector('[id^="clear-notes-"]');
         const form = wrapper.closest('form');
 
-        if (!textarea || !formatBtn || !saveBtn) return;
+        if (!textarea || !formatBtn || !saveBtn || !clearBtn) return;
 
         // Add placeholder on page load
         textarea.value = textarea.value.trim()
@@ -1290,7 +1335,6 @@ User's note: "${input}"`
                 return;
             }
 
-            // Use known good base to extract only genuinely new content
             const base = confirmedSnapshot || savedContent;
             const existing = base || '';
             const currentInput = base
@@ -1304,23 +1348,27 @@ User's note: "${input}"`
 
             formatBtn.disabled = true;
             formatBtn.value = 'Matching...';
+            formatBtn.style.cursor = 'progress';
 
             const result = await matchNotesReasons(currentInput);
 
             if (result.success) {
                 const timestamp = getUKDateTime();
-                const newEntry = `\u25B6 ${timestamp}\n\n${result.text}\n\n---`;
-                const fullContent = existing ? `${existing}\n${newEntry}` : newEntry;
+                const entries = result.multiple.map(text => `\n\u25A0 ${timestamp}\n\n${text}\n\n---`).join('\n');
+                const fullContent = existing ? `${existing}\n${entries}` : entries;
                 textarea.value = fullContent;
                 textarea.scrollTop = textarea.scrollHeight;
                 confirmedSnapshot = stripPlaceholder(fullContent).trim();
                 hasFallback = false;
                 fallbackBase = '';
                 textarea.readOnly = true;
+                textarea.style.cursor = 'not-allowed';
                 formatBtn.disabled = false;
                 formatBtn.value = 'Format my notes';
+                formatBtn.style.cursor = '';
                 formatBtn.style.display = 'none';
                 saveBtn.style.display = '';
+                clearBtn.style.display = '';
             } else {
                 const newEntry = `\u25CF This does not match any options - please add more details and try again.\n\n${currentInput}`;
                 textarea.value = existing ? `${existing}\n${newEntry}` : newEntry;
@@ -1328,13 +1376,14 @@ User's note: "${input}"`
                 hasFallback = true;
                 formatBtn.disabled = false;
                 formatBtn.value = 'Format my notes';
+                formatBtn.style.cursor = '';
             }
         });
 
         saveBtn.addEventListener('click', (e) => {
             e.preventDefault();
             if (confirmedSnapshot !== null) {
-                textarea.value = `${confirmedSnapshot}\n\n${PLACEHOLDER}`;
+              textarea.value = `${confirmedSnapshot}\n${PLACEHOLDER}`;
             }
             // if (form) form.submit(); // replace with AJAX call later
 
@@ -1347,7 +1396,24 @@ User's note: "${input}"`
             formatBtn.disabled = false;
             formatBtn.value = 'Format my notes';
             saveBtn.style.display = 'none';
+            clearBtn.style.display = 'none';
             textarea.readOnly = false;
+            textarea.style.cursor = '';
+        });
+
+        clearBtn.addEventListener('click', () => {
+            textarea.value = savedContent ? `${savedContent}\n${PLACEHOLDER}` : PLACEHOLDER;
+            textarea.scrollTop = textarea.scrollHeight;
+            confirmedSnapshot = null;
+            hasFallback = false;
+            fallbackBase = '';
+            formatBtn.style.display = '';
+            formatBtn.disabled = false;
+            formatBtn.value = 'Format my notes';
+            saveBtn.style.display = 'none';
+            clearBtn.style.display = 'none';
+            textarea.readOnly = false;
+            textarea.style.cursor = '';
         });
 
         textarea.addEventListener('keydown', (e) => {
@@ -1358,6 +1424,7 @@ User's note: "${input}"`
                     formatBtn.disabled = false;
                     formatBtn.value = 'Format my notes';
                     saveBtn.style.display = 'none';
+                    clearBtn.style.display = 'none';
                 }
             }
         });
@@ -1383,21 +1450,21 @@ User's note: "${input}"`
         });
 
         textarea.addEventListener('blur', (e) => {
-          if (textarea.readOnly) return;
-          if (e.relatedTarget === formatBtn || e.relatedTarget === saveBtn) return;
-          
-          const current = textarea.value.trimEnd();
-          const lastSep = current.lastIndexOf('---');
-          const newContent = lastSep === -1 ? current : current.substring(lastSep + 3).trim();
-          
-          if (newContent) return;
-          
-          if (!hasFallback && !textarea.value.includes(PLACEHOLDER)) {
+            if (textarea.readOnly) return;
+            if (e.relatedTarget === formatBtn || e.relatedTarget === saveBtn || e.relatedTarget === clearBtn) return;
+
+            const current = textarea.value.trimEnd();
+            const lastSep = current.lastIndexOf('---');
+            const newContent = lastSep === -1 ? current : current.substring(lastSep + 3).trim();
+
+            if (newContent) return;
+
+            if (!hasFallback && !textarea.value.includes(PLACEHOLDER)) {
               textarea.value = textarea.value.trim()
-                  ? `${textarea.value.trim()}\n${PLACEHOLDER}`
-                  : PLACEHOLDER;
-          }
-      });
+            ? `${textarea.value.trim()}\n${PLACEHOLDER}`
+            : PLACEHOLDER;
+            }
+        });
 
     });
 
