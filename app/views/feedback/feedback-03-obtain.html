@@ -66,8 +66,14 @@ Select a deferral reason
 
         </div>
 
+
+        <!--a href="https://www.gov.uk/" id="open-only-one-tab" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">
+          Give feedback to caseworker (opens in new tab) 
+        </a-->
+
+
         <p class="govuk-body-s govuk-!-padding-top-3 hmlr-give-your-feedback">     
-          <a href="https://www.gov.uk/" id="open-only-one-tab" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">
+          <a href="https://www.bbc.co.uk/news" id="open-only-one-tab" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">
             Give feedback to caseworker (opens in new tab) 
           </a>
           <span class="govuk-visually-hidden">.</span>
@@ -77,6 +83,7 @@ Select a deferral reason
           let targetTab = null;
         
           document.getElementById('open-only-one-tab').addEventListener('click', function(e) {
+            alert('test');
             e.preventDefault();
             if (!targetTab || targetTab.closed) {
               targetTab = window.open(this.getAttribute('href'), '_blank');
@@ -84,6 +91,31 @@ Select a deferral reason
               targetTab.focus();
             }
           });
+
+          /*let targetTab = null;
+ 
+          document.getElementById('open-only-one-tab').addEventListener('click', function(e) {
+            e.preventDefault();
+          
+            const url = this.getAttribute('href');
+          
+            if (!targetTab || targetTab.closed) {
+              // Use a named window instead of _blank
+              targetTab = window.open(url, 'myReusableTab');
+            } else {
+              // Reuse the same tab, even across domains
+              targetTab.location.href = url;
+              targetTab.focus();
+            }
+          });*/
+
+          /*
+          document.getElementById('open-only-one-tab').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.open(this.getAttribute('href'), 'feedbackTab');
+          });
+
+          */
         </script>        
 
         <div id="data-progress-later-table">
