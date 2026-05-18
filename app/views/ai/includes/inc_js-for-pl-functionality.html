@@ -133,7 +133,8 @@ node server.js
               myTd.querySelector('.hmlr-my-notes-textarea').setAttribute('aria-hidden', 'true');
             }
 
-            if (textarea.value.trim() !== "") {//textarea is not empty
+            //if (textarea.value.trim() !== "") {//textarea is not empty
+            if (textarea.value.trim() !== "" && textarea.value.trim() !== "Type your next note here...") {              
               var myLink = myTd.querySelector('.hmlr-my-notes');
               myLink.classList.add('hmlr-my-notes--added');//add dot icon to my notes link
               myLink.setAttribute('aria-label', 'This case has notes');

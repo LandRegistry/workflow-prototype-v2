@@ -36,7 +36,7 @@ if (checkIfTblsExist()) {
 
       // Auto-expand textarea rows to fit content on load
       const tdEle = link.closest('td');
-      /*if (tdEle) {
+      if (tdEle) {
         const textarea = tdEle.querySelector('textarea');
         if (textarea) {
           const lineHeight = parseInt(window.getComputedStyle(textarea).lineHeight);
@@ -52,20 +52,7 @@ if (checkIfTblsExist()) {
           }
           textarea.style.height = '';
         }
-      }*/
-
-
-      const textarea = tdEle.querySelector('textarea');
-      
-      if (textarea) {
-        if (textarea.value.trim() !== "") {     
-          //var myLink = tdEle.querySelector('.hmlr-my-notes');
-          var myLink = tdEle.querySelector('.case__my-notes');
-          myLink.classList.add('hmlr-my-notes--added');//add dot icon to my notes link
-          myLink.setAttribute('aria-label', 'This case has notes');
-        } 
       }
-
 
       link.addEventListener('click', function(e) {
         e.preventDefault();
