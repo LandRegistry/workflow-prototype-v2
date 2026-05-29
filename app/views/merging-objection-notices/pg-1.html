@@ -72,10 +72,28 @@
               Cancellation
             </label>
           </div>
+
+<!--
+Dev: You should already have .hmlr-no-way in your SASS/CSS library? If not... 
+
+SASS:
+@include govuk-media-query($from: desktop){
+    .hmlr-no-wrap {
+        white-space: nowrap;
+    }
+}
+
+CSS:
+@media (min-width: 48.0625em) {
+    .hmlr-no-wrap {
+        white-space: nowrap;
+    }
+}
+-->
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="adn" name="filters" type="radio" value="adn">
-            <label class="govuk-label govuk-radios__label govuk-!-font-size-16" for="adn">
-              <abbr>ADN</abbr>
+            <input class="govuk-radios__input" id="expired" name="filters" type="radio" value="adn">
+            <label class="govuk-label govuk-radios__label govuk-!-font-size-16 hmlr-no-wrap" for="expired">
+              Expired Notices
             </label>
           </div>          
         </div>
