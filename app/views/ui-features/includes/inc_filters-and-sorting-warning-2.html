@@ -72,25 +72,40 @@
 
     <style>
 
-      .govuk-warning-text.hmlr-warning-text--sm {
-        margin-top: -20px;
+      .govuk-warning-text.hmlr-warning-text--centered {
+        width: fit-content;
+        margin: 0 auto 25px auto;
       }
-      .govuk-warning-text.hmlr-warning-text--sm .govuk-warning-text__icon {
+      /*.govuk-warning-text.hmlr-warning-text--centered .govuk-warning-text__icon {
         font-size: 20px; 
         min-height: 34px;
         min-width: 34px; 
         top: 7px; 
-      }
+      }*/
+
+      /* sass ...
+
+      xxx: $hmlr-brand-colour; 
+
+      */
 
       @media (min-width: 48.0625em) {}
     </style>
 
       <!-- *** must be inside form after the 'section' tag if special css required *** -->
-      <div class="govuk-warning-text hmlr-warning-text--sm"> 
+      <div class="govuk-warning-text hmlr-warning-text--centered"> 
         <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-        <strong class="govuk-warning-text__text govuk-!-font-weight-regular govuk-!-font-size-16">
+        <strong class="govuk-warning-text__text">
           <span class="govuk-visually-hidden">Warning</span>
-          You have applied a filtering or sorting to the list.
+          This list has been filtered or sorted
+
+          <!-- ideally ...
+          "This list has been sorted"
+          "This list has been filtered"
+          "This list has been filtered and sorted"
+          -->
+
+
         </strong>
       </div> 
 
