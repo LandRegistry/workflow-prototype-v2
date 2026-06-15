@@ -352,7 +352,95 @@ Example of dynamic table
         Progress Later : 5 applications
       </h2>
 
-      {% include "./includes/inc_filters-and-sorting-warning-2.html" %} 
+      <form action="#" name="filtering" novalidate>
+        <section class="govuk-!-margin-bottom-6 hmlr-form-grouping-c hmlr-form-grouping--full-width hmlr-form-grouping--curved">
+    
+            <h2 class="hmlr-from-grouping__header">
+              Filtering and sorting the list
+            </h2>
+    
+            <div class="hmlr-form-grouping__form">
+    
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-two-thirds"> 
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend--s govuk-visually-hidden">
+                    Filters
+                  </legend>
+    
+                  <div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="filter" name="filter" type="radio" value="filter-none">
+                      <label class="govuk-label govuk-radios__label govuk-!-font-size-16" for="filter">
+                        None
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="filter-2" name="filter" type="radio" value="filter-referred" checked="checked">
+                      <label class="govuk-label govuk-radios__label govuk-!-font-size-16" for="filter-2">
+                        Referred 
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="filter-3" name="filter" type="radio" value="filter-expedited">
+                      <label class="govuk-label govuk-radios__label govuk-!-font-size-16" for="filter-3">
+                        Non-referred
+                      </label>
+                    </div>                
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="filter-4" name="filter" type="radio" value="filter-flagged">
+                      <label class="govuk-label govuk-radios__label govuk-!-font-size-16" for="filter-4">
+                        My flagged cases
+                      </label>
+                    </div>              
+                  </div>
+                </fieldset>
+              </div>
+    
+              <div class="govuk-grid-column-one-third govuk-!-padding-left-0">   <!-- **** PADDING LEFT ZERO **** --><!-- govuk-grid-column-one-third-from-desktop -->
+                <!--div class="govuk-form-group"-->
+                  <label class="govuk-label govuk-!-font-size-16 govuk-visually-hidden" for="sort">
+                    Sorted by
+                  </label>
+                  <select class="govuk-select govuk-!-margin-top-2 govuk-!-font-size-16 govuk-!-width-full" id="sort" name="sort">
+                    <option value="default">Default sorting</option>
+                    <option value="priority-newest" selected>Priority date: Newest</option>
+                    <option value="priority-oldest">Priority date: Oldest</option>
+                    <option value="obtained-newest">Date obtained: Newest</option>
+                    <option value="obtained-oldest">Date obtained: Oldest</option>
+                  </select>
+                <!--/div-->
+              </div>            
+            </div>          
+    
+            <div class="govuk-button-group">
+              <button class="govuk-button govuk-button--secondary govuk-!-font-size-16" type="submit">
+                Submit
+              </button>
+              <!--input class="hmlr-btn-as-link hmlr-link--min-width-48 govuk-!-font-size-16" type="reset" value="Reset"-->
+            </div>
+    
+          </div>
+    
+        </section>
+    
+        <style>
+          .govuk-warning-text.hmlr-warning-text--centered {
+            width: fit-content;
+            margin: 0 auto 45px auto;
+          }
+        </style>
+    
+          <!-- *** must be inside form after the 'section' tag - special css required *** -->
+          <div class="govuk-warning-text hmlr-warning-text--centered"> 
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+              <span class="govuk-visually-hidden">Warning</span>
+              This list has been filtered and sorted
+            </strong>
+          </div> 
+    
+      </form>      
 
       <div id="hmlrListTbl"><!-- wrapped with this div#hmlrListTbl just for this prototype page to pick up styles  -->
         <table id="progress_later_table" class="govuk-table">

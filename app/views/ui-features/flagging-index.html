@@ -24,16 +24,8 @@ Index page for UI design features
         </p>
 
         <p class="govuk-body-s">
-          A new 'Add flag' "link" (button) is now added to the end of the action buttons for each case shown on the page (for both progress now and progress later lists).
+          A new 'Add flag' "link" (button) is now added to the end of the action buttons for each case shown on the Worklist page (for both progress now and progress later lists): the "Add flag" button, lets caseworkers mark cases that need attention or follow-up. Clicking the button shows a flag icon next to that case and updates the button text (value) to "Remove flag", with the change saved immediately so it persists if the caseworker leaves and returns to the page. The flag state is also stored in a database, so it's consistent across devices. For users without JavaScript, the page reloads after clicking to apply the same update.
         </p>        
-
-        <p class="govuk-body-s">
-          View the <abbr>HTML</abbr> page source to access the JavaScript and additional <abbr>CSS</abbr> (bottom of the page/file). Note the <abbr>ID</abbr>s <code>progress_now_table</code> and <code>progress_later_table</code> on the two <abbr>HTML</abbr> <code>table</code>s.
-        </p>
-
-        <p class="govuk-body-s">
-          Each "link" (button) is seperated by a hidden 'pipe': ensure this new button is also seperated from the previous link/button using a 'pipe'. (View the <abbr>HTML</abbr> source).
-        </p>         
 
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">        
 
@@ -41,29 +33,49 @@ Index page for UI design features
           How the flagging functionality works
         </h2>
 
-        <p class="govuk-body-s">
-          At the end of each row of actions (for each case) is a flag button (styled as a link) immediately followed by an SVG flag icon. The flag mechanism is a progressive enhancement layered over the standard table markup: the <abbr>SVG</abbr> is hidden by default (<code>aria-hidden="true"</code>, with no <code>hmlr-flag-icon-show</code> class added) and the JavaScript toggles its visibility when clicking the button.
-        </p>
-        
-        <p class="govuk-body-s">
-          The JavaScript runs on DOMContentLoaded: on page load, it selects all <code>.hmlr-flag-icon-btn</code> elements within <code>#main-content</code>, then for each one reads any saved flag state from localStorage (keyed as flag_ plus the button's <abbr>ID</abbr>, with a 365-day expiry time and stored in JSON) and applies it to the DOM via <code>applyFlagState()</code> — showing or hiding the <abbr>SVG</abbr>, updating the <code>title</code> text for screen readers, and setting the button value to "Add flag" or "Remove flag".
-        </p>
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Technical description
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p class="govuk-body-s">
+              At the end of each row of actions (for each case) is a flag button (styled as a link) immediately followed by an SVG flag icon. The flag mechanism is a progressive enhancement layered over the standard table markup: the <abbr>SVG</abbr> is hidden by default (<code>aria-hidden="true"</code>, with no <code>hmlr-flag-icon-show</code> class added) and the JavaScript toggles its visibility when clicking the button.
+            </p>
+            
+            <p class="govuk-body-s">
+              The JavaScript runs on DOMContentLoaded: on page load, it selects all <code>.hmlr-flag-icon-btn</code> elements within <code>#main-content</code>, then for each one reads any saved flag state from localStorage (keyed as flag_ plus the button's <abbr>ID</abbr>, with a 365-day expiry time and stored in JSON) and applies it to the DOM via <code>applyFlagState()</code> — showing or hiding the <abbr>SVG</abbr>, updating the <code>title</code> text for screen readers, and setting the button value/label to "Add flag" or "Remove flag".
+            </p>
+    
+            <p class="govuk-body-s">
+              When a user clicks a flag button, the handler calls <code>e.preventDefault()</code> to stop the form submitting (so the page never reloads), toggles the <abbr>SVG</abbr> visibility, ARIA state, title text, and button label, then immediately writes the new state to localStorage (within the browser). The final step — <b>currently commented out in the code</b> — calls <code>updateFlagInDatabase()</code>, which sends an asynchronous fetch POST to <code>/api/update-flag</code> with the case's record <abbr>ID</abbr> and flag state as JSON. The <abbr>UI</abbr> updates instantly without waiting for the server. If the server call fails, the <code>.catch()</code> block rolls everything back — reverting localStorage, the button label, the <abbr>SVG</abbr> visibility, and the ARIA attributes — so the <abbr>ID</abbr> never shows a flag state the database doesn't hold. The button is also disabled (<code>pointerEvents = 'none'</code>) during the request to prevent double-clicks.
+            </p>
+    
+            <p class="govuk-body-s">        
+              Basically, localStorage gives instant per-browser persistence. The AJAX call syncs to the server as the source of truth, and the error handler keeps the two consistent. When the page is reloaded from the server the updated <abbr>HTML</abbr> is served with the correct settings for each flag per case.
+            </p>
+          </div>
+        </details>
 
-        <p class="govuk-body-s">
-          When a user clicks a flag button, the handler calls <code>e.preventDefault()</code> to stop the form submitting (so the page never reloads), toggles the <abbr>SVG</abbr> visibility, <code>ARIA</code> state, title text, and button label, then immediately writes the new state to localStorage. The final step — <b>currently commented out</b> — calls <code>updateFlagInDatabase()</code>, which sends an asynchronous fetch POST to <code>/api/update-flag</code> with the case's record <abbr>ID</abbr> and flag state as JSON. The <abbr>UI</abbr> updates instantly without waiting for the server. If the server call fails, the <code>.catch()</code> block rolls everything back — reverting localStorage, the button label, the <abbr>SVG</abbr> visibility, and the <code>ARIA</code> attributes — so the <abbr>ID</abbr> never shows a flag state the database doesn't hold. The button is also disabled (<code>pointerEvents = 'none'</code>) during the request to prevent double-clicks.
-        </p>
-
-        <p class="govuk-body-s">        
-          Basically, localStorage gives instant per-browser persistence. The AJAX call syncs to the server as the source of truth, and the error handler keeps the two consistent.
-        </p>
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
         <h3 class="govuk-heading-m">
           Non-JavaScript and <abbr>WCAG</abbr> fallback
         </h3>
 
-        <p class="govuk-body-s">        
-          The JavaScript functionality is a progressive enhancement. In browsers which do not support this JavaScript, the click event on the button is never set. Therefore the button will simply submit the local form (wrapping the flag button) and the page reloads (having submitted the form) in the conventional way. (We update the database and reload the page with the <abbr>HTML</abbr> setting that flag appropriately: showing or hiding the <abbr>SVG</abbr> flag, updating the <code>title</code> text for screen readers, and setting the button value to "Add flag" or "Remove flag".)
-        </p>
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Accessibility support
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p class="govuk-body-s">        
+              The JavaScript functionality is a progressive enhancement. In browsers which do not support this JavaScript, the click event on the button is never set. Therefore the button will simply submit the local form (wrapping the flag button) and the page reloads (having submitted the form) in the conventional way. (We update the database and reload the page with the <abbr>HTML</abbr> setting that flag appropriately: showing or hiding the <abbr>SVG</abbr> flag, updating the <code>title</code> text for screen readers, and setting the button value to "Add flag" or "Remove flag".)
+            </p>
+          </div>
+        </details>        
 
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
@@ -71,66 +83,80 @@ Index page for UI design features
           Notes on implimentation
         </h2>
 
-        <p class="govuk-body-s">
-          To make the flag button update the remote database without a page reload:
-        </p>
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Some suggested dev notes
+            </span>
+          </summary>
+          <div class="govuk-details__text">
 
-        <ol class="govuk-list govuk-list--number govuk-!-margin-top-7 govuk-list--spaced govuk-!-font-size-16">
-          <li>
-            Ensure you have <abbr>ID</abbr>s <code>progress_now_table</code> and <code>progress_later_table</code> on the two <abbr>HTML</abbr> <code>table</code>s respectively (as per the prototype).
-          </li>
-          <li>
-            Uncomment the database sync line in the click handler: <code>//updateFlagInDatabase(recordId, isFlagged, this);</code> <br>(Remove the //).
-          </li>
-          <li>
-            Create the server-side endpoint at POST <code>/api/update-flag</code>. It must: 
-
-            <ul class="govuk-list govuk-list--bullet govuk-!-margin-top-3 govuk-!-margin-bottom-3 govuk-!-font-size-16">
+            <p class="govuk-body-s">
+              View the <abbr>HTML</abbr> page source to access the JavaScript and additional <abbr>CSS</abbr> (bottom of the page/file). Note the <abbr>ID</abbr>s <code>progress_now_table</code> and <code>progress_later_table</code> on the two <abbr>HTML</abbr> <code>table</code>s. (Each "link" - technically a button - is seperated by a hidden 'pipe'. Ensure this new button is also seperated from the previous link/button using a 'pipe'. View the <abbr>HTML</abbr> source).
+            </p>        
+    
+            <p class="govuk-body-s">
+              To make the flag button update the remote database without a page reload - a suggestion:
+            </p>
+    
+            <ol class="govuk-list govuk-list--number govuk-!-margin-top-7 govuk-list--spaced govuk-!-font-size-16">
               <li>
-                Accept a JSON body of the shape <code>{ "recordId": "E365VWW", "isFlagged": true }</code>
+                Ensure you have <abbr>ID</abbr>s <code>progress_now_table</code> and <code>progress_later_table</code> on the two <abbr>HTML</abbr> <code>table</code>s respectively (as per the prototype).
               </li>
               <li>
-                Update the flag column for that case record in the database
+                Uncomment the database sync line in the click handler: <code>//updateFlagInDatabase(recordId, isFlagged, this);</code> <br>(Remove the //).
               </li>
               <li>
-                Return a 200 response with a JSON body (e.g. <code>{ "success": true }</code>) — the client calls response.json(), so the response must be valid JSON
+                Create the server-side endpoint at POST <code>/api/update-flag</code>. It must: 
+    
+                <ul class="govuk-list govuk-list--bullet govuk-!-margin-top-3 govuk-!-margin-bottom-3 govuk-!-font-size-16">
+                  <li>
+                    Accept a JSON body of the shape <code>{ "recordId": "E365VWW", "isFlagged": true }</code>
+                  </li>
+                  <li>
+                    Update the flag column for that case record in the database
+                  </li>
+                  <li>
+                    Return a 200 response with a JSON body (e.g. <code>{ "success": true }</code>) — the client calls response.json(), so the response must be valid JSON
+                  </li>
+                  <li>
+                    Return a non-2xx status on failure, which triggers the client-side rollback
+                  </li>
+                </ul>
+    
               </li>
               <li>
-                Return a non-2xx status on failure, which triggers the client-side rollback
+                Probably best to add <abbr>CSRF</abbr> protection. The fetch request currently sends no <abbr>CSRF</abbr> token, but the page's forms use one. Either: 
+    
+                <ul class="govuk-list govuk-list--bullet govuk-!-margin-top-3 govuk-!-margin-bottom-3 govuk-!-font-size-16">
+                  <li>
+                    Add a <code>&lt;meta name="csrf-token" content="..."&gt;</code> tag to the page head, and
+                  </li>
+                  <li>
+                    Uncomment the 'X-CSRF-Token' header line in updateFlagInDatabase(), then validate the token server-side
+                  </li>
+                </ul>
+    
               </li>
-            </ul>
-
-          </li>
-          <li>
-            Probably best to add <abbr>CSRF</abbr> protection. The fetch request currently sends no <abbr>CSRF</abbr> token, but the page's forms use one. Either: 
-
-            <ul class="govuk-list govuk-list--bullet govuk-!-margin-top-3 govuk-!-margin-bottom-3 govuk-!-font-size-16">
               <li>
-                Add a <code>&lt;meta name="csrf-token" content="..."&gt;</code> tag to the page head, and
+                Verify the record <abbr>ID</abbr> mapping. The browser/JavaScript gets the <code>recordId</code> by stripping add_flag_ from the button <abbr>ID</abbr> (giving the case reference, e.g. V667KXL). Ensure the database lookup uses the case reference, or change the markup/JavaScript if the database keys on a different identifier (e.g. the numeric row <abbr>ID</abbr>).
               </li>
               <li>
-                Uncomment the 'X-CSRF-Token' header line in updateFlagInDatabase(), then validate the token server-side
+                Decide the source of truth on page load. Currently the initial flag state comes from localStorage, which is per-browser. But for cross-device consistency (if the user switches browsers or machines and/or a colleague logs into the worklist on their own <abbr>PC</abbr>), render the flag state server-side (add <code>hmlr-flag-icon-show</code> and set the button value in the template from the database). i.e, when the page first loads we check the database settings and serve the initial <abbr>HTML</abbr> page accordingly.
+              </li>          
+              <li>
+                Test the failure path. Temporarily make the endpoint return a 500 and confirm the <abbr>UI</abbr> reverts: <abbr>SVG</abbr> hides, button label restores, localStorage rolls back, and the button becomes clickable again.
               </li>
-            </ul>
-
-          </li>
-          <li>
-            Verify the record <abbr>ID</abbr> mapping. The browser/JavaScript gets the <code>recordId</code> by stripping add_flag_ from the button <abbr>ID</abbr> (giving the case reference, e.g. V667KXL). Ensure the database lookup uses the case reference, or change the markup/JavaScript if the database keys on a different identifier (e.g. the numeric row <abbr>ID</abbr>).
-          </li>
-          <li>
-            Decide the source of truth on page load. Currently the initial flag state comes from localStorage, which is per-browser. But for cross-device consistency (if the user switches browsers or machines and/or a colleague logs into the worklist on their own <abbr>PC</abbr>), render the flag state server-side (add <code>hmlr-flag-icon-show</code> and set the button value in the template from the database), and treat localStorage as a cache only — or remove it entirely once/if the database sync is live. i.e, when the page first loads we check the database settings and serve the initial <abbr>HTML</abbr> page accordingly.
-          </li>          
-          <li>
-            Test the failure path. Temporarily make the endpoint return a 500 and confirm the <abbr>UI</abbr> reverts: <abbr>SVG</abbr> hides, button label restores, localStorage rolls back, and the button becomes clickable again.
-          </li>
-          <li>
-            <abbr>Q:</abbr> Should we show errors to the user? The JavaScript block only logs to console. We could uncomment and show  notifications to caseworkers so they know a flag failed to save? (If so, we should also mimic this with an important notification banner for Non-JavaScript users).
-          </li> 
-          <li>
-            Note: there are two options at the start of the JavaScript to temporarily un-comment to clear (reset) the localstorage of the flags if you need to, while developing. Un-comment one (the first line), reload the page once, then comment it back out. It only removes keys beginning with flag_, so anything else in localStorage (like its auto-stored session data) is left alone. If you prefer to nuke everything in localStorage for the page, use the second line.
-          </li>                   
-             
-        </ol>
+              <li>
+                <abbr>Q:</abbr> Should we show errors to the user? The JavaScript block only logs to console. We could uncomment and show  notifications to caseworkers so they know a flag failed to save? (If so, we should also mimic this with an important notification banner for Non-JavaScript users).
+              </li> 
+              <li>
+                Note: there are two options at the start of the JavaScript to temporarily un-comment to clear (reset) the localstorage of the flags if you need to, while developing. Un-comment one (the first line), reload the page once, then comment it back out. It only removes keys beginning with flag_, so anything else in localStorage (like its auto-stored session data) is left alone. If you prefer to nuke everything in localStorage for the page, use the second line.
+              </li>                   
+                 
+            </ol>
+          </div>
+        </details>        
 
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"> 
         
@@ -138,24 +164,58 @@ Index page for UI design features
           Some <abbr>UI</abbr> <abbr>AC</abbr>s
         </h2>
 
-        <ol class="govuk-list govuk-list--number govuk-!-margin-top-7 govuk-list--spaced govuk-!-font-size-16">
-          <li>
-            Thew new 'Add flag' buttons are seperated from the previous link/button using a hidden 'pipe'. (As per the pre-existing links/buttons in the row)
-          </li>
-          <li>
-            The database values set (override) the <abbr>UI</abbr> as the primary source of truth
-          </li>
-          <li>
-            Failure to update the database, rolls back any changes to the <abbr>UI</abbr> (if necessary)
-          </li>
-          <li>
-            Keyboard tabbing works as expected
-          </li>
-          <li>
-            Non-JavaScript functionality is supported
-          </li>
-        </ol>
-             
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Some acceptance criteria points
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <ol class="govuk-list govuk-list--number govuk-!-margin-top-7 govuk-list--spaced govuk-!-font-size-16">
+              <li>
+                Thew new 'Add flag' buttons are seperated from the previous link/button using a hidden 'pipe'. (As per the pre-existing links/buttons in the row)
+              </li>
+              <li>
+                The database values set (override) the <abbr>UI</abbr> as the primary source of truth
+              </li>
+              <li>
+                When the flag button is clicked, the following are updated:
+    
+                <ul class="govuk-list govuk-list--bullet govuk-!-margin-top-3 govuk-!-margin-bottom-3 govuk-!-font-size-16">
+                  <li>
+                    <abbr>SVG</abbr> flag icon becomes visible and the aria-hidden attribute is updated to match
+                  </li>
+                  <li>
+                    Title element within the <abbr>SVG</abbr> block is updated. (This tooltip/screen-reader text on the icon changes to reflect the new state)
+                  </li>
+                  <li>
+                    Button value/label - toggles between "Add flag" and "Remove flag"
+                  </li>
+                  <li>
+                    The cursor style is set to 'none' while the request is in flight, then restored afterwards
+                  </li>
+                  <li>
+                    If the server request fails, all of the above (except the SVG and label changes that already happened) get reverted back to their previous values via the .catch() block
+                  </li>
+                  <li>
+                    The support for localStorage works: when setting a flag to a different state (without a connection to the server or database), refreshing the page correctly shows the latest setting
+                  </li>              
+                  <li>
+                    Failure to update the database, rolls back any changes to the <abbr>UI</abbr> (if necessary)
+                  </li>
+                </ul>
+    
+              </li>
+              <li>
+                Keyboard tabbing works as expected
+              </li>
+              <li>
+                Non-JavaScript functionality is supported
+              </li>
+            </ol>
+          </div>
+        </details>        
+
     
   </div>
 </div>

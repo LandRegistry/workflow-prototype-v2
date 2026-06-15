@@ -1,0 +1,166 @@
+{% extends "layouts/wf_layout-std-new.html" %}
+
+{# set pageName="Example of dynamic table" #}
+
+{% block pageTitle %}
+Index page for UI design features
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      
+        <h1 class="govuk-heading-l">
+          Filtering and sorting <abbr>UI</abbr> features
+        </h1>
+    
+        <p class="govuk-body-s">
+          The design: <a href="std-pg-with-filters-ordering.html" class="govuk-link govuk-link--no-visited-state" target="_blank">
+            functional prototype (opens in new tab)
+          </a>
+        </p>
+
+        <p class="govuk-body-s">
+          Design including <a href="std-pg-with-filters-ordering-warning-2.html" class="govuk-link govuk-link--no-visited-state" target="_blank">
+            the warning message (opens in new tab)
+          </a>
+        </p>        
+
+        <p class="govuk-body-s">
+          
+        </p>        
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">        
+
+        <h2 class="govuk-heading-m">
+          How the flagging functionality works
+        </h2>
+
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Technical description
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+
+            <p class="govuk-body-s">
+              Standard form logic: 4x radio buttons and selections from a 'select' (dropdown) element dictate which cases in the Progress Later list are shown and in what order. The form options are submited when the 'Submit' button is selected - the page refreshes with the new filtering and/or sorting.
+            </p>
+            
+            <p class="govuk-body-s">
+              Filter 'None' applies no filtering, with all cases in the Progress Later list shown. When a filter is applied (and there is no change to the default sorting option) we maintain the standard ordering setting (which in the live service <em>appears</em> to be the oldest priority date running from the start/top to end/bottom).
+            </p>
+    
+            <p class="govuk-body-s">
+              Sorting set to the 'Default sorting' follows the established ordering which is currently used (and has always been used): this prepends the Progress Later list with cases which have been expedited. There is no change to the current sorting/ordering logic. As is. 
+            </p>
+    
+            <p class="govuk-body-s">        
+              Other sorting options are self explanatory and do not prioritise prepending expedited cases at the top/start of the Progress Later list (they appear within the list according to the order/sorting selected). e.g. selecting 'Priority date: Newest' puts the newest cases according to priority date at the top/start of the list, and ascending accordingly.
+            </p>
+
+            <p class="govuk-body-s">        
+              The selected ordering and filters are maintained/persisted for the user session. (This means the user does not need to reapply the settings). The optins are reset to their default settings ('None' and 'Default sorting') "each day (logging off, 'end of the day')" and/or when logging back into Workflow. (Potentially achieved through session data/timings).
+            </p>    
+            
+            <p class="govuk-body-s">        
+              When filter/sorting selections are in action, a warning message is included within the page (below the filter/sorting options). This is contextual and is either of the following three: 
+            </p>      
+            
+            <ul class="govuk-list govuk-list--bullet govuk-!-margin-top-3 govuk-!-margin-bottom-3 govuk-!-font-size-16">
+              <li>
+                This list has been sorted
+              </li>
+              <li>
+                This list has been filtered
+              </li>
+              <li>
+                This list has been filtered and sorted
+              </li>
+            </ul>
+
+            <p class="govuk-body-s">        
+              The warning messages use the standard <abbr>GDS</abbr> library 'Warning Text' component (with a <abbr>HMLR</abbr> style class added to the parent element).
+            </p>   
+            
+            <p class="govuk-body-s">        
+              <small>The case ordering of the design mock-ups may not reflect the form settings.</small>
+            </p>             
+
+          </div>
+        </details>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"> 
+
+
+        <p class="govuk-body-s">        
+          Inspect the <abbr>HTML</abbr> of the prototype for <abbr>HTML</abbr> structure and classes and bespoke <abbr>CSS</abbr>.
+        </p> 
+
+
+        <!--
+        <h2 class="govuk-heading-m">
+          Some <abbr>UI</abbr> <abbr>AC</abbr>s
+        </h2>
+
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Some acceptance criteria points
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <ol class="govuk-list govuk-list--number govuk-!-margin-top-7 govuk-list--spaced govuk-!-font-size-16">
+              <li>
+                
+              </li>
+              <li>
+                
+              </li>
+              <li>
+                
+    
+                <ul class="govuk-list govuk-list--bullet govuk-!-margin-top-3 govuk-!-margin-bottom-3 govuk-!-font-size-16">
+                  <li>
+                    
+                  </li>
+                  <li>
+                    
+                  </li>
+                  <li>
+                    
+                  </li>
+                  <li>
+                    
+                  </li>
+                  <li>
+                    
+                  </li>
+                  <li>
+                    
+                  </li>              
+                  <li>
+                    
+                  </li>
+                </ul>
+    
+              </li>
+              <li>
+                
+              </li>
+              <li>
+                
+              </li>
+            </ol>
+          </div>
+        </details>        
+      -->
+    
+  </div>
+</div>
+
+{% endblock %}
