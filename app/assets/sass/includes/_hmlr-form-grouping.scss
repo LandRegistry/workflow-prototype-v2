@@ -280,6 +280,7 @@ label[class$=font-size-16]{line-height:1.6rem!important}
             margin-bottom: - (govuk-spacing(2));
         }  
 
+
         .govuk-grid-column-one-third.govuk-\!-padding-left-0 {
             padding-left: govuk-spacing(3) !important;
         }
@@ -430,14 +431,10 @@ label[class$=font-size-16]{line-height:1.6rem!important}
             margin-bottom: - (govuk-spacing(2));
         }  
 
-        .govuk-grid-column-one-third.govuk-\!-padding-left-0 {
+        /*.govuk-grid-column-one-third.govuk-\!-padding-left-0 {
             padding-left: govuk-spacing(3) !important;
-        }
+        }*/
 
-       //.govuk-select.govuk-\!-width-full {/* pt1: fix for a brief moment when select escapes border at certain resize width */
-            //position: relative; 
-            //left: - (govuk-spacing(2));
-        //}
     }
 
     //@media (max-width: 40em) {/* pt2: fix for a brief moment when select escapes border at certain resize width */

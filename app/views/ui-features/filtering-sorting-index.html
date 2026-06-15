@@ -29,10 +29,6 @@ Index page for UI design features
           </a>
         </p>        
 
-        <p class="govuk-body-s">
-          
-        </p>        
-
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">        
 
         <h2 class="govuk-heading-m">
@@ -41,7 +37,7 @@ Index page for UI design features
 
         <details class="govuk-details">
           <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text">
+            <span class="govuk-details__summary-text govuk-!-font-size-16">
               Technical description
             </span>
           </summary>
@@ -100,6 +96,112 @@ Index page for UI design features
         <p class="govuk-body-s">        
           Inspect the <abbr>HTML</abbr> of the prototype for <abbr>HTML</abbr> structure and classes and bespoke <abbr>CSS</abbr>.
         </p> 
+
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text govuk-!-font-size-16"> 
+              SASS
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+
+            <code class="govuk-!-font-size-16 govuk-!-font-weight-regular"><pre>
+            .hmlr-form-grouping-c {
+
+              padding: 0 !important; 
+              overflow: hidden;
+
+              div[class$="checkboxes--small"] {
+                  label[class$="font-size-16"] {
+                      line-height: 1.6rem !important;
+                  }
+              }
+
+              .govuk-radios--small {
+                  label.govuk-radios__label.govuk-\!-font-size-16 {
+                      padding: (govuk-spacing(3) - 2px) govuk-spacing(3) govuk-spacing(2) (govuk-spacing(1) - 4px) !important;
+                      min-width: 100% !important;
+                  }
+              }
+
+              border: 2px solid $govuk-brand-colour;
+
+              .govuk-button, 
+              input.hmlr-btn-as-link, 
+              button.hmlr-btn-as-link {
+                  margin-top: govuk-spacing(2);
+                  margin-bottom: govuk-spacing(4); 
+              }
+              
+              &.hmlr-form-grouping--full-width {
+                  width: inherit; 
+              }  
+              
+              &.hmlr-form-grouping--curved {/* curved corners */
+                  border-radius: govuk-spacing(1); 
+              }
+
+              .hmlr-from-grouping__header {
+                  background-color: $govuk-brand-colour; //#789904;
+                  color: govuk-colour("white");
+                  font-weight: normal; 
+                  @include hmlr-font-size($s: 17px, $l: 1.2);
+                  display: inline-block; 
+
+                  width: 100%; 
+                  margin: govuk-spacing(0) !important; 
+                  padding: govuk-spacing(1) govuk-spacing(1) govuk-spacing(1) govuk-spacing(2); 
+
+              }
+
+              .hmlr-form-grouping__form {
+                  padding: govuk-spacing(2) govuk-spacing(3) govuk-spacing(0) govuk-spacing(3);  
+                  margin: govuk-spacing(0); 
+              }
+
+              @include govuk-media-query($until: desktop){
+                  select {
+                      margin-top: govuk-spacing(2);
+
+                      &.govuk-\!-width-full {
+                          width: auto !important;
+                      }
+                  }
+                  .govuk-button-group {
+                      margin-top: govuk-spacing(3); 
+                      margin-bottom: - (govuk-spacing(2));
+                  }  
+              }
+
+              @include govuk-media-query($from: desktop){
+                  .govuk-button-group {
+                      margin-top: govuk-spacing(0); 
+                      margin-bottom: govuk-spacing(0);
+                  }
+
+                  button, input[type='submit'], input[type='button'] {
+                      padding: govuk-spacing(1) (govuk-spacing(1) + 2px) (govuk-spacing(1) - 2px) (govuk-spacing(1) + 2px);
+                  }        
+              }
+
+            } 
+            </pre></code>
+
+            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">        
+
+            <p class="govuk-body-s">Warning text - extra styling (<abbr>CSS</abbr>):</p>
+
+            <code class="govuk-!-font-size-16 govuk-!-font-weight-regular"><pre>
+              .govuk-warning-text.hmlr-warning-text--centered {
+                width: fit-content;
+                margin: 0 auto 45px auto;
+              }
+            </pre></code>
+
+          </div>
+          </details>
+
+
 
 
         <!--
