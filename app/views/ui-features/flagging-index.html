@@ -55,6 +55,11 @@ Index page for UI design features
             <p class="govuk-body-s">        
               Basically, localStorage gives instant per-browser persistence. The AJAX call syncs to the server as the source of truth, and the error handler keeps the two consistent. When the page is reloaded from the server the updated <abbr>HTML</abbr> is served with the correct settings for each flag per case.
             </p>
+
+            <p class="govuk-body-s">        
+              The 'flag' is only shown to the caseworker (and a leader if they log in to their workflow list); referring and deferring does not 'carry' the flag. The flag is set back to zero/no-flag: so if the case is returned, the flag does not 'remember' and previous states. (Set to default zero/no-show flag).
+            </p>
+
           </div>
         </details>
 
