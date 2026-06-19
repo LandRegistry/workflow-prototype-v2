@@ -25,9 +25,24 @@ Index page for UI design features
 
         <p class="govuk-body-s">
           A new 'Add flag' "link" (button) is now added to the end of the action buttons for each case shown on the Worklist page (for both progress now and progress later lists): the "Add flag" button, lets caseworkers mark cases that need attention or follow-up. Clicking the button shows a flag icon next to that case and updates the button text (value) to "Remove flag", with the change saved immediately so it persists if the caseworker leaves and returns to the page. The flag state is also stored in a database, so it's consistent across devices. For users without JavaScript, the page reloads after clicking to apply the same update.
-        </p>        
+        </p>  
+        
+        <p class="govuk-body-s">
+          For mulit-titles, flags can only be added to 'parent/lead' case. (Flags can not be added to the attached applications).
+        </p>
 
-        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">        
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">   
+        
+        <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+          <div class="govuk-notification-banner__header">
+            <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+              Important
+            </h2>
+          </div>
+          <div class="govuk-notification-banner__content">
+            19/06/26: Discussed with Andy - Flagging will use a different technical architecture to that described below. Users will still be able to add/remove flags without the page refreshing. (Data still stored in a remote source).
+          </div>
+        </div>
 
         <h2 class="govuk-heading-m">
           How the flagging functionality works
