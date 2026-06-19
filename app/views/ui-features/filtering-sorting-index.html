@@ -18,8 +18,19 @@ Index page for UI design features
         </h1>
 
         <p class="govuk-body-s">
-          <b>Update</b> (16/06/26): </p> Andy to use a different solution for implimentation, on the client.
+          <b>Update</b> (16/06/26): </p> 
         </p>
+
+        <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+          <div class="govuk-notification-banner__header">
+            <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+              Important
+            </h2>
+          </div>
+          <div class="govuk-notification-banner__content">
+            16/06/26: Discussed with Andy - a different solution for implementation (on the client) using Jinja2 which reorders the list dynamically (manipulating the <abbr>DOM</abbr>). We'll need to add 'aria' guidence and hidden status/update message each time the page is updated.
+          </div>
+        </div>
 
         <p class="govuk-body-s">
           The design: <a href="std-pg-with-filters-ordering.html" class="govuk-link govuk-link--no-visited-state" target="_blank">
@@ -36,7 +47,7 @@ Index page for UI design features
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">        
 
         <h2 class="govuk-heading-m">
-          How the flagging functionality works
+          How it works
         </h2>
 
         <details class="govuk-details">
