@@ -109,12 +109,29 @@ Select a deferral reason
               </div>               
               
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="x2" type="radio" name="category_code" value="x2">
+                <input class="govuk-radios__input" id="x2" type="radio" name="category_code" value="x2" data-aria-controls="conditional-req-25-req">
 
                 <label class="govuk-label govuk-radios__label" for="x2">
                   Objection notice (15 days) and Requisition
                 </label>
               </div> 
+
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-req-25-req">
+                <div class="govuk-form-group">
+
+                  <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">  
+                      <input class="govuk-checkboxes__input" id="25-overseas-2" type="checkbox" name="requisition-option" value="25-overseas-2" data-aria-controls="conditional-req-25-req">
+                      <label class="govuk-label govuk-checkboxes__label" for="25-overseas-2">
+                        Extend to 25 days for overseas notice (optional)
+                      </label>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+
               
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="x3" type="radio" name="category_code" value="x3">
