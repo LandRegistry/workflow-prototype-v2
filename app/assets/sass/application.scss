@@ -7,6 +7,64 @@
     //color: $govuk-text-colour;
 //}
 
+/* for the new double links header - STARTS (/sharepoint-link/index) */
+#hmlr-header-links {
+
+    $hmlr-header-link-colour: #fff; /* gds: inverse-text */
+
+    li a.govuk-link {
+        color: $hmlr-header-link-colour; 
+        display: inline-block;
+
+        &:visited, &:hover {
+            color: $hmlr-header-link-colour;
+        }
+
+        &:hover {
+            text-decoration-thickness: max(2px, 0rem) !important;
+        }        
+
+        &:focus {
+            color: inherit;
+            text-decoration: none !important; 
+            border-bottom: 3px dashed #0b0c0c; /* gds black: primary */
+        }
+
+        span {
+            font-size: 76%;
+        }
+        
+    }
+
+    @include govuk-media-query($from: desktop){
+        ul {
+            text-align: right;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        li {
+
+            line-height: 0;
+            display: inline-block; 
+            margin-right: govuk-spacing(3); 
+            
+                &:last-child{/* to support older browsers (not using :not) */
+                    margin-right: 0;
+                }
+        }
+    }
+}
+.hmlr-header-wf--temp-style:focus {
+    /* bring the logo link focus state inline (dashed) with these new links. The class is already in the HTML */
+    border-bottom-style: dashed;
+    outline: 0 !important; 
+    margin-bottom: govuk-spacing(2) - 2 !important;
+}
+/* for the new double links header - ENDS */
+
+
 footer.govuk-footer .govuk-footer__link {/* play nicely with latest gds lib, as we don't have extra footer links */
     padding: 0 !important; 
 }

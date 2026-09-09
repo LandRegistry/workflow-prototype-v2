@@ -1,0 +1,219 @@
+{% extends "layouts/wf_layout-std-new-header-link.html" %}
+
+{# set pageName="Example of dynamic table" #}
+
+{% block pageTitle %}
+Index page for UI design features
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      
+        <h1 class="govuk-heading-l">
+          Workflow SharePoint link
+        </h1>
+
+        <p class="govuk-body-s">
+          September 2026 - <abbr>AMW</abbr>-5264
+        </p>
+
+        <p class="govuk-body-s">
+          New link(s) design for the proprietary Workflow header: and as presented in the header of <em>this</em> page. 
+          (The <abbr>HTML</abbr> is carefully accessibility compliant).
+        </p>
+    
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">    
+        
+        <h2 class="govuk-heading-m">
+          The <abbr>HTML</abbr>
+        </h2>
+
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text govuk-!-font-size-16">
+              <abbr>HTML</abbr>
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+
+            <code class="govuk-!-font-size-16 govuk-!-font-weight-regular"><pre style="font-size: 90%;">
+&lt;div id="hmlr-header-links"&gt;
+  &lt;ul class="govuk-list"&gt;
+    &lt;li&gt;
+
+        &lt;a class="govuk-link govuk-link--inverse govuk-link--no-underline govuk-!-font-size-16" href="#" rel="noreferrer noopener" target="_blank"&gt;
+          Lorem ipsum &lt;br&gt;&lt;span&gt;(opens in new tab)&lt;/span&gt;
+        &lt;/a&gt;
+
+    &lt;/li&gt;
+    &lt;li&gt;
+
+        &lt;a class="govuk-link govuk-link--inverse govuk-link--no-underline govuk-!-font-size-16" href="https://uk.4me.io/cnQ9MjIwNA" rel="noreferrer noopener" target="_blank"&gt;
+        Report an issue &lt;br&gt;&lt;span&gt;(opens in new tab)&lt;/span&gt;
+        &lt;/a&gt;
+
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;              
+            </pre></code>       
+
+          </div>
+        </details>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">         
+
+        <h2 class="govuk-heading-m">
+          The SASS
+        </h2>
+
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text govuk-!-font-size-16">
+              SASS
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+
+            <code class="govuk-!-font-size-16 govuk-!-font-weight-regular"><pre style="font-size: 90%;">
+/* for the new double links header - STARTS */
+#hmlr-header-links {
+
+    $hmlr-header-link-colour: #fff; /* gds: inverse-text */
+
+    li a.govuk-link {
+        color: $hmlr-header-link-colour; 
+        display: inline-block;
+
+        &:visited, &:hover {
+            color: $hmlr-header-link-colour;
+        }
+
+        &:hover {
+            text-decoration-thickness: max(2px, 0rem) !important;
+        }        
+
+        &:focus {
+            color: inherit;
+            text-decoration: none !important; 
+            border-bottom: 3px dashed #0b0c0c; /* gds black: primary */
+        }
+
+        span {
+            font-size: 76%;
+        }
+        
+    }
+
+    @include govuk-media-query($from: desktop){
+        ul {
+            text-align: right;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        li {
+
+            line-height: 0;
+            display: inline-block; 
+            margin-right: govuk-spacing(3); 
+            
+                &:last-child{/* to support older browsers (not using :not) */
+                    margin-right: 0;
+                }
+        }
+    }
+}
+.hmlr-header-wf--temp-style:focus {
+    /* bring the logo link focus state inline (dashed) with these new links. The class is already in the HTML */
+    border-bottom-style: dashed;
+    outline: 0 !important; 
+    margin-bottom: govuk-spacing(2) - 2 !important;
+}
+/* for the new double links header - ENDS */
+            </pre></code>       
+
+          </div>
+        </details>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"> 
+
+        <h2 class="govuk-heading-m">
+          The <abbr>CSS</abbr>
+        </h2>
+
+        <p class="govuk-body-s">        
+          The SASS creates this <abbr>CSS</abbr>:
+        </p>
+
+
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text govuk-!-font-size-16"> 
+              <abbr>CSS</abbr>
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+
+
+            <code class="govuk-!-font-size-16 govuk-!-font-weight-regular"><pre style="font-size: 90%;">
+/* for the new double links header - STARTS */
+#hmlr-header-links {
+  /* gds: inverse-text */
+}
+#hmlr-header-links li a.govuk-link {
+  color: #fff;
+  display: inline-block;
+}
+#hmlr-header-links li a.govuk-link:visited, #hmlr-header-links li a.govuk-link:hover {
+  color: #fff;
+}
+#hmlr-header-links li a.govuk-link:hover {
+  text-decoration-thickness: max(2px, 0rem) !important;
+}
+#hmlr-header-links li a.govuk-link:focus {
+  color: inherit;
+  text-decoration: none !important;
+  border-bottom: 3px dashed #0b0c0c; /* gds black: primary */
+}
+#hmlr-header-links li a.govuk-link span {
+  font-size: 76%;
+}
+@media (min-width: 48.0625em) {
+  #hmlr-header-links ul {
+    text-align: right;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  #hmlr-header-links li {
+    line-height: 0;
+    display: inline-block;
+    margin-right: 15px;
+  }
+  #hmlr-header-links li:last-child { /* to support older browsers (not using :not) */
+    margin-right: 0;
+  }
+}
+
+.hmlr-header-wf--temp-style:focus {
+  /* bring the logo link focus state inline (dashed) with these new links. The class is already in the HTML */
+  border-bottom-style: dashed;
+  outline: 0 !important;
+  margin-bottom: 8px !important;
+}
+
+/* for the new double links header - ENDS */
+            </pre></code>
+
+          </div>
+          </details>
+
+
+  </div>
+</div>
+
+{% endblock %}
