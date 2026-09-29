@@ -1,0 +1,14 @@
+Currently the AI in these pages does not work ...
+
+There are different versions of the JavaScript in each file within the ‘ai/designs’ directory.* The AI was used to cleanse the ‘my notes’ entries as an initial ‘rough’ proof of concept, but a more fundamental option would have been to simply ask the AI to remove all personal info and inappropriate language. 
+
+Claude has now been blocked by HMLR so you’ll need to update these files with an alternative AI model:
+package.json
+routes.js
+
+The unique Claude API key is not in these scripts. The script expects to find it in the environment variable ANTHROPIC_API_KEY, sometimes loaded from a .env file but here it was held as a Heroku Config Var (in Heroku, but it got removed).
+
+
+
+
+*Each file 1 to 4 got more complex and sophisticated, with more functionality.
