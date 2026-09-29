@@ -776,7 +776,7 @@
       <form method="post" action="/">
         <div class="govuk-form-group{% if error %} govuk-form-group--error{% endif %}">
           
-          <p class="govuk-body-s">The list of designs are password protected.</p>
+          <p class="govuk-body-s">The list of designs on this index page are password protected. <br>This limits access so users can only view the prototypes they should have access to (via the direct <abbr>URL</abbr> they have been provided).</p>
           
           <label class="govuk-label" for="password">
             Enter password
@@ -794,7 +794,7 @@
         </button>
       </form>
 
-      <p class="govuk-body-s">Designers: the password is hardcoded into the root routes.js file.</p>
+      <p class="govuk-body-s"><b>Designers</b>: the password is hardcoded into the root routes.js file.</p>
 
       {% endif %}
 

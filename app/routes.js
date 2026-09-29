@@ -18,8 +18,8 @@ router.get('/index', function (req, res) {
 router.post(['/', '/index'], function (req, res) {
   const password = req.body.password
   
-  if (password === 'workf1ow') {//<<<<<<< THE PASSWORD
-    res.cookie('authenticated', 'true', {
+  if (password === 'workf1ow') {//<<<<<<<<<<<<<< THE PASSWORD for the site index page <<<<<<<<<<<<<<<<<<<
+    res.cookie('authenticated', 'true', {//  this password should not be confused with the password for accessing Heroku
       maxAge: 1000 * 60 * 60 * 24 * 365 * 3
     })
     res.render('index', { authenticated: true })
