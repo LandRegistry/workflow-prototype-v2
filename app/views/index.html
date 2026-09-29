@@ -59,7 +59,7 @@
 </style>
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-full">
     
     <h1 class="govuk-heading-l">
       <span class="govuk-caption-m">
@@ -70,13 +70,15 @@
 
 
 <!-- ***********************  display none added on this div ********************** -->
-
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
 
         <p class="govuk-body-s">
           This repository of 'Workflow' prototypes and <abbr>HTML</abbr> designs contains Workflow designs from mid 2023 onwards. It supersedes the <a href="https://workflow-prototype-main.herokuapp.com/" class="govuk-link govuk-link--no-visited-state" target="_blank">previouse Workflow repository (opens in new tab)</a>. 
         </p>
 
- 
+      </div>
+    </div>   
 
 
 
@@ -771,29 +773,32 @@
 
       {% else %}
       {# Password form #}
-      <form method="post" action="/">
-        <div class="govuk-form-group{% if error %} govuk-form-group--error{% endif %}">
-          
-          <p class="govuk-body-s">The list of designs on this index page are password protected. This limits access, ensuring visitors can only view the prototypes they are invited to (via the direct <abbr>URL</abbr> they have been provided).</p>
-          
-          <label class="govuk-label" for="password">
-            Enter password
-          </label>
-          {% if error %}
-          <p class="govuk-error-message">
-            <span class="govuk-visually-hidden">Error:</span> Enter the correct password
-          </p>
-          {% endif %}
-          <input class="govuk-input  govuk-input--width-10{% if error %} govuk-input--error{% endif %}" id="password" name="password" type="password" autocomplete="off">
-        </div>
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+              <form method="post" action="/">
+                <div class="govuk-form-group{% if error %} govuk-form-group--error{% endif %}">
+                  
+                  <p class="govuk-body-s">The list of designs on this index page are password protected. This limits access, ensuring visitors can only view the prototypes they are invited to (via the direct <abbr>URL</abbr> they have been provided).</p>
+                  
+                  <label class="govuk-label" for="password">
+                    Enter password
+                  </label>
+                  {% if error %}
+                  <p class="govuk-error-message">
+                    <span class="govuk-visually-hidden">Error:</span> Enter the correct password
+                  </p>
+                  {% endif %}
+                  <input class="govuk-input  govuk-input--width-10{% if error %} govuk-input--error{% endif %}" id="password" name="password" type="password" autocomplete="off">
+                </div>
 
-        <button type="submit" class="govuk-button" data-module="govuk-button">
-          Submit
-        </button>
-      </form>
+                <button type="submit" class="govuk-button" data-module="govuk-button">
+                  Submit
+                </button>
+              </form>
 
-      <p class="govuk-body-s"><b>Designers</b>: the password is hardcoded into the root routes.js file.</p>
-
+              <p class="govuk-body-s"><b>Designers</b>: the password is hardcoded into the root routes.js file.</p>
+            </div>
+          </div>
       {% endif %}
 
 
