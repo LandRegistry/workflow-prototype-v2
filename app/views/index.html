@@ -68,6 +68,8 @@
       Workflow Prototypes and Designs
     </h1>
 
+  </div>
+</div>  
 
 <!-- ***********************  display none added on this div ********************** -->
     <div class="govuk-grid-row">
@@ -80,725 +82,728 @@
       </div>
     </div>   
 
-
-
 <!-- ***********************  display none added on this div ********************** -->  
 
       {% if authenticated %}
       {# Alternative content shown when authenticated #}
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
 
-      <div class="govuk-accordion govuk-!-margin-top-4" data-module="govuk-accordion" id="accordion-with-summary-sections">
-        <div class="govuk-accordion__section">
-  
-          <div class="govuk-accordion__section-header">
-            <h2 class="govuk-accordion__section-heading">
-              <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-1">
-                The design prototypes
-              </span>
-            </h2>
-            <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1">
-              Find the prototypes and design work in this Workflow V2 repository   <!--designed using the <abbr>GDS</abbr> Design System-->
-            </div>
-          </div>
-          <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content">
-  
-            <table class="govuk-table govuk-!-margin-bottom-8">
-              <caption class="govuk-table__caption govuk-table__caption--s govuk-!-font-weight-regular govuk-!-padding-left-1 govuk-!-font-size-16">Prototypes - from mid 2023 onwards: links open in a new tab</caption>
-  
-              <thead class="govuk-table__head">
-                <tr class="govuk-table__row">
-                  <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Name</th>
-                  <th scope="col" class="govuk-table__header govuk-!-width-one-half">Notes</th>
-                  <th scope="col" class="govuk-table__header">Period</th>
-                  <th scope="col" class="govuk-table__header">Index</th>
-                </tr>
-              </thead>
-        
-              <!-- *** This is the correct location for the TFOOT in the HTML DOM) *** -->
-              <tfoot class="govuk-table__head">
-                <tr class="govuk-table__row">
-                  <th scope="col" class="govuk-table__header">Name</th>
-                  <th scope="col" class="govuk-table__header">Notes</th>
-                  <th scope="col" class="govuk-table__header">Period</th>
-                  <th scope="col" class="govuk-table__header">Index</th>
-                </tr>
-              </tfoot>    
-              
-  
-              <tbody class="govuk-table__body">
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell" colspan="4">
-                      <span class="govuk-!-padding-right-4">Extension of time</span> <span class="govuk-!-font-weight-regular">(or Deferral of time)</span>
-                  </td>
-                </tr>
-  
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell">
-                    <a href="/defer-time-dates-v3-1/two-defer_01" class="govuk-link govuk-link--no-visited-state" target="_blank">Extension of time v3-1</a>
-                  </td>
-                  <td class="govuk-table__cell">
-                      <span class="govuk-!-font-weight-bold">Updated</span>: This version incorporates all three options for adding a date (+ update to question text).
-                  </td>
-                  <td class="govuk-table__cell">
-                    July 2024
-                  </td>                
-                  <td class="govuk-table__cell">
-                    <a href="/defer-time-dates-v3-1/index" class="govuk-link govuk-link--no-visited-state" target="_blank">Open<span class="govuk-visually-hidden"> v3-1 index</span></a>
-                  </td>                            
-                </tr>
-  
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell">
-                    <a href="/defer-time-dates-v3/two-defer_01" class="govuk-link govuk-link--no-visited-state" target="_blank">Extension of time v3</a>
-                  </td>
-                  <td class="govuk-table__cell">
-                      This version incorporates all three options for adding a date.
-                  </td>
-                  <td class="govuk-table__cell">
-                    May 2024
-                  </td>                
-                  <td class="govuk-table__cell">
-                    <a href="/defer-time-dates-v3/index" class="govuk-link govuk-link--no-visited-state" target="_blank">Open<span class="govuk-visually-hidden"> v3 index</span></a>
-                  </td>                            
-                </tr>              
-  
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell">
-                    Extension of time v2
-                  </td>
-                  <td class="govuk-table__cell">
-                    Two flows: 1). moves live design <a href="/defer-time-dates/one-defer_01" class="govuk-link govuk-link--no-visited-state" target="_blank">date fields</a> into own page. 2). <a href="/defer-time-dates/two-defer_01" class="govuk-link govuk-link--no-visited-state" target="_blank">date fields and a set 20 days</a> option combined.
-                  </td>
-                  <td class="govuk-table__cell">
-                    May 2024
-                  </td>                
-                  <td class="govuk-table__cell">
-                    <a href="/defer-time-dates/index" class="govuk-link govuk-link--no-visited-state" target="_blank">Open<span class="govuk-visually-hidden"> v2 index</span></a>
-                  </td>                            
-                </tr>  
-  
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell">
-                    Extension of time v1
-                  </td>
-                  <td class="govuk-table__cell">
-                    Two flows: 1). proposed replacing live design with <a href="/defer-time/one-defer_01" class="govuk-link govuk-link--no-visited-state" target="_blank">a custom number entry</a>. 2). proposed a <a href="/defer-time/two-defer_01" class="govuk-link govuk-link--no-visited-state" target="_blank">custom number entry and a set 20 days</a>.  
-                  </td>
-                  <td class="govuk-table__cell">
-                    April 2024
-                  </td>                
-                  <td class="govuk-table__cell">
-                    <a href="/defer-time/index" class="govuk-link govuk-link--no-visited-state" target="_blank">Open<span class="govuk-visually-hidden"> v1 index</span></a>
-                  </td>                            
-                </tr>              
-  
-              </tbody>
-  
-              <tbody class="govuk-table__body">
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell" colspan="4">
-                      <span class="govuk-!-padding-right-4"><abbr>WCAG</abbr></span> <span class="govuk-!-font-weight-regular">(Accessibility and <abbr>GDS</abbr> compliance)</span>
-                  </td>
-                </tr>
-  
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell">
-                    <abbr>WCAG</abbr> work
-                  </td>
-                  <td class="govuk-table__cell">
-                    <abbr>HTML</abbr> Designs, templates, guides and examples for resolving accessibility and <abbr>GDS</abbr> compliance issues.
-                  </td>
-                  <td class="govuk-table__cell">
-                    Q1 and Q2 2024
-                  </td>                
-                  <td class="govuk-table__cell">
-                    <a href="/wcag-work/indexx" class="govuk-link govuk-link--no-visited-state" target="_blank">Open<span class="govuk-visually-hidden"> <abbr>WCAG</abbr> index</span></a>
-                  </td>                            
-                </tr> 
-  
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell">
-                    Error message pages
-                  </td>
-                  <td class="govuk-table__cell">
-                    <abbr>HTML</abbr> Designs and example guides for revised error message pages.
-                  </td>
-                  <td class="govuk-table__cell">
-                    May 2024
-                  </td>                
-                  <td class="govuk-table__cell">
-                    <a href="/error-msg-pgs/index" class="govuk-link govuk-link--no-visited-state" target="_blank">Open<span class="govuk-visually-hidden"> <abbr>WCAG</abbr> index</span></a>
-                  </td>                            
-                </tr>               
-  
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell">
-                    Related works assets
-                  </td>
-                  <td class="govuk-table__cell" colspan="2">
-                    
-                    <ul class="govuk-list govuk-!-margin-0">
-                      <li class="govuk-!-display-inline-block govuk-!-margin-right-1">
-                        <a class="govuk-link govuk-link--no-visited-state" target="_blank" href="/accessibility-issues/index">Accessibility issues</a>
-                      </li>
-                    </ul>
-  
-                  </td>
-                  <td class="govuk-table__cell">
-                    &mdash;
-                  </td>                            
-                </tr>                  
-                            
-              </tbody>                  
-  
-              <tbody class="govuk-table__body">
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell" colspan="4">
-                      <span class="govuk-!-padding-right-4">Expedites</span> <span class="govuk-!-font-weight-regular">(filtering/order when obtaining expedited applications )</span>
-                  </td>
-                </tr>
-  
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell">
-                    Expedite filter designs
-                  </td>
-                  <td class="govuk-table__cell" colspan="2">
-                    
-                    <ul class="govuk-list govuk-!-margin-0">
-                      <li class="govuk-!-display-inline-block govuk-!-margin-right-1">
-                        <a class="govuk-link govuk-link--no-visited-state" target="_blank" href="/expedites/index">Expedites index</a>
-                      </li>
-                    </ul>
-  
-                  </td>
-                  <td class="govuk-table__cell">
-                    &mdash;
-                  </td>                            
-                </tr>                  
-                            
-              </tbody>
-              
-              <tbody class="govuk-table__body">
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell" colspan="4">
-                      <span class="govuk-!-padding-right-4">Cancellations</span> <span class="govuk-!-font-weight-regular">(filtering/order when obtaining cancelled <abbr>ADR</abbr> applications )</span>
-                  </td>
-                </tr>
-  
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell">
-                    Cancelled/Extended filter designs
-                  </td>
-                  <td class="govuk-table__cell">
-                    
-                    <ul class="govuk-list govuk-!-margin-0">
-                      <li class="govuk-!-display-inline-block govuk-!-margin-right-1">
-                        <a class="govuk-link govuk-link--no-visited-state" target="_blank" href="/cancellation/index">Designs</a>
-                      </li>
-                    </ul>
-  
-                  </td>
-  
-                  <td class="govuk-table__cell">
-                    July 2025
-                  </td>                 
-                  <td class="govuk-table__cell">
-                    &mdash;
-                  </td>                            
-                </tr>                  
-                            
-              </tbody>             
-              
-              <tbody class="govuk-table__body">
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell" colspan="4">
-                      <span class="govuk-!-padding-right-4">Progress Later</span> <span class="govuk-!-font-weight-regular">(capture reason why moving case to Progress Later)</span> 
-                  </td>
-                </tr>
-  
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell">
-                    Progress later designs
-                  </td>
-                  <td class="govuk-table__cell">
-                    <p class="govuk-body">
-                      <a href="/progress-later/pg-1-01" class="govuk-link govuk-link--no-visited-state" target="_blank">
-                        Progress Later - Reason list form demo
-                      </a> <br><span class="govuk-!-font-size-14">Select 'Progress Later' link in first application.</span>
-                    </p>
-  
-                    <a class="govuk-link govuk-link--no-visited-state" target="_blank" href="/progress-later/index">Progress Later index</a> (of designs)                   
-  
-                  </td>
-                  <td class="govuk-table__cell">
-                    Oct - Dec 2024
-                  </td>
-                  <td class="govuk-table__cell">
-                    <a class="govuk-link govuk-link--no-visited-state" target="_blank" href="/progress-later/pg-1-01">Open</a>
-                  </td>                            
-                </tr>                  
-                            
-              </tbody>   
-              
-              <tbody class="govuk-table__body">
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell" colspan="4">
-                      <span class="govuk-!-padding-right-4">Manage Assigned Work</span> <span class="govuk-!-font-weight-regular">(Assign to me)</span>
-                  </td>
-                </tr>
-  
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell">
-                    Manage Assigned Work
-                  </td>
-                  <td class="govuk-table__cell">
-  
-                    <a class="govuk-link govuk-link--no-visited-state" target="_blank" href="/manage-assigned/manage-assigned-work-checkbox">Assign to me - final design</a> (fully functional with autocomplete)
-  
-                  </td>
-                  <td class="govuk-table__cell">
-                    Aug 2025
-                  </td>
-                  <td class="govuk-table__cell">
-                    &mdash;
-                  </td>                            
-                </tr>
-                
-              </tbody> 
-              
-              <tbody class="govuk-table__body">
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell" colspan="4">
-                      <span class="govuk-!-padding-right-4">Category of work </span> <span class="govuk-!-font-weight-regular">(Sub-categories)</span> &nbsp; <span class="govuk-!-font-weight-regular">&#35;179</span>
-                  </td>
-                </tr>
-  
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell">
-                    Category of work 
-                  </td>
-                  <td class="govuk-table__cell">
-    
-                    <a class="govuk-link govuk-link--no-visited-state" target="_blank" href="/capability-based/indexx">Category of Work index</a>
-    
-                  </td>
-                  <td class="govuk-table__cell">
-                    Oct 2025
-                  </td>
-                  <td class="govuk-table__cell">
-                    &mdash;
-                  </td>                            
-                </tr>
-                
-              </tbody>   
-              
-              <tbody class="govuk-table__body">
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell" colspan="4">
-                      <span class="govuk-!-padding-right-4">Category of work #2</span> <span class="govuk-!-font-weight-regular">(Sub-categories)</span> &nbsp; <span class="govuk-!-font-weight-regular">&#35;270</span>
-                  </td>
-                </tr>
-  
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell">
-                    Category of work #2
-                  </td>
-                  <td class="govuk-table__cell">
-    
-                    <a class="govuk-link govuk-link--no-visited-state" target="_blank" href="/capability-based/designs-270">Category of Work Designs 270</a>
-    
-                  </td>
-                  <td class="govuk-table__cell">
-                    Feb 2025
-                  </td>
-                  <td class="govuk-table__cell">
-                    &mdash;
-                  </td>                            
-                </tr>
-                
-              </tbody>               
-  
-              <tbody class="govuk-table__body">
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell" colspan="4">
-                      <span class="govuk-!-padding-right-4"><abbr>UI</abbr> design work</span> <span class="govuk-!-font-weight-regular">(including additional worklist design features)</span> &nbsp; 
-                  </td>
-                </tr>
-  
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell">
-                    New <abbr>UI</abbr> designs
-                  </td>
-                  <td class="govuk-table__cell">
-    
-                    <p class="govuk-body">
-                      Including new Worklist &amp; Progress Later <abbr>UI</abbr>, and (3x widget) search features. My notes, Flagging, Sorting/Ordering &plus; new <abbr>GUI</abbr> layout/design and new <abbr>IA</abbr>. 
-
-                      <span style="display: block; margin-top: 1.5rem;">
-                        Directory of designs: <a class="govuk-link govuk-link--no-visited-state" 
-                      href="/ui-design/indexx" target="_blank"><code>/ui-design/</code></a>.
-                      </span>
-                    </p>
-  
-                    <p class="govuk-body" style="font-size: 80% !important;">
-                      (Designers can access much older works in: <a class="govuk-link govuk-link--no-visited-state"  
-                      href="/new-designs/index" target="_blank" style="font-size: inherit !important;">/new-designs/</a>)
-                    </p>
-                    
-    
-                  </td>
-                  <td class="govuk-table__cell">
-                    Jun 2024 - Mar 2025
-                  </td>
-                  <td class="govuk-table__cell">
-                    &mdash;
-                  </td>                            
-                </tr>
-                
-              </tbody>
-              
-              <tbody class="govuk-table__body">
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell" colspan="4">
-                      <span class="govuk-!-padding-right-4">Defer for executive</span> <span class="govuk-!-font-weight-regular">&#35;4834</span>
-                  </td>
-                </tr>
-  
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell">
-                    Select a deferral reason (page)
-                  </td>
-                  <td class="govuk-table__cell">
-
-                    <ul class="govuk-list govuk-list--bullet">
-                      <li><a class="govuk-link govuk-link--no-visited-state" target="_blank" href="/defer-for-reason/return-to-me-checkbox">Return to me</a> (checkbox)</li>
-
-                      <li><a class="govuk-link govuk-link--no-visited-state" target="_blank" href="/defer-for-reason/defer-to-volume-checkbox">Defer to <abbr>VCO</abbr> <abbr>ADR</abbr></a> (checkbox)</li>
-
-                      <li><a class="govuk-link govuk-link--no-visited-state" target="_blank" href="/defer-for-reason/defer-to-executive-checkbox">Defer to exec <abbr>ADR</abbr></a> (checkbox)</li>
-
-
-                      <li><a class="govuk-link govuk-link--no-visited-state" target="_blank" href="/defer-for-reason/extend-25-days">Extend to 25 days for overseas notice</a> (checkbox)</li>
-                               
-                      
-                      <li><a class="govuk-link govuk-link--no-visited-state" target="_blank" href="/defer-for-reason/defer-to-executive-and-return-radios">Defer to exec <abbr>ADR</abbr> &plus; Return to me</a> (Radios)</li>
-                      <li><a class="govuk-link govuk-link--no-visited-state" target="_blank" href="defer-for-reason/defer-to-volume-and-return-radios">Defer to <abbr>VCO</abbr> <abbr>ADR</abbr> &plus; Return to me</a> (Radios)</li>
-                    </ul>
-
-
-
-    
-                    (<a class="govuk-link govuk-link--no-visited-state" target="_blank" href="/defer-for-reason/defer"><i>Old version</i></a>)
-                  </td>
-                  <td class="govuk-table__cell">
-                    Jan 2026
-                  </td>
-                  <td class="govuk-table__cell">
-                    &mdash;
-                  </td>                            
-                </tr>
-                
-              </tbody>  
-
-              <tbody class="govuk-table__body">
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell" colspan="4">
-                      <span class="govuk-!-padding-right-4">Deferrals - extention of time dates (Manual bring forward)</span>
-                  </td>
-                </tr>
-  
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell">
-                    Date forms added to deferral options
-                  </td>
-                  <td class="govuk-table__cell">
-    
-                    <a class="govuk-link govuk-link--no-visited-state" target="_blank" href="/deferrals/index">Deferral - time extention</a>
-    
-                  </td>
-                  <td class="govuk-table__cell">
-                    July 2026
-                  </td>
-                  <td class="govuk-table__cell">
-                    <a class="govuk-link govuk-link--no-visited-state" target="_blank" href="/deferrals/index">Open</a>
-                  </td>                            
-                </tr>
-              </tbody>                   
-              
-              <tbody class="govuk-table__body">
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell" colspan="4">
-                      <span class="govuk-!-padding-right-4">Feedback form link</span>
-                  </td>
-                </tr>
-  
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell">
-                    Feedback link
-                  </td>
-                  <td class="govuk-table__cell">
-    
-                    <a class="govuk-link govuk-link--no-visited-state" target="_blank" href="/feedback/index">Designs for feedback link</a>
-    
-                  </td>
-                  <td class="govuk-table__cell">
-                    Mar 2026
-                  </td>
-                  <td class="govuk-table__cell">
-                    &mdash;
-                  </td>                            
-                </tr>
-              </tbody>                
-  
-              <tbody class="govuk-table__body">
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell" colspan="4">
-                      <span class="govuk-!-padding-right-4"><abbr>ADN</abbr></span>
-                      <span class="govuk-!-font-weight-regular"><addr>AMW</addr>-4976</span>
-                  </td>
-                </tr>
-  
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell">
-                    Additional <addr>ADN</addr> filter and label updates
-                  </td>
-                  <td class="govuk-table__cell">
-    
-                    A <a class="govuk-link govuk-link--no-visited-state govuk-!-display-inline-block govuk-!-padding-bottom-4" href="/merging-objection-notices/pg-1">new filter</a> added to the obtain options <br><span class="govuk-visually-hidden">|</span>
-                    Select a <a class="govuk-link govuk-link--no-visited-state" target="_blank" href="/merging-objection-notices/pg-2">category of work</a> list update: &quot;Executive Register Update Actionable Deferral: Objection Notice Replies&quot; 
-    
-                  </td>
-                  <td class="govuk-table__cell">
-                    May 2026
-                  </td>
-                  <td class="govuk-table__cell">
-                    &mdash;
-                  </td>                            
-                </tr>
-              </tbody>    
-              
-              <tbody class="govuk-table__body">
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell" colspan="4">
-                      <span class="govuk-!-padding-right-4">Flagging feature (finished)</span> 
-                  </td>
-                </tr>
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell">
-                    Flagging (New <abbr>UI</abbr> feature)
-                  </td>
-                  <td class="govuk-table__cell">
-                    <p class="govuk-body">
-                      Includes dev notes and guidence: <a class="govuk-link govuk-link--no-visited-state" 
-                      href="/ui-features/flagging-index" target="_blank"><code>flagging index</code></a>.
-                      </span>
-                    </p>
-                  </td>
-                  <td class="govuk-table__cell">
-                    June 2026
-                  </td>
-                  <td class="govuk-table__cell">
-                    &mdash;
-                  </td>                            
-                </tr>
-              </tbody>    
-              
-              <tbody class="govuk-table__body">
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell" colspan="4">
-                      <span class="govuk-!-padding-right-4">Filtering / Sorting (finished)</span> 
-                  </td>
-                </tr>
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell">
-                    Filtering/Sorting (New <abbr>UI</abbr> feature)
-                  </td>
-                  <td class="govuk-table__cell">
-                    <p class="govuk-body">
-                      Includes dev notes and guidence: <a class="govuk-link govuk-link--no-visited-state" 
-                      href="/ui-features/filtering-sorting-index" target="_blank"><code>filtering and sorting index</code></a>.
-                      </span>
-                    </p>
-                  </td>
-                  <td class="govuk-table__cell">
-                    June 2026
-                  </td>
-                  <td class="govuk-table__cell">
-                    &mdash;
-                  </td>                            
-                </tr>
-              </tbody> 
-              
-              <tbody class="govuk-table__body">
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell" colspan="4">
-                      <span class="govuk-!-padding-right-4">SharePoint link</span> <span class="govuk-!-font-weight-regular">(in the Workflow header)</span>
-                  </td>
-                </tr>
-  
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell">
-                      &nbsp;
-                  </td>
-                  <td class="govuk-table__cell">
-                    <a href="/sharepoint-link/index" class="govuk-link govuk-link--no-visited-state" target="_blank">New header link(s)</a>
-                  </td>                  
-                  <td class="govuk-table__cell">
-                    Sept 2026
-                  </td>                
-                  <td class="govuk-table__cell">
-                    &nbsp;
-                  </td>                            
-                </tr>
-              </tbody>              
-  
-            </table>
-  
-            <details class="govuk-details">
-              <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                  Archives:
-                </span>
-              </summary>
-              <div class="govuk-details__text">
-                
-                <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16">
-                  <li>
-                    Production Information: This dashboard page was decommissioned circa Dec 2024. <br>The page/<abbr>HTML</abbr> is <a href="/reference/production-information" class="govuk-link govuk-link--no-visited-state" target="_blank">saved here</a> (one tab) for reference.
-                  </li>
-                </ul>
-  
-  
+          <div class="govuk-accordion govuk-!-margin-top-4" data-module="govuk-accordion" id="accordion-with-summary-sections">
+            <div class="govuk-accordion__section">
+      
+              <div class="govuk-accordion__section-header">
+                <h2 class="govuk-accordion__section-heading">
+                  <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-1">
+                    The design prototypes
+                  </span>
+                </h2>
+                <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1">
+                  Find the prototypes and design work in this Workflow V2 repository   <!--designed using the <abbr>GDS</abbr> Design System-->
+                </div>
               </div>
-            </details>
-  
-            <!--p class="govuk-body-s">Miscellaneous: </p>
-  
-            <ul class="govuk-list govuk-!-margin-0 govuk-!-font-size-16 govuk-list--bullet">
-              <li>
-                <a href="/new-designs/index" class="govuk-link govuk-link--no-visited-state" target="_blank">New designs</a> (<abbr>WIP</abbr>)
-              </li>
-                                      
-            </ul-->
-  
-          </div>
-        </div>
-        <div class="govuk-accordion__section">
-          <div class="govuk-accordion__section-header">
-            <h2 class="govuk-accordion__section-heading">
-              <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-2">
-                Information for designers
-              </span>
-            </h2>
-            <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-2">
-              How to use this repository and prototyping kit ...
-            </div>
-          </div>
-          <div id="accordion-with-summary-sections-content-2" class="govuk-accordion__section-content">
-  
-            <ul class="govuk-list">
-  
-              <li>
-                <details class="govuk-details govuk-!-margin-bottom-2">
+              <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content">
+      
+                <table class="govuk-table govuk-!-margin-bottom-8">
+                  <caption class="govuk-table__caption govuk-table__caption--s govuk-!-font-weight-regular govuk-!-padding-left-1 govuk-!-font-size-16">Prototypes - from mid 2023 onwards: links open in a new tab</caption>
+      
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Name</th>
+                      <th scope="col" class="govuk-table__header govuk-!-width-one-half">Notes</th>
+                      <th scope="col" class="govuk-table__header">Period</th>
+                      <th scope="col" class="govuk-table__header">Index</th>
+                    </tr>
+                  </thead>
+            
+                  <!-- *** This is the correct location for the TFOOT in the HTML DOM) *** -->
+                  <tfoot class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th scope="col" class="govuk-table__header">Name</th>
+                      <th scope="col" class="govuk-table__header">Notes</th>
+                      <th scope="col" class="govuk-table__header">Period</th>
+                      <th scope="col" class="govuk-table__header">Index</th>
+                    </tr>
+                  </tfoot>    
+                  
+      
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell" colspan="4">
+                          <span class="govuk-!-padding-right-4">Extension of time</span> <span class="govuk-!-font-weight-regular">(or Deferral of time)</span>
+                      </td>
+                    </tr>
+      
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <a href="/defer-time-dates-v3-1/two-defer_01" class="govuk-link govuk-link--no-visited-state" target="_blank">Extension of time v3-1</a>
+                      </td>
+                      <td class="govuk-table__cell">
+                          <span class="govuk-!-font-weight-bold">Updated</span>: This version incorporates all three options for adding a date (+ update to question text).
+                      </td>
+                      <td class="govuk-table__cell">
+                        July 2024
+                      </td>                
+                      <td class="govuk-table__cell">
+                        <a href="/defer-time-dates-v3-1/index" class="govuk-link govuk-link--no-visited-state" target="_blank">Open<span class="govuk-visually-hidden"> v3-1 index</span></a>
+                      </td>                            
+                    </tr>
+      
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <a href="/defer-time-dates-v3/two-defer_01" class="govuk-link govuk-link--no-visited-state" target="_blank">Extension of time v3</a>
+                      </td>
+                      <td class="govuk-table__cell">
+                          This version incorporates all three options for adding a date.
+                      </td>
+                      <td class="govuk-table__cell">
+                        May 2024
+                      </td>                
+                      <td class="govuk-table__cell">
+                        <a href="/defer-time-dates-v3/index" class="govuk-link govuk-link--no-visited-state" target="_blank">Open<span class="govuk-visually-hidden"> v3 index</span></a>
+                      </td>                            
+                    </tr>              
+      
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        Extension of time v2
+                      </td>
+                      <td class="govuk-table__cell">
+                        Two flows: 1). moves live design <a href="/defer-time-dates/one-defer_01" class="govuk-link govuk-link--no-visited-state" target="_blank">date fields</a> into own page. 2). <a href="/defer-time-dates/two-defer_01" class="govuk-link govuk-link--no-visited-state" target="_blank">date fields and a set 20 days</a> option combined.
+                      </td>
+                      <td class="govuk-table__cell">
+                        May 2024
+                      </td>                
+                      <td class="govuk-table__cell">
+                        <a href="/defer-time-dates/index" class="govuk-link govuk-link--no-visited-state" target="_blank">Open<span class="govuk-visually-hidden"> v2 index</span></a>
+                      </td>                            
+                    </tr>  
+      
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        Extension of time v1
+                      </td>
+                      <td class="govuk-table__cell">
+                        Two flows: 1). proposed replacing live design with <a href="/defer-time/one-defer_01" class="govuk-link govuk-link--no-visited-state" target="_blank">a custom number entry</a>. 2). proposed a <a href="/defer-time/two-defer_01" class="govuk-link govuk-link--no-visited-state" target="_blank">custom number entry and a set 20 days</a>.  
+                      </td>
+                      <td class="govuk-table__cell">
+                        April 2024
+                      </td>                
+                      <td class="govuk-table__cell">
+                        <a href="/defer-time/index" class="govuk-link govuk-link--no-visited-state" target="_blank">Open<span class="govuk-visually-hidden"> v1 index</span></a>
+                      </td>                            
+                    </tr>              
+      
+                  </tbody>
+      
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell" colspan="4">
+                          <span class="govuk-!-padding-right-4"><abbr>WCAG</abbr></span> <span class="govuk-!-font-weight-regular">(Accessibility and <abbr>GDS</abbr> compliance)</span>
+                      </td>
+                    </tr>
+      
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <abbr>WCAG</abbr> work
+                      </td>
+                      <td class="govuk-table__cell">
+                        <abbr>HTML</abbr> Designs, templates, guides and examples for resolving accessibility and <abbr>GDS</abbr> compliance issues.
+                      </td>
+                      <td class="govuk-table__cell">
+                        Q1 and Q2 2024
+                      </td>                
+                      <td class="govuk-table__cell">
+                        <a href="/wcag-work/indexx" class="govuk-link govuk-link--no-visited-state" target="_blank">Open<span class="govuk-visually-hidden"> <abbr>WCAG</abbr> index</span></a>
+                      </td>                            
+                    </tr> 
+      
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        Error message pages
+                      </td>
+                      <td class="govuk-table__cell">
+                        <abbr>HTML</abbr> Designs and example guides for revised error message pages.
+                      </td>
+                      <td class="govuk-table__cell">
+                        May 2024
+                      </td>                
+                      <td class="govuk-table__cell">
+                        <a href="/error-msg-pgs/index" class="govuk-link govuk-link--no-visited-state" target="_blank">Open<span class="govuk-visually-hidden"> <abbr>WCAG</abbr> index</span></a>
+                      </td>                            
+                    </tr>               
+      
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        Related works assets
+                      </td>
+                      <td class="govuk-table__cell" colspan="2">
+                        
+                        <ul class="govuk-list govuk-!-margin-0">
+                          <li class="govuk-!-display-inline-block govuk-!-margin-right-1">
+                            <a class="govuk-link govuk-link--no-visited-state" target="_blank" href="/accessibility-issues/index">Accessibility issues</a>
+                          </li>
+                        </ul>
+      
+                      </td>
+                      <td class="govuk-table__cell">
+                        &mdash;
+                      </td>                            
+                    </tr>                  
+                                
+                  </tbody>                  
+      
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell" colspan="4">
+                          <span class="govuk-!-padding-right-4">Expedites</span> <span class="govuk-!-font-weight-regular">(filtering/order when obtaining expedited applications )</span>
+                      </td>
+                    </tr>
+      
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        Expedite filter designs
+                      </td>
+                      <td class="govuk-table__cell" colspan="2">
+                        
+                        <ul class="govuk-list govuk-!-margin-0">
+                          <li class="govuk-!-display-inline-block govuk-!-margin-right-1">
+                            <a class="govuk-link govuk-link--no-visited-state" target="_blank" href="/expedites/index">Expedites index</a>
+                          </li>
+                        </ul>
+      
+                      </td>
+                      <td class="govuk-table__cell">
+                        &mdash;
+                      </td>                            
+                    </tr>                  
+                                
+                  </tbody>
+                  
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell" colspan="4">
+                          <span class="govuk-!-padding-right-4">Cancellations</span> <span class="govuk-!-font-weight-regular">(filtering/order when obtaining cancelled <abbr>ADR</abbr> applications )</span>
+                      </td>
+                    </tr>
+      
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        Cancelled/Extended filter designs
+                      </td>
+                      <td class="govuk-table__cell">
+                        
+                        <ul class="govuk-list govuk-!-margin-0">
+                          <li class="govuk-!-display-inline-block govuk-!-margin-right-1">
+                            <a class="govuk-link govuk-link--no-visited-state" target="_blank" href="/cancellation/index">Designs</a>
+                          </li>
+                        </ul>
+      
+                      </td>
+      
+                      <td class="govuk-table__cell">
+                        July 2025
+                      </td>                 
+                      <td class="govuk-table__cell">
+                        &mdash;
+                      </td>                            
+                    </tr>                  
+                                
+                  </tbody>             
+                  
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell" colspan="4">
+                          <span class="govuk-!-padding-right-4">Progress Later</span> <span class="govuk-!-font-weight-regular">(capture reason why moving case to Progress Later)</span> 
+                      </td>
+                    </tr>
+      
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        Progress later designs
+                      </td>
+                      <td class="govuk-table__cell">
+                        <p class="govuk-body">
+                          <a href="/progress-later/pg-1-01" class="govuk-link govuk-link--no-visited-state" target="_blank">
+                            Progress Later - Reason list form demo
+                          </a> <br><span class="govuk-!-font-size-14">Select 'Progress Later' link in first application.</span>
+                        </p>
+      
+                        <a class="govuk-link govuk-link--no-visited-state" target="_blank" href="/progress-later/index">Progress Later index</a> (of designs)                   
+      
+                      </td>
+                      <td class="govuk-table__cell">
+                        Oct - Dec 2024
+                      </td>
+                      <td class="govuk-table__cell">
+                        <a class="govuk-link govuk-link--no-visited-state" target="_blank" href="/progress-later/pg-1-01">Open</a>
+                      </td>                            
+                    </tr>                  
+                                
+                  </tbody>   
+                  
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell" colspan="4">
+                          <span class="govuk-!-padding-right-4">Manage Assigned Work</span> <span class="govuk-!-font-weight-regular">(Assign to me)</span>
+                      </td>
+                    </tr>
+      
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        Manage Assigned Work
+                      </td>
+                      <td class="govuk-table__cell">
+      
+                        <a class="govuk-link govuk-link--no-visited-state" target="_blank" href="/manage-assigned/manage-assigned-work-checkbox">Assign to me - final design</a> (fully functional with autocomplete)
+      
+                      </td>
+                      <td class="govuk-table__cell">
+                        Aug 2025
+                      </td>
+                      <td class="govuk-table__cell">
+                        &mdash;
+                      </td>                            
+                    </tr>
+                    
+                  </tbody> 
+                  
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell" colspan="4">
+                          <span class="govuk-!-padding-right-4">Category of work </span> <span class="govuk-!-font-weight-regular">(Sub-categories)</span> &nbsp; <span class="govuk-!-font-weight-regular">&#35;179</span>
+                      </td>
+                    </tr>
+      
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        Category of work 
+                      </td>
+                      <td class="govuk-table__cell">
+        
+                        <a class="govuk-link govuk-link--no-visited-state" target="_blank" href="/capability-based/indexx">Category of Work index</a>
+        
+                      </td>
+                      <td class="govuk-table__cell">
+                        Oct 2025
+                      </td>
+                      <td class="govuk-table__cell">
+                        &mdash;
+                      </td>                            
+                    </tr>
+                    
+                  </tbody>   
+                  
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell" colspan="4">
+                          <span class="govuk-!-padding-right-4">Category of work #2</span> <span class="govuk-!-font-weight-regular">(Sub-categories)</span> &nbsp; <span class="govuk-!-font-weight-regular">&#35;270</span>
+                      </td>
+                    </tr>
+      
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        Category of work #2
+                      </td>
+                      <td class="govuk-table__cell">
+        
+                        <a class="govuk-link govuk-link--no-visited-state" target="_blank" href="/capability-based/designs-270">Category of Work Designs 270</a>
+        
+                      </td>
+                      <td class="govuk-table__cell">
+                        Feb 2025
+                      </td>
+                      <td class="govuk-table__cell">
+                        &mdash;
+                      </td>                            
+                    </tr>
+                    
+                  </tbody>               
+      
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell" colspan="4">
+                          <span class="govuk-!-padding-right-4"><abbr>UI</abbr> design work</span> <span class="govuk-!-font-weight-regular">(including additional worklist design features)</span> &nbsp; 
+                      </td>
+                    </tr>
+      
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        New <abbr>UI</abbr> designs
+                      </td>
+                      <td class="govuk-table__cell">
+        
+                        <p class="govuk-body">
+                          Including new Worklist &amp; Progress Later <abbr>UI</abbr>, and (3x widget) search features. My notes, Flagging, Sorting/Ordering &plus; new <abbr>GUI</abbr> layout/design and new <abbr>IA</abbr>. 
+
+                          <span style="display: block; margin-top: 1.5rem;">
+                            Directory of designs: <a class="govuk-link govuk-link--no-visited-state" 
+                          href="/ui-design/indexx" target="_blank"><code>/ui-design/</code></a>.
+                          </span>
+                        </p>
+      
+                        <p class="govuk-body" style="font-size: 80% !important;">
+                          (Designers can access much older works in: <a class="govuk-link govuk-link--no-visited-state"  
+                          href="/new-designs/index" target="_blank" style="font-size: inherit !important;">/new-designs/</a>)
+                        </p>
+                        
+        
+                      </td>
+                      <td class="govuk-table__cell">
+                        Jun 2024 - Mar 2025
+                      </td>
+                      <td class="govuk-table__cell">
+                        &mdash;
+                      </td>                            
+                    </tr>
+                    
+                  </tbody>
+                  
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell" colspan="4">
+                          <span class="govuk-!-padding-right-4">Defer for executive</span> <span class="govuk-!-font-weight-regular">&#35;4834</span>
+                      </td>
+                    </tr>
+      
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        Select a deferral reason (page)
+                      </td>
+                      <td class="govuk-table__cell">
+
+                        <ul class="govuk-list govuk-list--bullet">
+                          <li><a class="govuk-link govuk-link--no-visited-state" target="_blank" href="/defer-for-reason/return-to-me-checkbox">Return to me</a> (checkbox)</li>
+
+                          <li><a class="govuk-link govuk-link--no-visited-state" target="_blank" href="/defer-for-reason/defer-to-volume-checkbox">Defer to <abbr>VCO</abbr> <abbr>ADR</abbr></a> (checkbox)</li>
+
+                          <li><a class="govuk-link govuk-link--no-visited-state" target="_blank" href="/defer-for-reason/defer-to-executive-checkbox">Defer to exec <abbr>ADR</abbr></a> (checkbox)</li>
+
+
+                          <li><a class="govuk-link govuk-link--no-visited-state" target="_blank" href="/defer-for-reason/extend-25-days">Extend to 25 days for overseas notice</a> (checkbox)</li>
+                                  
+                          
+                          <li><a class="govuk-link govuk-link--no-visited-state" target="_blank" href="/defer-for-reason/defer-to-executive-and-return-radios">Defer to exec <abbr>ADR</abbr> &plus; Return to me</a> (Radios)</li>
+                          <li><a class="govuk-link govuk-link--no-visited-state" target="_blank" href="defer-for-reason/defer-to-volume-and-return-radios">Defer to <abbr>VCO</abbr> <abbr>ADR</abbr> &plus; Return to me</a> (Radios)</li>
+                        </ul>
+
+
+
+        
+                        (<a class="govuk-link govuk-link--no-visited-state" target="_blank" href="/defer-for-reason/defer"><i>Old version</i></a>)
+                      </td>
+                      <td class="govuk-table__cell">
+                        Jan 2026
+                      </td>
+                      <td class="govuk-table__cell">
+                        &mdash;
+                      </td>                            
+                    </tr>
+                    
+                  </tbody>  
+
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell" colspan="4">
+                          <span class="govuk-!-padding-right-4">Deferrals - extention of time dates (Manual bring forward)</span>
+                      </td>
+                    </tr>
+      
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        Date forms added to deferral options
+                      </td>
+                      <td class="govuk-table__cell">
+        
+                        <a class="govuk-link govuk-link--no-visited-state" target="_blank" href="/deferrals/index">Deferral - time extention</a>
+        
+                      </td>
+                      <td class="govuk-table__cell">
+                        July 2026
+                      </td>
+                      <td class="govuk-table__cell">
+                        <a class="govuk-link govuk-link--no-visited-state" target="_blank" href="/deferrals/index">Open</a>
+                      </td>                            
+                    </tr>
+                  </tbody>                   
+                  
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell" colspan="4">
+                          <span class="govuk-!-padding-right-4">Feedback form link</span>
+                      </td>
+                    </tr>
+      
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        Feedback link
+                      </td>
+                      <td class="govuk-table__cell">
+        
+                        <a class="govuk-link govuk-link--no-visited-state" target="_blank" href="/feedback/index">Designs for feedback link</a>
+        
+                      </td>
+                      <td class="govuk-table__cell">
+                        Mar 2026
+                      </td>
+                      <td class="govuk-table__cell">
+                        &mdash;
+                      </td>                            
+                    </tr>
+                  </tbody>                
+      
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell" colspan="4">
+                          <span class="govuk-!-padding-right-4"><abbr>ADN</abbr></span>
+                          <span class="govuk-!-font-weight-regular"><addr>AMW</addr>-4976</span>
+                      </td>
+                    </tr>
+      
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        Additional <addr>ADN</addr> filter and label updates
+                      </td>
+                      <td class="govuk-table__cell">
+        
+                        A <a class="govuk-link govuk-link--no-visited-state govuk-!-display-inline-block govuk-!-padding-bottom-4" href="/merging-objection-notices/pg-1">new filter</a> added to the obtain options <br><span class="govuk-visually-hidden">|</span>
+                        Select a <a class="govuk-link govuk-link--no-visited-state" target="_blank" href="/merging-objection-notices/pg-2">category of work</a> list update: &quot;Executive Register Update Actionable Deferral: Objection Notice Replies&quot; 
+        
+                      </td>
+                      <td class="govuk-table__cell">
+                        May 2026
+                      </td>
+                      <td class="govuk-table__cell">
+                        &mdash;
+                      </td>                            
+                    </tr>
+                  </tbody>    
+                  
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell" colspan="4">
+                          <span class="govuk-!-padding-right-4">Flagging feature (finished)</span> 
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        Flagging (New <abbr>UI</abbr> feature)
+                      </td>
+                      <td class="govuk-table__cell">
+                        <p class="govuk-body">
+                          Includes dev notes and guidence: <a class="govuk-link govuk-link--no-visited-state" 
+                          href="/ui-features/flagging-index" target="_blank"><code>flagging index</code></a>.
+                          </span>
+                        </p>
+                      </td>
+                      <td class="govuk-table__cell">
+                        June 2026
+                      </td>
+                      <td class="govuk-table__cell">
+                        &mdash;
+                      </td>                            
+                    </tr>
+                  </tbody>    
+                  
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell" colspan="4">
+                          <span class="govuk-!-padding-right-4">Filtering / Sorting (finished)</span> 
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        Filtering/Sorting (New <abbr>UI</abbr> feature)
+                      </td>
+                      <td class="govuk-table__cell">
+                        <p class="govuk-body">
+                          Includes dev notes and guidence: <a class="govuk-link govuk-link--no-visited-state" 
+                          href="/ui-features/filtering-sorting-index" target="_blank"><code>filtering and sorting index</code></a>.
+                          </span>
+                        </p>
+                      </td>
+                      <td class="govuk-table__cell">
+                        June 2026
+                      </td>
+                      <td class="govuk-table__cell">
+                        &mdash;
+                      </td>                            
+                    </tr>
+                  </tbody> 
+                  
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell" colspan="4">
+                          <span class="govuk-!-padding-right-4">SharePoint link</span> <span class="govuk-!-font-weight-regular">(in the Workflow header)</span>
+                      </td>
+                    </tr>
+      
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                          &nbsp;
+                      </td>
+                      <td class="govuk-table__cell">
+                        <a href="/sharepoint-link/index" class="govuk-link govuk-link--no-visited-state" target="_blank">New header link(s)</a>
+                      </td>                  
+                      <td class="govuk-table__cell">
+                        Sept 2026
+                      </td>                
+                      <td class="govuk-table__cell">
+                        &nbsp;
+                      </td>                            
+                    </tr>
+                  </tbody>              
+      
+                </table>
+      
+                <details class="govuk-details">
                   <summary class="govuk-details__summary">
                     <span class="govuk-details__summary-text">
-                      Workflow layout templates
+                      Archives:
                     </span>
                   </summary>
                   <div class="govuk-details__text">
-  
-                    <p class="govuk-body-s">A list of base templates already coded, available to use. Copy these and add to your own folder (directory) in the 'views' directory:</p>
-                
-                    <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
+                    
+                    <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16">
                       <li>
-                        <a href="/index-main" class="govuk-link govuk-link--no-visited-state" target="_blank">index-main (opens in new tab)</a>. <br>A standard page template using the layout template of <code>main.html</code>
-                      </li>
-                      <li>
-                        <a href="/index-wf" class="govuk-link govuk-link--no-visited-state" target="_blank">index-wf (opens in new tab)</a>. <br>A standard page template using the primary Workflow layout template of <code>wf_layout.html</code>
-                      </li>
-                      <li>
-                        <a href="/index-wf-legacy" class="govuk-link govuk-link--no-visited-state" target="_blank">index-wf-legacy (opens in new tab)</a>. <br>A page template using the legacy Workflow layout template of <code>index-wf-legacy.html</code>. Used for recreating pages to match older Workflow pages. (The orginal legacy prototype used different <abbr>CSS</abbr> classes and <abbr>ID</abbr>s on the footer).
-                      </li>
-                      <li>
-                        Additional layouts in the 'layouts' folder (directory) include <code>wf_layout_legacy_wcag_updates.html</code> and <code>wf_layout_legacy_wcag_updates-new-autocomplete.html</code>, which include specific <abbr>CSS</abbr> and <abbr>JS</abbr> for key functionality. 
+                        Production Information: This dashboard page was decommissioned circa Dec 2024. <br>The page/<abbr>HTML</abbr> is <a href="/reference/production-information" class="govuk-link govuk-link--no-visited-state" target="_blank">saved here</a> (one tab) for reference.
                       </li>
                     </ul>
-  
+      
+      
                   </div>
-                </details> 
-              </li>
-              <li>                
-                <details class="govuk-details govuk-!-margin-bottom-2">
-                  <summary class="govuk-details__summary">
-                    <span class="govuk-details__summary-text">
-                      Clearing session data (Tip)
-                    </span>
-                  </summary>
-                  <div class="govuk-details__text">
-  
-                    <p class="govuk-body">
-                      A solution for more convenient session data clearing is to use the 'Clear data link' plug-in. Simply add the following code to the bottom of your layout page: <br> 
-  
-                      <code class="govuk-!-font-weight-regular govuk-!-font-size-16 govuk-!-display-inline-block govuk-!-margin-top-4">
-                      &lt;script type=&quot;text/javascript&quot; src=&quot;/public/javascripts/clear-data-link.js&quot;&gt;&lt;/script&gt; 
-                      </code>
-                      
-  
-                    <p class="govuk-body">
-                      This appends a link to the list of links in the footer of your pages. Clicking the new 'Clear data (popup)' link opens a popup window: Select 'Clear the data', close the pop-up window and then refresh the page.
-                    </p>
-  
-                  </div>   
-              </li>         
-                
-            </ul>
-  
-            <!--p class="govuk-body-s">Miscellaneous: </p>
-            <ul class="govuk-list govuk-!-margin-0 govuk-!-font-size-16 govuk-list--bullet">
-              <li>
-                <a href="xxx" class="govuk-link govuk-link--no-visited-state" target="_blank">xxxx</a> (xxxxxxxxxxx)
-              </li> 
-            </ul-->
-  
-            {# this link is already in the footer...
-            {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
-            #}
-  
-            {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}
-  
-          </div>
+                </details>
+      
+                <!--p class="govuk-body-s">Miscellaneous: </p>
+      
+                <ul class="govuk-list govuk-!-margin-0 govuk-!-font-size-16 govuk-list--bullet">
+                  <li>
+                    <a href="/new-designs/index" class="govuk-link govuk-link--no-visited-state" target="_blank">New designs</a> (<abbr>WIP</abbr>)
+                  </li>
+                                          
+                </ul-->
+      
+              </div>
+            </div>
+            <div class="govuk-accordion__section">
+              <div class="govuk-accordion__section-header">
+                <h2 class="govuk-accordion__section-heading">
+                  <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-2">
+                    Information for designers
+                  </span>
+                </h2>
+                <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-2">
+                  How to use this repository and prototyping kit ...
+                </div>
+              </div>
+              <div id="accordion-with-summary-sections-content-2" class="govuk-accordion__section-content">
+      
+                <ul class="govuk-list">
+      
+                  <li>
+                    <details class="govuk-details govuk-!-margin-bottom-2">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          Workflow layout templates
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+      
+                        <p class="govuk-body-s">A list of base templates already coded, available to use. Copy these and add to your own folder (directory) in the 'views' directory:</p>
+                    
+                        <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
+                          <li>
+                            <a href="/index-main" class="govuk-link govuk-link--no-visited-state" target="_blank">index-main (opens in new tab)</a>. <br>A standard page template using the layout template of <code>main.html</code>
+                          </li>
+                          <li>
+                            <a href="/index-wf" class="govuk-link govuk-link--no-visited-state" target="_blank">index-wf (opens in new tab)</a>. <br>A standard page template using the primary Workflow layout template of <code>wf_layout.html</code>
+                          </li>
+                          <li>
+                            <a href="/index-wf-legacy" class="govuk-link govuk-link--no-visited-state" target="_blank">index-wf-legacy (opens in new tab)</a>. <br>A page template using the legacy Workflow layout template of <code>index-wf-legacy.html</code>. Used for recreating pages to match older Workflow pages. (The orginal legacy prototype used different <abbr>CSS</abbr> classes and <abbr>ID</abbr>s on the footer).
+                          </li>
+                          <li>
+                            Additional layouts in the 'layouts' folder (directory) include <code>wf_layout_legacy_wcag_updates.html</code> and <code>wf_layout_legacy_wcag_updates-new-autocomplete.html</code>, which include specific <abbr>CSS</abbr> and <abbr>JS</abbr> for key functionality. 
+                          </li>
+                        </ul>
+      
+                      </div>
+                    </details> 
+                  </li>
+                  <li>                
+                    <details class="govuk-details govuk-!-margin-bottom-2">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          Clearing session data (Tip)
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+      
+                        <p class="govuk-body">
+                          A solution for more convenient session data clearing is to use the 'Clear data link' plug-in. Simply add the following code to the bottom of your layout page: <br> 
+      
+                          <code class="govuk-!-font-weight-regular govuk-!-font-size-16 govuk-!-display-inline-block govuk-!-margin-top-4">
+                          &lt;script type=&quot;text/javascript&quot; src=&quot;/public/javascripts/clear-data-link.js&quot;&gt;&lt;/script&gt; 
+                          </code>
+                          
+      
+                        <p class="govuk-body">
+                          This appends a link to the list of links in the footer of your pages. Clicking the new 'Clear data (popup)' link opens a popup window: Select 'Clear the data', close the pop-up window and then refresh the page.
+                        </p>
+      
+                      </div>   
+                  </li>         
+                    
+                </ul>
+      
+                <!--p class="govuk-body-s">Miscellaneous: </p>
+                <ul class="govuk-list govuk-!-margin-0 govuk-!-font-size-16 govuk-list--bullet">
+                  <li>
+                    <a href="xxx" class="govuk-link govuk-link--no-visited-state" target="_blank">xxxx</a> (xxxxxxxxxxx)
+                  </li> 
+                </ul-->
+      
+                {# this link is already in the footer...
+                {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
+                #}
+      
+                {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}
+      
+              </div>
+            </div>
+      
+          </div> 
+      
         </div>
-  
-      </div>  
+      </div>      
 
       {% else %}
       {# Password form #}
-          <div class="govuk-grid-row">
-            <div class="govuk-grid-column-two-thirds">
-              <form method="post" action="/">
-                <div class="govuk-form-group{% if error %} govuk-form-group--error{% endif %}">
-                  
-                  <p class="govuk-body-s">The list of designs on this index page are password protected. This limits access, ensuring visitors can only view the prototypes they are invited to (via the direct <abbr>URL</abbr> they have been provided).</p>
-                  
-                  <label class="govuk-label" for="password">
-                    Enter password
-                  </label>
-                  {% if error %}
-                  <p class="govuk-error-message">
-                    <span class="govuk-visually-hidden">Error:</span> Enter the correct password
-                  </p>
-                  {% endif %}
-                  <input class="govuk-input  govuk-input--width-10{% if error %} govuk-input--error{% endif %}" id="password" name="password" type="password" autocomplete="off">
-                </div>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <form method="post" action="/">
+              <div class="govuk-form-group{% if error %} govuk-form-group--error{% endif %}">
+                
+                <p class="govuk-body-s">The list of designs on this index page are password protected. This limits access, ensuring visitors can only view the prototypes they are invited to (via the direct <abbr>URL</abbr> they have been provided).</p>
+                
+                <label class="govuk-label" for="password">
+                  Enter password
+                </label>
+                {% if error %}
+                <p class="govuk-error-message">
+                  <span class="govuk-visually-hidden">Error:</span> Enter the correct password
+                </p>
+                {% endif %}
+                <input class="govuk-input  govuk-input--width-10{% if error %} govuk-input--error{% endif %}" id="password" name="password" type="password" autocomplete="off">
+              </div>
 
-                <button type="submit" class="govuk-button" data-module="govuk-button">
-                  Submit
-                </button>
-              </form>
+              <button type="submit" class="govuk-button" data-module="govuk-button">
+                Submit
+              </button>
+            </form>
 
-              <p class="govuk-body-s"><b>Designers</b>: the password is hardcoded into the root routes.js file.</p>
-            </div>
+            <p class="govuk-body-s"><b>Designers</b>: the password is hardcoded into the root routes.js file.</p>
           </div>
+        </div>
       {% endif %}
 
 
